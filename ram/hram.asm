@@ -22,12 +22,11 @@ hSeconds:: db
 
 	ds 1
 
+hVBlank:: db
 hVBlankCounter:: db
-
-	ds 1
+hVBlankOccurred:: db
 
 hROMBank:: db
-hVBlank:: db
 hMapEntryMethod:: db
 
 hMenuReturn:: db

@@ -1737,7 +1737,6 @@ wMoreMenuDataEnd::
 
 wOverworldDelay:: db
 wTextDelayFrames:: db
-wVBlankOccurred:: db
 
 wPredefID:: db
 wPredefHL:: dw

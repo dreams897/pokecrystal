@@ -32,7 +32,7 @@ VBlank::
 	call GameTimer
 
 	xor a
-	ld [wVBlankOccurred], a
+	ldh [hVBlankOccurred], a
 
 	ldh a, [hROMBankBackup]
 	rst Bankswitch
@@ -119,7 +119,7 @@ VBlank0::
 	ldh [hRandomSub], a
 
 	xor a
-	ld [wVBlankOccurred], a
+	ldh [hVBlankOccurred], a
 
 	ld a, [wTextDelayFrames]
 	and a
@@ -352,6 +352,6 @@ VBlank7:
 	push af
 	homecall VBlankSafeCopyTilemapAtOnce
 	xor a
-	ld [wVBlankOccurred], a
+	ld [hVBlankOccurred], a
 	pop af
 	ret
