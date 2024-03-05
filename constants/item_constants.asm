@@ -196,6 +196,13 @@
 	const MUSIC_MAIL   ; bc
 	const MIRAGE_MAIL  ; bd
 	const ITEM_BE      ; be
+	const ITEM_BF      ; bf
+	const ITEM_C0      ; c0
+	const ITEM_C1      ; c1
+	const ITEM_C2      ; c2
+	const ITEM_C3      ; c3
+	const ITEM_C4      ; c4
+	const ITEM_C5      ; c5
 DEF NUM_ITEMS EQU const_value - 1
 
 DEF __tmhm_value__ = 1
@@ -205,11 +212,11 @@ MACRO add_tmnum
 	DEF __tmhm_value__ += 1
 ENDM
 
-MACRO add_tm
 ; Defines three constants:
-; - TM_\1: the item id, starting at $bf
+; - TM_\1: the item id, starting at $c6
 ; - \1_TMNUM: the learnable TM/HM flag, starting at 1
 ; - TM##_MOVE: alias for the move id, equal to the value of \1
+MACRO add_tm
 	const TM_\1
 	DEF TM{02d:__tmhm_value__}_MOVE = \1
 	add_tmnum \1
@@ -217,65 +224,63 @@ ENDM
 
 ; see data/moves/tmhm_moves.asm for moves
 DEF TM01 EQU const_value
-	add_tm DYNAMICPUNCH ; bf
-	add_tm HEADBUTT     ; c0
-	add_tm CURSE        ; c1
-	add_tm ROLLOUT      ; c2
-	const ITEM_C3       ; c3
-	add_tm ROAR         ; c4
-	add_tm TOXIC        ; c5
-	add_tm ZAP_CANNON   ; c6
-	add_tm ROCK_SMASH   ; c7
-	add_tm PSYCH_UP     ; c8
-	add_tm HIDDEN_POWER ; c9
-	add_tm SUNNY_DAY    ; ca
-	add_tm SWEET_SCENT  ; cb
-	add_tm SNORE        ; cc
-	add_tm BLIZZARD     ; cd
-	add_tm HYPER_BEAM   ; ce
-	add_tm ICY_WIND     ; cf
-	add_tm PROTECT      ; d0
-	add_tm RAIN_DANCE   ; d1
-	add_tm GIGA_DRAIN   ; d2
-	add_tm ENDURE       ; d3
-	add_tm FRUSTRATION  ; d4
-	add_tm SOLARBEAM    ; d5
-	add_tm IRON_TAIL    ; d6
-	add_tm DRAGONBREATH ; d7
-	add_tm THUNDER      ; d8
-	add_tm EARTHQUAKE   ; d9
-	add_tm RETURN       ; da
-	add_tm DIG          ; db
-	const ITEM_DC       ; dc
-	add_tm PSYCHIC_M    ; dd
-	add_tm SHADOW_BALL  ; de
-	add_tm MUD_SLAP     ; df
-	add_tm DOUBLE_TEAM  ; e0
-	add_tm ICE_PUNCH    ; e1
-	add_tm SWAGGER      ; e2
-	add_tm SLEEP_TALK   ; e3
-	add_tm SLUDGE_BOMB  ; e4
-	add_tm SANDSTORM    ; e5
-	add_tm FIRE_BLAST   ; e6
-	add_tm SWIFT        ; e7
-	add_tm DEFENSE_CURL ; e8
-	add_tm THUNDERPUNCH ; e9
-	add_tm DREAM_EATER  ; ea
-	add_tm DETECT       ; eb
-	add_tm REST         ; ec
-	add_tm ATTRACT      ; ed
-	add_tm THIEF        ; ee
-	add_tm STEEL_WING   ; ef
-	add_tm FIRE_PUNCH   ; f0
-	add_tm FURY_CUTTER  ; f1
-	add_tm NIGHTMARE    ; f2
+	add_tm DYNAMICPUNCH ; c6
+	add_tm HEADBUTT     ; c7
+	add_tm CURSE        ; c9
+	add_tm ROLLOUT      ; c9
+	add_tm ROAR         ; ca
+	add_tm TOXIC        ; cb
+	add_tm ZAP_CANNON   ; cc
+	add_tm ROCK_SMASH   ; cd
+	add_tm PSYCH_UP     ; ce
+	add_tm HIDDEN_POWER ; cf
+	add_tm SUNNY_DAY    ; d0
+	add_tm SWEET_SCENT  ; d1
+	add_tm SNORE        ; d2
+	add_tm BLIZZARD     ; d3
+	add_tm HYPER_BEAM   ; d4
+	add_tm ICY_WIND     ; d5
+	add_tm PROTECT      ; d6
+	add_tm RAIN_DANCE   ; d7
+	add_tm GIGA_DRAIN   ; d8
+	add_tm ENDURE       ; d9
+	add_tm FRUSTRATION  ; da
+	add_tm SOLARBEAM    ; db
+	add_tm IRON_TAIL    ; dc
+	add_tm DRAGONBREATH ; dd
+	add_tm THUNDER      ; de
+	add_tm EARTHQUAKE   ; df
+	add_tm RETURN       ; e0
+	add_tm DIG          ; e1
+	add_tm PSYCHIC_M    ; e2
+	add_tm SHADOW_BALL  ; e3
+	add_tm MUD_SLAP     ; e4
+	add_tm DOUBLE_TEAM  ; e5
+	add_tm ICE_PUNCH    ; e6
+	add_tm SWAGGER      ; e7
+	add_tm SLEEP_TALK   ; e8
+	add_tm SLUDGE_BOMB  ; e9
+	add_tm SANDSTORM    ; ea
+	add_tm FIRE_BLAST   ; eb
+	add_tm SWIFT        ; ec
+	add_tm DEFENSE_CURL ; ed
+	add_tm THUNDERPUNCH ; ee
+	add_tm DREAM_EATER  ; ef
+	add_tm DETECT       ; f0
+	add_tm REST         ; f1
+	add_tm ATTRACT      ; f2
+	add_tm THIEF        ; f3
+	add_tm STEEL_WING   ; f4
+	add_tm FIRE_PUNCH   ; f5
+	add_tm FURY_CUTTER  ; f6
+	add_tm NIGHTMARE    ; f7
 DEF NUM_TMS EQU __tmhm_value__ - 1
 
-MACRO add_hm
 ; Defines three constants:
-; - HM_\1: the item id, starting at $f3
+; - HM_\1: the item id, starting at $f8
 ; - \1_TMNUM: the learnable TM/HM flag, starting at 51
 ; - HM##_MOVE: alias for the move id, equal to the value of \1
+MACRO add_hm
 	const HM_\1
 	DEF HM_VALUE = __tmhm_value__ - NUM_TMS
 	DEF HM{02d:HM_VALUE}_MOVE = \1
@@ -283,19 +288,19 @@ MACRO add_hm
 ENDM
 
 DEF HM01 EQU const_value
-	add_hm CUT          ; f3
-	add_hm FLY          ; f4
-	add_hm SURF         ; f5
-	add_hm STRENGTH     ; f6
-	add_hm FLASH        ; f7
-	add_hm WHIRLPOOL    ; f8
-	add_hm WATERFALL    ; f9
+	add_hm CUT          ; f8
+	add_hm FLY          ; f9
+	add_hm SURF         ; fa
+	add_hm STRENGTH     ; fb
+	add_hm FLASH        ; fc
+	add_hm WHIRLPOOL    ; fd
+	add_hm WATERFALL    ; fe
 DEF NUM_HMS EQU __tmhm_value__ - NUM_TMS - 1
 
-MACRO add_mt
 ; Defines two constants:
 ; - \1_TMNUM: the learnable TM/HM flag, starting at 58
 ; - MT##_MOVE: alias for the move id, equal to the value of \1
+MACRO add_mt
 	DEF MT_VALUE = __tmhm_value__ - NUM_TMS - NUM_HMS
 	DEF MT{02d:MT_VALUE}_MOVE = \1
 	add_tmnum \1
@@ -308,8 +313,6 @@ DEF MT01 EQU const_value
 DEF NUM_TUTORS = __tmhm_value__ - NUM_TMS - NUM_HMS - 1
 
 DEF NUM_TM_HM_TUTOR EQU NUM_TMS + NUM_HMS + NUM_TUTORS
-
-	const ITEM_FA       ; fa
 
 DEF USE_SCRIPT_VAR EQU $00
 DEF ITEM_FROM_MEM  EQU $ff

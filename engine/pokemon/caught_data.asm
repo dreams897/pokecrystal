@@ -163,16 +163,25 @@ CaughtAskNicknameText:
 SetCaughtData:
 	ld a, [wPartyCount]
 	dec a
-	ld hl, wPartyMon1CaughtLevel
+	ld hl, wPartyMon1CaughtTime
 	call GetPartyLocation
 SetBoxmonOrEggmonCaughtData:
+	ld a, [hl]
+	and EXP_MASK
+	ld b, a
 	ld a, [wTimeOfDay]
 	inc a
 	rrca
 	rrca
-	ld b, a
-	ld a, [wCurPartyLevel]
 	or b
+	ld [hl], a
+	ld a, (wPartyMon1CaughtLevel - wPartyMon1CaughtTime)
+	add l
+	ld l, a
+	adc h
+	sub l
+	ld h, a
+	ld a, [wCurPartyLevel]
 	ld [hli], a
 	ld a, [wMapGroup]
 	ld b, a
@@ -199,9 +208,9 @@ SetBoxmonOrEggmonCaughtData:
 	ret
 
 SetBoxMonCaughtData:
-	ld a, BANK(sBoxMon1CaughtLevel)
+	ld a, BANK(sBoxMon1CaughtTime)
 	call OpenSRAM
-	ld hl, sBoxMon1CaughtLevel
+	ld hl, sBoxMon1CaughtTime
 	call SetBoxmonOrEggmonCaughtData
 	call CloseSRAM
 	ret
@@ -234,7 +243,7 @@ SetGiftMonCaughtData:
 
 SetEggMonCaughtData:
 	ld a, [wCurPartyMon]
-	ld hl, wPartyMon1CaughtLevel
+	ld hl, wPartyMon1CaughtTime
 	call GetPartyLocation
 	ld a, [wCurPartyLevel]
 	push af

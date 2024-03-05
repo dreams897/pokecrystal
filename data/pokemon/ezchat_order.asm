@@ -1,5 +1,4 @@
 ; Every Pokémon sorted by their Japanese names in gojūon order.
-; Notably, Rhydon is missing (it should be before Rhyhorn).
 
 EZChat_SortedPokemon:
 	dw .a
@@ -58,7 +57,7 @@ EZChat_SortedPokemon:
 .ku_gu:    db GLOOM, PINECO, GLIGAR, KRABBY, GRANBULL, CROBAT, -1
 .ke_ge:    db ABRA, GENGAR, TAUROS, -1
 .ko_go:    db MAGIKARP, MAGNEMITE, GASTLY, HAUNTER, MACHOKE, KAKUNA, PSYDUCK, PHANPY, RATTATA, GOLDUCK, GOLBAT, GOLEM, GRAVELER, VENONAT, -1
-.sa_za:    db RHYHORN, PUPITAR, CORSOLA, HITMONLEE, ZAPDOS, JOLTEON, SANDSHREW, SANDSLASH, -1 ; RHYDON should lead this list
+.sa_za:    db RHYDON, RHYHORN, PUPITAR, CORSOLA, HITMONLEE, ZAPDOS, JOLTEON, SANDSHREW, SANDSLASH, -1
 .shi_ji:   db SEADRA, SHELLDER, VAPOREON, DEWGONG, -1
 .su_zu:    db SUICUNE, STARMIE, SCYTHER, ZUBAT, BEEDRILL, HYPNO, DROWZEE, -1
 .se_ze:    db SQUIRTLE, CELEBI, -1

@@ -1,9 +1,13 @@
-Cosine:: ; unreferenced
-; a = d * cos(a * pi/32)
-	add %010000 ; cos(x) = sin(x + pi/2)
-	; fallthrough
+; Global (co)sine functions
+
+; INPUT:  a = signed 6-bit value
+;         d = degree offset
+Cosine::
+; OUTPUT: a = d * cos(a).
+	add %010000 ; add 90 degrees
 Sine::
-; a = d * sin(a * pi/32)
+; OUTPUT: a = d * sin(a).
 	ld e, a
 	homecall _Sine
+	ld a, e
 	ret

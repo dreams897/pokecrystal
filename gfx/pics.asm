@@ -1,3 +1,4 @@
+
 ; PokemonPicPointers and UnownPicPointers are assumed to start at the same
 ; address, but in different banks. This is enforced in layout.link.
 
@@ -775,8 +776,7 @@ INCBIN "gfx/pokemon/unown_i/back.2bpp.lz"
 INCBIN "gfx/pokemon/unown_r/back.2bpp.lz"
 
 
-; Sections "Pics 20" to "Pics 24" are not used for any graphics,
-; but entries for their banks exist in FixPicBank (see engine/gfx/load_pics.asm).
+; Sections "Pics 20" to "Pics 24" are not used for any graphics
 
 SECTION "Pics 20", ROMX
 

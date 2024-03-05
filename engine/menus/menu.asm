@@ -276,7 +276,7 @@ Function241d5: ; unreferenced
 	call Place2DMenuCursor
 .loop
 	call Move2DMenuCursor
-	call HDMATransferTilemapToWRAMBank3 ; should be farcall
+	farcall HDMATransferTilemapToWRAMBank3
 	call .loop2
 	jr nc, .done
 	call _2DMenuInterpretJoypad
@@ -298,7 +298,7 @@ Function241d5: ; unreferenced
 	ret c
 	ld c, 1
 	ld b, 3
-	call AdvanceMobileInactivityTimerAndCheckExpired ; should be farcall
+	farcall AdvanceMobileInactivityTimerAndCheckExpired
 	ret c
 	farcall Function100337
 	ret c

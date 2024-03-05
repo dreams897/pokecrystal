@@ -191,71 +191,73 @@ ItemDescriptions:
 	dw MusicMailDesc
 	dw MirageMailDesc
 	dw TeruSama25Desc
-	assert_table_length NUM_ITEMS
-	dw TeruSama26Desc
-	dw TeruSama26Desc
-	dw TeruSama26Desc
-	dw TeruSama26Desc
 	dw TeruSama26Desc
 	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
 	dw TeruSama28Desc
 	dw TeruSama29Desc
 	dw TeruSama30Desc
 	dw TeruSama31Desc
 	dw TeruSama32Desc
+	assert_table_length NUM_ITEMS
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	assert_table_length NUM_ITEMS + NUM_TMS
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	assert_table_length NUM_ITEMS + NUM_TMS + NUM_HMS
 	dw TeruSama33Desc
 	assert_table_length $ff
 

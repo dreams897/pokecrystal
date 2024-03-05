@@ -1636,15 +1636,14 @@ Function108c80:
 	ldh [rVBK], a
 	ret
 
-DebugMobileTrade: ; unreferenced
-; localization error: NAME_LENGTH (11) should be NAME_LENGTH_JAPANESE (6) here
+DebugMobileTrade:
 
 	ld hl, .DebugTradeData
 	ld a, [hli]
 	ld [wPlayerTrademonSpecies], a
 
 	ld de, wPlayerTrademonSenderName
-	ld c, NAME_LENGTH
+	ld c, NAME_LENGTH_JAPANESE
 .your_name_loop
 	ld a, [hli]
 	ld [de], a
@@ -1662,7 +1661,7 @@ DebugMobileTrade: ; unreferenced
 	jr nz, .your_id_loop
 
 	ld de, wPlayerTrademonOTName
-	ld c, NAME_LENGTH
+	ld c, NAME_LENGTH_JAPANESE
 .your_ot_loop
 	ld a, [hli]
 	ld [de], a
@@ -1674,7 +1673,7 @@ DebugMobileTrade: ; unreferenced
 	ld [wOTTrademonSpecies], a
 
 	ld de, wOTTrademonSenderName
-	ld c, NAME_LENGTH
+	ld c, NAME_LENGTH_JAPANESE
 .their_name_loop
 	ld a, [hli]
 	ld [de], a
@@ -1692,7 +1691,7 @@ DebugMobileTrade: ; unreferenced
 	jr nz, .their_id_loop
 
 	ld de, wOTTrademonOTName
-	ld c, NAME_LENGTH
+	ld c, NAME_LENGTH_JAPANESE
 .their_ot_loop
 	ld a, [hli]
 	ld [de], a

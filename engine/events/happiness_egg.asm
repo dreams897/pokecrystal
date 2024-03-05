@@ -158,9 +158,16 @@ DayCareStep::
 	dec hl
 	inc [hl]
 	ld a, [hl]
+	and EXP_MASK
 	cp HIGH(MAX_DAY_CARE_EXP >> 8)
 	jr c, .day_care_lady
+	push de
+	ld a, [hl]
+	and CAUGHT_TIME_MASK
+	ld d, a
 	ld a, HIGH(MAX_DAY_CARE_EXP >> 8)
+	or d
+	pop de
 	ld [hl], a
 
 .day_care_lady
@@ -180,9 +187,16 @@ DayCareStep::
 	dec hl
 	inc [hl]
 	ld a, [hl]
+	and EXP_MASK
 	cp HIGH(MAX_DAY_CARE_EXP >> 8)
 	jr c, .check_egg
+	push de
+	ld a, [hl]
+	and CAUGHT_TIME_MASK
+	ld d, a
 	ld a, HIGH(MAX_DAY_CARE_EXP >> 8)
+	or d
+	pop de
 	ld [hl], a
 
 .check_egg
