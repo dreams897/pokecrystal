@@ -4280,3 +4280,40 @@ BattleAnim_IncAnonJumptableIndex:
 	add hl, bc
 	inc [hl]
 	ret
+	
+BattleAnim_Cosine:
+; a = d * cos(a * pi/32)
+	add %010000 ; cos(x) = sin(x + pi/2)
+	; fallthrough
+BattleAnim_Sine:
+; a = d * sin(a * pi/32)
+	calc_sine_wave BattleAnimSineWave
+
+BattleAnim_Sine_e:
+	ld a, e
+	call BattleAnim_Sine
+	ld e, a
+	ret
+
+BattleAnim_Cosine_e:
+	ld a, e
+	call BattleAnim_Cosine
+	ld e, a
+	ret
+
+BattleAnim_AbsSinePrecise: ; unreferenced
+	ld a, e
+	call BattleAnim_Sine
+	ld e, l
+	ld d, h
+	ret
+
+BattleAnim_AbsCosinePrecise: ; unreferenced
+	ld a, e
+	call BattleAnim_Cosine
+	ld e, l
+	ld d, h
+	ret
+
+BattleAnimSineWave:
+	sine_table 32
