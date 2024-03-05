@@ -69,6 +69,6 @@ A: There will be a new house in Fuchsia City with both a Move Deleter and Relear
 ### Credits:
 
 * Everyone who contributed to the [pret Crystal repo](https://pret.github.io/pokecrystal/)
-* lwelyk for coding and support (this started as a fork of their work)
+* [lwelyk](https://github.com/lwelyk) for coding and support (this started as a fork of their work)
 
 [Discord Channel for updates and discussion](https://discord.gg/cSCDrA96yh)
