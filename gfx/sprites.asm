@@ -50,6 +50,7 @@ SECTION "Sprites 2", ROMX
 
 PokefanMSpriteGFX::            INCBIN "gfx/sprites/pokefan_m.2bpp"
 PokefanFSpriteGFX::            INCBIN "gfx/sprites/pokefan_f.2bpp"
+GamblerSpriteGFX::	       INCBIN "gfx/sprites/gambler.2bpp"
 GrampsSpriteGFX::              INCBIN "gfx/sprites/gramps.2bpp"
 GrannySpriteGFX::              INCBIN "gfx/sprites/granny.2bpp"
 SwimmerGuySpriteGFX::          INCBIN "gfx/sprites/swimmer_guy.2bpp"
@@ -102,6 +103,9 @@ SilverTrophySpriteGFX::        INCBIN "gfx/sprites/silver_trophy.2bpp"
 KrisSpriteGFX::                INCBIN "gfx/sprites/kris.2bpp"
 KrisBikeSpriteGFX::            INCBIN "gfx/sprites/kris_bike.2bpp"
 KurtOutsideSpriteGFX::         INCBIN "gfx/sprites/kurt_outside.2bpp"
+
+SECTION "Sprites 3", ROMX
+
 SuicuneSpriteGFX::             INCBIN "gfx/sprites/suicune.2bpp"
 EnteiSpriteGFX::               INCBIN "gfx/sprites/entei.2bpp"
 RaikouSpriteGFX::              INCBIN "gfx/sprites/raikou.2bpp"

@@ -83,8 +83,8 @@ GetPlayerNameArray: ; unreferenced
 	ret
 
 GetPlayerIcon:
-	ld de, ChrisSpriteGFX
-	ld b, BANK(ChrisSpriteGFX)
+	ld de, RedSpriteGFX
+	ld b, BANK(RedSpriteGFX)
 	ld a, [wPlayerGender]
 	bit PLAYERGENDER_FEMALE_F, a
 	jr z, .got_gfx

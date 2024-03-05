@@ -275,7 +275,7 @@ gfx/player/chris_back.2bpp: rgbgfx += -Z
 gfx/player/kris.2bpp: rgbgfx += -Z
 gfx/player/kris_back.2bpp: rgbgfx += -Z
 
-gfx/trainer_card/chris_card.2bpp: rgbgfx += -Z
+gfx/trainer_card/red_card.2bpp: rgbgfx += -Z
 gfx/trainer_card/kris_card.2bpp: rgbgfx += -Z
 gfx/trainer_card/leaders.2bpp: tools/gfx += --trim-whitespace
 

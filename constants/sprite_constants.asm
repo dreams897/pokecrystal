@@ -48,6 +48,7 @@
 	const SPRITE_ROCKER ; 2c
 	const SPRITE_POKEFAN_M ; 2d
 	const SPRITE_POKEFAN_F ; 2e
+	const SPRITE_GAMBLER ; RBY
 	const SPRITE_GRAMPS ; 2f
 	const SPRITE_GRANNY ; 30
 	const SPRITE_SWIMMER_GUY ; 31
