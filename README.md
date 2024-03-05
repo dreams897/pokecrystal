@@ -41,26 +41,26 @@ A: Mew will be behind the truck and should be accessable after getting 4+ gym ba
 ### Q: What are the new in-game trades?
 A: As follows:
 
-Give: Marowak 
-Get: Haunter (evolves!)
+**Give**: Marowak 
+**Get**: Haunter (evolves!)
 
-Give: Pikachu 
-Get: Staryu
+**Give**: Pikachu 
+**Get**: Staryu
 
-Give: Hypno 
-Get: Kadabra (evolves!)
+**Give**: Hypno 
+**Get**: Kadabra (evolves!)
 
-Give: Gloom 
-Get: Bulbasaur
+**Giv**e: Gloom 
+**Get**: Bulbasaur
 
-Give: Rhyhorn 
-Get: Graveler (evolves!)
+**Give**: Rhyhorn 
+**Get**: Graveler (evolves!)
 
-Give: Primeape 
-Get: Machoke (evolves!)
+**Give**: Primeape 
+**Get**: Machoke (evolves!)
 
-Give: Ninetails 
-Get: Charmander
+**Give**: Ninetails 
+**Get**: Charmander
 
 ### Q: Is there a Move Deleter/Relearner?
 A: There will be a new house in Fuchsia City with both a Move Deleter and Relearner added! Also the grandpa of Bill is still next to it.
