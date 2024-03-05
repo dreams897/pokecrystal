@@ -5,7 +5,7 @@
 
 * First real attempt at porting Pokémon Red to the Crystal engine?!
 * All documented bugs and glitches for Crystal engine fixed and all design flaws corrected
-* 60fps and Running Shoes branches merged
+* 60fps and Running Shoes [branch](https://github.com/fellowship-of-the-roms/pokecrystal/tree/Doublespeed-60fps-Running-Shoes) merged
 * New ENBY (non-binary) player choice being added in addtion to boy/girl!
 * Girl/Green/Leaf sprite changed to fit gen 1 look
 * Only original 151 Pokémon are obtainable and will not be changed or expanded
