@@ -467,7 +467,7 @@ WooperFrontpic:      INCBIN "gfx/pokemon/wooper/front.animated.2bpp.lz"
 ClefairyBackpic:     INCBIN "gfx/pokemon/clefairy/back.2bpp.lz"
 VenonatBackpic:      INCBIN "gfx/pokemon/venonat/back.2bpp.lz"
 BellossomBackpic:    INCBIN "gfx/pokemon/bellossom/back.2bpp.lz"
-Rival1Pic:           INCBIN "gfx/trainers/rival1.2bpp.lz"
+Rival1Pic:           INCBIN "gfx/trainers/blue1.2bpp.lz"
 SwinubBackpic:       INCBIN "gfx/pokemon/swinub/back.2bpp.lz"
 
 
@@ -540,7 +540,7 @@ TogepiFrontpic:      INCBIN "gfx/pokemon/togepi/front.animated.2bpp.lz"
 SuperNerdPic:        INCBIN "gfx/trainers/super_nerd.2bpp.lz"
 HaunterBackpic:      INCBIN "gfx/pokemon/haunter/back.2bpp.lz"
 XatuBackpic:         INCBIN "gfx/pokemon/xatu/back.2bpp.lz"
-RedPic:              INCBIN "gfx/trainers/red.2bpp.lz"
+ChrisPic:            INCBIN "gfx/trainers/cal.2bpp.lz"
 Porygon2Backpic:     INCBIN "gfx/pokemon/porygon2/back.2bpp.lz"
 JasminePic:          INCBIN "gfx/trainers/jasmine.2bpp.lz"
 PinecoBackpic:       INCBIN "gfx/pokemon/pineco/back.2bpp.lz"
@@ -567,7 +567,7 @@ ChinchouBackpic:     INCBIN "gfx/pokemon/chinchou/back.2bpp.lz"
 ChanseyBackpic:      INCBIN "gfx/pokemon/chansey/back.2bpp.lz"
 SkiploomBackpic:     INCBIN "gfx/pokemon/skiploom/back.2bpp.lz"
 SpinarakFrontpic:    INCBIN "gfx/pokemon/spinarak/front.animated.2bpp.lz"
-Rival2Pic:           INCBIN "gfx/trainers/rival2.2bpp.lz"
+Rival2Pic:           INCBIN "gfx/trainers/blue2.2bpp.lz"
 UnownWFrontpic:      INCBIN "gfx/pokemon/unown_w/front.animated.2bpp.lz"
 CharmanderBackpic:   INCBIN "gfx/pokemon/charmander/back.2bpp.lz"
 RhyhornBackpic:      INCBIN "gfx/pokemon/rhyhorn/back.2bpp.lz"
@@ -578,11 +578,11 @@ UnownZFrontpic:      INCBIN "gfx/pokemon/unown_z/front.animated.2bpp.lz"
 SwinubFrontpic:      INCBIN "gfx/pokemon/swinub/front.animated.2bpp.lz"
 LarvitarBackpic:     INCBIN "gfx/pokemon/larvitar/back.2bpp.lz"
 PorygonBackpic:      INCBIN "gfx/pokemon/porygon/back.2bpp.lz"
-UnownHBackpic:       INCBIN "gfx/pokemon/unown_h/back.2bpp.lz"
 
 
 SECTION "Pics 17", ROMX
 
+UnownHBackpic:       INCBIN "gfx/pokemon/unown_h/back.2bpp.lz"
 ParasBackpic:        INCBIN "gfx/pokemon/paras/back.2bpp.lz"
 VaporeonBackpic:     INCBIN "gfx/pokemon/vaporeon/back.2bpp.lz"
 TentacoolBackpic:    INCBIN "gfx/pokemon/tentacool/back.2bpp.lz"
@@ -641,9 +641,6 @@ DratiniBackpic:      INCBIN "gfx/pokemon/dratini/back.2bpp.lz"
 ElectrodeBackpic:    INCBIN "gfx/pokemon/electrode/back.2bpp.lz"
 SkarmoryBackpic:     INCBIN "gfx/pokemon/skarmory/back.2bpp.lz"
 MetapodBackpic:      INCBIN "gfx/pokemon/metapod/back.2bpp.lz"
-JigglypuffBackpic:   INCBIN "gfx/pokemon/jigglypuff/back.2bpp.lz"
-OddishBackpic:       INCBIN "gfx/pokemon/oddish/back.2bpp.lz"
-UnownDBackpic:       INCBIN "gfx/pokemon/unown_d/back.2bpp.lz"
 
 
 SECTION "Pics 18", ROMX
@@ -779,6 +776,10 @@ INCBIN "gfx/pokemon/unown_r/back.2bpp.lz"
 ; Sections "Pics 20" to "Pics 24" are not used for any graphics
 
 SECTION "Pics 20", ROMX
+
+JigglypuffBackpic:   INCBIN "gfx/pokemon/jigglypuff/back.2bpp.lz"
+OddishBackpic:       INCBIN "gfx/pokemon/oddish/back.2bpp.lz"
+UnownDBackpic:       INCBIN "gfx/pokemon/unown_d/back.2bpp.lz"
 
 SECTION "Pics 21", ROMX
 

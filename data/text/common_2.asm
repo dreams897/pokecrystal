@@ -100,17 +100,19 @@ Text_Gained::
 	text_end
 
 _BoostedExpPointsText::
+; BUG: Five-digit experience gain is printed incorrectly (see docs/bugs_and_glitches.md)
 	text_start
 	line "a boosted"
 	cont "@"
-	text_decimal wStringBuffer2, 2, 5
+	text_decimal wStringBuffer2, 2, 4
 	text " EXP. Points!"
 	prompt
 
 _ExpPointsText::
+; BUG: Five-digit experience gain is printed incorrectly (see docs/bugs_and_glitches.md)
 	text_start
 	line "@"
-	text_decimal wStringBuffer2, 2, 5
+	text_decimal wStringBuffer2, 2, 4
 	text " EXP. Points!"
 	prompt
 
@@ -1524,16 +1526,13 @@ _MayRegisterItemText::
 	done
 
 _OakText1::
-	text "Hello! Sorry to"
-	line "keep you waiting!"
+	text "Hello there!"
+	line "Welcome to the"
+	cont "world of #MON!"
 
-	para "Welcome to the"
-	line "world of #MON!"
-
-	para "My name is OAK."
-
-	para "People call me the"
-	line "#MON PROF."
+	para "My name is OAK!"
+	line "People call me"
+	cont "the #MON PROF!"
 	prompt
 
 _OakText2::
@@ -1547,29 +1546,21 @@ _OakText3::
 	text_promptbutton
 	text_end
 
-	text_end ; unreferenced
-
 _OakText4::
-	text "People and #MON"
-	line "live together by"
+	text "For some people,"
+	line "#MON are pets."
+	cont "Others use them"
+	cont "for fights."
 
-	para "supporting each"
-	line "other."
-
-	para "Some people play"
-	line "with #MON, some"
-	cont "battle with them."
+	para "Myself..."
 	prompt
 
 _OakText5::
-	text "But we don't know"
-	line "everything about"
-	cont "#MON yet."
+	text "I study #MON"
+	line "as a profession."
+	prompt
 
-	para "There are still"
-	line "many mysteries to"
-	cont "solve."
-
-	para "That's why I study"
-	line "#MON every day."
+_OakText6::
+	text "First, what is"
+	line "your name?"
 	prompt

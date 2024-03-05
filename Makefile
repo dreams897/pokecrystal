@@ -268,6 +268,8 @@ gfx/battle_anims/rocks.2bpp: tools/gfx += --remove-whitespace
 gfx/battle_anims/skyattack.2bpp: tools/gfx += --remove-whitespace
 gfx/battle_anims/status.2bpp: tools/gfx += --remove-whitespace
 
+gfx/player/red.2bpp: rgbgfx += -Z
+gfx/player/red_back.2bpp: rgbgfx += -Z
 gfx/player/chris.2bpp: rgbgfx += -Z
 gfx/player/chris_back.2bpp: rgbgfx += -Z
 gfx/player/kris.2bpp: rgbgfx += -Z
