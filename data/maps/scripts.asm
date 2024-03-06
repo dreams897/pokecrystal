@@ -300,6 +300,8 @@ INCLUDE "maps/Route5CleanseTagHouse.asm"
 SECTION "Map Scripts 16", ROMX
 
 INCLUDE "maps/PewterCity.asm"
+INCLUDE "maps/PewterMuseum1F.asm"
+INCLUDE "maps/PewterMuseum2F.asm"
 INCLUDE "maps/WhirlIslandNW.asm"
 INCLUDE "maps/WhirlIslandNE.asm"
 INCLUDE "maps/WhirlIslandSW.asm"
