@@ -6,6 +6,8 @@
 * First real attempt at porting Pokémon Red to the Crystal engine?!
 * All documented [bugs and glitches](https://pret.github.io/pokecrystal/bugs_and_glitches.html) fixed and all [design flaws](https://pret.github.io/pokecrystal/design_flaws.html) corrected for Crystal engine
 * 60fps and Running Shoes [branch](https://github.com/fellowship-of-the-roms/pokecrystal/tree/Doublespeed-60fps-Running-Shoes) merged
+* Expanded tileset to fix some visual limitations that Gen 1 had
+* There will be 2 tilesets to choose from - **Gen 1** and **Gen 2**
 * New ENBY (non-binary) player choice being added in addtion to boy/girl!
 * Girl/Green/Leaf sprite changed to fit gen 1 look
 * Only original 151 Pokémon are obtainable and will not be changed or expanded
@@ -50,7 +52,7 @@ A: As follows:
 **Give**: Hypno 
 **Get**: Kadabra (evolves!)
 
-**Giv**e: Gloom 
+**Give**: Gloom 
 **Get**: Bulbasaur
 
 **Give**: Rhyhorn 
