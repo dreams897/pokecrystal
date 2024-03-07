@@ -41,7 +41,7 @@
 **A**: I'm probably going to make MISSINGNO a properly numbered Pokémon for less problems, but haven't implemented that yet.
 
 ### Q: Is Mew available?
-**A**: Mew will be behind the truck and should be accessable after getting 4+ gym badges
+**A**: Mew will be behind the truck by the S.S. Anne and should be accessable after becoming Champion.
 
 ### Q: What are the new in-game trades?
 **A**: As follows:
