@@ -70,7 +70,6 @@ TilesetHoOhWordRoomPalMap:
 TilesetKabutoWordRoomPalMap:
 TilesetOmanyteWordRoomPalMap:
 TilesetAerodactylWordRoomPalMap:
-TilesetMuseumAnim:
 INCLUDE "gfx/tilesets/ruins_of_alph_palette_map.asm"
 
 TilesetRadioTowerPalMap:
