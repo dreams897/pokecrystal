@@ -268,7 +268,15 @@
 	const EVENT_DANA_GAVE_THUNDERSTONE
 	const EVENT_TULLY_GAVE_WATER_STONE
 	const EVENT_TIFFANY_GAVE_PINK_BOW
-; Unused: next 339 events
+; New Kanto Events
+	const EVENT_OAK_WILL_STOP_YOU
+	const EVENT_GOT_A_POKEMON_FROM_OAK
+	const EVENT_GOT_A_CHARMANDER_FROM_OAK
+	const EVENT_GOT_A_SQUIRTLE_FROM_OAK
+	const EVENT_GOT_A_BULBASAUR_FROM_OAK
+	const EVENT_GOT_A_PIKACHU_FROM_OAK ; placeholder
+	const EVENT_GOT_A_EEVEE_FROM_OAK ; placeholder
+; Unused: next 332 events
 
 	const_next 600
 ; Kurt Apricorn events
