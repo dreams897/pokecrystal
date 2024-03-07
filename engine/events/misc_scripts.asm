@@ -12,7 +12,7 @@ FindItemInBallScript::
 	disappear LAST_TALKED
 	opentext
 	writetext .FoundItemText
-	playsound SFX_ITEM
+	playsound SFX_GET_ITEM1_1
 	pause 60
 	itemnotify
 	closetext
