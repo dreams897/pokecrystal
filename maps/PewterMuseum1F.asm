@@ -1,5 +1,3 @@
-	object_const_def
-
 PewterMuseum1F_MapScripts:
 	def_scene_scripts
 
