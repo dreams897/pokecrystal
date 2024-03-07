@@ -74,7 +74,7 @@
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 49
 	tilecoll FLOOR, WALL, FLOOR, WALL ; 4a
 	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 4b
-	tilecoll FLOOR, WALL, FLOOR, FLOOR ; 4c
+	tilecoll FLOOR, WALL, FLOOR, WALL ; 4c
 	tilecoll BOOKSHELF, BOOKSHELF, BOOKSHELF, BOOKSHELF ; 4d
 	tilecoll WALL, FLOOR, WALL, FLOOR ; 4e
 	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 4f
