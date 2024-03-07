@@ -32,7 +32,7 @@
 A: Some features from Crystal will be quite beneficial and an upgrade to features in Gen 1. These features include shiny Pokémon, a set-able clock (new morning, day, and night spawns!), better battle engine, Stereo audio option and much more! Some features will be removed that aren't useful to Gen 1 or don't serve a purpose that I can justify. These include the Cellphone feature and Eggs since there will be no baby Pokémon. The PokéGear will likely be renamed to "Clock" because the cellphone feature will be removed making it less worthy of the title "Gear". 
 
 ### Q: Will you keep new moves and features for Pokémon?
-A: Yes, I plan on keeping a lot of new moves as well as some features like Magikarp legth, etc. Items that make Pokémon evolve past Gen 1 will not be kept. 
+A: Yes, I plan on keeping a lot of new moves as well as some features like Magikarp length, etc. Items that make Pokémon evolve past Gen 1 will not be kept. 
 
 ### Q: How many Pokémon are available?
 A: All original 151 Pokémon are obtainable and carefully placed throughout the map or available through trades, Celedon Prize Room, or gifts. No Pokémon past Gen 1 will be present in the game. 
