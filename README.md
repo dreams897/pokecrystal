@@ -68,7 +68,7 @@
 **Get**: Charmander
 
 ### Q: Is there a Move Deleter/Relearner?
-**A**: There will be a new house in Fuchsia City with both a Move Deleter and Relearner added! Also the grandpa of Bill is still next to it.
+**A**: There will be a new house in Fuchsia City with both a Move Deleter and Relearner added! Also Bill's grampa is still next to it.
 
 
 ### Credits:
