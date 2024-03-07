@@ -108,3 +108,4 @@ SECTION "Sprites 3", ROMX
 SuicuneSpriteGFX::             INCBIN "gfx/sprites/suicune.2bpp"
 EnteiSpriteGFX::               INCBIN "gfx/sprites/entei.2bpp"
 RaikouSpriteGFX::              INCBIN "gfx/sprites/raikou.2bpp"
+OldAmberSpriteGFX::	       INCBIN "gfx/sprites/old_amber.2bpp"
