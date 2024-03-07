@@ -1,4 +1,4 @@
-	tilecoll WALL, WALL, WALL, WALL ; 00
+	tilecoll CUT_TREE, CUT_TREE, CUT_TREE, CUT_TREE ; 00
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 01
 	tilecoll WALL, WALL, WALL, DOOR ; 02
 	tilecoll WALL, WALL, WALL, WALL ; 03
@@ -128,3 +128,4 @@
 	tilecoll WALL, WALL, WALL, WALL ; 7f
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 80
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 81
+	tilecoll WALL, WALL, WALL, WALL ; 82
