@@ -101,6 +101,10 @@ MACRO special
 	dw (\1Special - SpecialsPointers) / 3
 ENDM
 
+DEF FadeInQuicklySpecial EQUS "FadeInFromBlackSpecial"
+DEF FadeBlackQuicklySpecial EQUS "FadeOutToBlackSpecial"
+DEF FadeOutPalettesSpecial EQUS "FadeOutToWhiteSpecial"
+
 	const memcallasm_command ; $10
 MACRO memcallasm
 	db memcallasm_command
