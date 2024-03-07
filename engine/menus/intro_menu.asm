@@ -633,7 +633,7 @@ OakSpeech:
 	call RotateFourPalettesLeft
 	call ClearTilemap
 
-	ld de, MUSIC_ROUTE_30
+	ld de, MUSIC_ROUTES2
 	call PlayMusic
 
 	call RotateFourPalettesRight
@@ -937,7 +937,7 @@ ShrinkPlayer:
 	ld a, d
 	ld [wMusicFadeID + 1], a
 
-	ld de, SFX_ESCAPE_ROPE
+	ld de, SFX_SHRINK_1
 	call PlaySFX
 	pop af
 	rst Bankswitch
@@ -1241,7 +1241,7 @@ TitleScreenEntrance:
 	ldh [hLCDCPointer], a
 
 ; Play the title screen music.
-	ld de, MUSIC_TITLE
+	ld de, MUSIC_TITLE_SCREEN
 	call PlayMusic
 
 	ld a, $88

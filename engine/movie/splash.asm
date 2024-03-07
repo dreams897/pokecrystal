@@ -154,7 +154,7 @@ GameFreakPresents_PlaceGameFreak:
 	ld bc, .end - .game_freak
 	call CopyBytes
 	call GameFreakPresents_NextScene
-	ld de, SFX_GAME_FREAK_PRESENTS
+	ld de, SFX_SHOOTING_STAR
 	call PlaySFX
 	ret
 

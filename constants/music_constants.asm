@@ -19,17 +19,13 @@
 	const MUSIC_ROUTE_2                      ; 0f
 	const MUSIC_MT_MOON                      ; 10
 	const MUSIC_SHOW_ME_AROUND               ; 11
-	const MUSIC_GAME_CORNER                  ; 12
 	const MUSIC_BICYCLE                      ; 13
-	const MUSIC_HALL_OF_FAME                 ; 14
 	const MUSIC_VIRIDIAN_CITY                ; 15
 	const MUSIC_CELADON_CITY                 ; 16
 	const MUSIC_TRAINER_VICTORY              ; 17
 	const MUSIC_WILD_VICTORY                 ; 18
 	const MUSIC_GYM_VICTORY                  ; 19
 	const MUSIC_MT_MOON_SQUARE               ; 1a
-	const MUSIC_GYM                          ; 1b
-	const MUSIC_PALLET_TOWN                  ; 1c
 	const MUSIC_POKEMON_TALK                 ; 1d
 	const MUSIC_PROF_OAK                     ; 1e
 	const MUSIC_RIVAL_ENCOUNTER              ; 1f
@@ -37,7 +33,6 @@
 	const MUSIC_SURF                         ; 21
 	const MUSIC_EVOLUTION                    ; 22
 	const MUSIC_NATIONAL_PARK                ; 23
-	const MUSIC_CREDITS                      ; 24
 	const MUSIC_AZALEA_TOWN                  ; 25
 	const MUSIC_CHERRYGROVE_CITY             ; 26
 	const MUSIC_KIMONO_ENCOUNTER             ; 27
@@ -55,13 +50,13 @@
 	const MUSIC_DARK_CAVE                    ; 33
 	const MUSIC_ROUTE_29                     ; 34
 	const MUSIC_ROUTE_36                     ; 35
-	const MUSIC_SS_AQUA                      ; 36
+	const MUSIC_SS_AQUA
 	const MUSIC_YOUNGSTER_ENCOUNTER          ; 37
 	const MUSIC_BEAUTY_ENCOUNTER             ; 38
 	const MUSIC_ROCKET_ENCOUNTER             ; 39
 	const MUSIC_POKEMANIAC_ENCOUNTER         ; 3a
 	const MUSIC_SAGE_ENCOUNTER               ; 3b
-	const MUSIC_NEW_BARK_TOWN                ; 3c
+	const MUSIC_NEW_BARK_TOWN
 	const MUSIC_GOLDENROD_CITY               ; 3d
 	const MUSIC_VERMILION_CITY               ; 3e
 	const MUSIC_POKEMON_CHANNEL              ; 3f
@@ -71,7 +66,6 @@
 	const MUSIC_BURNED_TOWER                 ; 43
 	const MUSIC_LIGHTHOUSE                   ; 44
 	const MUSIC_LAKE_OF_RAGE                 ; 45
-	const MUSIC_INDIGO_PLATEAU               ; 46
 	const MUSIC_ROUTE_37                     ; 47
 	const MUSIC_ROCKET_HIDEOUT               ; 48
 	const MUSIC_DRAGONS_DEN                  ; 49
@@ -105,6 +99,54 @@
 	const MUSIC_SUICUNE_BATTLE               ; 64
 	const MUSIC_BATTLE_TOWER_LOBBY           ; 65
 	const MUSIC_MOBILE_CENTER                ; 66
+; RBY
+	const MUSIC_PALLET_TOWN
+	const MUSIC_POKECENTER
+	const MUSIC_GYM
+	const MUSIC_CITIES1
+	const MUSIC_CITIES2
+	const MUSIC_CELADON
+	const MUSIC_CINNABAR
+	const MUSIC_VERMILION
+	const MUSIC_LAVENDER
+	const MUSIC_SS_ANNE
+	const MUSIC_MEET_PROF_OAK
+	const MUSIC_MEET_RIVAL
+	const MUSIC_MUSEUM_GUY
+	const MUSIC_SAFARI_ZONE
+	const MUSIC_PKMN_HEALED
+	const MUSIC_ROUTES1
+	const MUSIC_ROUTES2
+	const MUSIC_ROUTES3
+	const MUSIC_ROUTES4
+	const MUSIC_INDIGO_PLATEAU
+	
+	const MUSIC_GYM_LEADER_BATTLE
+	const MUSIC_TRAINER_BATTLE
+	const MUSIC_WILD_BATTLE
+	const MUSIC_FINAL_BATTLE
+	const MUSIC_DEFEATED_TRAINER
+	const MUSIC_DEFEATED_WILD_MON
+	const MUSIC_DEFEATED_GYM_LEADER
+	
+	const MUSIC_TITLE_SCREEN
+	const MUSIC_CREDITS
+	const MUSIC_HALL_OF_FAME
+	const MUSIC_OAKS_LAB
+	const MUSIC_JIGGLYPUFF_SONG
+	const MUSIC_BIKE_RIDING
+	const MUSIC_SURFING
+	const MUSIC_GAME_CORNER
+	const MUSIC_INTRO_BATTLE
+	const MUSIC_DUNGEON1
+	const MUSIC_DUNGEON2
+	const MUSIC_DUNGEON3
+	const MUSIC_CINNABAR_MANSION
+	const MUSIC_POKEMON_TOWER
+	const MUSIC_SILPH_CO
+	const MUSIC_MEET_EVIL_TRAINER
+	const MUSIC_MEET_FEMALE_TRAINER
+	const MUSIC_MEET_MALE_TRAINER
 DEF NUM_MUSIC_SONGS EQU const_value
 
 ; GetMapMusic picks music for these values (see home/map.asm)

@@ -112,7 +112,7 @@ PC_CheckPartyForPokemon:
 	ld a, [wPartyCount]
 	and a
 	ret nz
-	ld de, SFX_CHOOSE_PC_OPTION
+	ld de, SFX_ENTER_PC_1
 	call PlaySFX
 	ld hl, .PokecenterPCCantUseText
 	call PC_DisplayText
@@ -179,23 +179,23 @@ TurnOffPC:
 	ret
 
 PC_PlayBootSound:
-	ld de, SFX_BOOT_PC
+	ld de, SFX_TURN_ON_PC_1
 	jr PC_WaitPlaySFX
 
 PC_PlayShutdownSound:
-	ld de, SFX_SHUT_DOWN_PC
+	ld de, SFX_TURN_OFF_PC_1
 	call PC_WaitPlaySFX
 	call WaitSFX
 	ret
 
 PC_PlayChoosePCSound:
-	ld de, SFX_CHOOSE_PC_OPTION
+	ld de, SFX_ENTER_PC_1
 	jr PC_WaitPlaySFX
 
 PC_PlaySwapItemsSound:
-	ld de, SFX_SWITCH_POKEMON
+	ld de, SFX_SWITCH_1
 	call PC_WaitPlaySFX
-	ld de, SFX_SWITCH_POKEMON
+	ld de, SFX_SWITCH_1
 
 PC_WaitPlaySFX:
 	push de

@@ -91,11 +91,11 @@ CheckCutCollision:
 
 GetWarpSFX::
 	ld a, [wPlayerTileCollision]
-	ld de, SFX_ENTER_DOOR
+	ld de, SFX_GO_INSIDE_1
 	cp COLL_DOOR
 	ret z
 	ld de, SFX_WARP_TO
 	cp COLL_WARP_PANEL
 	ret z
-	ld de, SFX_EXIT_BUILDING
+	ld de, SFX_GO_OUTSIDE_1
 	ret

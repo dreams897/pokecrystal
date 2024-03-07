@@ -126,7 +126,7 @@ ENDM
 	call PlaySFX
 	call .FlashPalettes8Times
 	call WaitSFX
-	ld de, SFX_BOOT_PC
+	ld de, SFX_TURN_ON_PC_1
 	call PlaySFX
 	ret
 

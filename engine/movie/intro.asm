@@ -1138,7 +1138,7 @@ IntroScene28:
 	cp $8
 	ret nz
 
-	ld de, SFX_INTRO_WHOOSH
+	ld de, SFX_INTRO_WHOOSH_RBY
 	call PlaySFX
 	ret
 

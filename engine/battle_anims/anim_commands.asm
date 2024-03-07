@@ -1299,13 +1299,13 @@ PlayHitSound:
 	ret z
 
 	cp EFFECTIVE
-	ld de, SFX_DAMAGE
+	ld de, SFX_DAMAGE_RBY
 	jr z, .play
 
-	ld de, SFX_SUPER_EFFECTIVE
+	ld de, SFX_SUPER_EFFECTIVE_RBY
 	jr nc, .play
 
-	ld de, SFX_NOT_VERY_EFFECTIVE
+	ld de, SFX_NOT_VERY_EFFECTIVE_RBY
 
 .play
 	call PlaySFX

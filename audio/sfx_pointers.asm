@@ -1,5 +1,5 @@
 SFX:
-; entries correspond to SFX_* constants
+; entries correspond to Sfx_* constants
 	table_width 3, SFX
 	dba Sfx_DexFanfare5079
 	dba Sfx_Item
@@ -209,4 +209,117 @@ SFX:
 	dba Sfx_TwoPcBeeps
 	dba Sfx_4NoteDitty
 	dba Sfx_Twinkle
+; RBY
+	dba Sfx_Get_Item1_1
+
+	dba Sfx_Get_Item2_1
+	dba Sfx_Tink_1
+	dba Sfx_Heal_HP_1
+	dba Sfx_Heal_Ailment_1
+	dba Sfx_Start_Menu_1
+	dba Sfx_Press_AB_1
+
+	dba Sfx_Pokedex_Rating_1
+	dba Sfx_Get_Key_Item_1
+	dba Sfx_Poisoned_1
+	dba Sfx_Trade_Machine_1
+	dba Sfx_Turn_On_PC_1
+	dba Sfx_Turn_Off_PC_1
+	dba Sfx_Enter_PC_1
+	dba Sfx_Shrink_1
+	dba Sfx_Switch_1
+	dba Sfx_Healing_Machine_1
+	dba Sfx_Teleport_Exit1_1
+	dba Sfx_Teleport_Enter1_1
+	dba Sfx_Teleport_Exit2_1
+	dba Sfx_Ledge_1
+	dba Sfx_Teleport_Enter2_1
+	dba Sfx_Fly_1
+	dba Sfx_Denied_1
+	dba Sfx_Arrow_Tiles_1
+	dba Sfx_Push_Boulder_1
+	dba Sfx_SS_Anne_Horn_1
+	dba Sfx_Withdraw_Deposit_1
+	dba Sfx_Cut_1
+	dba Sfx_Go_Inside_1
+	dba Sfx_Swap_1
+	dba Sfx_59_1
+	dba Sfx_Purchase_1
+	dba Sfx_Collision_1
+	dba Sfx_Go_Outside_1
+	dba Sfx_Save_1
+
+	dba Sfx_Pokeflute_Rby
+	dba Sfx_Safari_Zone_PA
+
+	dba Sfx_Level_Up_Rby
+
+	dba Sfx_Ball_Toss
+	dba Sfx_Ball_Poof_Rby
+	dba Sfx_Faint_Thud
+	dba Sfx_Run_Rby
+	dba Sfx_Dex_Page_Added
+	dba Sfx_Caught_Mon_Rby
+	dba Sfx_Peck_Rby
+	dba Sfx_Faint_Fall
+	dba Sfx_Battle_09
+	dba Sfx_Pound_Rby
+	dba Sfx_Battle_0B
+	dba Sfx_Battle_0C
+	dba Sfx_Battle_0D
+	dba Sfx_Battle_0E
+	dba Sfx_Battle_0F
+	dba Sfx_Damage_Rby
+	dba Sfx_Not_Very_Effective_Rby
+	dba Sfx_Battle_12
+	dba Sfx_Battle_13
+	dba Sfx_Battle_14
+	dba Sfx_Vine_Whip_Rby
+	dba Sfx_Battle_16
+	dba Sfx_Battle_17
+	dba Sfx_Battle_18
+	dba Sfx_Battle_19
+	dba Sfx_Super_Effective_Rby
+	dba Sfx_Battle_1B
+	dba Sfx_Battle_1C
+	dba Sfx_Doubleslap_Rby
+	dba Sfx_Battle_1E
+	dba Sfx_Horn_Drill
+	dba Sfx_Battle_20
+	dba Sfx_Battle_21
+	dba Sfx_Battle_22
+	dba Sfx_Battle_23
+	dba Sfx_Battle_24
+	dba Sfx_Battle_25
+	dba Sfx_Battle_26
+	dba Sfx_Battle_27
+	dba Sfx_Battle_28
+	dba Sfx_Battle_29
+	dba Sfx_Battle_2A
+	dba Sfx_Battle_2B
+	dba Sfx_Battle_2C
+	dba Sfx_Psybeam_Rby
+	dba Sfx_Battle_2E
+	dba Sfx_Battle_2F
+	dba Sfx_Psychic_M
+	dba Sfx_Battle_31
+	dba Sfx_Battle_32
+	dba Sfx_Battle_33
+	dba Sfx_Battle_34
+	dba Sfx_Battle_35
+	dba Sfx_Battle_36
+	dba Sfx_Silph_Scope
+
+	dba Sfx_Intro_Lunge
+	dba Sfx_Intro_Hip
+	dba Sfx_Intro_Hop
+	dba Sfx_Intro_Raise
+	dba Sfx_Intro_Crash
+	dba Sfx_Intro_Whoosh_Rby
+	dba Sfx_Slots_Stop_Wheel
+	dba Sfx_Slots_Reward
+	dba Sfx_Slots_New_Spin
+	dba Sfx_Shooting_Star
+
+	dba Sfx_PokefluteInBattle	
 	assert_table_length NUM_SFX

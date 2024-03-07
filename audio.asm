@@ -13,9 +13,6 @@ SECTION "Songs 1", ROMX
 INCLUDE "audio/music/route36.asm"
 INCLUDE "audio/music/rivalbattle.asm"
 INCLUDE "audio/music/rocketbattle.asm"
-INCLUDE "audio/music/elmslab.asm"
-INCLUDE "audio/music/darkcave.asm"
-INCLUDE "audio/music/johtogymbattle.asm"
 INCLUDE "audio/music/championbattle.asm"
 INCLUDE "audio/music/ssaqua.asm"
 INCLUDE "audio/music/newbarktown.asm"
@@ -149,10 +146,87 @@ SECTION "Extra Songs 2", ROMX
 
 INCLUDE "audio/music/postcredits.asm"
 
+SECTION "Extra Songs 3", ROMX
+
+INCLUDE "audio/music/elmslab.asm"
+INCLUDE "audio/music/darkcave.asm"
+
+SECTION "Extra Songs 4", ROMX
+INCLUDE "audio/music/johtogymbattle.asm"
+
+SECTION "RBY Songs 1", ROMX
+
+INCLUDE "audio/music/RBY/pkmnhealed.asm"
+INCLUDE "audio/music/RBY/routes1.asm"
+INCLUDE "audio/music/RBY/routes2.asm"
+INCLUDE "audio/music/RBY/routes3.asm"
+INCLUDE "audio/music/RBY/routes4.asm"
+INCLUDE "audio/music/RBY/indigoplateau.asm"
+INCLUDE "audio/music/RBY/pallettown.asm"
+INCLUDE "audio/music/RBY/unusedsong.asm"
+INCLUDE "audio/music/RBY/cities1.asm"
+INCLUDE "audio/music/RBY/museumguy.asm"
+INCLUDE "audio/music/RBY/meetprofoak.asm"
+INCLUDE "audio/music/RBY/meetrival.asm"
+INCLUDE "audio/music/RBY/ssanne.asm"
+INCLUDE "audio/music/RBY/cities2.asm"
+INCLUDE "audio/music/RBY/celadon.asm"
+INCLUDE "audio/music/RBY/cinnabar.asm"
+INCLUDE "audio/music/RBY/vermilion.asm"
+INCLUDE "audio/music/RBY/lavender.asm"
+INCLUDE "audio/music/RBY/safarizone.asm"
+INCLUDE "audio/music/RBY/gym.asm"
+INCLUDE "audio/music/RBY/pokecenter.asm"
+
+
+SECTION "RBY Songs 2", ROMX
+
+INCLUDE "audio/music/RBY/gymleaderbattle.asm"
+INCLUDE "audio/music/RBY/trainerbattle.asm"
+INCLUDE "audio/music/RBY/wildbattle.asm"
+INCLUDE "audio/music/RBY/finalbattle.asm"
+INCLUDE "audio/music/RBY/defeatedtrainer.asm"
+INCLUDE "audio/music/RBY/defeatedwildmon.asm"
+INCLUDE "audio/music/RBY/defeatedgymleader.asm"
+
+
+SECTION "RBY Songs 3", ROMX
+
+INCLUDE "audio/music/RBY/bikeriding.asm"
+INCLUDE "audio/music/RBY/dungeon1.asm"
+INCLUDE "audio/music/RBY/gamecorner.asm"
+INCLUDE "audio/music/RBY/titlescreen.asm"
+INCLUDE "audio/music/RBY/dungeon2.asm"
+INCLUDE "audio/music/RBY/dungeon3.asm"
+INCLUDE "audio/music/RBY/cinnabarmansion.asm"
+INCLUDE "audio/music/RBY/oakslab.asm"
+INCLUDE "audio/music/RBY/pokemontower.asm"
+INCLUDE "audio/music/RBY/silphco.asm"
+INCLUDE "audio/music/RBY/meeteviltrainer.asm"
+INCLUDE "audio/music/RBY/meetfemaletrainer.asm"
+INCLUDE "audio/music/RBY/meetmaletrainer.asm"
+INCLUDE "audio/music/RBY/introbattle.asm"
+INCLUDE "audio/music/RBY/surfing.asm"
+INCLUDE "audio/music/RBY/jigglypuffsong.asm"
+INCLUDE "audio/music/RBY/halloffame.asm"
+INCLUDE "audio/music/RBY/credits.asm"
+
+
+SECTION "RBY Songs 4", ROMX
+
+INCLUDE "audio/music/RBY/yellowintro.asm"
+INCLUDE "audio/music/RBY/surfingpikachu.asm"
+INCLUDE "audio/music/RBY/yellowunusedsong.asm"
+INCLUDE "audio/music/RBY/meetjessiejames.asm"
+
 
 SECTION "Sound Effects", ROMX
 
 INCLUDE "audio/sfx.asm"
+
+SECTION "Sound Effects RBY", ROMX
+
+INCLUDE "audio/sfx_RBY.asm"
 
 
 SECTION "Crystal Sound Effects", ROMX

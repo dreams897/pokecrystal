@@ -1665,7 +1665,7 @@ ItemRestoreHP:
 
 HealHP_SFX_GFX:
 	push de
-	ld de, SFX_POTION
+	ld de, SFX_HEAL_HP_1
 	call WaitPlaySFX
 	pop de
 	ld a, [wCurPartyMon]
@@ -2225,7 +2225,7 @@ PokeFluteEffect:
 	jr nz, .battle
 
 	push de
-	ld de, SFX_POKEFLUTE
+	ld de, SFX_POKEFLUTE_RBY
 	call WaitPlaySFX
 	call WaitSFX
 	pop de

@@ -386,7 +386,7 @@ DoPlayerMovement::
 	and [hl]
 	jr z, .DontJump
 
-	ld de, SFX_JUMP_OVER_LEDGE
+	ld de, SFX_LEDGE_1
 	call PlaySFX
 	ld a, STEP_LEDGE
 	call .DoStep
@@ -793,7 +793,7 @@ ENDM
 .BumpSound:
 	call CheckSFX
 	ret c
-	ld de, SFX_BUMP
+	ld de, SFX_COLLISION_1
 	call PlaySFX
 	ret
 

@@ -147,8 +147,8 @@ WildFled_EnemyFled_LinkBattleCanceled:
 	call CheckMobileBattleError
 	jr c, .skip_sfx
 
-; BUG: SFX_RUN does not play correctly when a wild Pokémon flees from battle (see docs/bugs_and_glitches.md)
-	ld de, SFX_RUN
+; BUG: SFX_RUN_RBY does not play correctly when a wild Pokémon flees from battle (see docs/bugs_and_glitches.md)
+	ld de, SFX_RUN_RBY
 	call PlaySFX
 
 .skip_sfx
@@ -3863,7 +3863,7 @@ TryToRunAwayFromBattle:
 	ld [wBattleResult], a
 	call StopDangerSound
 	push de
-	ld de, SFX_RUN
+	ld de, SFX_RUN_RBY
 	call WaitPlaySFX
 	pop de
 	call WaitSFX

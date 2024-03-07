@@ -4764,7 +4764,7 @@ Function102142:
 	call Function102180
 	ld hl, NewCardArrivedText
 	call MenuTextbox
-	ld de, SFX_LEVEL_UP
+	ld de, SFX_LEVEL_UP_RBY
 	call PlaySFX
 	call JoyWaitAorB
 	call ExitMenu

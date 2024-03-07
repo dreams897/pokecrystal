@@ -126,7 +126,7 @@ PlayBattleMusic:
 	jr .done
 
 .kantotrainer
-	ld de, MUSIC_KANTO_TRAINER_BATTLE
+	ld de, MUSIC_TRAINER_BATTLE
 
 .done
 	call PlayMusic
