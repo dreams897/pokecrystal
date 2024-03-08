@@ -4,8 +4,9 @@ Pokepic::
 	call MenuBox
 	call UpdateSprites
 	call ApplyTilemap
-	ld b, SCGB_POKEPIC
-	call GetSGBLayout
+	ld de, wBGPals1 palette PAL_BG_TEXT color 1
+	farcall LoadPokemonPalette
+	call UpdateTimePals
 	xor a
 	ldh [hBGMapMode], a
 	ld a, [wCurPartySpecies]
@@ -35,6 +36,7 @@ ClosePokepic::
 	call GetMemSGBLayout
 	xor a
 	ldh [hBGMapMode], a
+	call CopyTilemapAtOnce
 	call LoadOverworldTilemapAndAttrmapPals
 	call ApplyTilemap
 	call UpdateSprites
