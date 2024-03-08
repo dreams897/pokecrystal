@@ -345,3 +345,14 @@ INCBIN "data/tilesets/museum_metatiles.bin"
 
 TilesetMuseumColl::
 INCLUDE "data/tilesets/museum_collision.asm"
+
+SECTION "Tileset Data 9", ROMX
+
+TilesetHouseKantoGFX::
+INCBIN "gfx/tilesets/house_kanto.2bpp.lz"
+
+TilesetHouseKantoMeta::
+INCBIN "data/tilesets/house_kanto_metatiles.bin"
+
+TilesetHouseKantoColl::
+INCLUDE "data/tilesets/house_kanto_collision.asm"

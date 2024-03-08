@@ -11,6 +11,9 @@ ENDM
 TilesetKantoPalMap:
 INCLUDE "gfx/tilesets/kanto_palette_map.asm"
 
+TilesetHouseKantoPalMap:
+INCLUDE "gfx/tilesets/house_kanto_palette_map.asm"
+
 Tileset0PalMap:
 TilesetJohtoPalMap:
 INCLUDE "gfx/tilesets/johto_palette_map.asm"
