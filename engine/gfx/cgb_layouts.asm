@@ -65,15 +65,15 @@ CGBLayoutJumptable:
 	assert_table_length NUM_SCGB_LAYOUTS
 
 _CGB_BattleGrayscale:
-	ld hl, PalPacket_BattleGrayscale + 1
+	ld hl, PalPacket_BattleGrayscale  1
 	ld de, wBGPals1
 	ld c, 4
 	call CopyPalettes
-	ld hl, PalPacket_BattleGrayscale + 1
+	ld hl, PalPacket_BattleGrayscale  1
 	ld de, wBGPals1 palette PAL_BATTLE_BG_EXP
 	ld c, 4
 	call CopyPalettes
-	ld hl, PalPacket_BattleGrayscale + 1
+	ld hl, PalPacket_BattleGrayscale  1
 	ld de, wOBPals1
 	ld c, 2
 	call CopyPalettes
@@ -422,7 +422,7 @@ _CGB_SlotMachine:
 	ret
 
 _CGB_BetaTitleScreen:
-	ld hl, PalPacket_BetaTitleScreen + 1
+	ld hl, PalPacket_BetaTitleScreen  1
 	call CopyFourPalettes
 	call WipeAttrmap
 	ld de, wOBPals1
@@ -486,7 +486,7 @@ INCLUDE "gfx/intro/gs_shellder_lapras_ob.pal"
 	ret
 
 .StartersCharizardScene:
-	ld hl, PalPacket_Pack + 1
+	ld hl, PalPacket_Pack  1
 	call CopyFourPalettes
 	ld de, wOBPals1
 	ld a, PREDEFPAL_GS_INTRO_STARTERS_TRANSITION
@@ -513,7 +513,7 @@ _CGB_Diploma:
 	ld a, BANK(wBGPals1)
 	call FarCopyWRAM
 
-	ld hl, PalPacket_Diploma + 1
+	ld hl, PalPacket_Diploma  1
 	call CopyFourPalettes
 	call WipeAttrmap
 	call ApplyAttrmap
@@ -526,7 +526,7 @@ _CGB_MapPals:
 	ret
 
 _CGB_PartyMenu:
-	ld hl, PalPacket_PartyMenu + 1
+	ld hl, PalPacket_PartyMenu  1
 	call CopyFourPalettes
 	call InitPartyMenuBGPal0
 	call InitPartyMenuBGPal7
@@ -587,14 +587,14 @@ _CGB_GSTitleScreen:
 	ret
 
 _CGB_Unused0D:
-	ld hl, PalPacket_Diploma + 1
+	ld hl, PalPacket_Diploma  1
 	call CopyFourPalettes
 	call WipeAttrmap
 	call ApplyAttrmap
 	ret
 
 _CGB_UnownPuzzle:
-	ld hl, PalPacket_UnownPuzzle + 1
+	ld hl, PalPacket_UnownPuzzle  1
 	call CopyFourPalettes
 	ld de, wOBPals1
 	ld a, PREDEFPAL_UNOWN_PUZZLE
@@ -605,9 +605,9 @@ _CGB_UnownPuzzle:
 	ld a, BANK(wOBPals1)
 	ldh [rSVBK], a
 	ld hl, wOBPals1
-	ld a, LOW(palred 31 + palgreen 0 + palblue 0)
+	ld a, LOW(palred 31  palgreen 0  palblue 0)
 	ld [hli], a
-	ld a, HIGH(palred 31 + palgreen 0 + palblue 0)
+	ld a, HIGH(palred 31  palgreen 0  palblue 0)
 	ld [hl], a
 	pop af
 	ldh [rSVBK], a
@@ -668,32 +668,32 @@ _CGB_TrainerCard:
 	; top-right corner still uses the border's palette
 	hlcoord 18, 1, wAttrmap
 	ld [hl], $1
-	hlcoord 2, 11, wAttrmap
-	lb bc, 2, 4
+	hlcoord 3, 10, wAttrmap
+	lb bc, 3, 3
 	ld a, $1 ; falkner
 	call FillBoxCGB
-	hlcoord 6, 11, wAttrmap
-	lb bc, 2, 4
+	hlcoord 7, 10, wAttrmap
+	lb bc, 3, 3
 	ld a, $2 ; bugsy
 	call FillBoxCGB
-	hlcoord 10, 11, wAttrmap
-	lb bc, 2, 4
+	hlcoord 11, 10, wAttrmap
+	lb bc, 3, 3
 	ld a, $3 ; whitney
 	call FillBoxCGB
-	hlcoord 14, 11, wAttrmap
-	lb bc, 2, 4
+	hlcoord 15, 10, wAttrmap
+	lb bc, 3, 3
 	ld a, $4 ; morty
 	call FillBoxCGB
-	hlcoord 2, 14, wAttrmap
-	lb bc, 2, 4
+	hlcoord 3, 13, wAttrmap
+	lb bc, 3, 3
 	ld a, $5 ; chuck
 	call FillBoxCGB
-	hlcoord 6, 14, wAttrmap
-	lb bc, 2, 4
+	hlcoord 7, 13, wAttrmap
+	lb bc, 3, 3
 	ld a, $6 ; jasmine
 	call FillBoxCGB
-	hlcoord 10, 14, wAttrmap
-	lb bc, 2, 4
+	hlcoord 11, 13, wAttrmap
+	lb bc, 3, 3
 	ld a, $7 ; pryce
 	call FillBoxCGB
 	; clair uses kris's palette
@@ -701,8 +701,8 @@ _CGB_TrainerCard:
 	and a
 	push af
 	jr z, .got_gender3
-	hlcoord 14, 14, wAttrmap
-	lb bc, 2, 4
+	hlcoord 15, 13, wAttrmap
+	lb bc, 3, 3
 	ld a, $1
 	call FillBoxCGB
 .got_gender3
@@ -745,7 +745,7 @@ _CGB_MoveList:
 	ret
 
 _CGB_BetaPikachuMinigame:
-	ld hl, PalPacket_BetaPikachuMinigame + 1
+	ld hl, PalPacket_BetaPikachuMinigame  1
 	call CopyFourPalettes
 	call WipeAttrmap
 	call ApplyAttrmap
@@ -855,7 +855,7 @@ _CGB_Pokepic:
 	ret
 
 _CGB_MagnetTrain: ; unused
-	ld hl, PalPacket_MagnetTrain + 1
+	ld hl, PalPacket_MagnetTrain  1
 	call CopyFourPalettes
 	call WipeAttrmap
 	hlcoord 0, 4, wAttrmap
@@ -912,7 +912,7 @@ _CGB_Unused1E:
 	ret
 
 _CGB_TradeTube:
-	ld hl, PalPacket_TradeTube + 1
+	ld hl, PalPacket_TradeTube  1
 	call CopyFourPalettes
 	ld hl, PartyMenuOBPals
 	ld de, wOBPals1
