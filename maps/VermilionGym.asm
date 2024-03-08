@@ -22,7 +22,7 @@ VermilionGymSurgeScript:
 	loadtrainer LT_SURGE, LT_SURGE1
 	startbattle
 	reloadmapafterbattle
-	setevent EVENT_BEAT_LTSURGE
+	setevent EVENT_BEAT_LT_SURGE
 	setevent EVENT_BEAT_GENTLEMAN_GREGORY
 	setevent EVENT_BEAT_GUITARIST_VINCENT
 	setevent EVENT_BEAT_JUGGLER_HORTON
@@ -78,7 +78,7 @@ TrainerJugglerHorton:
 VermilionGymGuideScript:
 	faceplayer
 	opentext
-	checkevent EVENT_BEAT_LTSURGE
+	checkevent EVENT_BEAT_LT_SURGE
 	iftrue .VermilionGymGuideWinScript
 	writetext VermilionGymGuideText
 	waitbutton
