@@ -9,7 +9,4 @@
 	tilepal 0, GRAY, GRAY, GRAY, GRAY, GRAY, GRAY, ROOF, ROOF
 	tilepal 0, BROWN, GRAY, BROWN, GRAY, GRAY, GRAY, RED, RED
 	tilepal 0, GRAY, GRAY, GRAY, GRAY, GRAY, GRAY, GRAY, GRAY
-	tilepal 0, GRAY, GRAY, GRAY, GRAY, GRAY, GRAY, RED, GRAY
-rept 32
-  	db $ff
- endr
+	tilepal 0, GRAY, GRAY, GRAY, GRAY, GRAY, GRAY, RED
