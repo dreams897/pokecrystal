@@ -363,8 +363,8 @@ INCLUDE "data/tilesets/pokecenter_kanto_collision.asm"
 TilesetViridianForestGFX::
 INCBIN "gfx/tilesets/viridian_forest.2bpp.lz"
 
-TilesetMuseumMeta::
+TilesetViridianForestMeta::
 INCBIN "data/tilesets/viridian_forest_metatiles.bin"
 
-TilesetMuseumColl::
+TilesetViridianForestColl::
 INCLUDE "data/tilesets/viridian_forest_collision.asm"
