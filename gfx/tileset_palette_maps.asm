@@ -108,6 +108,9 @@ INCLUDE "gfx/tilesets/forest_palette_map.asm"
 TilesetViridianForestPalMap:
 INCLUDE "gfx/tilesets/viridian_forest_palette_map.asm"
 
+TilesetGateKantoPalMap:
+INCLUDE "gfx/tilesets/gate_kanto_palette_map.asm"
+
 TilesetPokeComCenterPalMap:
 INCLUDE "gfx/tilesets/pokecom_center_palette_map.asm"
 

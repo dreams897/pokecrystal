@@ -368,3 +368,14 @@ INCBIN "data/tilesets/viridian_forest_metatiles.bin"
 
 TilesetViridianForestColl::
 INCLUDE "data/tilesets/viridian_forest_collision.asm"
+
+SECTION "Tileset Data 10", ROMX
+
+TilesetGateKantoGFX::
+INCBIN "gfx/tilesets/gate_kanto.2bpp.lz"
+
+TilesetGateKantoMeta::
+INCBIN "data/tilesets/gate_kanto_metatiles.bin"
+
+TilesetGateKantoColl::
+INCLUDE "data/tilesets/gate_kanto_collision.asm"

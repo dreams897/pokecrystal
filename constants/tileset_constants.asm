@@ -37,9 +37,10 @@
 	const TILESET_OMANYTE_WORD_ROOM    ; 23
 	const TILESET_AERODACTYL_WORD_ROOM ; 24
 	const TILESET_MUSEUM ; Pewter City ; 25
-	const TILESET_HOUSE_KANTO		   ; 26
+	const TILESET_HOUSE_KANTO	   ; 26
 	const TILESET_POKECENTER_KANTO	   ; 27
 	const TILESET_VIRIDIAN_FOREST	   ; 28
+	const TILESET_GATE_KANTO           ; 29
 DEF NUM_TILESETS EQU const_value - 1
 
 ; wTileset struct size
