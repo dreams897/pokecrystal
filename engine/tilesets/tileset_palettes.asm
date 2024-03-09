@@ -64,6 +64,11 @@ LoadSpecialMapPalette:
 	call LoadPokecenterKantoPalette
 	scf
 	ret
+	
+.viridian_forest
+	call LoadViridianForestPalette
+	scf
+	ret
 
 .do_nothing
 	and a

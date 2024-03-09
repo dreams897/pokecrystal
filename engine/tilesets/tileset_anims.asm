@@ -278,6 +278,7 @@ TilesetAerodactylWordRoomAnim:
 TilesetMuseumAnim:
 TilesetHouseKantoAnim:
 TilesetPokecenterKantoAnim:
+TilesetViridianForestAnim:
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
