@@ -16,8 +16,6 @@ LoadSpecialMapPalette:
 	jr z, .museum
 	cp TILESET_POKECENTER_KANTO
 	jr z, .pokecenter_kanto
-	cp TILESET_VIRIDIAN_FOREST
-	jr z, .viridian_forest
 	jr .do_nothing
 
 .pokecom_2f
@@ -62,11 +60,6 @@ LoadSpecialMapPalette:
 	
 .pokecenter_kanto
 	call LoadPokecenterKantoPalette
-	scf
-	ret
-	
-.viridian_forest
-	call LoadViridianForestPalette
 	scf
 	ret
 
@@ -178,12 +171,3 @@ LoadPokecenterKantoPalette:
 PokecenterKantoPalette:
 INCLUDE "gfx/tilesets/pokecenter_kanto.pal"
 
-LoadViridianForestPalette:
-	ld a, BANK(wBGPals1)
-	ld de, wBGPals1
-	ld hl, ViridianForestPalette
-	ld bc, 8 palettes
-	jp FarCopyWRAM
-
-ViridianForestPalette:
-INCLUDE "gfx/tilesets/viridian_forest.pal"
