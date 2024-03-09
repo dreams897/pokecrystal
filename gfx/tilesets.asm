@@ -356,3 +356,12 @@ INCBIN "data/tilesets/house_kanto_metatiles.bin"
 
 TilesetHouseKantoColl::
 INCLUDE "data/tilesets/house_kanto_collision.asm"
+
+TilesetPokecenterKantoGFX::
+INCBIN "gfx/tilesets/pokecenter_kanto.2bpp.lz"
+
+TilesetPokecenterKantoMeta::
+INCBIN "data/tilesets/pokecenter_kanto_metatiles.bin"
+
+TilesetPokecenterKantoColl::
+INCLUDE "data/tilesets/pokecenter_kanto_collision.asm"

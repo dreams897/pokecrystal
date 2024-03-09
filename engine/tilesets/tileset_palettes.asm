@@ -14,6 +14,8 @@ LoadSpecialMapPalette:
 	jr z, .mansion_mobile
 	cp TILESET_MUSEUM
 	jr z, .museum
+	cp TILESET_POKECENTER_KANTO
+	jr z, .pokecenter_kanto
 	jr .do_nothing
 
 .pokecom_2f
@@ -53,6 +55,11 @@ LoadSpecialMapPalette:
 
 .museum
 	call LoadMuseumPalette
+	scf
+	ret
+	
+.pokecenter_kanto
+	call LoadPokecenterKantoPalette
 	scf
 	ret
 
@@ -153,3 +160,16 @@ LoadMuseumPalette:
 
 MuseumPalette:
 INCLUDE "gfx/tilesets/museum.pal"
+
+
+
+
+LoadPokecenterKantoPalette:
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
+	ld hl, PokecenterKantoPalette
+	ld bc, 8 palettes
+	jp FarCopyWRAM
+
+PokecenterKantoPalette:
+INCLUDE "gfx/tilesets/pokecenter_kanto.pal"

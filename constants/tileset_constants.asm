@@ -38,6 +38,7 @@
 	const TILESET_AERODACTYL_WORD_ROOM ; 24
 	const TILESET_MUSEUM ; Pewter City
 	const TILESET_HOUSE_KANTO
+	const TILESET_POKECENTER_KANTO
 DEF NUM_TILESETS EQU const_value - 1
 
 ; wTileset struct size

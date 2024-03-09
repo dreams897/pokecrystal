@@ -52,4 +52,5 @@ Tilesets::
 	tileset TilesetAerodactylWordRoom
 	tileset TilesetMuseum
 	tileset TilesetHouseKanto
+	tileset TilesetPokecenterKanto
 	assert_table_length NUM_TILESETS + 1
