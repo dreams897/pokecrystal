@@ -59,6 +59,7 @@ Landmarks:
 	landmark  52,  92, Route1Name
 	landmark  52,  76, ViridianCityName
 	landmark  52,  64, Route2Name
+	landmark  51,  63, ViridianForestName
 	landmark  52,  52, PewterCityName
 	landmark  64,  52, Route3Name
 	landmark  76,  52, MtMoonName
@@ -202,7 +203,7 @@ DarkCaveName:        db "DARK CAVE@"
 IlexForestName:      db "ILEX<BSP>FOREST@"
 BurnedTowerName:     db "BURNED<BSP>TOWER@"
 FastShipName:        db "FAST SHIP@"
-ViridianForestName:  db "VIRIDIAN<BSP>FOREST@" ; unreferenced
+ViridianForestName:  db "VIRIDIAN<BSP>FOREST@" ; added
 DiglettsCaveName:    db "DIGLETT'S<BSP>CAVE@"
 TohjoFallsName:      db "TOHJO FALLS@"
 UndergroundName:     db "UNDERGROUND@"

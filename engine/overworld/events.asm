@@ -1255,8 +1255,6 @@ TryWildEncounter_BugContest:
 	and a
 	ret
 
-INCLUDE "data/wild/bug_contest_mons.asm"
-
 DoBikeStep::
 	nop
 	nop
@@ -1324,3 +1322,7 @@ DoBikeStep::
 	ret
 
 INCLUDE "engine/overworld/cmd_queue.asm"
+
+SECTION "Events 2", ROMX
+
+INCLUDE "data/wild/bug_contest_mons.asm"
