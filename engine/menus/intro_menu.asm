@@ -633,6 +633,7 @@ OakSpeech:
 	farcall InitClock
 	call RotateFourPalettesLeft
 	call ClearTilemap
+	call StartPCItem
 
 	ld de, MUSIC_ROUTES2
 	call PlayMusic
@@ -782,6 +783,15 @@ OakText9:
 OakText10:
 	text_far _OakText10
 	text_end
+	
+StartPCItem:
+	ld a, POTION
+	ld [wCurItem], a
+	ld a, 1
+	ld [wItemQuantityChange], a
+	ld hl, wNumPCItems
+	call ReceiveItem
+	ret
 
 NamePlayer:
 	farcall MovePlayerPicRight

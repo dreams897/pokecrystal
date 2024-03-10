@@ -55,6 +55,7 @@ RedsMomText1:
 	para "PROF.OAK, next"
 	line "door, is looking"
 	cont "for you."
+	done
 	
 RedsHouse1FMomYouShouldRestText:
 	text "MOM: <PLAYER>!"
@@ -75,11 +76,13 @@ RedsHouse1FTVText:
 	line "on TV. Four boys"
 	cont "are walking on"
 	cont "railroad tracks."
+	
 	para "I better go too."
 	done
 	
 RedsHouse1FTVWrongSideText:
 	text "Oops, wrong side."
+	done
 
 RedsHouse1F_MapEvents:
 	db 0, 0 ; filler

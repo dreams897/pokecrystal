@@ -3,25 +3,25 @@ RedsHouse2F_MapScripts:
 
 	def_callbacks
 
-RedsHouse2FN64Script:
-	jumptext RedsHouse2FN64Text
+RedsHouse2FSNESScript:
+	jumptext RedsHouse2FSNESText
 
-RedsHouse2FPCScript:
-	jumptext RedsHouse2FPCText
-
-RedsHouse2FN64Text:
-	text "<PLAYER> played the"
-	line "N64."
-
-	para "Better get going--"
-	line "no time to lose!"
+RedsHouse2FSNESText:
+	text "<PLAYER> is"
+	line "playing the SNES!"
+	cont "... Okay!"
+	cont "It's time to go!"
 	done
-
+	
 RedsHouse2FPCText:
-	text "It looks like it"
-	line "hasn't been used"
-	cont "in a long time…"
-	done
+	opentext
+	special PlayersHousePC
+	iftrue .Warp
+	closetext
+	end
+.Warp:
+	warp NONE, 0, 0
+	end
 
 RedsHouse2F_MapEvents:
 	db 0, 0 ; filler
@@ -32,7 +32,7 @@ RedsHouse2F_MapEvents:
 	def_coord_events
 
 	def_bg_events
-	bg_event  3,  5, BGEVENT_READ, RedsHouse2FN64Script
-	bg_event  0,  1, BGEVENT_READ, RedsHouse2FPCScript
+	bg_event  3,  5, BGEVENT_READ, RedsHouse2FSNESScript
+	bg_event  0,  1, BGEVENT_UP, RedsHouse2FPCText
 
 	def_object_events
