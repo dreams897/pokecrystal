@@ -9,7 +9,6 @@ ViridianForestNorthGate_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  4, 0, ROUTE_2, 1
 	warp_event  5, 0, ROUTE_2, 1
 	warp_event  4, 7, VIRIDIAN_FOREST, 1
 	warp_event  5, 7, VIRIDIAN_FOREST, 2
