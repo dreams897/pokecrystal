@@ -5,7 +5,7 @@ ViridianForest_MapScripts:
 
 	def_callbacks
 	
-TrainerYoungsterViridianForest1Script:
+YoungsterViridianForest1Script:
 	faceplayer
 	opentext
 	writetext ViridianForestYoungster1Text
@@ -13,8 +13,16 @@ TrainerYoungsterViridianForest1Script:
 	closetext
 	end
 	
+YoungsterViridianForest5Script:
+	faceplayer
+	opentext
+	writetext ViridianForestYoungster5Text
+	waitbutton
+	closetext
+	end
+	
 TrainerYoungsterViridianForest1:
-	trainer BUG_CATCHER, JOE1, EVENT_BEAT_VIRIDIAN_FOREST_TRAINER_0, ViridianForestYoungster2SeenText, ViridianForestYoungster2BeatenText, 0, .Script
+	trainer BUG_CATCHER, JOE, EVENT_BEAT_VIRIDIAN_FOREST_TRAINER_0, ViridianForestYoungster2SeenText, ViridianForestYoungster2BeatenText, 0, .Script
 	
 .Script:
 	endifjustbattled
@@ -31,6 +39,17 @@ TrainerYoungsterViridianForest2:
 	endifjustbattled
 	opentext
 	writetext ViridianForestYoungster3AfterBattleText
+	waitbutton
+	closetext
+	end
+	
+TrainerYoungsterViridianForest3:
+	trainer BUG_CATCHER, MIKE, EVENT_BEAT_VIRIDIAN_FOREST_TRAINER_2, ViridianForestYoungster4SeenText, ViridianForestYoungster4BeatenText, 0, .Script
+	
+.Script:
+	endifjustbattled
+	opentext
+	writetext ViridianForestYoungster4AfterBattleText
 	waitbutton
 	closetext
 	end
@@ -110,7 +129,7 @@ ViridianForestYoungster4SeenText:
 	line "What's the hurry?"
 	done
 
-ViridianForestYoungster4EndBattleText:
+ViridianForestYoungster4BeatenText:
 	text "I"
 	line "give! You're good"
 	cont "at this!"
@@ -209,9 +228,11 @@ ViridianForest_MapEvents:
 	bg_event   2,  1, BGEVENT_READ, ViridianForestLeavingSign
 
 	def_object_events
-	object_event 16, 43, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TrainerYoungsterViridianForest1Script, -1
+	object_event 16, 43, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, YoungsterViridianForest1Script, -1
+	object_event 27, 40, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, YoungsterViridianForest5Script, -1
 	object_event 30, 33, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerYoungsterViridianForest1, -1
 	object_event 30, 19, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 5, TrainerYoungsterViridianForest2, -1
+	object_event  2, 18, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerYoungsterViridianForest3, -1
 	object_event  1, 31, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, ViridianForestPokeBall, EVENT_VIRIDIAN_FOREST_POKE_BALL
 	object_event 12, 29, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, ViridianForestPotion, EVENT_VIRIDIAN_FOREST_POTION
 	object_event 25, 11, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, ViridianForestAntidote, EVENT_VIRIDIAN_FOREST_ANTIDOTE
