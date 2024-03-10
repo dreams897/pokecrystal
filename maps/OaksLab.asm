@@ -18,6 +18,7 @@ OaksLab_MapScripts:
 	scene_const SCENE_OAKSLAB_AIDE_GIVES_POKE_BALLS
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, OaksLabMoveOakCallback
 
 OaksLabMeetOakScene:
 	sdefer OaksLabWalkUpToOakScript
@@ -37,6 +38,13 @@ OaksLabNoop4Scene:
 
 OaksLabNoop5Scene:
 	end
+	
+OaksLabMoveOakCallback:
+	checkscene
+	iftrue .Skip ; not SCENE_OAKSLAB_MEET_OAK
+	moveobject OAKSLAB_OAK, 3, 4
+.Skip:
+	endcallback
 
 OaksLabWalkUpToOakScript:
 	applymovement PLAYER, OaksLab_WalkUpToOakMovement
