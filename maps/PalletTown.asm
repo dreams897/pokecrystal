@@ -1,12 +1,19 @@
 	object_const_def
 	const PALLETTOWN_TEACHER
 	const PALLETTOWN_FISHER
+	const PALLETTOWN_OAK
 
 PalletTown_MapScripts:
 	def_scene_scripts
+	scene_script PalletTownNoop1Scene, SCENE_PALLET_TOWN_OAK_STOPS_YOU
+	scene_script PalletTownNoop1Scene, SCENE_PALLET_TOWN_NOOP
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, PalletTownFlypointCallback
+	
+PalletTownNoop1Scene:
+PalletTownProfessorOak:
+	end
 
 PalletTownFlypointCallback:
 	setflag ENGINE_FLYPOINT_PALLET
@@ -29,33 +36,151 @@ OaksLabSign:
 
 BluesHouseSign:
 	jumptext BluesHouseSignText
+	
+OakStopsYouLeft:
+	opentext
+	writetext PalletTownOakHeyWaitDontGoOutText
+	appear PALLETTOWN_OAK
+	closetext
+	turnobject PLAYER, DOWN
+	showemote EMOTE_SHOCK, PLAYER, 30
+	applymovement PALLETTOWN_OAK, PalletTownOakWalkToYouMovementLeft
+	opentext
+	writetext PalletTownOakItsUnsafeText
+	waitbutton
+	closetext
+	follow PALLETTOWN_OAK, PLAYER
+	applymovement PALLETTOWN_OAK, PalletTownOakWalkToLabLeft
+	sjump OakTakesYouToLab
+OakStopsYouRight:
+	opentext
+	writetext PalletTownOakHeyWaitDontGoOutText
+	appear PALLETTOWN_OAK
+	closetext
+	turnobject PLAYER, DOWN
+	showemote EMOTE_SHOCK, PLAYER, 30
+	applymovement PALLETTOWN_OAK, PalletTownOakWalkToYouMovementRight
+	opentext
+	writetext PalletTownOakItsUnsafeText
+	waitbutton
+	closetext
+	follow PALLETTOWN_OAK, PLAYER
+	applymovement PALLETTOWN_OAK, PalletTownOakWalkToLabRight
+	sjump OakTakesYouToLab
+
+OakTakesYouToLab:
+	stopfollow
+	disappear PALLETTOWN_OAK
+	applymovement PLAYER, PalletTownPlayerWalkUp
+	warp OAKS_LAB, 4, 11
+	end
+
+PalletTownPlayerWalkUp:
+	step UP
+	step_end
+
+
+PalletTownOakWalkToYouMovementLeft:
+	step RIGHT
+	step UP
+	step RIGHT
+	step UP
+	step UP
+	step_end
+
+PalletTownOakWalkToYouMovementRight:
+	step RIGHT
+	step UP
+	step RIGHT
+	step UP
+	step RIGHT
+	step UP
+	step_end
+
+PalletTownOakWalkToLabLeft:
+	step DOWN
+	step LEFT
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step UP
+	step_end
+
+PalletTownOakWalkToLabRight:
+	step DOWN
+	step LEFT
+	step LEFT
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step UP
+	step_end
+
+PalletTownOakHeyWaitDontGoOutText:
+	text "OAK: Hey! Wait!"
+	line "Don't go out!"
+	done
+
+PalletTownOakItsUnsafeText:
+	text "OAK: It's unsafe!"
+	line "Wild #MON live"
+	cont "in tall grass!"
+
+	para "You need your own"
+	line "#MON for your"
+	cont "protection."
+	cont "I know!"
+
+	para "Here, come with"
+	line "me!"
+	done
+
 
 PalletTownTeacherText:
-	text "I'm raising #-"
-	line "MON too."
+	text "I'm raising"
+	line "#MON too!"
 
-	para "They serve as my"
-	line "private guards."
-	done
+	para "When they get"
+	line "strong, they can"
+	cont "protect me!"
 
 PalletTownFisherText:
 	text "Technology is"
 	line "incredible!"
 
-	para "You can now trade"
-	line "#MON across"
-	cont "time like e-mail."
+	para "You can now store"
+	line "and recall items"
+	cont "and #MON as"
+	cont "data via PC!"
 	done
 
 PalletTownSignText:
 	text "PALLET TOWN"
 
-	para "A Tranquil Setting"
-	line "of Peace & Purity"
+	line "Shades of your"
+	cont "journey await!"
 	done
 
 RedsHouseSignText:
-	text "RED'S HOUSE"
+	text "<PLAYER>'s house "
 	done
 
 OaksLabSignText:
@@ -64,7 +189,7 @@ OaksLabSignText:
 	done
 
 BluesHouseSignText:
-	text "BLUE'S HOUSE"
+	text "<RIVAL>'s house "
 	done
 
 PalletTown_MapEvents:
@@ -76,6 +201,8 @@ PalletTown_MapEvents:
 	warp_event 12, 11, OAKS_LAB, 1
 
 	def_coord_events
+	coord_event 10,  1, SCENE_PALLET_TOWN_OAK_STOPS_YOU, OakStopsYouLeft
+	coord_event 11,  1, SCENE_PALLET_TOWN_OAK_STOPS_YOU, OakStopsYouRight
 
 	def_bg_events
 	bg_event  7,  9, BGEVENT_READ, PalletTownSign
@@ -86,3 +213,4 @@ PalletTown_MapEvents:
 	def_object_events
 	object_event  3,  8, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PalletTownTeacherScript, -1
 	object_event 12, 14, SPRITE_FISHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, PalletTownFisherScript, -1
+	object_event  8,  5, SPRITE_OAK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PalletTownProfessorOak, EVENT_OAK_WILL_STOP_YOU
