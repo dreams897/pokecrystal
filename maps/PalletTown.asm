@@ -40,8 +40,9 @@ BluesHouseSign:
 OakStopsYouLeft:
 	opentext
 	writetext PalletTownOakHeyWaitDontGoOutText
-	appear PALLETTOWN_OAK
+	waitbutton
 	closetext
+	appear PALLETTOWN_OAK
 	turnobject PLAYER, DOWN
 	showemote EMOTE_SHOCK, PLAYER, 30
 	applymovement PALLETTOWN_OAK, PalletTownOakWalkToYouMovementLeft
@@ -56,6 +57,7 @@ OakStopsYouRight:
 	opentext
 	writetext PalletTownOakHeyWaitDontGoOutText
 	appear PALLETTOWN_OAK
+	waitbutton
 	closetext
 	turnobject PLAYER, DOWN
 	showemote EMOTE_SHOCK, PLAYER, 30
