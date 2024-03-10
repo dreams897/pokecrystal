@@ -14,18 +14,45 @@ TrainerYoungsterViridianForest1Script:
 	end
 	
 TrainerYoungsterViridianForest1:
-	trainer BUG_CATCHER, JOE1, EVENT_BEAT_VIRIDIAN_FOREST_TRAINER_0, ViridianForestYoungster2SeenText, ViridianForestYoungster2BeatenText, 0, .Script
+	trainer BUG_CATCHER, JOE1, EVENT_BEAT_VIRIDIAN_FOREST_TRAINER_0, ViridianForestYoungster2SeenText, ViridianForestYoungster2BeatenText, .Script
 	
 .Script:
 	endifjustbattled
 	opentext
-	writetext ViridianForestYoungster2BeatenText
+	writetext ViridianForestYoungster2AfterBattleText
 	waitbutton
 	closetext
 	end
 	
+TrainerYoungsterViridianForest2:
+	trainer BUG_CATCHER, GREG1, EVENT_BEAT_VIRIDIAN_FOREST_TRAINER_1, ViridianForestYoungster3SeenText, ViridianForestYoungster3BeatenText, .Script
+	
+.Script:
+	endifjustbattled
+	opentext
+	writetext ViridianForestYoungster3AfterBattleText
+	waitbutton
+	closetext
+	end
+	
+	
+ViridianForestUseAntidoteSign:
+	jumptext ViridianForestUseAntidoteSignText
+	
 ViridianForestTrainerTips4Sign:
 	jumptext ViridianForestTrainerTips4Text
+	
+ViridianForestTrainerTips1Sign:
+	jumptext ViridianForestTrainerTips1Text
+	
+ViridianForestTrainerTips2Sign:
+	jumptext ViridianForestTrainerTips2Text
+	
+ViridianForestTrainerTips3Sign:
+	jumptext ViridianForestTrainerTips3Text
+	
+ViridianForestLeavingSign:
+	jumptext ViridianForestLeavingSignText
 
 ViridianForestYoungster1Text:
 	text "I came here with"
@@ -52,13 +79,13 @@ ViridianForestYoungster2AfterBattleText:
 	line "the bugs away!"
 	done
 
-ViridianForestYoungster3BattleText:
+ViridianForestYoungster3SeenText:
 	text "Yo! You can't jam"
 	line "out if you're a"
 	cont "#MON trainer!"
 	done
 
-ViridianForestYoungster3EndBattleText:
+ViridianForestYoungster3BeatenText:
 	text "Huh?"
 	line "I ran out of"
 	cont "#MON!"
@@ -70,7 +97,7 @@ ViridianForestYoungster3AfterBattleText:
 	cont "stronger ones!"
 	done
 
-ViridianForestYoungster4BattleText:
+ViridianForestYoungster4SeenText:
 	text "Hey, wait up!"
 	line "What's the hurry?"
 	done
@@ -167,8 +194,14 @@ ViridianForest_MapEvents:
 
 	def_bg_events
 	bg_event  18, 45, BGEVENT_READ, ViridianForestTrainerTips4Sign
+	bg_event  24, 40, BGEVENT_READ, ViridianForestTrainerTips1Sign
+	bg_event  16, 32, BGEVENT_READ, ViridianForestUseAntidoteSign
+	bg_event  26, 17, BGEVENT_READ, ViridianForestTrainerTips2Sign
+	bg_event   4, 24, BGEVENT_READ, ViridianForestTrainerTips3Sign
+	bg_event   2,  1, BGEVENT_READ, ViridianForestLeavingSign
 
 	def_object_events
 	object_event 16, 43, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TrainerYoungsterViridianForest1Script, -1
-	object_event 30, 33, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerYoungsterViridianForest1, -1
+	object_event 30, 33, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerYoungsterViridianForest1, -1
+	object_event 30, 19, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 5, TrainerYoungsterViridianForest2, -1
 	

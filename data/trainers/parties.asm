@@ -1495,11 +1495,6 @@ SabrinaGroup:
 	db -1 ; end
 
 BugCatcherGroup:
-	; BUG_CATCHER (0)
-	db "JOE@", TRAINERTYPE_NORMAL
-	db  6, WEEDLE
-	db  6, CATERPIE
-	db -1 ; end
 	
 	; BUG_CATCHER (1)
 	db "DON@", TRAINERTYPE_NORMAL
@@ -1618,6 +1613,19 @@ BugCatcherGroup:
 	db "WAYNE@", TRAINERTYPE_NORMAL
 	db  8, LEDYBA
 	db 10, PARAS
+	db -1 ; end
+	
+	; BUG_CATCHER (20)
+	db "JOE@", TRAINERTYPE_NORMAL
+	db  6, WEEDLE
+	db  6, CATERPIE
+	db -1 ; end
+	
+	; BUG_CATCHER (21)
+	db "GREG@", TRAINERTYPE_NORMAL
+	db  7, WEEDLE
+	db  7, KAKUNA
+	db  7, WEEDLE
 	db -1 ; end
 
 FisherGroup:
