@@ -168,6 +168,12 @@ OakDidntChooseStarterScript:
 
 OakDirectionsScript:
 	turnobject PLAYER, UP
+	opentext
+	checkevent EVENT_GOT_A_POKEMON_FROM_OAK
+	writetext OaksLabOakYourPokemonCanFightText
+	waitbutton
+	closetext
+
 	turnobject OAKSLAB_OAK, LEFT
 	turnobject OAKSLAB_OAK, DOWN
 	setevent EVENT_GOT_A_POKEMON_FROM_OAK
@@ -437,6 +443,13 @@ OakText_Refused:
 	text "But… Please, I"
 	line "need your help!"
 	done
+	
+OaksLabOakYourPokemonCanFightText:
+	text "OAK: If a wild"
+	line "#MON appears,"
+	cont "your #MON can"
+	cont "fight against it!"
+	done
 
 OakText_ResearchAmbitions:
 	text "When I announce my"
@@ -564,31 +577,6 @@ OakAideText_AlwaysBusy:
 	text "There are only two"
 	line "of us, so we're"
 	cont "always busy."
-	done
-
-OakAideText_TheftTestimony:
-	text "There was a loud"
-	line "noise outside…"
-
-	para "When we went to"
-	line "look, someone"
-	cont "stole a #MON."
-
-	para "It's unbelievable"
-	line "that anyone would"
-	cont "do that!"
-
-	para "…sigh… That"
-	line "stolen #MON."
-
-	para "I wonder how it's"
-	line "doing."
-
-	para "They say a #MON"
-	line "raised by a bad"
-
-	para "person turns bad"
-	line "itself."
 	done
 
 OakAideText_GiveYouBalls:
