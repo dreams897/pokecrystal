@@ -191,14 +191,6 @@ INCLUDE "maps/Route12SuperRodHouse.asm"
 
 SECTION "Map Scripts 11", ROMX
 
-INCLUDE "maps/EcruteakTinTowerEntrance.asm"
-INCLUDE "maps/WiseTriosRoom.asm"
-INCLUDE "maps/EcruteakPokecenter1F.asm"
-INCLUDE "maps/EcruteakLugiaSpeechHouse.asm"
-INCLUDE "maps/DanceTheater.asm"
-INCLUDE "maps/EcruteakMart.asm"
-INCLUDE "maps/EcruteakGym.asm"
-INCLUDE "maps/EcruteakItemfinderHouse.asm"
 INCLUDE "maps/ViridianGym.asm"
 INCLUDE "maps/ViridianNicknameSpeechHouse.asm"
 INCLUDE "maps/Viridian_Forest.asm"
@@ -489,5 +481,16 @@ SECTION "Map Scripts 25", ROMX
 
 INCLUDE "maps/SilverCaveOutside.asm"
 INCLUDE "maps/Route10North.asm"
+
+SECTION "Map Scripts 26", ROMX
+
+INCLUDE "maps/EcruteakTinTowerEntrance.asm"
+INCLUDE "maps/WiseTriosRoom.asm"
+INCLUDE "maps/EcruteakPokecenter1F.asm"
+INCLUDE "maps/EcruteakLugiaSpeechHouse.asm"
+INCLUDE "maps/DanceTheater.asm"
+INCLUDE "maps/EcruteakMart.asm"
+INCLUDE "maps/EcruteakGym.asm"
+INCLUDE "maps/EcruteakItemfinderHouse.asm"
 
 ENDSECTION

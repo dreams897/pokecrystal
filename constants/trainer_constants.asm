@@ -333,6 +333,7 @@ DEF KRIS EQU __trainer_class__
 	const ROB
 	const ED
 	const WADE1
+	const JOE1
 	const BUG_CATCHER_BENNY
 	const AL
 	const JOSH

@@ -336,6 +336,7 @@ ErikaGroup:
 	db -1 ; end
 
 YoungsterGroup:
+
 	; YOUNGSTER (1)
 	db "JOEY@", TRAINERTYPE_NORMAL
 	db  4, RATTATA
@@ -1494,6 +1495,12 @@ SabrinaGroup:
 	db -1 ; end
 
 BugCatcherGroup:
+	; BUG_CATCHER (0)
+	db "JOE@", TRAINERTYPE_NORMAL
+	db  6, WEEDLE
+	db  6, CATERPIE
+	db -1 ; end
+	
 	; BUG_CATCHER (1)
 	db "DON@", TRAINERTYPE_NORMAL
 	db  3, CATERPIE
