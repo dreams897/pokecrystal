@@ -3120,7 +3120,8 @@ wMountMoonSquareSceneID::                         db
 wMobileTradeRoomSceneID::                         db
 wMobileBattleRoomSceneID::                        db
 wPalletTownSceneID::                              db
-	ds 48
+wOaksLabSceneID::				  db
+	ds 47
 
 ; fight counts
 wJackFightCount::    db

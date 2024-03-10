@@ -50,6 +50,7 @@ OakStopsYouLeft:
 	writetext PalletTownOakItsUnsafeText
 	waitbutton
 	closetext
+	setevent EVENT_FOLLOWED_OAK_INTO_LAB
 	follow PALLETTOWN_OAK, PLAYER
 	applymovement PALLETTOWN_OAK, PalletTownOakWalkToLabLeft
 	sjump OakTakesYouToLab
@@ -66,6 +67,7 @@ OakStopsYouRight:
 	writetext PalletTownOakItsUnsafeText
 	waitbutton
 	closetext
+	setevent EVENT_FOLLOWED_OAK_INTO_LAB
 	follow PALLETTOWN_OAK, PLAYER
 	applymovement PALLETTOWN_OAK, PalletTownOakWalkToLabRight
 	sjump OakTakesYouToLab
