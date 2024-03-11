@@ -41,8 +41,8 @@ OakStopsYouLeft:
 	playmusic MUSIC_MEET_PROF_OAK
 	opentext
 	writetext PalletTownOakHeyWaitDontGoOutText
-	showemote EMOTE_SHOCK, PLAYER, 30
 	turnobject PLAYER, DOWN
+	showemote EMOTE_SHOCK, PLAYER, 30
 	appear PALLETTOWN_OAK
 	closetext
 	applymovement PALLETTOWN_OAK, PalletTownOakWalkToYouMovementLeft
@@ -59,8 +59,8 @@ OakStopsYouRight:
 	playmusic MUSIC_MEET_PROF_OAK
 	opentext
 	writetext PalletTownOakHeyWaitDontGoOutText
-	showemote EMOTE_SHOCK, PLAYER, 30
 	turnobject PLAYER, DOWN
+	showemote EMOTE_SHOCK, PLAYER, 30
 	appear PALLETTOWN_OAK
 	closetext
 	applymovement PALLETTOWN_OAK, PalletTownOakWalkToYouMovementRight
