@@ -347,7 +347,7 @@ OakAideWalksLeft2:
 
 OakJumpUpMovement:
 	fix_facing
-	big_step UP
+	step UP
 	remove_fixed_facing
 	step_end
 
