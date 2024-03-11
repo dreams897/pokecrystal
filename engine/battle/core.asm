@@ -147,9 +147,8 @@ WildFled_EnemyFled_LinkBattleCanceled:
 	call CheckMobileBattleError
 	jr c, .skip_sfx
 
-; BUG: SFX_RUN_RBY does not play correctly when a wild Pokémon flees from battle (see docs/bugs_and_glitches.md)
 	ld de, SFX_RUN_RBY
-	call PlaySFX
+	call WaitPlaySFX
 
 .skip_sfx
 	call SetPlayerTurn
@@ -6433,8 +6432,7 @@ LoadEnemyMon:
 	ld de, wEnemyStats
 	ld bc, NUM_BATTLE_STATS * 2
 	call CopyBytes
-
-; BUG: PRZ and BRN stat reductions don't apply to switched Pokémon (see docs/bugs_and_glitches.md)
+	call ApplyStatusEffectOnEnemyStats
 	ret
 
 CheckSleepingTreeMon:
