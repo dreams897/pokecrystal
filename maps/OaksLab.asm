@@ -47,16 +47,15 @@ OaksLabMoveOakCallback:
 	endcallback
 
 OaksLabWalkUpToOakScript:
+	checkevent EVENT_OAK_APPEARED_IN_PALLET
+	iftrue OakGivesPokemonScript
+	
+OakGivesPokemonScript:
 	applymovement PLAYER, OaksLab_WalkUpToOakMovement
-	showemote EMOTE_SHOCK, OAKSLAB_OAK, 15
 	turnobject OAKSLAB_OAK, RIGHT
 	opentext
 	writetext OakText_Intro
-.MustSayYes:
-	yesorno
-	iftrue .OakGivesPokemon
-	writetext OakText_Refused
-	sjump .MustSayYes
+	sjump .OakGivesPokemon
 
 .OakGivesPokemon:
 	applymovement OAKSLAB_OAK, OaksLab_OakToDefaultPositionMovement1
@@ -102,7 +101,7 @@ CharmanderPokeBallScript:
 	waitsfx
 	getmonname STRING_BUFFER_3, CHARMANDER
 	writetext OakReceivedStarterText
-	playsound SFX_CAUGHT_MON
+	playsound SFX_CAUGHT_MON_RBY
 	waitsfx
 	promptbutton
 	givepoke CHARMANDER, 5, BERRY
@@ -132,7 +131,7 @@ SquirtlePokeBallScript:
 	waitsfx
 	getmonname STRING_BUFFER_3, SQUIRTLE
 	writetext OakReceivedStarterText
-	playsound SFX_CAUGHT_MON
+	playsound SFX_CAUGHT_MON_RBY
 	waitsfx
 	promptbutton
 	givepoke SQUIRTLE, 5, BERRY
@@ -160,7 +159,7 @@ BulbasaurPokeBallScript:
 	waitsfx
 	getmonname STRING_BUFFER_3, BULBASAUR
 	writetext OakReceivedStarterText
-	playsound SFX_CAUGHT_MON
+	playsound SFX_CAUGHT_MON_RBY
 	waitsfx
 	promptbutton
 	givepoke BULBASAUR, 5, BERRY
@@ -185,6 +184,7 @@ OakDirectionsScript:
 	turnobject OAKSLAB_OAK, LEFT
 	turnobject OAKSLAB_OAK, DOWN
 	setevent EVENT_GOT_A_POKEMON_FROM_OAK
+	setscene SCENE_OAKSLAB_AIDE_GIVES_POKE_BALLS
 	setmapscene PALLET_TOWN, SCENE_PALLET_TOWN_NOOP
 	end
 
@@ -402,54 +402,31 @@ AfterBulbasaurMovement:
 	step_end
 
 OakText_Intro:
-	text "OAK: <PLAY_G>!"
-	line "There you are!"
+	text "OAK: <RIVAL>?"
+	line "Let me think..."
 
-	para "I needed to ask"
-	line "you a favor."
+	para "Oh, that's right,"
+	line "I told you to"
+	cont "come! Just wait!"
 
-	para "I'm conducting new"
-	line "#MON research"
+	para "Here, <PLAYER>!"
 
-	para "right now. I was"
-	line "wondering if you"
+	para "There are 3"
+	line "#MON here!"
 
-	para "could help me with"
-	line "it, <PLAY_G>."
+	para "Haha!"
 
-	para "You see…"
+	para "They are inside"
+	line "the # BALLs."
 
-	para "I'm writing a"
-	line "paper that I want"
+	para "When I was young,"
+	line "I was a serious"
+	cont "#MON trainer!"
 
-	para "to present at a"
-	line "conference."
-
-	para "But there are some"
-	line "things I don't"
-
-	para "quite understand"
-	line "yet."
-
-	para "So!"
-
-	para "I'd like you to"
-	line "raise a #MON"
-
-	para "that I recently"
-	line "caught."
-	done
-
-OakText_Accepted:
-	text "Thanks, <PLAY_G>!"
-
-	para "You're a great"
-	line "help!"
-	done
-
-OakText_Refused:
-	text "But… Please, I"
-	line "need your help!"
+	para "In my old age, I"
+	line "have only 3 left,"
+	cont "but you can have"
+	cont "one! Choose!"
 	done
 	
 OaksLabOakYourPokemonCanFightText:

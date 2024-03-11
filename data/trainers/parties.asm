@@ -1629,7 +1629,7 @@ BugCatcherGroup:
 	db -1 ; end
 	
 	; BUG_CATCHER (21)
-	db "MIKE@", TRAINERTYPE_NORMAL
+	db "MIKE1@", TRAINERTYPE_NORMAL
 	db  9, WEEDLE
 	db -1 ; end
 

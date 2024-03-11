@@ -93,7 +93,7 @@ _GrewToLevelText::
 	line "level @"
 	text_decimal wCurPartyLevel, 1, 3
 	text "!@"
-	sound_dex_fanfare_50_79 ; plays SFX_DEX_FANFARE_50_79, identical to SFX_LEVEL_UP
+	sound_level_up_rby ; plays RBY level up sound
 	text_promptbutton
 	text_end
 

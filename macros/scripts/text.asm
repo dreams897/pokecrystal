@@ -73,9 +73,9 @@ MACRO text_pause
 	db TX_PAUSE
 ENDM
 
-	const TX_SOUND_DEX_FANFARE_50_79 ; $0b
-MACRO sound_dex_fanfare_50_79
-	db TX_SOUND_DEX_FANFARE_50_79
+	const TX_SOUND_LEVEL_UP_RBY ; $0b
+MACRO sound_level_up_rby
+	db TX_SOUND_LEVEL_UP_RBY
 ENDM
 
 	const TX_DOTS ; $0c

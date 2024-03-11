@@ -61,9 +61,9 @@ Read *bytes* bytes from *address* and print them as a *digits*-digit number.
 Pause for 30 frames unless A or B is pressed.
 
 
-## `$0B`: `sound_dex_fanfare_50_79`
+## `$0B`: `sound_level_up_rby`
 
-Play `SFX_DEX_FANFARE_50_79`.
+Play `SFX_LEVEL_UP_RBY`.
 
 
 ## `$0C`: <code>text_dots <i>n</i></code>

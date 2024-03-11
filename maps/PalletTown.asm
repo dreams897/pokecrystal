@@ -38,35 +38,37 @@ BluesHouseSign:
 	jumptext BluesHouseSignText
 	
 OakStopsYouLeft:
+	playmusic MUSIC_MEET_PROF_OAK
 	opentext
 	writetext PalletTownOakHeyWaitDontGoOutText
-	waitbutton
-	closetext
-	appear PALLETTOWN_OAK
-	turnobject PLAYER, DOWN
 	showemote EMOTE_SHOCK, PLAYER, 30
+	turnobject PLAYER, DOWN
+	appear PALLETTOWN_OAK
+	closetext
 	applymovement PALLETTOWN_OAK, PalletTownOakWalkToYouMovementLeft
 	opentext
 	writetext PalletTownOakItsUnsafeText
 	waitbutton
 	closetext
+	setevent EVENT_OAK_APPEARED_IN_PALLET
 	setevent EVENT_FOLLOWED_OAK_INTO_LAB
 	follow PALLETTOWN_OAK, PLAYER
 	applymovement PALLETTOWN_OAK, PalletTownOakWalkToLabLeft
 	sjump OakTakesYouToLab
 OakStopsYouRight:
+	playmusic MUSIC_MEET_PROF_OAK
 	opentext
 	writetext PalletTownOakHeyWaitDontGoOutText
-	appear PALLETTOWN_OAK
-	waitbutton
-	closetext
-	turnobject PLAYER, DOWN
 	showemote EMOTE_SHOCK, PLAYER, 30
+	turnobject PLAYER, DOWN
+	appear PALLETTOWN_OAK
+	closetext
 	applymovement PALLETTOWN_OAK, PalletTownOakWalkToYouMovementRight
 	opentext
 	writetext PalletTownOakItsUnsafeText
 	waitbutton
 	closetext
+	setevent EVENT_OAK_APPEARED_IN_PALLET
 	setevent EVENT_FOLLOWED_OAK_INTO_LAB
 	follow PALLETTOWN_OAK, PLAYER
 	applymovement PALLETTOWN_OAK, PalletTownOakWalkToLabRight
@@ -217,4 +219,4 @@ PalletTown_MapEvents:
 	def_object_events
 	object_event  3,  8, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PalletTownTeacherScript, -1
 	object_event 12, 14, SPRITE_FISHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, PalletTownFisherScript, -1
-	object_event  8,  5, SPRITE_OAK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PalletTownProfessorOak, EVENT_OAK_WILL_STOP_YOU
+	object_event  8,  5, SPRITE_OAK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PalletTownProfessorOak, EVENT_OAK_APPEARED_IN_PALLET
