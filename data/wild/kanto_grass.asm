@@ -173,58 +173,88 @@ KantoGrassWildMons:
 	def_grass_wildmons ROUTE_1
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 2, PIDGEY
-	db 2, RATTATA
-	db 3, SENTRET
-	db 3, PIDGEY
-	db 6, FURRET
-	db 4, PIDGEY
-	db 4, PIDGEY
+	db  3, PIDGEY
+	db  3, RATTATA
+	db  2, RATTATA
+	db  2, PIDGEY
+	db  3, PIDGEY
+	db  4, RATTATA
+	db  5, PIDGEY
 	; day
-	db 2, PIDGEY
-	db 2, RATTATA
-	db 3, SENTRET
-	db 3, PIDGEY
-	db 6, FURRET
-	db 4, PIDGEY
-	db 4, PIDGEY
+	db  3, PIDGEY
+	db  3, RATTATA
+	db  2, RATTATA
+	db  2, PIDGEY
+	db  3, PIDGEY
+	db  4, RATTATA
+	db  5, PIDGEY
 	; nite
-	db 2, HOOTHOOT
+	db 2, ZUBAT
 	db 2, RATTATA
 	db 3, RATTATA
-	db 3, HOOTHOOT
+	db 3, ZUBAT
 	db 6, RATICATE
-	db 4, HOOTHOOT
-	db 4, HOOTHOOT
+	db 4, ZUBAT
+	db 4, ZUBAT
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_2
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 3, CATERPIE
-	db 3, LEDYBA
-	db 5, PIDGEY
-	db 7, BUTTERFREE
-	db 7, LEDIAN
-	db 4, PIKACHU
-	db 4, PIKACHU
+	db  3, RATTATA
+	db  3, PIDGEY
+	db  4, PIDGEY
+	db  4, RATTATA
+	db  5, PIDGEY
+	db  5, PIKACHU
+	db  6, PIKACHU
 	; day
-	db 3, CATERPIE
-	db 3, PIDGEY
-	db 5, PIDGEY
-	db 7, BUTTERFREE
-	db 7, PIDGEOTTO
-	db 4, PIKACHU
-	db 4, PIKACHU
+	db  3, WEEDLE
+	db  2, RATTATA
+	db  5, RATTATA
+	db  4, WEEDLE
+	db  5, WEEDLE
+	db  5, PIDGEY
+	db  5, WEEDLE
 	; nite
-	db 3, HOOTHOOT
-	db 3, SPINARAK
-	db 5, HOOTHOOT
-	db 7, NOCTOWL
-	db 7, ARIADOS
-	db 4, NOCTOWL
-	db 4, NOCTOWL
+	db 3, ZUBAT
+	db 3, RATTATA
+	db 5, RATTATA
+	db 5, EKANS
+	db 6, EKANS
+	db 4, ZUBAT
+	db 5, ZUBAT
 	end_grass_wildmons
+	
+	def_grass_wildmons VIRIDIAN_FOREST
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	db  4, WEEDLE
+	db  5, KAKUNA
+	db  5, WEEDLE
+	db  6, KAKUNA
+	db  4, METAPOD
+	db  3, CATERPIE
+	db  3, PIKACHU
+	db  5, PIKACHU
+	; day
+	db  4, CATERPIE
+	db  5, METAPOD
+	db  5, CATERPIE
+	db  4, METAPOD
+	db  6, METAPOD
+	db  4, KAKUNA
+	db  3, WEEDLE
+	db  3, PIKACHU
+	db  5, PIKACHU
+	; nite
+	db 4, RATTATA
+	db 5, ZUBAT
+	db 5, KAKUNA
+	db 5, EKANS
+	db 6, VENONAT
+	db 5, RATTATA
+	db 5, RATTATA
 
 	def_grass_wildmons ROUTE_3
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
