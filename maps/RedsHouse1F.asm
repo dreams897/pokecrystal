@@ -26,7 +26,7 @@ RedsMom:
 	special FadeBlackQuickly
 	special ReloadSpritesNoPalettes
 	special StubbedTrainerRankings_Healings
-	playmusic MUSIC_HEAL
+	playmusic MUSIC_PKMN_HEALED
 	special HealParty
 	pause 60
 	special FadeInQuickly

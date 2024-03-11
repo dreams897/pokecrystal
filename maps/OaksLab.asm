@@ -3,6 +3,7 @@
 	const OAKSLAB_OAKS_AIDE
 	const OAKSLAB_SCIENTIST2
 	const OAKSLAB_SCIENTIST3
+	const OAKSLAB_BLUE
 	const OAKSLAB_POKE_BALL1
 	const OAKSLAB_POKE_BALL2
 	const OAKSLAB_POKE_BALL3
@@ -18,7 +19,6 @@ OaksLab_MapScripts:
 	scene_const SCENE_OAKSLAB_AIDE_GIVES_POKE_BALLS
 
 	def_callbacks
-	callback MAPCALLBACK_OBJECTS, OaksLabMoveOakCallback
 
 OaksLabMeetOakScene:
 	sdefer OaksLabWalkUpToOakScript
@@ -38,30 +38,19 @@ OaksLabNoop4Scene:
 
 OaksLabNoop5Scene:
 	end
-	
-OaksLabMoveOakCallback:
-	checkscene
-	iftrue .Skip ; not SCENE_OAKSLAB_MEET_OAK
-	moveobject OAKSLAB_OAK, 3, 4
-.Skip:
-	endcallback
 
 OaksLabWalkUpToOakScript:
 	checkevent EVENT_OAK_APPEARED_IN_PALLET
+	checkevent EVENT_FOLLOWED_OAK_INTO_LAB
 	iftrue OakGivesPokemonScript
 	
 OakGivesPokemonScript:
 	applymovement PLAYER, OaksLab_WalkUpToOakMovement
-	turnobject OAKSLAB_OAK, RIGHT
 	opentext
 	writetext OakText_Intro
 	sjump .OakGivesPokemon
 
-.OakGivesPokemon:
-	applymovement OAKSLAB_OAK, OaksLab_OakToDefaultPositionMovement1
-	turnobject PLAYER, UP
-	applymovement OAKSLAB_OAK, OaksLab_OakToDefaultPositionMovement2
-	turnobject PLAYER, RIGHT
+.OakGivesPokemon:	
 	opentext
 	writetext OakText_ChooseAPokemon
 	waitbutton
@@ -180,9 +169,6 @@ OakDirectionsScript:
 	writetext OaksLabOakYourPokemonCanFightText
 	waitbutton
 	closetext
-
-	turnobject OAKSLAB_OAK, LEFT
-	turnobject OAKSLAB_OAK, DOWN
 	setevent EVENT_GOT_A_POKEMON_FROM_OAK
 	setscene SCENE_OAKSLAB_AIDE_GIVES_POKE_BALLS
 	setmapscene PALLET_TOWN, SCENE_PALLET_TOWN_NOOP
@@ -308,11 +294,13 @@ OaksLab_WalkUpToOakMovement:
 	step UP
 	step UP
 	step UP
+	step RIGHT
 	step UP
 	step UP
 	step UP
 	step UP
-	turn_head LEFT
+	step UP
+	turn_head UP
 	step_end
 
 OaksLab_CantLeaveMovement:
@@ -322,14 +310,19 @@ OaksLab_CantLeaveMovement:
 OakAideWalksRight1:
 	step RIGHT
 	step RIGHT
-	turn_head UP
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step UP
 	step_end
 
 OakAideWalksRight2:
 	step RIGHT
 	step RIGHT
 	step RIGHT
-	turn_head UP
+	step RIGHT
+	step RIGHT
+	step UP
 	step_end
 
 OakAideWalksLeft1:
@@ -367,17 +360,6 @@ OakJumpRightMovement:
 	fix_facing
 	big_step RIGHT
 	remove_fixed_facing
-	step_end
-
-OaksLab_OakToDefaultPositionMovement1:
-	step UP
-	step_end
-
-OaksLab_OakToDefaultPositionMovement2:
-	step RIGHT
-	step RIGHT
-	step UP
-	turn_head DOWN
 	step_end
 
 AfterCharmanderMovement:
@@ -484,17 +466,10 @@ OakText_MissionFromMrPokemon:
 	done
 
 OakText_ChooseAPokemon:
-	text "I want you to"
-	line "raise one of the"
-
-	para "#MON contained"
-	line "in these BALLS."
-
-	para "You'll be that"
-	line "#MON's first"
-	cont "partner, <PLAY_G>!"
-
-	para "Go on. Pick one!"
+	text "OAK: Now, <PLAYER>,"
+	line "which #MON do"
+	cont "you want?"
+	done
 	done
 
 OakText_LetYourMonBattleIt:
@@ -509,21 +484,21 @@ OakLabWhereGoingText:
 	done
 
 TakeCharmanderText:
-	text "OAK: You'll take"
-	line "CHARMANDER, the"
-	cont "fire #MON?"
+	text "So! You want the"
+	line "fire #MON,"
+	cont "CHARMANDER?"
 	done
 
 TakeSquirtleText:
-	text "OAK: Do you want"
-	line "SQUIRTLE, the"
-	cont "water #MON?"
+	text "So! You want the"
+	line "water #MON,"
+	cont "SQUIRTLE?"
 	done
 
 TakeBulbasaurText:
-	text "OAK: So, you like"
-	line "BULBASAUR, the"
-	cont "grass #MON?"
+	text "So! You want the"
+	line "plant #MON,"
+	cont "BULBASAUR?"
 	done
 
 OakDidntChooseStarterText:
@@ -706,9 +681,9 @@ OaksLab_MapEvents:
 
 	def_object_events
 	object_event  5,  2, SPRITE_OAK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ProfOakScript, -1
-	object_event  2,  9, SPRITE_SCIENTIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, OaksAideScript, EVENT_OAKS_AIDE_IN_LAB
 	object_event  0, 10, SPRITE_SCIENTIST, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, OaksAssistant1Script, -1
 	object_event  8,  9, SPRITE_SCIENTIST, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, OaksAssistant2Script, -1
+	object_event  2,  9, SPRITE_SCIENTIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, OaksAideScript, EVENT_OAKS_AIDE_IN_LAB
 	object_event  4,  3, SPRITE_BLUE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OakLabRivalScript, -1
 	object_event  6,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CharmanderPokeBallScript, EVENT_GOT_A_CHARMANDER_FROM_OAK
 	object_event  7,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SquirtlePokeBallScript, EVENT_GOT_A_SQUIRTLE_FROM_OAK
