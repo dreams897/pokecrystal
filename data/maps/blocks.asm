@@ -157,12 +157,6 @@ CianwoodPhotoStudio_Blocks:
 CianwoodLugiaSpeechHouse_Blocks:
 PokeSeersHouse_Blocks:
 ViridianNicknameSpeechHouse_Blocks:
-ViridianForestNorthGate_Blocks:
-	INCBIN "maps/Viridian_Forest_North_Gate.blk"
-ViridianForestSouthGate_Blocks:
-	INCBIN "maps/Viridian_Forest_South_Gate.blk"
-ViridianForest_Blocks:
-	INCBIN "maps/Viridian_Forest.blk"
 Route2NuggetHouse_Blocks:
 PlayersNeighborsHouse_Blocks:
 Route26HealHouse_Blocks:
@@ -243,6 +237,13 @@ Route7SaffronGate_Blocks:
 Route17Route18Gate_Blocks:
 Route31VioletGate_Blocks:
 	INCBIN "maps/EastWestGate.blk"
+	
+ViridianForestNorthGate_Blocks:
+	INCBIN "maps/Viridian_Forest_North_Gate.blk"
+ViridianForestSouthGate_Blocks:
+	INCBIN "maps/Viridian_Forest_South_Gate.blk"
+ViridianForest_Blocks:
+	INCBIN "maps/Viridian_Forest.blk"
 
 VermilionCity_Blocks:
 	INCBIN "maps/VermilionCity.blk"
