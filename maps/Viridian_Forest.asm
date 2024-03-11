@@ -232,8 +232,8 @@ ViridianForest_MapEvents:
 	bg_event  26, 17, BGEVENT_READ, ViridianForestTrainerTips2Sign
 	bg_event   4, 24, BGEVENT_READ, ViridianForestTrainerTips3Sign
 	bg_event   2,  1, BGEVENT_READ, ViridianForestLeavingSign
-	bg_event   1, 18, BGEVENT_READ, ViridianForestHiddenPotion
-	bg_event  16, 42, BGEVENT_READ, ViridianForestHiddenAntidote
+	bg_event   1, 18, BGEVENT_ITEM, ViridianForestHiddenPotion
+	bg_event  16, 42, BGEVENT_ITEM, ViridianForestHiddenAntidote
 
 	def_object_events
 	object_event 16, 43, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, YoungsterViridianForest1Script, -1
