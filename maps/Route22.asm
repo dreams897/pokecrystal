@@ -17,7 +17,7 @@ Route22_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event 13,  5, VICTORY_ROAD_GATE, 1
+	warp_event  8,  5, VICTORY_ROAD_GATE, 1
 
 	def_coord_events
 
