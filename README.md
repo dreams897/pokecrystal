@@ -6,9 +6,10 @@
 * First real attempt at porting Pokémon Red to the Crystal engine?!
 * All documented [bugs and glitches](https://pret.github.io/pokecrystal/bugs_and_glitches.html) fixed and all [design flaws](https://pret.github.io/pokecrystal/design_flaws.html) corrected for Crystal engine
 * 60fps and Running Shoes [branch](https://github.com/fellowship-of-the-roms/pokecrystal/tree/Doublespeed-60fps-Running-Shoes) merged
+* A set-able clock from the Menu
 * Expanded tileset to fix some visual limitations that Gen 1 had
 * There will be 2 tilesets to choose from - **Gen 1** and **Gen 2**
-* New ENBY (non-binary) player choice being added in addtion to boy/girl!
+* New ENBY (non-binary) player choice added in addtion to boy/girl!
 * Girl/Green/Leaf sprite changed to fit gen 1 look
 * Only original 151 Pokémon are obtainable and will not be changed or expanded
 * All Starters can be obtained through in-game trades with NPCs in addition to your initial choice
@@ -18,7 +19,7 @@
 * The Day Care aims to be massively improved with new sprites, a PC in the corner, more accessable entrance, and will be added to the map/Fly
 * Tangela will be exclusive to the Safari Zone
 * New trades have been added, see list below!
-* Wild Pokémon areas aim to be a balance between Red, Blue and Yellow
+* Wild Pokémon areas aim to be a balance between Red, Blue and Yellow with the addition of Nite spawns!
 
 ### Roadmap:
 
