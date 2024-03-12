@@ -294,13 +294,11 @@ OaksLab_WalkUpToOakMovement:
 	step UP
 	step UP
 	step UP
-	step RIGHT
 	step UP
 	step UP
 	step UP
 	step UP
 	step UP
-	turn_head UP
 	step_end
 
 OaksLab_CantLeaveMovement:
@@ -308,7 +306,6 @@ OaksLab_CantLeaveMovement:
 	step_end
 
 OakAideWalksRight1:
-	step RIGHT
 	step RIGHT
 	step RIGHT
 	step RIGHT
@@ -646,8 +643,8 @@ OaksLab_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  4, 11, PALLET_TOWN, 3
 	warp_event  5, 11, PALLET_TOWN, 3
+	warp_event  4, 11, PALLET_TOWN, 3
 
 	def_coord_events
 	coord_event  4,  6, SCENE_OAKSLAB_CANT_LEAVE, OakLabTryToLeaveScript

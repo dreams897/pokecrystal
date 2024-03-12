@@ -159,7 +159,6 @@ PalletTownOakItsUnsafeText:
 	line "me!"
 	done
 
-
 PalletTownTeacherText:
 	text "I'm raising"
 	line "#MON too!"
@@ -167,6 +166,7 @@ PalletTownTeacherText:
 	para "When they get"
 	line "strong, they can"
 	cont "protect me!"
+	done
 
 PalletTownFisherText:
 	text "Technology is"
