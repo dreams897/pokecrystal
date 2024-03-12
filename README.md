@@ -30,6 +30,9 @@
 
 ## Frequently Asked Questions
 
+### Q: Is this currently playable? Where can I download the ROM?
+**A**: This is a work in progress, but once the first Gym badge is obtainable I will be releasing a demo. In the meantime, you are welcome to build the ROM and it is playble up until Viridian Forest but some events are missing or limited and certain interactions may cause crashes. 
+
 ### Q: What features from Crystal are being kept and which are being removed?
 **A**: Some features from Crystal will be quite beneficial and an upgrade to features in Gen 1. These features include shiny Pokémon, a set-able clock (new morning, day, and night spawns!), better battle engine, Stereo audio option and much more! Some features will be removed that aren't useful to Gen 1 or don't serve a purpose that I can justify. These include the Cellphone feature and Eggs since there will be no baby Pokémon. The PokéGear will likely be renamed to "Clock" because the cellphone feature will be removed making it less worthy of the title "Gear". 
 
