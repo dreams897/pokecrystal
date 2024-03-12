@@ -309,4 +309,5 @@ DEF NUM_FACINGS EQU const_value
 	const STEP_TURN          ; 6
 	const STEP_BACK_LEDGE    ; 7
 	const STEP_WALK_IN_PLACE ; 8
+	const STEP_SPIN          ; 9
 DEF NUM_STEPS EQU const_value

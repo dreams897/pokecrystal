@@ -2384,8 +2384,6 @@ wCurPartyLevel:: db
 
 wScrollingMenuListSize:: db
 
-	ds 1
-
 ; used when following a map warp
 wNextWarp:: db
 wNextMapGroup:: db
@@ -2402,6 +2400,8 @@ wPlayerStepVectorX:: db
 wPlayerStepVectorY:: db
 wPlayerStepFlags:: db
 wPlayerStepDirection:: db
+
+wSpinning:: db
 
 wBGMapAnchor:: dw
 
