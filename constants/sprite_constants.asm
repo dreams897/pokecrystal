@@ -87,6 +87,7 @@
 	const SPRITE_SUDOWOODO ; 52
 	const SPRITE_SURF ; 53
 	const SPRITE_POKE_BALL ; 54
+	const SPRITE_POKE_BALL_2 ; Added realistic Poke ball for overworld
 	const SPRITE_POKEDEX ; 55
 	const SPRITE_PAPER ; 56
 	const SPRITE_VIRTUAL_BOY ; 57

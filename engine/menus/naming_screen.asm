@@ -157,9 +157,9 @@ NamingScreen:
 	db "MOTHER'S NAME?@"
 
 .Box:
-	ld de, PokeBallSpriteGFX
+	ld de, PokeBall2SpriteGFX
 	ld hl, vTiles0 tile $00
-	lb bc, BANK(PokeBallSpriteGFX), 4
+	lb bc, BANK(PokeBall2SpriteGFX), 4
 	call Request2bpp
 	xor a ; SPRITE_ANIM_DICT_DEFAULT and tile offset $00
 	ld hl, wSpriteAnimDict
