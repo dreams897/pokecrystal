@@ -17,16 +17,15 @@ Route1YoungsterGivePotionScript:
 	checkevent EVENT_GOT_POTION_SAMPLE
 	iftrue .AlsoGotPokeballsText
 	writetext Route1Youngster1MartSampleText
+	verbosegiveitem POTION
 	setevent EVENT_GOT_POTION_SAMPLE
-	getitemname STRING_BUFFER_4, POTION
-	scall Youngster_Give_Potion
-	giveitem POTION
-	itemnotify
 	closetext
 	end
 	
 .AlsoGotPokeballsText
 	writetext Route1Youngster1AlsoGotPokeballsText
+	closetext
+	end
 
 Youngster_Give_Potion:
 	jumpstd ReceiveItemScript
@@ -54,6 +53,7 @@ Route1Youngster1AlsoGotPokeballsText:
 	text "We also carry"
 	line "# BALLs for"
 	cont "catching #MON!"
+	prompt
 	done
 
 Route1Youngster1NoRoomText:
