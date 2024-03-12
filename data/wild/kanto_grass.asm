@@ -225,36 +225,6 @@ KantoGrassWildMons:
 	db 4, ZUBAT
 	db 5, ZUBAT
 	end_grass_wildmons
-	
-	def_grass_wildmons VIRIDIAN_FOREST
-	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
-	; morn
-	db  4, WEEDLE
-	db  5, KAKUNA
-	db  5, WEEDLE
-	db  6, KAKUNA
-	db  4, METAPOD
-	db  3, CATERPIE
-	db  3, PIKACHU
-	db  5, PIKACHU
-	; day
-	db  4, CATERPIE
-	db  5, METAPOD
-	db  5, CATERPIE
-	db  4, METAPOD
-	db  6, METAPOD
-	db  4, KAKUNA
-	db  3, WEEDLE
-	db  3, PIKACHU
-	db  5, PIKACHU
-	; nite
-	db 4, RATTATA
-	db 5, ZUBAT
-	db 5, KAKUNA
-	db 5, EKANS
-	db 6, VENONAT
-	db 5, RATTATA
-	db 5, RATTATA
 
 	def_grass_wildmons ROUTE_3
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
@@ -871,5 +841,35 @@ KantoGrassWildMons:
 	db 42, GOLBAT
 	db 42, GOLBAT
 	end_grass_wildmons
+	
+	def_grass_wildmons VIRIDIAN_FOREST
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	db  4, WEEDLE
+	db  5, KAKUNA
+	db  5, WEEDLE
+	db  6, KAKUNA
+	db  4, METAPOD
+	db  3, CATERPIE
+	db  3, PIKACHU
+	db  5, PIKACHU
+	; day
+	db  4, CATERPIE
+	db  5, METAPOD
+	db  5, CATERPIE
+	db  4, METAPOD
+	db  6, METAPOD
+	db  4, KAKUNA
+	db  3, WEEDLE
+	db  3, PIKACHU
+	db  5, PIKACHU
+	; nite
+	db 4, RATTATA
+	db 5, ZUBAT
+	db 5, KAKUNA
+	db 5, EKANS
+	db 6, VENONAT
+	db 5, RATTATA
+	db 5, RATTATA
 
 	db -1 ; end

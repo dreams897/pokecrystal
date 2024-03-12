@@ -768,18 +768,6 @@ FightingDojo_Blocks:
 
 SilphCo1F_Blocks:
 	INCBIN "maps/SilphCo1F.blk"
-	
-ViridianForestNorthGate_Blocks:
-	INCBIN "maps/Viridian_Forest_North_Gate.blk"
-	
-ViridianForestSouthGate_Blocks:
-	INCBIN "maps/Viridian_Forest_South_Gate.blk"
-	
-ViridianForest_Blocks:
-	INCBIN "maps/Viridian_Forest.blk"
-
-ViridianGym_Blocks:
-	INCBIN "maps/ViridianGym.blk"
 
 TrainerHouse1F_Blocks:
 	INCBIN "maps/TrainerHouse1F.blk"
@@ -943,6 +931,18 @@ BattleTowerElevator_Blocks:
 
 BattleTowerOutside_Blocks:
 	INCBIN "maps/BattleTowerOutside.blk"
+	
+ViridianForestNorthGate_Blocks:
+	INCBIN "maps/Viridian_Forest_North_Gate.blk"
+	
+ViridianForestSouthGate_Blocks:
+	INCBIN "maps/Viridian_Forest_South_Gate.blk"
+	
+ViridianForest_Blocks:
+	INCBIN "maps/Viridian_Forest.blk"
+
+ViridianGym_Blocks:
+	INCBIN "maps/ViridianGym.blk"
 
 GoldenrodDeptStoreRoof_Blocks:
 	INCBIN "maps/GoldenrodDeptStoreRoof.blk"
