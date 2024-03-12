@@ -6,12 +6,17 @@
 PalletTown_MapScripts:
 	def_scene_scripts
 	scene_script PalletTownNoop1Scene, SCENE_PALLET_TOWN_OAK_STOPS_YOU
-	scene_script PalletTownNoop1Scene, SCENE_PALLET_TOWN_NOOP
+	scene_script PalletTownNoop2Scene, SCENE_PALLET_TOWN_NOOP
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, PalletTownFlypointCallback
 	
 PalletTownNoop1Scene:
+	end
+
+PalletTownNoop2Scene:
+	end
+
 PalletTownProfessorOak:
 	end
 
@@ -77,8 +82,9 @@ OakStopsYouRight:
 OakTakesYouToLab:
 	stopfollow
 	disappear PALLETTOWN_OAK
+	setscene SCENE_PALLET_TOWN_NOOP
 	applymovement PLAYER, PalletTownPlayerWalkUp
-	warp OAKS_LAB, 4, 11
+	warp OAKS_LAB, 5, 11
 	end
 
 PalletTownPlayerWalkUp:
