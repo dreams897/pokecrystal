@@ -12,12 +12,12 @@ Route1Youngster1Script:
 	end
 	
 Route1YoungsterGivePotionScript:
+	faceplayer
 	opentext
 	checkevent EVENT_GOT_POTION_SAMPLE
 	iftrue .AlsoGotPokeballsText
-	setevent EVENT_GOT_POTION_SAMPLE
 	writetext Route1Youngster1MartSampleText
-	promptbutton
+	setevent EVENT_GOT_POTION_SAMPLE
 	getitemname STRING_BUFFER_4, POTION
 	scall Youngster_Give_Potion
 	giveitem POTION
@@ -48,6 +48,7 @@ Route1Youngster1MartSampleText:
 	line "you a sample!"
 	cont "Here you go!"
 	prompt
+	end
 
 Route1Youngster1AlsoGotPokeballsText:
 	text "We also carry"
