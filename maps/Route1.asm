@@ -1,6 +1,6 @@
 	object_const_def
-	const ROUTE1_YOUNGSTER
 	const ROUTE1_YOUNGSTER_GIVE_POTION
+	const ROUTE1_YOUNGSTER_SEE_LEDGES
 	const ROUTE1_FRUIT_TREE
 
 Route1_MapScripts:
@@ -60,6 +60,27 @@ Route1Youngster1NoRoomText:
 	text "You have too much"
 	line "stuff with you!"
 	done
+	
+Route1YoungsterLedgeScript:
+	faceplayer
+	opentext
+	writetext Route1YoungsterLedgeText
+	closetext
+	end
+
+Route1YoungsterLedgeText:
+	text "See those ledges"
+	line "along the road?"
+
+	para "It's a bit scary,"
+	line "but you can jump"
+	cont "from them."
+
+	para "You can get back"
+	line "to PALLET TOWN"
+	cont "quicker that way."
+	prompt
+	done
 
 Route1Sign:
 	jumptext Route1SignText
@@ -85,6 +106,6 @@ Route1_MapEvents:
 	bg_event  7, 27, BGEVENT_READ, Route1Sign
 
 	def_object_events
-	object_event  4, 12, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route1Youngster1Script, -1
-	object_event  9, 25, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route1YoungsterGivePotionScript, -1
+	object_event  3, 24, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route1YoungsterGivePotionScript, -1
+	object_event  15, 13, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route1YoungsterLedgeScript, -1
 	object_event  3,  7, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route1FruitTree, -1
