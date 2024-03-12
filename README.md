@@ -8,9 +8,10 @@
 * 60fps and Running Shoes [branch](https://github.com/fellowship-of-the-roms/pokecrystal/tree/Doublespeed-60fps-Running-Shoes) merged
 * A set-able clock from the Menu
 * Expanded tileset to fix some visual limitations that Gen 1 had
-* There will be 2 tilesets to choose from - **Gen 1** and **Gen 2**
+* There will be 2 different tilesets (and possibly other things) to choose from - **Gen 1** and **Gen 2**
 * New ENBY (non-binary) player choice added in addtion to boy/girl!
 * Girl/Green/Leaf sprite changed to fit gen 1 look
+* Colored Poké Balls to match ball type and new Poké Ball sprite added
 * Only original 151 Pokémon are obtainable and will not be changed or expanded
 * All Starters can be obtained through in-game trades with NPCs in addition to your initial choice
 * Switched Good Rod and Super Rod locations
