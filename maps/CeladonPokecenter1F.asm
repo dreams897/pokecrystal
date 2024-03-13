@@ -9,6 +9,12 @@ CeladonPokecenter1F_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	
+PokeCenterPCScript:
+	opentext
+	special PokemonCenterPC
+	closetext
+	end
 
 CeladonPokecenter1FNurseScript:
 	jumpstd PokecenterNurseScript
@@ -154,6 +160,7 @@ CeladonPokecenter1F_MapEvents:
 	def_coord_events
 
 	def_bg_events
+	bg_event  13,  3, BGEVENT_UP, PokeCenterPCScript
 
 	def_object_events
 	object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeladonPokecenter1FNurseScript, -1
