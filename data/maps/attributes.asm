@@ -352,8 +352,8 @@ ENDM
 	connection south, CeruleanCity, CERULEAN_CITY, -5
 	connection east, Route25, ROUTE_25, 0
 
-	map_attributes Route25, ROUTE_25, $2c, SOUTH
-	connection south, Route24, ROUTE_24, 0
+	map_attributes Route25, ROUTE_25, $2c, WEST
+	connection west, Route24, ROUTE_24, 0
 
 	map_attributes Route3, ROUTE_3, $2c, NORTH | WEST
 	connection north, Route4, ROUTE_4, 25
