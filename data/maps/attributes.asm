@@ -231,7 +231,7 @@ ENDM
 
 	map_attributes PewterCity, PEWTER_CITY, $0f, SOUTH | EAST
 	connection south, Route2, ROUTE_2, 5
-	connection east, Route3, ROUTE_3, 5
+	connection east, Route3, ROUTE_3, 4
 
 	map_attributes Route2, ROUTE_2, $0f, NORTH | SOUTH
 	connection north, PewterCity, PEWTER_CITY, -5
@@ -348,9 +348,9 @@ ENDM
 	connection south, Route10North, ROUTE_10_NORTH, 20
 	connection west, CeruleanCity, CERULEAN_CITY, -9
 
-	map_attributes Route24, ROUTE_24, $2c, NORTH | SOUTH
-	connection north, Route25, ROUTE_25, 0
-	connection south, CeruleanCity, CERULEAN_CITY, -6
+	map_attributes Route24, ROUTE_24, $2c, SOUTH | EAST
+	connection south, CeruleanCity, CERULEAN_CITY, -5
+	connection east, Route25, ROUTE_25, 0
 
 	map_attributes Route25, ROUTE_25, $2c, SOUTH
 	connection south, Route24, ROUTE_24, 0
