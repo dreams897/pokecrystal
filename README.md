@@ -25,8 +25,8 @@
 ### Roadmap:
 
 * Finish porting all code and resources from Pokémon Red / Blue
-* Add missing Maps
 * Add Safari Zone
+* Add post-game content
 
 ## Frequently Asked Questions
 
