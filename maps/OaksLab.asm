@@ -12,39 +12,45 @@ OakLabRivalScript:
 
 OaksLab_MapScripts:
 	def_scene_scripts
-	scene_script OaksLabMeetOakScene, SCENE_OAKSLAB_MEET_OAK
+	scene_script OaksLabNotMetOakScene,   SCENE_OAKSLAB_NOT_MET_OAK
+	scene_script OaksLabMeetOakScene,   SCENE_OAKSLAB_MEET_OAK
 	scene_script OaksLabNoop1Scene,   SCENE_OAKSLAB_CANT_LEAVE
-	scene_script OaksLabNoop2Scene,   SCENE_OAKSLAB_NOOP
 	scene_script OaksLabNoop4Scene,   SCENE_OAKSLAB_UNUSED
 	scene_const SCENE_OAKSLAB_AIDE_GIVES_POKE_BALLS
 
 	def_callbacks
 
+OaksLabNotMetOakScene:
+	sdefer OaksLabNotMetOakScript
+	end
+
 OaksLabMeetOakScene:
-	sdefer OaksLabWalkUpToOakScript
+	sdefer OakGivesPokemonScript
 	end
 
 OaksLabNoop1Scene:
 	end
-
-OaksLabNoop2Scene:
-	end
-
-OaksLabNoop3Scene:
-	end
-
+	
 OaksLabNoop4Scene:
 	end
-
-OaksLabNoop5Scene:
-	end
-
-OaksLabWalkUpToOakScript:
+	
+OaksLabNotMetOakScript:
 	checkevent EVENT_OAK_APPEARED_IN_PALLET
-	checkevent EVENT_FOLLOWED_OAK_INTO_LAB
 	iftrue OakGivesPokemonScript
+	setscene SCENE_OAKSLAB_UNUSED
+	end
+	
+BlueOakNotAround:
+	jumptext OaksNotAroundText
+	
+OaksNotAroundText:
+	text "<RIVAL>: Yo"
+	line "<PLAYER>! Gramps"
+	cont "isn't around!"
+	done
 	
 OakGivesPokemonScript:
+	setscene SCENE_OAKSLAB_MEET_OAK
 	applymovement PLAYER, OaksLab_WalkUpToOakMovement
 	opentext
 	writetext OakText_Intro
@@ -244,7 +250,7 @@ OakAideScript_GiveYouBalls:
 	promptbutton
 	itemnotify
 	closetext
-	setscene SCENE_OAKSLAB_NOOP
+	setscene SCENE_OAKSLAB_UNUSED
 	end
 
 OakAideScript_ReceiveTheBalls:
@@ -286,9 +292,6 @@ OaksAssistant1Script:
 
 OaksAssistant2Script:
 	jumptextfaceplayer OaksAssistant2Text
-
-OaksAssistant3Script:
-	jumptextfaceplayer OaksAssistant3Text
 
 OaksLab_WalkUpToOakMovement:
 	step UP
@@ -415,53 +418,6 @@ OaksLabOakYourPokemonCanFightText:
 	cont "fight against it!"
 	done
 
-OakText_ResearchAmbitions:
-	text "When I announce my"
-	line "findings, I'm sure"
-
-	para "we'll delve a bit"
-	line "deeper into the"
-
-	para "many mysteries of"
-	line "#MON."
-
-	para "You can count on"
-	line "it!"
-	done
-
-OakText_MissionFromMrPokemon:
-	text "Hey, listen."
-
-	para "I have an acquain-"
-	line "tance called MR."
-	cont "#MON."
-
-	para "He keeps finding"
-	line "weird things and"
-
-	para "raving about his"
-	line "discoveries."
-
-	para "Anyway, I just got"
-	line "an e-mail from him"
-
-	para "saying that this"
-	line "time it's real."
-
-	para "It is intriguing,"
-	line "but we're busy"
-
-	para "with our #MON"
-	line "research…"
-
-	para "Wait!"
-
-	para "I know!"
-
-	para "<PLAY_G>, can you"
-	line "go in our place?"
-	done
-
 OakText_ChooseAPokemon:
 	text "OAK: Now, <PLAYER>,"
 	line "which #MON do"
@@ -507,10 +463,9 @@ OakDidntChooseStarterText:
 	done
 
 OakChoseStarterText:
-	text "OAK: I think"
-	line "that's a great"
-	cont "#MON too!"
-	done
+	text "This #MON is"
+	line "really energetic!"
+	prompt
 
 OakReceivedStarterText:
 	text "<PLAYER> received"
@@ -528,12 +483,6 @@ OakPokeBallText:
 	text "It contains a"
 	line "#MON caught by"
 	cont "PROF.OAK."
-	done
-
-OakAideText_AlwaysBusy:
-	text "There are only two"
-	line "of us, so we're"
-	cont "always busy."
 	done
 
 OakAideText_GiveYouBalls:
@@ -554,31 +503,13 @@ OakAideText_ExplainBalls:
 	done
 	
 OaksAssistant1Text:
-	text "The PROF's #MON"
-	line "TALK radio program"
-
-	para "isn't aired here"
-	line "in KANTO."
-
-	para "It's a shame--I'd"
-	line "like to hear it."
+	text "I study #MON as"
+	line "PROF.OAK's AIDE."
 	done
 
 OaksAssistant2Text:
-	text "Thanks to your"
-	line "work on the #-"
-	cont "DEX, the PROF's"
-
-	para "research is coming"
-	line "along great."
-	done
-
-OaksAssistant3Text:
-	text "Don't tell anyone,"
-	line "but PROF.OAK'S"
-
-	para "#MON TALK isn't"
-	line "a live broadcast."
+	text "I study #MON as"
+	line "PROF.OAK's AIDE."
 	done
 
 OaksLabTravelTip1Text:
@@ -675,6 +606,7 @@ OaksLab_MapEvents:
 	bg_event  9,  7, BGEVENT_READ, OaksLabBookshelf
 	bg_event  9,  3, BGEVENT_READ, OaksLabTrashcan
 	bg_event  3,  5, BGEVENT_DOWN, OaksLabPC
+	bg_event  4,  3, BGEVENT_READ, BlueOakNotAround
 
 	def_object_events
 	object_event  5,  2, SPRITE_OAK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ProfOakScript, -1

@@ -50,13 +50,12 @@ OakStopsYouLeft:
 	showemote EMOTE_SHOCK, PLAYER, 30
 	appear PALLETTOWN_OAK
 	closetext
+	setevent EVENT_OAK_APPEARED_IN_PALLET
 	applymovement PALLETTOWN_OAK, PalletTownOakWalkToYouMovementLeft
 	opentext
 	writetext PalletTownOakItsUnsafeText
 	waitbutton
 	closetext
-	setevent EVENT_OAK_APPEARED_IN_PALLET
-	setevent EVENT_FOLLOWED_OAK_INTO_LAB
 	follow PALLETTOWN_OAK, PLAYER
 	applymovement PALLETTOWN_OAK, PalletTownOakWalkToLabLeft
 	sjump OakTakesYouToLab
@@ -68,13 +67,12 @@ OakStopsYouRight:
 	showemote EMOTE_SHOCK, PLAYER, 30
 	appear PALLETTOWN_OAK
 	closetext
+	setevent EVENT_OAK_APPEARED_IN_PALLET
 	applymovement PALLETTOWN_OAK, PalletTownOakWalkToYouMovementRight
 	opentext
 	writetext PalletTownOakItsUnsafeText
 	waitbutton
 	closetext
-	setevent EVENT_OAK_APPEARED_IN_PALLET
-	setevent EVENT_FOLLOWED_OAK_INTO_LAB
 	follow PALLETTOWN_OAK, PLAYER
 	applymovement PALLETTOWN_OAK, PalletTownOakWalkToLabRight
 	sjump OakTakesYouToLab
@@ -85,6 +83,7 @@ OakTakesYouToLab:
 	setscene SCENE_PALLET_TOWN_NOOP
 	applymovement PLAYER, PalletTownPlayerWalkUp
 	warp OAKS_LAB, 5, 11
+	setevent EVENT_FOLLOWED_OAK_INTO_LAB
 	end
 
 PalletTownPlayerWalkUp:
@@ -126,6 +125,7 @@ PalletTownOakWalkToLabLeft:
 	step RIGHT
 	step UP
 	step_end
+	end
 
 PalletTownOakWalkToLabRight:
 	step DOWN
@@ -145,6 +145,7 @@ PalletTownOakWalkToLabRight:
 	step RIGHT
 	step UP
 	step_end
+	end
 
 PalletTownOakHeyWaitDontGoOutText:
 	text "OAK: Hey! Wait!"
