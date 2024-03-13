@@ -204,7 +204,7 @@ ENDM
 	map_const ROUTE_10_POKECENTER_2F_BETA,                  7,  4 ;  9
 	map_const POWER_PLANT,                                 10,  9 ; 10
 	map_const BILLS_HOUSE,                                  4,  4 ; 11
-	map_const ROUTE_4,                                     20,  9 ; 12
+	map_const ROUTE_4,                                     45,  9 ; 12
 	map_const ROUTE_9,                                     30,  9 ; 13
 	map_const ROUTE_10_NORTH,                              10,  9 ; 14
 	map_const ROUTE_24,                                    10,  9 ; 15
@@ -304,7 +304,7 @@ ENDM
 	endgroup
 
 	newgroup PEWTER                                               ; 14
-	map_const ROUTE_3,                                     30,  9 ;  1
+	map_const ROUTE_3,                                     35,  9 ;  1
 	map_const PEWTER_CITY,                                 20, 18 ;  2
 	map_const PEWTER_NIDORAN_SPEECH_HOUSE,                  4,  4 ;  3
 	map_const PEWTER_GYM,                                   5,  7 ;  4
