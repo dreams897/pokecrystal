@@ -9,7 +9,7 @@ ViridianPokecenter1F_MapScripts:
 
 	def_callbacks
 	
-PokeCenterPCScript:
+PokeCenterPCScriptViridian:
 	opentext
 	special PokemonCenterPC
 	closetext
@@ -86,7 +86,7 @@ ViridianPokecenter1F_MapEvents:
 	def_coord_events
 
 	def_bg_events
-	bg_event  13,  3, BGEVENT_UP, PokeCenterPCScript
+	bg_event  13,  3, BGEVENT_UP, PokeCenterPCScriptViridian
 
 	def_object_events
 	object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ViridianPokecenter1FNurseScript, -1
