@@ -107,7 +107,7 @@ ENDM
 .party_loop
 	call .PlaceHealingMachineTile
 	push de
-	ld de, SFX_SECOND_PART_OF_ITEMFINDER
+	ld de, SFX_HEALING_MACHINE_1
 	call PlaySFX
 	pop de
 	ld c, 30
@@ -117,7 +117,7 @@ ENDM
 	ret
 
 .PlayHealMusic:
-	ld de, MUSIC_HEAL
+	ld de, MUSIC_PKMN_HEALED
 	call PlayMusic
 	jp .FlashPalettes8Times
 
@@ -134,25 +134,31 @@ ENDM
 	ret
 
 .PC_ElmsLab_OAM:
-	dbsprite   4,   4, 2, 0, $7c, PAL_OW_TREE | OBP_NUM
-	dbsprite   4,   4, 6, 0, $7c, PAL_OW_TREE | OBP_NUM
-	dbsprite   4,   4, 0, 6, $7d, PAL_OW_TREE | OBP_NUM
-	dbsprite   5,   4, 0, 6, $7d, PAL_OW_TREE | OBP_NUM | X_FLIP
-	dbsprite   4,   5, 0, 3, $7d, PAL_OW_TREE | OBP_NUM
-	dbsprite   5,   5, 0, 3, $7d, PAL_OW_TREE | OBP_NUM | X_FLIP
-	dbsprite   4,   6, 0, 0, $7d, PAL_OW_TREE | OBP_NUM
-	dbsprite   5,   6, 0, 0, $7d, PAL_OW_TREE | OBP_NUM | X_FLIP
+	; heal machine monitor
+	dbsprite  6,  4,  4,  4, $7c, PAL_OW_TREE | OBP_NUM
+	; poke balls 1-6
+	dbsprite  6,  5,  0,  3, $7d, PAL_OW_TREE | OBP_NUM
+	dbsprite  6,  4,  4,  4, $7c, PAL_OW_TREE | OBP_NUM
+	dbsprite  7,  5,  0,  3, $7d, PAL_OW_TREE | OBP_NUM | X_FLIP
+	dbsprite  6,  6,  0,  0, $7d, PAL_OW_TREE | OBP_NUM
+	dbsprite  7,  6,  0,  0, $7d, PAL_OW_TREE | OBP_NUM | X_FLIP
+	dbsprite  6,  6,  0,  5, $7d, PAL_OW_TREE | OBP_NUM
+	dbsprite  7,  6,  0,  5, $7d, PAL_OW_TREE | OBP_NUM | X_FLIP
 
 .HealMachineGFX:
 INCBIN "gfx/overworld/heal_machine.2bpp"
 
 .HOF_OAM:
-	dbsprite  10,   7, 1, 4, $7d, PAL_OW_TREE | OBP_NUM
-	dbsprite  10,   7, 6, 4, $7d, PAL_OW_TREE | OBP_NUM
-	dbsprite   9,   7, 5, 3, $7d, PAL_OW_TREE | OBP_NUM
-	dbsprite  11,   7, 2, 3, $7d, PAL_OW_TREE | OBP_NUM
-	dbsprite   9,   7, 1, 1, $7d, PAL_OW_TREE | OBP_NUM
-	dbsprite  11,   7, 5, 1, $7d, PAL_OW_TREE | OBP_NUM
+	; heal machine monitor
+	dbsprite  6,  4,  4,  4, $7c, PAL_OW_TREE | OBP_NUM
+	; poke balls 1-6
+	dbsprite  6,  5,  0,  3, $7d, PAL_OW_TREE | OBP_NUM
+	dbsprite  6,  4,  4,  4, $7c, PAL_OW_TREE | OBP_NUM
+	dbsprite  7,  5,  0,  3, $7d, PAL_OW_TREE | OBP_NUM | X_FLIP
+	dbsprite  6,  6,  0,  0, $7d, PAL_OW_TREE | OBP_NUM
+	dbsprite  7,  6,  0,  0, $7d, PAL_OW_TREE | OBP_NUM | X_FLIP
+	dbsprite  6,  6,  0,  5, $7d, PAL_OW_TREE | OBP_NUM
+	dbsprite  7,  6,  0,  5, $7d, PAL_OW_TREE | OBP_NUM | X_FLIP
 
 .LoadPalettes:
 	call IsCGB
