@@ -940,10 +940,11 @@ AnimateWaterPalette:
 	and %110
 	jr z, .color0
 	cp %100
+	jr z, .color1
 
 ; Copy one color from hl to rBGPI via rBGPD
 
-; color1
+.color1
 	ld hl, wBGPals1 palette PAL_BG_WATER color 1
 	ld a, [hli]
 	ldh [rBGPD], a
@@ -958,6 +959,13 @@ AnimateWaterPalette:
 	ld a, [hli]
 	ldh [rBGPD], a
 	jr .end
+
+.color2
+	ld hl, wBGPals1 palette PAL_BG_WATER color 2
+	ld a, [hli]
+	ldh [rBGPD], a
+	ld a, [hli]
+	ldh [rBGPD], a
 
 .end
 	pop af
