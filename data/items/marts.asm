@@ -233,8 +233,6 @@ MartViridian:
 	db PARLYZ_HEAL
 	db BURN_HEAL
 	db -1 ; end
-	
-	POKE_BALL, ANTIDOTE, PARLYZ_HEAL, BURN_HEAL
 
 MartPewter:
 	db 7 ; # items
