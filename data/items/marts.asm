@@ -236,50 +236,48 @@ MartViridian:
 
 MartPewter:
 	db 7 ; # items
-	db GREAT_BALL
-	db SUPER_POTION
-	db SUPER_REPEL
+	db POKE_BALL
+	db POTION
+	db ESCAPE_ROPE
 	db ANTIDOTE
-	db PARLYZ_HEAL
-	db AWAKENING
 	db BURN_HEAL
+	db AWAKENING
+	db PARLYZ_HEAL
 	db -1 ; end
 
 MartCerulean:
-	db 9 ; # items
-	db GREAT_BALL
-	db ULTRA_BALL
-	db SUPER_POTION
-	db SUPER_REPEL
-	db FULL_HEAL
-	db X_DEFEND
-	db X_ATTACK
-	db DIRE_HIT
-	db SURF_MAIL
+	db 7 ; # items
+	db POKE_BALL
+	db POTION
+	db REPEL
+	db ANTIDOTE
+	db BURN_HEAL
+	db AWAKENING
+	db PARLYZ_HEAL
 	db -1 ; end
 
 MartLavender:
-	db 8 ; # items
+	db 9 ; # items
 	db GREAT_BALL
-	db POTION
 	db SUPER_POTION
-	db MAX_REPEL
+	db REVIVE
+	db ESCAPE_ROPE
+	db SUPER_REPEL
 	db ANTIDOTE
-	db PARLYZ_HEAL
-	db AWAKENING
 	db BURN_HEAL
+	db ICE_HEAL
+	db PARLYZ_HEAL
 	db -1 ; end
 
 MartVermilion:
-	db 8 ; # items
-	db ULTRA_BALL
+	db 7 ; # items
+	db POKE_BALL
 	db SUPER_POTION
-	db HYPER_POTION
-	db REVIVE
+	db ICE_HEAL
+	db AWAKENING
 	db PARLYZ_HEAL
 	db AWAKENING
-	db BURN_HEAL
-	db LITEBLUEMAIL
+	db REPEL
 	db -1 ; end
 
 MartCeladon2F1:
