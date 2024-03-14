@@ -71,6 +71,11 @@ LoadSpecialMapPalette:
 	call LoadGateKantoPalette
 	scf
 	ret
+	
+.mart_kanto
+	call LoadMartKantoPalette
+	scf
+	ret
 
 .do_nothing
 	and a
