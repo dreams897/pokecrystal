@@ -39,8 +39,8 @@ Route15_Blocks:
 Route19_Blocks:
 	INCBIN "maps/Route19.blk"
 
-Route10South_Blocks:
-	INCBIN "maps/Route10South.blk"
+Route10_Blocks:
+	INCBIN "maps/Route10.blk"
 
 Pokecenter2F_Blocks:
 CinnabarPokecenter2FBeta_Blocks:
@@ -280,16 +280,13 @@ SaffronMart_Blocks:
 CherrygroveMart_Blocks:
 	INCBIN "maps/Mart.blk"
 
-Route10North_Blocks:
-	INCBIN "maps/Route10North.blk"
-
 OlivinePokecenter1F_Blocks:
 MahoganyPokecenter1F_Blocks:
 EcruteakPokecenter1F_Blocks:
 BlackthornPokecenter1F_Blocks:
 CinnabarPokecenter1F_Blocks:
 CeruleanPokecenter1F_Blocks:
-Route10Pokecenter1F_Blocks:
+RockTunnelPokecenter_Blocks:
 AzaleaPokecenter1F_Blocks:
 VioletPokecenter1F_Blocks:
 Route32Pokecenter1F_Blocks:

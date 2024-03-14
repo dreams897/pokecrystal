@@ -37,7 +37,7 @@ KantoWaterWildMons:
 	db 15, SEAKING
 	end_water_wildmons
 
-	def_water_wildmons ROUTE_10_NORTH
+	def_water_wildmons ROUTE_10
 	db 4 percent ; encounter rate
 	db 15, GOLDEEN
 	db 10, GOLDEEN

@@ -239,14 +239,14 @@ ENDM
 
 	map_attributes ViridianCity, VIRIDIAN_CITY, $0f, NORTH | SOUTH | WEST
 	connection north, Route2, ROUTE_2, 5
-	connection south, Route1, ROUTE_1, 10
+	connection south, Route1, ROUTE_1, 5
 	connection west, Route22, ROUTE_22, 4
 
 	map_attributes Route22, ROUTE_22, $2c, EAST
 	connection east, ViridianCity, VIRIDIAN_CITY, -4
 
 	map_attributes Route1, ROUTE_1, $0f, NORTH | SOUTH
-	connection north, ViridianCity, VIRIDIAN_CITY, -10
+	connection north, ViridianCity, VIRIDIAN_CITY, -5
 	connection south, PalletTown, PALLET_TOWN, 0
 
 	map_attributes PalletTown, PALLET_TOWN, $0f, NORTH | SOUTH
@@ -263,66 +263,66 @@ ENDM
 
 	map_attributes Route20, ROUTE_20, $43, WEST | EAST
 	connection west, CinnabarIsland, CINNABAR_ISLAND, 0
-	connection east, Route19, ROUTE_19, -9
+	connection east, Route19, ROUTE_19, -18
 
 	map_attributes Route19, ROUTE_19, $43, NORTH | WEST
-	connection north, FuchsiaCity, FUCHSIA_CITY, 0
-	connection west, Route20, ROUTE_20, 9
+	connection north, FuchsiaCity, FUCHSIA_CITY, -5
+	connection west, Route20, ROUTE_20, 18
 
 	map_attributes FuchsiaCity, FUCHSIA_CITY, $0f, SOUTH | WEST | EAST
-	connection south, Route19, ROUTE_19, 0
-	connection west, Route18, ROUTE_18, 7
-	connection east, Route15, ROUTE_15, 9
+	connection south, Route19, ROUTE_19, 5
+	connection west, Route18, ROUTE_18, 4
+	connection east, Route15, ROUTE_15, 4
 
-	map_attributes Route18, ROUTE_18, $43, WEST | EAST
-	connection west, Route17, ROUTE_17, -38
-	connection east, FuchsiaCity, FUCHSIA_CITY, -7
+	map_attributes Route18, ROUTE_18, $43, NORTH | EAST
+	connection north, Route17, ROUTE_17, 0
+	connection east, FuchsiaCity, FUCHSIA_CITY, -4
 
-	map_attributes Route17, ROUTE_17, $43, NORTH | EAST
+	map_attributes Route17, ROUTE_17, $43, NORTH | SOUTH
 	connection north, Route16, ROUTE_16, 0
-	connection east, Route18, ROUTE_18, 38
+	connection south, Route18, ROUTE_18, 0
 
 	map_attributes Route16, ROUTE_16, $0f, SOUTH | EAST
 	connection south, Route17, ROUTE_17, 0
-	connection east, CeladonCity, CELADON_CITY, -9
+	connection east, CeladonCity, CELADON_CITY, -4
 
 	map_attributes CeladonCity, CELADON_CITY, $0f, WEST | EAST
-	connection west, Route16, ROUTE_16, 9
-	connection east, Route7, ROUTE_7, 5
+	connection west, Route16, ROUTE_16, 4
+	connection east, Route7, ROUTE_7, 4
 
 	map_attributes Route7, ROUTE_7, $0f, WEST | EAST
-	connection west, CeladonCity, CELADON_CITY, -5
-	connection east, SaffronCity, SAFFRON_CITY, -9
+	connection west, CeladonCity, CELADON_CITY, -4
+	connection east, SaffronCity, SAFFRON_CITY, -4
 
 	map_attributes Route15, ROUTE_15, $0f, WEST | EAST
-	connection west, FuchsiaCity, FUCHSIA_CITY, -9
-	connection east, Route14, ROUTE_14, -9
+	connection west, FuchsiaCity, FUCHSIA_CITY, -4
+	connection east, Route14, ROUTE_14, -18
 
-	map_attributes Route14, ROUTE_14, $43, NORTH | WEST
-	connection north, Route13, ROUTE_13, 0
-	connection west, Route15, ROUTE_15, 9
+	map_attributes Route14, ROUTE_14, $43, WEST | EAST
+	connection west, Route15, ROUTE_15, 18
+	connection east, Route13, ROUTE_13, 0
 
-	map_attributes Route13, ROUTE_13, $43, NORTH | SOUTH
+	map_attributes Route13, ROUTE_13, $43, NORTH | WEST
 	connection north, Route12, ROUTE_12, 20
-	connection south, Route14, ROUTE_14, 0
+	connection west, Route14, ROUTE_14, 0
 
 	map_attributes Route12, ROUTE_12, $43, NORTH | SOUTH | WEST
 	connection north, LavenderTown, LAVENDER_TOWN, 0
 	connection south, Route13, ROUTE_13, -20
-	connection west, Route11, ROUTE_11, 9
+	connection west, Route11, ROUTE_11, 27
 
 	map_attributes Route11, ROUTE_11, $0f, WEST | EAST
-	connection west, VermilionCity, VERMILION_CITY, 0
-	connection east, Route12, ROUTE_12, -9
+	connection west, VermilionCity, VERMILION_CITY, -4
+	connection east, Route12, ROUTE_12, -27
 
 	map_attributes LavenderTown, LAVENDER_TOWN, $2c, NORTH | SOUTH | WEST
-	connection north, Route10South, ROUTE_10_SOUTH, 0
+	connection north, Route10, ROUTE_10, 0
 	connection south, Route12, ROUTE_12, 0
 	connection west, Route8, ROUTE_8, 0
 
 	map_attributes VermilionCity, VERMILION_CITY, $43, NORTH | EAST
 	connection north, Route6, ROUTE_6, 5
-	connection east, Route11, ROUTE_11, 0
+	connection east, Route11, ROUTE_11, 4
 
 	map_attributes Route6, ROUTE_6, $0f, NORTH | SOUTH
 	connection north, SaffronCity, SAFFRON_CITY, -5
@@ -331,8 +331,8 @@ ENDM
 	map_attributes SaffronCity, SAFFRON_CITY, $0f, NORTH | SOUTH | WEST | EAST
 	connection north, Route5, ROUTE_5, 5
 	connection south, Route6, ROUTE_6, 5
-	connection west, Route7, ROUTE_7, 9
-	connection east, Route8, ROUTE_8, 9
+	connection west, Route7, ROUTE_7, 4
+	connection east, Route8, ROUTE_8, 4
 
 	map_attributes Route5, ROUTE_5, $0f, NORTH | SOUTH
 	connection north, CeruleanCity, CERULEAN_CITY, -5
@@ -344,9 +344,9 @@ ENDM
 	connection west, Route4, ROUTE_4, 4
 	connection east, Route9, ROUTE_9, 4
 
-	map_attributes Route9, ROUTE_9, $2c, SOUTH | WEST
-	connection south, Route10North, ROUTE_10_NORTH, 20
-	connection west, CeruleanCity, CERULEAN_CITY, -9
+	map_attributes Route9, ROUTE_9, $2c, WEST | EAST
+	connection west, CeruleanCity, CERULEAN_CITY, -4
+	connection east, Route10, ROUTE_10, 0
 
 	map_attributes Route24, ROUTE_24, $2c, SOUTH | EAST
 	connection south, CeruleanCity, CERULEAN_CITY, -5
@@ -364,16 +364,12 @@ ENDM
 	connection east, CeruleanCity, CERULEAN_CITY, -4
 
 	map_attributes Route8, ROUTE_8, $2c, WEST | EAST
-	connection west, SaffronCity, SAFFRON_CITY, -9
+	connection west, SaffronCity, SAFFRON_CITY, -4
 	connection east, LavenderTown, LAVENDER_TOWN, 0
 
-	map_attributes Route10North, ROUTE_10_NORTH, $2c, NORTH | SOUTH
-	connection north, Route9, ROUTE_9, -20
-	connection south, Route10South, ROUTE_10_SOUTH, 0
-
-	map_attributes Route10South, ROUTE_10_SOUTH, $2c, NORTH | SOUTH
-	connection north, Route10North, ROUTE_10_NORTH, 0
+	map_attributes Route10, ROUTE_10, $2c, SOUTH | WEST
 	connection south, LavenderTown, LAVENDER_TOWN, 0
+	connection west, Route9, ROUTE_9, 0
 
 	map_attributes Route23, ROUTE_23, $0f, 0
 	map_attributes SproutTower1F, SPROUT_TOWER_1F, $00, 0
@@ -508,8 +504,7 @@ ENDM
 	map_attributes CeruleanPokecenter2FBeta, CERULEAN_POKECENTER_2F_BETA, $00, 0
 	map_attributes CeruleanGym, CERULEAN_GYM, $00, 0
 	map_attributes CeruleanMart, CERULEAN_MART, $00, 0
-	map_attributes Route10Pokecenter1F, ROUTE_10_POKECENTER_1F, $00, 0
-	map_attributes Route10Pokecenter2FBeta, ROUTE_10_POKECENTER_2F_BETA, $00, 0
+	map_attributes RockTunnelPokecenter, ROCK_TUNNEL_POKECENTER, $00, 0
 	map_attributes PowerPlant, POWER_PLANT, $00, 0
 	map_attributes BillsHouse, BILLS_HOUSE, $00, 0
 	map_attributes AzaleaPokecenter1F, AZALEA_POKECENTER_1F, $00, 0

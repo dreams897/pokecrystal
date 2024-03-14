@@ -181,7 +181,7 @@ KantoGrassWildMons:
 	db 4, RATTATA
 	db 5, PIDGEY
 	; day
-	db 3, PIDGEY
+	db 100, MEW
 	db 3, RATTATA
 	db 2, RATTATA
 	db 2, PIDGEY
@@ -422,7 +422,7 @@ KantoGrassWildMons:
 	db 18, RATICATE
 	end_grass_wildmons
 
-	def_grass_wildmons ROUTE_10_NORTH
+	def_grass_wildmons ROUTE_10
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 15, SPEAROW

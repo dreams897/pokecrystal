@@ -273,8 +273,7 @@ INCLUDE "maps/CeruleanPokecenter1F.asm"
 INCLUDE "maps/CeruleanPokecenter2FBeta.asm"
 INCLUDE "maps/CeruleanGym.asm"
 INCLUDE "maps/CeruleanMart.asm"
-INCLUDE "maps/Route10Pokecenter1F.asm"
-INCLUDE "maps/Route10Pokecenter2FBeta.asm"
+INCLUDE "maps/RockTunnelPokecenter.asm"
 INCLUDE "maps/PowerPlant.asm"
 INCLUDE "maps/BillsHouse.asm"
 INCLUDE "maps/FightingDojo.asm"
@@ -471,7 +470,7 @@ INCLUDE "maps/Route5.asm"
 INCLUDE "maps/Route24.asm"
 INCLUDE "maps/Route3.asm"
 INCLUDE "maps/Route4.asm"
-INCLUDE "maps/Route10South.asm"
+INCLUDE "maps/Route10.asm"
 INCLUDE "maps/Route23.asm"
 INCLUDE "maps/SilverCavePokecenter1F.asm"
 INCLUDE "maps/Route28SteelWingHouse.asm"
@@ -480,7 +479,6 @@ INCLUDE "maps/Route28SteelWingHouse.asm"
 SECTION "Map Scripts 25", ROMX
 
 INCLUDE "maps/SilverCaveOutside.asm"
-INCLUDE "maps/Route10North.asm"
 
 SECTION "Map Scripts 26", ROMX
 

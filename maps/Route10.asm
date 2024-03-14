@@ -1,8 +1,8 @@
 	object_const_def
-	const ROUTE10SOUTH_POKEFAN_M1
-	const ROUTE10SOUTH_POKEFAN_M2
+	const ROUTE10_POKEFAN_M1
+	const ROUTE10_POKEFAN_M2
 
-Route10South_MapScripts:
+Route10_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
@@ -73,11 +73,14 @@ Route10SignText:
 	line "LAVENDER TOWN"
 	done
 
-Route10South_MapEvents:
+Route10_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  6,  1, ROCK_TUNNEL_1F, 2
+	warp_event 11, 19, ROCK_TUNNEL_POKECENTER, 1
+	warp_event  8, 17, ROCK_TUNNEL_1F, 1
+	warp_event  8, 53, ROCK_TUNNEL_1F, 3
+	warp_event  6, 39, POWER_PLANT, 1
 
 	def_coord_events
 
