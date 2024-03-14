@@ -3,6 +3,7 @@
 	const VIRIDIANCITY_GRAMPS2
 	const VIRIDIANCITY_FISHER
 	const VIRIDIANCITY_YOUNGSTER
+	const VIRIDIANCITY_HIDDEN_POTION
 
 ViridianCity_MapScripts:
 	def_scene_scripts
@@ -84,6 +85,9 @@ ViridianCityPokecenterSign:
 
 ViridianCityMartSign:
 	jumpstd MartSignScript
+	
+ViridianCityHiddenPotion:
+	hiddenitem POTION, EVENT_VIRIDIAN_CITY_HIDDEN_POTION
 
 ViridianCityCoffeeGrampsQuestionText:
 	text "Hey, kid! I just"
@@ -232,6 +236,7 @@ ViridianCity_MapEvents:
 	bg_event 20, 15, BGEVENT_READ, TrainerHouseSign
 	bg_event 24, 25, BGEVENT_READ, ViridianCityPokecenterSign
 	bg_event 30, 19, BGEVENT_READ, ViridianCityMartSign
+	bg_event 14,  4, BGEVENT_ITEM, ViridianCityHiddenPotion
 
 	def_object_events
 	object_event 18,  5, SPRITE_GAMBLER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ViridianCityCoffeeGramps, -1
