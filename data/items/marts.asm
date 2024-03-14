@@ -227,17 +227,14 @@ MartBlackthorn:
 	db -1 ; end
 
 MartViridian:
-	db 9 ; # items
-	db ULTRA_BALL
-	db HYPER_POTION
-	db FULL_HEAL
-	db REVIVE
+	db 4 ; # items
+	db POKE_BALL
 	db ANTIDOTE
 	db PARLYZ_HEAL
-	db AWAKENING
 	db BURN_HEAL
-	db FLOWER_MAIL
 	db -1 ; end
+	
+	POKE_BALL, ANTIDOTE, PARLYZ_HEAL, BURN_HEAL
 
 MartPewter:
 	db 7 ; # items
