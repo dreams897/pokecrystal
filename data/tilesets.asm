@@ -55,4 +55,5 @@ Tilesets::
 	tileset TilesetPokecenterKanto
 	tileset TilesetViridianForest
 	tileset TilesetGateKanto
+	tileset TilesetMartKanto
 	assert_table_length NUM_TILESETS + 1

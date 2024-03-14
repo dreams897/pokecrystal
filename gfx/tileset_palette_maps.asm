@@ -99,6 +99,9 @@ INCLUDE "gfx/tilesets/museum_palette_map.asm"
 TilesetPokecenterKantoPalMap:
 INCLUDE "gfx/tilesets/pokecenter_kanto_palette_map.asm"
 
+TilesetMartKantoPalMap:
+INCLUDE "gfx/tilesets/mart_kanto_palette_map.asm"
+
 TilesetIcePathPalMap:
 INCLUDE "gfx/tilesets/ice_path_palette_map.asm"
 

@@ -18,6 +18,8 @@ LoadSpecialMapPalette:
 	jr z, .pokecenter_kanto
 	cp TILESET_GATE_KANTO
 	jr z, .gate_kanto
+	cp TILESET_MART_KANTO
+	jr z, .mart_kanto
 	jr .do_nothing
 
 .pokecom_2f
@@ -187,4 +189,15 @@ LoadGateKantoPalette:
 
 GateKantoPalette:
 INCLUDE "gfx/tilesets/gate_kanto.pal"
+
+
+LoadMartKantoPalette:
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
+	ld hl, MartKantoPalette
+	ld bc, 8 palettes
+	jp FarCopyWRAM
+
+MartKantoPalette:
+INCLUDE "gfx/tilesets/mart_kanto.pal"
 

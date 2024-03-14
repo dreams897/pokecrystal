@@ -379,3 +379,12 @@ INCBIN "data/tilesets/gate_kanto_metatiles.bin"
 
 TilesetGateKantoColl::
 INCLUDE "data/tilesets/gate_kanto_collision.asm"
+
+TilesetMartKantoGFX::
+INCBIN "gfx/tilesets/mart_kanto.2bpp.lz"
+
+TilesetMartKantoMeta::
+INCBIN "data/tilesets/mart_kanto_metatiles.bin"
+
+TilesetMartKantoColl::
+INCLUDE "data/tilesets/mart_kanto_collision.asm"

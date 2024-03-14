@@ -280,6 +280,7 @@ TilesetHouseKantoAnim:
 TilesetPokecenterKantoAnim:
 TilesetViridianForestAnim:
 TilesetGateKantoAnim:
+TilesetMartKantoAnim:
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
