@@ -120,17 +120,13 @@ DifficultBookshelfText:
 	done
 
 PictureBookshelfText:
-	text "A whole collection"
-	line "of #MON picture"
-	cont "books!"
+	text "Crammed full of"
+	line "#MON books!"
 	done
 
 MagazineBookshelfText:
-	text "#MON magazines…"
-	line "#MON PAL,"
-
-	para "#MON HANDBOOK,"
-	line "#MON GRAPH…"
+	text "Crammed full of"
+	line "#MON books!"
 	done
 
 TeamRocketOathText:
@@ -160,7 +156,7 @@ MerchandiseShelfText:
 	done
 
 LookTownMapText:
-	text "It's the TOWN MAP."
+	text "A TOWN MAP."
 	done
 
 WindowText:
