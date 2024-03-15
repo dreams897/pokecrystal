@@ -1018,7 +1018,7 @@ MobileTradeAnim_05:
 	ld a, SPRITE_ANIM_OBJ_MOBILE_TRADE_OT_PULSE
 	call InitSpriteAnimStruct
 	call GetMobileTradeAnimByte
-	ld de, SFX_THROW_BALL
+	ld de, SFX_BALL_TOSS
 	call PlaySFX
 	ret
 
@@ -1039,7 +1039,7 @@ MobileTradeAnim_07:
 	ld a, SPRITE_ANIM_OBJ_MOBILE_TRADE_OT_PULSE
 	call InitSpriteAnimStruct
 	call GetMobileTradeAnimByte
-	ld de, SFX_THROW_BALL
+	ld de, SFX_BALL_TOSS
 	call PlaySFX
 	ret
 

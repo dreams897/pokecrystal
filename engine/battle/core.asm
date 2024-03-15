@@ -2582,7 +2582,7 @@ PlayVictoryMusic:
 	ld de, MUSIC_NONE
 	call PlayMusic
 	call DelayFrame
-	ld de, MUSIC_WILD_VICTORY
+	ld de, MUSIC_DEFEATED_WILD_MON
 	ld a, [wBattleMode]
 	dec a
 	jr nz, .trainer_victory
@@ -2600,7 +2600,7 @@ PlayVictoryMusic:
 	jr .play_music
 
 .trainer_victory
-	ld de, MUSIC_GYM_VICTORY
+	ld de, MUSIC_DEFEATED_GYM_LEADER
 	call IsGymLeader
 	jr c, .play_music
 	ld de, MUSIC_TRAINER_VICTORY
@@ -7614,7 +7614,7 @@ AnimateExpBar:
 .PlayExpBarSound:
 	push bc
 	call WaitSFX
-	ld de, SFX_EXP_BAR
+	ld de, SFX_HEAL_HP_1
 	call PlaySFX
 	ld c, 10
 	call DelayFrames

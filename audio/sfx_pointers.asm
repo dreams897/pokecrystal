@@ -258,7 +258,7 @@ SFX:
 	dba Sfx_Ball_Poof_Rby
 	dba Sfx_Faint_Thud
 	dba Sfx_Run_Rby
-	dba Sfx_Dex_Page_Added
+	dba Sfx_Dex_Page_Added_Rby
 	dba Sfx_Caught_Mon_Rby
 	dba Sfx_Peck_Rby
 	dba Sfx_Faint_Fall

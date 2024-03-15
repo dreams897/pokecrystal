@@ -1083,7 +1083,7 @@ Text_GotchaMonWasCaught:
 	ld de, MUSIC_NONE
 	call PlayMusic
 	call DelayFrame
-	ld de, MUSIC_CAPTURE
+	ld de, MUSIC_DEFEATED_WILD_MON
 	call PlayMusic
 	pop bc
 	ld hl, WaitButtonText

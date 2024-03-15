@@ -267,7 +267,7 @@
 	const SFX_BATTLE_0C
 	const SFX_BATTLE_0D
 	const SFX_BATTLE_0E
-	const SFX_BATTLE_0F
+	const SFX_BATTLE_0F ; splash
 	const SFX_DAMAGE_RBY
 	const SFX_NOT_VERY_EFFECTIVE_RBY
 	const SFX_BATTLE_12
@@ -280,7 +280,7 @@
 	const SFX_BATTLE_19
 	const SFX_SUPER_EFFECTIVE_RBY
 	const SFX_BATTLE_1B
-	const SFX_BATTLE_1C
+	const SFX_BATTLE_1C ; poisonpowder?
 	const SFX_DOUBLESLAP_RBY
 	const SFX_BATTLE_1E
 	const SFX_HORN_DRILL
@@ -293,20 +293,20 @@
 	const SFX_BATTLE_26
 	const SFX_BATTLE_27
 	const SFX_BATTLE_28
-	const SFX_BATTLE_29
-	const SFX_BATTLE_2A
+	const SFX_BATTLE_29 ; blizzard
+	const SFX_BATTLE_2A ; surf
 	const SFX_BATTLE_2B
-	const SFX_BATTLE_2C
+	const SFX_BATTLE_2C ; hydropump
 	const SFX_PSYBEAM_RBY
 	const SFX_BATTLE_2E
-	const SFX_BATTLE_2F
+	const SFX_BATTLE_2F ; thundershock
 	const SFX_PSYCHIC_M
 	const SFX_BATTLE_31
 	const SFX_BATTLE_32
-	const SFX_BATTLE_33
+	const SFX_BATTLE_33 ; teleport
 	const SFX_BATTLE_34
-	const SFX_BATTLE_35
-	const SFX_BATTLE_36
+	const SFX_BATTLE_35 ; sing
+	const SFX_BATTLE_36 ; hyperbeam
 	const SFX_SILPH_SCOPE
 
 	const SFX_INTRO_LUNGE

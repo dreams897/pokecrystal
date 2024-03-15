@@ -54,7 +54,7 @@ Pokedex:
 	jr .main
 
 .exit
-	ld de, SFX_READ_TEXT_2
+	ld de, SFX_PRESS_AB_1
 	call PlaySFX
 	call WaitSFX
 	call ClearSprites

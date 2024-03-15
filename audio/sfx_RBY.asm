@@ -190,7 +190,7 @@ Sfx_Run_Rby:
 	channel_count 1
 	channel 8, Sfx_Run_Rby_Ch8
 
-Sfx_Dex_Page_Added:
+Sfx_Dex_Page_Added_Rby:
 	channel_count 2
 	channel 5, Sfx_Dex_Page_Added_Ch5
 	channel 6, Sfx_Dex_Page_Added_Ch6

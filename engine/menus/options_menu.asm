@@ -67,7 +67,7 @@ _Option:
 	jr .joypad_loop
 
 .ExitOptions:
-	ld de, SFX_TRANSACTION
+	ld de, SFX_PURCHASE_1
 	call PlaySFX
 	call WaitSFX
 	pop af

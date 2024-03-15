@@ -229,7 +229,7 @@ PCScript:
 	end
 
 ElevatorButtonScript:
-	playsound SFX_READ_TEXT_2
+	playsound SFX_PRESS_AB_1
 	pause 15
 	playsound SFX_ELEVATOR_END
 	end
@@ -1678,7 +1678,7 @@ CoinVendor_IntroScript:
 	givecoins 50
 	takemoney YOUR_MONEY, 1000
 	waitsfx
-	playsound SFX_TRANSACTION
+	playsound SFX_PURCHASE_1
 	farwritetext CoinVendor_Buy50CoinsText
 	waitbutton
 	sjump .loop
@@ -1691,7 +1691,7 @@ CoinVendor_IntroScript:
 	givecoins 500
 	takemoney YOUR_MONEY, 10000
 	waitsfx
-	playsound SFX_TRANSACTION
+	playsound SFX_PURCHASE_1
 	farwritetext CoinVendor_Buy500CoinsText
 	waitbutton
 	sjump .loop

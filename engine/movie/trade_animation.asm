@@ -1039,7 +1039,7 @@ TradeAnim_Poof:
 	call TradeAnim_AdvanceScriptPointer
 	ld a, 16
 	ld [wFrameCounter], a
-	ld de, SFX_BALL_POOF
+	ld de, SFX_BALL_POOF_RBY
 	call PlaySFX
 	ret
 

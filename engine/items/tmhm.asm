@@ -480,7 +480,7 @@ Tutorial_TMHMPocket:
 
 TMHM_PlaySFX_ReadText2:
 	push de
-	ld de, SFX_READ_TEXT_2
+	ld de, SFX_PRESS_AB_1
 	call PlaySFX
 	pop de
 	ret

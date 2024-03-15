@@ -51,7 +51,7 @@ PokeGear:
 	jr .loop
 
 .done
-	ld de, SFX_READ_TEXT_2
+	ld de, SFX_PRESS_AB_1
 	call PlaySFX
 	call WaitSFX
 	pop af
@@ -1284,7 +1284,7 @@ GetAMPMHours: ; unreferenced
 	ret
 
 Pokegear_SwitchPage:
-	ld de, SFX_READ_TEXT_2
+	ld de, SFX_PRESS_AB_1
 	call PlaySFX
 	ld a, c
 	ld [wJumptableIndex], a

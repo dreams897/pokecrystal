@@ -13,7 +13,7 @@
 StartMenu::
 	call ClearWindowData
 
-	ld de, SFX_MENU
+	ld de, SFX_START_MENU_1
 	call PlaySFX
 
 	farcall ReanchorBGMap_NoOAMUpdate

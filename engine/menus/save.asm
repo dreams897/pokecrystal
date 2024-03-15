@@ -108,7 +108,7 @@ MoveMonWOMail_InsertMon_SaveGame:
 	farcall SaveRTC
 	call LoadBox
 	call ResumeGameLogic
-	ld de, SFX_SAVE
+	ld de, SFX_SAVE_1
 	call PlaySFX
 	ld c, 24
 	call DelayFrames
@@ -255,7 +255,7 @@ SavedTheGame:
 	; restore the original text speed setting
 	pop af
 	ld [wOptions], a
-	ld de, SFX_SAVE
+	ld de, SFX_SAVE_1
 	call WaitPlaySFX
 	call WaitSFX
 	; wait 30 frames

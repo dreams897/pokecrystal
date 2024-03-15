@@ -47,7 +47,7 @@ MonMenuLoop:
 	ld hl, w2DMenuFlags1
 	set 6, [hl]
 	call StaticMenuJoypad
-	ld de, SFX_READ_TEXT_2
+	ld de, SFX_PRESS_AB_1
 	call PlaySFX
 	ldh a, [hJoyPressed]
 	bit A_BUTTON_F, a
@@ -261,7 +261,7 @@ BattleMonMenu:
 	ld hl, w2DMenuFlags1
 	set 6, [hl]
 	call StaticMenuJoypad
-	ld de, SFX_READ_TEXT_2
+	ld de, SFX_PRESS_AB_1
 	call PlaySFX
 	ldh a, [hJoyPressed]
 	bit B_BUTTON_F, a
