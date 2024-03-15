@@ -1,19 +1,75 @@
 	object_const_def
-	const VIRIDIANCITY_GRAMPS1
-	const VIRIDIANCITY_GRAMPS2
+	const VIRIDIANCITY_GAMBLER1
+	const VIRIDIANCITY_GAMBLER2
 	const VIRIDIANCITY_FISHER
+	const VIRIDIANCITY_LASS
+	const VIRIDIANCITY_GAMBLER_ASLEEP
 	const VIRIDIANCITY_YOUNGSTER
 	const VIRIDIANCITY_HIDDEN_POTION
 
 ViridianCity_MapScripts:
 	def_scene_scripts
+	scene_script ViridianCityGamblerAsleepScene,   SCENE_VIRIDIAN_CITY_CANT_PASS
+	scene_script ViridianCityNoop2Scene, SCENE_VIRIDIAN_CITY_NOOP
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, ViridianCityFlypointCallback
+	
+ViridianCityNoop1Scene:
+	end
+	
+ViridianCityGamblerAsleepScene:
+	end
+
+ViridianCityNoop2Scene:
+	end
 
 ViridianCityFlypointCallback:
 	setflag ENGINE_FLYPOINT_VIRIDIAN
 	endcallback
+	
+ViridianCityOldManSleepyScript1:
+	opentext
+	writetext ViridianCityOldManSleepyPrivatePropertyText
+	waitbutton
+	closetext
+	applymovement PLAYER, ViridianCity_OldManSleepyMovement
+	end
+	
+ViridianCityOldManSleepyScript2:
+	opentext
+	writetext ViridianCityOldManSleepyPrivatePropertyText
+	waitbutton
+	closetext
+	end
+	
+ViridianCity_OldManSleepyMovement:
+	turn_head DOWN
+	step DOWN
+	step_end
+	
+ViridianCityLassScript:
+	faceplayer
+	opentext
+	writetext ViridianCityGirlHasntHadHisCoffeeYetText
+	waitbutton
+	closetext
+	end
+	
+ViridianCityGirlHasntHadHisCoffeeYetText:
+	text "Oh Grandpa! Don't"
+	line "be so mean!"
+	cont "He hasn't had his"
+	cont "coffee yet."
+	done
+	
+ViridianCityOldManSleepyPrivatePropertyText:
+	text "You can't go"
+	line "through here!"
+
+	para "This is private"
+	line "property!"
+	done
 
 ViridianCityCoffeeGramps:
 	faceplayer
@@ -228,6 +284,7 @@ ViridianCity_MapEvents:
 	warp_event 23, 25, VIRIDIAN_POKECENTER_1F, 1
 
 	def_coord_events
+	coord_event  19,  9, SCENE_VIRIDIAN_CITY_CANT_PASS, ViridianCityOldManSleepyScript1
 
 	def_bg_events
 	bg_event 17, 17, BGEVENT_READ, ViridianCitySign
@@ -242,4 +299,6 @@ ViridianCity_MapEvents:
 	object_event 18,  5, SPRITE_GAMBLER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ViridianCityCoffeeGramps, -1
 	object_event 30,  8, SPRITE_GAMBLER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ViridianCityGrampsNearGym, -1
 	object_event  6, 23, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ViridianCityDreamEaterFisher, -1
+	object_event 17,  9, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ViridianCityLassScript, -1
+	object_event 18,  9, SPRITE_GAMBLER_ASLEEP, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ViridianCityOldManSleepyScript2, -1
 	object_event 13, 20, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 3, 3, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ViridianCityYoungsterScript, -1

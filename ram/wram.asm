@@ -3113,7 +3113,8 @@ wMobileTradeRoomSceneID::                         db
 wMobileBattleRoomSceneID::                        db
 wPalletTownSceneID::                              db
 wOaksLabSceneID::				  db
-	ds 47
+wViridianCitySceneID::			  	  db
+	ds 46
 
 ; fight counts
 wJackFightCount::    db

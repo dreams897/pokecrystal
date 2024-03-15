@@ -105,6 +105,7 @@
 	const SPRITE_ENTEI ; 64
 	const SPRITE_RAIKOU ; 65
 	const SPRITE_OLD_AMBER; 66
+	const SPRITE_GAMBLER_ASLEEP ; 67
 DEF NUM_OVERWORLD_SPRITES EQU const_value - 1
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)

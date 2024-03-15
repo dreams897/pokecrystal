@@ -3,8 +3,6 @@ IrwinRumorScript:
 	iftrue .MtSilver
 	checkevent EVENT_FOUGHT_SNORLAX
 	iftrue .Snorlax
-	checkevent EVENT_GOT_PASS_FROM_COPYCAT
-	iftrue .TrainPass
 	checkflag ENGINE_MARSHBADGE
 	iftrue .MarshBadge
 	checkflag ENGINE_FLYPOINT_VERMILION
@@ -59,11 +57,6 @@ IrwinRumorScript:
 
 .VermilionCity:
 	farwritetext IrwinVermilionCityGossipText
-	promptbutton
-	sjump PhoneScript_HangUpText_Male
-
-.TrainPass:
-	farwritetext IrwinTrainPassGossipText
 	promptbutton
 	sjump PhoneScript_HangUpText_Male
 

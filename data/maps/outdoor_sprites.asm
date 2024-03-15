@@ -45,6 +45,8 @@ CinnabarGroupSprites:
 ; Route19, Route20, Route21, CinnabarIsland
 	db SPRITE_TEACHER
 	db SPRITE_FISHER
+	db SPRITE_LASS
+	db SPRITE_GAMBLER_ASLEEP
 	db SPRITE_YOUNGSTER
 	db SPRITE_BLUE
 	db SPRITE_GAMBLER

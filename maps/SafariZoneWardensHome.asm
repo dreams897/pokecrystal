@@ -9,15 +9,7 @@ SafariZoneWardensHome_MapScripts:
 WardensGranddaughter:
 	faceplayer
 	opentext
-	checkevent EVENT_TALKED_TO_WARDENS_GRANDDAUGHTER
-	iftrue .AlreadyMet
 	writetext WardensGranddaughterText1
-	waitbutton
-	closetext
-	setevent EVENT_TALKED_TO_WARDENS_GRANDDAUGHTER
-	end
-.AlreadyMet:
-	writetext WardensGranddaughterText2
 	waitbutton
 	closetext
 	end

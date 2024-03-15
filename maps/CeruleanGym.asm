@@ -48,7 +48,6 @@ CeruleanGymGruntRunsOutScript:
 	clearevent EVENT_ROUTE_25_MISTY_BOYFRIEND
 	setscene SCENE_CERULEANGYM_NOOP
 	setmapscene ROUTE_25, SCENE_ROUTE25_MISTYS_DATE
-	setmapscene POWER_PLANT, SCENE_POWERPLANT_NOOP
 	waitsfx
 	special RestartMapMusic
 	pause 15
