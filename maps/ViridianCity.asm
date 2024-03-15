@@ -54,6 +54,7 @@ ViridianCityGirlScript:
 	writetext ViridianCityGirlHasntHadHisCoffeeYetText
 	waitbutton
 	closetext
+	turnobject VIRIDIANCITY_GIRL, RIGHT
 	end
 	
 ViridianCityGirlHasntHadHisCoffeeYetText:
