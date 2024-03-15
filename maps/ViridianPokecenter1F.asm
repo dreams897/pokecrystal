@@ -39,6 +39,9 @@ ViridianPokecenter1FCooltrainerFScript:
 
 ViridianPokecenter1FBugCatcherScript:
 	jumptextfaceplayer ViridianPokecenter1FBugCatcherText
+	
+ViridianPokecenter1FLinkScript:
+	jumptextfaceplayer ViridianPokecenter1FLinkText
 
 ViridianPokecenter1FCooltrainerMText:
 	text "Where in the world"
@@ -74,6 +77,13 @@ ViridianPokecenter1FBugCatcherText:
 	text "My dream is to be-"
 	line "come a GYM LEADER."
 	done
+	
+ViridianPokecenter1FLinkText:
+	text "This area is"
+	line "reserved for 2"
+	cont "friends who are"
+	cont "linked by cable."
+	done
 
 ViridianPokecenter1F_MapEvents:
 	db 0, 0 ; filler
@@ -93,3 +103,4 @@ ViridianPokecenter1F_MapEvents:
 	object_event  8,  4, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ViridianPokecenter1FCooltrainerMScript, -1
 	object_event  5,  3, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ViridianPokecenter1FCooltrainerFScript, -1
 	object_event  1,  6, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ViridianPokecenter1FBugCatcherScript, -1
+	object_event  11, 2, SPRITE_OLD_LINK_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ViridianPokecenter1FLinkScript, -1
