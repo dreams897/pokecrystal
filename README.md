@@ -4,7 +4,7 @@
 ### Main Features:
 
 * First real attempt at porting Pokémon Red to the Crystal engine?!
-* A mostly vanilla take on Red Version with some updated features from different generations.
+* A mostly vanilla take on Red Version with many updated features from different generations.
 * All documented [bugs and glitches](https://pret.github.io/pokecrystal/bugs_and_glitches.html) fixed and all [design flaws](https://pret.github.io/pokecrystal/design_flaws.html) corrected for Crystal engine
 * 60fps and Running Shoes [branch](https://github.com/fellowship-of-the-roms/pokecrystal/tree/Doublespeed-60fps-Running-Shoes) merged
 * A set-able clock from the Menu
