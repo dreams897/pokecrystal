@@ -5,20 +5,75 @@
 
 ViridianMart_MapScripts:
 	def_scene_scripts
+	scene_script ViridianCityMartNoop1Scene,   SCENE_VIRIDIAN_CITY_MART_PARCEL
+	scene_script ViridianCityMartSayHiToOakScene,   SCENE_VIRIDIAN_CITY_MART_SAY_HI
 
 	def_callbacks
+	
+ViridianCityMartNoop1Scene:
+	end
+	
+ViridianCityMartSayHiToOakScene:
+	end
 
 ViridianMartClerkScript:
+	checkevent EVENT_GOT_OAKS_PARCEL
+	iftrue .viridian_mart_trade
+	opentext
+	writetext ViridianMartClerkYouCameFromPalletTownText
+	closetext
+	applymovement PLAYER, ViridianMartClerkMovement
+	opentext
+	writetext ViridianMartClerkParcelQuestText
+	verbosegiveitem OAKS_PARCEL
+	closetext
+	setevent EVENT_GOT_OAKS_PARCEL
+	setscene SCENE_VIRIDIAN_CITY_MART_SAY_HI
+	end
+	
+.viridian_mart_trade:
 	opentext
 	pokemart MARTTYPE_STANDARD, MART_VIRIDIAN
 	closetext
 	end
+	
+ViridianMartClerkParcelQuestText:
+	text "You know PROF."
+	line "OAK, right?"
 
+	para "His order came in."
+	line "Will you take it"
+	cont "to him?"
+	
+	
+ViridianCityMartSayHiToOakSceneScript:
+	opentext
+	writetext ViridianMartClerkSayHiToOakText
+	closetext
+	end
+	
+ViridianMartClerkSayHiToOakText:
+	text "Okay! Say hi to"
+	line "PROF.OAK for me!"
+	done
+	
+	
+ViridianMartClerkMovement:
+	step UP
+	step UP
+	step LEFT
+	step_end
+	
 ViridianMartYoungsterScript:
 	jumptextfaceplayer ViridianMartYoungsterText
 
 ViridianMartCooltrainerMScript:
 	jumptextfaceplayer ViridianMartCooltrainerMText
+	
+ViridianMartClerkYouCameFromPalletTownText:
+	text "Hey! You came from"
+	line "PALLET TOWN?"
+	done
 
 ViridianMartYoungsterText:
 	text "This shop sells"
@@ -38,6 +93,8 @@ ViridianMart_MapEvents:
 	warp_event  3,  7, VIRIDIAN_CITY, 4
 
 	def_coord_events
+	coord_event  3,  7, SCENE_VIRIDIAN_CITY_MART_PARCEL, ViridianMartClerkScript
+	coord_event  0,  5, SCENE_VIRIDIAN_CITY_MART_SAY_HI, ViridianCityMartSayHiToOakSceneScript
 
 	def_bg_events
 
