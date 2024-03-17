@@ -10,7 +10,7 @@
 ViridianCity_MapScripts:
 	def_scene_scripts
 	scene_script ViridianCityGamblerAsleepScene,   SCENE_VIRIDIAN_CITY_CANT_PASS
-	scene_script ViridianCityNoop2Scene, SCENE_VIRIDIAN_CITY_NOOP
+	scene_script ViridianCityNoopScene, SCENE_VIRIDIAN_CITY_NOOP
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, ViridianCityFlypointCallback
@@ -21,7 +21,7 @@ ViridianCityNoop1Scene:
 ViridianCityGamblerAsleepScene:
 	end
 
-ViridianCityNoop2Scene:
+ViridianCityNoopScene:
 	end
 
 ViridianCityFlypointCallback:
