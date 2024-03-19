@@ -358,7 +358,7 @@ WaterStoneDesc:
 
 OaksParcelDesc:
 	db   "A parcel belonging"
-	next "to PROF.OAK."
+	next "to PROF.OAK.@"
 
 HPUpDesc:
 	db   "Raises the HP of"

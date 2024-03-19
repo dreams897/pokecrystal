@@ -87,4 +87,5 @@ MapScenes::
 	scene_var PALLET_TOWN,                                 wPalletTownSceneID
 	scene_var OAKS_LAB,                                    wOaksLabSceneID
 	scene_var VIRIDIAN_CITY,			       wViridianCitySceneID
+	scene_var VIRIDIAN_MART,                               wViridianMartSceneID
 	db -1 ; end
