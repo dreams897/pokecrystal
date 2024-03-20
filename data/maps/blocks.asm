@@ -819,6 +819,12 @@ RockTunnelB1F_Blocks:
 
 DiglettsCave_Blocks:
 	INCBIN "maps/DiglettsCave.blk"
+	
+DiglettsCaveRoute2_Blocks:
+	INCBIN "maps/DiglettsCaveRoute2.blk"
+	
+DiglettsCaveRoute11_Blocks:
+	INCBIN "maps/DiglettsCaveRoute11.blk"
 
 MountMoon_Blocks:
 	INCBIN "maps/MountMoon.blk"

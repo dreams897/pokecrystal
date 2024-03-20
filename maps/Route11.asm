@@ -56,6 +56,9 @@ TrainerPsychicFidel:
 
 Route11Sign:
 	jumptext Route11SignText
+	
+DiglettsCaveSign:
+	jumptext VermilionCityDiglettsCaveSignText
 
 Route11FruitTree:
 	fruittree FRUITTREE_ROUTE_11
@@ -142,17 +145,23 @@ PsychicFidelAfterBattleText:
 Route11SignText:
 	text "ROUTE 11"
 	done
+	
+VermilionCityDiglettsCaveSignText:
+	text "DIGLETT'S CAVE"
+	done
 
 Route11_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
+	warp_event  4,  5, DIGLETTS_CAVE_ROUTE_11, 1
 
 	def_coord_events
 
 	def_bg_events
 	bg_event  3,  7, BGEVENT_READ, Route11Sign
 	bg_event 32,  5, BGEVENT_ITEM, Route11HiddenRevive
+	bg_event  1,  5, BGEVENT_READ, DiglettsCaveSign
 
 	def_object_events
 	object_event 22, 14, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerYoungsterOwen, -1
