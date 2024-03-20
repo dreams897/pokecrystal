@@ -3,6 +3,9 @@ PewterMuseum2F_MapScripts:
 
 	def_callbacks
 	
+PewterMuseum2FSpaceShuttleSignpostScript:
+	jumptext PewterMuseum2FSpaceShuttleSignpostText
+	
 PewterMuseum2FSpaceShuttleSignpostText:
 	text "Space Shuttle"
 	done

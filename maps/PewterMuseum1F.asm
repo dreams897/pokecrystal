@@ -13,32 +13,25 @@ PewterMuseum1F_MapScripts:
 	def_callbacks
 	
 PewterMuseum1FEnterScript:
-	done
+	end
 	
 PewterMuseum1FNoopScene:
 	end
-	
-PewterMuseum1FFossil1:
-	done
-	
-PewterMuseum1FFossil2:
-	done
 
 PewterMuseum1F_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  10, 7, PEWTER_CITY, 6
-	warp_event  11, 7, PEWTER_CITY, 6
-	warp_event 16,  7, PEWTER_CITY, 7
-	warp_event 17,  7, PEWTER_CITY, 7
-	warp_event  7, 7,  PEWTER_MUSEUM_2F, 1
+	warp_event 10,  7, PEWTER_CITY, 1
+	warp_event 11,  7, PEWTER_CITY, 1
+	warp_event 16,  7, PEWTER_CITY, 2
+	warp_event 17,  7, PEWTER_CITY, 2
+	warp_event  7,  7, PEWTER_MUSEUM_2F, 1
+
 
 	def_coord_events
 
 	def_bg_events
-	bg_event  2,  3, BGEVENT_READ, PewterMuseum1FFossil1
-	bg_event  2,  6, BGEVENT_READ, PewterMuseum1FFossil2
 
 	def_object_events
 	object_event  12, 4, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterMuseum1FEnterScript, -1

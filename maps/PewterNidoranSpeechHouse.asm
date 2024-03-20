@@ -30,8 +30,8 @@ PewterNidoranSpeechHouse_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  2,  7, PEWTER_CITY, 1
-	warp_event  3,  7, PEWTER_CITY, 1
+	warp_event  2,  7, PEWTER_CITY, 4
+	warp_event  3,  7, PEWTER_CITY, 4
 
 	def_coord_events
 
