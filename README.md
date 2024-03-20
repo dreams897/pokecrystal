@@ -10,7 +10,7 @@
 * New post-game content and restored content that didn't make it into RBY (see list below)
 * Expanded tileset to fix some visual limitations that Gen 1 had
 * There will be 2 different tilesets (and possibly other things) to choose from - **Gen 1** and **Gen 2**
-* New ENBY (non-binary) player choice added in addtion to boy/girl!
+* New ENBY (non-binary) player choice added in addition to boy/girl!
 * Girl/Green/Leaf sprite changed to fit gen 1 look
 * Colored Poké Balls to match ball type and new Poké Ball sprite added
 * Only original 151 Pokémon are obtainable and will not be changed or expanded
