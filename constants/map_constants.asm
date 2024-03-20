@@ -201,7 +201,7 @@ ENDM
 	map_const CERULEAN_POKECENTER_1F,                       7,  4 ;  4
 	map_const CERULEAN_POKECENTER_2F_BETA,                  7,  4 ;  5
 	map_const CERULEAN_GYM,                                 5,  8 ;  6
-	map_const CERULEAN_MART,                                6,  4 ;  7
+	map_const CERULEAN_MART,                                4,  4 ;  7
 	map_const ROCK_TUNNEL_POKECENTER,                       7,  4 ;  8
 	map_const POWER_PLANT,                                 10,  9 ; 10
 	map_const BILLS_HOUSE,                                  4,  4 ; 11
@@ -287,7 +287,7 @@ ENDM
 	map_const VERMILION_POKECENTER_2F_BETA,                 7,  4 ;  6
 	map_const POKEMON_FAN_CLUB,                             5,  4 ;  7
 	map_const VERMILION_MAGNET_TRAIN_SPEECH_HOUSE,          4,  4 ;  8
-	map_const VERMILION_MART,                               6,  4 ;  9
+	map_const VERMILION_MART,                               4,  4 ;  9
 	map_const VERMILION_DIGLETTS_CAVE_SPEECH_HOUSE,         4,  4 ; 10
 	map_const VERMILION_GYM,                                5,  9 ; 11
 	map_const ROUTE_6_SAFFRON_GATE,                         5,  4 ; 12
@@ -308,7 +308,7 @@ ENDM
 	map_const PEWTER_CITY,                                 20, 18 ;  2
 	map_const PEWTER_NIDORAN_SPEECH_HOUSE,                  4,  4 ;  3
 	map_const PEWTER_GYM,                                   5,  7 ;  4
-	map_const PEWTER_MART,                                  6,  4 ;  5
+	map_const PEWTER_MART,                                  4,  4 ;  5
 	map_const PEWTER_POKECENTER_1F,                         7,  4 ;  6
 	map_const PEWTER_POKECENTER_2F_BETA,                    7,  4 ;  7
 	map_const PEWTER_SNOOZE_SPEECH_HOUSE,                   4,  4 ;  8
@@ -348,7 +348,7 @@ ENDM
 	map_const ROUTE_15,                                    30,  9 ;  3
 	map_const ROUTE_18,                                    25,  9 ;  4
 	map_const FUCHSIA_CITY,                                20, 18 ;  5
-	map_const FUCHSIA_MART,                                 6,  4 ;  6
+	map_const FUCHSIA_MART,                                 4,  4 ;  6
 	map_const SAFARI_ZONE_MAIN_OFFICE,                      4,  4 ;  7
 	map_const FUCHSIA_GYM,                                  5,  9 ;  8
 	map_const BILLS_BROTHERS_HOUSE,                         4,  4 ;  9
@@ -368,7 +368,7 @@ ENDM
 	map_const MR_FUJIS_HOUSE,                               5,  4 ;  7
 	map_const LAVENDER_SPEECH_HOUSE,                        4,  4 ;  8
 	map_const LAVENDER_NAME_RATER,                          4,  4 ;  9
-	map_const LAVENDER_MART,                                6,  4 ; 10
+	map_const LAVENDER_MART,                                4,  4 ; 10
 	map_const SOUL_HOUSE,                                   5,  4 ; 11
 	map_const LAV_RADIO_TOWER_1F,                          10,  4 ; 12
 	map_const ROUTE_8_SAFFRON_GATE,                         5,  4 ; 13
@@ -479,7 +479,7 @@ ENDM
 	map_const SAFFRON_CITY,                                20, 18 ;  2
 	map_const FIGHTING_DOJO,                                5,  6 ;  3
 	map_const SAFFRON_GYM,                                 10,  9 ;  4
-	map_const SAFFRON_MART,                                 6,  4 ;  5
+	map_const SAFFRON_MART,                                 4,  4 ;  5
 	map_const SAFFRON_POKECENTER_1F,                        7,  4 ;  6
 	map_const SAFFRON_POKECENTER_2F_BETA,                   7,  4 ;  7
 	map_const MR_PSYCHICS_HOUSE,                            4,  4 ;  8
