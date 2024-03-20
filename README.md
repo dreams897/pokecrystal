@@ -1,5 +1,5 @@
 # Pokémon Red Remastered
-### Pokémon Red ported to the Crystal engine with QOL updates, bug fixes and expanded post-game content.
+### Pokémon Red Version ported to the Crystal engine with QOL updates, bug fixes and expanded post-game content.
 
 ### Main Features:
 
