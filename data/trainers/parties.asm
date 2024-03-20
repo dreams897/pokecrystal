@@ -1510,9 +1510,8 @@ BugCatcherGroup:
 
 	; BUG_CATCHER (3)
 	db "ED@", TRAINERTYPE_NORMAL
-	db 30, BEEDRILL
-	db 30, BEEDRILL
-	db 30, BEEDRILL
+	db  7, KAKUNA
+	db  5, PIKACHU
 	db -1 ; end
 
 	; BUG_CATCHER (4)

@@ -42,6 +42,7 @@
 	const TILESET_VIRIDIAN_FOREST	   ; 28
 	const TILESET_GATE_KANTO           ; 29
 	const TILESET_MART_KANTO	       ; 30
+	const TILESET_CAVE_KANTO		   ; 31
 DEF NUM_TILESETS EQU const_value - 1
 
 ; wTileset struct size

@@ -281,6 +281,7 @@ TilesetPokecenterKantoAnim:
 TilesetViridianForestAnim:
 TilesetGateKantoAnim:
 TilesetMartKantoAnim:
+TilesetCaveKantoAnim:
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation

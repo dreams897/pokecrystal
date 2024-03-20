@@ -388,3 +388,12 @@ INCBIN "data/tilesets/mart_kanto_metatiles.bin"
 
 TilesetMartKantoColl::
 INCLUDE "data/tilesets/mart_kanto_collision.asm"
+
+TilesetCaveKantoGFX::
+INCBIN "gfx/tilesets/cave_kanto.2bpp.lz"
+
+TilesetCaveKantoMeta::
+INCBIN "data/tilesets/cave_kanto_metatiles.bin"
+
+TilesetCaveKantoColl::
+INCLUDE "data/tilesets/cave_kanto_collision.asm"
