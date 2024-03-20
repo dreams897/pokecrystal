@@ -599,7 +599,6 @@ SilverCaveRoom3_Blocks:
 	INCBIN "maps/SilverCaveRoom3.blk"
 
 MahoganyMart1F_Blocks:
-MountMoonGiftShop_Blocks:
 	INCBIN "maps/GiftShop.blk"
 
 TeamRocketBaseB1F_Blocks:
@@ -825,9 +824,18 @@ DiglettsCaveRoute2_Blocks:
 	
 DiglettsCaveRoute11_Blocks:
 	INCBIN "maps/DiglettsCaveRoute11.blk"
+	
+MtMoonPokecenter_Blocks:
+	INCBIN "maps/MtMoonPokecenter.blk"
 
-MountMoon_Blocks:
-	INCBIN "maps/MountMoon.blk"
+MtMoon1F_Blocks:
+	INCBIN "maps/MtMoon1F.blk"
+	
+MtMoonB1F_Blocks:
+	INCBIN "maps/MtMoonB1F.blk"
+	
+MtMoonB2F_Blocks:
+	INCBIN "maps/MtMoonB2F.blk"
 
 SeafoamGym_Blocks:
 	INCBIN "maps/SeafoamGym.blk"
@@ -874,9 +882,6 @@ CopycatsHouse2F_Blocks:
 
 GoldenrodFlowerShop_Blocks:
 	INCBIN "maps/GoldenrodFlowerShop.blk"
-
-MountMoonSquare_Blocks:
-	INCBIN "maps/MountMoonSquare.blk"
 
 WiseTriosRoom_Blocks:
 	INCBIN "maps/WiseTriosRoom.blk"

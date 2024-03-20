@@ -146,10 +146,12 @@ ENDM
 	map_const DRAGONS_DEN_B1F,                             20, 18 ; 81
 	map_const DRAGON_SHRINE,                                5,  5 ; 82
 	map_const TOHJO_FALLS,                                 15,  9 ; 83
-	map_const DIGLETTS_CAVE,                       		   20, 18 ; 84
-	map_const DIGLETTS_CAVE_ROUTE_11,						4,  4 ; Added
-	map_const DIGLETTS_CAVE_ROUTE_2,						4,  4 ; Added
-	map_const MOUNT_MOON,                                  15,  9 ; 85
+	map_const DIGLETTS_CAVE,                       	       20, 18 ; 84
+	map_const DIGLETTS_CAVE_ROUTE_11,			4,  4 ; Added
+	map_const DIGLETTS_CAVE_ROUTE_2,			4,  4 ; Added
+	map_const MT_MOON_1F,              		       20, 18 ; Added                     
+	map_const MT_MOON_B1F,				       14, 14 ; Added
+	map_const MT_MOON_B2F,				       20, 18 ; Added
 	map_const UNDERGROUND_PATH,                             3, 14 ; 86
 	map_const ROCK_TUNNEL_1F,                              15, 18 ; 87
 	map_const ROCK_TUNNEL_B1F,                             15, 18 ; 88
@@ -205,6 +207,7 @@ ENDM
 	map_const ROCK_TUNNEL_POKECENTER,                       7,  4 ;  8
 	map_const POWER_PLANT,                                 10,  9 ; 10
 	map_const BILLS_HOUSE,                                  4,  4 ; 11
+	map_const MT_MOON_POKECENTER,                           7,  4 ; Added
 	map_const ROUTE_4,                                     45,  9 ; 12
 	map_const ROUTE_9,                                     30,  9 ; 13
 	map_const ROUTE_24,                                    10,  18 ; 15
@@ -326,8 +329,6 @@ ENDM
 	map_const FAST_SHIP_B1F,                               16,  8 ;  7
 	map_const OLIVINE_PORT_PASSAGE,                        10,  9 ;  8
 	map_const VERMILION_PORT_PASSAGE,                      10,  9 ;  9
-	map_const MOUNT_MOON_SQUARE,                           15,  9 ; 10
-	map_const MOUNT_MOON_GIFT_SHOP,                         4,  4 ; 11
 	map_const TIN_TOWER_ROOF,                              10,  9 ; 12
 	endgroup
 

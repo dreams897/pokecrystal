@@ -172,27 +172,6 @@ EnterMapWarp:
 	call CheckIndoorMap
 	ret nz
 
-; MOUNT_MOON_SQUARE and TIN_TOWER_ROOF are outdoor maps within indoor maps.
-; Dig and Escape Rope should not take you to them.
-	ld a, [wPrevMapGroup]
-	cp GROUP_MOUNT_MOON_SQUARE
-	jr nz, .not_mt_moon_square_or_tin_tower_roof
-	assert GROUP_MOUNT_MOON_SQUARE == GROUP_TIN_TOWER_ROOF
-	ld a, [wPrevMapNumber]
-	cp MAP_MOUNT_MOON_SQUARE
-	ret z
-	cp MAP_TIN_TOWER_ROOF
-	ret z
-.not_mt_moon_square_or_tin_tower_roof
-
-	ld a, [wPrevWarp]
-	ld [wDigWarpNumber], a
-	ld a, [wPrevMapGroup]
-	ld [wDigMapGroup], a
-	ld a, [wPrevMapNumber]
-	ld [wDigMapNumber], a
-	ret
-
 .SetSpawn:
 	call GetMapEnvironment
 	call CheckOutdoorMap

@@ -3082,7 +3082,10 @@ wBattleTowerElevatorSceneID::                     db
 wBattleTowerHallwaySceneID::                      db
 wBattleTowerOutsideSceneID::                      db
 wRoute43GateSceneID::                             db
-wMountMoonSceneID::                               db
+wMtMoonPokecenterSceneID::                        db
+wMtMoon1FSceneID::                                db
+wMtMoonB1FSceneID::			          db
+wMtMoonB2FSceneID::				  db
 wSproutTower3FSceneID::                           db
 wTinTower1FSceneID::                              db
 wBurnedTower1FSceneID::                           db
@@ -3108,14 +3111,13 @@ wOlivinePortSceneID::                             db
 wVermilionPortSceneID::                           db
 wFastShip1FSceneID::                              db
 wFastShipB1FSceneID::                             db
-wMountMoonSquareSceneID::                         db
 wMobileTradeRoomSceneID::                         db
 wMobileBattleRoomSceneID::                        db
 wPalletTownSceneID::                              db
 wOaksLabSceneID::				  db
 wViridianCitySceneID::			  	  db
 wViridianMartSceneID::                            db
-	ds 45
+	ds 44
 
 ; fight counts
 wJackFightCount::    db

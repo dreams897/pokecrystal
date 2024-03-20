@@ -370,7 +370,8 @@ ENDM
 	map_attributes Route10, ROUTE_10, $2c, SOUTH | WEST
 	connection south, LavenderTown, LAVENDER_TOWN, 0
 	connection west, Route9, ROUTE_9, 0
-
+	
+	map_attributes MtMoonPokecenter, MT_MOON_POKECENTER, $00, 0
 	map_attributes Route23, ROUTE_23, $0f, 0
 	map_attributes SproutTower1F, SPROUT_TOWER_1F, $00, 0
 	map_attributes SproutTower2F, SPROUT_TOWER_2F, $00, 0
@@ -473,7 +474,9 @@ ENDM
 	map_attributes DiglettsCave, DIGLETTS_CAVE, $09, 0
 	map_attributes DiglettsCaveRoute2, DIGLETTS_CAVE_ROUTE_2, $09, 0
 	map_attributes DiglettsCaveRoute11, DIGLETTS_CAVE_ROUTE_11, $09, 0
-	map_attributes MountMoon, MOUNT_MOON, $09, 0
+	map_attributes MtMoon1F, MT_MOON_1F, $09, 0
+	map_attributes MtMoonB1F, MT_MOON_B1F, $09, 0
+	map_attributes MtMoonB2F, MT_MOON_B2F, $09, 0
 	map_attributes UndergroundPath, UNDERGROUND_PATH, $00, 0
 	map_attributes RockTunnel1F, ROCK_TUNNEL_1F, $09, 0
 	map_attributes RockTunnelB1F, ROCK_TUNNEL_B1F, $09, 0
@@ -583,8 +586,6 @@ ENDM
 	map_attributes FastShipB1F, FAST_SHIP_B1F, $00, 0
 	map_attributes OlivinePortPassage, OLIVINE_PORT_PASSAGE, $00, 0
 	map_attributes VermilionPortPassage, VERMILION_PORT_PASSAGE, $00, 0
-	map_attributes MountMoonSquare, MOUNT_MOON_SQUARE, $2d, 0
-	map_attributes MountMoonGiftShop, MOUNT_MOON_GIFT_SHOP, $00, 0
 	map_attributes TinTowerRoof, TIN_TOWER_ROOF, $00, 0
 	map_attributes IndigoPlateauPokecenter1F, INDIGO_PLATEAU_POKECENTER_1F, $00, 0
 	map_attributes WillsRoom, WILLS_ROOM, $00, 0
