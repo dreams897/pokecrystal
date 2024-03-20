@@ -16,7 +16,7 @@ MtMoonB1F_MapEvents:
 	warp_event 21, 17, MT_MOON_B2F, 2
 	warp_event 13, 27, MT_MOON_B2F, 3
 	warp_event 23,  3, MT_MOON_B2F, 4
-	warp_event 27,  3, MT_MOON_1F, 3
+	warp_event 27,  3, ROUTE_4, 3
 
 	def_coord_events
 
