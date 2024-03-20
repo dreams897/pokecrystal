@@ -1,5 +1,5 @@
 # Pokémon Red Remastered
-## A work-in-progress QOL port of Pokémon Red to the Crystal engine
+## A QOL port of Pokémon Red to the Crystal engine with bug fixes, improvements, and expanded content.
 
 ### Main Features:
 
