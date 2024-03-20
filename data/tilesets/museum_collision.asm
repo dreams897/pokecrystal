@@ -80,7 +80,7 @@
 	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 4f
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 50
 	tilecoll FLOOR, FLOOR, WALL, WALL ; 51
-	tilecoll FLOOR, FLOOR, FLOOR, STAIRCASE ; 52
+	tilecoll FLOOR, FLOOR, FLOOR, LADDER ; 52
 	tilecoll WALL, FLOOR, WALL, FLOOR ; 53
 	tilecoll FLOOR, WALL, FLOOR, WALL ; 54
 	tilecoll WALL, WALL, WALL, WALL ; 55
@@ -111,7 +111,7 @@
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 6e
 	tilecoll WALL, DOOR, FLOOR, FLOOR ; 6f
 	tilecoll FLOOR, FLOOR, FLOOR, WALL ; 70
-	tilecoll FLOOR, FLOOR, FLOOR, STAIRCASE ; 71
+	tilecoll FLOOR, FLOOR, FLOOR, LADDER ; 71
 	tilecoll FLOOR, FLOOR, WALL, WALL ; 72
 	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 73
 	tilecoll WALL, WALL, WALL, WALL ; 74
