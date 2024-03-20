@@ -5,7 +5,7 @@
 
 * A mostly vanilla take on Red Version with many updated features from different generations (see list below)
 * All documented [bugs and glitches](https://pret.github.io/pokecrystal/bugs_and_glitches.html) fixed and all [design flaws](https://pret.github.io/pokecrystal/design_flaws.html) corrected for Crystal engine
-* 60fps and Running Shoes [branch](https://github.com/fellowship-of-the-roms/pokecrystal/tree/Doublespeed-60fps-Running-Shoes) merged
+* 60fps and Running Shoes [branches](https://github.com/fellowship-of-the-roms/pokecrystal/tree/Doublespeed-60fps-Running-Shoes) merged
 * A set-able clock from the Menu
 * New post-game and restored content
 * Expanded tileset to fix some visual limitations that Gen 1 had
