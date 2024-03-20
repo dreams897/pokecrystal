@@ -102,6 +102,9 @@ INCLUDE "gfx/tilesets/pokecenter_kanto_palette_map.asm"
 TilesetMartKantoPalMap:
 INCLUDE "gfx/tilesets/mart_kanto_palette_map.asm"
 
+TilesetCaveKantoPalMap:
+INCLUDE "gfx/tilesets/cave_kanto_palette_map.asm"
+
 TilesetIcePathPalMap:
 INCLUDE "gfx/tilesets/ice_path_palette_map.asm"
 
