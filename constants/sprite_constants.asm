@@ -3,7 +3,7 @@
 	const_def
 	const SPRITE_NONE ; 00
 	const SPRITE_CHRIS ; 01
-	const SPRITE_CHRIS_BIKE ; 02
+	const SPRITE_RED_BIKE ; 02
 	const SPRITE_GAMEBOY_KID ; 03
 	const SPRITE_RIVAL ; 04
 	const SPRITE_OAK ; 05
