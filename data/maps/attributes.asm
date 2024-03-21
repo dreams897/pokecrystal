@@ -474,9 +474,9 @@ ENDM
 	map_attributes DiglettsCave, DIGLETTS_CAVE, $09, 0
 	map_attributes DiglettsCaveRoute2, DIGLETTS_CAVE_ROUTE_2, $09, 0
 	map_attributes DiglettsCaveRoute11, DIGLETTS_CAVE_ROUTE_11, $09, 0
-	map_attributes MtMoon1F, MT_MOON_1F, $09, 0
-	map_attributes MtMoonB1F, MT_MOON_B1F, $09, 0
-	map_attributes MtMoonB2F, MT_MOON_B2F, $09, 0
+	map_attributes MtMoon1F, MT_MOON_1F, $7D, 0
+	map_attributes MtMoonB1F, MT_MOON_B1F, $03, 0
+	map_attributes MtMoonB2F, MT_MOON_B2F, $7D, 0
 	map_attributes UndergroundPath, UNDERGROUND_PATH, $00, 0
 	map_attributes RockTunnel1F, ROCK_TUNNEL_1F, $09, 0
 	map_attributes RockTunnelB1F, ROCK_TUNNEL_B1F, $09, 0
