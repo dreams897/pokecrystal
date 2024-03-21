@@ -1644,7 +1644,7 @@ BikeFunction:
 	call PlayMusic
 	call DelayFrame
 	call MaxVolume
-	ld de, MUSIC_BICYCLE
+	ld de, MUSIC_BIKE_RIDING
 	ld a, e
 	ld [wMapMusic], a
 	call PlayMusic
