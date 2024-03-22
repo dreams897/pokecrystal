@@ -3108,7 +3108,17 @@ wVictoryRoadSceneID::                             db
 wDragonsDenB1FSceneID::                           db
 wDragonShrineSceneID::                            db
 wOlivinePortSceneID::                             db
-wVermilionPortSceneID::                           db
+wVermilionDockSceneID::                           db
+wSSAnne1FSceneID:: 				  db
+wSSAnne2FSceneID:: 				  db
+wSSAnne3FSceneID:: 				  db
+wSSAnneB1FSceneID:: 				  db
+wSSAnneBowSceneID:: 				  db
+wSSAnneKitchenSceneID:: 			  db
+wSSAnneCaptainsRoomSceneID:: 		          db
+wSSAnne1FRoomsSceneID:: 			  db
+wSSAnne2FRoomsSceneID:: 			  db
+wSSAnneB1FRoomsSceneID:: 			  db
 wFastShip1FSceneID::                              db
 wFastShipB1FSceneID::                             db
 wMobileTradeRoomSceneID::                         db
@@ -3117,7 +3127,7 @@ wPalletTownSceneID::                              db
 wOaksLabSceneID::				  db
 wViridianCitySceneID::			  	  db
 wViridianMartSceneID::                            db
-	ds 44
+	ds 34
 
 ; fight counts
 wJackFightCount::    db

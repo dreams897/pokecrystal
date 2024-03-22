@@ -81,7 +81,17 @@ MapScenes::
 	scene_var DRAGONS_DEN_B1F,                             wDragonsDenB1FSceneID
 	scene_var DRAGON_SHRINE,                               wDragonShrineSceneID
 	scene_var OLIVINE_PORT,                                wOlivinePortSceneID
-	scene_var VERMILION_PORT,                              wVermilionPortSceneID
+	scene_var VERMILION_DOCK,                              wVermilionDockSceneID
+	scene_var SS_ANNE_1F,                                  wSSAnne1FSceneID
+	scene_var SS_ANNE_2F,				       wSSAnne2FSceneID
+	scene_var SS_ANNE_3F,				       wSSAnne3FSceneID
+	scene_var SS_ANNE_B1F,				       wSSAnneB1FSceneID
+	scene_var SS_ANNE_BOW,			               wSSAnneBowSceneID
+	scene_var SS_ANNE_KITCHEN,			       wSSAnneKitchenSceneID
+	scene_var SS_ANNE_CAPTAINS_ROOM, 		       wSSAnneCaptainsRoomSceneID
+	scene_var SS_ANNE_1F_ROOMS,			       wSSAnne1FRoomsSceneID
+	scene_var SS_ANNE_2F_ROOMS,			       wSSAnne2FRoomsSceneID
+	scene_var SS_ANNE_B1F_ROOMS,			       wSSAnneB1FRoomsSceneID
 	scene_var FAST_SHIP_1F,                                wFastShip1FSceneID
 	scene_var FAST_SHIP_B1F,                               wFastShipB1FSceneID
 	scene_var MOBILE_TRADE_ROOM,                           wMobileTradeRoomSceneID

@@ -287,14 +287,15 @@ DungeonsGroupSprites:
 	db 0 ; end
 
 FastShipGroupSprites:
-; OlivinePort, VermilionPort, TinTowerRoof
+; OlivinePort, VermilionDock, TinTowerRoof
 	db SPRITE_SAILOR
 	db SPRITE_FISHING_GURU
-	db SPRITE_SUPER_NERD
-	db SPRITE_COOLTRAINER_F
+	db SPRITE_CAPTAIN
+	db SPRITE_WAITER
 	db SPRITE_YOUNGSTER
 	db SPRITE_FAIRY
-	; 6 of max 9 walking sprites
+	db SPRITE_GENTLEMAN
+	; 7 of max 9 walking sprites
 	db SPRITE_HO_OH
 	db SPRITE_ROCK
 	db 0 ; end

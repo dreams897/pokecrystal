@@ -730,8 +730,38 @@ FastShipCabins_SE_SSE_CaptainsCabin_Blocks:
 OlivinePort_Blocks:
 	INCBIN "maps/OlivinePort.blk"
 
-VermilionPort_Blocks:
-	INCBIN "maps/VermilionPort.blk"
+VermilionDock_Blocks:
+	INCBIN "maps/VermilionDock.blk"
+	
+SSAnne1F_Blocks:
+	INCBIN "maps/SSAnne1F.blk"
+	
+SSAnne2F_Blocks:
+	INCBIN "maps/SSAnne2F.blk"
+	
+SSAnne3F_Blocks:
+	INCBIN "maps/SSAnne3F.blk"
+	
+SSAnneB1F_Blocks:
+	INCBIN "maps/SSAnneB1F.blk"
+	
+SSAnneBow_Blocks:
+	INCBIN "maps/SSAnneBow.blk"
+	
+SSAnneKitchen_Blocks:
+	INCBIN "maps/SSAnneKitchen.blk"
+	
+SSAnneCaptainsRoom_Blocks:
+	INCBIN "maps/SSAnneCaptainsRoom.blk"
+	
+SSAnne1FRooms_Blocks:
+	INCBIN "maps/SSAnne1FRooms.blk"
+	
+SSAnne2FRooms_Blocks:
+	INCBIN "maps/SSAnne2FRooms.blk"
+	
+SSAnneB1FRooms_Blocks:
+	INCBIN "maps/SSAnneB1FRooms.blk"
 
 OlivineCafe_Blocks:
 SafariZoneMainOffice_Blocks:
@@ -847,7 +877,6 @@ VictoryRoadGate_Blocks:
 	INCBIN "maps/VictoryRoadGate.blk"
 
 OlivinePortPassage_Blocks:
-VermilionPortPassage_Blocks:
 	INCBIN "maps/PortPassage.blk"
 
 FuchsiaGym_Blocks:

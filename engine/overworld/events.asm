@@ -35,41 +35,6 @@ CheckEnabledMapEventsBit5:
 	bit 5, [hl]
 	ret
 
-DisableWarpsConnections: ; unreferenced
-	ld hl, wEnabledPlayerEvents
-	res 2, [hl]
-	ret
-
-DisableCoordEvents: ; unreferenced
-	ld hl, wEnabledPlayerEvents
-	res 1, [hl]
-	ret
-
-DisableStepCount: ; unreferenced
-	ld hl, wEnabledPlayerEvents
-	res 0, [hl]
-	ret
-
-DisableWildEncounters: ; unreferenced
-	ld hl, wEnabledPlayerEvents
-	res 4, [hl]
-	ret
-
-EnableWarpsConnections: ; unreferenced
-	ld hl, wEnabledPlayerEvents
-	set 2, [hl]
-	ret
-
-EnableCoordEvents: ; unreferenced
-	ld hl, wEnabledPlayerEvents
-	set 1, [hl]
-	ret
-
-EnableStepCount: ; unreferenced
-	ld hl, wEnabledPlayerEvents
-	set 0, [hl]
-	ret
-
 EnableWildEncounters:
 	ld hl, wEnabledPlayerEvents
 	set 4, [hl]
@@ -130,11 +95,6 @@ EnterMap:
 	ldh [hMapEntryMethod], a
 	ld a, MAPSTATUS_HANDLE
 	ld [wMapStatus], a
-	ret
-
-UnusedWait30Frames: ; unreferenced
-	ld c, 30
-	call DelayFrames
 	ret
 
 HandleMap:
@@ -456,11 +416,6 @@ CheckTimeEvents:
 	ld a, BANK(BugCatchingContestOverScript)
 	ld hl, BugCatchingContestOverScript
 	call CallScript
-	scf
-	ret
-
-.unused ; unreferenced
-	ld a, $8 ; ???
 	scf
 	ret
 
@@ -887,15 +842,10 @@ CountStep:
 	ld hl, wPoisonStepCount
 	ld a, [hl]
 	cp 4
-	jr c, .skip_poison
 	ld [hl], 0
 
 	farcall DoPoisonStep
 	jr c, .doscript
-
-.skip_poison
-	farcall DoBikeStep
-
 .done
 	xor a
 	ret
@@ -981,9 +931,6 @@ PlayerEventScriptPointers:
 	assert_table_length NUM_PLAYER_EVENTS + 1
 
 InvalidEventScript:
-	end
-
-UnusedPlayerEventScript: ; unreferenced
 	end
 
 HatchEggScript:
@@ -1262,72 +1209,6 @@ TryWildEncounter_BugContest:
 	ret c
 	ld a, 1
 	and a
-	ret
-
-DoBikeStep::
-	nop
-	nop
-	; If the bike shop owner doesn't have our number, or
-	; if we've already gotten the call, we don't have to
-	; be here.
-	ld hl, wStatusFlags2
-	bit STATUSFLAGS2_BIKE_SHOP_CALL_F, [hl]
-	jr z, .NoCall
-
-	; If we're not on the bike, we don't have to be here.
-	ld a, [wPlayerState]
-	cp PLAYER_BIKE
-	jr nz, .NoCall
-
-	; If we're not in an area of phone service, we don't
-	; have to be here.
-	call GetMapPhoneService
-	and a
-	jr nz, .NoCall
-
-	; Check the bike step count and check whether we've
-	; taken 65536 of them yet.
-	ld hl, wBikeStep
-	ld a, [hli]
-	ld d, a
-	ld e, [hl]
-	cp 255
-	jr nz, .increment
-	ld a, e
-	cp 255
-	jr z, .dont_increment
-
-.increment
-	inc de
-	ld [hl], e
-	dec hl
-	ld [hl], d
-
-.dont_increment
-	; If we've taken at least 1024 steps, have the bike
-	;  shop owner try to call us.
-	ld a, d
-	cp HIGH(1024)
-	jr c, .NoCall
-
-	; If a call has already been queued, don't overwrite
-	; that call.
-	ld a, [wSpecialPhoneCallID]
-	and a
-	jr nz, .NoCall
-
-	; Queue the call.
-	ld a, SPECIALCALL_BIKESHOP
-	ld [wSpecialPhoneCallID], a
-	xor a
-	ld [wSpecialPhoneCallID + 1], a
-	ld hl, wStatusFlags2
-	res STATUSFLAGS2_BIKE_SHOP_CALL_F, [hl]
-	scf
-	ret
-
-.NoCall:
-	xor a
 	ret
 
 INCLUDE "engine/overworld/cmd_queue.asm"

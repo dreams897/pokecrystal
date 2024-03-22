@@ -1,16 +1,16 @@
 	object_const_def
 
-OlivinePort_MapScripts:
+SSAnneBow_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-
-OlivinePort_MapEvents:
+	
+SSAnneBow_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event 11,  7, OLIVINE_PORT_PASSAGE, 5
-	warp_event  7, 23, FAST_SHIP_1F, 1
+	warp_event 13,  6, SS_ANNE_3F, 1
+	warp_event 13,  7, SS_ANNE_3F, 1
 
 	def_coord_events
 
