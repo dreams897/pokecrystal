@@ -282,6 +282,8 @@ TilesetViridianForestAnim:
 TilesetGateKantoAnim:
 TilesetMartKantoAnim:
 TilesetCaveKantoAnim:
+TilesetPortKantoAnim:
+TilesetShipKantoAnim:
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation

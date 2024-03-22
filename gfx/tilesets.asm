@@ -397,3 +397,23 @@ INCBIN "data/tilesets/cave_kanto_metatiles.bin"
 
 TilesetCaveKantoColl::
 INCLUDE "data/tilesets/cave_kanto_collision.asm"
+
+SECTION "Tileset Data 11", ROMX
+
+TilesetPortKantoGFX::
+INCBIN "gfx/tilesets/port_kanto.2bpp.lz"
+
+TilesetPortKantoMeta::
+INCBIN "data/tilesets/port_kanto_metatiles.bin"
+
+TilesetPortKantoColl::
+INCLUDE "data/tilesets/port_kanto_collision.asm"
+
+TilesetShipKantoGFX::
+INCBIN "gfx/tilesets/ship_kanto.2bpp.lz"
+
+TilesetShipKantoMeta::
+INCBIN "data/tilesets/ship_kanto_metatiles.bin"
+
+TilesetShipKantoColl::
+INCLUDE "data/tilesets/ship_kanto_collision.asm"
