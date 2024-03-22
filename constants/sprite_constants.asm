@@ -108,6 +108,15 @@
 	const SPRITE_GAMBLER_ASLEEP ; 67
 	const SPRITE_GIRL ; 68
 	const SPRITE_WAITER ; 69
+	const SPRITE_LITTLE_GIRL ; 70
+	const SPRITE_LITTLE_BOY ; 71
+	const SPRITE_WARDEN ; 72
+	const SPRITE_GUARD ; 73
+	const SPRITE_SILPH_PRESIDENT ; 74
+	const SPRITE_GIOVANNI ; 75
+	const SPRITE_SILPH_WORKER_F ; 76
+	const SPRITE_SILPH_WORKER_M ; 77
+	
 DEF NUM_OVERWORLD_SPRITES EQU const_value - 1
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)
