@@ -5,31 +5,34 @@
 
 ViridianMart_MapScripts:
 	def_scene_scripts
-	scene_script ViridianMartDefaultScene,   SCENE_VIRIDIANMART_DEFAULT
 	scene_script ViridianMartOaksParcelScene,   SCENE_VIRIDIANMART_OAKS_PARCEL
-	scene_script ViridianMartNoopScene,   SCENE_VIRIDIANMART_NOOP
+	scene_script ViridianMartNoop1Scene,   SCENE_VIRIDIANMART_DEFAULT
+	scene_script ViridianMartNoop2Scene,   SCENE_VIRIDIANMART_NOOP
 
 	def_callbacks
 	
-ViridianMartDefaultScene:
+ViridianMartOaksParcelScene:
+	sdefer ViridianMartParcelScript
+	end
+	
+ViridianMartNoop1Scene:
 	checkevent EVENT_GOT_OAKS_PARCEL
-	iffalse ViridianMartClerkScript
+	iftrue ViridianMartShopScript
+
+ViridianMartShopScript:
 	opentext
 	pokemart MARTTYPE_STANDARD, MART_VIRIDIAN
 	closetext
 	end
 	
-ViridianMartOaksParcelScene:
-	sdefer ViridianMartClerkScript
-	end
-	
-ViridianMartNoopScene:
+ViridianMartNoop2Scene:
+	jumptext ViridianMartClerkSayHiToOakText
 	end
 
-ViridianMartClerkScript:
+ViridianMartParcelScript:
 	opentext
 	writetext ViridianMartClerkYouCameFromPalletTownText
-	waitbutton
+	pause 15
 	closetext
 	applymovement PLAYER, ViridianMartClerkMovement
 	opentext
@@ -93,11 +96,11 @@ ViridianMart_MapEvents:
 	warp_event  3,  7, VIRIDIAN_CITY, 4
 
 	def_coord_events
-	coord_event  3,  7, SCENE_VIRIDIANMART_OAKS_PARCEL, ViridianMartOaksParcelScene
+	coord_event  3,  7, SCENE_VIRIDIANMART_OAKS_PARCEL, ViridianMartParcelScript
 
 	def_bg_events
 
 	def_object_events
-	object_event  0,  5, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ViridianMartClerkScript, -1
+	object_event  0,  5, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ViridianMartParcelScript, -1
 	object_event  5,  5, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ViridianMartCooltrainerMScript, -1
 	object_event  3,  3, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ViridianMartYoungsterScript, -1
