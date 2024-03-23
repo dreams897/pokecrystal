@@ -1615,20 +1615,20 @@ BugCatcherGroup:
 	db -1 ; end
 	
 	; BUG_CATCHER (20)
-	db "JOE@", TRAINERTYPE_NORMAL
+	db "CALEB@", TRAINERTYPE_NORMAL
 	db  6, WEEDLE
 	db  6, CATERPIE
 	db -1 ; end
 	
 	; BUG_CATCHER (21)
-	db "GREG1@", TRAINERTYPE_NORMAL
+	db "DYLAN@", TRAINERTYPE_NORMAL
 	db  7, WEEDLE
 	db  7, KAKUNA
 	db  7, WEEDLE
 	db -1 ; end
 	
 	; BUG_CATCHER (21)
-	db "MIKE1@", TRAINERTYPE_NORMAL
+	db "FORREST@", TRAINERTYPE_NORMAL
 	db  9, WEEDLE
 	db -1 ; end
 

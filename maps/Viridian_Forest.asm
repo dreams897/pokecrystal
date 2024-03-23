@@ -22,7 +22,7 @@ YoungsterViridianForest5Script:
 	end
 	
 TrainerYoungsterViridianForest1:
-	trainer BUG_CATCHER, JOE1, EVENT_BEAT_VIRIDIAN_FOREST_TRAINER_0, ViridianForestYoungster2SeenText, ViridianForestYoungster2BeatenText, 0, .Script
+	trainer BUG_CATCHER, CALEB, EVENT_BEAT_VIRIDIAN_FOREST_TRAINER_0, ViridianForestYoungster2SeenText, ViridianForestYoungster2BeatenText, 0, .Script
 	
 .Script:
 	endifjustbattled
@@ -33,7 +33,7 @@ TrainerYoungsterViridianForest1:
 	end
 	
 TrainerYoungsterViridianForest2:
-	trainer BUG_CATCHER, GREG1, EVENT_BEAT_VIRIDIAN_FOREST_TRAINER_1, ViridianForestYoungster3SeenText, ViridianForestYoungster3BeatenText, 0, .Script
+	trainer BUG_CATCHER, DYLAN, EVENT_BEAT_VIRIDIAN_FOREST_TRAINER_1, ViridianForestYoungster3SeenText, ViridianForestYoungster3BeatenText, 0, .Script
 	
 .Script:
 	endifjustbattled
@@ -44,7 +44,7 @@ TrainerYoungsterViridianForest2:
 	end
 	
 TrainerYoungsterViridianForest3:
-	trainer BUG_CATCHER, MIKE1, EVENT_BEAT_VIRIDIAN_FOREST_TRAINER_2, ViridianForestYoungster4SeenText, ViridianForestYoungster4BeatenText, 0, .Script
+	trainer BUG_CATCHER, FORREST, EVENT_BEAT_VIRIDIAN_FOREST_TRAINER_2, ViridianForestYoungster4SeenText, ViridianForestYoungster4BeatenText, 0, .Script
 	
 .Script:
 	endifjustbattled
