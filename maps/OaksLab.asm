@@ -53,6 +53,8 @@ ProfOakScript:
 	opentext
 	checkitem OAKS_PARCEL
 	iftrue OaksLabParcelScript
+	waitbutton
+	closetext
 	end
 	
 OaksAideScript:
@@ -67,7 +69,7 @@ OaksLabGirlScript:
 	faceplayer
 	opentext
 	writetext OaksLabGirlText
-	promptbutton
+	waitbutton
 	closetext
 	end
 	
@@ -75,13 +77,13 @@ OaksLabRivalScript:
 	faceplayer
 	opentext
 	writetext OaksLabRivalGrampsIsntAroundText
-	promptbutton
+	waitbutton
 	closetext
 	end
 	
 OaksLabParcelScript:
 	writetext OaksLabOak1ParcelThanksText
-	promptbutton
+	waitbutton
 	takeitem OAKS_PARCEL
 	closetext
 	setevent EVENT_OAK_GOT_PARCEL
@@ -99,6 +101,8 @@ OaksLabTryToLeaveScript:
 CharmanderPokeBallScript:
 	checkevent EVENT_GOT_A_POKEMON_FROM_OAK
 	iftrue LookAtOakPokeBallScript
+	checkevent EVENT_FOLLOWED_OAK_INTO_LAB
+	iffalse OakNotAroundPokeBallsScript
 	turnobject OAKSLAB_OAK, DOWN
 	reanchormap
 	pokepic CHARMANDER
@@ -129,6 +133,8 @@ CharmanderPokeBallScript:
 SquirtlePokeBallScript:
 	checkevent EVENT_GOT_A_POKEMON_FROM_OAK
 	iftrue LookAtOakPokeBallScript
+	checkevent EVENT_FOLLOWED_OAK_INTO_LAB
+	iffalse OakNotAroundPokeBallsScript
 	turnobject OAKSLAB_OAK, DOWN
 	reanchormap
 	pokepic SQUIRTLE
@@ -157,6 +163,8 @@ SquirtlePokeBallScript:
 BulbasaurPokeBallScript:
 	checkevent EVENT_GOT_A_POKEMON_FROM_OAK
 	iftrue LookAtOakPokeBallScript
+	checkevent EVENT_FOLLOWED_OAK_INTO_LAB
+	iffalse OakNotAroundPokeBallsScript
 	turnobject OAKSLAB_OAK, DOWN
 	reanchormap
 	pokepic BULBASAUR
@@ -194,6 +202,14 @@ LookAtOakPokeBallScript:
 	waitbutton
 	closetext
 	end
+	
+OakNotAroundPokeBallsScript:
+	opentext
+	writetext OaksLabThoseArePokeBallsText
+	waitbutton
+	closetext
+	end
+	
 	
 OakDirectionsScript:
 	turnobject PLAYER, UP
