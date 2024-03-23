@@ -18,7 +18,7 @@ ViridianMartNoop1Scene:
 	end
 	
 ViridianMartClerkScript:
-	checkevent EVENT_GOT_POKEDEX
+	checkevent EVENT_OAK_GOT_PARCEL
 	iffalse .Skip
 	opentext
 	pokemart MARTTYPE_STANDARD, MART_VIRIDIAN

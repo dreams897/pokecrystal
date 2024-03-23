@@ -87,6 +87,11 @@ OaksLabParcelScript:
 	takeitem OAKS_PARCEL
 	closetext
 	setevent EVENT_OAK_GOT_PARCEL
+	setevent EVENT_GAMBLER_ASLEEP
+	setevent EVENT_GAMBLER_GIRL_BLOCKING
+	clearevent EVENT_GAMBLER_AWAKE
+	setmapscene VIRIDIAN_MART, SCENE_VIRIDIANMART_NOOP
+	setmapscene VIRIDIAN_CITY, SCENE_VIRIDIAN_CITY_NOOP
 	end
 
 OaksLabTryToLeaveScript:
