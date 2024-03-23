@@ -68,10 +68,9 @@ GetWhiteoutSpawn:
 	farcall IsSpawnPoint
 	ld a, c
 	jr c, .yes
-	xor a ; Spawn home
+	ld a, SPAWN_PALLET
 
 .yes
-	ld a, SPAWN_PALLET
 	ld [wDefaultSpawnpoint], a
 	ret
-
+	

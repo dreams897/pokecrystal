@@ -191,9 +191,9 @@ EnterMapWarp:
 ; Respawn in Pokémon Centers.
 	call GetAnyMapTileset
 	ld a, c
-	cp TILESET_POKECENTER
+	cp TILESET_POKECENTER_KANTO
 	jr z, .pokecenter_pokecom
-	cp TILESET_POKECOM_CENTER
+	cp TILESET_POKECENTER_KANTO
 	jr z, .pokecenter_pokecom
 	ret
 .pokecenter_pokecom
