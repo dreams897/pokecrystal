@@ -6,8 +6,7 @@
 ViridianMart_MapScripts:
 	def_scene_scripts
 	scene_script ViridianMartOaksParcelScene,   SCENE_VIRIDIANMART_OAKS_PARCEL
-	scene_script ViridianMartNoop1Scene,   SCENE_VIRIDIANMART_DEFAULT
-	scene_script ViridianMartNoop2Scene,   SCENE_VIRIDIANMART_NOOP
+	scene_script ViridianMartNoop1Scene,   SCENE_VIRIDIANMART_NOOP
 
 	def_callbacks
 	
@@ -16,50 +15,38 @@ ViridianMartOaksParcelScene:
 	end
 	
 ViridianMartNoop1Scene:
-	checkevent EVENT_GOT_OAKS_PARCEL
-	iftrue ViridianMartShopScript
-
-ViridianMartShopScript:
+	end
+	
+ViridianMartClerkScript:
+	checkevent EVENT_GOT_POKEDEX
+	iffalse .Skip
 	opentext
 	pokemart MARTTYPE_STANDARD, MART_VIRIDIAN
 	closetext
 	end
-	
-ViridianMartNoop2Scene:
+.Skip
 	jumptext ViridianMartClerkSayHiToOakText
-	end
 
 ViridianMartParcelScript:
+	turnobject VIRIDIANMART_CLERK, DOWN
 	opentext
 	writetext ViridianMartClerkYouCameFromPalletTownText
 	pause 15
 	closetext
 	applymovement PLAYER, ViridianMartClerkMovement
+	turnobject VIRIDIANMART_CLERK, RIGHT
 	opentext
 	writetext ViridianMartClerkParcelQuestText
-	waitbutton
-	verbosegiveitem OAKS_PARCEL
+	giveitem OAKS_PARCEL
+	promptbutton
+	waitsfx
+	writetext ViridianMartGotParcelText
+	playsound SFX_GET_KEY_ITEM_1
+	waitsfx
 	closetext
 	setevent EVENT_GOT_OAKS_PARCEL
 	setscene SCENE_VIRIDIANMART_NOOP
 	end
-	
-ViridianMartClerkParcelQuestText:
-	text "You know PROF."
-	line "OAK, right?"
-
-	para "His order came in."
-	line "Will you take it"
-	cont "to him?"
-	done
-	
-ViridianCityMartSayHiToOakSceneScript:
-	jumptext ViridianMartClerkSayHiToOakText
-	
-ViridianMartClerkSayHiToOakText:
-	text "Okay! Say hi to"
-	line "PROF.OAK for me!"
-	done
 	
 ViridianMartClerkMovement:
 	step UP
@@ -77,6 +64,20 @@ ViridianMartClerkYouCameFromPalletTownText:
 	text "Hey! You came from"
 	line "PALLET TOWN?"
 	done
+	
+ViridianMartClerkParcelQuestText:
+	text "You know PROF."
+	line "OAK, right?"
+
+	para "His order came in."
+	line "Will you take it"
+	cont "to him?"
+	done
+	
+ViridianMartClerkSayHiToOakText:
+	text "Okay! Say hi to"
+	line "PROF.OAK for me!"
+	done
 
 ViridianMartYoungsterText:
 	text "This shop sells"
@@ -86,6 +87,11 @@ ViridianMartYoungsterText:
 ViridianMartCooltrainerMText:
 	text "No! POTIONs are"
 	line "all sold out."
+	done
+	
+ViridianMartGotParcelText:
+	text "<PLAYER> received"
+	line "OAK'S PARCEL!"
 	done
 
 ViridianMart_MapEvents:
@@ -101,6 +107,6 @@ ViridianMart_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  0,  5, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ViridianMartParcelScript, -1
+	object_event  0,  5, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ViridianMartClerkScript, -1
 	object_event  5,  5, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ViridianMartCooltrainerMScript, -1
 	object_event  3,  3, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ViridianMartYoungsterScript, -1
