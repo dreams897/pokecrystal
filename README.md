@@ -83,5 +83,6 @@
 
 * Everyone who contributed to the [pret Crystal repo](https://pret.github.io/pokecrystal/)
 * [lwelyk](https://github.com/lwelyk) for coding and support (this started as a fork of their work)
+* Th3Element05 for some scripts
 
 [Discord Channel](https://discord.gg/cSCDrA96yh) for updates and discussion
