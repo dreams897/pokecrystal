@@ -702,7 +702,8 @@ GetPlayerOrMonPalettePointer:
 .dude
 	ld hl, DudePalette
 	ret
-	
+
+DudePalette:
 INCLUDE "gfx/player/dude.pal"
 
 GetFrontpicPalettePointer:
