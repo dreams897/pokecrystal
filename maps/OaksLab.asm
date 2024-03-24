@@ -704,6 +704,8 @@ OaksLab_WalkUpToOakMovement:
 	step UP
 	step UP
 	step UP
+	step UP
+	step UP
 	step_end
 	
 Rival_LeaveMovement:
@@ -896,14 +898,14 @@ OaksLab_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  5, 11, PALLET_TOWN, 3
-	warp_event  4, 11, PALLET_TOWN, 3
+	warp_event  5, 13, PALLET_TOWN, 3
+	warp_event  4, 13, PALLET_TOWN, 3
 
 	def_coord_events
 	coord_event  4,  6, SCENE_OAKSLAB_CANT_LEAVE, OaksLabTryToLeaveScript
 	coord_event  5,  6, SCENE_OAKSLAB_CANT_LEAVE, OaksLabTryToLeaveScript
-	coord_event  4,  8, SCENE_OAKSLAB_AIDE_GIVES_POKE_BALLS, OakAideScript_WalkBalls1
-	coord_event  5,  8, SCENE_OAKSLAB_AIDE_GIVES_POKE_BALLS, OakAideScript_WalkBalls2
+	coord_event  4,  9, SCENE_OAKSLAB_AIDE_GIVES_POKE_BALLS, OakAideScript_WalkBalls1
+	coord_event  5,  9, SCENE_OAKSLAB_AIDE_GIVES_POKE_BALLS, OakAideScript_WalkBalls2
 
 	def_bg_events
 	bg_event  6,  1, BGEVENT_READ, OaksLabBookshelf
@@ -919,13 +921,13 @@ OaksLab_MapEvents:
 	bg_event  8,  7, BGEVENT_READ, OaksLabBookshelf
 	bg_event  9,  7, BGEVENT_READ, OaksLabBookshelf
 	bg_event  9,  3, BGEVENT_READ, OaksLabTrashcan
-	bg_event  0,  1, BGEVENT_DOWN, OaksLabPC
+	bg_event  0,  2, BGEVENT_DOWN, OaksLabPC
 
 	def_object_events
 	object_event  5,  2, SPRITE_OAK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ProfOakScript, -1
-	object_event  0, 10, SPRITE_GIRL, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, OaksLabGirlScript, -1
-	object_event  2,  9, SPRITE_SCIENTIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, OaksAideScript, EVENT_OAKS_AIDE_IN_LAB
-	object_event  8,  9, SPRITE_SCIENTIST, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, OaksAideScript, -1
+	object_event  0, 12, SPRITE_GIRL, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, OaksLabGirlScript, -1
+	object_event  2, 11, SPRITE_SCIENTIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, OaksAideScript, EVENT_OAKS_AIDE_IN_LAB
+	object_event  8, 11, SPRITE_SCIENTIST, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, OaksAideScript, -1
 	object_event  4,  3, SPRITE_BLUE, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OaksLabRivalScript, -1
 	object_event  6,  3, SPRITE_POKE_BALL_2, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CharmanderPokeBallScript, EVENT_GOT_A_CHARMANDER_FROM_OAK
 	object_event  7,  3, SPRITE_POKE_BALL_2, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SquirtlePokeBallScript, EVENT_GOT_A_SQUIRTLE_FROM_OAK
