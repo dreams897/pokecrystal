@@ -704,8 +704,6 @@ OaksLab_WalkUpToOakMovement:
 	step UP
 	step UP
 	step UP
-	step UP
-	step UP
 	step_end
 	
 Rival_LeaveMovement:
