@@ -121,4 +121,6 @@ SilphPresidentSpriteGFX::      INCBIN "gfx/sprites/silph_president.2bpp"
 GiovanniSpriteGFX::            INCBIN "gfx/sprites/giovanni.2bpp"
 SilphWorkerFSpriteGFX::        INCBIN "gfx/sprites/silph_worker_f.2bpp"
 SilphWorkerMSpriteGFX::        INCBIN "gfx/sprites/silph_worker_m.2bpp"
+EnbySpriteGFX::                INCBIN "gfx/sprites/enby.2bpp"
+EnbyBikeSpriteGFX::            INCBIN "gfx/sprites/enby_bike.2bpp"
 

@@ -116,6 +116,8 @@
 	const SPRITE_GIOVANNI ; 75
 	const SPRITE_SILPH_WORKER_F ; 76
 	const SPRITE_SILPH_WORKER_M ; 77
+	const SPRITE_ENBY           ; 78
+	const SPRITE_ENBY_BIKE      ; 79
 	
 DEF NUM_OVERWORLD_SPRITES EQU const_value - 1
 
