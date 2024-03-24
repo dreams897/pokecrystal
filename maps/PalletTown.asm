@@ -83,6 +83,7 @@ OakTakesYouToLab:
 	setscene SCENE_PALLET_TOWN_NOOP
 	applymovement PLAYER, PalletTownPlayerWalkUp
 	warp OAKS_LAB, 5, 11
+	playsound SFX_GO_INSIDE_1 
 	setevent EVENT_FOLLOWED_OAK_INTO_LAB
 	end
 

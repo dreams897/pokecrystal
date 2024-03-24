@@ -85,12 +85,20 @@ OaksLabRivalScript:
 	opentext
 	checkevent EVENT_FOLLOWED_OAK_INTO_LAB
 	iffalse GrampsIsNotAroundScript
+	checkscene SCENE_OAKSLAB_CANT_LEAVE
+	iftrue OaksLabRivalGoAheadAndChooseScript
 	waitbutton
 	closetext
 	end
 	
 GrampsIsNotAroundScript:
 	writetext OaksLabRivalGrampsIsntAroundText
+	waitbutton
+	closetext
+	end
+	
+OaksLabRivalGoAheadAndChooseScript:
+	writetext OaksLabRivalGoAheadAndChooseText
 	waitbutton
 	closetext
 	end
@@ -105,6 +113,7 @@ OaksLabParcelScript:
 	pause 15
 	writetext OaksLabRivalGrampsText
 	waitbutton
+	turnobject OAKSLAB_BLUE, UP
 	writetext OaksLabRivalWhatDidYouCallMeForText
 	waitbutton
 	writetext OaksLabOakIHaveARequestText
@@ -119,9 +128,14 @@ OaksLabParcelScript:
 	writetext OaksLabOakThatWasMyDreamText
 	waitbutton
 	turnobject PLAYER, LEFT
+	turnobject OAKSLAB_BLUE, RIGHT
 	writetext OaksLabRivalLeaveItAllToMeText
 	waitbutton
 	closetext
+	applymovement OAKSLAB_BLUE, Rival_LeaveMovement
+	playmusic MUSIC_MEET_RIVAL
+	disappear OAKSLAB_BLUE
+	special RestartMapMusic
 	setevent EVENT_GAMBLER_ASLEEP
 	setevent EVENT_GAMBLER_GIRL_BLOCKING
 	clearevent EVENT_GAMBLER_AWAKE
@@ -249,15 +263,7 @@ OakNotAroundPokeBallsScript:
 	writetext OaksLabThoseArePokeBallsText
 	waitbutton
 	closetext
-	end
-	
-PokeDexScript:
-	opentext
-	writetext OaksLabPokedexText
-	waitbutton
-	closetext
-	end
-	
+	end	
 	
 OakDirectionsScript:
 	turnobject PLAYER, UP
@@ -472,12 +478,6 @@ OaksLabOak1HowIsYourPokedexComingText:
 	cont "a look!"
 	prompt
 
-OaksLabPokedexText:
-	text "It's encyclopedia-"
-	line "like, but the"
-	cont "pages are blank!"
-	done
-
 OaksLabOak2Text:
 	text "?"
 	done
@@ -685,6 +685,9 @@ OaksLabTravelTip4:
 
 OaksLabTrashcan:
 	jumptext OaksLabTrashcanText
+	
+OaksLabPokeDex:
+	jumptext OaksLabPokedexText
 
 OaksLabPC:
 	jumptext OaksLabPCText
@@ -701,6 +704,14 @@ OaksLab_WalkUpToOakMovement:
 	step UP
 	step UP
 	step UP
+	step_end
+	
+Rival_LeaveMovement:
+	slow_step DOWN
+	slow_step DOWN
+	slow_step DOWN
+	slow_step DOWN
+	slow_step DOWN
 	step_end
 
 OaksLab_CantLeaveMovement:
@@ -809,6 +820,12 @@ OakPokeBallText:
 	line "#MON caught by"
 	cont "PROF.OAK."
 	done
+	
+OaksLabPokedexText:
+	text "It's encyclopedia-"
+	line "like, but the"
+	cont "pages are blank!"
+	done
 
 OakAideText_GiveYouBalls:
 	text "<PLAY_G>!"
@@ -913,5 +930,5 @@ OaksLab_MapEvents:
 	object_event  6,  3, SPRITE_POKE_BALL_2, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CharmanderPokeBallScript, EVENT_GOT_A_CHARMANDER_FROM_OAK
 	object_event  7,  3, SPRITE_POKE_BALL_2, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SquirtlePokeBallScript, EVENT_GOT_A_SQUIRTLE_FROM_OAK
 	object_event  8,  3, SPRITE_POKE_BALL_2, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BulbasaurPokeBallScript, EVENT_GOT_A_BULBASAUR_FROM_OAK
-	object_event  2,  1, SPRITE_POKEDEX, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PokeDexScript, EVENT_GOT_POKEDEX
-	object_event  3,  1, SPRITE_POKEDEX, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PokeDexScript, EVENT_GOT_POKEDEX
+	object_event  2,  1, SPRITE_POKEDEX, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OaksLabPokeDex, EVENT_GOT_POKEDEX
+	object_event  3,  1, SPRITE_POKEDEX, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OaksLabPokeDex, EVENT_GOT_POKEDEX
