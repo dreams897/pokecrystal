@@ -135,6 +135,14 @@ GetChrisBackpic:
 	predef DecompressGet2bpp
 	ret
 
+GetEnbyBackpic:
+	ld hl, EnbyBackpic
+	ld b, BANK(EnbyBackpic)
+	ld de, vTiles2 tile $31
+	ld c, 7 * 7
+	predef DecompressGet2bpp
+	ret
+
 HOF_LoadTrainerFrontpic:
 	call WaitBGMap
 	xor a
