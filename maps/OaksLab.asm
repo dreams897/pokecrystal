@@ -7,13 +7,15 @@
 	const OAKSLAB_POKE_BALL1
 	const OAKSLAB_POKE_BALL2
 	const OAKSLAB_POKE_BALL3
+	const OAKSLAB_POKE_DEX1
+	const OAKSLAB_POKE_DEX2
 
 OaksLab_MapScripts:
 	def_scene_scripts
 	scene_script OaksLabOakNotAroundScene, SCENE_OAKSLAB_OAK_NOT_AROUND
 	scene_script OaksLabNoop1Scene,   SCENE_OAKSLAB_CANT_LEAVE
 	scene_script OaksLabNoop2Scene,   SCENE_OAKSLAB_NOOP
-	scene_script OaksLabNoop4Scene,   SCENE_OAKSLAB_UNUSED
+	scene_script OaksLabNoop3Scene,   SCENE_OAKSLAB_UNUSED
 	scene_const SCENE_OAKSLAB_AIDE_GIVES_POKE_BALLS
 
 	def_callbacks
@@ -33,15 +35,12 @@ OaksLabNoop2Scene:
 OaksLabNoop3Scene:
 	end
 
-OaksLabNoop4Scene:
-	end
-
-OaksLabNoop5Scene:
-	end
-
 OaksLabWalkUpToOakScript:
 	applymovement PLAYER, OaksLab_WalkUpToOakMovement
+	turnobject OAKSLAB_BLUE, UP
 	opentext
+	writetext OaksLabRivalFedUpWithWaitingText
+	waitbutton
 	writetext OaksLabOakChooseMonText
 	waitbutton
 	setscene SCENE_OAKSLAB_CANT_LEAVE
@@ -53,6 +52,14 @@ ProfOakScript:
 	opentext
 	checkitem OAKS_PARCEL
 	iftrue OaksLabParcelScript
+	checkevent EVENT_GOT_A_POKEMON_FROM_OAK
+	iffalse WhichMonYouWantScript
+	waitbutton
+	closetext
+	end
+	
+WhichMonYouWantScript:
+	writetext OaksLabOak1WhichPokemonDoYouWantText
 	waitbutton
 	closetext
 	end
@@ -76,23 +83,52 @@ OaksLabGirlScript:
 OaksLabRivalScript:
 	faceplayer
 	opentext
+	checkevent EVENT_FOLLOWED_OAK_INTO_LAB
+	iffalse GrampsIsNotAroundScript
+	waitbutton
+	closetext
+	end
+	
+GrampsIsNotAroundScript:
 	writetext OaksLabRivalGrampsIsntAroundText
 	waitbutton
 	closetext
 	end
 	
 OaksLabParcelScript:
-	writetext OaksLabOak1ParcelThanksText
+	writetext OaksLabOak1DeliverParcelText
 	waitbutton
 	takeitem OAKS_PARCEL
-	closetext
 	setevent EVENT_OAK_GOT_PARCEL
+	writetext OaksLabOak1ParcelThanksText
+	waitbutton
+	pause 15
+	writetext OaksLabRivalGrampsText
+	waitbutton
+	writetext OaksLabRivalWhatDidYouCallMeForText
+	waitbutton
+	writetext OaksLabOakIHaveARequestText
+	waitbutton
+	writetext OaksLabOakMyInventionPokedexText
+	waitbutton
+	writetext OaksLabOakGotPokedexText
+	disappear OAKSLAB_POKE_DEX1
+	disappear OAKSLAB_POKE_DEX2
+	setevent EVENT_GOT_POKEDEX
+	waitbutton
+	writetext OaksLabOakThatWasMyDreamText
+	waitbutton
+	turnobject PLAYER, LEFT
+	writetext OaksLabRivalLeaveItAllToMeText
+	waitbutton
+	closetext
 	setevent EVENT_GAMBLER_ASLEEP
 	setevent EVENT_GAMBLER_GIRL_BLOCKING
 	clearevent EVENT_GAMBLER_AWAKE
 	setmapscene VIRIDIAN_MART, SCENE_VIRIDIANMART_NOOP
 	setmapscene VIRIDIAN_CITY, SCENE_VIRIDIAN_CITY_NOOP
 	end
+	
 
 OaksLabTryToLeaveScript:
 	turnobject OAKSLAB_OAK, DOWN
@@ -215,6 +251,13 @@ OakNotAroundPokeBallsScript:
 	closetext
 	end
 	
+PokeDexScript:
+	opentext
+	writetext OaksLabPokedexText
+	waitbutton
+	closetext
+	end
+	
 	
 OakDirectionsScript:
 	turnobject PLAYER, UP
@@ -225,26 +268,6 @@ OakDirectionsScript:
 	setevent EVENT_GOT_A_POKEMON_FROM_OAK
 	setscene SCENE_OAKSLAB_AIDE_GIVES_POKE_BALLS
 	setmapscene PALLET_TOWN, SCENE_PALLET_TOWN_NOOP
-	end
-
-OakJumpUpScript:
-	applymovement OAKSLAB_OAK, OakJumpUpMovement
-	opentext
-	end
-
-OakJumpDownScript:
-	applymovement OAKSLAB_OAK, OakJumpDownMovement
-	opentext
-	end
-
-OakJumpLeftScript:
-	applymovement OAKSLAB_OAK, OakJumpLeftMovement
-	opentext
-	end
-
-OakJumpRightScript:
-	applymovement OAKSLAB_OAK, OakJumpRightMovement
-	opentext
 	end
 
 OakAideScript_WalkBalls1:
@@ -340,7 +363,7 @@ OaksLabReceivedMonText:
 	line "a @"
 	text_ram wcd6d
 	text "!@"
-	text_end
+	done
 
 OaksLabLastMonText:
 	text "That's PROF.OAK's"
@@ -388,8 +411,7 @@ OaksLabOak1DeliverParcelText:
 	text_end
 
 OaksLabOak1ParcelThanksText:
-	text_start
-	para "Ah! This is the"
+	text "Ah! This is the"
 	line "custom # BALL"
 	cont "I ordered!"
 	cont "Thank you!"
@@ -417,8 +439,7 @@ OaksLabOak1ReceivedPokeballsText:
 	text_end
 
 OaksLabGivePokeballsExplanationText:
-	text_start
-	para "When a wild"
+	text "When a wild"
 	line "#MON appears,"
 	cont "it's fair game."
 
@@ -807,23 +828,13 @@ OakAideText_ExplainBalls:
 	done
 
 OaksLabTravelTip1Text:
-	text "<PLAYER> opened a"
-	line "book."
-
-	para "Travel Tip 1:"
-
-	para "Press START to"
+	text "Press START to"
 	line "open the MENU."
 	done
 
 OaksLabTravelTip2Text:
-	text "<PLAYER> opened a"
-	line "book."
-
-	para "Travel Tip 2:"
-
-	para "Record your trip"
-	line "with SAVE!"
+	text "Hold 'B'"
+	line "to Run!"
 	done
 
 OaksLabTravelTip3Text:
@@ -898,7 +909,9 @@ OaksLab_MapEvents:
 	object_event  0, 10, SPRITE_GIRL, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, OaksLabGirlScript, -1
 	object_event  2,  9, SPRITE_SCIENTIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, OaksAideScript, EVENT_OAKS_AIDE_IN_LAB
 	object_event  8,  9, SPRITE_SCIENTIST, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, OaksAideScript, -1
-	object_event  4,  3, SPRITE_BLUE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OaksLabRivalScript, -1
+	object_event  4,  3, SPRITE_BLUE, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OaksLabRivalScript, -1
 	object_event  6,  3, SPRITE_POKE_BALL_2, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CharmanderPokeBallScript, EVENT_GOT_A_CHARMANDER_FROM_OAK
 	object_event  7,  3, SPRITE_POKE_BALL_2, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SquirtlePokeBallScript, EVENT_GOT_A_SQUIRTLE_FROM_OAK
 	object_event  8,  3, SPRITE_POKE_BALL_2, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BulbasaurPokeBallScript, EVENT_GOT_A_BULBASAUR_FROM_OAK
+	object_event  2,  1, SPRITE_POKEDEX, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PokeDexScript, EVENT_GOT_POKEDEX
+	object_event  3,  1, SPRITE_POKEDEX, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PokeDexScript, EVENT_GOT_POKEDEX
