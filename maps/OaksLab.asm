@@ -153,6 +153,7 @@ OaksLabParcelScript:
 	closetext
 	changeblock 2, 1, $2E ; replace pokedex tile
 	setevent EVENT_GOT_POKEDEX
+	setflag ENGINE_POKEDEX
 	opentext
 	writetext OaksLabOakThatWasMyDreamText
 	waitbutton
