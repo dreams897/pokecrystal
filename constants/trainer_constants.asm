@@ -350,7 +350,7 @@ DEF KRIS EQU __trainer_class__
 	const WAYNE
 	const CALEB
 	const DYLAN
-	const FORREST
+	const WOODY
 
 	trainerclass FISHER ; 25
 	const JUSTIN

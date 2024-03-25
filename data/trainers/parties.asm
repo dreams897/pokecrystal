@@ -1628,7 +1628,7 @@ BugCatcherGroup:
 	db -1 ; end
 	
 	; BUG_CATCHER (21)
-	db "FORREST@", TRAINERTYPE_NORMAL
+	db "WOODY@", TRAINERTYPE_NORMAL
 	db  9, WEEDLE
 	db -1 ; end
 
