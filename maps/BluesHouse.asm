@@ -9,6 +9,7 @@ BluesHouse_MapScripts:
 
 	def_callbacks
 	callback MAPCALLBACK_OBJECTS, BluesHouseMapCallback
+	callback MAPCALLBACK_OBJECTS, BluesHouseDaisyCallback
 	
 BluesHouseNoop1Scene:
 	end
@@ -17,31 +18,43 @@ BluesHouseNoop2Scene:
 	end
 	
 BluesHouseMapCallback:
-	checkevent EVENT_GOT_TOWN_MAP
-	iftrue .HideTownMap
-.HideTownMap
+	checkscene
+	ifequal SCENE_BLUES_HOUSE_NOOP2, .HideMap
+	endcallback
+	
+.HideMap:
 	disappear BLUESHOUSE_MAP
 	endcallback
 	
+BluesHouseDaisyCallback:
+	checkscene
+	ifequal SCENE_BLUES_HOUSE_NOOP2, .DaisyWander
+	endcallback
+	
+.DaisyWander
+	setval SPRITE_DAISY, SPRITEMOVEDATA_WANDER, 2, 1, -1, -1
+    	writemem wMap3ObjectMovement
 
 DaisyScript:
 	faceplayer
 	opentext
-	checkevent EVENT_FOLLOWED_OAK_INTO_LAB
+	checkevent EVENT_OAK_GOT_PARCEL
 	iffalse .BlueInOaksLab
 	checkevent EVENT_GOT_POKEDEX
-	iftrue OfferTownMapScript
+	iftrue .OfferTownMap
 	waitbutton
 	closetext
+	turnobject BLUESHOUSE_DAISY, RIGHT
 	end
 	
 .BlueInOaksLab
 	writetext BluesHouseDaisyRivalAtLabText
 	waitbutton
 	closetext
+	turnobject BLUESHOUSE_DAISY, RIGHT
 	end
 	
-OfferTownMapScript:
+.OfferTownMap
 	checkevent EVENT_GOT_TOWN_MAP
 	iftrue .PokemonAreLivingThings
 	writetext BluesHouseDaisyOfferMapText
@@ -53,10 +66,11 @@ OfferTownMapScript:
 	writetext BluesHouseDaisyUseMapText
 	waitbutton
 	closetext
+	turnobject BLUESHOUSE_DAISY, RIGHT
+	setscene SCENE_BLUES_HOUSE_NOOP2
 	setevent EVENT_GOT_TOWN_MAP
 	setflag ENGINE_POKEGEAR
 	setflag ENGINE_MAP_CARD
-	setscene SCENE_BLUES_HOUSE_NOOP2
 	end
 	
 .PokemonAreLivingThings
