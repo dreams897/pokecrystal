@@ -9,7 +9,7 @@ BluesHouse_MapScripts:
 
 	def_callbacks
 	callback MAPCALLBACK_OBJECTS, BluesHouseMapCallback
-	callback MAPCALLBACK_OBJECTS, BluesHouseDaisyCallback
+	callback MAPCALLBACK_TILES, BluesHouseDaisyCallback
 	
 BluesHouseNoop1Scene:
 	end
@@ -32,8 +32,9 @@ BluesHouseDaisyCallback:
 	endcallback
 	
 .DaisyWander
-	setval SPRITE_DAISY, SPRITEMOVEDATA_WANDER, 2, 1, -1, -1
-    	writemem wMap3ObjectMovement
+	setval SPRITEMOVEDATA_WANDER
+    	writemem wMap1ObjectMovement
+    	endcallback
 
 DaisyScript:
 	faceplayer
@@ -67,10 +68,10 @@ DaisyScript:
 	waitbutton
 	closetext
 	turnobject BLUESHOUSE_DAISY, RIGHT
-	setscene SCENE_BLUES_HOUSE_NOOP2
 	setevent EVENT_GOT_TOWN_MAP
 	setflag ENGINE_POKEGEAR
 	setflag ENGINE_MAP_CARD
+	setscene SCENE_BLUES_HOUSE_NOOP2
 	end
 	
 .PokemonAreLivingThings
