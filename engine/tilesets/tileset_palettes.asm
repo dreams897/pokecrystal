@@ -22,6 +22,8 @@ LoadSpecialMapPalette:
 	jr z, .mart_kanto
 	cp TILESET_LAB
 	jr z, .lab
+	cp TILESET_HOUSE_KANTO
+	jr z, .house_kanto
 	jr .do_nothing
 
 .pokecom_2f
@@ -81,6 +83,11 @@ LoadSpecialMapPalette:
 	
 .lab
 	call LoadLabPalette
+	scf
+	ret
+	
+.house_kanto
+	call LoadHouseKantoPalette
 	scf
 	ret
 
@@ -222,5 +229,15 @@ LoadLabPalette:
 
 LabPalette:
 INCLUDE "gfx/tilesets/lab.pal"
+
+LoadHouseKantoPalette:
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
+	ld hl, HouseKantoPalette
+	ld bc, 8 palettes
+	jp FarCopyWRAM
+
+HouseKantoPalette:
+INCLUDE "gfx/tilesets/house_kanto.pal"
 
 
