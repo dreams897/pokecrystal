@@ -785,7 +785,7 @@ OakText10:
 	text_end
 	
 StartPCItem:
-	ld a, MASTER_BALL
+	ld a, POTION
 	ld [wCurItem], a
 	ld a, 1
 	ld [wItemQuantityChange], a

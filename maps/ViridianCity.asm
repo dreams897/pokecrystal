@@ -55,6 +55,9 @@ ViridianCity_TurnDownMovement1:
 	
 ViridianCity_TurnDownMovement2:
 	turn_head DOWN
+	step_end
+	
+ViridianCity_TurnDownMovement3:
 	jump_step DOWN
 	step_end
 	
@@ -114,6 +117,9 @@ ViridianGymLockedDoorScript:
 	waitbutton
 	closetext
 	applymovement PLAYER, ViridianCity_TurnDownMovement2
+	playsound SFX_LEDGE_1
+	applymovement PLAYER, ViridianCity_TurnDownMovement3
+	waitsfx
 	end
 	
 	

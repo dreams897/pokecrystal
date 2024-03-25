@@ -3127,7 +3127,8 @@ wPalletTownSceneID::                              db
 wOaksLabSceneID::				  db
 wViridianCitySceneID::			  	  db
 wViridianMartSceneID::                            db
-	ds 34
+wBluesHouseSceneID::                              db
+	ds 33
 
 ; fight counts
 wJackFightCount::    db

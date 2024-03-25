@@ -1,145 +1,116 @@
 	object_const_def
 	const BLUESHOUSE_DAISY
+	const BLUESHOUSE_MAP
 
 BluesHouse_MapScripts:
 	def_scene_scripts
+	scene_script BluesHouseNoop1Scene, SCENE_BLUES_HOUSE_NOOP
+	scene_script BluesHouseNoop2Scene, SCENE_BLUES_HOUSE_NOOP2
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, BluesHouseMapCallback
+	
+BluesHouseNoop1Scene:
+	end
+
+BluesHouseNoop2Scene:
+	end
+	
+BluesHouseMapCallback:
+	checkevent EVENT_GOT_TOWN_MAP
+	iftrue .HideTownMap
+.HideTownMap
+	disappear BLUESHOUSE_MAP
+	endcallback
+	
 
 DaisyScript:
 	faceplayer
 	opentext
-	readvar VAR_HOUR
-	ifequal 15, .ThreePM
-	writetext DaisyHelloText
+	checkevent EVENT_FOLLOWED_OAK_INTO_LAB
+	iffalse .BlueInOaksLab
+	checkevent EVENT_GOT_POKEDEX
+	iftrue OfferTownMapScript
 	waitbutton
 	closetext
 	end
-
-.ThreePM:
-	checkflag ENGINE_DAISYS_GROOMING
-	iftrue .AlreadyGroomedMon
-	writetext DaisyOfferGroomingText
-	yesorno
-	iffalse .Refused
-	writetext DaisyWhichMonText
-	waitbutton
-	special DaisysGrooming
-	ifequal $0, .Refused
-	ifequal $1, .CantGroomEgg
-	setflag ENGINE_DAISYS_GROOMING
-	writetext DaisyAlrightText
+	
+.BlueInOaksLab
+	writetext BluesHouseDaisyRivalAtLabText
 	waitbutton
 	closetext
-	special FadeOutToWhite
-	playmusic MUSIC_HEAL
-	pause 60
-	special FadeInFromWhite
-	special RestartMapMusic
+	end
+	
+OfferTownMapScript:
+	checkevent EVENT_GOT_TOWN_MAP
+	iftrue .PokemonAreLivingThings
+	writetext BluesHouseDaisyOfferMapText
+	waitsfx
+	writetext GotMapText
+	playsound SFX_GET_KEY_ITEM_1
+	waitsfx
+	disappear BLUESHOUSE_MAP
+	writetext BluesHouseDaisyUseMapText
+	waitbutton
+	closetext
+	setevent EVENT_GOT_TOWN_MAP
+	setflag ENGINE_POKEGEAR
+	setflag ENGINE_MAP_CARD
+	setscene SCENE_BLUES_HOUSE_NOOP2
+	end
+	
+.PokemonAreLivingThings
+	writetext BluesHouseDaisyWalkingText
+	waitbutton
+	closetext
+	end
+	
+TownMapText:
 	opentext
-	writetext GroomedMonLooksContentText
-	special PlayCurMonCry
-	promptbutton
-	writetext DaisyAllDoneText
+	writetext BluesHouseTownMapText
 	waitbutton
 	closetext
 	end
 
-.AlreadyGroomedMon:
-	writetext DaisyAlreadyGroomedText
-	waitbutton
-	closetext
-	end
-
-.Refused:
-	writetext DaisyRefusedText
-	waitbutton
-	closetext
-	end
-
-.CantGroomEgg:
-	writetext DaisyCantGroomEggText
-	waitbutton
-	closetext
-	end
-
-DaisyHelloText:
-	text "DAISY: Hi! My kid"
-	line "brother is the GYM"
-
-	para "LEADER in VIRIDIAN"
-	line "CITY."
-
-	para "But he goes out"
-	line "of town so often,"
-
-	para "it causes problems"
-	line "for the trainers."
+BluesHouseDaisyRivalAtLabText:
+	text "Hi <PLAYER>!"
+	line "<RIVAL> is out at"
+	cont "Grandpa's lab."
 	done
 
-DaisyOfferGroomingText:
-	text "DAISY: Hi! Good"
-	line "timing. I'm about"
-	cont "to have some tea."
+BluesHouseDaisyOfferMapText:
+	text "Grandpa asked you"
+	line "to run an errand?"
+	cont "Here, this will"
+	cont "help you!"
+	prompt
 
-	para "Would you like to"
-	line "join me?"
-
-	para "Oh, your #MON"
-	line "are a bit dirty."
-
-	para "Would you like me"
-	line "to groom one?"
+GotMapText:
+	text "<PLAYER> got a"
+	line "TOWN MAP!"
 	done
 
-DaisyWhichMonText:
-	text "DAISY: Which one"
-	line "should I groom?"
+BluesHouseDaisyBagFullText:
+	text "You have too much"
+	line "stuff with you."
 	done
 
-DaisyAlrightText:
-	text "DAISY: OK, I'll"
-	line "get it looking"
-	cont "nice in no time."
+BluesHouseDaisyUseMapText:
+	text "Use the TOWN MAP"
+	line "to find out where"
+	cont "you are."
 	done
 
-GroomedMonLooksContentText:
-	text_ram wStringBuffer3
-	text " looks"
-	line "content."
+BluesHouseDaisyWalkingText:
+	text "#MON are living"
+	line "things! If they"
+	cont "get tired, give"
+	cont "them a rest!"
 	done
 
-DaisyAllDoneText:
-	text "DAISY: There you"
-	line "go! All done."
-
-	para "See? Doesn't it"
-	line "look nice?"
-
-	para "It's such a cute"
-	line "#MON."
-	done
-
-DaisyAlreadyGroomedText:
-	text "DAISY: I always"
-	line "have tea around"
-
-	para "this time. Come"
-	line "join me."
-	done
-
-DaisyRefusedText:
-	text "DAISY: You don't"
-	line "want to have one"
-
-	para "groomed? OK, we'll"
-	line "just have tea."
-	done
-
-DaisyCantGroomEggText:
-	text "DAISY: Oh, sorry."
-	line "I honestly can't"
-	cont "groom an EGG."
+BluesHouseTownMapText:
+	text "It's a big map!"
+	line "This is useful!"
 	done
 
 BluesHouse_MapEvents:
@@ -154,4 +125,5 @@ BluesHouse_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  2,  3, SPRITE_DAISY, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DaisyScript, -1
+	object_event  2,  3, SPRITE_DAISY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DaisyScript, -1
+	object_event  3,  3, SPRITE_TOWN_MAP, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TownMapText, -1

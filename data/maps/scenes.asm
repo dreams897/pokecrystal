@@ -100,4 +100,5 @@ MapScenes::
 	scene_var OAKS_LAB,                                    wOaksLabSceneID
 	scene_var VIRIDIAN_CITY,			       wViridianCitySceneID
 	scene_var VIRIDIAN_MART,                               wViridianMartSceneID
+	scene_var BLUES_HOUSE,                                 wBluesHouseSceneID
 	db -1 ; end
