@@ -140,4 +140,4 @@ BluesHouse_MapEvents:
 
 	def_object_events
 	object_event  2,  3, SPRITE_DAISY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DaisyScript, -1
-	object_event  3,  3, SPRITE_TOWN_MAP, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TownMapText, -1
+	object_event  3,  3, SPRITE_TOWN_MAP, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TownMapText, EVENT_GOT_TOWN_MAP
