@@ -18,7 +18,12 @@ PokeCenterPCScriptViridian:
 	
 ViridianPokecenterBenchGuyScript:
 	faceplayer
-	jumptext ViridianCityPokecenterBenchGuyText
+	opentext
+	writetext ViridianCityPokecenterBenchGuyText
+	waitbutton
+	closetext
+	turnobject VIRIDIANPOKECENTER1F_BENCH_GUY, RIGHT
+	end
 	
 ViridianPokecenterCooltrainerMScript:
 	jumptextfaceplayer ViridianPokecenterCooltrainerMText
