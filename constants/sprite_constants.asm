@@ -107,6 +107,7 @@
 	const SPRITE_OLD_AMBER; 66
 	const SPRITE_GAMBLER_ASLEEP ; 67
 	const SPRITE_TOWN_MAP       ; Added
+	const SPRITE_BENCH_GUY ; Added
 	const SPRITE_GIRL ; 68
 	const SPRITE_WAITER ; 69
 	const SPRITE_LITTLE_GIRL ; 70

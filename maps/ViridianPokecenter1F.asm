@@ -1,8 +1,9 @@
 	object_const_def
 	const VIRIDIANPOKECENTER1F_NURSE
 	const VIRIDIANPOKECENTER1F_COOLTRAINER_M
-	const VIRIDIANPOKECENTER1F_COOLTRAINER_F
-	const VIRIDIANPOKECENTER1F_BUG_CATCHER
+	const VIRIDIANPOKECENTER1F_GENTLEMAN
+	const VIRIDIANPOKECENTER1F_BENCH_GUY
+	const VIRIDIANPOKECENTER1F_LINK_RECEPTIONIST
 
 ViridianPokecenter1F_MapScripts:
 	def_scene_scripts
@@ -14,71 +15,47 @@ PokeCenterPCScriptViridian:
 	special PokemonCenterPC
 	closetext
 	end
+	
+ViridianPokecenterBenchGuyScript:
+	jumptext ViridianCityPokecenterBenchGuyText
+	
+ViridianPokecenterCooltrainerMScript:
+	jumptextfaceplayer ViridianPokecenterCooltrainerMText
+	
+ViridianPokecenterGentlemanScript:
+	jumptextfaceplayer ViridianPokecenterGentlemanText
 
-ViridianPokecenter1FNurseScript:
+ViridianPokecenterNurseScript:
 	jumpstd PokecenterNurseScript
-
-ViridianPokecenter1FCooltrainerMScript:
-	faceplayer
-	opentext
-	checkevent EVENT_BLUE_IN_CINNABAR
-	iftrue .BlueReturned
-	writetext ViridianPokecenter1FCooltrainerMText
-	waitbutton
-	closetext
-	end
-
-.BlueReturned:
-	writetext ViridianPokecenter1FCooltrainerMText_BlueReturned
-	waitbutton
-	closetext
-	end
-
-ViridianPokecenter1FCooltrainerFScript:
-	jumptextfaceplayer ViridianPokecenter1FCooltrainerFText
-
-ViridianPokecenter1FBugCatcherScript:
-	jumptextfaceplayer ViridianPokecenter1FBugCatcherText
 	
-ViridianPokecenter1FLinkScript:
-	jumptextfaceplayer ViridianPokecenter1FLinkText
-
-ViridianPokecenter1FCooltrainerMText:
-	text "Where in the world"
-	line "is VIRIDIAN's GYM"
-
-	para "LEADER? I wanted"
-	line "to challenge him."
+ViridianPokecenterLinkScript:
+	jumptext ViridianPokecenterLinkText
+	
+ViridianCityPokecenterBenchGuyText:
+	text "#MON CENTERs"
+	line "heal your tired,"
+	cont "hurt or fainted"
+	cont "#MON!"
 	done
 
-ViridianPokecenter1FCooltrainerMText_BlueReturned:
-	text "There are no GYM"
-	line "TRAINERS at the"
-	cont "VIRIDIAN GYM."
+ViridianPokecenterGentlemanText:
+	text "You can use that"
+	line "PC in the corner."
 
-	para "The LEADER claims"
-	line "his policy is to"
-
-	para "win without having"
-	line "any underlings."
+	para "The receptionist"
+	line "told me. So kind!"
 	done
 
-ViridianPokecenter1FCooltrainerFText:
-	text "I heard that the"
-	line "GYM in CINNABAR is"
-	cont "gone."
+ViridianPokecenterCooltrainerMText:
+	text "There's a #MON"
+	line "CENTER in every"
+	cont "town ahead."
 
-	para "I wonder what be-"
-	line "came of BLAINE,"
-	cont "the GYM LEADER."
-	done
-
-ViridianPokecenter1FBugCatcherText:
-	text "My dream is to be-"
-	line "come a GYM LEADER."
+	para "They don't charge"
+	line "any money either!"
 	done
 	
-ViridianPokecenter1FLinkText:
+ViridianPokecenterLinkText:
 	text "This area is"
 	line "reserved for 2"
 	cont "friends who are"
@@ -91,7 +68,6 @@ ViridianPokecenter1F_MapEvents:
 	def_warp_events
 	warp_event  3,  7, VIRIDIAN_CITY, 5
 	warp_event  4,  7, VIRIDIAN_CITY, 5
-	warp_event  0,  7, POKECENTER_2F, 1
 
 	def_coord_events
 
@@ -99,8 +75,8 @@ ViridianPokecenter1F_MapEvents:
 	bg_event  13,  3, BGEVENT_UP, PokeCenterPCScriptViridian
 
 	def_object_events
-	object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ViridianPokecenter1FNurseScript, -1
-	object_event  8,  4, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ViridianPokecenter1FCooltrainerMScript, -1
-	object_event  5,  3, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ViridianPokecenter1FCooltrainerFScript, -1
-	object_event  1,  6, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ViridianPokecenter1FBugCatcherScript, -1
-	object_event  11, 2, SPRITE_OLD_LINK_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ViridianPokecenter1FLinkScript, -1
+	object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ViridianPokecenterNurseScript, -1
+	object_event  4,  3, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ViridianPokecenterCooltrainerMScript, -1
+	object_event  10, 5, SPRITE_GENTLEMAN, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ViridianPokecenterGentlemanScript, -1
+	object_event  0,  4, SPRITE_BENCH_GUY, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ViridianPokecenterBenchGuyScript, -1
+	object_event  11, 2, SPRITE_OLD_LINK_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ViridianPokecenterLinkScript, -1
