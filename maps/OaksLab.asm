@@ -709,12 +709,6 @@ OaksLabTravelTip1:
 OaksLabTravelTip2:
 	jumptext OaksLabTravelTip2Text
 
-OaksLabTravelTip3:
-	jumptext OaksLabTravelTip3Text
-
-OaksLabTravelTip4:
-	jumptext OaksLabTravelTip4Text
-
 OaksLabTrashcan:
 	jumptext OaksLabTrashcanText
 
@@ -722,7 +716,7 @@ OaksLabPC:
 	jumptext OaksLabPCText
 
 OaksLabBookshelf:
-	jumpstd DifficultBookshelfScript
+	jumpstd PictureBookshelfScript
 
 OaksLab_WalkUpToOakMovement:
 	step UP
@@ -883,30 +877,6 @@ OaksLabTravelTip2Text:
 	line "to Run!"
 	done
 
-OaksLabTravelTip3Text:
-	text "<PLAYER> opened a"
-	line "book."
-
-	para "Travel Tip 3:"
-
-	para "Open your PACK and"
-	line "press SELECT to"
-	cont "move items."
-	done
-
-OaksLabTravelTip4Text:
-	text "<PLAYER> opened a"
-	line "book."
-
-	para "Travel Tip 4:"
-
-	para "Check your #MON"
-	line "moves. Press the"
-
-	para "A Button to switch"
-	line "moves."
-	done
-
 OaksLabTrashcanText:
 	text "The wrapper from"
 	line "the snack PROF.OAK"
@@ -941,14 +911,14 @@ OaksLab_MapEvents:
 	bg_event  9,  1, BGEVENT_READ, OaksLabBookshelf
 	bg_event  4,  0, BGEVENT_READ, OaksLabTravelTip1
 	bg_event  5,  0, BGEVENT_READ, OaksLabTravelTip2
-	bg_event  0,  7, BGEVENT_READ, OaksLabTravelTip3
-	bg_event  3,  7, BGEVENT_READ, OaksLabTravelTip4
+	bg_event  0,  7, BGEVENT_READ, OaksLabBookshelf
+	bg_event  3,  7, BGEVENT_READ, OaksLabBookshelf
 	bg_event  6,  7, BGEVENT_READ, OaksLabBookshelf
 	bg_event  7,  7, BGEVENT_READ, OaksLabBookshelf
 	bg_event  8,  7, BGEVENT_READ, OaksLabBookshelf
 	bg_event  9,  7, BGEVENT_READ, OaksLabBookshelf
 	bg_event  9,  3, BGEVENT_READ, OaksLabTrashcan
-	bg_event  0,  1, BGEVENT_DOWN, OaksLabPC
+	bg_event  0,  1, BGEVENT_READ, OaksLabPC
 	bg_event  2,  1, BGEVENT_READ, PokeDexScript
 	bg_event  3,  1, BGEVENT_READ, PokeDexScript
 
