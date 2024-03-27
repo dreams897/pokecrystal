@@ -26,7 +26,13 @@ ViridianPokecenterBenchGuyScript:
 	end
 	
 ViridianPokecenterCooltrainerMScript:
-	jumptextfaceplayer ViridianPokecenterCooltrainerMText
+	faceplayer
+	opentext
+	writetext ViridianPokecenterCooltrainerMText
+	waitbutton
+	closetext
+	turnobject VIRIDIANPOKECENTER1F_COOLTRAINER_M, DOWN
+	end
 	
 ViridianPokecenterGentlemanScript:
 	jumptextfaceplayer ViridianPokecenterGentlemanText

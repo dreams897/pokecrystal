@@ -1,9 +1,9 @@
 	object_const_def
-	const PEWTERPOKECENTER1F_NURSE
-	const PEWTERPOKECENTER1F_TEACHER
-	const PEWTERPOKECENTER1F_JIGGLYPUFF
-	const PEWTERPOKECENTER1F_BUG_CATCHER
-	const PEWTERPOKECENTER1F_CHRIS
+	const PEWTERPOKECENTER_NURSE
+	const PEWTERPOKECENTER_JIGGLYPUFF
+	const PEWTERPOKECENTER_GENTLEMAN
+	const PEWTERPOKECENTER_BENCHGUY
+	const PEWTERPOKECENTER_LINK_RECEPTIONIST
 
 PewterPokecenter1F_MapScripts:
 	def_scene_scripts
@@ -13,56 +13,66 @@ PewterPokecenter1F_MapScripts:
 PewterPokecenter1FNurseScript:
 	jumpstd PokecenterNurseScript
 
-PewterPokecenter1FTeacherScript:
-	jumptextfaceplayer PewterPokecenter1FTeacherText
-
 PewterJigglypuff:
 	opentext
-	writetext PewterJigglypuffText
+	writetext PewterPokecenterJigglypuffText
 	cry JIGGLYPUFF
 	waitbutton
 	closetext
 	end
-
-PewterPokecenter1FBugCatcherScript:
-	jumptextfaceplayer PewterPokecenter1FBugCatcherText
-
-Chris:
+	
+PewterPokecenterBenchGuyScript:
 	faceplayer
 	opentext
-	trade NPC_TRADE_CHRIS
+	writetext PewterPokecenterBenchGuyText
 	waitbutton
 	closetext
+	turnobject CERULEANPOKECENTER_BENCH_GUY, RIGHT
+	end
+	
+PewterPokecenterLinkScript:
+	jumptext PewterPokecenterLinkText
+	
+PewterPokecenterGentlemanScript:
+	faceplayer
+	opentext
+	writetext PewterPokecenterGentlemanText
+	waitbutton
+	closetext
+	turnobject PEWTERPOKECENTER_GENTLEMAN, LEFT
 	end
 
-PewterPokecenter1FTeacherText:
-	text "…Yeah, and the"
-	line "GYM in CINNABAR's"
+PewterPokecenterGentlemanText:
+	text "What!?"
 
-	para "gone. I was really"
-	line "amazed."
+	para "TEAM ROCKET is"
+	line "at MT.MOON? Huh?"
+	cont "I'm on the phone!"
 
-	para "…Yes? I'm on the"
-	line "phone. Go away!"
+	para "Scram!"
 	done
 
-PewterJigglypuffText:
+PewterPokecenterJigglypuffText:
 	text "JIGGLYPUFF: Puu"
-	line "pupuu."
+	line "pupuu!"
 	done
+	
+PewterPokecenterLinkText:
+	text "This area is"
+	line "reserved for 2"
+	cont "friends who are"
+	cont "linked by cable."
+	done
+	
+PewterPokecenterBenchGuyText:
+	text "Yawn!"
 
-PewterPokecenter1FBugCatcherText:
-	text "Most #MON get"
-	line "drowsy if they"
+	para "When JIGGLYPUFF"
+	line "sings, #MON"
+	cont "get drowsy..."
 
-	para "hear a JIGGLYPUFF"
-	line "singing."
-
-	para "There are several"
-	line "moves that can be"
-
-	para "used only while a"
-	line "#MON is asleep."
+	para "...Me too..."
+	line "Snore..."
 	done
 
 PewterPokecenter1F_MapEvents:
@@ -78,7 +88,7 @@ PewterPokecenter1F_MapEvents:
 
 	def_object_events
 	object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterPokecenter1FNurseScript, -1
-	object_event  8,  6, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, PewterPokecenter1FTeacherScript, -1
 	object_event  1,  3, SPRITE_JIGGLYPUFF, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterJigglypuff, -1
-	object_event  2,  3, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PewterPokecenter1FBugCatcherScript, -1
-	object_event  7,  2, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Chris, -1
+	object_event 11,  7, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PewterPokecenterGentlemanScript, -1
+	object_event  0,  4, SPRITE_BENCH_GUY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PewterPokecenterBenchGuyScript, -1
+	object_event  11, 2, SPRITE_OLD_LINK_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, PewterPokecenterLinkScript, -1
