@@ -112,6 +112,7 @@ OverworldSprites:
 	overworld_sprite OldAmberSpriteGFX, 4, STILL_SPRITE, PAL_OW_BROWN
 	overworld_sprite GamblerAsleepSpriteGFX, 4, STILL_SPRITE, PAL_OW_BROWN
 	overworld_sprite TownMapSpriteGFX, 4, STILL_SPRITE, PAL_OW_BLUE
+	overworld_sprite ClipboardSpriteGFX, 4, STILL_SPRITE, PAL_OW_BROWN
 	overworld_sprite BenchGuySpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite GirlSpriteGFX, 12, WALKING_SPRITE, PAL_OW_GREEN
 	overworld_sprite WaiterSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN

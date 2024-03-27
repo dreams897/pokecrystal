@@ -156,6 +156,7 @@ CianwoodPharmacy_Blocks:
 CianwoodPhotoStudio_Blocks:
 CianwoodLugiaSpeechHouse_Blocks:
 PokeSeersHouse_Blocks:
+ViridianNicknameSpeechHouse_Blocks:
 Route2NuggetHouse_Blocks:
 PlayersNeighborsHouse_Blocks:
 Route26HealHouse_Blocks:
@@ -168,9 +169,6 @@ GuideGentsHouse_Blocks:
 CherrygroveEvolutionSpeechHouse_Blocks:
 Route30BerryHouse_Blocks:
 	INCBIN "maps/House1.blk"
-	
-ViridianNicknameSpeechHouse_Blocks:
-	INCBIN "maps/ViridianNicknameHouse.blk"
 
 SafariZoneFuchsiaGateBeta_Blocks:
 Route19FuchsiaGate_Blocks:
