@@ -9,15 +9,15 @@ ViridianNicknameSpeechHouse_MapScripts:
 
 	def_callbacks
 
-ViridianNicknameSpeechHousePokefanMScript:
-	jumptextfaceplayer ViridianNicknameSpeechHousePokefanMText
+ViridianNicknameHouseBaldingGuyScript:
+	jumptextfaceplayer ViridianNicknameHouseBaldingGuyText
 
-ViridianNicknameSpeechHouseLassScript:
-	jumptextfaceplayer ViridianNicknameSpeechHouseLassText
+ViridianNicknameHouseLittleGirlScript:
+	jumptextfaceplayer ViridianNicknameHouseLittleGirlText
 
 Speary:
 	opentext
-	writetext SpearyText
+	writetext ViridianNicknameHouseSpearowText
 	cry SPEAROW
 	waitbutton
 	closetext
@@ -31,33 +31,34 @@ Rattey:
 	closetext
 	end
 
-ViridianNicknameSpeechHousePokefanMText:
-	text "Do you put a lot"
-	line "of thought into"
-
-	para "naming your"
-	line "#MON?"
-
-	para "Giving them good"
-	line "nicknames adds to"
-
-	para "the fun of trading"
-	line "with others."
-	done
-
-ViridianNicknameSpeechHouseLassText:
-	text "They're SPEARY--"
-	line "a SPEAROW--and"
-	cont "RATTEY--a RATTATA."
-	done
-
-SpearyText:
-	text "SPEARY: Ch-chun!"
-	done
-
 RatteyText:
 	text "RATTEY: Kikiii!"
 	done
+
+ViridianNicknameHouseBaldingGuyText:
+	text "Coming up with"
+	line "nicknames is fun,"
+	cont "but hard."
+
+	para "Simple names are"
+	line "the easiest to"
+	cont "remember."
+	done
+
+ViridianNicknameHouseLittleGirlText:
+	text "My Daddy loves"
+	line "#MON too."
+	done
+
+ViridianNicknameHouseSpearowText:
+	text "SPEARY: Tetweet!"
+	done
+
+ViridianNicknameHouseSpearySignText:
+	text "SPEAROW"
+	line "Name: SPEARY"
+	done
+
 
 ViridianNicknameSpeechHouse_MapEvents:
 	db 0, 0 ; filler
@@ -71,7 +72,7 @@ ViridianNicknameSpeechHouse_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  2,  4, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ViridianNicknameSpeechHousePokefanMScript, -1
-	object_event  5,  4, SPRITE_LASS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ViridianNicknameSpeechHouseLassScript, -1
+	object_event  2,  4, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ViridianNicknameHouseBaldingGuyScript, -1
+	object_event  5,  4, SPRITE_LITTLE_GIRL, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ViridianNicknameHouseLittleGirlScript, -1
 	object_event  5,  2, SPRITE_MOLTRES, SPRITEMOVEDATA_POKEMON, 2, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Speary, -1
 	object_event  6,  3, SPRITE_GROWLITHE, SPRITEMOVEDATA_POKEMON, 2, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Rattey, -1
