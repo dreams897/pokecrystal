@@ -3039,7 +3039,6 @@ wTimeCapsuleSceneID::                             db
 wPowerPlantSceneID::                              db
 wCeruleanGymSceneID::                             db
 wRoute25SceneID::                                 db
-wTrainerHouseB1FSceneID::                         db
 wVictoryRoadGateSceneID::                         db
 wSaffronMagnetTrainStationSceneID::               db
 wRoute16GateSceneID::                             db
@@ -3128,7 +3127,7 @@ wOaksLabSceneID::				  db
 wViridianCitySceneID::			  	  db
 wViridianMartSceneID::                            db
 wBluesHouseSceneID::                              db
-	ds 33
+	ds 34
 
 ; fight counts
 wJackFightCount::    db

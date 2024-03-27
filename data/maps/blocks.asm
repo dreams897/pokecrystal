@@ -795,11 +795,8 @@ FightingDojo_Blocks:
 SilphCo1F_Blocks:
 	INCBIN "maps/SilphCo1F.blk"
 
-TrainerHouse1F_Blocks:
-	INCBIN "maps/TrainerHouse1F.blk"
-
-TrainerHouseB1F_Blocks:
-	INCBIN "maps/TrainerHouseB1F.blk"
+ViridianSchoolHouse_Blocks:
+	INCBIN "maps/ViridianSchoolHouse.blk"
 
 RedsHouse1F_Blocks:
 	INCBIN "maps/RedsHouse1F.blk"

@@ -669,8 +669,7 @@ ENDM
 	map_attributes ViridianForestNorthGate, VIRIDIAN_FOREST_NORTH_GATE, $00, 0
 	map_attributes ViridianGym, VIRIDIAN_GYM, $00, 0
 	map_attributes ViridianNicknameSpeechHouse, VIRIDIAN_NICKNAME_SPEECH_HOUSE, $00, 0
-	map_attributes TrainerHouse1F, TRAINER_HOUSE_1F, $00, 0
-	map_attributes TrainerHouseB1F, TRAINER_HOUSE_B1F, $00, 0
+	map_attributes ViridianSchoolHouse, VIRIDIAN_SCHOOL_HOUSE, $00, 0
 	map_attributes ViridianMart, VIRIDIAN_MART, $00, 0
 	map_attributes ViridianPokecenter1F, VIRIDIAN_POKECENTER_1F, $00, 0
 	map_attributes ViridianPokecenter2FBeta, VIRIDIAN_POKECENTER_2F_BETA, $00, 0

@@ -455,8 +455,7 @@ ENDM
 	map_const VIRIDIAN_CITY,                               20, 18 ;  3
 	map_const VIRIDIAN_GYM,                                 5,  9 ;  4
 	map_const VIRIDIAN_NICKNAME_SPEECH_HOUSE,               4,  4 ;  5
-	map_const TRAINER_HOUSE_1F,                             5,  7 ;  6
-	map_const TRAINER_HOUSE_B1F,                            5,  8 ;  7
+	map_const VIRIDIAN_SCHOOL_HOUSE,                        4,  4 ;  6
 	map_const VIRIDIAN_MART,                                4,  4 ;  8
 	map_const VIRIDIAN_POKECENTER_1F,                       7,  4 ;  9
 	map_const VIRIDIAN_POKECENTER_2F_BETA,                  7,  4 ; 10
