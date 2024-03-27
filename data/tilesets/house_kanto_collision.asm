@@ -18,12 +18,12 @@
 	tilecoll WALL, WALL, WALL, FLOOR ; 11
 	tilecoll WALL, WALL, FLOOR, STAIRCASE ; 12
 	tilecoll WALL, TOWN_MAP, FLOOR, FLOOR ; 13
-	tilecoll FLOOR, FLOOR, UP_WALL, WALL ; 14
-	tilecoll FLOOR, FLOOR, WALL, UP_WALL ; 15
+	tilecoll FLOOR, FLOOR, WALL, WALL ; 14
+	tilecoll FLOOR, FLOOR, WALL, WALL ; 15
 	tilecoll WALL, WINDOW, FLOOR, FLOOR ; 16
 	tilecoll FLOOR, FLOOR, FLOOR, WALL ; 17
-	tilecoll DOWN_WALL, WALL, FLOOR, FLOOR ; 18
-	tilecoll WALL, DOWN_WALL, FLOOR, FLOOR ; 19
+	tilecoll WALL, WALL, FLOOR, FLOOR ; 18
+	tilecoll WALL, WALL, FLOOR, FLOOR ; 19
 	tilecoll WALL, WALL, BOOKSHELF, BOOKSHELF ; 1a
 	tilecoll WALL, DOOR, FLOOR, FLOOR ; 1b
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 1c
