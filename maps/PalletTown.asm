@@ -80,10 +80,12 @@ OakStopsYouRight:
 OakTakesYouToLab:
 	stopfollow
 	disappear PALLETTOWN_OAK
+	playsound SFX_GO_INSIDE_1
 	setscene SCENE_PALLET_TOWN_NOOP
 	applymovement PLAYER, PalletTownPlayerWalkUp
-	warp OAKS_LAB, 5, 11
 	playsound SFX_GO_INSIDE_1
+	setmapscene OAKS_LAB, SCENE_OAKSLAB_WALK_UP
+	warpfacing UP, OAKS_LAB, 5, 11
 	setevent EVENT_FOLLOWED_OAK_INTO_LAB
 	end
 
@@ -93,20 +95,20 @@ PalletTownPlayerWalkUp:
 
 
 PalletTownOakWalkToYouMovementLeft:
-	step RIGHT
-	step UP
-	step RIGHT
-	step UP
-	step UP
+	slow_step RIGHT
+	slow_step UP
+	slow_step RIGHT
+	slow_step UP
+	slow_step UP
 	step_end
 
 PalletTownOakWalkToYouMovementRight:
-	step RIGHT
-	step UP
-	step RIGHT
-	step UP
-	step RIGHT
-	step UP
+	slow_step RIGHT
+	slow_step UP
+	slow_step RIGHT
+	slow_step UP
+	slow_step RIGHT
+	slow_step UP
 	step_end
 
 PalletTownOakWalkToLabLeft:

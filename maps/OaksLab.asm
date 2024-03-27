@@ -1,5 +1,6 @@
 	object_const_def
 	const OAKSLAB_OAK
+	const OAKSLAB_OAK_WALK
 	const OAKSLAB_GIRL
 	const OAKSLAB_OAKS_AIDE
 	const OAKSLAB_SCIENTIST
@@ -11,6 +12,7 @@
 OaksLab_MapScripts:
 	def_scene_scripts
 	scene_script OaksLabOakNotAroundScene, SCENE_OAKSLAB_OAK_NOT_AROUND
+	scene_script OaksLabWalkUpScene,  SCENE_OAKSLAB_WALK_UP
 	scene_script OaksLabNoop1Scene,   SCENE_OAKSLAB_CANT_LEAVE
 	scene_script OaksLabNoop2Scene,   SCENE_OAKSLAB_NOOP
 	scene_script OaksLabNoop3Scene,   SCENE_OAKSLAB_UNUSED
@@ -18,24 +20,32 @@ OaksLab_MapScripts:
 
 	def_callbacks
 	callback MAPCALLBACK_TILES, OaksLabCallback
+	callback MAPCALLBACK_OBJECTS, OaksLabOakCallback
 
 OaksLabOakNotAroundScene:
-	checkevent EVENT_FOLLOWED_OAK_INTO_LAB
-	iftrue OaksLabWalkUpToOakScript
 	disappear OAKSLAB_OAK
+	disappear OAKSLAB_OAK_WALK
 	end
 
 OaksLabNoop1Scene:
+	disappear OAKSLAB_OAK_WALK
 	end
 
 OaksLabNoop2Scene:
+	disappear OAKSLAB_OAK_WALK
 	end
 
 OaksLabNoop3Scene:
 	checkevent EVENT_GOT_POKEDEX
 	iftrue .HideBlue
+	disappear OAKSLAB_OAK_WALK
 .HideBlue
 	disappear OAKSLAB_BLUE
+	end
+	
+OaksLabWalkUpScene:
+	checkevent EVENT_FOLLOWED_OAK_INTO_LAB
+	iftrue OaksLabWalkUpToOakScript
 	end
 	
 OaksLabCallback:
@@ -44,9 +54,19 @@ OaksLabCallback:
 	changeblock 2, 1, $2E ; replace pokedex tile
 .DontHidePokeDex:
 	endcallback
+	
+OaksLabOakCallback:
+	checkscene
+	ifnotequal SCENE_OAKSLAB_WALK_UP, .HideOak
+	endcallback
+
+.HideOak:
+	moveobject OAKSLAB_OAK_WALK, 5, 2
+	endcallback
 
 OaksLabWalkUpToOakScript:
-	playsound SFX_GO_INSIDE_1
+	applymovement OAKSLAB_OAK_WALK, OaksLab_OakWalkUpMovement
+	disappear OAKSLAB_OAK_WALK
 	applymovement PLAYER, OaksLab_WalkUpToOakMovement
 	turnobject OAKSLAB_BLUE, UP
 	opentext
@@ -717,7 +737,15 @@ OaksLabPC:
 
 OaksLabBookshelf:
 	jumpstd PictureBookshelfScript
-
+	
+OaksLab_OakWalkUpMovement:
+	slow_step UP
+	slow_step UP
+	slow_step UP
+	slow_step UP
+	slow_step UP
+	step_end
+	
 OaksLab_WalkUpToOakMovement:
 	step UP
 	step UP
@@ -924,6 +952,7 @@ OaksLab_MapEvents:
 
 	def_object_events
 	object_event  5,  2, SPRITE_OAK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ProfOakScript, -1
+	object_event  5, 10, SPRITE_OAK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OaksLabWalkUpToOakScript, -1
 	object_event  1,  9, SPRITE_GIRL, SPRITEMOVEDATA_WALK_UP_DOWN, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, OaksLabGirlScript, -1
 	object_event  2, 10, SPRITE_SCIENTIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, OaksAideScript, EVENT_OAKS_AIDE_IN_LAB
 	object_event  8, 10, SPRITE_SCIENTIST, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, OaksAideScript, -1
