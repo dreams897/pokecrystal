@@ -465,7 +465,7 @@ ENDM
 	map_const ROUTE_2_GATE,                                 5,  4 ; 13
 	map_const VIRIDIAN_FOREST_SOUTH_GATE,     	        5,  4 ; 14 ; Added
 	map_const VIRIDIAN_FOREST,               	       17, 24 ; 15 ; Added
-	map_const VICTORY_ROAD_GATE,                           10,  9 ; 16
+	map_const VICTORY_ROAD_GATE,                            5,  4 ; 16
 	endgroup
 
 	newgroup NEW_BARK                                             ; 24
