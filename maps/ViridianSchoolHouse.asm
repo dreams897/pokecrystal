@@ -1,6 +1,6 @@
 	object_const_def
-	const TRAINERHOUSE1F_BRUNETTE_GIRL
-	const TRAINERHOUSE1F_COOLTRAINER_F
+	const VIRIDIANSCHOOLHOUSE_BRUNETTE_GIRL
+	const VIRIDIANSCHOOLHOUSE_COOLTRAINER_F
 
 ViridianSchoolHouse_MapScripts:
 	def_scene_scripts
@@ -8,13 +8,52 @@ ViridianSchoolHouse_MapScripts:
 	def_callbacks
 
 ViridianTrainerHouseBrunetteGirlScript:
-	jumptextfaceplayer ViridianTrainerHouseBrunetteGirlText
+	faceplayer
+	opentext
+	writetext ViridianTrainerHouseBrunetteGirlText
+	waitbutton
+	closetext
+	turnobject VIRIDIANSCHOOLHOUSE_BRUNETTE_GIRL, UP
+	end
 
 ViridianTrainerHouseCooltrainerFScript:
-	jumptextfaceplayer ViridianTrainerHouseCooltrainerFText
+	faceplayer
+	opentext
+	writetext ViridianTrainerHouseCooltrainerFText
+	waitbutton
+	closetext
+	turnobject VIRIDIANSCHOOLHOUSE_COOLTRAINER_F, DOWN
+	end
 
-TrainerHouseBlackboard:
+ViridianSchoolHouseBlackboardScript:
 	jumptext ViridianSchoolBlackboardText1
+	
+ViridianSchoolHouseNotebookScript:
+	opentext
+	writetext ViridianSchoolNotebookText1
+	writetext KeepReadingText
+	yesorno
+	iffalse .StopReading
+	writetext ViridianSchoolNotebookText2
+	writetext KeepReadingText
+	yesorno
+	iffalse .StopReading
+	writetext ViridianSchoolNotebookText3
+	writetext KeepReadingText
+	yesorno
+	iffalse .StopReading
+	writetext ViridianSchoolNotebookText4
+	sjump .StopReading
+	
+.StopReading
+	writetext ViridianSchoolNotebookText5
+	waitbutton
+	closetext
+	end
+	
+KeepReadingText:
+	text "Keep reading?"
+	done
 
 ViridianTrainerHouseBrunetteGirlText:
 	text "Whew! I'm trying"
@@ -114,6 +153,72 @@ ViridianBlackboardFrozenText:
 	para "Use ICE HEAL to"
 	line "thaw out #MON!"
 	prompt
+	
+ViridianSchoolNotebookText5:
+	text "GIRL: Hey! Don't"
+	line "look at my notes!"
+	done
+
+ViridianSchoolNotebookText1:
+	text "Looked at the"
+	line "notebook!"
+
+	para "First page..."
+
+	para "# BALLs are"
+	line "used to catch"
+	cont "#MON."
+
+	para "Up to 6 #MON"
+	line "can be carried."
+
+	para "People who raise"
+	line "and make #MON"
+	cont "fight are called"
+	cont "#MON trainers."
+	prompt
+
+ViridianSchoolNotebookText2:
+	text "Second page..."
+
+	para "A healthy #MON"
+	line "may be hard to"
+	cont "catch, so weaken"
+	cont "it first!"
+
+	para "Poison, burns and"
+	line "other damage are"
+	cont "effective!"
+	prompt
+
+ViridianSchoolNotebookText3:
+	text "Third page..."
+
+	para "#MON trainers"
+	line "seek others to"
+	cont "engage in #MON"
+	cont "fights."
+
+	para "Battles are"
+	line "constantly fought"
+	cont "at #MON GYMs."
+	prompt
+
+ViridianSchoolNotebookText4:
+	text "Fourth page..."
+
+	para "The goal for"
+	line "#MON trainers"
+	cont "is to beat the "
+	cont "top 8 #MON"
+	cont "GYM LEADERs."
+
+	para "Do so to earn the"
+	line "right to face..."
+
+	para "The ELITE FOUR of"
+	line "#MON LEAGUE!"
+	prompt
 
 ViridianSchoolHouse_MapEvents:
 	db 0, 0 ; filler
@@ -125,7 +230,8 @@ ViridianSchoolHouse_MapEvents:
 	def_coord_events
 
 	def_bg_events
-	bg_event  3,  0, BGEVENT_READ, TrainerHouseBlackboard
+	bg_event  3,  0, BGEVENT_READ, ViridianSchoolHouseBlackboardScript
+	bg_event  3,  4, BGEVENT_READ, ViridianSchoolHouseNotebookScript
 
 	def_object_events
 	object_event  3,  5, SPRITE_LASS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ViridianTrainerHouseBrunetteGirlScript, -1
