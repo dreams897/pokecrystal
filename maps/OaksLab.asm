@@ -26,9 +26,17 @@ OaksLabOakNotAroundScene:
 	disappear OAKSLAB_OAK
 	disappear OAKSLAB_OAK_WALK
 	end
+	
+OaksLabWalkUpScene:
+	checkevent EVENT_FOLLOWED_OAK_INTO_LAB
+	iftrue OaksLabWalkUpToOakScript
+	end
 
 OaksLabNoop1Scene:
 	disappear OAKSLAB_OAK_WALK
+	end
+	
+OaksLabTakeYouOnScene:
 	end
 
 OaksLabNoop2Scene:
@@ -41,11 +49,6 @@ OaksLabNoop3Scene:
 	disappear OAKSLAB_OAK_WALK
 .HideBlue
 	disappear OAKSLAB_BLUE
-	end
-	
-OaksLabWalkUpScene:
-	checkevent EVENT_FOLLOWED_OAK_INTO_LAB
-	iftrue OaksLabWalkUpToOakScript
 	end
 	
 OaksLabCallback:
@@ -89,6 +92,7 @@ ProfOakScript:
 	iftrue OaksLabParcelScript
 	checkevent EVENT_GOT_A_POKEMON_FROM_OAK
 	iffalse WhichMonYouWantScript
+	iftrue OaksLabYourPokemonCanFightScript
 	waitbutton
 	closetext
 	end
@@ -120,8 +124,16 @@ OaksLabRivalScript:
 	opentext
 	checkevent EVENT_FOLLOWED_OAK_INTO_LAB
 	iffalse GrampsIsNotAroundScript
+	checkevent EVENT_RIVAL_CHOSE_STARTER
+	iftrue OaksLabMineLooksStrongerScript
 	checkscene SCENE_OAKSLAB_CANT_LEAVE
 	iftrue OaksLabRivalGoAheadAndChooseScript
+	waitbutton
+	closetext
+	end
+	
+OaksLabMineLooksStrongerScript:
+	writetext OaksLabRivalMyPokemonLooksStrongerText
 	waitbutton
 	closetext
 	end
@@ -134,6 +146,12 @@ GrampsIsNotAroundScript:
 	
 OaksLabRivalGoAheadAndChooseScript:
 	writetext OaksLabRivalGoAheadAndChooseText
+	waitbutton
+	closetext
+	end
+	
+OaksLabYourPokemonCanFightScript:
+	writetext OaksLabOak1YourPokemonCanFightText
 	waitbutton
 	closetext
 	end
@@ -208,6 +226,8 @@ OaksLabTryToLeaveScript:
 CharmanderPokeBallScript:
 	checkevent EVENT_GOT_A_POKEMON_FROM_OAK
 	iftrue LookAtOakPokeBallScript
+	checkevent EVENT_RIVAL_CHOSE_STARTER
+	iftrue OaksLastPokemonScript
 	checkevent EVENT_FOLLOWED_OAK_INTO_LAB
 	iffalse OakNotAroundPokeBallsScript
 	turnobject OAKSLAB_OAK, DOWN
@@ -233,13 +253,14 @@ CharmanderPokeBallScript:
 	givepoke CHARMANDER, 5, BERRY
 	closetext
 	readvar VAR_FACING
-	ifequal RIGHT, OakDirectionsScript
-	applymovement PLAYER, AfterCharmanderMovement
-	sjump OakDirectionsScript
+	ifequal RIGHT, OaksLabRivalTakesSquirtleScript
+	sjump OaksLabRivalTakesSquirtleScript
 
 SquirtlePokeBallScript:
 	checkevent EVENT_GOT_A_POKEMON_FROM_OAK
 	iftrue LookAtOakPokeBallScript
+	checkevent EVENT_RIVAL_CHOSE_STARTER
+	iftrue OaksLastPokemonScript
 	checkevent EVENT_FOLLOWED_OAK_INTO_LAB
 	iffalse OakNotAroundPokeBallsScript
 	turnobject OAKSLAB_OAK, DOWN
@@ -264,12 +285,13 @@ SquirtlePokeBallScript:
 	promptbutton
 	givepoke SQUIRTLE, 5, BERRY
 	closetext
-	applymovement PLAYER, AfterSquirtleMovement
-	sjump OakDirectionsScript
+	sjump OaksLabRivalTakesBulbasaurScript
 
 BulbasaurPokeBallScript:
 	checkevent EVENT_GOT_A_POKEMON_FROM_OAK
 	iftrue LookAtOakPokeBallScript
+	checkevent EVENT_RIVAL_CHOSE_STARTER
+	iftrue OaksLastPokemonScript
 	checkevent EVENT_FOLLOWED_OAK_INTO_LAB
 	iffalse OakNotAroundPokeBallsScript
 	turnobject OAKSLAB_OAK, DOWN
@@ -294,8 +316,7 @@ BulbasaurPokeBallScript:
 	promptbutton
 	givepoke BULBASAUR, 5, BERRY
 	closetext
-	applymovement PLAYER, AfterBulbasaurMovement
-	sjump OakDirectionsScript
+	sjump OaksLabRivalTakesCharmanderScript
 
 OaksLabDidntChooseStarterScript:
 	writetext OaksLabDidntChooseStarterText
@@ -315,15 +336,82 @@ OakNotAroundPokeBallsScript:
 	writetext OaksLabThoseArePokeBallsText
 	waitbutton
 	closetext
-	end	
+	end
 	
-OakDirectionsScript:
-	turnobject PLAYER, UP
+OaksLabRivalTakesCharmanderScript:
+	applymovement OAKSLAB_BLUE, RivalTakesCharmanderMovement
 	opentext
-	writetext OaksLabOak1YourPokemonCanFightText
+	writetext OaksLabRivalIllTakeThisOneText
 	waitbutton
 	closetext
+	disappear OAKSLAB_POKE_BALL1
+	opentext
+	writetext OaksLabRivalReceivedCharmanderText
+	playsound SFX_CAUGHT_MON_RBY
+	waitsfx
+	waitbutton
+	closetext
+	sjump OakDirectionsScript
+	
+OaksLabRivalTakesSquirtleScript:
+	applymovement OAKSLAB_BLUE, RivalTakesSquirtleMovement
+	opentext
+	writetext OaksLabRivalIllTakeThisOneText
+	waitbutton
+	closetext
+	disappear OAKSLAB_POKE_BALL2
+	opentext
+	writetext OaksLabRivalReceivedSquritleText
+	playsound SFX_CAUGHT_MON_RBY
+	waitsfx
+	waitbutton
+	closetext
+	sjump OakDirectionsScript
+	
+OaksLabRivalTakesBulbasaurScript:
+	applymovement OAKSLAB_BLUE, RivalTakesBulbasaurMovement
+	opentext
+	writetext OaksLabRivalIllTakeThisOneText
+	waitbutton
+	closetext
+	disappear OAKSLAB_POKE_BALL3
+	opentext
+	writetext OaksLabRivalReceivedBulbasaurText
+	playsound SFX_CAUGHT_MON_RBY
+	waitsfx
+	waitbutton
+	closetext
+	sjump OakDirectionsScript
+	
+RivalTakesCharmanderMovement:
+	slow_step DOWN
+	slow_step RIGHT
+	slow_step RIGHT
+	turn_head UP
+	step_end
+	
+RivalTakesSquirtleMovement:
+	slow_step DOWN
+	slow_step DOWN
+	slow_step RIGHT
+	slow_step RIGHT
+	slow_step RIGHT
+	slow_step UP
+	step_end
+	
+RivalTakesBulbasaurMovement:
+	slow_step DOWN
+	slow_step DOWN
+	slow_step RIGHT
+	slow_step RIGHT
+	slow_step RIGHT
+	slow_step RIGHT
+	slow_step UP
+	step_end
+	
+OakDirectionsScript:
 	setevent EVENT_GOT_A_POKEMON_FROM_OAK
+	setevent EVENT_RIVAL_CHOSE_STARTER
 	setscene SCENE_OAKSLAB_AIDE_GIVES_POKE_BALLS
 	setmapscene PALLET_TOWN, SCENE_PALLET_TOWN_NOOP
 	end
@@ -362,6 +450,13 @@ OakAideScript_ReceiveTheBalls:
 
 OakAideScript_ExplainBalls:
 	writetext OakAideText_ExplainBalls
+	waitbutton
+	closetext
+	end
+	
+OaksLastPokemonScript:
+	opentext
+	writetext OaksLabLastMonText
 	waitbutton
 	closetext
 	end
@@ -721,6 +816,21 @@ OaksLabRivalLeaveItAllToMeText:
 OaksLabScientistText:
 	text "I study #MON as"
 	line "PROF.OAK's AIDE."
+	done
+	
+OaksLabRivalReceivedBulbasaurText:
+	text "<RIVAL> received"
+	line "a BULBASAUR!"
+	done
+	
+OaksLabRivalReceivedSquritleText:
+	text "<RIVAL> received"
+	line "a SQUIRTLE!"
+	done
+	
+OaksLabRivalReceivedCharmanderText:
+	text "<RIVAL> received"
+	line "a CHARMANDER!"
 	done
 
 OaksLabTravelTip1:
