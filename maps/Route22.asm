@@ -4,13 +4,111 @@ Route22_MapScripts:
 	def_callbacks
 
 VictoryRoadEntranceSign:
-	jumptext VictoryRoadEntranceSignText
+	jumptext Route22PokemonLeagueSignText
+	
+Route22RivalBeforeBattleText1:
+	text "<RIVAL>: Hey!"
+	line "<PLAYER>!"
 
-VictoryRoadEntranceSignText:
+	para "You're going to"
+	line "#MON LEAGUE?"
+
+	para "Forget it! You"
+	line "probably don't"
+	cont "have any BADGEs!"
+
+	para "The guard won't"
+	line "let you through!"
+
+	para "By the way, did"
+	line "your #MON"
+	cont "get any stronger?"
+	done
+
+Route22RivalAfterBattleText1:
+	text "I heard #MON"
+	line "LEAGUE has many"
+	cont "tough trainers!"
+
+	para "I have to figure"
+	line "out how to get"
+	cont "past them!"
+
+	para "You should quit"
+	line "dawdling and get"
+	cont "a move on!"
+	done
+
+Route22Rival1DefeatedText:
+	text "Awww!"
+	line "You just lucked"
+	cont "out!"
+	prompt
+
+Route22Rival1VictoryText:
+	text "<RIVAL>: What?"
+	line "Why do I have 2"
+	cont "#MON?"
+
+	para "You should catch"
+	cont "some more too!"
+	prompt
+
+Route22RivalBeforeBattleText2:
+	text "<RIVAL>: What?"
+	line "<PLAYER>! What a"
+	cont "surprise to see"
+	cont "you here!"
+
+	para "So you're going to"
+	line "#MON LEAGUE?"
+
+	para "You collected all"
+	line "the BADGEs too?"
+	cont "That's cool!"
+
+	para "Then I'll whip you"
+	line "<PLAYER> as a"
+	cont "warm up for"
+	cont "#MON LEAGUE!"
+
+	para "Come on!"
+	done
+
+Route22RivalAfterBattleText2:
+	text "That loosened me"
+	line "up! I'm ready for"
+	cont "#MON LEAGUE!"
+
+	para "<PLAYER>, you need"
+	line "more practice!"
+
+	para "But hey, you know"
+	line "that! I'm out of"
+	cont "here. Smell ya!"
+	done
+
+Route22Rival2DefeatedText:
+	text "What!?"
+
+	para "I was just"
+	line "careless!"
+	prompt
+
+Route22Rival2VictoryText:
+	text "<RIVAL>: Hahaha!"
+	line "<PLAYER>! That's"
+	cont "your best? You're"
+	cont "nowhere near as"
+	cont "good as me, pal!"
+
+	para "Go train some"
+	line "more! You loser!"
+	prompt
+
+Route22PokemonLeagueSignText:
 	text "#MON LEAGUE"
-
-	para "VICTORY ROAD"
-	line "ENTRANCE"
+	line "Front Gate"
 	done
 
 Route22_MapEvents:
