@@ -9,17 +9,10 @@ Route2NuggetHouse_MapScripts:
 Route2NuggetHouseFisherScript:
 	faceplayer
 	opentext
-	checkevent EVENT_GOT_NUGGET_FROM_GUY
-	iftrue .GotNugget
 	writetext Route2NuggetHouseFisherText
 	promptbutton
 	verbosegiveitem NUGGET
-	iffalse .NoRoom
-	setevent EVENT_GOT_NUGGET_FROM_GUY
-.GotNugget:
 	writetext Route2NuggetHouseFisherText_GotNugget
-	waitbutton
-.NoRoom:
 	closetext
 	end
 

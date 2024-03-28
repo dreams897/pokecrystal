@@ -43,7 +43,6 @@ CeruleanGymGruntRunsOutScript:
 	applymovement CERULEANGYM_ROCKET, CeruleanGymGruntRunsOutMovement
 	playsound SFX_EXIT_BUILDING
 	disappear CERULEANGYM_ROCKET
-	setevent EVENT_MET_ROCKET_GRUNT_AT_CERULEAN_GYM
 	clearevent EVENT_ROUTE_24_ROCKET
 	clearevent EVENT_ROUTE_25_MISTY_BOYFRIEND
 	setscene SCENE_CERULEANGYM_NOOP

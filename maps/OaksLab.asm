@@ -414,10 +414,9 @@ RivalBattleScript:
 	iftrue .Bulbasaur
 	winlosstext OaksLabRivalIPickedTheWrongPokemonText, OaksLabRivalAmIGreatOrWhatText
 	setlasttalked OAKSLAB_BLUE
-	loadtrainer RIVAL1, RIVAL1_1_BULBASAUR
+	loadtrainer RIVAL1, RIVAL1_1_SQUIRTLE
 	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
-	special RestartMapMusic
 	reloadmap
 	iftrue .AfterVictorious
 	sjump .AfterYourDefeat
@@ -428,7 +427,6 @@ RivalBattleScript:
 	loadtrainer RIVAL1, RIVAL1_1_CHARMANDER
 	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
-	special RestartMapMusic
 	reloadmap
 	iftrue .AfterVictorious
 	sjump .AfterYourDefeat
@@ -439,7 +437,6 @@ RivalBattleScript:
 	loadtrainer RIVAL1, RIVAL1_1_SQUIRTLE
 	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
-	special RestartMapMusic
 	reloadmap
 	iftrue .AfterVictorious
 	sjump .AfterYourDefeat
@@ -1107,6 +1104,6 @@ OaksLab_MapEvents:
 	object_event  2, 10, SPRITE_SCIENTIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, OaksAideScript, EVENT_OAKS_AIDE_IN_LAB
 	object_event  8, 10, SPRITE_SCIENTIST, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, OaksAideScript, -1
 	object_event  4,  3, SPRITE_BLUE, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OaksLabRivalScript, -1
-	object_event  6,  3, SPRITE_POKE_BALL_2, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CharmanderPokeBallScript, EVENT_GOT_A_CHARMANDER_FROM_OAK
-	object_event  7,  3, SPRITE_POKE_BALL_2, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SquirtlePokeBallScript, EVENT_GOT_A_SQUIRTLE_FROM_OAK
-	object_event  8,  3, SPRITE_POKE_BALL_2, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BulbasaurPokeBallScript, EVENT_GOT_A_BULBASAUR_FROM_OAK
+	object_event  6,  3, SPRITE_POKE_BALL_2, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CharmanderPokeBallScript, EVENT_CHARMANDER_POKEBALL_IN_OAKS_LAB
+	object_event  7,  3, SPRITE_POKE_BALL_2, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SquirtlePokeBallScript, EVENT_SQUIRTLE_POKEBALL_IN_OAKS_LAB
+	object_event  8,  3, SPRITE_POKE_BALL_2, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BulbasaurPokeBallScript, EVENT_BULBASAUR_POKEBALL_IN_OAKS_LAB

@@ -70,8 +70,7 @@ CeruleanCityFisherScript:
 	opentext
 	checkevent EVENT_RETURNED_MACHINE_PART
 	iftrue .ReturnedMachinePart
-	checkevent EVENT_MET_ROCKET_GRUNT_AT_CERULEAN_GYM
-	iftrue .MetCeruleanRocket
+	iffalse .MetCeruleanRocket
 .ReturnedMachinePart:
 	writetext CeruleanCityFisherText
 	waitbutton
