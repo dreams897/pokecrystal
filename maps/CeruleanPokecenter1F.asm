@@ -9,6 +9,12 @@ CeruleanPokecenter1F_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	
+PokeCenterPCScriptCerulean:
+	opentext
+	special PokemonCenterPC
+	closetext
+	end
 
 CeruleanPokecenter1FNurseScript:
 	jumpstd PokecenterNurseScript
@@ -96,6 +102,7 @@ CeruleanPokecenter1F_MapEvents:
 	def_coord_events
 
 	def_bg_events
+	bg_event  13,  3, BGEVENT_UP, PokeCenterPCScriptCerulean
 
 	def_object_events
 	object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeruleanPokecenter1FNurseScript, -1

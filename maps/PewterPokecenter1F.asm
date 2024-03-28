@@ -9,6 +9,12 @@ PewterPokecenter1F_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	
+PokeCenterPCScriptPewter:
+	opentext
+	special PokemonCenterPC
+	closetext
+	end
 
 PewterPokecenter1FNurseScript:
 	jumpstd PokecenterNurseScript
@@ -85,6 +91,7 @@ PewterPokecenter1F_MapEvents:
 	def_coord_events
 
 	def_bg_events
+	bg_event  13,  3, BGEVENT_UP, PokeCenterPCScriptPewter
 
 	def_object_events
 	object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterPokecenter1FNurseScript, -1
