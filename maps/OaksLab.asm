@@ -402,10 +402,12 @@ OaksDirections:
 	end
 	
 RivalBattleScript:
+	playmusic MUSIC_MEET_RIVAL
 	applymovement OAKSLAB_BLUE, RivalBattleMovement
 	turnobject PLAYER, UP
 	opentext
 	writetext OaksLabRivalIllTakeYouOnText
+	waitbutton
 	checkevent EVENT_GOT_A_SQUIRTLE_FROM_OAK
 	iftrue .Squirtle
 	checkevent EVENT_GOT_A_BULBASAUR_FROM_OAK
@@ -415,7 +417,7 @@ RivalBattleScript:
 	loadtrainer RIVAL1, RIVAL1_1_BULBASAUR
 	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
-	restartmapmusic
+	special RestartMapMusic
 	reloadmap
 	iftrue .AfterVictorious
 	sjump .AfterYourDefeat
@@ -426,7 +428,7 @@ RivalBattleScript:
 	loadtrainer RIVAL1, RIVAL1_1_CHARMANDER
 	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
-	dontrestartmapmusic
+	special RestartMapMusic
 	reloadmap
 	iftrue .AfterVictorious
 	sjump .AfterYourDefeat
@@ -437,7 +439,7 @@ RivalBattleScript:
 	loadtrainer RIVAL1, RIVAL1_1_SQUIRTLE
 	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
-	dontrestartmapmusic
+	special RestartMapMusic
 	reloadmap
 	iftrue .AfterVictorious
 	sjump .AfterYourDefeat
