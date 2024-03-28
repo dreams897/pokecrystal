@@ -20,7 +20,7 @@ OaksLab_MapScripts:
 	scene_const SCENE_OAKSLAB_AIDE_GIVES_POKE_BALLS
 
 	def_callbacks
-	callback MAPCALLBACK_TILES, OaksLabCallback
+	callback MAPCALLBACK_TILES, OaksLabPokeDexCallback
 	callback MAPCALLBACK_OBJECTS, OaksLabOakCallback
 
 OaksLabOakNotAroundScene:
@@ -52,7 +52,7 @@ OaksLabNoop3Scene:
 	disappear OAKSLAB_BLUE
 	end
 	
-OaksLabCallback:
+OaksLabPokeDexCallback:
 	checkevent EVENT_GOT_POKEDEX
 	iffalse .DontHidePokeDex
 	changeblock 2, 1, $2E ; replace pokedex tile
@@ -157,7 +157,7 @@ OaksLabYourPokemonCanFightScript:
 	closetext
 	end
 	
-PokeDexScript:
+OaksLabPokeDexScript:
 	checkevent EVENT_OAK_GOT_PARCEL
 	iffalse .PokeDexText
 	end
@@ -190,7 +190,7 @@ OaksLabParcelScript:
 	waitsfx
 	waitbutton
 	closetext
-	changeblock 2, 1, $2E ; replace pokedex tile
+	changeblock 2, 1, $2E ; replace Pokedex tile
 	setevent EVENT_GOT_POKEDEX
 	setflag ENGINE_POKEDEX
 	opentext
@@ -249,7 +249,6 @@ CharmanderPokeBallScript:
 	writetext OaksLabReceivedStarterText
 	playsound SFX_CAUGHT_MON_RBY
 	waitsfx
-	promptbutton
 	givepoke CHARMANDER, 5, BERRY
 	closetext
 	applymovement OAKSLAB_BLUE, RivalTakesSquirtleMovement
@@ -262,11 +261,10 @@ CharmanderPokeBallScript:
 	writetext OaksLabRivalReceivedMonText
 	playsound SFX_CAUGHT_MON_RBY
 	waitsfx
-	setevent EVENT_RIVAL_CHOSE_STARTER
 	closetext
 	readvar VAR_FACING
-	ifequal RIGHT, OakDirectionsScript
-	sjump OakDirectionsScript
+	ifequal RIGHT, OaksDirections
+	sjump OaksDirections
 
 SquirtlePokeBallScript:
 	checkevent EVENT_GOT_A_POKEMON_FROM_OAK
@@ -294,7 +292,6 @@ SquirtlePokeBallScript:
 	writetext OaksLabReceivedStarterText
 	playsound SFX_CAUGHT_MON_RBY
 	waitsfx
-	promptbutton
 	givepoke SQUIRTLE, 5, BERRY
 	closetext
 	applymovement OAKSLAB_BLUE, RivalTakesBulbasaurMovement
@@ -307,9 +304,8 @@ SquirtlePokeBallScript:
 	writetext OaksLabRivalReceivedMonText
 	playsound SFX_CAUGHT_MON_RBY
 	waitsfx
-	setevent EVENT_RIVAL_CHOSE_STARTER
 	closetext
-	sjump OakDirectionsScript
+	sjump OaksDirections
 
 BulbasaurPokeBallScript:
 	checkevent EVENT_GOT_A_POKEMON_FROM_OAK
@@ -335,7 +331,8 @@ BulbasaurPokeBallScript:
 	waitsfx
 	getmonname STRING_BUFFER_3, BULBASAUR
 	writetext OaksLabReceivedStarterText
-	promptbutton
+	playsound SFX_CAUGHT_MON_RBY
+	waitsfx
 	givepoke BULBASAUR, 5, BERRY
 	closetext
 	applymovement OAKSLAB_BLUE, RivalTakesSquirtleMovement
@@ -348,9 +345,8 @@ BulbasaurPokeBallScript:
 	writetext OaksLabRivalReceivedMonText
 	playsound SFX_CAUGHT_MON_RBY
 	waitsfx
-	setevent EVENT_RIVAL_CHOSE_STARTER
 	closetext
-	sjump OakDirectionsScript
+	sjump OaksDirections
 
 OaksLabDidntChooseStarterScript:
 	writetext OaksLabDidntChooseStarterText
@@ -399,6 +395,12 @@ RivalTakesBulbasaurMovement:
 	slow_step UP
 	step_end
 	
+OaksDirections:
+	setevent EVENT_RIVAL_CHOSE_STARTER
+	setevent EVENT_GOT_A_POKEMON_FROM_OAK
+	setscene SCENE_OAKSLAB_TAKE_YOU_ON
+	end
+	
 RivalBattleScript:
 	applymovement OAKSLAB_BLUE, RivalBattleMovement
 	turnobject PLAYER, UP
@@ -413,7 +415,7 @@ RivalBattleScript:
 	loadtrainer RIVAL1, RIVAL1_1_BULBASAUR
 	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
-	dontrestartmapmusic
+	restartmapmusic
 	reloadmap
 	iftrue .AfterVictorious
 	sjump .AfterYourDefeat
@@ -464,11 +466,6 @@ RivalBattleMovement:
 	step LEFT
 	turn_head DOWN
 	step_end
-	
-OakDirectionsScript:
-	setevent EVENT_GOT_A_POKEMON_FROM_OAK
-	setscene SCENE_OAKSLAB_TAKE_YOU_ON
-	end
 
 OakAideScript_WalkBalls1:
 	applymovement OAKSLAB_OAKS_AIDE, OakAideWalksRight1
@@ -1098,8 +1095,8 @@ OaksLab_MapEvents:
 	bg_event  9,  7, BGEVENT_READ, OaksLabBookshelf
 	bg_event  9,  3, BGEVENT_READ, OaksLabTrashcan
 	bg_event  0,  1, BGEVENT_READ, OaksLabPC
-	bg_event  2,  1, BGEVENT_READ, PokeDexScript
-	bg_event  3,  1, BGEVENT_READ, PokeDexScript
+	bg_event  2,  1, BGEVENT_READ, OaksLabPokeDexScript
+	bg_event  3,  1, BGEVENT_READ, OaksLabPokeDexScript
 
 	def_object_events
 	object_event  5,  2, SPRITE_OAK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ProfOakScript, -1
