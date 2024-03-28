@@ -947,7 +947,7 @@ ShrinkPlayer:
 	ld [wMusicFadeID], a
 	ld a, d
 	ld [wMusicFadeID + 1], a
-
+	call WaitSFX
 	ld de, SFX_SHRINK_1
 	call PlaySFX
 	pop af
