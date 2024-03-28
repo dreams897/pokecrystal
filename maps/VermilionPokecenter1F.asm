@@ -10,7 +10,7 @@ VermilionPokecenter1F_MapScripts:
 
 	def_callbacks
 	
-PokeCenterPCScriptViridian:
+PokeCenterPCScriptVermilion:
 	opentext
 	special PokemonCenterPC
 	closetext
