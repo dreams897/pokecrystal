@@ -4,6 +4,8 @@ ChrisBackpic::
 INCBIN "gfx/player/red_back.2bpp.lz"
 EnbyBackpic::
 INCBIN "gfx/player/enby_back.2bpp.lz"
+
+SECTION "Trainer Backpics 2", ROMX
 DudeBackpic::
 INCBIN "gfx/battle/dude.2bpp.lz"
 
