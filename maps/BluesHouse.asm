@@ -40,17 +40,18 @@ BluesHouseDaisyCallback:
 DaisyScript:
 	faceplayer
 	opentext
-	checkevent EVENT_OAK_GOT_PARCEL
-	iffalse .BlueInOaksLab
 	checkevent EVENT_GOT_POKEDEX
 	iftrue .OfferTownMap
+	checkmapscene OAKS_LAB
+	ifequal SCENE_OAKSLAB_NOOP, .BluesOutCatchingMon
+	writetext BluesHouseDaisyRivalAtLabText
 	waitbutton
 	closetext
 	turnobject BLUESHOUSE_DAISY, RIGHT
 	end
 	
-.BlueInOaksLab
-	writetext BluesHouseDaisyRivalAtLabText
+.BluesOutCatchingMon
+	writetext BluesHouseOutCatchingMonText
 	waitbutton
 	closetext
 	turnobject BLUESHOUSE_DAISY, RIGHT
@@ -128,6 +129,13 @@ BluesHouseTownMapText:
 	text "It's a big map!"
 	line "This is useful!"
 	done
+	
+BluesHouseOutCatchingMonText:
+	text "Hi <PLAYER>!"
+	line "<RIVAL> is out"
+	cont "catching #MON!"
+	done
+
 
 BluesHouse_MapEvents:
 	db 0, 0 ; filler

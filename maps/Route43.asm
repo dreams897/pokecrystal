@@ -258,8 +258,6 @@ TrainerPicnickerTiffany:
 	scall .Gift
 	verbosegiveitem PINK_BOW
 	iffalse .NoRoom
-	clearflag ENGINE_TIFFANY_HAS_PINK_BOW
-	setevent EVENT_TIFFANY_GAVE_PINK_BOW
 	sjump .NumberAccepted
 
 .NoRoom:

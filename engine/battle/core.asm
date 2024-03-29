@@ -2603,7 +2603,7 @@ PlayVictoryMusic:
 	ld de, MUSIC_DEFEATED_GYM_LEADER
 	call IsGymLeader
 	jr c, .play_music
-	ld de, MUSIC_TRAINER_VICTORY
+	ld de, MUSIC_DEFEATED_TRAINER
 
 .play_music
 	call PlayMusic

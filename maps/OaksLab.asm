@@ -249,15 +249,16 @@ CharmanderPokeBallScript:
 	writetext OaksLabReceivedStarterText
 	playsound SFX_CAUGHT_MON_RBY
 	waitsfx
-	givepoke CHARMANDER, 5, BERRY
+	promptbutton
+	givepoke CHARMANDER, 5
 	closetext
 	applymovement OAKSLAB_BLUE, RivalTakesSquirtleMovement
-	pause 15
-	disappear OAKSLAB_POKE_BALL2
 	opentext
 	getmonname STRING_BUFFER_3, SQUIRTLE
 	writetext OaksLabRivalIllTakeThisOneText
 	waitbutton
+	pause 15
+	disappear OAKSLAB_POKE_BALL2
 	writetext OaksLabRivalReceivedMonText
 	playsound SFX_CAUGHT_MON_RBY
 	waitsfx
@@ -292,15 +293,16 @@ SquirtlePokeBallScript:
 	writetext OaksLabReceivedStarterText
 	playsound SFX_CAUGHT_MON_RBY
 	waitsfx
-	givepoke SQUIRTLE, 5, BERRY
+	promptbutton
+	givepoke SQUIRTLE, 5
 	closetext
 	applymovement OAKSLAB_BLUE, RivalTakesBulbasaurMovement
-	pause 15
-	disappear OAKSLAB_POKE_BALL3
 	opentext
 	getmonname STRING_BUFFER_3, BULBASAUR
 	writetext OaksLabRivalIllTakeThisOneText
 	waitbutton
+	pause 15
+	disappear OAKSLAB_POKE_BALL3
 	writetext OaksLabRivalReceivedMonText
 	playsound SFX_CAUGHT_MON_RBY
 	waitsfx
@@ -333,15 +335,16 @@ BulbasaurPokeBallScript:
 	writetext OaksLabReceivedStarterText
 	playsound SFX_CAUGHT_MON_RBY
 	waitsfx
-	givepoke BULBASAUR, 5, BERRY
+	promptbutton
+	givepoke BULBASAUR, 5
 	closetext
 	applymovement OAKSLAB_BLUE, RivalTakesSquirtleMovement
-	pause 15
-	disappear OAKSLAB_POKE_BALL2
 	opentext
 	getmonname STRING_BUFFER_3, SQUIRTLE
 	writetext OaksLabRivalIllTakeThisOneText
 	waitbutton
+	pause 15
+	disappear OAKSLAB_POKE_BALL2
 	writetext OaksLabRivalReceivedMonText
 	playsound SFX_CAUGHT_MON_RBY
 	waitsfx
@@ -403,8 +406,8 @@ OaksDirections:
 	
 RivalBattleScript:
 	playmusic MUSIC_MEET_RIVAL
-	applymovement OAKSLAB_BLUE, RivalBattleMovement
 	turnobject PLAYER, UP
+	applymovement OAKSLAB_BLUE, RivalBattleMovement
 	opentext
 	writetext OaksLabRivalIllTakeYouOnText
 	waitbutton
@@ -424,7 +427,7 @@ RivalBattleScript:
 .Squirtle:
 	winlosstext OaksLabRivalIPickedTheWrongPokemonText, OaksLabRivalAmIGreatOrWhatText
 	setlasttalked OAKSLAB_BLUE
-	loadtrainer RIVAL1, RIVAL1_1_CHARMANDER
+	loadtrainer RIVAL1, RIVAL1_1_BULBASAUR
 	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
 	reloadmap
@@ -443,27 +446,46 @@ RivalBattleScript:
 
 .AfterVictorious:
 	opentext
-	writetext OaksLabRivalIPickedTheWrongPokemonText
+	writetext OaksLabRivalSmellYouLaterText
 	waitbutton
 	closetext
+	playmusic MUSIC_MEET_RIVAL
+	applymovement OAKSLAB_BLUE, RivalSmellYouLaterMovement
+	disappear OAKSLAB_BLUE
+	special HealParty
+	special RestartMapMusic
 	setscene SCENE_OAKSLAB_AIDE_GIVES_POKE_BALLS
 	setmapscene PALLET_TOWN, SCENE_PALLET_TOWN_NOOP
 	end
 	
 .AfterYourDefeat:
 	opentext
-	writetext OaksLabRivalAmIGreatOrWhatText
+	writetext OaksLabRivalSmellYouLaterText
 	waitbutton
 	closetext
+	playmusic MUSIC_MEET_RIVAL
+	applymovement OAKSLAB_BLUE, RivalSmellYouLaterMovement
+	disappear OAKSLAB_BLUE
+	special HealParty
+	special RestartMapMusic
 	setscene SCENE_OAKSLAB_AIDE_GIVES_POKE_BALLS
 	setmapscene PALLET_TOWN, SCENE_PALLET_TOWN_NOOP
 	end
 
 RivalBattleMovement:
-	step DOWN
-	step LEFT
-	step LEFT
+	slow_step DOWN
+	slow_step LEFT
+	slow_step LEFT
 	turn_head DOWN
+	step_end
+
+RivalSmellYouLaterMovement:
+	slow_step LEFT
+	slow_step DOWN
+	slow_step DOWN
+	slow_step DOWN
+	slow_step DOWN
+	slow_step DOWN
 	step_end
 
 OakAideScript_WalkBalls1:
@@ -747,7 +769,7 @@ OaksLabRivalIllTakeThisOneText:
 
 OaksLabRivalReceivedMonText:
 	text "<RIVAL> received"
-	line "@"
+	line "a @"
 	text_ram wStringBuffer3
 	text "!"
 	done

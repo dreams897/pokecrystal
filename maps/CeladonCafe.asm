@@ -89,28 +89,6 @@ EatathonContestPoster:
 	jumptext EatathonContestPosterText
 
 CeladonCafeTrashcan:
-	checkevent EVENT_FOUND_LEFTOVERS_IN_CELADON_CAFE
-	iftrue .TrashEmpty
-	giveitem LEFTOVERS
-	iffalse .PackFull
-	opentext
-	getitemname STRING_BUFFER_3, LEFTOVERS
-	writetext FoundLeftoversText
-	playsound SFX_ITEM
-	waitsfx
-	itemnotify
-	closetext
-	setevent EVENT_FOUND_LEFTOVERS_IN_CELADON_CAFE
-	end
-
-.PackFull:
-	opentext
-	getitemname STRING_BUFFER_3, LEFTOVERS
-	writetext FoundLeftoversText
-	promptbutton
-	writetext NoRoomForLeftoversText
-	waitbutton
-	closetext
 	end
 
 .TrashEmpty:
