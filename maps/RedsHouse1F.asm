@@ -35,6 +35,7 @@ RedsMom:
 	writetext RedsHouse1FMomLookingGreatText
 	waitbutton
 	closetext
+	turnobject REDSHOUSE1F_REDS_MOM, LEFT
 	end
 
 RedsHouse1FTV:
