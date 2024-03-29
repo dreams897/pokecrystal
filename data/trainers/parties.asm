@@ -1,14 +1,25 @@
-INCLUDE "data/trainers/party_pointers.asm"
 
-Trainers:
 ; Trainer data structure:
-; - db "NAME@", TRAINERTYPE_* constant
+; - db "NAME@", TRAINERTYPE_* constants |ed together
 ; - 1 to 6 Pokémon:
-;    * for TRAINERTYPE_NORMAL:     db level, species
-;    * for TRAINERTYPE_MOVES:      db level, species, 4 moves
-;    * for TRAINERTYPE_ITEM:       db level, species, item
-;    * for TRAINERTYPE_ITEM_MOVES: db level, species, item, 4 moves
+;    * in all cases:              db level, species
+;    * with TRAINERTYPE_NICKNAME: db "NICKNAME@"
+;    * with TRAINERTYPE_DVS:      db atk|def dv, spd|spc dv
+;    * with TRAINERTYPE_STAT_EXP: dw hp, atk, def, spd, spc
+;    * with TRAINERTYPE_HAPPINESS db happiness
+;    * with TRAINERTYPE_ITEM:     db item
+;    * with TRAINERTYPE_MOVES:    db move 1, move 2, move 3, move 4
+;    (TRAINERTYPE_ITEM_MOVES is just TRAINERTYPE_ITEM | TRAINERTYPE_MOVES)
 ; - db -1 ; end
+; Random Trainers:
+; - db "NAME@", TRAINERTYPE_RANDOM | other TRAINERTYPE_* constants, number of party pokémon, list constant (defined in constants/trainer_constants.asm)
+; - db -1 ; end
+; Lists of random Pokémon:
+; - db length of list
+; - Pokémon, separated by db $fe
+; - db -1 ; end
+
+SECTION "Enemy Trainer Parties 1", ROMX
 
 FalknerGroup:
 	; FALKNER (1)
@@ -75,18 +86,18 @@ ClairGroup:
 
 Rival1Group:
 	; RIVAL1 (1)
-	db "?@", TRAINERTYPE_NORMAL
-	db  5, BULBASAUR
+	db "?@", TRAINERTYPE_DVS | TRAINERTYPE_ITEM
+	db  5, BULBASAUR,    $67, $67, NO_ITEM
 	db -1 ; end
 
 	; RIVAL1 (2)
-	db "?@", TRAINERTYPE_NORMAL
-	db  5, CHARMANDER
+	db "?@", TRAINERTYPE_DVS | TRAINERTYPE_ITEM
+	db  5, CHARMANDER,    $67, $67, NO_ITEM
 	db -1 ; end
 
 	; RIVAL1 (3)
-	db "?@", TRAINERTYPE_NORMAL
-	db  5, SQUIRTLE
+	db "?@", TRAINERTYPE_DVS | TRAINERTYPE_ITEM
+	db  5, SQUIRTLE,    $67, $67, NO_ITEM
 	db -1 ; end
 
 	; RIVAL1 (4)
@@ -3514,3 +3525,7 @@ MysticalmanGroup:
 	db 23, HAUNTER,    LICK, HYPNOSIS, MEAN_LOOK, CURSE
 	db 25, ELECTRODE,  SCREECH, SONICBOOM, THUNDER, ROLLOUT
 	db -1 ; end
+	
+SECTION "Random Party Lists", ROMX
+
+RandomPartyLists::
