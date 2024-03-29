@@ -7,6 +7,7 @@ INCBIN "gfx/font/font_battle_extra.2bpp"
 
 Frames:
 	table_width TEXTBOX_FRAME_TILES * LEN_1BPP_TILE, Frames
+INCBIN "gfx/frames/0.1bpp"
 INCBIN "gfx/frames/1.1bpp"
 INCBIN "gfx/frames/2.1bpp"
 INCBIN "gfx/frames/3.1bpp"
@@ -14,8 +15,8 @@ INCBIN "gfx/frames/4.1bpp"
 INCBIN "gfx/frames/5.1bpp"
 INCBIN "gfx/frames/6.1bpp"
 INCBIN "gfx/frames/7.1bpp"
-INCBIN "gfx/frames/8.1bpp"
 	assert_table_length NUM_FRAMES
+INCBIN "gfx/frames/8.1bpp" ; unused
 INCBIN "gfx/frames/9.1bpp" ; unused
 
 StatsScreenPageTilesGFX:
