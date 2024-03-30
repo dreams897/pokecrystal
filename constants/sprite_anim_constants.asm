@@ -80,6 +80,11 @@ DEF NUM_SPRITEANIMDICT_ENTRIES EQU 10
 	const SPRITE_ANIM_OBJ_INTRO_UNOWN_F             ; 2a
 	const SPRITE_ANIM_OBJ_INTRO_SUICUNE_AWAY        ; 2b
 	const SPRITE_ANIM_OBJ_CELEBI                    ; 2c
+	const SPRITE_ANIM_INDEX_GREEN_WALK              ; 2d
+	const SPRITE_ANIM_INDEX_MAGNET_TRAIN_GREEN      ; 2e
+	const SPRITE_ANIM_INDEX_PURPLE_WALK             ; 2f
+	const SPRITE_ANIM_INDEX_MAGNET_TRAIN_PURPLE     ; 30
+	
 DEF NUM_SPRITE_ANIM_OBJS EQU const_value
 
 ; DoSpriteAnimFrame.Jumptable indexes (see engine/sprite_anims/functions.asm)
@@ -189,6 +194,10 @@ DEF NUM_SPRITE_ANIM_FUNCS EQU const_value
 	const SPRITE_ANIM_FRAMESET_INTRO_UNOWN_F             ; 3f
 	const SPRITE_ANIM_FRAMESET_CELEBI_LEFT               ; 40
 	const SPRITE_ANIM_FRAMESET_CELEBI_RIGHT              ; 41
+	const SPRITE_ANIM_FRAMESET_GREEN_WALK                ; 42
+	const SPRITE_ANIM_FRAMESET_MAGNET_TRAIN_GREEN        ; 43
+	const SPRITE_ANIM_FRAMESET_PURPLE_WALK               ; 44
+	const SPRITE_ANIM_FRAMESET_MAGNET_TRAIN_PURPLE       ; 45
 DEF NUM_SPRITE_ANIM_FRAMESETS EQU const_value
 
 ; SpriteAnimOAMData indexes (see data/sprite_anims/oam.asm)
@@ -333,6 +342,14 @@ DEF NUM_SPRITE_ANIM_FRAMESETS EQU const_value
 	const SPRITE_ANIM_OAMSET_GAMEFREAK_LOGO_9            ; 89
 	const SPRITE_ANIM_OAMSET_GAMEFREAK_LOGO_10           ; 8a
 	const SPRITE_ANIM_OAMSET_GAMEFREAK_LOGO_11           ; 8b
+	const SPRITE_ANIM_OAMSET_GREEN_WALK_1                ; 8c
+	const SPRITE_ANIM_OAMSET_GREEN_WALK_2                ; 8d
+	const SPRITE_ANIM_OAMSET_MAGNET_TRAIN_GREEN_1        ; 8e
+	const SPRITE_ANIM_OAMSET_MAGNET_TRAIN_GREEN_2        ; 8f
+	const SPRITE_ANIM_OAMSET_PURPLE_WALK_1               ; 90
+	const SPRITE_ANIM_OAMSET_PURPLE_WALK_2               ; 91
+	const SPRITE_ANIM_OAMSET_MAGNET_TRAIN_PURPLE_1       ; 92
+	const SPRITE_ANIM_OAMSET_MAGNET_TRAIN_PURPLE_2       ; 93
 DEF NUM_SPRITE_ANIM_OAMSETS EQU const_value
 
 assert NUM_SPRITE_ANIM_OAMSETS <= FIRST_OAM_CMD, \

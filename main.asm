@@ -180,7 +180,7 @@ INCLUDE "engine/pokemon/mail.asm"
 SECTION "Crystal Features 1", ROMX
 
 INCLUDE "engine/menus/init_gender.asm"
-INCLUDE "engine/items/pack_kris.asm"
+INCLUDE "engine/items/pack_green.asm"
 INCLUDE "engine/events/move_tutor.asm"
 INCLUDE "engine/gfx/crystal_layouts.asm"
 INCLUDE "engine/events/celebi.asm"
@@ -292,13 +292,16 @@ INCLUDE "engine/events/halloffame.asm"
 SECTION "Crystal Features 2", ROMX
 
 INCLUDE "engine/events/kurt.asm"
-INCLUDE "engine/gfx/player_gfx.asm"
 INCLUDE "mobile/mobile_22.asm"
 INCLUDE "engine/events/unown_walls.asm"
 INCLUDE "engine/events/buena.asm"
 INCLUDE "engine/events/dratini.asm"
 INCLUDE "engine/events/battle_tower/rules.asm"
 INCLUDE "mobile/mobile_22_2.asm"
+
+SECTION "Player GFX", ROMX
+
+INCLUDE "engine/gfx/player_gfx.asm"
 
 
 SECTION "bank23", ROMX

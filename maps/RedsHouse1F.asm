@@ -11,14 +11,30 @@ RedHouse1FNoopScene:
 	end
 
 RedsMom:
+	readvar VAR_PLAYERGENDER
+	ifequal FEMALE, .AllGirlsLeaveSomeday
+	ifequal ENBY, .EveryoneLeavesSomeday
 	faceplayer
 	opentext
 	checkevent EVENT_GOT_A_POKEMON_FROM_OAK
 	iftrue .Heal
-	writetext RedsMomText1
+	writetext MomWakeUpTextBoy
 	waitbutton
 	closetext
 	end
+	
+.AllGirlsLeaveSomeday
+	writetext MomWakeUpTextGirl
+	waitbutton
+	closetext
+	end
+	
+.EveryoneLeavesSomeday
+	writetext MomWakeUpTextEnby
+	waitbutton
+	closetext
+	end
+	
 .Heal:
 	writetext RedsHouse1FMomYouShouldRestText
 	waitbutton
@@ -39,15 +55,23 @@ RedsMom:
 	end
 
 RedsHouse1FTV:
-	jumptext RedsHouse1FTVText
+	readvar VAR_PLAYERGENDER
+	ifequal FEMALE, .GirlWizardOfOzMovie
+	ifequal ENBY, .EnbyVictorVictoriaMovie
+	jumptext StandByMeText
+	
+.EnbyVictorVictoriaMovie
+	jumptext VictorVictoriaText
+.GirlWizardOfOzMovie
+	jumptext WizardOfOzText
 
 RedsHouse1FBookshelf:
 	jumpstd PictureBookshelfScript
 
 RedsHouse1FWrongSide:
 	jumptext RedsHouse1FTVWrongSideText
-
-RedsMomText1:
+	
+MomWakeUpTextBoy:
 	text "MOM: Right."
 	line "All boys leave"
 	cont "home some day."
@@ -56,6 +80,62 @@ RedsMomText1:
 	para "PROF.OAK, next"
 	line "door, is looking"
 	cont "for you."
+	done
+	
+MomWakeUpTextGirl:
+	text "Mom: Right."
+	line "All girls leave"
+	cont "home some day."
+	cont "It said so on TV."
+
+	para "Prof. Oak, next"
+	line "door, is looking"
+	cont "for you."
+	done
+	
+MomWakeUpTextEnby:
+	text "Mom: Right."
+	line "Everyone leaves"
+	cont "home some day."
+	cont "It said so on TV."
+
+	para "Prof. Oak, next"
+	line "door, is looking"
+	cont "for you."
+	done
+	
+StandByMeText:
+	text "There's a movie"
+	line "on TV. Four boys"
+	cont "are walking on"
+	cont "railroad tracks."
+	
+	para "I better go too."
+	done
+	
+WizardOfOzText:
+	text "There's a movie"
+	line "on TV."
+	
+	para "A girl with her"
+	line "hair in pigtails"
+	cont "is walking up a"
+	cont "brick road."
+
+	para "I better go too."
+	done
+	
+VictorVictoriaText:
+	text "There's a movie"
+	line "on TV."
+	
+	para "A singer wearing"
+	line "a half-dress and"
+	cont "half-tuxedo"
+	cont "costume bows and"
+	cont "exits stage left."
+
+	para "I better go too."
 	done
 	
 RedsHouse1FMomYouShouldRestText:
@@ -70,15 +150,6 @@ RedsHouse1FMomLookingGreatText:
 	cont "#MON are"
 	cont "looking great!"
 	cont "Take care now!"
-	done
-
-RedsHouse1FTVText:
-	text "There's a movie"
-	line "on TV. Four boys"
-	cont "are walking on"
-	cont "railroad tracks."
-	
-	para "I better go too."
 	done
 	
 RedsHouse1FTVWrongSideText:

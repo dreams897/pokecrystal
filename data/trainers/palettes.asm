@@ -8,9 +8,9 @@ TrainerPalettes:
 
 PlayerPalette: ; Chris uses the same colors as Cal
 INCBIN "gfx/trainers/cal.gbcpal", middle_colors
-KrisPalette: ; Kris shares Falkner's palette
 INCBIN "gfx/trainers/falkner.gbcpal", middle_colors
 INCBIN "gfx/trainers/whitney.gbcpal", middle_colors
+GreenPalette: ; Green/Leaf shares Bugsy's palette
 INCBIN "gfx/trainers/bugsy.gbcpal", middle_colors
 INCBIN "gfx/trainers/morty.gbcpal", middle_colors
 INCBIN "gfx/trainers/pryce.gbcpal", middle_colors
@@ -55,6 +55,7 @@ INCBIN "gfx/trainers/guitarist.gbcpal", middle_colors
 INCBIN "gfx/trainers/hiker.gbcpal", middle_colors
 INCBIN "gfx/trainers/biker.gbcpal", middle_colors
 INCBIN "gfx/trainers/blaine.gbcpal", middle_colors
+EnbyPalette: ; enby uses burglar pal
 INCBIN "gfx/trainers/burglar.gbcpal", middle_colors
 INCBIN "gfx/trainers/firebreather.gbcpal", middle_colors
 INCBIN "gfx/trainers/juggler.gbcpal", middle_colors

@@ -80,7 +80,7 @@ NewGame:
 PlayerProfileSetup:
 	farcall CheckMobileAdapterStatus
 	jr c, .ok
-	; farcall InitGender
+	farcall InitGender
 	ret
 .ok
 	ld c, 0
@@ -824,19 +824,24 @@ NamePlayer:
 	call RotateThreePalettesLeft
 
 	ld hl, wPlayerName
-	ld de, .Chris
+	ld de, .Red
 	ld a, [wPlayerGender]
-	bit PLAYERGENDER_FEMALE_F, a
-	jr z, .Male
-	ld de, .Kris
-.Male:
+	and a ; MALE
+	jr z, .GotName
+	ld de, .Green
+	dec a ; FEMALE
+	jr z, .GotName
+	ld de, .Enby
+.GotName:
 	call InitName
 	ret
 
-.Chris:
+.Red:
 	db "RED@@@@@@@@"
-.Kris:
-	db "KRIS@@@@@@@"
+.Green:
+	db "GREEN@@@@@@@"
+.Enby:
+	db "PURPLE@@@@@@"
 
 NameRivalIntro:
 	farcall MovePlayerPicRight
@@ -1069,10 +1074,14 @@ Intro_PlacePlayerSprite:
 
 	ld b, PAL_OW_RED
 	ld a, [wPlayerGender]
-	bit PLAYERGENDER_FEMALE_F, a
-	jr z, .male
-	ld b, PAL_OW_BLUE
-.male
+	and a ; MALE
+	jr z, .okay
+	ld b, PAL_OW_GREEN
+	dec a ; FEMALE
+	jr z, .okay
+	ld b, PAL_OW_PURPLE
+	dec b ; ENBY
+.okay
 	ld a, b
 
 	ld [hli], a ; attributes

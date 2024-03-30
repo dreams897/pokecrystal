@@ -53,15 +53,18 @@ RefreshSprites::
 	ret
 
 GetPlayerSprite:
-; Get Chris or Kris's sprite.
+; Get Chris or Green's sprite.
 	ld hl, ChrisStateSprites
 	ld a, [wPlayerSpriteSetupFlags]
 	bit PLAYERSPRITESETUP_FEMALE_TO_MALE_F, a
 	jr nz, .go
 	ld a, [wPlayerGender]
-	bit PLAYERGENDER_FEMALE_F, a
+	and a ; MALE
 	jr z, .go
-	ld hl, KrisStateSprites
+	ld hl, GreenStateSprites
+	dec a ; FEMALE
+	jr z, .go
+	ld hl, EnbyStateSprites
 
 .go
 	ld a, [wPlayerState]

@@ -104,8 +104,8 @@ OverworldSprites:
 	overworld_sprite FruitTreeSpriteGFX, 4, STILL_SPRITE, PAL_OW_TREE
 	overworld_sprite GoldTrophySpriteGFX, 4, STILL_SPRITE, PAL_OW_BROWN
 	overworld_sprite SilverTrophySpriteGFX, 4, STILL_SPRITE, PAL_OW_EMOTE
-	overworld_sprite KrisSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
-	overworld_sprite KrisBikeSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
+	overworld_sprite GreenSpriteGFX, 12, WALKING_SPRITE, PAL_OW_GREEN
+	overworld_sprite GreenBikeSpriteGFX, 12, WALKING_SPRITE, PAL_OW_GREEN
 	overworld_sprite SuicuneSpriteGFX, 4, STILL_SPRITE, PAL_OW_BLUE
 	overworld_sprite EnteiSpriteGFX, 4, STILL_SPRITE, PAL_OW_RED
 	overworld_sprite RaikouSpriteGFX, 4, STILL_SPRITE, PAL_OW_RED
@@ -124,6 +124,6 @@ OverworldSprites:
 	overworld_sprite GiovanniSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite SilphWorkerFSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite SilphWorkerMSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
-	overworld_sprite EnbySpriteGFX, 12, WALKING_SPRITE, PAL_OW_PINK
-	overworld_sprite EnbyBikeSpriteGFX, 12, WALKING_SPRITE, PAL_OW_PINK
+	overworld_sprite EnbySpriteGFX, 12, WALKING_SPRITE, PAL_OW_PURPLE
+	overworld_sprite EnbyBikeSpriteGFX, 12, WALKING_SPRITE, PAL_OW_PURPLE
 	assert_table_length NUM_OVERWORLD_SPRITES

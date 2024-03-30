@@ -101,8 +101,8 @@ FamicomSpriteGFX::             INCBIN "gfx/sprites/famicom.2bpp"
 FruitTreeSpriteGFX::           INCBIN "gfx/sprites/fruit_tree.2bpp"
 GoldTrophySpriteGFX::          INCBIN "gfx/sprites/gold_trophy.2bpp"
 SilverTrophySpriteGFX::        INCBIN "gfx/sprites/silver_trophy.2bpp"
-KrisSpriteGFX::                INCBIN "gfx/sprites/kris.2bpp"
-KrisBikeSpriteGFX::            INCBIN "gfx/sprites/kris_bike.2bpp"
+GreenSpriteGFX::               INCBIN "gfx/sprites/green.2bpp"
+GreenBikeSpriteGFX::           INCBIN "gfx/sprites/green_bike.2bpp"
 
 SECTION "Sprites 3", ROMX
 

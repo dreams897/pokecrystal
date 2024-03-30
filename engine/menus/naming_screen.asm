@@ -210,13 +210,22 @@ NamingScreen:
 	pop de
 	ld b, SPRITE_ANIM_OBJ_RED_WALK
 	ld a, d
-	cp HIGH(KrisSpriteGFX)
-	jr nz, .not_kris
+	cp HIGH(GreenSpriteGFX)
+	jr nz, .not_green
 	ld a, e
-	cp LOW(KrisSpriteGFX)
-	jr nz, .not_kris
-	ld b, SPRITE_ANIM_OBJ_BLUE_WALK
-.not_kris
+	cp LOW(GreenSpriteGFX)
+	jr nz, .not_green
+	ld b, SPRITE_ANIM_INDEX_GREEN_WALK
+	jr .not_enby
+.not_green
+	ld a, d
+	cp HIGH(EnbySpriteGFX)
+	jr nz, .not_enby
+	ld a, e
+	cp LOW(EnbySpriteGFX)
+	jr nz, .not_enby
+	ld b, SPRITE_ANIM_INDEX_PURPLE_WALK
+.not_enby
 	ld a, b
 	depixel 4, 4, 4, 0
 	call InitSpriteAnimStruct

@@ -69,8 +69,6 @@ SunnyScript:
 	promptbutton
 	setevent EVENT_MET_SUNNY_OF_SUNDAY
 .MetSunny:
-	checkflag ENGINE_PLAYER_IS_FEMALE
-	iftrue .Kris
 	writetext SunnyGivesGiftText1
 	promptbutton
 	sjump .next

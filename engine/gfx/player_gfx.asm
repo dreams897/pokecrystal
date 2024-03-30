@@ -1,14 +1,3 @@
-BetaLoadPlayerTrainerClass: ; unreferenced
-	ld c, CAL
-	ld a, [wPlayerGender]
-	bit PLAYERGENDER_FEMALE_F, a
-	jr z, .got_class
-	ld c, KAREN ; not KRIS?
-.got_class
-	ld a, c
-	ld [wTrainerClass], a
-	ret
-
 MovePlayerPicRight:
 	hlcoord 6, 4
 	ld de, 1
@@ -57,10 +46,13 @@ MovePlayerPic:
 ShowPlayerNamingChoices:
 	ld hl, ChrisNameMenuHeader
 	ld a, [wPlayerGender]
-	bit PLAYERGENDER_FEMALE_F, a
-	jr z, .got_header
-	ld hl, KrisNameMenuHeader
-.got_header
+	and a ; MALE
+	jr z, .GotGender
+	ld hl, GreenNameMenuHeader
+	dec a ; FEMALE
+	jr z, .GotGender
+	ld hl, EnbyNameMenuHeader
+.GotGender
 	call LoadMenuHeader
 	call VerticalMenu
 	ld a, [wMenuCursorY]
@@ -71,38 +63,37 @@ ShowPlayerNamingChoices:
 
 INCLUDE "data/player_names.asm"
 
-GetPlayerNameArray: ; unreferenced
-	ld hl, wPlayerName
-	ld de, MalePlayerNameArray
-	ld a, [wPlayerGender]
-	bit PLAYERGENDER_FEMALE_F, a
-	jr z, .got_array
-	ld de, FemalePlayerNameArray
-.got_array
-	call InitName
-	ret
-
 GetPlayerIcon:
 	ld de, RedSpriteGFX
 	ld b, BANK(RedSpriteGFX)
 	ld a, [wPlayerGender]
-	bit PLAYERGENDER_FEMALE_F, a
-	jr z, .got_gfx
-	ld de, KrisSpriteGFX
-	ld b, BANK(KrisSpriteGFX)
-.got_gfx
+	and a ; MALE
+	jr z, .GotGraphics
+	ld de, GreenSpriteGFX
+	ld b, BANK(GreenSpriteGFX)
+	dec a ; FEMALE
+	jr z, .GotGraphics
+
+	; Enby
+	ld de, EnbySpriteGFX
+	ld b, BANK(EnbySpriteGFX)
+	
+.GotGraphics
 	ret
 
 GetCardPic:
 	ld hl, ChrisCardPic
 	ld a, [wPlayerGender]
-	bit PLAYERGENDER_FEMALE_F, a
-	jr z, .got_pic
-	ld hl, KrisCardPic
-.got_pic
+	and a ; MALE
+	jr z, .GotPic
+	ld hl, GreenCardPic
+	dec a ; FEMALE
+	jr z, .GotPic
+	ld hl, EnbyCardPic
+.GotPic
 	ld de, vTiles2 tile $00
 	ld bc, $23 tiles
-	ld a, BANK(ChrisCardPic) ; aka BANK(KrisCardPic)
+	ld a, BANK(ChrisCardPic) ; aka BANK(GreenCardPic)
 	call FarCopyBytes
 	ld hl, TrainerCardGFX
 	ld de, vTiles2 tile $23
@@ -114,30 +105,27 @@ GetCardPic:
 ChrisCardPic:
 INCBIN "gfx/trainer_card/red_card.2bpp"
 
-KrisCardPic:
-INCBIN "gfx/trainer_card/kris_card.2bpp"
+GreenCardPic:
+INCBIN "gfx/trainer_card/green_card.2bpp"
+
+EnbyCardPic:
+INCBIN "gfx/trainer_card/enby_card.2bpp"
 
 TrainerCardGFX:
 INCBIN "gfx/trainer_card/trainer_card.2bpp"
 
 GetPlayerBackpic:
 	ld a, [wPlayerGender]
-	bit PLAYERGENDER_FEMALE_F, a
+	and a ; MALE
 	jr z, GetChrisBackpic
-	call GetKrisBackpic
+	dec a ; FEMALE
+	jp z, GetGreenBackpic
+	call GetEnbyBackpic
 	ret
 
 GetChrisBackpic:
 	ld hl, ChrisBackpic
 	ld b, BANK(ChrisBackpic)
-	ld de, vTiles2 tile $31
-	ld c, 7 * 7
-	predef DecompressGet2bpp
-	ret
-
-GetEnbyBackpic:
-	ld hl, EnbyBackpic
-	ld b, BANK(EnbyBackpic)
 	ld de, vTiles2 tile $31
 	ld c, 7 * 7
 	predef DecompressGet2bpp
@@ -151,22 +139,28 @@ HOF_LoadTrainerFrontpic:
 ; Get class
 	ld e, CHRIS
 	ld a, [wPlayerGender]
-	bit PLAYERGENDER_FEMALE_F, a
-	jr z, .got_class
-	ld e, KRIS
-.got_class
+	and a ; MALE
+	jr z, .GotClass
+	ld e, GREEN
+	dec a ; FEMALE
+	jr z, .GotClass
+	ld e, PURPLE
+.GotClass
 	ld a, e
 	ld [wTrainerClass], a
 
 ; Load pic
 	ld de, RedPic
 	ld a, [wPlayerGender]
-	bit PLAYERGENDER_FEMALE_F, a
-	jr z, .got_pic
-	ld de, KrisPic
-.got_pic
+	and a ; MALE
+	jr z, .GotPic
+	ld de, GreenPic
+	dec a ; FEMALE
+	jr z, .GotPic
+	ld de, EnbyPic
+.GotPic
 	ld hl, vTiles2
-	ld b, BANK(RedPic) ; aka BANK(KrisPic)
+	ld b, BANK(RedPic) ; aka BANK(GreenPic)
 	ld c, 7 * 7
 	call Get2bpp
 
@@ -181,22 +175,28 @@ DrawIntroPlayerPic:
 ; Get class
 	ld e, CHRIS
 	ld a, [wPlayerGender]
-	bit PLAYERGENDER_FEMALE_F, a
-	jr z, .got_class
-	ld e, KRIS
-.got_class
+	and a ; MALE
+	jr z, .GotClass
+	ld e, GREEN
+	dec a ; FEMALE
+	jr z, .GotClass
+	ld e, PURPLE
+.GotClass
 	ld a, e
 	ld [wTrainerClass], a
 
 ; Load pic
 	ld de, RedPic
 	ld a, [wPlayerGender]
-	bit PLAYERGENDER_FEMALE_F, a
-	jr z, .got_pic
-	ld de, KrisPic
-.got_pic
+	and a ; MALE
+	jr z, .GotPic
+	ld de, GreenPic
+	dec a ; FEMALE
+	jr z, .GotPic
+	ld de, EnbyPic
+.GotPic
 	ld hl, vTiles2
-	ld b, BANK(RedPic) ; aka BANK(KrisPic)
+	ld b, BANK(RedPic) ; aka BANK(GreenPic)
 	ld c, 7 * 7 ; dimensions
 	call Get2bpp
 
@@ -211,16 +211,29 @@ DrawIntroPlayerPic:
 RedPic:
 INCBIN "gfx/player/red.2bpp"
 
-KrisPic:
-INCBIN "gfx/player/kris.2bpp"
+GreenPic:
+INCBIN "gfx/player/green.2bpp"
 
-GetKrisBackpic:
-; Kris's backpic is uncompressed.
-	ld de, KrisBackpic
+EnbyPic:
+INCBIN "gfx/player/enby.2bpp"
+
+GetGreenBackpic:
+; Green's backpic is uncompressed.
+	ld de, GreenBackpic
 	ld hl, vTiles2 tile $31
-	lb bc, BANK(KrisBackpic), 7 * 7 ; dimensions
+	lb bc, BANK(GreenBackpic), 7 * 7 ; dimensions
 	call Get2bpp
 	ret
 
-KrisBackpic:
-INCBIN "gfx/player/kris_back.2bpp"
+GreenBackpic:
+INCBIN "gfx/player/green_back.2bpp"
+
+GetEnbyBackpic:
+	ld de, EnbyBackpic
+	ld hl, vTiles2 tile $31
+	lb bc, BANK(EnbyBackpic), 7 * 7 ; dimensions
+	call Get2bpp
+	ret
+
+EnbyBackpic:
+INCBIN "gfx/player/enby_back.2bpp"

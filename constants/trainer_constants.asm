@@ -27,13 +27,13 @@ DEF CHRIS EQU __trainer_class__
 	const PHONECONTACT_BUENA
 DEF NUM_NONTRAINER_PHONECONTACTS EQU const_value - 1
 
-DEF KRIS EQU __trainer_class__
 	trainerclass FALKNER ; 1
 	const FALKNER1
 
 	trainerclass WHITNEY ; 2
 	const WHITNEY1
 
+DEF GREEN EQU __trainer_class__
 	trainerclass BUGSY ; 3
 	const BUGSY1
 
@@ -258,7 +258,7 @@ DEF KRIS EQU __trainer_class__
 	const THERESA ; unused
 	const VALERIE
 	const OLIVIA
-
+	
 	trainerclass POKEMANIAC ; 1e
 	const LARRY
 	const ANDREW
@@ -504,6 +504,7 @@ DEF KRIS EQU __trainer_class__
 	trainerclass BLAINE ; 2e
 	const BLAINE1
 
+DEF PURPLE EQU __trainer_class__
 	trainerclass BURGLAR ; 2f
 	const DUNCAN
 	const EDDIE
