@@ -43,7 +43,6 @@ PewterGroupSprites:
 ; Route3, PewterCity
 CinnabarGroupSprites:
 ; Route19, Route20, Route21, CinnabarIsland
-	db SPRITE_BLUE
 	db SPRITE_YOUNGSTER
 	db SPRITE_GIRL
 	db SPRITE_FISHER
@@ -51,6 +50,7 @@ CinnabarGroupSprites:
 	db SPRITE_GAMBLER
 	db SPRITE_SWIMMER_GUY
 	db SPRITE_COOLTRAINER_F
+	db SPRITE_SUPER_NERD
 	db SPRITE_VARIABLE
 	; max 9 of 9 walking sprites
 	db SPRITE_POKE_BALL
