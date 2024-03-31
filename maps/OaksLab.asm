@@ -263,6 +263,7 @@ CharmanderPokeBallScript:
 	playsound SFX_CAUGHT_MON_RBY
 	waitsfx
 	closetext
+	applymovement OAKSLAB_BLUE, RivalAfterChoosingSquirtleMovement
 	readvar VAR_FACING
 	ifequal RIGHT, OaksDirections
 	sjump OaksDirections
@@ -307,6 +308,7 @@ SquirtlePokeBallScript:
 	playsound SFX_CAUGHT_MON_RBY
 	waitsfx
 	closetext
+	applymovement OAKSLAB_BLUE, RivalAfterChoosingBulbasaurMovement
 	sjump OaksDirections
 
 BulbasaurPokeBallScript:
@@ -338,7 +340,7 @@ BulbasaurPokeBallScript:
 	promptbutton
 	givepoke BULBASAUR, 5
 	closetext
-	applymovement OAKSLAB_BLUE, RivalTakesSquirtleMovement
+	applymovement OAKSLAB_BLUE, RivalTakesSquirtleMovement2
 	opentext
 	getmonname STRING_BUFFER_3, SQUIRTLE
 	writetext OaksLabRivalIllTakeThisOneText
@@ -349,6 +351,7 @@ BulbasaurPokeBallScript:
 	playsound SFX_CAUGHT_MON_RBY
 	waitsfx
 	closetext
+	applymovement OAKSLAB_BLUE, RivalAfterChoosingSquirtleMovement
 	sjump OaksDirections
 
 OaksLabDidntChooseStarterScript:
@@ -388,6 +391,14 @@ RivalTakesSquirtleMovement:
 	slow_step UP
 	step_end
 	
+RivalTakesSquirtleMovement2:
+	slow_step DOWN
+	slow_step RIGHT
+	slow_step RIGHT
+	slow_step RIGHT
+	turn_head UP
+	step_end
+	
 RivalTakesBulbasaurMovement:
 	slow_step DOWN
 	slow_step DOWN
@@ -396,6 +407,19 @@ RivalTakesBulbasaurMovement:
 	slow_step RIGHT
 	slow_step RIGHT
 	slow_step UP
+	step_end
+	
+RivalAfterChoosingSquirtleMovement:
+	slow_step DOWN
+	slow_step LEFT
+	slow_step LEFT
+	step_end
+	
+RivalAfterChoosingBulbasaurMovement:
+	slow_step DOWN
+	slow_step LEFT
+	slow_step LEFT
+	slow_step LEFT
 	step_end
 	
 OaksDirections:
@@ -408,6 +432,7 @@ RivalBattleScript:
 	playmusic MUSIC_MEET_RIVAL
 	turnobject PLAYER, UP
 	applymovement OAKSLAB_BLUE, RivalBattleMovement
+	turnobject PLAYER, RIGHT
 	opentext
 	writetext OaksLabRivalIllTakeYouOnText
 	waitbutton
@@ -474,13 +499,10 @@ RivalBattleScript:
 
 RivalBattleMovement:
 	slow_step DOWN
-	slow_step LEFT
-	slow_step LEFT
-	turn_head DOWN
+	turn_head LEFT
 	step_end
 
 RivalSmellYouLaterMovement:
-	slow_step LEFT
 	slow_step DOWN
 	slow_step DOWN
 	slow_step DOWN
@@ -1097,7 +1119,6 @@ OaksLab_MapEvents:
 	coord_event  4,  6, SCENE_OAKSLAB_CANT_LEAVE, OaksLabTryToLeaveScript
 	coord_event  5,  6, SCENE_OAKSLAB_CANT_LEAVE, OaksLabTryToLeaveScript
 	coord_event  4,  6, SCENE_OAKSLAB_TAKE_YOU_ON, RivalBattleScript
-	coord_event  5,  6, SCENE_OAKSLAB_TAKE_YOU_ON, RivalBattleScript
 	coord_event  4,  9, SCENE_OAKSLAB_AIDE_GIVES_POKE_BALLS, OakAideScript_WalkBalls1
 	coord_event  5,  9, SCENE_OAKSLAB_AIDE_GIVES_POKE_BALLS, OakAideScript_WalkBalls2
 
