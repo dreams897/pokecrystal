@@ -442,7 +442,7 @@ RivalBattleScript:
 	iftrue .Bulbasaur
 	winlosstext OaksLabRivalIPickedTheWrongPokemonText, OaksLabRivalAmIGreatOrWhatText
 	setlasttalked OAKSLAB_BLUE
-	loadtrainer RIVAL1, RIVAL1_1_SQUIRTLE
+	loadtrainer RIVAL0, RIVAL0_1_SQUIRTLE
 	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
 	reloadmap
@@ -452,7 +452,7 @@ RivalBattleScript:
 .Squirtle:
 	winlosstext OaksLabRivalIPickedTheWrongPokemonText, OaksLabRivalAmIGreatOrWhatText
 	setlasttalked OAKSLAB_BLUE
-	loadtrainer RIVAL1, RIVAL1_1_BULBASAUR
+	loadtrainer RIVAL0, RIVAL0_1_BULBASAUR
 	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
 	reloadmap
@@ -462,7 +462,7 @@ RivalBattleScript:
 .Bulbasaur:
 	winlosstext OaksLabRivalIPickedTheWrongPokemonText, OaksLabRivalAmIGreatOrWhatText
 	setlasttalked OAKSLAB_BLUE
-	loadtrainer RIVAL1, RIVAL1_1_SQUIRTLE
+	loadtrainer RIVAL0, RIVAL0_1_SQUIRTLE
 	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
 	reloadmap

@@ -100,6 +100,8 @@ PlayBattleMusic:
 
 	ld de, MUSIC_TRAINER_BATTLE
 	ld a, [wOtherTrainerClass]
+	cp RIVAL0
+	jr z, .done
 	cp RIVAL1
 	jr z, .done
 	cp RIVAL2

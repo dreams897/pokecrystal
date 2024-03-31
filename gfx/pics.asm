@@ -57,7 +57,6 @@ QuilavaFrontpic:     INCBIN "gfx/pokemon/quilava/front.animated.2bpp.lz"
 
 SECTION "Pics 3", ROMX
 
-SteelixFrontpic:     INCBIN "gfx/pokemon/steelix/front.animated.2bpp.lz"
 AlakazamFrontpic:    INCBIN "gfx/pokemon/alakazam/front.animated.2bpp.lz"
 GyaradosFrontpic:    INCBIN "gfx/pokemon/gyarados/front.animated.2bpp.lz"
 KangaskhanFrontpic:  INCBIN "gfx/pokemon/kangaskhan/front.animated.2bpp.lz"
@@ -467,8 +466,8 @@ WooperFrontpic:      INCBIN "gfx/pokemon/wooper/front.animated.2bpp.lz"
 ClefairyBackpic:     INCBIN "gfx/pokemon/clefairy/back.2bpp.lz"
 VenonatBackpic:      INCBIN "gfx/pokemon/venonat/back.2bpp.lz"
 BellossomBackpic:    INCBIN "gfx/pokemon/bellossom/back.2bpp.lz"
+Rival0Pic:
 Rival1Pic:           INCBIN "gfx/trainers/blue1.2bpp.lz"
-SwinubBackpic:       INCBIN "gfx/pokemon/swinub/back.2bpp.lz"
 
 
 SECTION "Pics 15", ROMX
@@ -686,6 +685,12 @@ UnownVBackpic:       INCBIN "gfx/pokemon/unown_v/back.2bpp.lz"
 ForretressBackpic:   INCBIN "gfx/pokemon/forretress/back.2bpp.lz"
 UnownSBackpic:       INCBIN "gfx/pokemon/unown_s/back.2bpp.lz"
 UnownRFrontpic:      INCBIN "gfx/pokemon/unown_r/front.animated.2bpp.lz"
+
+
+SECTION "Pics 19", ROMX
+
+SteelixFrontpic:     INCBIN "gfx/pokemon/steelix/front.animated.2bpp.lz"
+SwinubBackpic:       INCBIN "gfx/pokemon/swinub/back.2bpp.lz"
 UnownEBackpic:       INCBIN "gfx/pokemon/unown_e/back.2bpp.lz"
 UnownJBackpic:       INCBIN "gfx/pokemon/unown_j/back.2bpp.lz"
 UnownBBackpic:       INCBIN "gfx/pokemon/unown_b/back.2bpp.lz"
@@ -705,11 +710,6 @@ UnownYBackpic:       INCBIN "gfx/pokemon/unown_y/back.2bpp.lz"
 UnownPBackpic:       INCBIN "gfx/pokemon/unown_p/back.2bpp.lz"
 UnownIBackpic:       INCBIN "gfx/pokemon/unown_i/back.2bpp.lz"
 UnownRBackpic:       INCBIN "gfx/pokemon/unown_r/back.2bpp.lz"
-
-
-SECTION "Pics 19", ROMX
-
-; EMPTY SECTION!
 
 
 ; Sections "Pics 20" to "Pics 24" are not used for any graphics

@@ -10,6 +10,7 @@ TrainerClassNames::
 	li "LEADER"
 	li "LEADER"
 	li "RIVAL"
+	li "RIVAL"
 	li "#MON PROF."
 	li "ELITE FOUR"
 	li "<PKMN> TRAINER"

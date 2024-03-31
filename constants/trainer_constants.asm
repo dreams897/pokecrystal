@@ -51,11 +51,13 @@ DEF GREEN EQU __trainer_class__
 
 	trainerclass CLAIR ; 8
 	const CLAIR1
-
+	
+	trainerclass RIVAL0 ; added
+	const RIVAL0_1_BULBASAUR
+	const RIVAL0_1_CHARMANDER
+	const RIVAL0_1_SQUIRTLE
+	
 	trainerclass RIVAL1 ; 9
-	const RIVAL1_1_BULBASAUR
-	const RIVAL1_1_CHARMANDER
-	const RIVAL1_1_SQUIRTLE
 	const RIVAL1_2_BULBASAUR
 	const RIVAL1_2_CHARMANDER
 	const RIVAL1_2_SQUIRTLE

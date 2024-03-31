@@ -8221,9 +8221,9 @@ InitEnemyTrainer:
 	callfar GetTrainerAttributes
 	callfar ReadTrainerParty
 
-	; RIVAL1's first mon has no held item
+	; RIVAL0's first mon has no held item
 	ld a, [wTrainerClass]
-	cp RIVAL1
+	cp RIVAL0
 	jr nz, .ok
 	xor a
 	ld [wOTPartyMon1Item], a

@@ -83,23 +83,24 @@ ClairGroup:
 	db 37, DRAGONAIR,  THUNDER_WAVE, ICE_BEAM, SLAM, DRAGONBREATH
 	db 40, KINGDRA,    SMOKESCREEN, SURF, HYPER_BEAM, DRAGONBREATH
 	db -1 ; end
-
-Rival1Group:
-	; RIVAL1 (1)
+	
+Rival0Group:
+	; RIVAL0 (1)
 	db "?@", TRAINERTYPE_DVS | TRAINERTYPE_ITEM
 	db  5, BULBASAUR,    $67, $67, NO_ITEM
 	db -1 ; end
 
-	; RIVAL1 (2)
+	; RIVAL0 (2)
 	db "?@", TRAINERTYPE_DVS | TRAINERTYPE_ITEM
 	db  5, CHARMANDER,    $67, $67, NO_ITEM
 	db -1 ; end
 
-	; RIVAL1 (3)
+	; RIVAL0 (3)
 	db "?@", TRAINERTYPE_DVS | TRAINERTYPE_ITEM
 	db  5, SQUIRTLE,    $67, $67, NO_ITEM
 	db -1 ; end
 
+Rival1Group:
 	; RIVAL1 (4)
 	db "?@", TRAINERTYPE_NORMAL
 	db 12, GASTLY
