@@ -20,9 +20,13 @@ PewterCityFlypointCallback:
 	endcallback
 	
 PewterCityNoopScene:
+	clearevent EVENT_BOUGHT_MUSEUM_TICKET
+	setmapscene PEWTER_MUSEUM_1F, PEWTER_MUSEUM_1F_NOOP_SCENE
 	end
 	
 PewterCityAfterBeatingBrockScene:
+	clearevent EVENT_BOUGHT_MUSEUM_TICKET
+	setmapscene PEWTER_MUSEUM_1F, PEWTER_MUSEUM_1F_NOOP_SCENE
 	disappear PEWTERCITY_YOUNGSTER_GYM_GUY
 	end
 

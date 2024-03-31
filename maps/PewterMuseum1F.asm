@@ -1,3 +1,5 @@
+DEF PEWTER_MUSEUM_TICKET_PRICE EQU 50
+
 	object_const_def
 	const PEWTERMUSEUM_SCIENTIST1_CASHIER
 	const PEWTERMUSEUM_GAMBLER
@@ -7,19 +9,44 @@
 
 PewterMuseum1F_MapScripts:
 	def_scene_scripts
+	scene_script PewterMuseum1FNoop, PEWTER_MUSEUM_1F_NOOP_SCENE
+	scene_script PewterMuseum1FFreeToLook, PEWTER_MUSEUM_FREE_TO_LOOK_AROUND_SCENE
 
 	def_callbacks
 	
-PewterMuseum1FEnterScript:
+PewterMuseum1FNoop:
+	end
+	
+PewterMuseum1FFreeToLook:
+	end
+	
+PewterMuseum1FTicketScript:
+	checkevent EVENT_BOUGHT_MUSEUM_TICKET
+	iftrue .TimeToLook
 	readvar VAR_FACING
-	ifequal RIGHT, Museum1FCantSneakInScript
-	turnobject PLAYER, RIGHT
+	ifequal LEFT, Museum1FCantSneakInScript
 	opentext
+	writetext Museum1FScientist1WouldYouLikeToComeInText
+	special PlaceMoneyTopRight
 	yesorno
 	iffalse .ComeAgain
-	writetext Museum1FScientist1WouldYouLikeToComeInText
-	waitbutton
+	checkmoney YOUR_MONEY, PEWTER_MUSEUM_TICKET_PRICE
+	ifequal HAVE_LESS, .NotEnoughMoney
+	takemoney YOUR_MONEY, PEWTER_MUSEUM_TICKET_PRICE
+	special PlaceMoneyTopRight
+	waitsfx
+	playsound SFX_PURCHASE_1
+	waitsfx
 	writetext Museum1FScientist1ThankYouText
+	promptbutton
+	closetext
+	setevent EVENT_BOUGHT_MUSEUM_TICKET
+	setscene PEWTER_MUSEUM_FREE_TO_LOOK_AROUND_SCENE
+	end
+	
+.TimeToLook
+	opentext
+	writetext Museum1FScientist1TakePlentyOfTimeText
 	waitbutton
 	closetext
 	end
@@ -29,7 +56,20 @@ PewterMuseum1FEnterScript:
 	writetext Museum1FScientist1ComeAgainText
 	waitbutton
 	closetext
+	applymovement PLAYER, StepDownMovement
 	end
+	
+.NotEnoughMoney
+	opentext
+	writetext Museum1FScientist1DontHaveEnoughMoneyText
+	waitbutton
+	closetext
+	applymovement PLAYER, StepDownMovement
+	end
+	
+StepDownMovement:
+	step DOWN
+	step_end
 	
 Museum1FScientist2Script:
 	end
@@ -192,11 +232,13 @@ PewterMuseum1F_MapEvents:
 
 
 	def_coord_events
+	coord_event  9, 4, PEWTER_MUSEUM_1F_NOOP_SCENE, PewterMuseum1FTicketScript
+	coord_event 10, 4, PEWTER_MUSEUM_1F_NOOP_SCENE, PewterMuseum1FTicketScript
 
 	def_bg_events
 
 	def_object_events
-	object_event  12, 4, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterMuseum1FEnterScript, -1
+	object_event  12, 4, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterMuseum1FTicketScript, -1
 	object_event  1,  4, SPRITE_GAMBLER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Museum1FOneMagnificientFossilScript, -1
 	object_event  15, 2, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Museum1FScientist2Script, -1
 	object_event  17, 4, SPRITE_SCIENTIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Museum1FScientist3Script, -1

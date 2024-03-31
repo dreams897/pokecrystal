@@ -3129,7 +3129,8 @@ wViridianCitySceneID::			  	  db
 wViridianMartSceneID::                            db
 wBluesHouseSceneID::                              db
 wPewterCitySceneID::                              db
-	ds 33
+wPewterMuseum1FSceneID::                          db
+	ds 32
 
 ; fight counts
 wJackFightCount::    db
