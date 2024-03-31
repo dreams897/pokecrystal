@@ -128,6 +128,7 @@ PewterCityGymGuyScript:
 	follow PEWTERCITY_YOUNGSTER_GYM_GUY, PLAYER
 	applymovement PEWTERCITY_YOUNGSTER_GYM_GUY, GymGuyTakesYouToGymMovement
 	stopfollow
+	turnobject PLAYER, UP
 	turnobject PEWTERCITY_YOUNGSTER_GYM_GUY, LEFT
 	special RestartMapMusic
 	opentext
@@ -152,6 +153,7 @@ PewterCityGymGuyScript:
 	follow PEWTERCITY_YOUNGSTER_GYM_GUY, PLAYER
 	applymovement PEWTERCITY_YOUNGSTER_GYM_GUY, GymGuyTakesYouToGymMovement2
 	stopfollow
+	turnobject PLAYER, UP
 	turnobject PEWTERCITY_YOUNGSTER_GYM_GUY, LEFT
 	special RestartMapMusic
 	opentext
@@ -177,6 +179,7 @@ PewterCityGymGuyScript:
 	follow PEWTERCITY_YOUNGSTER_GYM_GUY, PLAYER
 	applymovement PEWTERCITY_YOUNGSTER_GYM_GUY, GymGuyTakesYouToGymMovement2
 	stopfollow
+	turnobject PLAYER, UP
 	turnobject PEWTERCITY_YOUNGSTER_GYM_GUY, LEFT
 	special RestartMapMusic
 	opentext
@@ -239,6 +242,11 @@ GymGuyTakesYouToGymMovement:
 	step DOWN
 	step RIGHT
 	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
 	step_end
 	
 GymGuyTakesYouToGymMovement2:
@@ -279,6 +287,11 @@ GymGuyTakesYouToGymMovement2:
 	step DOWN
 	step RIGHT
 	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
 	step_end
 	
 GymGuyTakesYouToGymMovement3:
@@ -307,7 +320,6 @@ GymGuyTakesYouToGymMovement3:
 	step UP
 	step UP
 	step UP
-	step UP
 	step LEFT
 	step LEFT
 	step LEFT
@@ -322,6 +334,11 @@ GymGuyTakesYouToGymMovement3:
 	step DOWN
 	step DOWN
 	step DOWN
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
 	step RIGHT
 	step RIGHT
 	step_end
@@ -330,11 +347,9 @@ GymGuyLeavesMovement:
 	slow_step DOWN
 	slow_step LEFT
 	slow_step LEFT
-	step UP
-	step UP
-	step UP
-	step UP
-	step UP
+	slow_step LEFT
+	slow_step LEFT
+	slow_step LEFT
 	step_end
 
 PewterCitySign:
