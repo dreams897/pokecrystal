@@ -126,4 +126,5 @@ OverworldSprites:
 	overworld_sprite SilphWorkerMSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite EnbySpriteGFX, 12, WALKING_SPRITE, PAL_OW_PURPLE
 	overworld_sprite EnbyBikeSpriteGFX, 12, WALKING_SPRITE, PAL_OW_PURPLE
+	overworld_sprite GymGuideKantoGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
 	assert_table_length NUM_OVERWORLD_SPRITES
