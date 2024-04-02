@@ -26,6 +26,8 @@ LoadSpecialMapPalette:
 	jr z, .house_kanto
 	cp TILESET_VIRIDIAN_FOREST
 	jr z, .viridian_forest
+	cp TILESET_GYM_KANTO
+	jr z, .gym_kanto
 	jr .do_nothing
 
 .pokecom_2f
@@ -95,6 +97,11 @@ LoadSpecialMapPalette:
 	
 .viridian_forest
 	call LoadViridianForestPalette
+	scf
+	ret
+	
+.gym_kanto
+	call LoadGymKantoPalette
 	scf
 	ret
 
@@ -256,6 +263,16 @@ LoadViridianForestPalette:
 
 ViridianForestPalette:
 INCLUDE "gfx/tilesets/viridian_forest.pal"
+
+LoadGymKantoPalette:
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
+	ld hl, GymKantoPalette
+	ld bc, 8 palettes
+	jp FarCopyWRAM
+
+GymKantoPalette:
+INCLUDE "gfx/tilesets/gym_kanto.pal"
 
 
 
