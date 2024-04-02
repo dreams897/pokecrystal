@@ -536,11 +536,11 @@ _CantCarryItemText::
 	cont "items."
 	done
 
-_WhitedOutText::
+_BlackedOutText::
 	text "<PLAYER> is out of"
 	line "useable #MON!"
 
-	para "<PLAYER> whited"
+	para "<PLAYER> blacked"
 	line "out!"
 	done
 
@@ -561,11 +561,11 @@ _PoisonFaintText::
 	line "fainted!"
 	prompt
 
-_PoisonWhiteoutText::
+_PoisonBlackoutText::
 	text "<PLAYER> is out of"
 	line "useable #MON!"
 
-	para "<PLAYER> whited"
+	para "<PLAYER> blacked"
 	line "out!"
 	prompt
 

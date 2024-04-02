@@ -7,9 +7,9 @@ OverworldWhiteoutScript::
 	callasm OverworldBGMap
 
 Script_Whiteout:
-	writetext .WhitedOutText
+	writetext .BlackedOutText
 	waitbutton
-	special FadeOutToWhite
+	special FadeOutToBlack
 	pause 40
 	special HealParty
 	checkflag ENGINE_BUG_CONTEST_TIMER
@@ -24,8 +24,8 @@ Script_Whiteout:
 .bug_contest
 	jumpstd BugContestResultsWarpScript
 
-.WhitedOutText:
-	text_far _WhitedOutText
+.BlackedOutText:
+	text_far _BlackedOutText
 	text_end
 
 OverworldBGMap:

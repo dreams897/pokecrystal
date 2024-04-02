@@ -99,7 +99,7 @@ DoPoisonStep::
 	ret
 
 .PlayPoisonSFX:
-	ld de, SFX_POISON
+	ld de, SFX_POISONED_1
 	call PlaySFX
 	ld b, $2
 	predef LoadPoisonBGPals
@@ -147,8 +147,4 @@ DoPoisonStep::
 
 .PoisonFaintText:
 	text_far _PoisonFaintText
-	text_end
-
-.PoisonWhiteoutText: ; unreferenced
-	text_far _PoisonWhiteoutText
 	text_end
