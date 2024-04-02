@@ -20,7 +20,6 @@ ViridianCityNoop1Scene:
 	end
 	
 ViridianCityDrunkOldManScene:
-	clearevent EVENT_GAMBLER_GIRL_BLOCKING
 	clearevent EVENT_GAMBLER_ASLEEP
 	end
 
@@ -62,9 +61,24 @@ ViridianCity_TurnDownMovement3:
 	step_end
 	
 ViridianCityGirlScript:
+	checkevent EVENT_GAMBLER_AWAKE
+	iffalse ViridianCityGirlWindingTrailScript
+	iftrue ViridianCityGirlDontPassOutScript
+	end
+	
+ViridianCityGirlDontPassOutScript:
 	faceplayer
 	opentext
 	writetext ViridianCityGirlDontPassOutText
+	waitbutton
+	closetext
+	turnobject VIRIDIANCITY_GIRL, RIGHT
+	end
+	
+ViridianCityGirlWindingTrailScript:
+	faceplayer
+	opentext
+	writetext ViridianCityGirlWhenIGoShopText
 	waitbutton
 	closetext
 	turnobject VIRIDIANCITY_GIRL, RIGHT
@@ -406,7 +420,7 @@ ViridianCity_MapEvents:
 	object_event 17,  5, SPRITE_GAMBLER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CatchingTutorialOldManScript, EVENT_GAMBLER_AWAKE
 	object_event 30,  8, SPRITE_GAMBLER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ViridianCityGrampsNearGym, -1
 	object_event  6, 23, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ViridianCityDreamEaterFisher, -1
-	object_event 17,  9, SPRITE_GIRL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ViridianCityGirlScript, EVENT_GAMBLER_GIRL_BLOCKING
+	object_event 17,  9, SPRITE_GIRL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ViridianCityGirlScript, -1
 	object_event 18,  9, SPRITE_GAMBLER_ASLEEP, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ViridianCityDrunkOldManScript2, EVENT_GAMBLER_ASLEEP
 	object_event 13, 20, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 3, 3, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ViridianCityYoungsterScript, -1
 	object_event 30, 25, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 3, 3, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ViridianCityYoungster2Script, -1
