@@ -16,8 +16,8 @@ OaksLab_MapScripts:
 	scene_script OaksLabNoop1Scene,   SCENE_OAKSLAB_CANT_LEAVE
 	scene_script OaksLabTakeYouOnScene, SCENE_OAKSLAB_TAKE_YOU_ON
 	scene_script OaksLabNoop2Scene,   SCENE_OAKSLAB_NOOP
-	scene_script OaksLabNoop3Scene,   SCENE_OAKSLAB_UNUSED
-	scene_const SCENE_OAKSLAB_AIDE_GIVES_POKE_BALLS
+	scene_script OaksLabNoop3Scene,   SCENE_OAKSLAB_NOOP_2
+	scene_script OaksLabParcelScene,  SCENE_OAKSLAB_PARCEL
 
 	def_callbacks
 	callback MAPCALLBACK_TILES, OaksLabPokeDexCallback
@@ -42,14 +42,15 @@ OaksLabTakeYouOnScene:
 
 OaksLabNoop2Scene:
 	disappear OAKSLAB_OAK_WALK
+	disappear OAKSLAB_BLUE
 	end
 
 OaksLabNoop3Scene:
-	checkevent EVENT_GOT_POKEDEX
-	iftrue .HideBlue
 	disappear OAKSLAB_OAK_WALK
-.HideBlue
 	disappear OAKSLAB_BLUE
+	end
+	
+OaksLabParcelScene:
 	end
 	
 OaksLabPokeDexCallback:
@@ -66,14 +67,16 @@ OaksLabOakCallback:
 
 .HideOak:
 	moveobject OAKSLAB_OAK_WALK, 5, 2
+	disappear OAKSLAB_OAK_WALK
 	endcallback
 
 OaksLabWalkUpToOakScript:
 	applymovement OAKSLAB_OAK_WALK, OaksLab_OakWalkUpMovement
 	disappear OAKSLAB_OAK_WALK
+	turnobject OAKSLAB_BLUE, RIGHT
 	applymovement PLAYER, OaksLab_WalkUpToOakMovement
-	turnobject OAKSLAB_BLUE, UP
 	opentext
+	turnobject OAKSLAB_BLUE, UP
 	writetext OaksLabRivalFedUpWithWaitingText
 	waitbutton
 	writetext OaksLabOakChooseMonText
@@ -93,9 +96,15 @@ ProfOakScript:
 	iftrue OaksLabParcelScript
 	checkevent EVENT_GOT_A_POKEMON_FROM_OAK
 	iffalse WhichMonYouWantScript
-	iftrue OaksLabYourPokemonCanFightScript
+	checkscene
+	ifequal SCENE_OAKSLAB_TAKE_YOU_ON, OaksLabYourPokemonCanFightScript
+	checkscene
+	ifequal SCENE_OAKSLAB_NOOP, OaksLabOak1RaiseYourYoungPokemonScript
+	checkscene
+	ifequal SCENE_OAKSLAB_NOOP_2, OaksLabOak1PokemonAroundTheWorldScript
 	waitbutton
 	closetext
+	turnobject OAKSLAB_OAK, DOWN
 	end
 	
 WhichMonYouWantScript:
@@ -157,6 +166,18 @@ OaksLabYourPokemonCanFightScript:
 	closetext
 	end
 	
+OaksLabOak1RaiseYourYoungPokemonScript:
+	writetext OaksLabOak1RaiseYourYoungPokemonText
+	waitbutton
+	closetext
+	end
+	
+OaksLabOak1PokemonAroundTheWorldScript:
+	writetext OaksLabOak1PokemonAroundTheWorldText
+	waitbutton
+	closetext
+	end
+
 OaksLabPokeDexScript:
 	checkevent EVENT_OAK_GOT_PARCEL
 	iffalse .PokeDexText
@@ -166,6 +187,8 @@ OaksLabPokeDexScript:
 	jumptext OaksLabPokedexText
 	
 OaksLabParcelScript:
+	moveobject OAKSLAB_BLUE, 4, 7
+	setscene SCENE_OAKSLAB_PARCEL
 	writetext OaksLabOak1DeliverParcelText
 	playsound SFX_GET_KEY_ITEM_1
 	waitsfx
@@ -174,10 +197,14 @@ OaksLabParcelScript:
 	setevent EVENT_OAK_GOT_PARCEL
 	writetext OaksLabOak1ParcelThanksText
 	waitbutton
-	pause 15
+	closetext
+	appear OAKSLAB_BLUE
+	playmusic MUSIC_MEET_RIVAL
+	applymovement OAKSLAB_BLUE, BlueParcelWalkUpMovement
+	special RestartMapMusic
+	opentext
 	writetext OaksLabRivalGrampsText
 	waitbutton
-	turnobject OAKSLAB_BLUE, UP
 	writetext OaksLabRivalWhatDidYouCallMeForText
 	waitbutton
 	writetext OaksLabOakIHaveARequestText
@@ -188,7 +215,6 @@ OaksLabParcelScript:
 	writetext OaksLabOakGotPokedexText
 	playsound SFX_GET_KEY_ITEM_1
 	waitsfx
-	waitbutton
 	closetext
 	changeblock 2, 1, $2E ; replace Pokedex tile
 	setevent EVENT_GOT_POKEDEX
@@ -196,23 +222,50 @@ OaksLabParcelScript:
 	opentext
 	writetext OaksLabOakThatWasMyDreamText
 	waitbutton
-	turnobject PLAYER, LEFT
+	readvar VAR_FACING
+	ifequal RIGHT, .KeepBlueUp
+	ifequal UP, .TurnBlueRight
+	
+.TurnBlueRight
 	turnobject OAKSLAB_BLUE, RIGHT
 	writetext OaksLabRivalLeaveItAllToMeText
 	waitbutton
 	closetext
 	playmusic MUSIC_MEET_RIVAL
-	turnobject PLAYER, DOWN
-	applymovement OAKSLAB_BLUE, Rival_LeaveMovement
+	applymovement OAKSLAB_BLUE, RivalLeaveMovement
 	disappear OAKSLAB_BLUE
-	musicfadeout MUSIC_OAKS_LAB, 8
-	setscene SCENE_OAKSLAB_UNUSED
+	special RestartMapMusic
+	setscene SCENE_OAKSLAB_NOOP_2
 	setevent EVENT_GAMBLER_ASLEEP
 	setevent EVENT_GAMBLER_GIRL_BLOCKING
 	clearevent EVENT_GAMBLER_AWAKE
 	setmapscene VIRIDIAN_MART, SCENE_VIRIDIANMART_NOOP
 	setmapscene VIRIDIAN_CITY, SCENE_VIRIDIAN_CITY_NOOP
 	end
+	
+.KeepBlueUp
+	turnobject PLAYER, DOWN
+	writetext OaksLabRivalLeaveItAllToMeText
+	waitbutton
+	closetext
+	playmusic MUSIC_MEET_RIVAL
+	applymovement OAKSLAB_BLUE, RivalLeaveMovement
+	disappear OAKSLAB_BLUE
+	special RestartMapMusic
+	setscene SCENE_OAKSLAB_NOOP_2
+	setevent EVENT_GAMBLER_ASLEEP
+	setevent EVENT_GAMBLER_GIRL_BLOCKING
+	clearevent EVENT_GAMBLER_AWAKE
+	setmapscene VIRIDIAN_MART, SCENE_VIRIDIANMART_NOOP
+	setmapscene VIRIDIAN_CITY, SCENE_VIRIDIAN_CITY_NOOP
+	end
+	
+BlueParcelWalkUpMovement:
+	slow_step UP
+	slow_step UP
+	slow_step UP
+	slow_step UP
+	step_end
 	
 OaksLabTryToLeaveScript:
 	turnobject OAKSLAB_OAK, DOWN
@@ -224,12 +277,10 @@ OaksLabTryToLeaveScript:
 	end
 
 CharmanderPokeBallScript:
-	checkevent EVENT_GOT_A_POKEMON_FROM_OAK
-	iftrue LookAtOakPokeBallScript
-	checkevent EVENT_FOLLOWED_OAK_INTO_LAB
-	iffalse OakNotAroundPokeBallsScript
 	checkevent EVENT_RIVAL_CHOSE_STARTER
 	iftrue OaksLastPokemonScript
+	checkevent EVENT_FOLLOWED_OAK_INTO_LAB
+	iffalse OakNotAroundPokeBallsScript
 	turnobject OAKSLAB_OAK, DOWN
 	reanchormap
 	pokepic CHARMANDER
@@ -268,12 +319,10 @@ CharmanderPokeBallScript:
 	sjump OaksDirections
 
 SquirtlePokeBallScript:
-	checkevent EVENT_GOT_A_POKEMON_FROM_OAK
-	iftrue LookAtOakPokeBallScript
-	checkevent EVENT_FOLLOWED_OAK_INTO_LAB
-	iffalse OakNotAroundPokeBallsScript
 	checkevent EVENT_RIVAL_CHOSE_STARTER
 	iftrue OaksLastPokemonScript
+	checkevent EVENT_FOLLOWED_OAK_INTO_LAB
+	iffalse OakNotAroundPokeBallsScript
 	turnobject OAKSLAB_OAK, DOWN
 	reanchormap
 	pokepic SQUIRTLE
@@ -310,12 +359,10 @@ SquirtlePokeBallScript:
 	sjump OaksDirections
 
 BulbasaurPokeBallScript:
-	checkevent EVENT_GOT_A_POKEMON_FROM_OAK
-	iftrue LookAtOakPokeBallScript
-	checkevent EVENT_FOLLOWED_OAK_INTO_LAB
-	iffalse OakNotAroundPokeBallsScript
 	checkevent EVENT_RIVAL_CHOSE_STARTER
 	iftrue OaksLastPokemonScript
+	checkevent EVENT_FOLLOWED_OAK_INTO_LAB
+	iffalse OakNotAroundPokeBallsScript
 	turnobject OAKSLAB_OAK, DOWN
 	reanchormap
 	pokepic BULBASAUR
@@ -558,7 +605,7 @@ AfterBattleScript:
 	disappear OAKSLAB_BLUE
 	special HealParty
 	special RestartMapMusic
-	setscene SCENE_OAKSLAB_AIDE_GIVES_POKE_BALLS
+	setscene SCENE_OAKSLAB_NOOP
 	setmapscene PALLET_TOWN, SCENE_PALLET_TOWN_NOOP
 	end
 	
@@ -567,7 +614,7 @@ AfterBattleScript:
 	disappear OAKSLAB_BLUE
 	special HealParty
 	special RestartMapMusic
-	setscene SCENE_OAKSLAB_AIDE_GIVES_POKE_BALLS
+	setscene SCENE_OAKSLAB_NOOP
 	setmapscene PALLET_TOWN, SCENE_PALLET_TOWN_NOOP
 	end
 	
@@ -588,44 +635,6 @@ RivalSmellYouLaterMovementRight:
 	slow_step DOWN
 	slow_step DOWN
 	step_end
-
-OakAideScript_WalkBalls1:
-	applymovement OAKSLAB_OAKS_AIDE, OakAideWalksRight1
-	turnobject PLAYER, DOWN
-	scall OakAideScript_GiveYouBalls
-	applymovement OAKSLAB_OAKS_AIDE, OakAideWalksLeft1
-	end
-
-OakAideScript_WalkBalls2:
-	applymovement OAKSLAB_OAKS_AIDE, OakAideWalksRight2
-	turnobject PLAYER, DOWN
-	scall OakAideScript_GiveYouBalls
-	applymovement OAKSLAB_OAKS_AIDE, OakAideWalksLeft2
-	end
-
-OakAideScript_GiveYouBalls:
-	opentext
-	writetext OakAideText_GiveYouBalls
-	promptbutton
-	getitemname STRING_BUFFER_4, POKE_BALL
-	scall OakAideScript_ReceiveTheBalls
-	giveitem POKE_BALL, 5
-	writetext OakAideText_ExplainBalls
-	promptbutton
-	itemnotify
-	closetext
-	setscene SCENE_OAKSLAB_NOOP
-	end
-
-OakAideScript_ReceiveTheBalls:
-	jumpstd ReceiveItemScript
-	end
-
-OakAideScript_ExplainBalls:
-	writetext OakAideText_ExplainBalls
-	waitbutton
-	closetext
-	end
 	
 OaksLastPokemonScript:
 	opentext
@@ -1025,7 +1034,7 @@ OaksLab_WalkUpToOakMovement:
 	step UP
 	step_end
 	
-Rival_LeaveMovement:
+RivalLeaveMovement:
 	slow_step DOWN
 	slow_step DOWN
 	slow_step DOWN
@@ -1146,23 +1155,6 @@ OaksLabPokedexText:
 	cont "pages are blank!"
 	done
 
-OakAideText_GiveYouBalls:
-	text "<PLAY_G>!"
-
-	para "Use these on your"
-	line "#DEX quest!"
-	done
-
-OakAideText_ExplainBalls:
-	text "To add to your"
-	line "#DEX, you have"
-	cont "to catch #MON."
-
-	para "Throw # BALLS"
-	line "at wild #MON"
-	cont "to get them."
-	done
-
 OaksLabTravelTip1Text:
 	text "Press START to"
 	line "open the MENU."
@@ -1199,8 +1191,6 @@ OaksLab_MapEvents:
 	coord_event  5,  6, SCENE_OAKSLAB_CANT_LEAVE, OaksLabTryToLeaveScript
 	coord_event  4,  6, SCENE_OAKSLAB_TAKE_YOU_ON, RivalBattleScript
 	coord_event  5,  6, SCENE_OAKSLAB_TAKE_YOU_ON, RivalBattleScript
-	coord_event  4,  9, SCENE_OAKSLAB_AIDE_GIVES_POKE_BALLS, OakAideScript_WalkBalls1
-	coord_event  5,  9, SCENE_OAKSLAB_AIDE_GIVES_POKE_BALLS, OakAideScript_WalkBalls2
 
 	def_bg_events
 	bg_event  6,  1, BGEVENT_READ, OaksLabBookshelf
