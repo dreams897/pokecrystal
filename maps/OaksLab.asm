@@ -263,7 +263,6 @@ CharmanderPokeBallScript:
 	playsound SFX_CAUGHT_MON_RBY
 	waitsfx
 	closetext
-	applymovement OAKSLAB_BLUE, RivalAfterChoosingSquirtleMovement
 	readvar VAR_FACING
 	ifequal RIGHT, OaksDirections
 	sjump OaksDirections
@@ -308,7 +307,6 @@ SquirtlePokeBallScript:
 	playsound SFX_CAUGHT_MON_RBY
 	waitsfx
 	closetext
-	applymovement OAKSLAB_BLUE, RivalAfterChoosingBulbasaurMovement
 	sjump OaksDirections
 
 BulbasaurPokeBallScript:
@@ -351,7 +349,6 @@ BulbasaurPokeBallScript:
 	playsound SFX_CAUGHT_MON_RBY
 	waitsfx
 	closetext
-	applymovement OAKSLAB_BLUE, RivalAfterChoosingSquirtleMovement
 	sjump OaksDirections
 
 OaksLabDidntChooseStarterScript:
@@ -429,53 +426,135 @@ OaksDirections:
 	end
 	
 RivalBattleScript:
+	checkevent EVENT_GOT_A_CHARMANDER_FROM_OAK
+	iftrue RivalWalkFromSquirtleScript
+	checkevent EVENT_GOT_A_SQUIRTLE_FROM_OAK
+	iftrue RivalWalkFromBulbasaurScript
+	checkevent EVENT_GOT_A_BULBASAUR_FROM_OAK
+	iftrue RivalWalkFromSquirtleScript
+	
+RivalWalkFromSquirtleScript:
+	readvar VAR_XCOORD
+        getnum STRING_BUFFER_3
+        ifequal 4, .RivalWalksFromSquirtleLeft
+        ifequal 5, .RivalWalksFromSquirtleRight
+        
+.RivalWalksFromSquirtleLeft
 	playmusic MUSIC_MEET_RIVAL
 	turnobject PLAYER, UP
-	applymovement OAKSLAB_BLUE, RivalBattleMovement
-	turnobject PLAYER, RIGHT
+	turnobject OAKSLAB_BLUE, DOWN
 	opentext
 	writetext OaksLabRivalIllTakeYouOnText
 	waitbutton
-	checkevent EVENT_GOT_A_SQUIRTLE_FROM_OAK
-	iftrue .Squirtle
-	checkevent EVENT_GOT_A_BULBASAUR_FROM_OAK
-	iftrue .Bulbasaur
+	closetext
+	applymovement OAKSLAB_BLUE, RivalWalksFromSquirtleLeftMovement
 	winlosstext OaksLabRivalIPickedTheWrongPokemonText, OaksLabRivalAmIGreatOrWhatText
 	setlasttalked OAKSLAB_BLUE
 	loadtrainer RIVAL0, RIVAL0_1_SQUIRTLE
 	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
 	reloadmap
-	iftrue .AfterVictorious
-	sjump .AfterYourDefeat
+	sjump AfterBattleScript
 
-.Squirtle:
+.RivalWalksFromSquirtleRight
+	playmusic MUSIC_MEET_RIVAL
+	turnobject PLAYER, UP
+	turnobject OAKSLAB_BLUE, DOWN
+	opentext
+	writetext OaksLabRivalIllTakeYouOnText
+	waitbutton
+	closetext
+	applymovement OAKSLAB_BLUE, RivalWalksFromSquirtleRightMovement
+	turnobject OAKSLAB_BLUE, DOWN
+	winlosstext OaksLabRivalIPickedTheWrongPokemonText, OaksLabRivalAmIGreatOrWhatText
+	setlasttalked OAKSLAB_BLUE
+	loadtrainer RIVAL0, RIVAL0_1_SQUIRTLE
+	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
+	startbattle
+	reloadmap
+	sjump AfterBattleScript
+	
+RivalWalksFromSquirtleLeftMovement:
+	slow_step LEFT
+	slow_step LEFT
+	slow_step LEFT
+	slow_step DOWN
+	step_end
+	
+RivalWalksFromSquirtleRightMovement:
+	slow_step LEFT
+	slow_step LEFT
+	slow_step DOWN
+	step_end
+
+RivalWalkFromBulbasaurScript: 
+        readvar VAR_XCOORD
+        getnum STRING_BUFFER_3
+        ifequal 4, .RivalWalksFromBulbasaurLeft
+        ifequal 5, .RivalWalksFromBulbasaurRight
+        
+.RivalWalksFromBulbasaurLeft
+	playmusic MUSIC_MEET_RIVAL
+	turnobject PLAYER, UP
+	turnobject OAKSLAB_BLUE, DOWN
+	opentext
+	writetext OaksLabRivalIllTakeYouOnText
+	waitbutton
+	closetext
+	applymovement OAKSLAB_BLUE, RivalWalksFromBulbasaurLeftMovement
 	winlosstext OaksLabRivalIPickedTheWrongPokemonText, OaksLabRivalAmIGreatOrWhatText
 	setlasttalked OAKSLAB_BLUE
 	loadtrainer RIVAL0, RIVAL0_1_BULBASAUR
 	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
 	reloadmap
-	iftrue .AfterVictorious
-	sjump .AfterYourDefeat
+	sjump AfterBattleScript
 
-.Bulbasaur:
+.RivalWalksFromBulbasaurRight
+	playmusic MUSIC_MEET_RIVAL
+	turnobject PLAYER, UP
+	turnobject OAKSLAB_BLUE, DOWN
+	opentext
+	writetext OaksLabRivalIllTakeYouOnText
+	waitbutton
+	closetext
+	applymovement OAKSLAB_BLUE, RivalWalksFromBulbasaurRightMovement
 	winlosstext OaksLabRivalIPickedTheWrongPokemonText, OaksLabRivalAmIGreatOrWhatText
 	setlasttalked OAKSLAB_BLUE
-	loadtrainer RIVAL0, RIVAL0_1_SQUIRTLE
+	loadtrainer RIVAL0, RIVAL0_1_BULBASAUR
 	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
 	reloadmap
-	iftrue .AfterVictorious
-	sjump .AfterYourDefeat
+	sjump AfterBattleScript
 
-.AfterVictorious:
+RivalWalksFromBulbasaurLeftMovement:
+	slow_step LEFT
+	slow_step LEFT
+	slow_step LEFT
+	slow_step LEFT
+	slow_step DOWN
+	step_end
+	
+RivalWalksFromBulbasaurRightMovement:
+	slow_step LEFT
+	slow_step LEFT
+	slow_step LEFT
+	slow_step DOWN
+	step_end
+
+AfterBattleScript:
 	opentext
 	writetext OaksLabRivalSmellYouLaterText
 	waitbutton
 	closetext
 	playmusic MUSIC_MEET_RIVAL
-	applymovement OAKSLAB_BLUE, RivalSmellYouLaterMovement
+	readvar VAR_XCOORD
+        getnum STRING_BUFFER_3
+        ifequal 4, .RivalSmellYouLaterLeft
+        ifequal 5, .RivalSmellYouLaterRight
+	
+.RivalSmellYouLaterLeft
+	applymovement OAKSLAB_BLUE, RivalSmellYouLaterMovementLeft
 	disappear OAKSLAB_BLUE
 	special HealParty
 	special RestartMapMusic
@@ -483,26 +562,26 @@ RivalBattleScript:
 	setmapscene PALLET_TOWN, SCENE_PALLET_TOWN_NOOP
 	end
 	
-.AfterYourDefeat:
-	opentext
-	writetext OaksLabRivalSmellYouLaterText
-	waitbutton
-	closetext
-	playmusic MUSIC_MEET_RIVAL
-	applymovement OAKSLAB_BLUE, RivalSmellYouLaterMovement
+.RivalSmellYouLaterRight
+	applymovement OAKSLAB_BLUE, RivalSmellYouLaterMovementRight
 	disappear OAKSLAB_BLUE
 	special HealParty
 	special RestartMapMusic
 	setscene SCENE_OAKSLAB_AIDE_GIVES_POKE_BALLS
 	setmapscene PALLET_TOWN, SCENE_PALLET_TOWN_NOOP
 	end
-
-RivalBattleMovement:
+	
+RivalSmellYouLaterMovementLeft:
+	slow_step RIGHT
 	slow_step DOWN
-	turn_head LEFT
+	slow_step DOWN
+	slow_step DOWN
+	slow_step DOWN
+	slow_step DOWN
 	step_end
-
-RivalSmellYouLaterMovement:
+	
+RivalSmellYouLaterMovementRight:
+	slow_step LEFT
 	slow_step DOWN
 	slow_step DOWN
 	slow_step DOWN
@@ -1119,6 +1198,7 @@ OaksLab_MapEvents:
 	coord_event  4,  6, SCENE_OAKSLAB_CANT_LEAVE, OaksLabTryToLeaveScript
 	coord_event  5,  6, SCENE_OAKSLAB_CANT_LEAVE, OaksLabTryToLeaveScript
 	coord_event  4,  6, SCENE_OAKSLAB_TAKE_YOU_ON, RivalBattleScript
+	coord_event  5,  6, SCENE_OAKSLAB_TAKE_YOU_ON, RivalBattleScript
 	coord_event  4,  9, SCENE_OAKSLAB_AIDE_GIVES_POKE_BALLS, OakAideScript_WalkBalls1
 	coord_event  5,  9, SCENE_OAKSLAB_AIDE_GIVES_POKE_BALLS, OakAideScript_WalkBalls2
 
