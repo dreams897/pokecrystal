@@ -417,3 +417,13 @@ INCBIN "data/tilesets/ship_kanto_metatiles.bin"
 
 TilesetShipKantoColl::
 INCLUDE "data/tilesets/ship_kanto_collision.asm"
+
+TilesetGymKantoGFX::
+INCBIN "gfx/tilesets/gym_kanto.2bpp.lz"
+
+TilesetGymKantoMeta::
+INCBIN "data/tilesets/gym_kanto_metatiles.bin"
+
+TilesetGymKantoColl::
+INCLUDE "data/tilesets/gym_kanto_collision.asm"
+

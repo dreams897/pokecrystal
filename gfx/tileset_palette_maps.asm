@@ -123,6 +123,9 @@ INCLUDE "gfx/tilesets/port_kanto_palette_map.asm"
 TilesetShipKantoPalMap:
 INCLUDE "gfx/tilesets/ship_kanto_palette_map.asm"
 
+TilesetGymKantoPalMap:
+INCLUDE "gfx/tilesets/gym_kanto_palette_map.asm"
+
 TilesetPokeComCenterPalMap:
 INCLUDE "gfx/tilesets/pokecom_center_palette_map.asm"
 

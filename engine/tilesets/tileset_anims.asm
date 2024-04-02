@@ -284,6 +284,7 @@ TilesetMartKantoAnim:
 TilesetCaveKantoAnim:
 TilesetPortKantoAnim:
 TilesetShipKantoAnim:
+TilesetGymKantoAnim:
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
