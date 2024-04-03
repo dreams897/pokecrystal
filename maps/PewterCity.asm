@@ -371,6 +371,9 @@ PewterCityMtMoonSign:
 
 PewterCityPokecenterSign:
 	jumpstd PokecenterSignScript
+	
+PewterCityTrainerTipsSign:
+	jumptext PewterCityTrainerTipsText
 
 PewterCityMartSign:
 	jumpstd MartSignScript
@@ -521,7 +524,7 @@ PewterCity_MapEvents:
 	bg_event 11, 17, BGEVENT_READ, PewterGymSign
 	bg_event 15,  9, BGEVENT_READ, PewterMuseumSign
 	bg_event 33, 19, BGEVENT_READ, PewterCityMtMoonSign
-	bg_event 19, 29, BGEVENT_READ, PewterCitySign
+	bg_event 19, 29, BGEVENT_READ, PewterCityTrainerTipsSign
 	bg_event 14, 25, BGEVENT_READ, PewterCityPokecenterSign
 	bg_event 24, 17, BGEVENT_READ, PewterCityMartSign
 
