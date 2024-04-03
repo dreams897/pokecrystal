@@ -331,6 +331,18 @@ TrainerClassAttributes:
 	db 5 ; base reward
 	dw AI_BASIC | AI_CAUTIOUS | AI_STATUS
 	dw CONTEXT_USE | SWITCH_SOMETIMES
+	
+; Jr. Trainer ♀
+	db NO_ITEM, NO_ITEM ; items
+	db 5 ; base reward
+	dw AI_BASIC | AI_CAUTIOUS | AI_STATUS
+	dw CONTEXT_USE | SWITCH_SOMETIMES
+	
+; Jr. Trainer ♂
+	db NO_ITEM, NO_ITEM ; items
+	db 5 ; base reward
+	dw AI_BASIC | AI_CAUTIOUS | AI_STATUS
+	dw CONTEXT_USE | SWITCH_SOMETIMES
 
 ; Executivef
 	db NO_ITEM, NO_ITEM ; items

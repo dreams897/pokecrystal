@@ -56,6 +56,8 @@ TrainerClassNames::
 	li "PSYCHIC"
 	li "PICNICKER"
 	li "CAMPER"
+	li "JR TRAINER♀"
+	li "JR TRAINER♂"
 	li "ROCKET"
 	li "SAGE"
 	li "MEDIUM"

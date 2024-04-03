@@ -1,6 +1,6 @@
 	object_const_def
 	const PEWTERGYM_BROCK
-	const PEWTERGYM_YOUNGSTER
+	const PEWTERGYM_COOLTRAINER_M
 	const PEWTERGYM_GYM_GUIDE
 
 PewterGym_MapScripts:
@@ -21,10 +21,10 @@ PewterGymBrockScript:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_BROCK
-	setevent EVENT_BEAT_CAMPER_JERRY
+	setevent EVENT_BEAT_PEWTER_GYM_TRAINER_0
 	opentext
 	writetext ReceivedBoulderBadgeText
-	playsound SFX_GET_BADGE
+	playsound SFX_GET_KEY_ITEM_1
 	waitsfx
 	setflag ENGINE_BOULDERBADGE
 	writetext BrockBoulderBadgeText
@@ -38,13 +38,13 @@ PewterGymBrockScript:
 	closetext
 	end
 
-TrainerCamperJerry:
-	trainer CAMPER, JERRY, EVENT_BEAT_CAMPER_JERRY, CamperJerrySeenText, CamperJerryBeatenText, 0, .Script
+TrainerPewterGymTrainer1:
+	trainer JRTRAINER_M, JERRY, EVENT_BEAT_PEWTER_GYM_TRAINER_0, PewterGymTrainer1SeenText, PewterGymTrainer1BeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext CamperJerryAfterBattleText
+	writetext PewterGymTrainer1AfterBattleText
 	waitbutton
 	closetext
 	end
@@ -55,12 +55,28 @@ PewterGymGuideScript:
 	checkevent EVENT_BEAT_BROCK
 	iftrue .PewterGymGuideWinScript
 	writetext PewterGymGuideText
+	yesorno
+	iffalse .FreeService
+	iftrue .LetsGetHappening
+	
+.FreeService
+	writetext PewterGymGuideFreeServiceText
 	waitbutton
-	closetext
-	end
+	sjump PewterGymGuideTextContinued
+	
+.LetsGetHappening
+	writetext PewterGymGuideBeginAdviceText
+	waitbutton
+	sjump PewterGymGuideTextContinued
 
 .PewterGymGuideWinScript:
 	writetext PewterGymGuideWinText
+	waitbutton
+	closetext
+	end
+	
+PewterGymGuideTextContinued:
+	writetext PewterGymGuideAdviceText
 	waitbutton
 	closetext
 	end
@@ -74,137 +90,132 @@ PewterGymStatue:
 	jumpstd GymStatue2Script
 
 BrockIntroText:
-	text "BROCK: Wow, it's"
-	line "not often that we"
+	text "I'm BROCK!"
+	line "I'm PEWTER's GYM"
+	cont "LEADER!"
 
-	para "get a challenger"
-	line "from JOHTO."
+	para "I believe in rock"
+	line "hard defense and"
+	cont "determination!"
 
-	para "I'm BROCK, the"
-	line "PEWTER GYM LEADER."
+	para "That's why my"
+	line "#MON are all"
+	cont "the rock-type!"
 
-	para "I'm an expert on"
-	line "rock-type #MON."
-
-	para "My #MON are im-"
-	line "pervious to most"
-
-	para "physical attacks."
-	line "You'll have a hard"
-
-	para "time inflicting"
-	line "any damage."
-
-	para "Come on!"
+	para "Do you still want"
+	line "to challenge me?"
+	cont "Fine then! Show"
+	cont "me your best!"
 	done
 
 BrockWinLossText:
-	text "BROCK: Your #-"
-	line "MON's powerful at-"
-	cont "tacks overcame my"
-	cont "rock-hard defense…"
+	text "I took"
+	line "you for granted."
 
-	para "You're stronger"
-	line "than I expected…"
-
-	para "Go ahead--take"
-	line "this BADGE."
+	para "As proof of your"
+	line "victory, here's"
+	cont "the BOULDERBADGE!"
 	done
 
 ReceivedBoulderBadgeText:
 	text "<PLAYER> received"
-	line "BOULDERBADGE."
+	line "the BOULDERBADGE!"
 	done
 
 BrockBoulderBadgeText:
-	text "BROCK: <PLAY_G>,"
-	line "thanks. I enjoyed"
+	text "That's an official"
+	line "#MON LEAGUE"
+	cont "BADGE!"
 
-	para "battling you, even"
-	line "though I am a bit"
-	cont "upset."
+	para "Its bearer's"
+	line "#MON become"
+	cont "more powerful!"
 
-	para "That BOULDERBADGE"
-	line "will make your"
-
-	para "#MON even more"
-	line "powerful."
+	para "The technique"
+	line "FLASH can now be"
+	cont "used any time!"
+	prompt
 	done
 
 BrockFightDoneText:
-	text "BROCK: The world"
-	line "is huge. There are"
+	text "There are all"
+	line "kinds of trainers"
+	cont "in the world!"
 
-	para "still many strong"
-	line "trainers like you."
+	para "You appear to be"
+	line "very gifted as a"
+	cont "#MON trainer!"
 
-	para "Just wait and see."
-	line "I'm going to be-"
-	cont "come a lot strong-"
-	cont "er too."
+	para "Go to the GYM in"
+	line "CERULEAN and test"
+	cont "your abilities!"
 	done
 
-CamperJerrySeenText:
-	text "The trainers of"
-	line "this GYM use rock-"
-	cont "type #MON."
+PewterGymTrainer1SeenText:
+	text "Stop right there,"
+	line "kid!"
 
-	para "The rock-type has"
-	line "high DEFENSE."
-
-	para "Battles could end"
-	line "up going a long"
-
-	para "time. Are you"
-	line "ready for this?"
+	para "You're still light"
+	line "years from facing"
+	cont "BROCK!"
 	done
 
-CamperJerryBeatenText:
-	text "I have to win"
-	line "these battles…"
-	done
+PewterGymTrainer1BeatenText:
+	text "Darn!"
 
-CamperJerryAfterBattleText:
-	text "Hey, you! Trainer"
-	line "from JOHTO! BROCK"
+	para "Light years isn't"
+	line "time! It measures"
+	cont "distance!"
+	prompt
 
-	para "is tough. He'll"
-	line "punish you if you"
-
-	para "don't take him"
-	line "seriously."
+PewterGymTrainer1AfterBattleText:
+	text "You're pretty hot,"
+	line "but not as hot"
+	cont "as BROCK!"
 	done
 
 PewterGymGuideText:
-	text "Yo! CHAMP in"
-	line "making! You're"
+	text "Hiya! I can tell"
+	line "you have what it"
+	cont "takes to become a"
+	cont "#MON champ!"
 
-	para "really rocking."
-	line "Are you battling"
+	para "I'm no trainer,"
+	line "but I can tell"
+	cont "you how to win!"
 
-	para "the GYM LEADERS of"
-	line "KANTO?"
-
-	para "They're strong and"
-	line "dedicated people,"
-
-	para "just like JOHTO's"
-	line "GYM LEADERS."
+	para "Let me take you"
+	line "to the top!"
 	done
 
 PewterGymGuideWinText:
-	text "Yo! CHAMP in"
-	line "making! That GYM"
-
-	para "didn't give you"
-	line "much trouble."
-
-	para "The way you took"
-	line "charge was really"
-
-	para "inspiring. I mean"
-	line "that seriously."
+	text "Just as I thought!"
+	line "You're #MON"
+	cont "champ material!"
 	done
+	
+PewterGymGuideBeginAdviceText:
+	text "All right! Let's"
+	line "get happening!"
+	prompt
+
+PewterGymGuideAdviceText:
+	text "The 1st #MON"
+	line "out in a match is"
+	cont "at the top of the"
+	cont "#MON LIST!"
+
+	para "By changing the"
+	line "order of #MON,"
+	cont "matches could be"
+	cont "made easier!"
+	done
+
+PewterGymGuideFreeServiceText:
+	text "It's a free"
+	line "service! Let's"
+	cont "get happening!"
+	prompt
 
 PewterGym_MapEvents:
 	db 0, 0 ; filler
@@ -221,5 +232,5 @@ PewterGym_MapEvents:
 
 	def_object_events
 	object_event  4,  1, SPRITE_BROCK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PewterGymBrockScript, -1
-	object_event  3,  6, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerCamperJerry, -1
+	object_event  3,  6, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerPewterGymTrainer1, -1
 	object_event  7, 10, SPRITE_GYM_GUIDE_KANTO, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 1, PewterGymGuideScript, -1

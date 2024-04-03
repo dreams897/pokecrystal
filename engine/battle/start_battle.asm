@@ -88,7 +88,7 @@ PlayBattleMusic:
 	cp SCIENTIST
 	jr z, .done
 
-	ld de, MUSIC_KANTO_GYM_LEADER_BATTLE
+	ld de, MUSIC_GYM_LEADER_BATTLE
 	farcall IsKantoGymLeader
 	jr c, .done
 

@@ -65,6 +65,8 @@ INCBIN "gfx/trainers/executive_m.gbcpal", middle_colors
 INCBIN "gfx/trainers/psychic_t.gbcpal", middle_colors
 INCBIN "gfx/trainers/picnicker.gbcpal", middle_colors
 INCBIN "gfx/trainers/camper.gbcpal", middle_colors
+INCBIN "gfx/trainers/jrtrainerf.gbcpal", middle_colors
+INCBIN "gfx/trainers/jrtrainerm.gbcpal", middle_colors
 INCBIN "gfx/trainers/executive_f.gbcpal", middle_colors
 INCBIN "gfx/trainers/sage.gbcpal", middle_colors
 INCBIN "gfx/trainers/medium.gbcpal", middle_colors

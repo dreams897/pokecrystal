@@ -607,11 +607,15 @@ DEF PURPLE EQU __trainer_class__
 	const LEROY ; unused
 	const DAVID ; unused
 	const JOHN ; unused
-	const JERRY
 	const SPENCER
 	const TODD4
 	const TODD5
 	const QUENTIN
+	
+	trainerclass JRTRAINER_F ; added
+	
+	trainerclass JRTRAINER_M ; added
+	const JERRY
 
 	trainerclass EXECUTIVEF ; 37
 	const EXECUTIVEF_1

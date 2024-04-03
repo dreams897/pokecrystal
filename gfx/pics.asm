@@ -712,6 +712,7 @@ UnownIBackpic:       INCBIN "gfx/pokemon/unown_i/back.2bpp.lz"
 UnownRBackpic:       INCBIN "gfx/pokemon/unown_r/back.2bpp.lz"
 
 
+
 ; Sections "Pics 20" to "Pics 24" are not used for any graphics
 
 SECTION "Pics 20", ROMX
@@ -721,6 +722,9 @@ OddishBackpic:       INCBIN "gfx/pokemon/oddish/back.2bpp.lz"
 UnownDBackpic:       INCBIN "gfx/pokemon/unown_d/back.2bpp.lz"
 
 SECTION "Pics 21", ROMX
+
+JrtrainerfPic::      INCBIN "gfx/trainers/jrtrainerf.2bpp.lz"
+JrtrainermPic::      INCBIN "gfx/trainers/jrtrainerm.2bpp.lz"
 
 SECTION "Pics 22", ROMX
 

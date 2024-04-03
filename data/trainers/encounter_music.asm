@@ -21,7 +21,7 @@ TrainerEncounterMusic::
 	db MUSIC_HIKER_ENCOUNTER       ; karen
 	db MUSIC_HIKER_ENCOUNTER       ; koga
 	db MUSIC_OFFICER_ENCOUNTER     ; champion
-	db MUSIC_YOUNGSTER_ENCOUNTER   ; brock
+	db MUSIC_GYM_LEADER_BATTLE     ; brock
 	db MUSIC_LASS_ENCOUNTER        ; misty
 	db MUSIC_OFFICER_ENCOUNTER     ; lt_surge
 	db MUSIC_MEET_EVIL_TRAINER     ; scientist
@@ -59,6 +59,8 @@ TrainerEncounterMusic::
 	db MUSIC_YOUNGSTER_ENCOUNTER   ; psychic_t
 	db MUSIC_MEET_FEMALE_TRAINER   ; picnicker
 	db MUSIC_MEET_MALE_TRAINER     ; camper
+	db MUSIC_MEET_FEMALE_TRAINER   ; jr trainer f
+	db MUSIC_MEET_MALE_TRAINER     ; jr trainer m
 	db MUSIC_MEET_EVIL_TRAINER     ; executivef
 	db MUSIC_SAGE_ENCOUNTER        ; sage
 	db MUSIC_SAGE_ENCOUNTER        ; medium

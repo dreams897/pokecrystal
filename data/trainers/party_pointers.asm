@@ -58,6 +58,8 @@ TrainerGroups:
 	dba PsychicGroup
 	dba PicnickerGroup
 	dba CamperGroup
+	dba JrtrainerfGroup
+	dba JrtrainermGroup
 	dba ExecutiveFGroup
 	dba SageGroup
 	dba MediumGroup
