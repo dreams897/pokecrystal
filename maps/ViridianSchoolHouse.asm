@@ -26,7 +26,66 @@ ViridianTrainerHouseCooltrainerFScript:
 	end
 
 ViridianSchoolHouseBlackboardScript:
-	jumptext ViridianSchoolBlackboardText1
+	opentext
+	writetext ViridianSchoolBlackboardText1
+.Loop:
+	writetext ViridianSchoolBlackboardText2
+	loadmenu .BlackboardMenuHeader
+	_2dmenu
+	closewindow
+	ifequal 1, .Poison
+	ifequal 2, .Paralysis
+	ifequal 3, .Sleep
+	ifequal 4, .Burn
+	ifequal 5, .Freeze
+	closetext
+	end
+
+.Poison:
+	writetext ViridianBlackboardPoisonText
+	waitbutton
+	sjump .Loop
+
+.Paralysis:
+	writetext ViridianBlackboardPrlzText
+	waitbutton
+	sjump .Loop
+
+.Sleep:
+	writetext ViridianBlackboardSleepText
+	waitbutton
+	sjump .Loop
+
+.Burn:
+	writetext ViridianBlackboardBurnText
+	waitbutton
+	sjump .Loop
+
+.Freeze:
+	writetext ViridianBlackboardFrozenText
+	waitbutton
+	sjump .Loop
+
+.BlackboardMenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 0, 11, 8
+	dw .MenuData
+	db 1 ; default option
+
+.MenuData:
+	db STATICMENU_CURSOR ; flags
+	dn 3, 2 ; rows, columns
+	db 5 ; spacing
+	dba .Text
+	dbw BANK(@), NULL
+
+.Text:
+	db "PSN@"
+	db "PAR@"
+	db "SLP@"
+	db "BRN@"
+	db "FRZ@"
+	db "QUIT@"
 	
 ViridianSchoolHouseNotebookScript:
 	opentext
