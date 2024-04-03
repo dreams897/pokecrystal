@@ -27,6 +27,7 @@ PewterCityNoopScene:
 PewterCityAfterBeatingBrockScene:
 	clearevent EVENT_BOUGHT_MUSEUM_TICKET
 	setmapscene PEWTER_MUSEUM_1F, PEWTER_MUSEUM_1F_NOOP_SCENE
+	moveobject PEWTERCITY_YOUNGSTER_GYM_GUY, 39, 0
 	disappear PEWTERCITY_YOUNGSTER_GYM_GUY
 	end
 

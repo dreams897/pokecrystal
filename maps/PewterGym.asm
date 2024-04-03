@@ -27,6 +27,7 @@ PewterGymBrockScript:
 	playsound SFX_GET_KEY_ITEM_1
 	waitsfx
 	setflag ENGINE_BOULDERBADGE
+	setmapscene PEWTER_CITY, SCENE_PEWTER_AFTER_BEATING_BROCK
 	writetext BrockBoulderBadgeText
 	waitbutton
 	closetext
