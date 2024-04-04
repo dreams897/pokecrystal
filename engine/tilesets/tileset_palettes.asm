@@ -24,8 +24,6 @@ LoadSpecialMapPalette:
 	jr z, .lab
 	cp TILESET_HOUSE_KANTO
 	jr z, .house_kanto
-	cp TILESET_VIRIDIAN_FOREST
-	jr z, .viridian_forest
 	cp TILESET_GYM_KANTO
 	jr z, .gym_kanto
 	cp TILESET_GYM_BROCK
@@ -94,11 +92,6 @@ LoadSpecialMapPalette:
 	
 .house_kanto
 	call LoadHouseKantoPalette
-	scf
-	ret
-	
-.viridian_forest
-	call LoadViridianForestPalette
 	scf
 	ret
 	
@@ -260,16 +253,6 @@ LoadHouseKantoPalette:
 
 HouseKantoPalette:
 INCLUDE "gfx/tilesets/house_kanto.pal"
-
-LoadViridianForestPalette:
-	ld a, BANK(wBGPals1)
-	ld de, wBGPals1
-	ld hl, ViridianForestPalette
-	ld bc, 8 palettes
-	jp FarCopyWRAM
-
-ViridianForestPalette:
-INCLUDE "gfx/tilesets/viridian_forest.pal"
 
 LoadGymKantoPalette:
 	ld a, BANK(wBGPals1)
