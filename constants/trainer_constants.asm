@@ -127,6 +127,8 @@ DEF GREEN EQU __trainer_class__
 	const JASON
 	const JOEY4
 	const JOEY5
+	const BEN2
+	const MIKEY2
 
 	trainerclass SCHOOLBOY ; 17
 	const JACK1
@@ -193,6 +195,9 @@ DEF GREEN EQU __trainer_class__
 	const DANA3
 	const DANA4
 	const DANA5
+	const ALICE2
+	const CARRIE2
+	const CONNIE4
 
 	trainerclass JANINE ; 1a
 	const JANINE1
@@ -352,7 +357,10 @@ DEF GREEN EQU __trainer_class__
 	const WAYNE
 	const CALEB
 	const DYLAN
-	const WOODY
+	const FOREST_T
+	const FOREST_T2
+	const JOSH2
+	const WADE6
 
 	trainerclass FISHER ; 25
 	const JUSTIN

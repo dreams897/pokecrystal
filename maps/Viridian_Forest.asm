@@ -44,7 +44,7 @@ TrainerYoungsterViridianForest2:
 	end
 	
 TrainerYoungsterViridianForest3:
-	trainer BUG_CATCHER, WOODY, EVENT_BEAT_VIRIDIAN_FOREST_TRAINER_2, ViridianForestYoungster4SeenText, ViridianForestYoungster4BeatenText, 0, .Script
+	trainer BUG_CATCHER, FOREST_T, EVENT_BEAT_VIRIDIAN_FOREST_TRAINER_2, ViridianForestYoungster4SeenText, ViridianForestYoungster4BeatenText, 0, .Script
 	
 .Script:
 	endifjustbattled
