@@ -126,5 +126,6 @@ SilphWorkerFSpriteGFX::        INCBIN "gfx/sprites/silph_worker_f.2bpp"
 SilphWorkerMSpriteGFX::        INCBIN "gfx/sprites/silph_worker_m.2bpp"
 EnbySpriteGFX::                INCBIN "gfx/sprites/enby.2bpp"
 EnbyBikeSpriteGFX::            INCBIN "gfx/sprites/enby_bike.2bpp"
-GymGuideKantoGFX::             INCBIN "gfx/sprites/gym_guide_kanto.2bpp"
+GymGuideKantoSpriteGFX::       INCBIN "gfx/sprites/gym_guide_kanto.2bpp"
+HikerSpriteGFX::               INCBIN "gfx/sprites/hiker.2bpp"
 

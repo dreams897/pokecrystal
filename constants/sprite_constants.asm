@@ -122,6 +122,7 @@
 	const SPRITE_ENBY           ; 78
 	const SPRITE_ENBY_BIKE      ; 79
 	const SPRITE_GYM_GUIDE_KANTO ; 80
+	const SPRITE_HIKER ; 81
 	
 DEF NUM_OVERWORLD_SPRITES EQU const_value - 1
 
