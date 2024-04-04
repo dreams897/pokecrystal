@@ -1,6 +1,7 @@
 	object_const_def
 	const PEWTERGYM_BROCK
 	const PEWTERGYM_COOLTRAINER_M
+	const PEWTERGYM_HIKER
 	const PEWTERGYM_GYM_GUIDE
 
 PewterGym_MapScripts:
@@ -22,6 +23,7 @@ PewterGymBrockScript:
 	reloadmapafterbattle
 	setevent EVENT_BEAT_BROCK
 	setevent EVENT_BEAT_PEWTER_GYM_TRAINER_0
+	setevent EVENT_BEAT_PEWTER_GYM_TRAINER_1
 	opentext
 	writetext ReceivedBoulderBadgeText
 	playsound SFX_GET_KEY_ITEM_1
@@ -39,8 +41,19 @@ PewterGymBrockScript:
 	closetext
 	end
 
+TrainerPewterGymTrainer0:
+	trainer JRTRAINER_M, JERRY, EVENT_BEAT_PEWTER_GYM_TRAINER_0, PewterGymTrainer0SeenText, PewterGymTrainer0BeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext PewterGymTrainer0AfterBattleText
+	waitbutton
+	closetext
+	end
+	
 TrainerPewterGymTrainer1:
-	trainer JRTRAINER_M, JERRY, EVENT_BEAT_PEWTER_GYM_TRAINER_0, PewterGymTrainer1SeenText, PewterGymTrainer1BeatenText, 0, .Script
+	trainer HIKER, TONY, EVENT_BEAT_PEWTER_GYM_TRAINER_1, PewterGymTrainer1SeenText, PewterGymTrainer1BeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -152,7 +165,7 @@ BrockFightDoneText:
 	cont "your abilities!"
 	done
 
-PewterGymTrainer1SeenText:
+PewterGymTrainer0SeenText:
 	text "Stop right there,"
 	line "kid!"
 
@@ -161,7 +174,7 @@ PewterGymTrainer1SeenText:
 	cont "BROCK!"
 	done
 
-PewterGymTrainer1BeatenText:
+PewterGymTrainer0BeatenText:
 	text "Darn!"
 
 	para "Light years isn't"
@@ -169,10 +182,27 @@ PewterGymTrainer1BeatenText:
 	cont "distance!"
 	prompt
 
-PewterGymTrainer1AfterBattleText:
+PewterGymTrainer0AfterBattleText:
 	text "You're pretty hot,"
 	line "but not as hot"
 	cont "as BROCK!"
+	done
+	
+PewterGymTrainer1SeenText:
+	text "I just got back"
+	line "from Mt. Moon!"
+	done
+	
+PewterGymTrainer1BeatenText:
+	text "Darn!"
+	
+	para "You're ready"
+	line "for Brock!"
+	prompt
+	
+PewterGymTrainer1AfterBattleText:
+	text "I should've caught"
+	line "more #MON."
 	done
 
 PewterGymGuideText:
@@ -233,5 +263,6 @@ PewterGym_MapEvents:
 
 	def_object_events
 	object_event  4,  1, SPRITE_BROCK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PewterGymBrockScript, -1
-	object_event  3,  6, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerPewterGymTrainer1, -1
+	object_event  3,  6, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerPewterGymTrainer0, -1
+	object_event  7,  4, SPRITE_HIKER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerPewterGymTrainer1, -1
 	object_event  7, 10, SPRITE_GYM_GUIDE_KANTO, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 1, PewterGymGuideScript, -1

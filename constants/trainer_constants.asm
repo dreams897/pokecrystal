@@ -394,7 +394,7 @@ DEF GREEN EQU __trainer_class__
 	const PATON ; unused
 	const DARYL ; unused
 	const WALTER ; unused
-	const TONY ; unused
+	const UNUSED ; unused
 	const JEROME
 	const TUCKER
 	const RICK ; unused
@@ -491,6 +491,7 @@ DEF GREEN EQU __trainer_class__
 	const PARRY3
 	const ANTHONY4
 	const ANTHONY5
+	const TONY
 
 	trainerclass BIKER ; 2d
 	const BIKER_BENNY ; unused
