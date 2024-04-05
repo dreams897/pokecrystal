@@ -306,7 +306,6 @@ CharmanderPokeBallScript:
 	getmonname STRING_BUFFER_3, SQUIRTLE
 	writetext OaksLabRivalIllTakeThisOneText
 	waitbutton
-	pause 15
 	disappear OAKSLAB_POKE_BALL2
 	writetext OaksLabRivalReceivedMonText
 	playsound SFX_CAUGHT_MON_RBY
@@ -348,7 +347,6 @@ SquirtlePokeBallScript:
 	getmonname STRING_BUFFER_3, BULBASAUR
 	writetext OaksLabRivalIllTakeThisOneText
 	waitbutton
-	pause 15
 	disappear OAKSLAB_POKE_BALL3
 	writetext OaksLabRivalReceivedMonText
 	playsound SFX_CAUGHT_MON_RBY
@@ -388,7 +386,6 @@ BulbasaurPokeBallScript:
 	getmonname STRING_BUFFER_3, SQUIRTLE
 	writetext OaksLabRivalIllTakeThisOneText
 	waitbutton
-	pause 15
 	disappear OAKSLAB_POKE_BALL2
 	writetext OaksLabRivalReceivedMonText
 	playsound SFX_CAUGHT_MON_RBY

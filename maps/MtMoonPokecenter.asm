@@ -31,7 +31,7 @@ MtMoonPokecenterMagikarpSalesmanScript:
 	waitsfx
 	getmonname STRING_BUFFER_3, MAGIKARP
 	writetext MtMoonPokecenterGotMagikarpText
-	pause 5
+	pause 2
 	playsound SFX_CAUGHT_MON_RBY
 	waitsfx
 	promptbutton
