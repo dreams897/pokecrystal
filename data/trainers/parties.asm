@@ -637,12 +637,6 @@ BirdKeeperGroup:
 	db 25, PIDGEOTTO
 	db -1 ; end
 
-	; BIRD_KEEPER (8)
-	db "HANK@", TRAINERTYPE_NORMAL
-	db 12, PIDGEY
-	db 34, PIDGEOT
-	db -1 ; end
-
 	; BIRD_KEEPER (9)
 	db "ROY@", TRAINERTYPE_NORMAL
 	db 29, FEAROW
@@ -2869,11 +2863,6 @@ PicnickerGroup:
 	db 36, NIDOQUEEN
 	db -1 ; end
 
-	; PICNICKER (6)
-	db "HOPE@", TRAINERTYPE_NORMAL
-	db 34, FLAAFFY
-	db -1 ; end
-
 	; PICNICKER (7)
 	db "SHARON@", TRAINERTYPE_NORMAL
 	db 31, FURRET
@@ -3135,6 +3124,12 @@ CamperGroup:
 	db -1 ; end
 	
 JrtrainerfGroup:
+	; JRTRAINER_F (1)
+	db "SHARON@", TRAINERTYPE_NORMAL
+	db 31, PARAS
+	db 31, PARAS
+	db 31, PARASECT
+	db -1 ; end
 	
 JrtrainermGroup:
 	; JRTRAINER_M (1)

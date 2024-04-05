@@ -164,7 +164,6 @@ DEF GREEN EQU __trainer_class__
 	const TOBY
 	const DENIS
 	const VANCE1
-	const HANK
 	const ROY
 	const BORIS
 	const BOB
@@ -576,7 +575,6 @@ DEF PURPLE EQU __trainer_class__
 	const BROOKE
 	const KIM
 	const CINDY
-	const HOPE
 	const SHARON
 	const DEBRA
 	const GINA2
@@ -622,6 +620,7 @@ DEF PURPLE EQU __trainer_class__
 	const QUENTIN
 	
 	trainerclass JRTRAINER_F ; added
+	const SHARON2
 	
 	trainerclass JRTRAINER_M ; added
 	const JERRY

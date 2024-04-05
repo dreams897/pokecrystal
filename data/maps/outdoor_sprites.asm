@@ -63,15 +63,14 @@ CeruleanGroupSprites:
 ; Route4, Route9, Route10North, Route24, Route25, CeruleanCity
 SaffronGroupSprites:
 ; Route5, SaffronCity
-	db SPRITE_COOLTRAINER_M
-	db SPRITE_SUPER_NERD
-	db SPRITE_COOLTRAINER_F
-	db SPRITE_FISHER
 	db SPRITE_YOUNGSTER
-	db SPRITE_LASS
-	db SPRITE_POKEFAN_M
 	db SPRITE_ROCKET
-	db SPRITE_MISTY
+	db SPRITE_SUPER_NERD
+	db SPRITE_HIKER
+	db SPRITE_BLUE
+	db SPRITE_GUARD
+	db SPRITE_COOLTRAINER_F
+	db SPRITE_COOLTRAINER_M
 	; max 9 of 9 walking sprites
 	db SPRITE_POKE_BALL
 	db SPRITE_SLOWPOKE

@@ -1,7 +1,6 @@
 	object_const_def
-	const ROUTE4_YOUNGSTER
-	const ROUTE4_LASS1
-	const ROUTE4_LASS2
+	const ROUTE4_COOLTRAINER_F
+	const ROUTE4_LASS
 	const ROUTE4_POKE_BALL
 
 Route4_MapScripts:
@@ -9,113 +8,71 @@ Route4_MapScripts:
 
 	def_callbacks
 
-TrainerBirdKeeperHank:
-	trainer BIRD_KEEPER, HANK, EVENT_BEAT_BIRD_KEEPER_HANK, BirdKeeperHankSeenText, BirdKeeperHankBeatenText, 0, .Script
+Route4JrTrainerF1:
+	trainer JRTRAINER_F, SHARON2, EVENT_BEAT_ROUTE_4_JR_TRAINER_F_SHARON, Route4JrTrainerF1BattleText, Route4JrTrainerF1EndBattleText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext BirdKeeperHankAfterBattleText
+	writetext Route4JrTrainerF1AfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerPicnickerHope:
-	trainer PICNICKER, HOPE, EVENT_BEAT_PICNICKER_HOPE, PicnickerHopeSeenText, PicnickerHopeBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
+Route4CoolTrainerFScript:
+	faceplayer
 	opentext
-	writetext PicnickerHopeAfterBattleText
+	writetext Route4CooltrainerF1Text
 	waitbutton
 	closetext
 	end
+	
+Route4PokecenterSign:
+	jumpstd PokecenterSignScript
 
-TrainerPicnickerSharon:
-	trainer PICNICKER, SHARON, EVENT_BEAT_PICNICKER_SHARON, PicnickerSharonSeenText, PicnickerSharonBeatenText, 0, .Script
+MtMoonSign:
+	jumptext Route4MtMoonSignText
+	
+Route4MtMoonExitSign:
+	jumptext Route4SignText
 
-.Script:
-	endifjustbattled
-	opentext
-	writetext PicnickerSharonAfterBattleText
-	waitbutton
-	closetext
-	end
+Route4RolloutTM:
+	itemball TM_ROLLOUT
 
-MtMoonSquareSign:
-	jumptext MtMoonSquareSignText
-
-Route4HPUp:
-	itemball HP_UP
-
-Route4HiddenUltraBall:
-	hiddenitem ULTRA_BALL, EVENT_ROUTE_4_HIDDEN_ULTRA_BALL
-
-BirdKeeperHankSeenText:
-	text "I'm raising my"
-	line "#MON. Want to"
-	cont "battle with me?"
+Route4CooltrainerF1Text:
+	text "Ouch! I tripped"
+	line "over a rocky"
+	cont "#MON, GEODUDE!"
 	done
 
-BirdKeeperHankBeatenText:
-	text "Ack! I lost that"
-	line "one…"
+Route4JrTrainerF1BattleText:
+	text "I came to get my"
+	line "mushroom #MON!"
 	done
 
-BirdKeeperHankAfterBattleText:
-	text "If you have a"
-	line "specific #MON"
+Route4JrTrainerF1EndBattleText:
+	text "Oh! My cute"
+	line "mushroom #MON!"
+	prompt
 
-	para "that you want to"
-	line "raise, put it out"
+Route4JrTrainerF1AfterBattleText:
+	text "There might not"
+	line "be any more"
+	cont "mushrooms here."
 
-	para "first, then switch"
-	line "it right away."
-
-	para "That's how to do"
-	line "it."
+	para "I think I got"
+	line "them all."
 	done
 
-PicnickerHopeSeenText:
-	text "I have a feeling"
-	line "that I can win."
-
-	para "Let's see if I'm"
-	line "right!"
+Route4MtMoonSignText:
+	text "MT.MOON"
+	line "Tunnel Entrance"
 	done
 
-PicnickerHopeBeatenText:
-	text "Aww, you are too"
-	line "strong."
-	done
-
-PicnickerHopeAfterBattleText:
-	text "I heard CLEFAIRY"
-	line "appear at MT.MOON."
-
-	para "But where could"
-	line "they be?"
-	done
-
-PicnickerSharonSeenText:
-	text "Um…"
-	line "I…"
-	done
-
-PicnickerSharonBeatenText:
-	text "…"
-	done
-
-PicnickerSharonAfterBattleText:
-	text "……I'll go train"
-	line "some more…"
-	done
-
-MtMoonSquareSignText:
-	text "MT.MOON SQUARE"
-
-	para "Just go up the"
-	line "stairs."
+Route4SignText:
+	text "ROUTE 4"
+	line "MT.MOON -"
+	cont "CERULEAN CITY"
 	done
 
 Route4_MapEvents:
@@ -129,11 +86,11 @@ Route4_MapEvents:
 	def_coord_events
 
 	def_bg_events
-	bg_event 17,  7, BGEVENT_READ, MtMoonSquareSign
-	bg_event  9,  4, BGEVENT_ITEM, Route4HiddenUltraBall
+	bg_event 17,  7, BGEVENT_READ, MtMoonSign
+	bg_event 27,  7, BGEVENT_READ, Route4MtMoonExitSign
+	bg_event 12,  5, BGEVENT_READ, Route4PokecenterSign
 
 	def_object_events
-	object_event 16, 11, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBirdKeeperHank, -1
-	object_event  9,  8, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerPicnickerHope, -1
-	object_event 63,  3, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerPicnickerSharon, -1
-	object_event 57,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route4HPUp, EVENT_ROUTE_4_HP_UP
+	object_event  9,  8, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route4CoolTrainerFScript, -1
+	object_event 63,  3, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, Route4JrTrainerF1, -1
+	object_event 57,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route4RolloutTM, EVENT_ROUTE_4_TM_ROLLOUT
