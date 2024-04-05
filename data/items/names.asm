@@ -190,18 +190,12 @@ ItemNames::
 	li "MUSIC MAIL"
 	li "MIRAGE MAIL"
 	li "TERU-SAMA"
-	li "TERU-SAMA"
-	li "TERU-SAMA"
-	li "TERU-SAMA"
-	li "TERU-SAMA"
-	li "TERU-SAMA"
-	li "TERU-SAMA"
-	li "TERU-SAMA"
 	assert_list_length NUM_ITEMS
 	li "TM01"
 	li "TM02"
 	li "TM03"
 	li "TM04"
+	li "TERU-SAMA"
 	li "TM05"
 	li "TM06"
 	li "TM07"
@@ -226,6 +220,7 @@ ItemNames::
 	li "TM26"
 	li "TM27"
 	li "TM28"
+	li "TERU-SAMA"
 	li "TM29"
 	li "TM30"
 	li "TM31"
@@ -248,7 +243,7 @@ ItemNames::
 	li "TM48"
 	li "TM49"
 	li "TM50"
-	assert_list_length NUM_ITEMS + NUM_TMS
+	assert_list_length NUM_ITEMS + NUM_TMS + 2 ; count ITEM_C3 and ITEM_DC
 	li "HM01"
 	li "HM02"
 	li "HM03"
@@ -256,7 +251,12 @@ ItemNames::
 	li "HM05"
 	li "HM06"
 	li "HM07"
-	assert_list_length NUM_ITEMS + NUM_TMS + NUM_HMS
-	li "?"
+	assert_list_length NUM_ITEMS + NUM_TMS + 2 + NUM_HMS ; count ITEM_C3 and ITEM_DC
+	li "TERU-SAMA"
+	li "TERU-SAMA"
+	li "TERU-SAMA"
+	li "TERU-SAMA"
+	li "TERU-SAMA"
+	li "TERU-SAMA"
 	li "?"
 	assert_list_length $100
