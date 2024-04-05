@@ -1177,7 +1177,6 @@ RunTitleScreen:
 	bit 7, a
 	jr nz, .done_title
 	call TitleScreenScene
-	farcall SuicuneFrameIterator
 	call DelayFrame
 	and a
 	ret
@@ -1249,7 +1248,6 @@ TitleScreenEntrance:
 	dec b
 	jr nz, .loop
 
-	farcall AnimateTitleCrystal
 	ret
 
 .done

@@ -153,19 +153,3 @@ UnusedTitleFG_OAM:
 	dbsprite 12, 11,  0,  0, $4a, 1
 	dbsprite 13, 11,  0,  0, $4c, 1
 	dbsprite 14, 11,  0,  0, $4e, 1
-
-TestCrystalTitleScreen: ; unreferenced
-; Runs the title screen until A is pressed.
-; Possibly used for testing.
-	call _TitleScreen
-.loop
-	call JoyTextDelay
-	ldh a, [hJoyLast]
-	ld b, a
-	and A_BUTTON
-	jr nz, .done
-	call SuicuneFrameIterator
-	call DelayFrame
-	jr .loop
-.done
-	ret

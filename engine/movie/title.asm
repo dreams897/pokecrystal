@@ -21,11 +21,6 @@ _TitleScreen:
 	ld a, 1
 	ldh [rVBK], a
 
-; Decompress running Suicune gfx
-	ld hl, TitleSuicuneGFX
-	ld de, vTiles1
-	call Decompress
-
 ; Clear screen palettes
 	hlbgcoord 0, 0
 	ld bc, 20 * BG_MAP_WIDTH
@@ -78,12 +73,6 @@ _TitleScreen:
 	ld a, 1
 	call ByteFill
 
-; Suicune gfx
-	hlbgcoord 0, 12
-	ld bc, 6 * BG_MAP_WIDTH ; the rest of the screen
-	ld a, 0 | VRAM_BANK_1
-	call ByteFill
-
 ; Back to VRAM bank 0
 	ld a, 0
 	ldh [rVBK], a
@@ -91,11 +80,6 @@ _TitleScreen:
 ; Decompress logo
 	ld hl, TitleLogoGFX
 	ld de, vTiles1
-	call Decompress
-
-; Decompress background crystal
-	ld hl, TitleCrystalGFX
-	ld de, vTiles0
 	call Decompress
 
 ; Clear screen tiles
@@ -117,13 +101,6 @@ _TitleScreen:
 	ld d, $c
 	ld e, 16
 	call DrawTitleGraphic
-
-; Initialize running Suicune?
-	ld d, $0
-	call LoadSuicuneFrame
-
-; Initialize background crystal
-	call InitializeBackground
 
 ; Update palette colors
 	ldh a, [rSVBK]
@@ -204,74 +181,13 @@ _TitleScreen:
 ; Update BG Map 0 (bank 0)
 	ldh [hBGMapMode], a
 
-	xor a
-	ld [wSuicuneFrame], a
-
 ; Play starting sound effect
 	call SFXChannelsOff
 	ld de, SFX_TITLE_SCREEN_ENTRANCE
 	call PlaySFX
 
 	ret
-
-SuicuneFrameIterator:
-	ld hl, wSuicuneFrame
-	ld a, [hl]
-	ld c, a
-	inc [hl]
-
-; Only do this once every eight frames
-	and %111
-	ret nz
-
-	ld a, c
-	and %11000
-	sla a
-	swap a
-	ld e, a
-	ld d, 0
-	ld hl, .Frames
-	add hl, de
-	ld d, [hl]
-	xor a
-	ldh [hBGMapMode], a
-	call LoadSuicuneFrame
-	ld a, $1
-	ldh [hBGMapMode], a
-	ld a, $3
-	ldh [hBGMapThird], a
-	ret
-
-.Frames:
-	db $80 ; vTiles3 tile $80
-	db $88 ; vTiles3 tile $88
-	db $00 ; vTiles5 tile $00
-	db $08 ; vTiles5 tile $08
-
-LoadSuicuneFrame:
-	hlcoord 6, 12
-	ld b, 6
-.bgrows
-	ld c, 8
-.col
-	ld a, d
-	ld [hli], a
-	inc d
-	dec c
-	jr nz, .col
-	ld a, SCREEN_WIDTH - 8
-	add l
-	ld l, a
-	ld a, 0
-	adc h
-	ld h, a
-	ld a, 8
-	add d
-	ld d, a
-	dec b
-	jr nz, .bgrows
-	ret
-
+	
 DrawTitleGraphic:
 ; input:
 ;   hl: draw location
@@ -337,38 +253,8 @@ InitializeBackground:
 	jr nz, .loop2
 	ret
 
-AnimateTitleCrystal:
-; Move the title screen crystal downward until it's fully visible
-
-; Stop at y=6
-; y is really from the bottom of the sprite, which is two tiles high
-	ld hl, wShadowOAMSprite00YCoord
-	ld a, [hl]
-	cp 6 + 2 * TILE_WIDTH
-	ret z
-
-; Move all 30 parts of the crystal down by 2
-	ld c, 30
-.loop
-	ld a, [hl]
-	add 2
-	ld [hli], a ; y
-rept SPRITEOAMSTRUCT_LENGTH - 1
-	inc hl
-endr
-	dec c
-	jr nz, .loop
-
-	ret
-
-TitleSuicuneGFX:
-INCBIN "gfx/title/suicune.2bpp.lz"
-
 TitleLogoGFX:
 INCBIN "gfx/title/logo.2bpp.lz"
-
-TitleCrystalGFX:
-INCBIN "gfx/title/crystal.2bpp.lz"
 
 TitleScreenPalettes:
 INCLUDE "gfx/title/title.pal"
