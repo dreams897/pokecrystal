@@ -319,7 +319,7 @@ ENDM
 	map_const PEWTER_MUSEUM_2F,                             7,  4 ;  10
 	endgroup
 
-	newgroup FAST_SHIP
+	newgroup SS_ANNE
 	map_const VERMILION_DOCK,		               14,  6 ; Added
 	map_const SS_ANNE_1F,                   	       20,  9 ; Added
 	map_const SS_ANNE_2F,                    	       20,  9 ; Added
@@ -331,14 +331,6 @@ ENDM
 	map_const SS_ANNE_1F_ROOMS,                            12,  8 ; Added
 	map_const SS_ANNE_2F_ROOMS,                            12,  8 ; Added
 	map_const SS_ANNE_B1F_ROOMS,                           12,  8 ; Added
-	map_const OLIVINE_PORT,                                10, 18 ;  1
-	map_const FAST_SHIP_1F,                                16,  9 ;  3
-	map_const FAST_SHIP_CABINS_NNW_NNE_NE,                  4, 16 ;  4
-	map_const FAST_SHIP_CABINS_SW_SSW_NW,                   4, 16 ;  5
-	map_const FAST_SHIP_CABINS_SE_SSE_CAPTAINS_CABIN,       5, 17 ;  6
-	map_const FAST_SHIP_B1F,                               16,  8 ;  7
-	map_const OLIVINE_PORT_PASSAGE,                        10,  9 ;  8
-	map_const TIN_TOWER_ROOF,                              10,  9 ; 12
 	endgroup
 
 	newgroup INDIGO                                               ; 16

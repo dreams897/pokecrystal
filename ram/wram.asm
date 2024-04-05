@@ -3107,7 +3107,6 @@ wSilverCaveRoom3SceneID::                         db
 wVictoryRoadSceneID::                             db
 wDragonsDenB1FSceneID::                           db
 wDragonShrineSceneID::                            db
-wOlivinePortSceneID::                             db
 wVermilionDockSceneID::                           db
 wSSAnne1FSceneID:: 				  db
 wSSAnne2FSceneID:: 				  db
@@ -3119,8 +3118,6 @@ wSSAnneCaptainsRoomSceneID:: 		          db
 wSSAnne1FRoomsSceneID:: 			  db
 wSSAnne2FRoomsSceneID:: 			  db
 wSSAnneB1FRoomsSceneID:: 			  db
-wFastShip1FSceneID::                              db
-wFastShipB1FSceneID::                             db
 wMobileTradeRoomSceneID::                         db
 wMobileBattleRoomSceneID::                        db
 wPalletTownSceneID::                              db

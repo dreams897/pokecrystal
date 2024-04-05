@@ -54,7 +54,7 @@ RegionCheck:
 	ld a, [wMapNumber]
 	ld c, a
 	call GetWorldMapLocation
-	cp LANDMARK_FAST_SHIP ; S.S. Aqua
+	cp LANDMARK_SS_ANNE
 	jr z, .johto
 	cp LANDMARK_SPECIAL
 	jr nz, .checkagain

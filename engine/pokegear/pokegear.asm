@@ -130,7 +130,7 @@ Pokegear_LoadGFX:
 	ld a, [wMapNumber]
 	ld c, a
 	call GetWorldMapLocation
-	cp LANDMARK_FAST_SHIP
+	cp LANDMARK_SS_ANNE
 	jr z, .ssaqua
 	farcall GetPlayerIcon
 	push de

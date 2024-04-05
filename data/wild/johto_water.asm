@@ -121,13 +121,6 @@ JohtoWaterWildMons:
 	db 10, DRATINI
 	end_water_wildmons
 
-	def_water_wildmons OLIVINE_PORT
-	db 2 percent ; encounter rate
-	db 20, TENTACOOL
-	db 15, TENTACOOL
-	db 20, TENTACRUEL
-	end_water_wildmons
-
 	def_water_wildmons ROUTE_30
 	db 2 percent ; encounter rate
 	db 20, POLIWAG

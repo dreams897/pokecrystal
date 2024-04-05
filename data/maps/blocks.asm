@@ -529,9 +529,6 @@ TinTower8F_Blocks:
 TinTower9F_Blocks:
 	INCBIN "maps/TinTower9F.blk"
 
-TinTowerRoof_Blocks:
-	INCBIN "maps/TinTowerRoof.blk"
-
 BurnedTower1F_Blocks:
 	INCBIN "maps/BurnedTower1F.blk"
 
@@ -712,24 +709,6 @@ Route35NationalParkGate_Blocks:
 Route36NationalParkGate_Blocks:
 	INCBIN "maps/Route36NationalParkGate.blk"
 
-FastShip1F_Blocks:
-	INCBIN "maps/FastShip1F.blk"
-
-FastShipB1F_Blocks:
-	INCBIN "maps/FastShipB1F.blk"
-
-FastShipCabins_NNW_NNE_NE_Blocks:
-	INCBIN "maps/FastShipCabins_NNW_NNE_NE.blk"
-
-FastShipCabins_SW_SSW_NW_Blocks:
-	INCBIN "maps/FastShipCabins_SW_SSW_NW.blk"
-
-FastShipCabins_SE_SSE_CaptainsCabin_Blocks:
-	INCBIN "maps/FastShipCabins_SE_SSE_CaptainsCabin.blk"
-
-OlivinePort_Blocks:
-	INCBIN "maps/OlivinePort.blk"
-
 VermilionDock_Blocks:
 	INCBIN "maps/VermilionDock.blk"
 	
@@ -872,9 +851,6 @@ MrPokemonsHouse_Blocks:
 
 VictoryRoadGate_Blocks:
 	INCBIN "maps/VictoryRoadGate.blk"
-
-OlivinePortPassage_Blocks:
-	INCBIN "maps/PortPassage.blk"
 
 FuchsiaGym_Blocks:
 	INCBIN "maps/FuchsiaGym.blk"

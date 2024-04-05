@@ -79,7 +79,6 @@ MapScenes::
 	scene_var VICTORY_ROAD,                                wVictoryRoadSceneID
 	scene_var DRAGONS_DEN_B1F,                             wDragonsDenB1FSceneID
 	scene_var DRAGON_SHRINE,                               wDragonShrineSceneID
-	scene_var OLIVINE_PORT,                                wOlivinePortSceneID
 	scene_var VERMILION_DOCK,                              wVermilionDockSceneID
 	scene_var SS_ANNE_1F,                                  wSSAnne1FSceneID
 	scene_var SS_ANNE_2F,				       wSSAnne2FSceneID
@@ -91,8 +90,6 @@ MapScenes::
 	scene_var SS_ANNE_1F_ROOMS,			       wSSAnne1FRoomsSceneID
 	scene_var SS_ANNE_2F_ROOMS,			       wSSAnne2FRoomsSceneID
 	scene_var SS_ANNE_B1F_ROOMS,			       wSSAnneB1FRoomsSceneID
-	scene_var FAST_SHIP_1F,                                wFastShip1FSceneID
-	scene_var FAST_SHIP_B1F,                               wFastShipB1FSceneID
 	scene_var MOBILE_TRADE_ROOM,                           wMobileTradeRoomSceneID
 	scene_var MOBILE_BATTLE_ROOM,                          wMobileBattleRoomSceneID
 	scene_var PALLET_TOWN,                                 wPalletTownSceneID

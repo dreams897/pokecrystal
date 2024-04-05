@@ -18,7 +18,7 @@ OutdoorSprites:
 	dw VermilionGroupSprites
 	dw PalletGroupSprites
 	dw PewterGroupSprites
-	dw FastShipGroupSprites
+	dw SSAnneGroupSprites
 	dw IndigoGroupSprites
 	dw FuchsiaGroupSprites
 	dw LavenderGroupSprites
@@ -285,8 +285,8 @@ DungeonsGroupSprites:
 	db SPRITE_POKE_BALL
 	db 0 ; end
 
-FastShipGroupSprites:
-; OlivinePort, VermilionDock, TinTowerRoof
+SSAnneGroupSprites:
+; VermilionDock
 	db SPRITE_SAILOR
 	db SPRITE_FISHING_GURU
 	db SPRITE_CAPTAIN
