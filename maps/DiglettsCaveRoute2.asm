@@ -7,14 +7,16 @@ DiglettsCaveRoute2_MapScripts:
 	def_callbacks
 
 DiglettsCaveRoute2FisherScript:
-	jumptextfaceplayer DiglettsCaveRoute2FisherText
+	jumptextfaceplayer DiglettsCaveRoute2FishingGuruText
 
-DiglettsCaveRoute2FisherText:
-	text "A bunch of DIGLETT"
-	line "popped out of the"
+DiglettsCaveRoute2FishingGuruText:
+	text "I went to ROCK"
+	line "TUNNEL, but it's"
+	cont "dark and scary."
 
-	para "ground! That was"
-	line "shocking."
+	para "If a #MON's"
+	line "FLASH could light"
+	cont "it up..."
 	done
 
 DiglettsCaveRoute2_MapEvents:
@@ -30,4 +32,4 @@ DiglettsCaveRoute2_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  2, 3, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DiglettsCaveRoute2FisherScript, -1
+	object_event  3, 3, SPRITE_FISHING_GURU, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DiglettsCaveRoute2FisherScript, -1

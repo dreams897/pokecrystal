@@ -13,19 +13,20 @@ DiglettsCaveRoute11HiddenMaxRevive:
 	hiddenitem MAX_REVIVE, EVENT_DIGLETTS_CAVE_HIDDEN_MAX_REVIVE
 
 DiglettsCaveRoute11GamblerText:
-	text "A bunch of DIGLETT"
-	line "popped out of the"
+	text "What a surprise!"
+	line "DIGLETTs dug this"
+	cont "long tunnel!"
 
-	para "ground! That was"
-	line "shocking."
+	para "It goes right to"
+	line "VIRIDIAN CITY!"
 	done
 
 DiglettsCaveRoute11_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  2,  7, ROUTE_11, 5
-	warp_event  3,  7, ROUTE_11, 5
+	warp_event  2,  7, ROUTE_11, 1
+	warp_event  3,  7, ROUTE_11, 1
 	warp_event  4,  4, DIGLETTS_CAVE, 2
 
 	def_coord_events

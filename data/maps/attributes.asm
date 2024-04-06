@@ -471,9 +471,9 @@ ENDM
 	map_attributes MahoganyGym, MAHOGANY_GYM, $00, 0
 	map_attributes MahoganyPokecenter1F, MAHOGANY_POKECENTER_1F, $00, 0
 	map_attributes Route42EcruteakGate, ROUTE_42_ECRUTEAK_GATE, $00, 0
-	map_attributes DiglettsCave, DIGLETTS_CAVE, $09, 0
-	map_attributes DiglettsCaveRoute2, DIGLETTS_CAVE_ROUTE_2, $09, 0
-	map_attributes DiglettsCaveRoute11, DIGLETTS_CAVE_ROUTE_11, $09, 0
+	map_attributes DiglettsCave, DIGLETTS_CAVE, $19, 0
+	map_attributes DiglettsCaveRoute2, DIGLETTS_CAVE_ROUTE_2, $7D, 0
+	map_attributes DiglettsCaveRoute11, DIGLETTS_CAVE_ROUTE_11, $7D, 0
 	map_attributes MtMoon1F, MT_MOON_1F, $7D, 0
 	map_attributes MtMoonB1F, MT_MOON_B1F, $03, 0
 	map_attributes MtMoonB2F, MT_MOON_B2F, $7D, 0
