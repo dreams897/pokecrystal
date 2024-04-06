@@ -847,10 +847,15 @@ CountStep:
 	ld hl, wPoisonStepCount
 	ld a, [hl]
 	cp 4
+	jr c, .skip_poison
 	ld [hl], 0
 
 	farcall DoPoisonStep
 	jr c, .doscript
+
+.skip_poison
+	farcall DoBikeStep
+
 .done
 	xor a
 	ret
@@ -1218,6 +1223,11 @@ TryWildEncounter_BugContest:
 
 INCLUDE "engine/overworld/cmd_queue.asm"
 
+DoBikeStep::
+	xor a
+	ret
+
 SECTION "Events 2", ROMX
 
 INCLUDE "data/wild/bug_contest_mons.asm"
+
