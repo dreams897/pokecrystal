@@ -164,7 +164,7 @@ Route11_MapEvents:
 
 	def_bg_events
 	bg_event  3,  7, BGEVENT_READ, Route11Sign
-	bg_event 32,  5, BGEVENT_ITEM, Route11HiddenRevive
+	bg_event 48,  5, BGEVENT_ITEM, Route11HiddenRevive
 	bg_event  1,  5, BGEVENT_READ, DiglettsCaveSign
 
 	def_object_events
@@ -172,4 +172,4 @@ Route11_MapEvents:
 	object_event 22,  4, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerYoungsterJason, -1
 	object_event 26,  9, SPRITE_GAMBLER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerPsychicHerman, -1
 	object_event 10, 14, SPRITE_GAMBLER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPsychicFidel, -1
-	object_event 54,  3, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route11FruitTree, -1
+	object_event 51,  3, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route11FruitTree, -1
