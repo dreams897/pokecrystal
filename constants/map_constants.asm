@@ -286,6 +286,7 @@ ENDM
 	map_const ROUTE_11,                                    30,  9 ;  2
 	map_const ROUTE_11_GATE_1F,                             4,  5 ; Added
 	map_const ROUTE_11_GATE_2F,                             4,  4 ; Added
+	map_const ROUTE_12,                                    10, 54 ; Moved
 	map_const VERMILION_CITY,                              20, 18 ;  3
 	map_const VERMILION_FISHING_SPEECH_HOUSE,               4,  4 ;  4
 	map_const VERMILION_POKECENTER_1F,                      7,  4 ;  5
@@ -364,7 +365,6 @@ ENDM
 
 	newgroup LAVENDER                                             ; 18
 	map_const ROUTE_8,                                     30,  9 ;  1
-	map_const ROUTE_12,                                    10, 54 ;  2
 	map_const ROUTE_10,                                    10, 36 ;  3
 	map_const LAVENDER_TOWN,                               10,  9 ;  4
 	map_const LAVENDER_POKECENTER_1F,                       7,  4 ;  5
