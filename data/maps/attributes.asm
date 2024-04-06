@@ -577,7 +577,7 @@ ENDM
 	map_attributes PewterSnoozeSpeechHouse, PEWTER_SNOOZE_SPEECH_HOUSE, $00, 0
 	map_attributes PewterMuseum1F, PEWTER_MUSEUM_1F, $00, 0
 	map_attributes PewterMuseum2F, PEWTER_MUSEUM_2F, $00, 0
-	map_attributes VermilionDock, VERMILION_DOCK, $0a, 0
+	map_attributes VermilionDock, VERMILION_DOCK, $00, 0
 	map_attributes SSAnne1F, SS_ANNE_1F, $00, 0
 	map_attributes SSAnne2F, SS_ANNE_2F, $00, 0
 	map_attributes SSAnne3F, SS_ANNE_3F, $00, 0
