@@ -136,3 +136,6 @@
 	tilecoll WALL, WALL, WALL, WALL ; 87
 	tilecoll WARP_CARPET_LEFT, FLOOR, WALL, WALL ; 88
 	tilecoll FLOOR, WARP_CARPET_RIGHT, WALL, WALL ; 89
+	tilecoll WALL, WALL, WALL, WALL ; 8a
+	tilecoll WALL, WALL, WALL, WALL ; 8b
+	tilecoll WALL, WALL, WALL, WALL ; 8c
