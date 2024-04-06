@@ -28,6 +28,8 @@ LoadSpecialMapPalette:
 	jr z, .gym_kanto
 	cp TILESET_GYM_BROCK
 	jr z, .gym_brock
+	cp TILESET_PORT_KANTO
+	jr z, .port_kanto
 	jr .do_nothing
 
 .pokecom_2f
@@ -102,6 +104,11 @@ LoadSpecialMapPalette:
 	
 .gym_brock
 	call LoadGymBrockPalette
+	scf
+	ret
+	
+.port_kanto
+	call LoadPortKantoPalette
 	scf
 	ret
 
@@ -273,6 +280,16 @@ LoadGymBrockPalette:
 
 GymBrockPalette:
 INCLUDE "gfx/tilesets/gym_brock.pal"
+
+LoadPortKantoPalette:
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
+	ld hl, PortKantoPalette
+	ld bc, 8 palettes
+	jp FarCopyWRAM
+
+PortKantoPalette:
+INCLUDE "gfx/tilesets/port_kanto.pal"
 
 
 
