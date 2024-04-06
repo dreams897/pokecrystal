@@ -32,6 +32,12 @@ BetaSproutTower1_Blocks: ; unreferenced
 
 Route11_Blocks:
 	INCBIN "maps/Route11.blk"
+	
+Route11Gate1F_Blocks:
+	INCBIN "maps/Route11Gate1F.blk"
+	
+Route11Gate2F_Blocks:
+	INCBIN "maps/Route11Gate2F.blk"
 
 Route15_Blocks:
 	INCBIN "maps/Route15.blk"

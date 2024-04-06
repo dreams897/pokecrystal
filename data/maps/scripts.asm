@@ -128,6 +128,8 @@ SECTION "Map Scripts 8", ROMX
 INCLUDE "maps/DiglettsCave.asm"
 INCLUDE	"maps/DiglettsCaveRoute11.asm"
 INCLUDE	"maps/DiglettsCaveRoute2.asm"
+INCLUDE	"maps/Route11Gate1F.asm"
+INCLUDE	"maps/Route11Gate2F.asm"
 INCLUDE "maps/MtMoonPokecenter.asm"
 INCLUDE "maps/MtMoon1F.asm"
 INCLUDE "maps/MtMoonB1F.asm"
