@@ -122,6 +122,7 @@ UnusedTilesetAnim2: ; unreferenced
 
 TilesetPortAnim:
 TilesetPortKantoAnim:
+TilesetShipKantoAnim:
 	dw vTiles2 tile $14, AnimateWaterTile
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
@@ -283,7 +284,6 @@ TilesetViridianForestAnim:
 TilesetGateKantoAnim:
 TilesetMartKantoAnim:
 TilesetCaveKantoAnim:
-TilesetShipKantoAnim:
 TilesetGymKantoAnim:
 TilesetGymBrockAnim:
 	dw NULL,  WaitTileAnimation
