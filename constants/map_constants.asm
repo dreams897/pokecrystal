@@ -316,7 +316,7 @@ ENDM
 	map_const PEWTER_MART,                                  4,  4 ;  5
 	map_const PEWTER_POKECENTER_1F,                         7,  4 ;  6
 	map_const PEWTER_POKECENTER_2F_BETA,                    7,  4 ;  7
-	map_const PEWTER_SNOOZE_SPEECH_HOUSE,                   4,  4 ;  8
+	map_const PEWTER_SPEECH_HOUSE,                          4,  4 ;  8
 	map_const PEWTER_MUSEUM_1F,                            10,  4 ;  9
 	map_const PEWTER_MUSEUM_2F,                             7,  4 ;  10
 	endgroup

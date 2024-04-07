@@ -576,7 +576,7 @@ ENDM
 	map_attributes PewterMart, PEWTER_MART, $00, 0
 	map_attributes PewterPokecenter1F, PEWTER_POKECENTER_1F, $00, 0
 	map_attributes PewterPokecenter2FBeta, PEWTER_POKECENTER_2F_BETA, $00, 0
-	map_attributes PewterSnoozeSpeechHouse, PEWTER_SNOOZE_SPEECH_HOUSE, $00, 0
+	map_attributes PewterSpeechHouse, PEWTER_SPEECH_HOUSE, $00, 0
 	map_attributes PewterMuseum1F, PEWTER_MUSEUM_1F, $00, 0
 	map_attributes PewterMuseum2F, PEWTER_MUSEUM_2F, $00, 0
 	map_attributes VermilionDock, VERMILION_DOCK, $00, 0

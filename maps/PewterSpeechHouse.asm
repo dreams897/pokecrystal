@@ -1,5 +1,7 @@
 	object_const_def
-	const PEWTERSPEECHHOUSE_GRAMPS
+	const PEWTERSPEECHHOUSE_GAMBLER
+	const PEWTERSPEECHHOUSE_YOUNGSTER
+	const PEWTERSPEECHHOUSE_COOLTRAINER_M
 
 PewterSpeechHouse_MapScripts:
 	def_scene_scripts
@@ -15,6 +17,7 @@ PewterSpeechHouseGamblerScript:
 	writetext PewterSpeechHouseGamblerText
 	waitbutton
 	closetext
+	end
 
 PewterSpeechHouseYoungsterScript:
 	faceplayer
@@ -22,6 +25,7 @@ PewterSpeechHouseYoungsterScript:
 	writetext PewterSpeechHouseYoungsterText
 	waitbutton
 	closetext
+	end
 
 PewterSpeechHouseCooltrainerMScript:
 	faceplayer
@@ -29,6 +33,7 @@ PewterSpeechHouseCooltrainerMScript:
 	writetext PewterSpeechHouseCooltrainerText
 	waitbutton
 	closetext
+	end
 
 PewterSpeechHouseGamblerText:
 	text "#MON learn new"
@@ -58,8 +63,9 @@ PewterSpeechHouseCooltrainerText:
 
 	para "But, I'm no"
 	line "expert!"
-	cont "There's a man"
-	cont "in Cerulean who"
+	
+	para "There's a man"
+	line "in Cerulean who"
 	cont "knows all about"
 	cont "Berry Trees."
 	done
