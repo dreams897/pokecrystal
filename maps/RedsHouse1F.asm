@@ -11,11 +11,11 @@ RedHouse1FNoopScene:
 	end
 
 RedsMom:
+	faceplayer
+	opentext
 	readvar VAR_PLAYERGENDER
 	ifequal FEMALE, .AllGirlsLeaveSomeday
 	ifequal ENBY, .EveryoneLeavesSomeday
-	faceplayer
-	opentext
 	checkevent EVENT_GOT_A_POKEMON_FROM_OAK
 	iftrue .Heal
 	writetext MomWakeUpTextBoy
@@ -129,10 +129,9 @@ VictorVictoriaText:
 	text "There's a movie"
 	line "on TV."
 	
-	para "A singer wearing"
-	line "a half-dress and"
-	cont "half-tuxedo"
-	cont "costume bows and"
+	para "A singer with half"
+	line "of their face in"
+	cont "makeup bows and"
 	cont "exits stage left."
 
 	para "I better go too."
