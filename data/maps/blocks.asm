@@ -795,8 +795,8 @@ OaksLab_Blocks:
 MrFujisHouse_Blocks:
 	INCBIN "maps/MrFujisHouse.blk"
 
-LavRadioTower1F_Blocks:
-	INCBIN "maps/LavRadioTower1F.blk"
+PokemonTower1F_Blocks:
+	INCBIN "maps/PokemonTower1F.blk"
 
 SilverCaveItemRooms_Blocks:
 	INCBIN "maps/SilverCaveItemRooms.blk"
