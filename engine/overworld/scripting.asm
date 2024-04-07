@@ -529,7 +529,7 @@ Script_specialsound:
 	farcall CheckItemPocket
 	ld a, [wItemAttributeValue]
 	cp TM_HM
-	ld de, SFX_GET_TM
+	ld de, SFX_GET_ITEM1_1
 	jr z, .play
 	ld de, SFX_GET_ITEM1_1
 .play
