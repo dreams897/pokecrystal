@@ -36,7 +36,7 @@ PewterMuseum2FScientistScript:
 PewterMuseum2FHikerScript:
 	faceplayer
 	opentext
-	writetext Museum2FHikerText
+	trade NPC_TRADE_BOB
 	waitbutton
 	closetext
 	end
@@ -78,10 +78,11 @@ Museum2FBrunetteGirlText:
 	para "I asked my Daddy"
 	line "to catch me one!"
 	done
-
-Museum2FHikerText:
-	text "Yeah, a PIKACHU"
-	line "soon, I promise!"
+	
+Museum2FHikerAfterTradeText:
+	text "Hello there! Your"
+	line "old Pikachu is"
+	cont "magnificent!"
 	done
 
 Museum2FSpaceShuttleSignText:

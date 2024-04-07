@@ -410,6 +410,7 @@ TradeTexts:
 	dw NPCTradeIntroText2
 	dw NPCTradeIntroText2
 	dw NPCTradeIntroText3
+	dw NPCTradeIntroText4
 ; TRADE_DIALOG_CANCEL
 	dw NPCTradeCancelText1
 	dw NPCTradeCancelText2
@@ -491,6 +492,10 @@ NPCTradeAfterText2:
 
 NPCTradeIntroText3:
 	text_far _NPCTradeIntroText3
+	text_end
+	
+NPCTradeIntroText4:
+	text_far _NPCTradeIntroText4
 	text_end
 
 NPCTradeCancelText3:

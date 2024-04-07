@@ -1446,6 +1446,21 @@ _NPCTradeIntroText2::
 	text_ram wStringBuffer2
 	text "?"
 	done
+	
+_NPCTradeIntroText4::
+	text "Yeah, a PIKACHU"
+	line "soon, I promise!"
+
+	para "If you have"
+	line "@"
+	text_ram wStringBuffer1
+	text ", would"
+
+	para "you trade it for"
+	line "my @"
+	text_ram wStringBuffer2
+	text "?"
+	done
 
 _NPCTradeCancelText2::
 	text "You don't have"

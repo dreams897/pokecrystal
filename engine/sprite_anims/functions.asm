@@ -469,7 +469,7 @@ SpriteAnimFunc_TradePokeBall:
 	ret
 
 .done
-	ld de, SFX_GOT_SAFARI_BALLS
+	ld de, SFX_TINK_1
 	call PlaySFX
 	jr .delete
 
