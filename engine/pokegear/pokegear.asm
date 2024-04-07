@@ -736,8 +736,8 @@ TownMap_GetKantoLandmarkLimits:
 	ret
 
 .not_hof
-	ld d, LANDMARK_ROUTE_28
-	ld e, LANDMARK_VICTORY_ROAD
+	ld d, LANDMARK_INDIGO_PLATEAU ; LANDMARK_ROUTE_28
+	ld e, LANDMARK_PALLET_TOWN ; LANDMARK_VICTORY_ROAD
 	ret
 
 PokegearRadio_Init:
