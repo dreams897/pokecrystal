@@ -32,29 +32,23 @@ PewterGymBrockScript:
 	setmapscene PEWTER_CITY, SCENE_PEWTER_AFTER_BEATING_BROCK
 	writetext BrockBoulderBadgeText
 	waitbutton
-	closetext
-	end
+	sjump .FightDone
 
 .FightDone:
+	checkevent EVENT_GOT_TM34_BIDE
+	iftrue .GotBide
+	writetext PewterGymBrockWaitTakeThisText
+	waitbutton
+	verbosegiveitem TM_BIDE
+	setevent EVENT_GOT_TM34_BIDE
+	writetext TM34ExplanationText
+	promptbutton
+	iffalse .GotBide
+.GotBide:
 	writetext BrockFightDoneText
 	waitbutton
 	closetext
 	end
-
-; need to fix TMs first
-;.FightDone:
-	;checkevent EVENT_GOT_TM34_BIDE
-	;iftrue .GotBide
-	;writetext TM34ExplanationText
-	;promptbutton
-	;verbosegiveitem TM_BIDE
-	;iffalse .GotBide
-	;setevent EVENT_GOT_TM34_BIDE
-;.GotBide:
-	;writetext BrockFightDoneText
-	;waitbutton
-	;closetext
-	;end
 
 TrainerPewterGymTrainer0:
 	trainer JRTRAINER_M, JERRY, EVENT_BEAT_PEWTER_GYM_TRAINER_0, PewterGymTrainer0SeenText, PewterGymTrainer0BeatenText, 0, .Script
@@ -144,7 +138,9 @@ PewterGymBrockWaitTakeThisText:
 
 PewterGymReceivedTM34Text:
 	text "<PLAYER> received"
-	line "TM34!@"
+	line "@"
+	text_ram wStringBuffer3
+	text "!"
 	done
 
 TM34ExplanationText:
