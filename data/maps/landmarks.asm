@@ -104,7 +104,6 @@ Landmarks:
 	landmark  20, 100, Route27Name
 	landmark  12, 100, TohjoFallsName
 	landmark  20,  68, Route28Name
-	landmark 140, 116, FastShipName
 	landmark 100,  84, SSAnneName
 	assert_table_length NUM_LANDMARKS
 
@@ -202,7 +201,6 @@ Route46Name:         db "ROUTE 46@"
 DarkCaveName:        db "DARK CAVE@"
 IlexForestName:      db "ILEX<BSP>FOREST@"
 BurnedTowerName:     db "BURNED<BSP>TOWER@"
-FastShipName:        db "FAST SHIP@"
 SSAnneName:          db "S.S. ANNE@"
 ViridianForestName:  db "VIRIDIAN<BSP>FOREST@" ; added
 DiglettsCaveName:    db "DIGLETT'S<BSP>CAVE@"

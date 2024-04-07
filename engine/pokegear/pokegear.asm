@@ -131,7 +131,7 @@ Pokegear_LoadGFX:
 	ld c, a
 	call GetWorldMapLocation
 	cp LANDMARK_SS_ANNE
-	jr z, .ssaqua
+	jr z, .ssanne
 	farcall GetPlayerIcon
 	push de
 	ld h, d
@@ -152,7 +152,7 @@ Pokegear_LoadGFX:
 	call FarCopyBytes
 	ret
 
-.ssaqua
+.ssanne
 	ld hl, FastShipGFX
 	ld de, vTiles0 tile $10
 	ld bc, 8 tiles
@@ -210,7 +210,7 @@ TownMap_InitCursorAndPlayerIconPositions:
 	ld a, [wMapNumber]
 	ld c, a
 	call GetWorldMapLocation
-	cp LANDMARK_FAST_SHIP
+	cp LANDMARK_SS_ANNE
 	jr z, .FastShip
 	cp LANDMARK_SPECIAL
 	jr nz, .LoadLandmark
@@ -324,7 +324,7 @@ InitPokegearTilemap:
 
 .Map:
 	ld a, [wPokegearMapPlayerIconLandmark]
-	cp LANDMARK_FAST_SHIP
+	cp LANDMARK_SS_ANNE
 	jr z, .johto
 	cp KANTO_LANDMARK
 	jr nc, .kanto
@@ -530,7 +530,7 @@ Pokegear_UpdateClock:
 
 PokegearMap_CheckRegion:
 	ld a, [wPokegearMapPlayerIconLandmark]
-	cp LANDMARK_FAST_SHIP
+	cp LANDMARK_SS_ANNE
 	jr z, .johto
 	cp KANTO_LANDMARK
 	jr nc, .kanto
@@ -1543,7 +1543,7 @@ RadioChannels:
 ; if in Johto or on the S.S. Aqua, set carry
 ; otherwise clear carry
 	ld a, [wPokegearMapPlayerIconLandmark]
-	cp LANDMARK_FAST_SHIP
+	cp LANDMARK_SS_ANNE
 	jr z, .johto
 	cp KANTO_LANDMARK
 	jr c, .johto
@@ -2572,7 +2572,7 @@ Pokedex_GetArea:
 ; not in the same region as what's currently
 ; on the screen.
 	ld a, [wTownMapPlayerIconLandmark]
-	cp LANDMARK_FAST_SHIP
+	cp LANDMARK_SS_ANNE
 	jr z, .johto
 	cp KANTO_LANDMARK
 	jr c, .johto
@@ -2600,7 +2600,7 @@ Pokedex_GetArea:
 
 .GetPlayerOrFastShipIcon:
 	ld a, [wTownMapPlayerIconLandmark]
-	cp LANDMARK_FAST_SHIP
+	cp LANDMARK_SS_ANNE
 	jr z, .FastShip
 	farcall GetPlayerIcon
 	ret
