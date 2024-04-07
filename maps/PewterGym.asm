@@ -41,6 +41,21 @@ PewterGymBrockScript:
 	closetext
 	end
 
+; need to fix TMs first
+;.FightDone:
+	;checkevent EVENT_GOT_TM34_BIDE
+	;iftrue .GotBide
+	;writetext TM34ExplanationText
+	;promptbutton
+	;verbosegiveitem TM_BIDE
+	;iffalse .GotBide
+	;setevent EVENT_GOT_TM34_BIDE
+;.GotBide:
+	;writetext BrockFightDoneText
+	;waitbutton
+	;closetext
+	;end
+
 TrainerPewterGymTrainer0:
 	trainer JRTRAINER_M, JERRY, EVENT_BEAT_PEWTER_GYM_TRAINER_0, PewterGymTrainer0SeenText, PewterGymTrainer0BeatenText, 0, .Script
 
@@ -120,6 +135,43 @@ BrockIntroText:
 	line "to challenge me?"
 	cont "Fine then! Show"
 	cont "me your best!"
+	done
+	
+PewterGymBrockWaitTakeThisText:
+	text "Wait! Take this"
+	line "with you!"
+	done
+
+PewterGymReceivedTM34Text:
+	text "<PLAYER> received"
+	line "TM34!@"
+	done
+
+TM34ExplanationText:
+	text "A TM contains a"
+	line "technique that"
+	cont "can be taught to"
+	cont "#MON!"
+
+	para "A TM is good only"
+	line "once! So when you"
+	cont "use one to teach"
+	cont "a new technique,"
+	cont "pick the #MON"
+	cont "carefully!"
+
+	para "TM34 contains"
+	line "BIDE!"
+
+	para "Your #MON will"
+	line "absorb damage in"
+	cont "battle then pay"
+	cont "it back double!"
+	done
+
+PewterGymTM34NoRoomText:
+	text "You don't have"
+	line "room for this!"
 	done
 
 BrockWinLossText:
