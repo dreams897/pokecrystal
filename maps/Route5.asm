@@ -50,7 +50,7 @@ Route5_MapEvents:
 
 	def_bg_events
 	bg_event 17, 29, BGEVENT_READ, Route5UndergroundPathSign
-	bg_event  8, 22, BGEVENT_READ, HouseForSaleSign
+	bg_event  7, 21, BGEVENT_READ, HouseForSaleSign
 
 	def_object_events
 	object_event 17, 16, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route5PokefanMScript, EVENT_ROUTE_5_6_POKEFAN_M_BLOCKS_UNDERGROUND_PATH
