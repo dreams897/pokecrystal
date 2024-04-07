@@ -25,6 +25,8 @@ PewterMuseum1FTicketScript:
 	iftrue .TimeToLook
 	readvar VAR_FACING
 	ifequal LEFT, Museum1FCantSneakInScript
+	readvar VAR_FACING
+	ifequal DOWN, Museum1FCantSneakInScript
 	opentext
 	writetext Museum1FScientist1WouldYouLikeToComeInText
 	special PlaceMoneyTopRight
@@ -103,6 +105,7 @@ Museum1FScientist2TakeThisToAPokemonLabScript:
 	writetext Museum1FScientist2TakeThisToAPokemonLabText
 	waitbutton
 	closetext
+	end
 	
 Museum1FOneMagnificientFossilScript:
 	faceplayer
@@ -110,6 +113,7 @@ Museum1FOneMagnificientFossilScript:
 	writetext Museum1FGamblerText
 	waitbutton
 	closetext
+	end
 	
 Museum1FScientist1ComeAgainText:
 	text "Come again!"
