@@ -229,7 +229,7 @@ DEF TM01 EQU const_value
 	add_tm PSYCH_UP     ; c8
 	add_tm HIDDEN_POWER ; c9
 	add_tm SUNNY_DAY    ; ca
-	add_tm SWEET_SCENT  ; cb
+	add_tm WATER_GUN    ; added and switched with Sweet Scent
 	add_tm SNORE        ; cc
 	add_tm BLIZZARD     ; cd
 	add_tm HYPER_BEAM   ; ce
@@ -270,6 +270,7 @@ DEF TM01 EQU const_value
 	add_tm FURY_CUTTER  ; f1
 	add_tm NIGHTMARE    ; f2
 	add_tm SWAGGER      ; e2
+	add_tm SWEET_SCENT  ; cb
 DEF NUM_TMS EQU __tmhm_value__ - 1
 
 MACRO add_hm
