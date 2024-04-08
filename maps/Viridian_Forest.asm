@@ -1,11 +1,20 @@
 	object_const_def
+	const VIRIDIAN_FOREST_YOUNGSTER1
+	const VIRIDIAN_FOREST_YOUNGSTER2
+	const VIRIDIAN_FOREST_TRAINER_YOUNGSTER1
+	const VIRIDIAN_FOREST_TRAINER_YOUNGSTER2
+	const VIRIDIAN_FOREST_TRAINER_YOUNGSTER3
+	const VIRIDIAN_FOREST_ITEM_POKEBALL
+	const VIRIDIAN_FOREST_ITEM_POTION
+	const VIRIDIAN_FOREST_ITEM_ANTIDOTE
+	
 
 ViridianForest_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
 	
-YoungsterViridianForest1Script:
+ViridianForestYoungster1Script:
 	faceplayer
 	opentext
 	writetext ViridianForestYoungster1Text
@@ -13,7 +22,7 @@ YoungsterViridianForest1Script:
 	closetext
 	end
 	
-YoungsterViridianForest5Script:
+ViridianForestYoungster2Script:
 	faceplayer
 	opentext
 	writetext ViridianForestYoungster5Text
@@ -21,8 +30,8 @@ YoungsterViridianForest5Script:
 	closetext
 	end
 	
-TrainerYoungsterViridianForest1:
-	trainer BUG_CATCHER, CALEB, EVENT_BEAT_VIRIDIAN_FOREST_TRAINER_0, ViridianForestYoungster2SeenText, ViridianForestYoungster2BeatenText, 0, .Script
+ViridianForestTrainerYoungster1:
+	trainer BUG_CATCHER, CALEB, EVENT_BEAT_VIRIDIAN_FOREST_BUG_CATCHER_CALEB, ViridianForestYoungster2SeenText, ViridianForestYoungster2BeatenText, 0, .Script
 	
 .Script:
 	endifjustbattled
@@ -32,8 +41,8 @@ TrainerYoungsterViridianForest1:
 	closetext
 	end
 	
-TrainerYoungsterViridianForest2:
-	trainer BUG_CATCHER, DYLAN, EVENT_BEAT_VIRIDIAN_FOREST_TRAINER_1, ViridianForestYoungster3SeenText, ViridianForestYoungster3BeatenText, 0, .Script
+ViridianForestTrainerYoungster2:
+	trainer BUG_CATCHER, DYLAN, EVENT_BEAT_VIRIDIAN_FOREST_BUG_CATCHER_DYLAN, ViridianForestYoungster3SeenText, ViridianForestYoungster3BeatenText, 0, .Script
 	
 .Script:
 	endifjustbattled
@@ -43,8 +52,8 @@ TrainerYoungsterViridianForest2:
 	closetext
 	end
 	
-TrainerYoungsterViridianForest3:
-	trainer BUG_CATCHER, FOREST_T, EVENT_BEAT_VIRIDIAN_FOREST_TRAINER_2, ViridianForestYoungster4SeenText, ViridianForestYoungster4BeatenText, 0, .Script
+ViridianForestTrainerYoungster3:
+	trainer BUG_CATCHER, FOREST_T, EVENT_BEAT_VIRIDIAN_FOREST_BUG_CATCHER_FOREST, ViridianForestYoungster4SeenText, ViridianForestYoungster4BeatenText, 0, .Script
 	
 .Script:
 	endifjustbattled
@@ -120,8 +129,8 @@ ViridianForestYoungster3SeenText:
 
 ViridianForestYoungster3BeatenText:
 	text "Huh?"
-	line "I ran out of"
-	cont "#MON!"
+	line "I ran out"
+	cont "of #MON!"
 	prompt
 
 ViridianForestYoungster3AfterBattleText:
@@ -136,9 +145,8 @@ ViridianForestYoungster4SeenText:
 	done
 
 ViridianForestYoungster4BeatenText:
-	text "I"
-	line "give! You're good"
-	cont "at this!"
+	text "I give! You're good"
+	line "at this!"
 	prompt
 
 ViridianForestYoungster4AfterBattleText:
@@ -236,11 +244,11 @@ ViridianForest_MapEvents:
 	bg_event  16, 42, BGEVENT_ITEM, ViridianForestHiddenAntidote
 
 	def_object_events
-	object_event 16, 43, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, YoungsterViridianForest1Script, -1
-	object_event 27, 40, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, YoungsterViridianForest5Script, -1
-	object_event 30, 33, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerYoungsterViridianForest1, -1
-	object_event 30, 19, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 5, TrainerYoungsterViridianForest2, -1
-	object_event  2, 18, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerYoungsterViridianForest3, -1
+	object_event 16, 43, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ViridianForestYoungster1Script, -1
+	object_event 27, 40, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ViridianForestYoungster2Script, -1
+	object_event 30, 33, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, ViridianForestTrainerYoungster1, -1
+	object_event 30, 19, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, ViridianForestTrainerYoungster2, -1
+	object_event  2, 18, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, ViridianForestTrainerYoungster3, -1
 	object_event  1, 31, SPRITE_POKE_BALL_2, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, ViridianForestPokeBall, EVENT_VIRIDIAN_FOREST_POKE_BALL
 	object_event 12, 29, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, ViridianForestPotion, EVENT_VIRIDIAN_FOREST_POTION
 	object_event 25, 11, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, ViridianForestAntidote, EVENT_VIRIDIAN_FOREST_ANTIDOTE
