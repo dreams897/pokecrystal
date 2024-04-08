@@ -1,9 +1,21 @@
 	object_const_def
+	const MT_MOON_B2F_JAMES
+	const MT_MOON_B2F_JESSIE
 
 MtMoonB2F_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	
+MtMoonB2FTeamRocketScript:
+	faceplayer
+	opentext
+	writetext MtMoonJessieJamesText1
+	waitbutton
+	writetext MtMoonJessieJamesText2
+	waitbutton
+	closetext
+	end
 	
 MtMoonJessieJamesText1:
 	text "Stop right there!"
@@ -18,14 +30,13 @@ MtMoonJessieJamesText2:
 	done
 
 MtMoonJessieJamesText3:
-	text "A brat"
-	line "beat us?"
-	prompt
+	text "A brat beat us?"
+	done
 
 MtMoonJessieJamesText4:
 	text "TEAM ROCKET, blast"
 	line "off at the speed"
-	cont "of light!@"
+	cont "of light!"
 	done
 
 MtMoonB2FDomeFossilYouWantText:
@@ -59,9 +70,8 @@ MtMoonB2FSuperNerdTheyreBothMineText:
 	done
 
 MtMoonB2FSuperNerdOkIllShareText:
-	text "OK!"
-	line "I'll share!"
-	prompt
+	text "OK! I'll share!"
+	done
 
 MtMoonB2fSuperNerdEachTakeOneText:
 	text "We'll each take"
@@ -92,9 +102,8 @@ MtMoonB2FRocket2BattleText:
 	done
 
 MtMoonB2FRocket2EndBattleText:
-	text "I blew"
-	line "it!"
-	prompt
+	text "I blew it!"
+	done
 
 MtMoonB2FRocket2AfterBattleText:
 	text "Darn it all! My"
@@ -109,9 +118,8 @@ MtMoonB2FRocket3BattleText:
 	done
 
 MtMoonB2FRocket3EndBattleText:
-	text "So, you"
-	line "are good."
-	prompt
+	text "So, you are good."
+	done
 
 MtMoonB2FRocket3AfterBattleText:
 	text "If you find a"
@@ -126,8 +134,7 @@ MtMoonB2FRocket4BattleText:
 	done
 
 MtMoonB2FRocket4EndBattleText:
-	text "I'm"
-	line "steamed!"
+	text "I'm steamed!"
 	prompt
 
 MtMoonB2FRocket4AfterBattleText:
@@ -150,3 +157,5 @@ MtMoonB2F_MapEvents:
 	def_bg_events
 
 	def_object_events
+	object_event 9, 3, SPRITE_JAMES, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, MtMoonB2FTeamRocketScript, -1
+	object_event 9, 4, SPRITE_JESSIE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, MtMoonB2FTeamRocketScript, -1
