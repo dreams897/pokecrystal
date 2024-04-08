@@ -257,7 +257,6 @@ TrainerSchoolboyAlan1:
 	verbosegiveitem FIRE_STONE
 	iffalse .BagFull
 	clearflag ENGINE_ALAN_HAS_FIRE_STONE
-	setevent EVENT_ALAN_GAVE_FIRE_STONE
 	sjump .NumberAccepted
 
 .BagFull:

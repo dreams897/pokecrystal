@@ -72,9 +72,6 @@ CeladonCityTrainerTips:
 CeladonCityPokecenterSign:
 	jumpstd PokecenterSignScript
 
-CeladonCityHiddenPpUp:
-	hiddenitem PP_UP, EVENT_CELADON_CITY_HIDDEN_PP_UP
-
 CeladonCityFisherText:
 	text "This POLIWRATH is"
 	line "my partner."
@@ -268,7 +265,6 @@ CeladonCity_MapEvents:
 	bg_event 27, 21, BGEVENT_READ, CeladonCityGameCornerSign
 	bg_event 39, 21, BGEVENT_READ, CeladonCityTrainerTips
 	bg_event 42,  9, BGEVENT_READ, CeladonCityPokecenterSign
-	bg_event 37, 21, BGEVENT_ITEM, CeladonCityHiddenPpUp
 
 	def_object_events
 	object_event 32, 12, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonCityFisherScript, -1

@@ -131,9 +131,6 @@ BurnedTower1FRock:
 BurnedTower1FHiddenEther:
 	hiddenitem ETHER, EVENT_BURNED_TOWER_1F_HIDDEN_ETHER
 
-BurnedTower1FHiddenUltraBall:
-	hiddenitem ULTRA_BALL, EVENT_BURNED_TOWER_1F_HIDDEN_ULTRA_BALL
-
 BurnedTower1FHPUp:
 	itemball HP_UP
 
@@ -299,7 +296,6 @@ BurnedTower1F_MapEvents:
 
 	def_bg_events
 	bg_event  8,  7, BGEVENT_ITEM, BurnedTower1FHiddenEther
-	bg_event 13, 11, BGEVENT_ITEM, BurnedTower1FHiddenUltraBall
 
 	def_object_events
 	object_event 15,  4, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BurnedTower1FRock, -1

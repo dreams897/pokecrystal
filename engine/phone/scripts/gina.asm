@@ -39,8 +39,6 @@ GinaPhoneCallerScript:
 	iftrue .Generic
 	checkflag ENGINE_GINA_HAS_LEAF_STONE
 	iftrue .Generic
-	checkevent EVENT_GINA_GAVE_LEAF_STONE
-	iftrue .GaveLeafStone
 	farscall PhoneScript_Random2
 	ifequal 0, GinaHasLeafStone
 

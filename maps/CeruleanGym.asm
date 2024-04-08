@@ -130,9 +130,6 @@ CeruleanGymGuideScript:
 	closetext
 	end
 
-CeruleanGymHiddenMachinePart:
-	hiddenitem MACHINE_PART, EVENT_FOUND_MACHINE_PART_IN_CERULEAN_GYM
-
 CeruleanGymStatue1:
 	checkevent EVENT_TRAINERS_IN_CERULEAN_GYM
 	iffalse CeruleanGymStatue
@@ -368,7 +365,6 @@ CeruleanGym_MapEvents:
 	def_coord_events
 
 	def_bg_events
-	bg_event  3,  8, BGEVENT_ITEM, CeruleanGymHiddenMachinePart
 	bg_event  2, 13, BGEVENT_READ, CeruleanGymStatue1
 	bg_event  6, 13, BGEVENT_READ, CeruleanGymStatue2
 

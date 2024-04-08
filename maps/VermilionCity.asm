@@ -117,9 +117,6 @@ VermilionCityPokecenterSign:
 VermilionCityMartSign:
 	jumpstd MartSignScript
 
-VermilionCityHiddenFullHeal:
-	hiddenitem FULL_HEAL, EVENT_VERMILION_CITY_HIDDEN_FULL_HEAL
-
 VermilionCityTeacherText:
 	text "VERMILION PORT is"
 	line "KANTO's seaside"
@@ -281,7 +278,6 @@ VermilionCity_MapEvents:
 	bg_event 27, 15, BGEVENT_READ, VermilionCityPortSign
 	bg_event 12,  3, BGEVENT_READ, VermilionCityPokecenterSign
 	bg_event 24, 13, BGEVENT_READ, VermilionCityMartSign
-	bg_event 14, 19, BGEVENT_ITEM, VermilionCityHiddenFullHeal
 
 	def_object_events
 	object_event 18,  9, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionCityTeacherScript, -1

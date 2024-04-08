@@ -306,7 +306,6 @@ TrainerPicnickerGina1:
 	verbosegiveitem LEAF_STONE
 	iffalse .BagFull
 	clearflag ENGINE_GINA_HAS_LEAF_STONE
-	setevent EVENT_GINA_GAVE_LEAF_STONE
 	sjump .NumberAccepted
 
 .BagFull:
