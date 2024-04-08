@@ -129,6 +129,7 @@ DEF GREEN EQU __trainer_class__
 	const JOEY5
 	const BEN2
 	const MIKEY2
+	const SAMUEL2
 
 	trainerclass SCHOOLBOY ; 17
 	const JACK1
@@ -197,6 +198,8 @@ DEF GREEN EQU __trainer_class__
 	const ALICE2
 	const CARRIE2
 	const CONNIE4
+	const LAURA2
+	const SHANNON2
 
 	trainerclass JANINE ; 1a
 	const JANINE1
@@ -360,6 +363,8 @@ DEF GREEN EQU __trainer_class__
 	const FOREST_T2
 	const JOSH2
 	const WADE6
+	const KEN2
+	const BENNY2
 
 	trainerclass FISHER ; 25
 	const JUSTIN
@@ -462,6 +467,7 @@ DEF GREEN EQU __trainer_class__
 	const NORTON ; unused
 	const HUGH
 	const MARKUS
+	const DAVE2
 
 	trainerclass RIVAL2 ; 2a
 	const RIVAL2_1_CHIKORITA
@@ -499,6 +505,7 @@ DEF GREEN EQU __trainer_class__
 	const ANTHONY4
 	const ANTHONY5
 	const TONY
+	const RUSSELL2
 
 	trainerclass BIKER ; 2d
 	const BIKER_BENNY ; unused
