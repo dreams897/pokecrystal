@@ -433,6 +433,13 @@ YoungsterGroup:
 	db "MIKEY@", TRAINERTYPE_NORMAL
 	db 14, SPEAROW
 	db -1 ; end
+	
+	; YOUNGSTER (12)
+	db "SAMUEL@", TRAINERTYPE_NORMAL
+	db 10, RATTATA
+	db 10, RATTATA
+	db 10, ZUBAT
+	db -1 ; end
 
 SchoolboyGroup:
 	; SCHOOLBOY (1)
@@ -820,6 +827,17 @@ LassGroup:
 	; LASS (20)
 	db "CONNIE@", TRAINERTYPE_NORMAL
 	db 14, JIGGLYPUFF
+	db -1 ; end
+	
+	; LASS (21)
+	db "LAURA@", TRAINERTYPE_NORMAL
+	db 14, CLEFAIRY
+	db -1 ; end
+	
+	; LASS (22)
+	db "SHANNON@", TRAINERTYPE_NORMAL
+	db 11, ODDISH
+	db 11, BELLSPROUT
 	db -1 ; end
 
 JanineGroup:
@@ -1677,10 +1695,23 @@ BugCatcherGroup:
 	db  9, METAPOD
 	db -1 ; end
 	
-	; BUG_CATCHER (23)
+	; BUG_CATCHER (24)
 	db "WADE@", TRAINERTYPE_NORMAL
 	db  11, CATERPIE
 	db  11, METAPOD
+	db -1 ; end
+	
+	; BUG_CATCHER (25)
+	db "KEN@", TRAINERTYPE_NORMAL
+	db  11, WEEDLE
+	db  11, KAKUNA
+	db -1 ; end
+	
+	; BUG_CATCHER (26)
+	db "BENNY@", TRAINERTYPE_NORMAL
+	db  10, CATERPIE
+	db  10, METAPOD
+	db  10, CATERPIE
 	db -1 ; end
 
 FisherGroup:
@@ -2261,6 +2292,12 @@ SuperNerdGroup:
 	db "MARKUS@", TRAINERTYPE_MOVES
 	db 19, SLOWPOKE,   CURSE, WATER_GUN, GROWL, STRENGTH
 	db -1 ; end
+	
+	; SUPER_NERD (15)
+	db "DAVE@", TRAINERTYPE_NORMAL
+	db 11, MAGNEMITE
+	db 11, VOLTORB
+	db -1 ; end
 
 Rival2Group:
 	; RIVAL2 (1)
@@ -2486,6 +2523,13 @@ HikerGroup:
 	db "TONY@", TRAINERTYPE_NORMAL
 	db 9, ZUBAT
 	db 10, MACHOP
+	db -1 ; end
+	
+	; HIKER (24)
+	db "RUSSELL@", TRAINERTYPE_NORMAL
+	db 10, GEODUDE
+	db 10, GEODUDE
+	db 10, ONIX
 	db -1 ; end
 
 BikerGroup:
