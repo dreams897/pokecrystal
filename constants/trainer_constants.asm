@@ -723,8 +723,11 @@ DEF PURPLE EQU __trainer_class__
 	const GRUNTF_3
 	const GRUNTF_4
 	const GRUNTF_5
+	
+	trainerclass TEAM_ROCKET ; 43
+	const TEAM_ROCKET1
 
-	trainerclass MYSTICALMAN ; 43
+	trainerclass MYSTICALMAN ; 45
 	const EUSINE
 
 DEF NUM_TRAINER_CLASSES EQU __trainer_class__ - 1

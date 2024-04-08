@@ -41,4 +41,5 @@ FemaleTrainers:
 	db KIMONO_GIRL
 	db POKEFANF
 	db COOLTRAINERF
+	db TEAM_ROCKET ; female for now, probably won't be used
 .End

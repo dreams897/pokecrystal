@@ -72,4 +72,5 @@ BTTrainerClassGenders:
 	db MALE   ; BLUE
 	db MALE   ; OFFICER
 	db FEMALE ; GRUNTF
+	db FEMALE ; TEAM_ROCKET (female for now)
 	assert_table_length NUM_TRAINER_CLASSES - 1 ; exclude MYSTICALMAN
