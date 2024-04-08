@@ -41,7 +41,7 @@ MtMoon1FCooltrainerF2:
 	end
 	
 MtMoon1FTrainerSuperNerd:
-	trainer SUPER_NERD, DAVE2, EVENT_BEAT_MT_MOON_1F_SUPER_NERD_DAVE, MtMoon1FSuperNerdBattleText, MtMoon1FSuperNerdEndBattleText, 0, .Script
+	trainer SUPER_NERD, DAVE, EVENT_BEAT_MT_MOON_1F_SUPER_NERD_DAVE, MtMoon1FSuperNerdBattleText, MtMoon1FSuperNerdEndBattleText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -170,8 +170,7 @@ MtMoon1FSuperNerdBattleText:
 	done
 
 MtMoon1FSuperNerdEndBattleText:
-	text "My #MON"
-	line "won't do!"
+	text "My #MON won't do!"
 	done
 
 MtMoon1FSuperNerdAfterBattleText:
@@ -254,7 +253,7 @@ MtMoon1F_MapEvents:
 	object_event 7,  22, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, MtMoon1FTrainerBugCatcher1, -1
 	object_event 16, 23, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, MtMoon1FCooltrainerF2, -1
 	object_event 20, 33, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MtMoon1FPotion2, EVENT_MT_MOON_1F_POTION2
-	object_event 24, 31, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, MtMoon1FTrainerSuperNerd, -1
+	object_event 24, 31, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, MtMoon1FTrainerSuperNerd, -1
 	object_event 30, 27, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, MtMoon1FTrainerBugCatcher2, -1
 	object_event 35, 31, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MtMoon1FRareCandy, EVENT_MT_MOON_1F_RARE_CANDY
 	object_event 36, 23, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MtMoon1FEscapeRope, EVENT_MT_MOON_1F_ESCAPE_ROPE

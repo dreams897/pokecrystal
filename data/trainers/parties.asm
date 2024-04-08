@@ -2221,10 +2221,9 @@ SuperNerdGroup:
 	db -1 ; end
 
 	; SUPER_NERD (3)
-	db "GREGG@", TRAINERTYPE_NORMAL
-	db 20, MAGNEMITE
-	db 20, MAGNEMITE
-	db 20, MAGNEMITE
+	db "DAVE@", TRAINERTYPE_NORMAL
+	db 11, MAGNEMITE
+	db 11, VOLTORB
 	db -1 ; end
 
 	; SUPER_NERD (4)
@@ -2234,7 +2233,7 @@ SuperNerdGroup:
 	db -1 ; end
 
 	; SUPER_NERD (5)
-	db "DAVE@", TRAINERTYPE_NORMAL
+	db "GREGG@", TRAINERTYPE_NORMAL
 	db 24, DITTO
 	db -1 ; end
 
@@ -2291,12 +2290,6 @@ SuperNerdGroup:
 	; SUPER_NERD (14)
 	db "MARKUS@", TRAINERTYPE_MOVES
 	db 19, SLOWPOKE,   CURSE, WATER_GUN, GROWL, STRENGTH
-	db -1 ; end
-	
-	; SUPER_NERD (15)
-	db "DAVE@", TRAINERTYPE_NORMAL
-	db 11, MAGNEMITE
-	db 11, VOLTORB
 	db -1 ; end
 
 Rival2Group:

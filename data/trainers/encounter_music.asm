@@ -45,8 +45,8 @@ TrainerEncounterMusic::
 	db MUSIC_HIKER_ENCOUNTER       ; swimmerm
 	db MUSIC_BEAUTY_ENCOUNTER      ; swimmerf
 	db MUSIC_HIKER_ENCOUNTER       ; sailor
-	db MUSIC_POKEMANIAC_ENCOUNTER  ; super_nerd
-	db MUSIC_TRAINER_BATTLE       ; rival2
+	db MUSIC_MEET_MALE_TRAINER     ; super_nerd
+	db MUSIC_TRAINER_BATTLE        ; rival2
 	db MUSIC_MEET_MALE_TRAINER     ; guitarist
 	db MUSIC_MEET_MALE_TRAINER     ; hiker
 	db MUSIC_MEET_MALE_TRAINER     ; biker

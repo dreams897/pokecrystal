@@ -455,9 +455,9 @@ DEF GREEN EQU __trainer_class__
 	trainerclass SUPER_NERD ; 29
 	const STAN
 	const ERIC
-	const GREGG ; unused
-	const JAY ; unused
 	const DAVE ; unused
+	const JAY ; unused
+	const GREGG ; unused
 	const SAM
 	const TOM
 	const PAT
@@ -467,7 +467,6 @@ DEF GREEN EQU __trainer_class__
 	const NORTON ; unused
 	const HUGH
 	const MARKUS
-	const DAVE2
 
 	trainerclass RIVAL2 ; 2a
 	const RIVAL2_1_CHIKORITA
