@@ -171,7 +171,7 @@ MtMoon1FSuperNerdBattleText:
 
 MtMoon1FSuperNerdEndBattleText:
 	text "My #MON"
-	like "won't do!"
+	line "won't do!"
 	done
 
 MtMoon1FSuperNerdAfterBattleText:
