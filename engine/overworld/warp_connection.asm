@@ -171,6 +171,16 @@ EnterMapWarp:
 	call GetAnyMapEnvironment
 	call CheckIndoorMap
 	ret nz
+	
+; Escape Rope
+
+	ld a, [wPrevWarp]
+	ld [wDigWarpNumber], a
+	ld a, [wPrevMapGroup]
+	ld [wDigMapGroup], a
+	ld a, [wPrevMapNumber]
+	ld [wDigMapNumber], a
+	ret
 
 .SetSpawn:
 	call GetMapEnvironment
