@@ -99,6 +99,7 @@
 	const SPRITE_FRUIT_TREE ; 5d
 	const SPRITE_GOLD_TROPHY ; 5e
 	const SPRITE_SILVER_TROPHY ; 5f
+	const SPRITE_FOSSIL ; added from RBY
 	const SPRITE_GREEN ; 60
 	const SPRITE_GREEN_BIKE ; 61
 	const SPRITE_SUICUNE ; 63

@@ -130,5 +130,6 @@ GymGuideKantoSpriteGFX::       INCBIN "gfx/sprites/gym_guide_kanto.2bpp"
 HikerSpriteGFX::               INCBIN "gfx/sprites/hiker.2bpp"
 JamesSpriteGFX::               INCBIN "gfx/sprites/james.2bpp"
 JessieSpriteGFX::              INCBIN "gfx/sprites/jessie.2bpp"
+FossilSpriteGFX::              INCBIN "gfx/sprites/fossil.2bpp"
 
 
