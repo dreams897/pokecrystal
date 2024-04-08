@@ -1,6 +1,15 @@
 	object_const_def
 	const MT_MOON_B2F_JAMES
 	const MT_MOON_B2F_JESSIE
+	const MT_MOON_B2F_DOME_FOSSIL
+	const MT_MOON_B2F_HELIX_FOSSIL
+	const MT_MOON_B2F_ITEM_BALL_HP_UP
+	const MT_MOON_B2F_ITEM_BALL_TM_DYNAMIC_PUNCH
+	const MT_MOON_B2F_SUPER_NERD
+	const MT_MOON_B2F_ROCKET_1
+	const MT_MOON_B2F_ROCKET_2
+	const MT_MOON_B2F_ROCKET_3
+	
 
 MtMoonB2F_MapScripts:
 	def_scene_scripts
@@ -15,6 +24,30 @@ MtMoonB2FTeamRocketScript:
 	writetext MtMoonJessieJamesText2
 	waitbutton
 	closetext
+	end
+	
+MtMoonB2FDomeFossilScript:
+	end
+	
+MtMoonB2FHelixFossilScript:
+	end
+	
+MtMoonB2FHPUP:
+	itemball HP_UP
+	
+MtMoonB2FDynamicPunch:
+	itemball TM_DYNAMICPUNCH
+	
+MtMoonB2FSuperNerdScript:
+	end
+	
+MtMoonB2FTrainerRocket1:
+	end
+	
+MtMoonB2FTrainerRocket2:
+	end
+	
+MtMoonB2FTrainerRocket3:
 	end
 	
 MtMoonJessieJamesText1:
@@ -157,5 +190,13 @@ MtMoonB2F_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event 9, 3, SPRITE_JAMES, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, MtMoonB2FTeamRocketScript, -1
-	object_event 9, 4, SPRITE_JESSIE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, MtMoonB2FTeamRocketScript, -1
+	object_event 9,   3, SPRITE_JAMES, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, MtMoonB2FTeamRocketScript, -1
+	object_event 9,   4, SPRITE_JESSIE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, MtMoonB2FTeamRocketScript, -1
+	object_event 12,  6, SPRITE_FOSSIL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MtMoonB2FDomeFossilScript, EVENT_GOT_DOME_FOSSIL
+	object_event 13,  6, SPRITE_FOSSIL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MtMoonB2FHelixFossilScript, EVENT_GOT_HELIX_FOSSIL
+	object_event 25, 21, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MtMoonB2FHPUP, EVENT_MT_MOON_B2F_HP_UP
+	object_event 29,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MtMoonB2FDynamicPunch, EVENT_MT_MOON_B2F_TM_DYNAMIC_PUNCH
+	object_event 12,  8, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, MtMoonB2FSuperNerdScript, -1
+	object_event 15, 22, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, MtMoonB2FTrainerRocket1, -1
+	object_event 29, 11, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, MtMoonB2FTrainerRocket2, -1
+	object_event 29, 17, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, MtMoonB2FTrainerRocket3, -1
