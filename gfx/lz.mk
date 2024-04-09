@@ -22,8 +22,6 @@ gfx/new_game/shrink2.2bpp.lz: LZFLAGS += --align 4
 
 gfx/pc/pc.2bpp.lz: LZFLAGS = --compressor null --method 1 --align 1
 
-gfx/player/chris_back.2bpp.lz: LZFLAGS += --align 4
-
 gfx/pokedex/pokedex.2bpp.lz: LZFLAGS += --method 8 --align 1
 gfx/pokedex/pokedex_sgb.2bpp.lz: LZFLAGS += --method 8 --align 1
 gfx/pokedex/question_mark.2bpp.lz: LZFLAGS += --align 4

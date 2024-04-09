@@ -18,7 +18,7 @@ ENDM
 ; - BTTrainerClassSprites (see data/trainers/sprites.asm)
 ; - BTTrainerClassGenders (see data/trainers/genders.asm)
 ; trainer constants are Trainers indexes, for the sub-tables of TrainerGroups (see data/trainers/parties.asm)
-DEF CHRIS EQU __trainer_class__
+DEF RED EQU __trainer_class__
 	trainerclass TRAINER_NONE ; 0
 	const PHONECONTACT_MOM
 	const PHONECONTACT_BIKESHOP
@@ -706,9 +706,6 @@ DEF PURPLE EQU __trainer_class__
 	const BEVERLY3 ; unused
 	const GEORGIA
 	const JAIME
-
-	trainerclass RED ; 3f
-	const RED1
 
 	trainerclass BLUE ; 40
 	const BLUE1

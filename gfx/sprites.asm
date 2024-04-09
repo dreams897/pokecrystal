@@ -1,11 +1,10 @@
 SECTION "Sprites 1", ROMX
 
-ChrisSpriteGFX::               INCBIN "gfx/sprites/chris.2bpp"
+RedSpriteGFX::                 INCBIN "gfx/sprites/red.2bpp"
 RedBikeSpriteGFX::             INCBIN "gfx/sprites/red_bike.2bpp"
 GameboyKidSpriteGFX::          INCBIN "gfx/sprites/gameboy_kid.2bpp"
 RivalSpriteGFX::               INCBIN "gfx/sprites/rival.2bpp"
 OakSpriteGFX::                 INCBIN "gfx/sprites/oak.2bpp"
-RedSpriteGFX::                 INCBIN "gfx/sprites/red.2bpp"
 BlueSpriteGFX::                INCBIN "gfx/sprites/blue.2bpp"
 BillSpriteGFX::                INCBIN "gfx/sprites/bill.2bpp"
 ElderSpriteGFX::               INCBIN "gfx/sprites/elder.2bpp"

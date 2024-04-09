@@ -1,6 +1,6 @@
 	object_const_def
-	const TIMECAPSULE_CHRIS1
-	const TIMECAPSULE_CHRIS2
+	const TIMECAPSULE_RED1
+	const TIMECAPSULE_RED2
 
 TimeCapsule_MapScripts:
 	def_scene_scripts
@@ -8,7 +8,7 @@ TimeCapsule_MapScripts:
 	scene_script TimeCapsuleNoopScene,       SCENE_TIMECAPSULE_NOOP
 
 	def_callbacks
-	callback MAPCALLBACK_OBJECTS, TimeCapsuleSetWhichChrisCallback
+	callback MAPCALLBACK_OBJECTS, TimeCapsuleSetWhichRedCallback
 
 TimeCapsuleInitializeScene:
 	sdefer TimeCapsuleInitializeAndPreparePokecenter2FScript
@@ -17,16 +17,16 @@ TimeCapsuleInitializeScene:
 TimeCapsuleNoopScene:
 	end
 
-TimeCapsuleSetWhichChrisCallback:
-	special CableClubCheckWhichChris
-	iffalse .Chris2
-	disappear TIMECAPSULE_CHRIS2
-	appear TIMECAPSULE_CHRIS1
+TimeCapsuleSetWhichRedCallback:
+	special CableClubCheckWhichRed
+	iffalse .Red2
+	disappear TIMECAPSULE_RED2
+	appear TIMECAPSULE_RED1
 	endcallback
 
-.Chris2:
-	disappear TIMECAPSULE_CHRIS1
-	appear TIMECAPSULE_CHRIS2
+.Red2:
+	disappear TIMECAPSULE_RED1
+	appear TIMECAPSULE_RED2
 	endcallback
 
 TimeCapsuleInitializeAndPreparePokecenter2FScript:
@@ -65,5 +65,5 @@ TimeCapsule_MapEvents:
 	bg_event  5,  4, BGEVENT_LEFT, TimeCapsuleConsoleScript
 
 	def_object_events
-	object_event  3,  4, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TimeCapsuleFriendScript, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	object_event  6,  4, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TimeCapsuleFriendScript, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
+	object_event  3,  4, SPRITE_RED, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TimeCapsuleFriendScript, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	object_event  6,  4, SPRITE_RED, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TimeCapsuleFriendScript, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2

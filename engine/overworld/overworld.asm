@@ -53,8 +53,8 @@ RefreshSprites::
 	ret
 
 GetPlayerSprite:
-; Get Chris or Green's sprite.
-	ld hl, ChrisStateSprites
+; Get Red or Green's sprite.
+	ld hl, RedStateSprites
 	ld a, [wPlayerSpriteSetupFlags]
 	bit PLAYERSPRITESETUP_FEMALE_TO_MALE_F, a
 	jr nz, .go
@@ -77,10 +77,10 @@ GetPlayerSprite:
 	cp -1
 	jr nz, .loop
 
-; Any player state not in the array defaults to Chris's sprite.
+; Any player state not in the array defaults to Red's sprite.
 	xor a ; ld a, PLAYER_NORMAL
 	ld [wPlayerState], a
-	ld a, SPRITE_CHRIS
+	ld a, SPRITE_RED
 	jr .finish
 
 .good

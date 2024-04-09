@@ -2653,7 +2653,7 @@ Link_EnsureSync:
 	and $f
 	ret
 
-CableClubCheckWhichChris:
+CableClubCheckWhichRed:
 	ldh a, [hSerialConnectionStatus]
 	cp USING_EXTERNAL_CLOCK
 	ld a, TRUE

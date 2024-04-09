@@ -68,7 +68,6 @@ TrainerGroups:
 	dba KimonoGirlGroup
 	dba TwinsGroup
 	dba PokefanFGroup
-	dba RedGroup
 	dba BlueGroup
 	dba OfficerGroup
 	dba GruntFGroup

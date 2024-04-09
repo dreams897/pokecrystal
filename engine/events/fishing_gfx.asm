@@ -4,7 +4,7 @@ LoadFishingGFX:
 	ld a, $1
 	ldh [rVBK], a
 
-	ld de, FishingGFX
+	ld de, RedFishingGFX
 	ld a, [wPlayerGender]
 	and a ; MALE
 	jr z, .got_gender
@@ -28,7 +28,7 @@ LoadFishingGFX:
 	ret
 
 .LoadGFX:
-	lb bc, BANK(FishingGFX), 2
+	lb bc, BANK(RedFishingGFX), 2
 	push de
 	call Get2bpp
 	pop de
@@ -38,8 +38,8 @@ LoadFishingGFX:
 	ld e, l
 	ret
 
-FishingGFX:
-INCBIN "gfx/overworld/chris_fish.2bpp"
+RedFishingGFX:
+INCBIN "gfx/overworld/red_fish.2bpp"
 
 GreenFishingGFX:
 INCBIN "gfx/overworld/green_fish.2bpp"

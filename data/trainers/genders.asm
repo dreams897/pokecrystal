@@ -68,7 +68,6 @@ BTTrainerClassGenders:
 	db FEMALE ; KIMONO_GIRL
 	db FEMALE ; TWINS
 	db FEMALE ; POKEFANF
-	db MALE   ; RED
 	db MALE   ; BLUE
 	db MALE   ; OFFICER
 	db FEMALE ; GRUNTF

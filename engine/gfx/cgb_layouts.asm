@@ -812,7 +812,7 @@ _CGB_PackPals:
 	jr .got_gender
 
 .tutorial_male
-	ld hl, .ChrisPackPals
+	ld hl, .RedPackPals
 
 .got_gender
 	ld de, wBGPals1
@@ -846,7 +846,7 @@ _CGB_PackPals:
 	ldh [hCGBPalUpdate], a
 	ret
 
-.ChrisPackPals:
+.RedPackPals:
 INCLUDE "gfx/pack/pack.pal"
 
 .GreenPackPals:

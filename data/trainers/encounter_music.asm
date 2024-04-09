@@ -69,7 +69,6 @@ TrainerEncounterMusic::
 	db MUSIC_KIMONO_ENCOUNTER      ; kimono_girl
 	db MUSIC_LASS_ENCOUNTER        ; twins
 	db MUSIC_BEAUTY_ENCOUNTER      ; pokefanf
-	db MUSIC_HIKER_ENCOUNTER       ; red
 	db MUSIC_TRAINER_BATTLE        ; blue
 	db MUSIC_HIKER_ENCOUNTER       ; officer
 	db MUSIC_MEET_EVIL_TRAINER     ; gruntf

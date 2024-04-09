@@ -44,7 +44,7 @@ MovePlayerPic:
 	jr .loop
 
 ShowPlayerNamingChoices:
-	ld hl, ChrisNameMenuHeader
+	ld hl, RedNameMenuHeader
 	ld a, [wPlayerGender]
 	and a ; MALE
 	jr z, .GotGender
@@ -82,7 +82,7 @@ GetPlayerIcon:
 	ret
 
 GetCardPic:
-	ld hl, ChrisCardPic
+	ld hl, RedCardPic
 	ld a, [wPlayerGender]
 	and a ; MALE
 	jr z, .GotPic
@@ -93,7 +93,7 @@ GetCardPic:
 .GotPic
 	ld de, vTiles2 tile $00
 	ld bc, $23 tiles
-	ld a, BANK(ChrisCardPic) ; aka BANK(GreenCardPic)
+	ld a, BANK(RedCardPic) ; aka BANK(GreenCardPic)
 	call FarCopyBytes
 	ld hl, TrainerCardGFX
 	ld de, vTiles2 tile $23
@@ -102,7 +102,7 @@ GetCardPic:
 	call FarCopyBytes
 	ret
 
-ChrisCardPic:
+RedCardPic:
 INCBIN "gfx/trainer_card/red_card.2bpp"
 
 GreenCardPic:
@@ -117,15 +117,15 @@ INCBIN "gfx/trainer_card/trainer_card.2bpp"
 GetPlayerBackpic:
 	ld a, [wPlayerGender]
 	and a ; MALE
-	jr z, GetChrisBackpic
+	jr z, GetRedBackpic
 	dec a ; FEMALE
 	jp z, GetGreenBackpic
 	call GetEnbyBackpic
 	ret
 
-GetChrisBackpic:
-	ld hl, ChrisBackpic
-	ld b, BANK(ChrisBackpic)
+GetRedBackpic:
+	ld hl, RedBackpic
+	ld b, BANK(RedBackpic)
 	ld de, vTiles2 tile $31
 	ld c, 7 * 7
 	predef DecompressGet2bpp
@@ -137,7 +137,7 @@ HOF_LoadTrainerFrontpic:
 	ldh [hBGMapMode], a
 
 ; Get class
-	ld e, CHRIS
+	ld e, RED
 	ld a, [wPlayerGender]
 	and a ; MALE
 	jr z, .GotClass
@@ -173,7 +173,7 @@ DrawIntroPlayerPic:
 ; Draw the player pic at (6,4).
 
 ; Get class
-	ld e, CHRIS
+	ld e, RED
 	ld a, [wPlayerGender]
 	and a ; MALE
 	jr z, .GotClass
