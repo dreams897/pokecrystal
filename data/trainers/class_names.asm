@@ -72,4 +72,4 @@ TrainerClassNames::
 	li "ROCKET"
 	li "TEAM ROCKET"
 	li "MYSTICALMAN"
-	assert_list_length NUM_TRAINER_CLASSES
+	assert_list_length NUM_TRAINER_CLASSES - 2 ; exclude AERODACTYLE_FOSSIL, KABUTOPS_FOSSIL

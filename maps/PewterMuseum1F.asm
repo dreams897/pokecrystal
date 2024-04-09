@@ -73,6 +73,28 @@ StepDownMovement:
 	step DOWN
 	step_end
 	
+PewterMuseum1FKabutopsFossilDisplay:
+	refreshscreen
+	trainerpic KABUTOPS_FOSSIL
+	waitbutton
+	closepokepic
+	opentext
+	writetext KabutopsFossilDisplayText
+	waitbutton
+	closetext
+	end
+
+PewterMuseum1FAerodactylFossilDisplay:
+	refreshscreen
+	trainerpic AERODACTYL_FOSSIL
+	waitbutton
+	closepokepic
+	opentext
+	writetext AerodactylFossilDisplayText
+	waitbutton
+	closetext
+	end
+	
 Museum1FScientist2Script:
 	end
 	
@@ -223,6 +245,18 @@ Museum1FOldAmberText:
 	text "The AMBER is"
 	line "clear and gold!"
 	done
+	
+KabutopsFossilDisplayText:
+	text "KABUTOPS Fossil"
+	line "A primitive and"
+	cont "rare #MON."
+	done
+
+AerodactylFossilDisplayText:
+	text "AERODACTYL Fossil"
+	line "A primitive and"
+	cont "rare #MON."
+	done
 
 PewterMuseum1F_MapEvents:
 	db 0, 0 ; filler
@@ -240,6 +274,8 @@ PewterMuseum1F_MapEvents:
 	coord_event 10, 4, PEWTER_MUSEUM_1F_NOOP_SCENE, PewterMuseum1FTicketScript
 
 	def_bg_events
+	bg_event  2,  3, BGEVENT_READ, PewterMuseum1FKabutopsFossilDisplay
+	bg_event  2,  6, BGEVENT_READ, PewterMuseum1FAerodactylFossilDisplay
 
 	def_object_events
 	object_event  12, 4, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterMuseum1FTicketScript, -1

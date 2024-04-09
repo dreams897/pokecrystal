@@ -729,8 +729,12 @@ DEF PURPLE EQU __trainer_class__
 	const TEAM_ROCKET2
 	const TEAM_ROCKET3
 	const TEAM_ROCKET4
+	
+	trainerclass KABUTOPS_FOSSIL ; 44
 
-	trainerclass MYSTICALMAN ; 45
+	trainerclass AERODACTYL_FOSSIL ; 45
+
+	trainerclass MYSTICALMAN ; 46
 	const EUSINE
 
 DEF NUM_TRAINER_CLASSES EQU __trainer_class__ - 1
