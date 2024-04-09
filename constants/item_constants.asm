@@ -30,7 +30,7 @@
 	const FIRE_STONE   ; 16
 	const THUNDERSTONE ; 17
 	const WATER_STONE  ; 18
-	const OAKS_PARCEL  ; 19 ; Added
+	const OAKS_PARCEL  ; 19 ; added
 	const HP_UP        ; 1a
 	const PROTEIN      ; 1b
 	const IRON         ; 1c
@@ -140,9 +140,9 @@
 	const STAR_PIECE   ; 84
 	const BASEMENT_KEY ; 85
 	const PASS         ; 86
-	const DOME_FOSSIL  ; 87
-	const HELIX_FOSSIL ; 88
-	const ITEM_89      ; 89
+	const DOME_FOSSIL  ; 87 ; added
+	const HELIX_FOSSIL ; 88 ; added
+	const OLD_AMBER    ; 89 ; added
 	const CHARCOAL     ; 8a
 	const BERRY_JUICE  ; 8b
 	const SCOPE_LENS   ; 8c

@@ -150,7 +150,7 @@ ItemEffects:
 	dw NoEffect            ; PASS
 	dw NoEffect            ; DOME_FOSSIL
 	dw NoEffect            ; HELIX_FOSSIL
-	dw NoEffect            ; ITEM_89
+	dw NoEffect            ; OLD_AMBER
 	dw NoEffect            ; CHARCOAL
 	dw RestoreHPEffect     ; BERRY_JUICE
 	dw NoEffect            ; SCOPE_LENS

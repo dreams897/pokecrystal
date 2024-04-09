@@ -137,7 +137,7 @@ ItemDescriptions:
 	dw PassDesc
 	dw DomeFossilDesc
 	dw HelixFossilDesc
-	dw TeruSama11Desc
+	dw OldAmberDesc
 	dw CharcoalDesc
 	dw BerryJuiceDesc
 	dw ScopeLensDesc
@@ -790,8 +790,9 @@ HelixFossilDesc:
 	db   "A fossilized"
 	next "#MON shell.@"
 
-TeruSama11Desc:
-	db   "?@"
+OldAmberDesc:
+	db   "Fossilized resin"
+	next "containing DNA.@"
 
 CharcoalDesc:
 	db   "Powers up fire-"

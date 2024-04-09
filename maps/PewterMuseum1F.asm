@@ -24,9 +24,8 @@ PewterMuseum1FTicketScript:
 	checkevent EVENT_BOUGHT_MUSEUM_TICKET
 	iftrue .TimeToLook
 	readvar VAR_FACING
-	ifequal LEFT, Museum1FCantSneakInScript
-	readvar VAR_FACING
 	ifequal DOWN, Museum1FCantSneakInScript
+	ifequal LEFT, Museum1FCantSneakInScript
 	opentext
 	writetext Museum1FScientist1WouldYouLikeToComeInText
 	special PlaceMoneyTopRight
@@ -95,9 +94,6 @@ PewterMuseum1FAerodactylFossilDisplay:
 	closetext
 	end
 	
-Museum1FScientist2Script:
-	end
-	
 Museum1FScientist3Script:
 	end
 	
@@ -124,9 +120,25 @@ Museum1FOldAmberScript:
 Museum1FScientist2TakeThisToAPokemonLabScript:
 	faceplayer
 	opentext
+	checkevent EVENT_GOT_OLD_AMBER
+	iftrue .GotAmber
 	writetext Museum1FScientist2TakeThisToAPokemonLabText
 	waitbutton
+	disappear PEWTERMUSEUM_OLD_AMBER
+	setevent EVENT_GOT_OLD_AMBER
+	verbosegiveitem OLD_AMBER
+	iffalse .NoRoomForItems
 	closetext
+	end
+
+.GotAmber
+	writetext Museum1FScientist2GetTheOldAmberCheckText
+	waitbutton
+	closetext
+	end
+	
+.NoRoomForItems:
+	writetext Museum1FScientist2YouDontHaveSpaceText
 	end
 	
 Museum1FOneMagnificientFossilScript:
@@ -280,6 +292,6 @@ PewterMuseum1F_MapEvents:
 	def_object_events
 	object_event  12, 4, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterMuseum1FTicketScript, -1
 	object_event  1,  4, SPRITE_GAMBLER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Museum1FOneMagnificientFossilScript, -1
-	object_event  15, 2, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Museum1FScientist2Script, -1
+	object_event  15, 2, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Museum1FScientist2TakeThisToAPokemonLabScript, -1
 	object_event  17, 4, SPRITE_SCIENTIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Museum1FScientist3Script, -1
-	object_event  16, 2, SPRITE_OLD_AMBER, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Museum1FOldAmberScript, -1
+	object_event  16, 2, SPRITE_OLD_AMBER, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Museum1FOldAmberScript, EVENT_GOT_OLD_AMBER

@@ -136,7 +136,7 @@ ItemNames::
 	li "PASS"
 	li "DOME FOSSIL"
 	li "HELIX FOSSIL"
-	li "TERU-SAMA"
+	li "OLD AMBER"
 	li "CHARCOAL"
 	li "BERRY JUICE"
 	li "SCOPE LENS"
