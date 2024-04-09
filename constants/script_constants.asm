@@ -73,7 +73,7 @@ DEF STRING_BUFFER_LENGTH EQU 19
 	const VAR_BUENASPASSWORD   ; 19
 	const VAR_KENJI_BREAK      ; 1a
 	const VAR_PLAYERGENDER     ; 1b
-NUM_VARS EQU const_value       ; 1c
+DEF NUM_VARS EQU const_value       ; 1c
 
 ; variable action types
 DEF RETVAR_STRBUF2 EQU 0 << 6

@@ -1,4 +1,4 @@
-toggle_perfect_pitch EQUS "pitch_offset 1"
+DEF toggle_perfect_pitch EQUS "pitch_offset 1"
 
 MACRO channel_count
 	assert 0 < (\1) && (\1) <= NUM_MUSIC_CHANS, \
@@ -125,7 +125,7 @@ MACRO toggle_sfx
 	db toggle_sfx_cmd
 ENDM
 
-execute_music EQUS "toggle_sfx"
+DEF execute_music EQUS "toggle_sfx"
 	const pitch_slide_cmd ; $e0
 MACRO pitch_slide
 	db pitch_slide_cmd
