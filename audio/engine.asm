@@ -48,6 +48,28 @@ _InitSound::
 	or d
 	jr nz, .clearaudio
 
+; channels 5 and 6
+	ld hl, wChannel5
+	ld de, CHANNEL_STRUCT_LENGTH * 2
+.clearaudio2
+	xor a
+	ld [hli], a
+	dec de
+	ld a, e
+	or d
+	jr nz, .clearaudio2
+
+; channels 7 and 8
+	ld hl, wChannel7
+	ld de, CHANNEL_STRUCT_LENGTH * 2
+.clearaudio3
+	xor a
+	ld [hli], a
+	dec de
+	ld a, e
+	or d
+	jr nz, .clearaudio3
+
 	ld a, MAX_VOLUME
 	ld [wVolume], a
 	call MusicOn
@@ -319,8 +341,18 @@ UpdateChannels:
 	jr nz, .ch2_rest
 	bit NOTE_NOISE_SAMPLING, [hl]
 	jr nz, .ch2_noise_sampling
+	bit NOTE_FREQ_OVERRIDE, [hl]
+	jr nz, .ch2_frequency_override
 	bit NOTE_VIBRATO_OVERRIDE, [hl]
 	jr nz, .ch2_vibrato_override
+	jr .ch2_check_duty_override
+
+.ch2_frequency_override
+	ld a, [wCurTrackFrequency]
+	ldh [rNR23], a
+	ld a, [wCurTrackFrequency + 1]
+	ldh [rNR24], a
+.ch2_check_duty_override
 	bit NOTE_DUTY_OVERRIDE, [hl]
 	ret z
 	ld a, [wCurTrackDuty]
@@ -329,13 +361,6 @@ UpdateChannels:
 	and $3f ; sound length
 	or d
 	ldh [rNR21], a
-	ret
-
-.ch2_frequency_override ; unreferenced
-	ld a, [wCurTrackFrequency]
-	ldh [rNR23], a
-	ld a, [wCurTrackFrequency + 1]
-	ldh [rNR24], a
 	ret
 
 .ch2_vibrato_override
@@ -379,11 +404,13 @@ UpdateChannels:
 	jr nz, .ch3_rest
 	bit NOTE_NOISE_SAMPLING, [hl]
 	jr nz, .ch3_noise_sampling
+	bit NOTE_FREQ_OVERRIDE, [hl]
+	jr nz, .ch3_frequency_override
 	bit NOTE_VIBRATO_OVERRIDE, [hl]
 	jr nz, .ch3_vibrato_override
 	ret
 
-.ch3_frequency_override ; unreferenced
+.ch3_frequency_override
 	ld a, [wCurTrackFrequency]
 	ldh [rNR33], a
 	ld a, [wCurTrackFrequency + 1]
@@ -432,6 +459,8 @@ rept 4
 endr
 	ld de, WaveSamples
 	add hl, de
+	cp $f
+	jr z, .skip
 	; load wavepattern into rWave_0-rWave_f
 	ld a, [hli]
 	ldh [rWave_0], a
@@ -465,6 +494,7 @@ endr
 	ldh [rWave_e], a
 	ld a, [hli]
 	ldh [rWave_f], a
+.skip
 	pop hl
 	ld a, [wCurTrackVolumeEnvelope]
 	and $f0
@@ -1117,6 +1147,7 @@ ReadNoiseSample:
 	jr z, .quit
 
 	and $f
+	inc a
 	ld [wNoiseSampleDelay], a
 	ld a, [de]
 	inc de
@@ -1160,7 +1191,7 @@ ParseMusic:
 	jp nz, ParseSFXOrCry
 	bit SOUND_CRY, [hl]
 	jp nz, ParseSFXOrCry
-	bit SOUND_NOISE, [hl]
+	bit SOUND_NOISE, [hl] ; noise sample
 	jp nz, GetNoiseSample
 ; normal note
 	; set note duration (bottom nybble)
@@ -1425,11 +1456,70 @@ MusicCommands:
 MusicF1:
 MusicF2:
 MusicF3:
+;custom waveform
+	ld e, 16
+	ld hl, rWave_0
+.read
+	call GetMusicByte
+	ld [hli], a
+	dec e
+	jr nz, .read
+	ret
 MusicF4:
+;inc_octave
+	ld hl, CHANNEL_OCTAVE
+	add hl, bc
+	ld a, [hl]
+	dec a
+	and 7
+	ld [hl], a
+	ret
 MusicF5:
+;dec_octave
+	ld hl, CHANNEL_OCTAVE
+	add hl, bc
+	ld a, [hl]
+	inc a
+	and 7
+	ld [hl], a
+	ret
 MusicF6:
+;speed
+	call GetMusicByte
+	ld hl, CHANNEL_NOTE_LENGTH
+	add hl, bc
+	ld [hl], a
+	ret
 MusicF7:
+;channel_volume
+	call GetMusicByte
+	ld hl, CHANNEL_VOLUME_ENVELOPE
+	add hl, bc
+	rla
+	rla
+	rla
+	rla
+	and $f0
+	push bc
+	ld b, a
+	ld a, [hl]
+	and $f
+	add b
+	pop bc
+	ld [hl], a
+	ret
 MusicF8:
+;fade_wave
+	call GetMusicByte
+	ld hl, CHANNEL_VOLUME_ENVELOPE
+	add hl, bc
+	push bc
+	ld b, a
+	ld a, [hl]
+	and $f0
+	add b
+	pop bc
+	ld [hl], a
 	ret
 
 Music_Ret:
@@ -2467,6 +2557,131 @@ _PlayCry::
 	ld a, 1 ; stop playing music
 	ld [wSFXPriority], a
 	call MusicOn
+	ret
+	
+_PlayBattleSound::
+; clear channels if they aren't already
+	call MusicOff
+	ld hl, wChannel5Flags1
+	bit SOUND_CHANNEL_ON, [hl] ; ch5 on?
+	jr z, .ch6
+	res SOUND_CHANNEL_ON, [hl] ; turn it off
+	xor a
+	ldh [rNR11], a ; length/wavepattern = 0
+	ld a, $8
+	ldh [rNR12], a ; envelope = 0
+	xor a
+	ldh [rNR13], a ; frequency lo = 0
+	ld a, $80
+	ldh [rNR14], a ; restart sound (freq hi = 0)
+	xor a
+	ld [wPitchSweep], a ; pitch sweep off
+	ldh [rNR10], a ; pitch sweep off
+.ch6
+	ld hl, wChannel6Flags1
+	bit SOUND_CHANNEL_ON, [hl]
+	jr z, .ch7
+	res SOUND_CHANNEL_ON, [hl] ; turn it off
+	xor a
+	ldh [rNR21], a ; length/wavepattern = 0
+	ld a, $8
+	ldh [rNR22], a ; envelope = 0
+	xor a
+	ldh [rNR23], a ; frequency lo = 0
+	ld a, $80
+	ldh [rNR24], a ; restart sound (freq hi = 0)
+.ch7
+	ld hl, wChannel7Flags1
+	bit SOUND_CHANNEL_ON, [hl]
+	jr z, .ch8
+	res SOUND_CHANNEL_ON, [hl] ; turn it off
+	xor a
+	ldh [rNR30], a ; sound mode #3 off
+	ldh [rNR31], a ; length/wavepattern = 0
+	ld a, $8
+	ldh [rNR32], a ; envelope = 0
+	xor a
+	ldh [rNR33], a ; frequency lo = 0
+	ld a, $80
+	ldh [rNR34], a ; restart sound (freq hi = 0)
+.ch8
+	ld hl, wChannel8Flags1
+	bit SOUND_CHANNEL_ON, [hl]
+	jr z, .chscleared
+	res SOUND_CHANNEL_ON, [hl] ; turn it off
+	xor a
+	ldh [rNR41], a ; length/wavepattern = 0
+	ld a, $8
+	ldh [rNR42], a ; envelope = 0
+	xor a
+	ldh [rNR43], a ; frequency lo = 0
+	ld a, $80
+	ldh [rNR44], a ; restart sound (freq hi = 0)
+	xor a
+	ld [wNoiseSampleAddress], a
+	ld [wNoiseSampleAddress + 1], a
+.chscleared
+; start reading sfx header for # chs
+	ld hl, wMusicID
+	ld [hl], e
+	inc hl
+	ld [hl], d
+	ld hl, SFX
+	add hl, de ; three
+	add hl, de ; byte
+	add hl, de ; pointers
+	; get bank
+	ld a, [hli]
+	ld [wMusicBank], a
+	; get address
+	ld e, [hl]
+	inc hl
+	ld d, [hl]
+	; get # channels
+	call LoadMusicByte
+	rlca ; top 2
+	rlca ; bits
+	maskbits NUM_MUSIC_CHANS
+	inc a ; # channels -> # loops
+.startchannels
+	push af
+	call LoadChannel ; bc = current channel
+	ld hl, CHANNEL_FLAGS1
+	add hl, bc
+	set SOUND_SFX, [hl]
+
+	ld hl, CHANNEL_FLAGS2
+	add hl, bc
+	set SOUND_PITCH_OFFSET, [hl]
+
+	ld hl, CHANNEL_PITCH_OFFSET
+	add hl, bc
+	ld a, [wCryPitch]
+	ld [hli], a
+	ld a, [wCryPitch + 1]
+	ld [hl], a
+
+; No tempo for channel 4
+	ld a, [wCurChannel]
+	maskbits NUM_MUSIC_CHANS
+	cp CHAN4
+	jr nc, .start
+
+; Tempo is effectively length
+	ld hl, CHANNEL_TEMPO
+	add hl, bc
+	ld a, [wCryLength]
+	ld [hli], a
+	ld a, [wCryLength + 1]
+	ld [hl], a
+.start
+	call StartChannel
+	pop af
+	dec a
+	jr nz, .startchannels
+	call MusicOn
+	xor a
+	ld [wSFXPriority], a
 	ret
 
 _PlaySFX::
