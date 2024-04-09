@@ -145,7 +145,7 @@ ViridianForestYoungster4SeenText:
 	done
 
 ViridianForestYoungster4BeatenText:
-	text "I give!
+	text "I give!"
 	line "You're good at this!"
 	prompt
 
