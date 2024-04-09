@@ -20,7 +20,7 @@
 
 	RGB 31, 31, 31 ; Left box text color
 	RGB 16, 00, 25 ; Left box color 1
-	RGB 29, 09, 01 ; Left box border color
+	RGB 31, 12, 04 ; Left box border color
 	RGB 00, 00, 00 ; Left box inside color
 
 	RGB 31, 31, 31 ; Bag background color 1 (main)
