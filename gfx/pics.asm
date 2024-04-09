@@ -723,13 +723,14 @@ UnownDBackpic:       INCBIN "gfx/pokemon/unown_d/back.2bpp.lz"
 
 SECTION "Pics 21", ROMX
 
-JrtrainerfPic::      INCBIN "gfx/trainers/jrtrainerf.2bpp.lz"
-JrtrainermPic::      INCBIN "gfx/trainers/jrtrainerm.2bpp.lz"
-TeamRocketPic::      INCBIN "gfx/trainers/team_rocket.2bpp.lz"
+JrtrainerfPic:       INCBIN "gfx/trainers/jrtrainerf.2bpp.lz"
+JrtrainermPic:       INCBIN "gfx/trainers/jrtrainerm.2bpp.lz"
+TeamRocketPic:       INCBIN "gfx/trainers/team_rocket.2bpp.lz"
 KabutopsFossilPic:   INCBIN "gfx/trainers/kabutops_fossil.2bpp.lz"
 AerodactylFossilPic: INCBIN "gfx/trainers/aerodactyl_fossil.2bpp.lz"
 
 SECTION "Pics 22", ROMX
+ENBYPic: INCBIN "gfx/trainers/enby.2bpp.lz"
 
 SECTION "Pics 23", ROMX
 

@@ -56,7 +56,8 @@ INCBIN "gfx/trainers/guitarist.gbcpal", middle_colors
 INCBIN "gfx/trainers/hiker.gbcpal", middle_colors
 INCBIN "gfx/trainers/biker.gbcpal", middle_colors
 INCBIN "gfx/trainers/blaine.gbcpal", middle_colors
-EnbyPalette: ; enby uses burglar pal
+EnbyPalette: ; enby gets their own pal
+INCBIN "gfx/trainers/enby.gbcpal", middle_colors
 INCBIN "gfx/trainers/burglar.gbcpal", middle_colors
 INCBIN "gfx/trainers/firebreather.gbcpal", middle_colors
 INCBIN "gfx/trainers/juggler.gbcpal", middle_colors

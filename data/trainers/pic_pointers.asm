@@ -75,5 +75,6 @@ TrainerPicPointers::
 	dba TeamRocketPic
 	dba KabutopsFossilPic
 	dba AerodactylFossilPic
+	dba ENBYPic
 	dba MysticalmanPic
 	assert_table_length NUM_TRAINER_CLASSES

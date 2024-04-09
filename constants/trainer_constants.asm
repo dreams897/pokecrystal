@@ -733,8 +733,10 @@ DEF PURPLE EQU __trainer_class__
 	trainerclass KABUTOPS_FOSSIL ; 44
 
 	trainerclass AERODACTYL_FOSSIL ; 45
+	
+	trainerclass ENBY_T ; 46
 
-	trainerclass MYSTICALMAN ; 46
+	trainerclass MYSTICALMAN ; 47
 	const EUSINE
 
 DEF NUM_TRAINER_CLASSES EQU __trainer_class__ - 1

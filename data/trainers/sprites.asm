@@ -71,4 +71,4 @@ BTTrainerClassSprites:
 	db SPRITE_OFFICER
 	db SPRITE_ROCKET_GIRL
 	db SPRITE_JAMES ; team rocket, probably won't be used here
-	assert_table_length NUM_TRAINER_CLASSES - 3 ; exclude MYSTICALMAN
+	assert_table_length NUM_TRAINER_CLASSES - 4 ; exclude ENBY, AERODACTYLE_FOSSIL, KABUTOPS_FOSSIL, MYSTICALMAN

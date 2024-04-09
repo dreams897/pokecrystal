@@ -49,8 +49,8 @@ EnbyNameMenuHeader:
 	db "NEW NAME@"
 EnbyPlayerNameArray:
 	db "PURPLE@"
-	db "ACE@"
-	db "WEST@"
+	db "JORDAN@"
 	db "REMY@"
-	db 2 ; displacement
+	db "WEST@"
+	db 2 ; title indent
 	db " NAME @" ; title
