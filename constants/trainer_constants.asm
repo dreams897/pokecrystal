@@ -726,6 +726,9 @@ DEF PURPLE EQU __trainer_class__
 	
 	trainerclass TEAM_ROCKET ; 43
 	const TEAM_ROCKET1
+	const TEAM_ROCKET2
+	const TEAM_ROCKET3
+	const TEAM_ROCKET4
 
 	trainerclass MYSTICALMAN ; 45
 	const EUSINE
