@@ -6081,6 +6081,7 @@ LoadEnemyMon:
 	jp .Happiness
 
 .InitDVs:
+	farcall GetTrainerDVs
 	ld a, [wBattleMode]
 	dec a
 	
@@ -6093,8 +6094,8 @@ LoadEnemyMon:
 	ld b, [hl]
 	inc hl
 	ld c, [hl]
-	jr .UpdateDVs
-
+	jr nz, .UpdateDVs
+	
 .WildDVs:
 
 ; Wild DVs
