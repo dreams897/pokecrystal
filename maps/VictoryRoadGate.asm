@@ -15,14 +15,17 @@ VictoryRoadGateNoop2Scene:
 	end
 
 VictoryRoadGateBadgeCheckScript:
-	sjump _VictoryRoadGateBadgeCheckScript
+	sjump VictoryRoadGateOfficerScript
 
 VictoryRoadGateOfficerScript:
 	faceplayer
-_VictoryRoadGateBadgeCheckScript:
 	opentext
 	checkflag ENGINE_BOULDERBADGE
 	iftrue .HaveBoulderBadge
+	readvar VAR_XCOORD
+        getnum STRING_BUFFER_3
+        ifequal 6, .PlayerNotFacingForward
+        ifequal 7, .PlayerNotFacingForward
 	writetext VictoryRoadGateGuardNoBoulderbadgeText
 	playsound SFX_DENIED_1
 	waitbutton
@@ -30,6 +33,15 @@ _VictoryRoadGateBadgeCheckScript:
 	waitbutton
 	closetext
 	applymovement PLAYER, VictoryRoadGateStepDownMovement
+	end
+	
+.PlayerNotFacingForward:
+	writetext VictoryRoadGateGuardNoBoulderbadgeText
+	playsound SFX_DENIED_1
+	waitbutton
+	writetext VictoryRoadGateGuardICantLetYouPassText
+	waitbutton
+	closetext
 	end
 	
 .HaveBoulderBadge:
