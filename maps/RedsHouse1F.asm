@@ -109,30 +109,28 @@ StandByMeText:
 	line "on TV. Four boys"
 	cont "are walking on"
 	cont "railroad tracks."
-	
+
 	para "I better go too."
 	done
+
 	
 WizardOfOzText:
 	text "There's a movie"
-	line "on TV."
-	
-	para "A girl with her"
-	line "hair in pigtails"
-	cont "is walking up a"
-	cont "brick road."
+	line "on TV. A girl with"
+	cont "her hair in pig-"
+	cont "tails is walking"
+	cont "up a brick road."
 
 	para "I better go too."
 	done
 	
 VictorVictoriaText:
 	text "There's a movie"
-	line "on TV."
-	
-	para "A singer with half"
-	line "of their face in"
-	cont "makeup bows and"
-	cont "exits stage left."
+	line "on TV. A singer"
+	cont "wearing half-"
+	cont "face makeup"
+	cont "bows and exits"
+	cont "the stage."
 
 	para "I better go too."
 	done
