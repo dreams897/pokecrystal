@@ -135,8 +135,8 @@ ItemDescriptions:
 	dw StarPieceDesc
 	dw BasementKeyDesc
 	dw PassDesc
-	dw TeruSama9Desc
-	dw TeruSama10Desc
+	dw DomeFossilDesc
+	dw HelixFossilDesc
 	dw TeruSama11Desc
 	dw CharcoalDesc
 	dw BerryJuiceDesc
@@ -782,11 +782,13 @@ PassDesc:
 	db   "A ticket for the"
 	next "MAGNET TRAIN.@"
 
-TeruSama9Desc:
-	db   "?@"
+DomeFossilDesc:
+	db   "A fossilized"
+	next "#MON shell.@"
 
-TeruSama10Desc:
-	db   "?@"
+HelixFossilDesc:
+	db   "A fossilized"
+	next "#MON shell.@"
 
 TeruSama11Desc:
 	db   "?@"
