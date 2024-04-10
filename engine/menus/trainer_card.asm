@@ -155,7 +155,7 @@ TrainerCard_Page2_LoadGFX:
 	ret
 
 TrainerCard_Page2_Joypad:
-	ld hl, TrainerCard_JohtoBadgesOAM
+	ld hl, TrainerCard_KantoBadgesOAM
 	call TrainerCard_Page2_3_AnimateBadges
 	ld hl, hJoyLast
 	ld a, [hl]
@@ -203,7 +203,7 @@ TrainerCard_Page3_LoadGFX:
 	ret
 
 TrainerCard_Page3_Joypad:
-	ld hl, TrainerCard_JohtoBadgesOAM
+	ld hl, TrainerCard_KantoBadgesOAM
 	call TrainerCard_Page2_3_AnimateBadges
 	ld hl, hJoyLast
 	ld a, [hl]
@@ -331,7 +331,7 @@ endr
 	jr nz, .loop2
 	xor a
 	ld [wTrainerCardBadgeFrameCounter], a
-	ld hl, TrainerCard_JohtoBadgesOAM
+	ld hl, TrainerCard_KantoBadgesOAM
 	call TrainerCard_Page2_3_OAMUpdate
 	ret
 
@@ -479,7 +479,7 @@ TrainerCard_Page2_3_OAMUpdate:
 	ld a, [de]
 	ld c, a
 	ld de, wShadowOAMSprite00
-	ld b, NUM_JOHTO_BADGES
+	ld b, NUM_KANTO_BADGES
 .loop
 	srl c
 	push bc
@@ -559,51 +559,51 @@ TrainerCard_Page2_3_OAMUpdate:
 	dbsprite  1,  1,  0,  0, $02, 0 | X_FLIP
 	db -1
 
-TrainerCard_JohtoBadgesOAM:
+TrainerCard_KantoBadgesOAM:
 ; Template OAM data for each badge on the trainer card.
 ; Format:
 	; y, x, palette
 	; cycle 1: face tile, in1 tile, in2 tile, in3 tile
 	; cycle 2: face tile, in1 tile, in2 tile, in3 tile
 
-	dw wJohtoBadges
+	dw wKantoBadges
 
-	; Zephyrbadge
+	; Boulderbadge
 	db $68, $18, 0
 	db $00, $20, $24, $20 | (1 << 7)
 	db $00, $20, $24, $20 | (1 << 7)
 
-	; Hivebadge
+	; Cascadebadge
 	db $68, $38, 0
 	db $04, $20, $24, $20 | (1 << 7)
 	db $04, $20, $24, $20 | (1 << 7)
 
-	; Plainbadge
+	; Thunderbadge
 	db $68, $58, 0
 	db $08, $20, $24, $20 | (1 << 7)
 	db $08, $20, $24, $20 | (1 << 7)
 
-	; Fogbadge
+	; Rainbowbadge
 	db $68, $78, 0
 	db $0c, $20, $24, $20 | (1 << 7)
 	db $0c, $20, $24, $20 | (1 << 7)
 
-	; Mineralbadge
+	; Soulbadge
 	db $80, $38, 0
 	db $10, $20, $24, $20 | (1 << 7)
 	db $10, $20, $24, $20 | (1 << 7)
 
-	; Stormbadge
+	; Marshbadge
 	db $80, $18, 0
 	db $14, $20, $24, $20 | (1 << 7)
 	db $14, $20, $24, $20 | (1 << 7)
 
-	; Glacierbadge
+	; Volcanobadge
 	db $80, $58, 0
 	db $18, $20, $24, $20 | (1 << 7)
 	db $18, $20, $24, $20 | (1 << 7)
 
-	; Risingbadge
+	; Earthbadge
 	; X-flips on alternate cycles.
 	db $80, $78, 0
 	db $1c,            $20, $24, $20 | (1 << 7)
