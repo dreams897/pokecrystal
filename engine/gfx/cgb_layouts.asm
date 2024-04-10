@@ -720,13 +720,13 @@ _CGB_TrainerCard:
 	jr z, .male3
 	dec a
 	jr z, .female3
-	ld a, $2 ; purple for enby
+	ld a, $2 ; enby
 	jr .got_gender3
 .male3
-	ld a, $1 ; Red
+	ld a, $0 ; red
 	jr .got_gender3
 .female3
-	ld a, $0 ; red for green
+	ld a, $1 ; green
 .got_gender3
 	hlcoord 18, 1, wAttrmap
 	ld [hl], a
