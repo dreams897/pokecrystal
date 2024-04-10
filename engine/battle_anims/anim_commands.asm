@@ -15,11 +15,14 @@ PlayBattleAnim:
 
 _PlayBattleAnim:
 	ld c, 6
-	call DelayFrames
+.wait
+	call BattleAnimDelayFrame
+	dec c
+	jr nz, .wait
 
 	call BattleAnimAssignPals
 	call BattleAnimRequestPals
-	call DelayFrame
+	call BattleAnimDelayFrame
 
 	ld c, 1
 	ldh a, [rKEY1]
@@ -41,8 +44,9 @@ _PlayBattleAnim:
 	ld a, 1
 	ldh [hBGMapMode], a
 
-	ld c, 3
-	call DelayFrames
+	call BattleAnimDelayFrame
+	call BattleAnimDelayFrame
+	call BattleAnimDelayFrame
 	call WaitSFX
 	ret
 
@@ -67,7 +71,7 @@ BattleAnimRunScript:
 	xor a
 	ldh [hSCX], a
 	ldh [hSCY], a
-	call DelayFrame
+	call BattleAnimDelayFrame
 	call BattleAnimRestoreHuds
 
 .disabled
@@ -124,7 +128,7 @@ RunBattleAnimScript:
 	jr nz, .find
 
 .not_rollout
-	call DelayFrame
+	call BattleAnimDelayFrame
 
 .done
 	ld a, [wBattleAnimFlags]
@@ -135,17 +139,19 @@ RunBattleAnimScript:
 	ret
 
 BattleAnimClearHud:
-	call DelayFrame
+	call BattleAnimDelayFrame
 	call WaitTop
 	call ClearActorHud
 	ld a, $1
 	ldh [hBGMapMode], a
-	call Delay3
+	call BattleAnimDelayFrame
+	call BattleAnimDelayFrame
+	call BattleAnimDelayFrame
 	call WaitTop
 	ret
 
 BattleAnimRestoreHuds:
-	call DelayFrame
+	call BattleAnimDelayFrame
 	call WaitTop
 
 	ldh a, [rSVBK]
@@ -153,14 +159,19 @@ BattleAnimRestoreHuds:
 	ld a, BANK(wCurBattleMon) ; aka BANK(wTempMon), BANK(wPartyMon1), and several others
 	ldh [rSVBK], a
 
-	call UpdateBattleHuds
+; this block should just be "call UpdateBattleHuds"
+	ld hl, UpdateBattleHuds
+	ld a, BANK(UpdatePlayerHUD)
+	rst FarCall
 
 	pop af
 	ldh [rSVBK], a
 
 	ld a, $1
 	ldh [hBGMapMode], a
-	call Delay3
+	call BattleAnimDelayFrame
+	call BattleAnimDelayFrame
+	call BattleAnimDelayFrame
 	call WaitTop
 	ret
 
@@ -179,7 +190,18 @@ BattleAnimRequestPals:
 	ld b, a
 	ld a, [wOBP0]
 	cp b
-	jp nz, BattleAnim_SetOBPals
+	call nz, BattleAnim_SetOBPals
+	ret
+
+BattleAnimDelayFrame:
+; Like DelayFrame but wastes battery life.
+
+	ld a, 1
+	ld [wVBlankOccurred], a
+.wait
+	ld a, [wVBlankOccurred]
+	and a
+	jr nz, .wait
 	ret
 
 ClearActorHud:
@@ -214,7 +236,8 @@ PlaceWindowOverBattleTextbox: ; unreferenced
 	ldh [hBGMapAddress], a
 	ld a, HIGH(vBGMap0)
 	ldh [hBGMapAddress + 1], a
-	jp DelayFrame
+	call BattleAnimDelayFrame
+	ret
 
 BattleAnim_ClearOAM:
 	ld a, [wBattleAnimFlags]
@@ -1299,13 +1322,13 @@ PlayHitSound:
 	ret z
 
 	cp EFFECTIVE
-	ld de, SFX_DAMAGE_RBY
+	ld de, SFX_DAMAGE
 	jr z, .play
 
-	ld de, SFX_SUPER_EFFECTIVE_RBY
+	ld de, SFX_SUPER_EFFECTIVE
 	jr nc, .play
 
-	ld de, SFX_NOT_VERY_EFFECTIVE_RBY
+	ld de, SFX_NOT_VERY_EFFECTIVE
 
 .play
 	call PlaySFX
@@ -1342,8 +1365,13 @@ ClearBattleAnims::
 ; Clear animation block
 	ld hl, wLYOverrides
 	ld bc, wBattleAnimEnd - wLYOverrides
-	xor a
-	call ByteFill
+.loop
+	ld [hl], 0
+	inc hl
+	dec bc
+	ld a, c
+	or b
+	jr nz, .loop
 
 	ld hl, wFXAnimID
 	ld e, [hl]
@@ -1354,7 +1382,8 @@ ClearBattleAnims::
 	add hl, de
 	call GetBattleAnimPointer
 	call BattleAnimAssignPals
-	jp DelayFrame
+	call BattleAnimDelayFrame
+	ret
 
 BattleAnim_RevertPals:
 	call WaitTop
@@ -1368,7 +1397,7 @@ BattleAnim_RevertPals:
 	xor a
 	ldh [hSCX], a
 	ldh [hSCY], a
-	call DelayFrame
+	call BattleAnimDelayFrame
 	ld a, $1
 	ldh [hBGMapMode], a
 	ret
