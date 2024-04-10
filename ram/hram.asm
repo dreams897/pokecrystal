@@ -178,3 +178,5 @@ hClockResetTrigger:: db
 hDelayFrameLY:: db
 
 	ds 18
+
+ENDSECTION
