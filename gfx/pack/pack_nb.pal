@@ -1,6 +1,6 @@
 	RGB 31, 31, 31 ; Main background color
-	RGB 16, 00, 25 ; Left box color 1
-	RGB 12, 00, 16 ; Left box color 2
+	RGB 19, 04, 21 ; Left box color 1
+	RGB 16, 03, 17 ; Left box color 2
 	RGB 00, 00, 00
 
 	RGB 05, 17, 31 ; Upper left text color
@@ -16,14 +16,14 @@
 	RGB 31, 31, 31 ; Cursor/middle box (garbage)
 	RGB 16, 00, 25 ; Left box color 1
 	RGB 12, 00, 16 ; Left box color 2
-	RGB 10, 00, 18 ; Cursor color
+	RGB 29, 11, 00 ; Cursor color
 
 	RGB 31, 31, 31 ; Left box text color
 	RGB 16, 00, 25 ; Left box color 1
-	RGB 31, 12, 04 ; Left box border color
+	RGB 29, 11, 00 ; Left box border color
 	RGB 00, 00, 00 ; Left box inside color
 
 	RGB 31, 31, 31 ; Bag background color 1 (main)
-	RGB 18, 08, 25 ; Bag color
-	RGB 18, 08, 25 ; Bag color
+	RGB 19, 04, 21 ; Bag color
+	RGB 19, 04, 21 ; Bag color
 	RGB 00, 00, 00 ; Bag background color 1 (small border and selected pouch)

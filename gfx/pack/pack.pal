@@ -1,6 +1,6 @@
 	RGB 31, 31, 31 ; Main background color
 	RGB 22, 07, 08 ; Left box color 1
-	RGB 16, 05, 06 ; Left box color 2
+	RGB 25, 09, 10 ; Left box color 2
 	RGB 00, 00, 00
 
 	RGB 05, 17, 31 ; Upper left text color
@@ -20,7 +20,7 @@
 
 	RGB 31, 31, 31 ; Left box text color
 	RGB 31, 03, 03 ; ?
-	RGB 28, 18, 17 ; Left box border color
+	RGB 21, 01, 00 ; Left box border color
 	RGB 00, 00, 00 ; Left box inside color
 
 	RGB 31, 31, 31 ; Bag background color 1 (main)
