@@ -107,6 +107,10 @@ TrainerCard_Page1_LoadGFX:
 	ld d, 6
 	call TrainerCard_InitBorder
 	call WaitBGMap
+	ld b, SCGB_TRAINER_CARD
+	call GetSGBLayout
+	call SetDefaultBGPAndOBP ; this function was called 'SetPalettes' in older versions of pokecrystal
+	call WaitBGMap
 	ld de, CardStatusGFX
 	ld hl, vTiles2 tile $29
 	lb bc, BANK(CardStatusGFX), 86
@@ -142,6 +146,10 @@ TrainerCard_Page2_LoadGFX:
 	ld d, 6
 	call TrainerCard_InitBorder
 	call WaitBGMap
+	ld b, SCGB_TRAINER_CARD
+	call GetSGBLayout
+	call SetDefaultBGPAndOBP ; this function was called 'SetPalettes' in older versions of pokecrystal
+	call WaitBGMap
 	ld de, LeaderGFX
 	ld hl, vTiles2 tile $29
 	lb bc, BANK(LeaderGFX), 86
@@ -150,6 +158,7 @@ TrainerCard_Page2_LoadGFX:
 	ld hl, vTiles0 tile $00
 	lb bc, BANK(BadgeGFX), 44
 	call Request2bpp
+	ld hl, TrainerCard_KantoBadgesOAM
 	call TrainerCard_Page2_3_InitObjectsAndStrings
 	call TrainerCard_IncrementJumptable
 	ret
@@ -190,6 +199,10 @@ TrainerCard_Page3_LoadGFX:
 	ld d, 6
 	call TrainerCard_InitBorder
 	call WaitBGMap
+	ld b, SCGB_TRAINER_CARD
+	call GetSGBLayout
+	call SetDefaultBGPAndOBP ; this function was called 'SetPalettes' in older versions of pokecrystal
+	call WaitBGMap
 	ld de, LeaderGFX2
 	ld hl, vTiles2 tile $29
 	lb bc, BANK(LeaderGFX2), 86
@@ -198,6 +211,7 @@ TrainerCard_Page3_LoadGFX:
 	ld hl, vTiles0 tile $00
 	lb bc, BANK(BadgeGFX2), 44
 	call Request2bpp
+	ld hl, TrainerCard_KantoBadgesOAM
 	call TrainerCard_Page2_3_InitObjectsAndStrings
 	call TrainerCard_IncrementJumptable
 	ret
@@ -560,8 +574,8 @@ TrainerCard_Page2_3_OAMUpdate:
 	db -1
 
 TrainerCard_KantoBadgesOAM:
-; Template OAM data for each badge on the trainer card.
-; Format:
+   	; Template OAM data for Kanto badges on the trainer card.
+   	; Format:
 	; y, x, palette
 	; cycle 1: face tile, in1 tile, in2 tile, in3 tile
 	; cycle 2: face tile, in1 tile, in2 tile, in3 tile
@@ -570,44 +584,44 @@ TrainerCard_KantoBadgesOAM:
 
 	; Boulderbadge
 	db $68, $18, 0
-	db $00, $20, $24, $20 | (1 << 7)
-	db $00, $20, $24, $20 | (1 << 7)
+	db $00, $20 | (1 << 7), $24, $20
+	db $00, $20 | (1 << 7), $24, $20
 
 	; Cascadebadge
 	db $68, $38, 0
-	db $04, $20, $24, $20 | (1 << 7)
-	db $04, $20, $24, $20 | (1 << 7)
+	db $04, $20 | (1 << 7), $24, $20
+	db $04, $20 | (1 << 7), $24, $20
 
 	; Thunderbadge
 	db $68, $58, 0
-	db $08, $20, $24, $20 | (1 << 7)
-	db $08, $20, $24, $20 | (1 << 7)
+	db $08, $20 | (1 << 7), $24, $20
+	db $08, $20 | (1 << 7), $24, $20
 
 	; Rainbowbadge
 	db $68, $78, 0
-	db $0c, $20, $24, $20 | (1 << 7)
-	db $0c, $20, $24, $20 | (1 << 7)
+	db $0c, $20 | (1 << 7), $24, $20
+	db $0c, $20 | (1 << 7), $24, $20
 
 	; Soulbadge
-	db $80, $38, 0
-	db $10, $20, $24, $20 | (1 << 7)
-	db $10, $20, $24, $20 | (1 << 7)
+	db $80, $18, 0
+	db $10, $20 | (1 << 7), $24, $20
+	db $10, $20 | (1 << 7), $24, $20
 
 	; Marshbadge
-	db $80, $18, 0
-	db $14, $20, $24, $20 | (1 << 7)
-	db $14, $20, $24, $20 | (1 << 7)
+	db $80, $38, 0
+	db $14, $20 | (1 << 7), $24, $20
+	db $14, $20 | (1 << 7), $24, $20
 
 	; Volcanobadge
 	db $80, $58, 0
-	db $18, $20, $24, $20 | (1 << 7)
-	db $18, $20, $24, $20 | (1 << 7)
+	db $18, $20 | (1 << 7), $24, $20
+	db $18, $20 | (1 << 7), $24, $20
 
 	; Earthbadge
 	; X-flips on alternate cycles.
 	db $80, $78, 0
-	db $1c,            $20, $24, $20 | (1 << 7)
-	db $1c | (1 << 7), $20, $24, $20 | (1 << 7)
+	db $1c,            $20 | (1 << 7), $24, $20
+	db $1c | (1 << 7), $20 | (1 << 7), $24, $20
 
 CardStatusGFX: INCBIN "gfx/trainer_card/card_status.2bpp"
 

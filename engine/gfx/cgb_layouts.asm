@@ -629,16 +629,16 @@ _CGB_TrainerCard:
 	ld a, BURGLAR ; Enby
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
-	ld a, LT_SURGE
+	ld a, BROCK
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
-	ld a, ERIKA
+	ld a, LT_SURGE ; ERIKA / LT SURGE
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
 	ld a, KOGA
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
-	ld a, SABRINA
+	ld a, MISTY
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
 	ld a, BLAINE
@@ -647,9 +647,10 @@ _CGB_TrainerCard:
 	ld a, BLAINE
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
-	ld a, PREDEFPAL_CGB_BADGE
-	call GetPredefPal
-	call LoadHLPaletteIntoDE
+	ld hl, .BadgePalettes
+	ld bc, 8 palettes
+	ld a, BANK(wOBPals1)
+	call FarCopyWRAM
 
 	; fill screen with gender-based palette for the card border
 	hlcoord 0, 0, wAttrmap
@@ -685,37 +686,33 @@ _CGB_TrainerCard:
 	ld a, $1 ; green
 .got_gender2
 	call FillBoxCGB
-	hlcoord 3, 10, wAttrmap
-	lb bc, 3, 3
-	ld a, $1 ; falkner
+	hlcoord 2, 11, wAttrmap
+	lb bc, 2, 4
+	ld a, $3 ; brock
 	call FillBoxCGB
-	hlcoord 7, 10, wAttrmap
-	lb bc, 3, 3
-	ld a, $2 ; bugsy
+	hlcoord 6, 11, wAttrmap
+	lb bc, 2, 4
+	ld a, $6 ; misty
 	call FillBoxCGB
-	hlcoord 11, 10, wAttrmap
-	lb bc, 3, 3
-	ld a, $3 ; whitney
+	hlcoord 10, 11, wAttrmap
+	lb bc, 2, 4
+	ld a, $4 ; lt.surge
 	call FillBoxCGB
-	hlcoord 15, 10, wAttrmap
-	lb bc, 3, 3
-	ld a, $4 ; morty
+	hlcoord 14, 11, wAttrmap
+	lb bc, 2, 4
+	ld a, $4 ; erika
 	call FillBoxCGB
-	hlcoord 3, 13, wAttrmap
-	lb bc, 3, 3
-	ld a, $5 ; chuck
+	hlcoord 2, 14, wAttrmap
+	lb bc, 2, 4
+	ld a, $5 ; koga
 	call FillBoxCGB
-	hlcoord 7, 13, wAttrmap
-	lb bc, 3, 3
-	ld a, $6 ; jasmine
+	hlcoord 6, 14, wAttrmap
+	lb bc, 2, 4
+	ld a, $0 ; sabrina / red
 	call FillBoxCGB
-	hlcoord 11, 13, wAttrmap
-	lb bc, 3, 3
-	ld a, $7 ; pryce
-	call FillBoxCGB
-	hlcoord 15, 13, wAttrmap
-	lb bc, 3, 3
-	ld a, $1 ; clair
+	hlcoord 10, 14, wAttrmap
+	lb bc, 2, 4
+	ld a, $7 ; blaine
 	call FillBoxCGB
 	; top-right corner still uses the border's palette
 	ld a, [wPlayerGender]
@@ -738,6 +735,9 @@ _CGB_TrainerCard:
 	ld a, TRUE
 	ldh [hCGBPalUpdate], a
 	ret
+	
+.BadgePalettes:
+INCLUDE "gfx/trainer_card/badges.pal"
 
 _CGB_MoveList:
 	ld de, wBGPals1
