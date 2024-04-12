@@ -479,7 +479,6 @@ DiglettFrontpic:     INCBIN "gfx/pokemon/diglett/front.animated.2bpp.lz"
 OfficerPic:          INCBIN "gfx/trainers/officer.2bpp.lz"
 MukBackpic:          INCBIN "gfx/pokemon/muk/back.2bpp.lz"
 DelibirdBackpic:     INCBIN "gfx/pokemon/delibird/back.2bpp.lz"
-SabrinaPic:          INCBIN "gfx/trainers/sabrina.2bpp.lz"
 MagikarpBackpic:     INCBIN "gfx/pokemon/magikarp/back.2bpp.lz"
 AriadosBackpic:      INCBIN "gfx/pokemon/ariados/back.2bpp.lz"
 SneaselBackpic:      INCBIN "gfx/pokemon/sneasel/back.2bpp.lz"
@@ -730,6 +729,7 @@ AerodactylFossilPic: INCBIN "gfx/trainers/aerodactyl_fossil.2bpp.lz"
 
 SECTION "Pics 22", ROMX
 ENBYPic: INCBIN "gfx/trainers/enby.2bpp.lz"
+SabrinaPic:          INCBIN "gfx/trainers/sabrina.2bpp.lz"
 
 SECTION "Pics 23", ROMX
 MysticalmanPic:      INCBIN "gfx/trainers/mysticalman.2bpp.lz"
