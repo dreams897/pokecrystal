@@ -3038,7 +3038,7 @@ wMooMooBerries:: db
 wUndergroundSwitchPositions:: db
 wFarfetchdPosition:: db
 
-	ds 13
+	ds 1
 
 ; map scene ids
 wPokecenter2FSceneID::                            db
@@ -3259,7 +3259,7 @@ wPlayerMonSelection:: ds 3
 wdc5f:: db
 wdc60:: db
 
-	ds 18
+	ds 4
 
 wStepCount:: db
 wPoisonStepCount:: db
