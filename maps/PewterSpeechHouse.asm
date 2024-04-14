@@ -56,18 +56,17 @@ PewterSpeechHouseYoungsterText:
 	done
 	
 PewterSpeechHouseCooltrainerText:
-	text "Berries can be"
-	line "given to #MON"
-	cont "depending on"
-	cont "their status."
-
+	text "#MON can be fed"
+	line "a BERRY based on"
+	cont "their STATUS."
+	
 	para "But, I'm no"
 	line "expert!"
 	
-	para "There's a man"
-	line "in Cerulean who"
-	cont "knows all about"
-	cont "Berry Trees."
+	para "There's a man in"
+	line "CERULEAN who knows"
+	cont "everything about"
+	cont "BERRY trees."
 	done
 
 PewterSpeechHouse_MapEvents:
