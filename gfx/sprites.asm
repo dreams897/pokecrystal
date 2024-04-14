@@ -130,5 +130,11 @@ HikerSpriteGFX::               INCBIN "gfx/sprites/hiker.2bpp"
 JamesSpriteGFX::               INCBIN "gfx/sprites/james.2bpp"
 JessieSpriteGFX::              INCBIN "gfx/sprites/jessie.2bpp"
 FossilSpriteGFX::              INCBIN "gfx/sprites/fossil.2bpp"
+BaldingGuySpriteGFX::          INCBIN "gfx/sprites/balding_guy.2bpp"
+ChannelerSpriteGFX::           INCBIN "gfx/sprites/channeler.2bpp"
+CookSpriteGFX::                INCBIN "gfx/sprites/cook.2bpp"
+SafariZoneWorkerSpriteGFX::    INCBIN "gfx/sprites/safari_zone_worker.2bpp"
+
+
 
 

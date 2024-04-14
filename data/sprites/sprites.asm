@@ -130,4 +130,8 @@ OverworldSprites:
 	overworld_sprite HikerSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite JamesSpriteGFX, 12, WALKING_SPRITE, PAL_OW_PURPLE
 	overworld_sprite JessieSpriteGFX, 12, WALKING_SPRITE, PAL_OW_PURPLE
+	overworld_sprite BaldingGuySpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
+	overworld_sprite ChannelerSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
+	overworld_sprite CookSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
+	overworld_sprite SafariZoneWorkerSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
 	assert_table_length NUM_OVERWORLD_SPRITES

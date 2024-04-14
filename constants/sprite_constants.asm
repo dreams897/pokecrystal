@@ -104,27 +104,31 @@
 	const SPRITE_SUICUNE ; 63
 	const SPRITE_ENTEI ; 64
 	const SPRITE_RAIKOU ; 65
-	const SPRITE_OLD_AMBER; 66
+	const SPRITE_OLD_AMBER; added
 	const SPRITE_GAMBLER_ASLEEP ; 67
 	const SPRITE_TOWN_MAP       ; Added
 	const SPRITE_CLIPBOARD ; Added
 	const SPRITE_BENCH_GUY ; Added
-	const SPRITE_GIRL ; 68
-	const SPRITE_WAITER ; 69
-	const SPRITE_LITTLE_GIRL ; 70
-	const SPRITE_LITTLE_BOY ; 71
-	const SPRITE_WARDEN ; 72
-	const SPRITE_GUARD ; 73
-	const SPRITE_SILPH_PRESIDENT ; 74
-	const SPRITE_GIOVANNI ; 75
-	const SPRITE_SILPH_WORKER_F ; 76
-	const SPRITE_SILPH_WORKER_M ; 77
+	const SPRITE_GIRL ; added
+	const SPRITE_WAITER ; added
+	const SPRITE_LITTLE_GIRL ; added
+	const SPRITE_LITTLE_BOY ; added
+	const SPRITE_WARDEN ; added
+	const SPRITE_GUARD ; added
+	const SPRITE_SILPH_PRESIDENT ; added
+	const SPRITE_GIOVANNI ; added
+	const SPRITE_SILPH_WORKER_F ; added
+	const SPRITE_SILPH_WORKER_M ; added
 	const SPRITE_ENBY           ; 78
 	const SPRITE_ENBY_BIKE      ; 79
-	const SPRITE_GYM_GUIDE_KANTO ; 80
-	const SPRITE_HIKER ; 81
-	const SPRITE_JAMES ; 82
-	const SPRITE_JESSIE ; 83
+	const SPRITE_GYM_GUIDE_KANTO ; added
+	const SPRITE_HIKER ; added
+	const SPRITE_JAMES ; added
+	const SPRITE_JESSIE ; added
+	const SPRITE_BALDING_GUY ; added
+	const SPRITE_CHANNELER ; added
+	const SPRITE_COOK ; added
+	const SPRITE_SAFARI_ZONE_WORKER ; added
 	
 DEF NUM_OVERWORLD_SPRITES EQU const_value - 1
 
