@@ -1,6 +1,6 @@
 	object_const_def
-	const VIRIDIANNICKNAMESPEECHHOUSE_POKEFAN_M
-	const VIRIDIANNICKNAMESPEECHHOUSE_LASS
+	const VIRIDIANNICKNAMESPEECHHOUSE_BALDING_GUY
+	const VIRIDIANNICKNAMESPEECHHOUSE_LITTLE_GIRL
 	const VIRIDIANNICKNAMESPEECHHOUSE_SPEARY
 	const VIRIDIANNICKNAMESPEECHHOUSE_RATTEY
 
@@ -60,6 +60,8 @@ ViridianNicknameHouseSpearowText:
 ViridianNicknameHouseSpearySignText:
 	text "SPEAROW"
 	line "Name: SPEARY"
+	para "RATTATA"
+	line "Name: RATTEY"
 	done
 
 
@@ -75,8 +77,8 @@ ViridianNicknameSpeechHouse_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  5,  3, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ViridianNicknameHouseBaldingGuyScript, -1
-	object_event  1,  4, SPRITE_LITTLE_GIRL, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ViridianNicknameHouseLittleGirlScript, -1
+	object_event  5,  3, SPRITE_BALDING_GUY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ViridianNicknameHouseBaldingGuyScript, -1
+	object_event  1,  4, SPRITE_LITTLE_GIRL, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ViridianNicknameHouseLittleGirlScript, -1
 	object_event  5,  5, SPRITE_MOLTRES, SPRITEMOVEDATA_POKEMON, 2, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Speary, -1
 	object_event  6,  3, SPRITE_GROWLITHE, SPRITEMOVEDATA_POKEMON, 2, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Rattey, -1
 	object_event  4,  0, SPRITE_CLIPBOARD, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ViridianNicknameHouseSpearySignScript, -1
