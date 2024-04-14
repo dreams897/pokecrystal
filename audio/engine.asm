@@ -605,11 +605,11 @@ PlayDanger:
 	jr c, .noreset
 	add 2
 .noreset
-	; Make sure the danger sound is kept on
 	add e
 	jr nz, .load
 	dec a
 .load
+	ld [wLowHealthAlarm], a
 
 	; Enable channel 1 if it's off
 	ld a, [wSoundOutput]
