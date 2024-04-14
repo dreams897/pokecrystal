@@ -278,6 +278,8 @@ GymStatue_CityGymText:
 	text_ram wStringBuffer3
 	text_start
 	line "#MON GYM"
+	para "WINNING TRAINERS:"
+	line "<RIVAL>"
 	done
 
 GymStatue_WinningTrainersText:
@@ -286,6 +288,7 @@ GymStatue_WinningTrainersText:
 	text_start
 	para "WINNING TRAINERS:"
 	line "<PLAYER>"
+	line "<RIVAL>"
 	done
 
 CoinVendor_WelcomeText:
