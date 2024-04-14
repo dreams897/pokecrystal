@@ -50,27 +50,27 @@ TrainerPokemaniacBrent:
 	trainer POKEMANIAC, BRENT1, EVENT_BEAT_POKEMANIAC_BRENT, PokemaniacBrentSeenText, PokemaniacBrentBeatenText, 0, .Script
 
 .Script:
-	loadvar VAR_CALLERID, PHONE_POKEMANIAC_BRENT
+	loadvar VAR_CALLERID, PAGER_POKEMANIAC_BRENT
 	endifjustbattled
 	opentext
 	checkflag ENGINE_BRENT_READY_FOR_REMATCH
 	iftrue .WantsBattle
-	checkcellnum PHONE_POKEMANIAC_BRENT
+	checkcellnum PAGER_POKEMANIAC_BRENT
 	iftrue .NumberAccepted
-	checkevent EVENT_BRENT_ASKED_FOR_PHONE_NUMBER
+	checkevent EVENT_BRENT_ASKED_FOR_PAGER_NUMBER
 	iftrue .AskedAlready
 	writetext PokemaniacBrentAfterBattleText
 	promptbutton
-	setevent EVENT_BRENT_ASKED_FOR_PHONE_NUMBER
+	setevent EVENT_BRENT_ASKED_FOR_PAGER_NUMBER
 	scall .AskNumber1
 	sjump .AskForNumber
 
 .AskedAlready:
 	scall .AskNumber2
 .AskForNumber:
-	askforphonenumber PHONE_POKEMANIAC_BRENT
-	ifequal PHONE_CONTACTS_FULL, .PhoneFull
-	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
+	askforpagernumber PAGER_POKEMANIAC_BRENT
+	ifequal PAGER_CONTACTS_FULL, .PagerFull
+	ifequal PAGER_CONTACT_REFUSED, .NumberDeclined
 	gettrainername STRING_BUFFER_3, POKEMANIAC, BRENT1
 	scall .RegisteredNumber
 	sjump .NumberAccepted
@@ -143,8 +143,8 @@ TrainerPokemaniacBrent:
 	jumpstd NumberDeclinedMScript
 	end
 
-.PhoneFull:
-	jumpstd PhoneFullMScript
+.PagerFull:
+	jumpstd PagerFullMScript
 	end
 
 .Rematch:
@@ -177,31 +177,31 @@ TrainerPicnickerTiffany:
 	trainer PICNICKER, TIFFANY3, EVENT_BEAT_PICNICKER_TIFFANY, PicnickerTiffanySeenText, PicnickerTiffanyBeatenText, 0, .Script
 
 .Script:
-	loadvar VAR_CALLERID, PHONE_PICNICKER_TIFFANY
+	loadvar VAR_CALLERID, PAGER_PICNICKER_TIFFANY
 	endifjustbattled
 	opentext
 	checkflag ENGINE_TIFFANY_READY_FOR_REMATCH
 	iftrue .WantsBattle
 	checkflag ENGINE_TIFFANY_HAS_PINK_BOW
 	iftrue .HasPinkBow
-	checkcellnum PHONE_PICNICKER_TIFFANY
+	checkcellnum PAGER_PICNICKER_TIFFANY
 	iftrue .NumberAccepted
 	checkpoke CLEFAIRY
 	iffalse .NoClefairy
-	checkevent EVENT_TIFFANY_ASKED_FOR_PHONE_NUMBER
+	checkevent EVENT_TIFFANY_ASKED_FOR_PAGER_NUMBER
 	iftrue .AskedAlready
 	writetext PicnickerTiffanyWantsPicnicText
 	promptbutton
-	setevent EVENT_TIFFANY_ASKED_FOR_PHONE_NUMBER
+	setevent EVENT_TIFFANY_ASKED_FOR_PAGER_NUMBER
 	scall .AskNumber1
 	sjump .AskForNumber
 
 .AskedAlready:
 	scall .AskNumber2
 .AskForNumber:
-	askforphonenumber PHONE_PICNICKER_TIFFANY
-	ifequal PHONE_CONTACTS_FULL, .PhoneFull
-	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
+	askforpagernumber PAGER_PICNICKER_TIFFANY
+	ifequal PAGER_CONTACTS_FULL, .PagerFull
+	ifequal PAGER_CONTACT_REFUSED, .NumberDeclined
 	gettrainername STRING_BUFFER_3, PICNICKER, TIFFANY3
 	scall .RegisteredNumber
 	sjump .NumberAccepted
@@ -289,8 +289,8 @@ TrainerPicnickerTiffany:
 	jumpstd NumberDeclinedFScript
 	end
 
-.PhoneFull:
-	jumpstd PhoneFullFScript
+.PagerFull:
+	jumpstd PagerFullFScript
 	end
 
 .Rematch:

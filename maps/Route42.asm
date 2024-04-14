@@ -38,29 +38,29 @@ TrainerFisherTully:
 	trainer FISHER, TULLY1, EVENT_BEAT_FISHER_TULLY, FisherTullySeenText, FisherTullyBeatenText, 0, .Script
 
 .Script:
-	loadvar VAR_CALLERID, PHONE_FISHER_TULLY
+	loadvar VAR_CALLERID, PAGER_FISHER_TULLY
 	endifjustbattled
 	opentext
 	checkflag ENGINE_TULLY_READY_FOR_REMATCH
 	iftrue .WantsBattle
 	checkflag ENGINE_TULLY_HAS_WATER_STONE
 	iftrue .HasWaterStone
-	checkcellnum PHONE_FISHER_TULLY
+	checkcellnum PAGER_FISHER_TULLY
 	iftrue .NumberAccepted
-	checkevent EVENT_TULLY_ASKED_FOR_PHONE_NUMBER
+	checkevent EVENT_TULLY_ASKED_FOR_PAGER_NUMBER
 	iftrue .AskedAlready
 	writetext FisherTullyAfterBattleText
 	promptbutton
-	setevent EVENT_TULLY_ASKED_FOR_PHONE_NUMBER
+	setevent EVENT_TULLY_ASKED_FOR_PAGER_NUMBER
 	scall .AskNumber1
 	sjump .AskForNumber
 
 .AskedAlready:
 	scall .AskNumber2
 .AskForNumber:
-	askforphonenumber PHONE_FISHER_TULLY
-	ifequal PHONE_CONTACTS_FULL, .PhoneFull
-	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
+	askforpagernumber PAGER_FISHER_TULLY
+	ifequal PAGER_CONTACTS_FULL, .PagerFull
+	ifequal PAGER_CONTACT_REFUSED, .NumberDeclined
 	gettrainername STRING_BUFFER_3, FISHER, TULLY1
 	scall .RegisteredNumber
 	sjump .NumberAccepted
@@ -143,8 +143,8 @@ TrainerFisherTully:
 	jumpstd NumberDeclinedMScript
 	end
 
-.PhoneFull:
-	jumpstd PhoneFullMScript
+.PagerFull:
+	jumpstd PagerFullMScript
 	end
 
 .Rematch:

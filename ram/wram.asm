@@ -750,11 +750,11 @@ endc
 
 NEXTU
 ; pokegear
-wPokegearPhoneDisplayPosition:: db
-wPokegearPhoneCursorPosition:: db
-wPokegearPhoneScrollPosition:: db
-wPokegearPhoneSelectedPerson:: db
-wPokegearPhoneSubmenuCursor:: db
+wPokegearPagerDisplayPosition:: db
+wPokegearPagerCursorPosition:: db
+wPokegearPagerScrollPosition:: db
+wPokegearPagerSelectedPerson:: db
+wPokegearPagerSubmenuCursor:: db
 wPokegearMapCursorObjectPointer:: dw
 wPokegearMapCursorLandmark:: db
 wPokegearMapPlayerIconLandmark:: db
@@ -1911,9 +1911,9 @@ ENDU
 
 SECTION UNION "Miscellaneous WRAM 1", WRAMX
 
-; phone call data
-wPhoneScriptBank:: db
-wPhoneCaller:: dw
+; pager call data
+wPagerScriptBank:: db
+wPagerPager:: dw
 
 
 SECTION UNION "Miscellaneous WRAM 1", WRAMX
@@ -2218,16 +2218,16 @@ NEXTU
 wJumpStdScriptBuffer:: ds 3
 
 NEXTU
-; phone script data
+; pager script data
 wCheckedTime:: db
-wPhoneListIndex:: db
-wNumAvailableCallers:: db
-wAvailableCallers:: ds CONTACT_LIST_SIZE
+wPagerListIndex:: db
+wNumAvailablePagers:: db
+wAvailablePagers:: ds CONTACT_LIST_SIZE
 
 NEXTU
-; phone caller contact
+; pager caller contact
 	ds 1
-wCallerContact:: ds PHONE_CONTACT_SIZE
+wPagerContact:: ds PAGER_CONTACT_SIZE
 
 NEXTU
 ; backup menu data
@@ -2610,7 +2610,7 @@ wd1f3:: ds 1
 NEXTU
 ; miscellaneous bytes
 wSkipMovesBeforeLevelUp::
-wRegisteredPhoneNumbers::
+wRegisteredPagerNumbers::
 wListMovesLineSpacing:: db
 wSwitchMonTo:: db
 wSwitchMonFrom:: db
@@ -3018,7 +3018,7 @@ wPCItems:: ds MAX_PC_ITEMS * 2 + 1
 wPokegearFlags::
 ; bit 0: map
 ; bit 1: radio
-; bit 2: phone
+; bit 2: pager
 ; bit 3: expn
 ; bit 7: on/off
 	db
@@ -3192,7 +3192,7 @@ wBikeFlags::
 
 wCurMapSceneScriptPointer:: dw
 
-wCurCaller:: dw
+wCurPager:: dw
 wCurMapWarpEventCount:: db
 wCurMapWarpEventsPointer:: dw
 wCurMapCoordEventCount:: db
@@ -3237,7 +3237,7 @@ wFruitTreeFlags:: flag_array NUM_FRUIT_TREES
 
 wLuckyNumberDayTimer:: dw
 	ds 2
-wSpecialPhoneCallID:: db
+wSpecialPagerCallID:: db
 	ds 3
 wBugContestStartTime:: ds 4 ; day, hour, min, sec
 wUnusedTwoDayTimerOn:: db
@@ -3250,8 +3250,8 @@ wdc42:: ds 8
 wBuenasPassword:: db
 wBlueCardBalance:: db
 wDailyRematchFlags:: ds 4
-wDailyPhoneItemFlags:: ds 4
-wDailyPhoneTimeOfDayFlags:: ds 4
+wDailyPagerItemFlags:: ds 4
+wDailyPagerTimeOfDayFlags:: ds 4
 wKenjiBreakTimer:: ds 2 ; Kenji
 wYanmaMapGroup:: db
 wYanmaMapNumber:: db
@@ -3271,7 +3271,7 @@ wParkBallsRemaining::
 wSafariBallsRemaining:: db
 wSafariTimeRemaining:: dw
 
-wPhoneList:: ds CONTACT_LIST_SIZE + 1
+wPagerList:: ds CONTACT_LIST_SIZE + 1
 
 	ds 22
 

@@ -1032,14 +1032,14 @@ Sfx_Fanfare:
 	channel 6, Sfx_Fanfare_Ch6
 	channel 8, Sfx_Fanfare_Ch8
 
-Sfx_RegisterPhoneNumber:
+Sfx_RegisterPagerNumber:
 	channel_count 4
-	channel 5, Sfx_RegisterPhoneNumber_Ch5
-	channel 6, Sfx_RegisterPhoneNumber_Ch6
-	channel 7, Sfx_RegisterPhoneNumber_Ch7
-	channel 8, Sfx_RegisterPhoneNumber_Ch8
+	channel 5, Sfx_RegisterPagerNumber_Ch5
+	channel 6, Sfx_RegisterPagerNumber_Ch6
+	channel 7, Sfx_RegisterPagerNumber_Ch7
+	channel 8, Sfx_RegisterPagerNumber_Ch8
 
-Sfx_RegisterPhoneNumber_Ch5:
+Sfx_RegisterPagerNumber_Ch5:
 	toggle_sfx
 	tempo 124
 	volume 7, 7
@@ -1065,7 +1065,7 @@ Sfx_RegisterPhoneNumber_Ch5:
 
 	toggle_sfx ; unused
 
-Sfx_RegisterPhoneNumber_Ch6:
+Sfx_RegisterPagerNumber_Ch6:
 	toggle_sfx
 	duty_cycle 3
 	note_type 12, 12, 2
@@ -1089,7 +1089,7 @@ Sfx_RegisterPhoneNumber_Ch6:
 
 	toggle_sfx ; unused
 
-Sfx_RegisterPhoneNumber_Ch7:
+Sfx_RegisterPagerNumber_Ch7:
 	toggle_sfx
 	note_type 12, 2, 5
 	rest 2
@@ -1110,7 +1110,7 @@ Sfx_RegisterPhoneNumber_Ch7:
 
 	toggle_sfx ; unused
 
-Sfx_RegisterPhoneNumber_Ch8:
+Sfx_RegisterPagerNumber_Ch8:
 	toggle_sfx
 	sfx_toggle_noise 4
 	drum_speed 12

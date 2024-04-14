@@ -22,25 +22,25 @@ TrainerSailorHuey:
 	trainer SAILOR, HUEY1, EVENT_BEAT_SAILOR_HUEY, SailorHueySeenText, SailorHueyBeatenText, 0, .Script
 
 .Script:
-	loadvar VAR_CALLERID, PHONE_SAILOR_HUEY
+	loadvar VAR_CALLERID, PAGER_SAILOR_HUEY
 	endifjustbattled
 	opentext
 	checkflag ENGINE_HUEY_READY_FOR_REMATCH
 	iftrue .WantsBattle
-	checkcellnum PHONE_SAILOR_HUEY
+	checkcellnum PAGER_SAILOR_HUEY
 	iftrue .NumberAccepted
-	checkevent EVENT_HUEY_ASKED_FOR_PHONE_NUMBER
+	checkevent EVENT_HUEY_ASKED_FOR_PAGER_NUMBER
 	iftrue .AskedBefore
-	setevent EVENT_HUEY_ASKED_FOR_PHONE_NUMBER
+	setevent EVENT_HUEY_ASKED_FOR_PAGER_NUMBER
 	scall .AskNumber1
 	sjump .AskForNumber
 
 .AskedBefore:
 	scall .AskNumber2
 .AskForNumber:
-	askforphonenumber PHONE_SAILOR_HUEY
-	ifequal PHONE_CONTACTS_FULL, .PhoneFull
-	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
+	askforpagernumber PAGER_SAILOR_HUEY
+	ifequal PAGER_CONTACTS_FULL, .PagerFull
+	ifequal PAGER_CONTACT_REFUSED, .NumberDeclined
 	gettrainername STRING_BUFFER_3, SAILOR, HUEY1
 	scall .RegisteredNumber
 	sjump .NumberAccepted
@@ -134,8 +134,8 @@ TrainerSailorHuey:
 	jumpstd NumberDeclinedMScript
 	end
 
-.PhoneFull:
-	jumpstd PhoneFullMScript
+.PagerFull:
+	jumpstd PagerFullMScript
 	end
 
 .Rematch:

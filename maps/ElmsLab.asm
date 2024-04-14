@@ -104,7 +104,7 @@ ElmCheckEverstone:
 	iftrue ElmScript_CallYou
 	checkevent EVENT_SHOWED_TOGEPI_TO_ELM
 	iftrue ElmGiveEverstoneScript
-	checkevent EVENT_TOLD_ELM_ABOUT_TOGEPI_OVER_THE_PHONE
+	checkevent EVENT_TOLD_ELM_ABOUT_TOGEPI_OVER_THE_PAGER
 	iffalse ElmCheckTogepiEgg
 	setval TOGEPI
 	special FindPartyMonThatSpeciesYourTrainerID
@@ -254,10 +254,10 @@ ElmDirectionsScript:
 	writetext ElmDirectionsText1
 	waitbutton
 	closetext
-	addcellnum PHONE_ELM
+	addcellnum PAGER_ELM
 	opentext
 	writetext GotElmsNumberText
-	playsound SFX_REGISTER_PHONE_NUMBER
+	playsound SFX_REGISTER_PAGER_NUMBER
 	waitsfx
 	waitbutton
 	closetext
@@ -909,7 +909,7 @@ ElmDirectionsText1:
 	line "can't miss it."
 
 	para "But just in case,"
-	line "here's my phone"
+	line "here's my pager"
 
 	para "number. Call me if"
 	line "anything comes up!"
@@ -933,7 +933,7 @@ ElmDirectionsText3:
 
 GotElmsNumberText:
 	text "<PLAYER> got ELM's"
-	line "phone number."
+	line "pager number."
 	done
 
 ElmDescribesMrPokemonText:

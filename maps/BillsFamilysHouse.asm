@@ -68,16 +68,16 @@ BillsMomScript:
 BillsSisterScript:
 	faceplayer
 	opentext
-	checkcellnum PHONE_BILL
+	checkcellnum PAGER_BILL
 	iftrue .GotBillsNumber
 	writetext BillsSisterUsefulNumberText
-	askforphonenumber PHONE_BILL
-	ifequal PHONE_CONTACTS_FULL, .NoRoom
-	ifequal PHONE_CONTACT_REFUSED, .Refused
+	askforpagernumber PAGER_BILL
+	ifequal PAGER_CONTACTS_FULL, .NoRoom
+	ifequal PAGER_CONTACT_REFUSED, .Refused
 	waitsfx
-	addcellnum PHONE_BILL
+	addcellnum PAGER_BILL
 	writetext RecordedBillsNumberText
-	playsound SFX_REGISTER_PHONE_NUMBER
+	playsound SFX_REGISTER_PAGER_NUMBER
 	waitsfx
 	promptbutton
 .GotBillsNumber:
@@ -93,7 +93,7 @@ BillsSisterScript:
 	end
 
 .NoRoom:
-	writetext BillsSisterPhoneFullText
+	writetext BillsSisterPagerFullText
 	promptbutton
 	sjump .Refused
 
@@ -208,7 +208,7 @@ BillsSisterUsefulNumberText:
 	text "Are you a trainer?"
 
 	para "I've got a useful"
-	line "phone number for"
+	line "pager number for"
 	cont "you."
 	done
 
@@ -227,7 +227,7 @@ BillsSisterRefusedNumberText:
 	cont "number…"
 	done
 
-BillsSisterPhoneFullText:
+BillsSisterPagerFullText:
 	text "You can't record"
 	line "any more numbers."
 	done

@@ -30,11 +30,11 @@ DEF STRING_BUFFER_LENGTH EQU 19
 	const POKEMAIL_NO_MAIL    ; 3
 	const POKEMAIL_LAST_MON   ; 4
 
-; askforphonenumber return values
+; askforpagernumber return values
 	const_def
-	const PHONE_CONTACT_GOT     ; 0
-	const PHONE_CONTACTS_FULL   ; 1
-	const PHONE_CONTACT_REFUSED ; 2
+	const PAGER_CONTACT_GOT     ; 0
+	const PAGER_CONTACTS_FULL   ; 1
+	const PAGER_CONTACT_REFUSED ; 2
 
 ; trainertext arguments
 	const_def
@@ -65,7 +65,7 @@ DEF STRING_BUFFER_LENGTH EQU 19
 	const VAR_CONTESTMINUTES   ; 11
 	const VAR_XCOORD           ; 12
 	const VAR_YCOORD           ; 13
-	const VAR_SPECIALPHONECALL ; 14
+	const VAR_SPECIALPAGERCALL ; 14
 	const VAR_BT_WIN_STREAK    ; 15
 	const VAR_KURT_APRICORNS   ; 16
 	const VAR_CALLERID         ; 17

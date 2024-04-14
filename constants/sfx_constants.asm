@@ -147,7 +147,7 @@
 	const SFX_LEVEL_UP                    ; 90
 	const SFX_KEY_ITEM                    ; 91
 	const SFX_FANFARE_2                   ; 92
-	const SFX_REGISTER_PHONE_NUMBER       ; 93
+	const SFX_REGISTER_PAGER_NUMBER       ; 93
 	const SFX_3RD_PLACE                   ; 94
 	const SFX_GET_EGG_UNUSED              ; 95
 	const SFX_GET_EGG                     ; 96

@@ -15,29 +15,29 @@ TrainerHikerAnthony:
 	trainer HIKER, ANTHONY2, EVENT_BEAT_HIKER_ANTHONY, HikerAnthony2SeenText, HikerAnthony2BeatenText, 0, .Script
 
 .Script:
-	loadvar VAR_CALLERID, PHONE_HIKER_ANTHONY
+	loadvar VAR_CALLERID, PAGER_HIKER_ANTHONY
 	endifjustbattled
 	opentext
 	checkflag ENGINE_ANTHONY_READY_FOR_REMATCH
 	iftrue .Rematch
 	checkflag ENGINE_DUNSPARCE_SWARM
 	iftrue .Swarm
-	checkcellnum PHONE_HIKER_ANTHONY
+	checkcellnum PAGER_HIKER_ANTHONY
 	iftrue .NumberAccepted
-	checkevent EVENT_ANTHONY_ASKED_FOR_PHONE_NUMBER
+	checkevent EVENT_ANTHONY_ASKED_FOR_PAGER_NUMBER
 	iftrue .AskAgain
 	writetext HikerAnthony2AfterText
 	promptbutton
-	setevent EVENT_ANTHONY_ASKED_FOR_PHONE_NUMBER
+	setevent EVENT_ANTHONY_ASKED_FOR_PAGER_NUMBER
 	scall .AskNumber1
-	sjump .AskForPhoneNumber
+	sjump .AskForPagerNumber
 
 .AskAgain:
 	scall .AskNumber2
-.AskForPhoneNumber:
-	askforphonenumber PHONE_HIKER_ANTHONY
-	ifequal PHONE_CONTACTS_FULL, .PhoneFull
-	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
+.AskForPagerNumber:
+	askforpagernumber PAGER_HIKER_ANTHONY
+	ifequal PAGER_CONTACTS_FULL, .PagerFull
+	ifequal PAGER_CONTACT_REFUSED, .NumberDeclined
 	gettrainername STRING_BUFFER_3, HIKER, ANTHONY2
 	scall .RegisteredNumber
 	sjump .NumberAccepted
@@ -128,8 +128,8 @@ TrainerHikerAnthony:
 	jumpstd NumberDeclinedMScript
 	end
 
-.PhoneFull:
-	jumpstd PhoneFullMScript
+.PagerFull:
+	jumpstd PagerFullMScript
 	end
 
 .RematchStd:

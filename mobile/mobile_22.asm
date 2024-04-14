@@ -2,7 +2,7 @@ String_89116:
 	db "-----@"
 
 String_8911c:
-	db   "でんわばんごうが　ただしく" ; Phone number is not
+	db   "でんわばんごうが　ただしく" ; Pager number is not
 	next "はいって　いません！@"   ; entered correctly!
 
 String_89135:

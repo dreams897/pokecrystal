@@ -20,27 +20,27 @@ TrainerBirdKeeperVance1:
 	trainer BIRD_KEEPER, VANCE1, EVENT_BEAT_BIRD_KEEPER_VANCE, BirdKeeperVance1SeenText, BirdKeeperVance1BeatenText, 0, .Script
 
 .Script:
-	loadvar VAR_CALLERID, PHONE_BIRDKEEPER_VANCE
+	loadvar VAR_CALLERID, PAGER_BIRDKEEPER_VANCE
 	endifjustbattled
 	opentext
 	checkflag ENGINE_VANCE_READY_FOR_REMATCH
 	iftrue .WantsBattle
-	checkcellnum PHONE_BIRDKEEPER_VANCE
+	checkcellnum PAGER_BIRDKEEPER_VANCE
 	iftrue Route44NumberAcceptedM
-	checkevent EVENT_VANCE_ASKED_FOR_PHONE_NUMBER
+	checkevent EVENT_VANCE_ASKED_FOR_PAGER_NUMBER
 	iftrue .AskedAlready
 	writetext BirdKeeperVanceLegendaryBirdsText
 	promptbutton
-	setevent EVENT_VANCE_ASKED_FOR_PHONE_NUMBER
+	setevent EVENT_VANCE_ASKED_FOR_PAGER_NUMBER
 	scall Route44AskNumber1M
 	sjump .AskForNumber
 
 .AskedAlready:
 	scall Route44AskNumber2M
 .AskForNumber:
-	askforphonenumber PHONE_BIRDKEEPER_VANCE
-	ifequal PHONE_CONTACTS_FULL, Route44PhoneFullM
-	ifequal PHONE_CONTACT_REFUSED, Route44NumberDeclinedM
+	askforpagernumber PAGER_BIRDKEEPER_VANCE
+	ifequal PAGER_CONTACTS_FULL, Route44PagerFullM
+	ifequal PAGER_CONTACT_REFUSED, Route44NumberDeclinedM
 	gettrainername STRING_BUFFER_3, BIRD_KEEPER, VANCE1
 	scall Route44RegisteredNumberM
 	sjump Route44NumberAcceptedM
@@ -122,8 +122,8 @@ Route44NumberDeclinedM:
 	jumpstd NumberDeclinedMScript
 	end
 
-Route44PhoneFullM:
-	jumpstd PhoneFullMScript
+Route44PagerFullM:
+	jumpstd PagerFullMScript
 	end
 
 Route44RematchM:
@@ -162,29 +162,29 @@ TrainerFisherWilton1:
 	trainer FISHER, WILTON1, EVENT_BEAT_FISHER_WILTON, FisherWilton1SeenText, FisherWilton1BeatenText, 0, .Script
 
 .Script:
-	loadvar VAR_CALLERID, PHONE_FISHER_WILTON
+	loadvar VAR_CALLERID, PAGER_FISHER_WILTON
 	endifjustbattled
 	opentext
 	checkflag ENGINE_WILTON_READY_FOR_REMATCH
 	iftrue .WantsBattle
 	checkflag ENGINE_WILTON_HAS_ITEM
 	iftrue .HasItem
-	checkcellnum PHONE_FISHER_WILTON
+	checkcellnum PAGER_FISHER_WILTON
 	iftrue Route44NumberAcceptedM
-	checkevent EVENT_WILTON_ASKED_FOR_PHONE_NUMBER
+	checkevent EVENT_WILTON_ASKED_FOR_PAGER_NUMBER
 	iftrue .AskedAlready
 	writetext FisherWiltonHugePoliwagText
 	promptbutton
-	setevent EVENT_WILTON_ASKED_FOR_PHONE_NUMBER
+	setevent EVENT_WILTON_ASKED_FOR_PAGER_NUMBER
 	scall Route44AskNumber1M
 	sjump .AskForNumber
 
 .AskedAlready:
 	scall Route44AskNumber2M
 .AskForNumber:
-	askforphonenumber PHONE_FISHER_WILTON
-	ifequal PHONE_CONTACTS_FULL, Route44PhoneFullM
-	ifequal PHONE_CONTACT_REFUSED, Route44NumberDeclinedM
+	askforpagernumber PAGER_FISHER_WILTON
+	ifequal PAGER_CONTACTS_FULL, Route44PagerFullM
+	ifequal PAGER_CONTACT_REFUSED, Route44NumberDeclinedM
 	gettrainername STRING_BUFFER_3, FISHER, WILTON1
 	scall Route44RegisteredNumberM
 	sjump Route44NumberAcceptedM

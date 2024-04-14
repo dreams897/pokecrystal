@@ -259,7 +259,7 @@ sTrainerRankingSurf:: ds 3
 sTrainerRankingWaterfall:: ds 3
 sTrainerRankingWhiteOuts:: ds 3
 sTrainerRankingLuckyNumberShow:: ds 3
-sTrainerRankingPhoneCalls:: ds 3
+sTrainerRankingPagerCalls:: ds 3
 sTrainerRankingUnused2:: ds 3
 sTrainerRankingLinkBattles:: ds 3
 sTrainerRankingSplash:: ds 3

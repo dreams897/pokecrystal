@@ -89,9 +89,9 @@ LoadHPBar:
 	ld hl, vTiles2 tile $55
 	lb bc, BANK(ExpBarGFX), 9
 	call Get2bppViaHDMA
-	ld de, MobilePhoneTilesGFX + 7 tiles ; mobile phone icon
+	ld de, MobilePagerTilesGFX + 7 tiles ; mobile pager icon
 	ld hl, vTiles2 tile $5e
-	lb bc, BANK(MobilePhoneTilesGFX), 2
+	lb bc, BANK(MobilePagerTilesGFX), 2
 	call Get2bppViaHDMA
 	ret
 

@@ -809,7 +809,7 @@ Text_BattleReceptionistMobile:
 	line "battle over a GAME"
 
 	para "LINK cable or by"
-	line "mobile phone?"
+	line "mobile pager?"
 	done
 
 Text_TradeReceptionistMobile:
@@ -817,7 +817,7 @@ Text_TradeReceptionistMobile:
 	line "trade over a GAME"
 
 	para "LINK cable or by"
-	line "mobile phone?"
+	line "mobile pager?"
 	done
 
 Text_ThisWayToMobileRoom: ; unreferenced

@@ -22,7 +22,7 @@ Route31VioletGateOfficerText:
 Route31VioletGateCooltrainerFText:
 	text "I came too far"
 	line "out. I'd better"
-	cont "phone home!"
+	cont "pager home!"
 	done
 
 Route31VioletGate_MapEvents:

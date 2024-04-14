@@ -89,29 +89,29 @@ TrainerCamperTodd1:
 	trainer CAMPER, TODD1, EVENT_BEAT_CAMPER_TODD, CamperTodd1SeenText, CamperTodd1BeatenText, 0, .Script
 
 .Script:
-	loadvar VAR_CALLERID, PHONE_CAMPER_TODD
+	loadvar VAR_CALLERID, PAGER_CAMPER_TODD
 	endifjustbattled
 	opentext
 	checkflag ENGINE_TODD_READY_FOR_REMATCH
 	iftrue .Rematch
 	checkflag ENGINE_GOLDENROD_DEPT_STORE_SALE_IS_ON
 	iftrue .SaleIsOn
-	checkcellnum PHONE_CAMPER_TODD
+	checkcellnum PAGER_CAMPER_TODD
 	iftrue .NumberAccepted
-	checkevent EVENT_TODD_ASKED_FOR_PHONE_NUMBER
+	checkevent EVENT_TODD_ASKED_FOR_PAGER_NUMBER
 	iftrue .AskAgain
 	writetext CamperTodd1AfterText
 	promptbutton
-	setevent EVENT_TODD_ASKED_FOR_PHONE_NUMBER
+	setevent EVENT_TODD_ASKED_FOR_PAGER_NUMBER
 	scall .AskNumber
 	sjump .FinishAsk
 
 .AskAgain:
 	scall .AskNumber2
 .FinishAsk:
-	askforphonenumber PHONE_CAMPER_TODD
-	ifequal PHONE_CONTACTS_FULL, .PhoneFull
-	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
+	askforpagernumber PAGER_CAMPER_TODD
+	ifequal PAGER_CONTACTS_FULL, .PagerFull
+	ifequal PAGER_CONTACT_REFUSED, .NumberDeclined
 	gettrainername STRING_BUFFER_3, CAMPER, TODD1
 	scall .RegisteredNumber
 	sjump .NumberAccepted
@@ -202,8 +202,8 @@ TrainerCamperTodd1:
 	jumpstd NumberDeclinedMScript
 	end
 
-.PhoneFull:
-	jumpstd PhoneFullMScript
+.PagerFull:
+	jumpstd PagerFullMScript
 	end
 
 .RematchStd:
@@ -214,29 +214,29 @@ TrainerPicnickerGina1:
 	trainer PICNICKER, GINA1, EVENT_BEAT_PICNICKER_GINA, PicnickerGina1SeenText, PicnickerGina1BeatenText, 0, .Script
 
 .Script:
-	loadvar VAR_CALLERID, PHONE_PICNICKER_GINA
+	loadvar VAR_CALLERID, PAGER_PICNICKER_GINA
 	endifjustbattled
 	opentext
 	checkflag ENGINE_GINA_READY_FOR_REMATCH
 	iftrue .Rematch
 	checkflag ENGINE_GINA_HAS_LEAF_STONE
 	iftrue .LeafStone
-	checkcellnum PHONE_PICNICKER_GINA
+	checkcellnum PAGER_PICNICKER_GINA
 	iftrue .NumberAccepted
-	checkevent EVENT_GINA_ASKED_FOR_PHONE_NUMBER
+	checkevent EVENT_GINA_ASKED_FOR_PAGER_NUMBER
 	iftrue .AskAgain
 	writetext PicnickerGina1AfterText
 	promptbutton
-	setevent EVENT_GINA_ASKED_FOR_PHONE_NUMBER
+	setevent EVENT_GINA_ASKED_FOR_PAGER_NUMBER
 	scall .AskNumber1
 	sjump .FinishAsk
 
 .AskAgain:
 	scall .AskNumber2
 .FinishAsk:
-	askforphonenumber PHONE_PICNICKER_GINA
-	ifequal PHONE_CONTACTS_FULL, .PhoneFull
-	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
+	askforpagernumber PAGER_PICNICKER_GINA
+	ifequal PAGER_CONTACTS_FULL, .PagerFull
+	ifequal PAGER_CONTACT_REFUSED, .NumberDeclined
 	gettrainername STRING_BUFFER_3, PICNICKER, GINA1
 	scall .RegisteredNumber
 	sjump .NumberAccepted
@@ -331,8 +331,8 @@ TrainerPicnickerGina1:
 	jumpstd NumberDeclinedFScript
 	end
 
-.PhoneFull:
-	jumpstd PhoneFullFScript
+.PagerFull:
+	jumpstd PagerFullFScript
 	end
 
 .RematchStd:

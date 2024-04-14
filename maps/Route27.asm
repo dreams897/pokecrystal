@@ -61,29 +61,29 @@ TrainerBirdKeeperJose2:
 	trainer BIRD_KEEPER, JOSE2, EVENT_BEAT_BIRD_KEEPER_JOSE2, BirdKeeperJose2SeenText, BirdKeeperJose2BeatenText, 0, .Script
 
 .Script:
-	loadvar VAR_CALLERID, PHONE_BIRDKEEPER_JOSE
+	loadvar VAR_CALLERID, PAGER_BIRDKEEPER_JOSE
 	endifjustbattled
 	opentext
 	checkflag ENGINE_JOSE_READY_FOR_REMATCH
 	iftrue .WantsBattle
 	checkflag ENGINE_JOSE_HAS_STAR_PIECE
 	iftrue .HasStarPiece
-	checkcellnum PHONE_BIRDKEEPER_JOSE
+	checkcellnum PAGER_BIRDKEEPER_JOSE
 	iftrue .NumberAccepted
-	checkevent EVENT_JOSE_ASKED_FOR_PHONE_NUMBER
+	checkevent EVENT_JOSE_ASKED_FOR_PAGER_NUMBER
 	iftrue .AskedAlready
 	writetext BirdKeeperJose2AfterBattleText
 	promptbutton
-	setevent EVENT_JOSE_ASKED_FOR_PHONE_NUMBER
+	setevent EVENT_JOSE_ASKED_FOR_PAGER_NUMBER
 	scall .AskNumber1
 	sjump .AskForNumber
 
 .AskedAlready:
 	scall .AskNumber2
 .AskForNumber:
-	askforphonenumber PHONE_BIRDKEEPER_JOSE
-	ifequal PHONE_CONTACTS_FULL, .PhoneFull
-	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
+	askforpagernumber PAGER_BIRDKEEPER_JOSE
+	ifequal PAGER_CONTACTS_FULL, .PagerFull
+	ifequal PAGER_CONTACT_REFUSED, .NumberDeclined
 	gettrainername STRING_BUFFER_3, BIRD_KEEPER, JOSE2
 	scall .RegisteredNumber
 	sjump .NumberAccepted
@@ -154,8 +154,8 @@ TrainerBirdKeeperJose2:
 	jumpstd NumberDeclinedMScript
 	end
 
-.PhoneFull:
-	jumpstd PhoneFullMScript
+.PagerFull:
+	jumpstd PagerFullMScript
 	end
 
 .Rematch:
@@ -196,27 +196,27 @@ TrainerCooltrainerfReena:
 	trainer COOLTRAINERF, REENA1, EVENT_BEAT_COOLTRAINERF_REENA, CooltrainerfReenaSeenText, CooltrainerfReenaBeatenText, 0, .Script
 
 .Script:
-	loadvar VAR_CALLERID, PHONE_COOLTRAINERF_REENA
+	loadvar VAR_CALLERID, PAGER_COOLTRAINERF_REENA
 	endifjustbattled
 	opentext
 	checkflag ENGINE_REENA_READY_FOR_REMATCH
 	iftrue .WantsBattle
-	checkcellnum PHONE_COOLTRAINERF_REENA
+	checkcellnum PAGER_COOLTRAINERF_REENA
 	iftrue .NumberAccepted
-	checkevent EVENT_REENA_ASKED_FOR_PHONE_NUMBER
+	checkevent EVENT_REENA_ASKED_FOR_PAGER_NUMBER
 	iftrue .AskedAlready
 	writetext CooltrainerfReenaAfterBattleText
 	promptbutton
-	setevent EVENT_REENA_ASKED_FOR_PHONE_NUMBER
+	setevent EVENT_REENA_ASKED_FOR_PAGER_NUMBER
 	scall .AskNumber1
 	sjump .AskForNumber
 
 .AskedAlready:
 	scall .AskNumber2
 .AskForNumber:
-	askforphonenumber PHONE_COOLTRAINERF_REENA
-	ifequal PHONE_CONTACTS_FULL, .PhoneFull
-	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
+	askforpagernumber PAGER_COOLTRAINERF_REENA
+	ifequal PAGER_CONTACTS_FULL, .PagerFull
+	ifequal PAGER_CONTACT_REFUSED, .NumberDeclined
 	gettrainername STRING_BUFFER_3, COOLTRAINERF, REENA1
 	scall .RegisteredNumber
 	sjump .NumberAccepted
@@ -277,8 +277,8 @@ TrainerCooltrainerfReena:
 	jumpstd NumberDeclinedFScript
 	end
 
-.PhoneFull:
-	jumpstd PhoneFullFScript
+.PagerFull:
+	jumpstd PagerFullFScript
 	end
 
 .Rematch:

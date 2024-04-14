@@ -125,7 +125,7 @@ TeacherHillaryAfterBattleText:
 
 SchoolboyKippSeenText:
 	text "Hang on. I have to"
-	line "phone my mom."
+	line "pager my mom."
 	done
 
 SchoolboyKippBeatenText:
@@ -137,7 +137,7 @@ SchoolboyKippAfterBattleText:
 	text "My mom worries so"
 	line "much about me, I"
 
-	para "have to phone her"
+	para "have to pager her"
 	line "all the time."
 	done
 

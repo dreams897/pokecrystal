@@ -796,7 +796,7 @@ _MobileCardFolderIntro1Text::
 	line "information like"
 
 	para "the person's name,"
-	line "phone number and"
+	line "pager number and"
 	cont "profile."
 
 	para ""
@@ -806,7 +806,7 @@ _MobileCardFolderIntro2Text::
 	text "This is your CARD."
 
 	para "Once you've"
-	line "entered your phone"
+	line "entered your pager"
 
 	para "number, you can"
 	line "trade CARDS with"
@@ -822,7 +822,7 @@ _MobileCardFolderIntro3Text::
 	para "can use it to make"
 	line "a call from a"
 
-	para "mobile phone on"
+	para "mobile pager on"
 	line "the 2nd floor of a"
 	cont "#MON CENTER."
 
@@ -887,30 +887,30 @@ _MobileCardFolderFinishRegisteringCardsText::
 	line "CARDS?"
 	done
 
-_PhoneWrongNumberText::
+_PagerWrongNumberText::
 	text "Huh? Sorry, wrong"
 	line "number!"
 	done
 
-_PhoneClickText::
+_PagerClickText::
 	text "Click!"
 	done
 
-_PhoneEllipseText::
+_PagerEllipseText::
 	text "<……>"
 	done
 
-_PhoneOutOfAreaText::
+_PagerOutOfAreaText::
 	text "That number is out"
 	line "of the area."
 	done
 
-_PhoneJustTalkToThemText::
+_PagerJustTalkToThemText::
 	text "Just go talk to"
 	line "that person!"
 	done
 
-_PhoneThankYouText::
+_PagerThankYouText::
 	text "Thank you!"
 	done
 
@@ -1073,9 +1073,9 @@ _GearOutOfServiceText::
 	line "service area."
 	prompt
 
-_PokegearAskWhoCallText::
+_PokegearAskWhoPageText::
 	text "Whom do you want"
-	line "to call?"
+	line "to page?"
 	done
 
 _PokegearPressButtonText::
@@ -1085,7 +1085,7 @@ _PokegearPressButtonText::
 
 _PokegearAskDeleteText::
 	text "Delete this stored"
-	line "phone number?"
+	line "pager number?"
 	done
 
 _BuenaAskWhichPrizeText::

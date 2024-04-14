@@ -2,11 +2,11 @@
 	const_def
 	const POKEGEARCARD_CLOCK ; 0
 	const POKEGEARCARD_MAP   ; 1
-	const POKEGEARCARD_PHONE ; 2
+	const POKEGEARCARD_PAGER ; 2
 	const POKEGEARCARD_RADIO ; 3
 DEF NUM_POKEGEAR_CARDS EQU const_value
 
-DEF PHONE_DISPLAY_HEIGHT EQU 4
+DEF PAGER_DISPLAY_HEIGHT EQU 4
 
 ; PokegearJumptable.Jumptable indexes
 	const_def
@@ -17,10 +17,10 @@ DEF PHONE_DISPLAY_HEIGHT EQU 4
 	const POKEGEARSTATE_JOHTOMAPJOYPAD  ; 4
 	const POKEGEARSTATE_KANTOMAPINIT    ; 5
 	const POKEGEARSTATE_KANTOMAPJOYPAD  ; 6
-	const POKEGEARSTATE_PHONEINIT       ; 7
-	const POKEGEARSTATE_PHONEJOYPAD     ; 8
-	const POKEGEARSTATE_MAKEPHONECALL   ; 9
-	const POKEGEARSTATE_FINISHPHONECALL ; a
+	const POKEGEARSTATE_PAGERINIT       ; 7
+	const POKEGEARSTATE_PAGERJOYPAD     ; 8
+	const POKEGEARSTATE_MAKEPAGERCALL   ; 9
+	const POKEGEARSTATE_FINISHPAGERCALL ; a
 	const POKEGEARSTATE_RADIOINIT       ; b
 	const POKEGEARSTATE_RADIOJOYPAD     ; c
 
@@ -93,9 +93,9 @@ PokeGear:
 	ld [wPokegearCard], a ; POKEGEARCARD_CLOCK
 	ld [wPokegearMapRegion], a ; JOHTO_REGION
 	ld [wUnusedPokegearByte], a
-	ld [wPokegearPhoneScrollPosition], a
-	ld [wPokegearPhoneCursorPosition], a
-	ld [wPokegearPhoneSelectedPerson], a
+	ld [wPokegearPagerScrollPosition], a
+	ld [wPokegearPagerCursorPosition], a
+	ld [wPokegearPagerSelectedPerson], a
 	ld [wPokegearRadioChannelBank], a
 	ld [wPokegearRadioChannelAddr], a
 	ld [wPokegearRadioChannelAddr + 1], a
@@ -186,7 +186,7 @@ AnimatePokegearModeIndicatorArrow:
 .XCoords:
 	db $00 ; POKEGEARCARD_CLOCK
 	db $10 ; POKEGEARCARD_MAP
-	db $20 ; POKEGEARCARD_PHONE
+	db $20 ; POKEGEARCARD_PAGER
 	db $30 ; POKEGEARCARD_RADIO
 
 TownMap_GetCurrentLandmark:
@@ -304,7 +304,7 @@ InitPokegearTilemap:
 ; entries correspond to POKEGEARCARD_* constants
 	dw .Clock
 	dw .Map
-	dw .Phone
+	dw .Pager
 	dw .Radio
 
 .Clock:
@@ -356,17 +356,17 @@ InitPokegearTilemap:
 	call Textbox
 	ret
 
-.Phone:
-	ld de, PhoneTilemapRLE
+.Pager:
+	ld de, PagerTilemapRLE
 	call Pokegear_LoadTilemapRLE
 	hlcoord 0, 12
 	lb bc, 4, 18
 	call Textbox
-	call .PlacePhoneBars
-	call PokegearPhone_UpdateDisplayList
+	call .PlacePagerBars
+	call PokegearPager_UpdateDisplayList
 	ret
 
-.PlacePhoneBars:
+.PlacePagerBars:
 	hlcoord 17, 1
 	ld a, $5c
 	ld [hli], a
@@ -375,7 +375,7 @@ InitPokegearTilemap:
 	hlcoord 17, 2
 	inc a
 	ld [hli], a
-	call GetMapPhoneService
+	call GetMapPagerService
 	and a
 	ret nz
 	hlcoord 18, 2
@@ -396,8 +396,8 @@ Pokegear_FinishTilemap:
 	bit POKEGEAR_MAP_CARD_F, a
 	call nz, .PlaceMapIcon
 	ld a, [de]
-	bit POKEGEAR_PHONE_CARD_F, a
-	call nz, .PlacePhoneIcon
+	bit POKEGEAR_PAGER_CARD_F, a
+	call nz, .PlacePagerIcon
 	ld a, [de]
 	bit POKEGEAR_RADIO_CARD_F, a
 	call nz, .PlaceRadioIcon
@@ -411,7 +411,7 @@ Pokegear_FinishTilemap:
 	ld a, $60
 	jr .PlacePokegearCardIcon
 
-.PlacePhoneIcon:
+.PlacePagerIcon:
 	hlcoord 4, 0
 	ld a, $64
 	jr .PlacePokegearCardIcon
@@ -443,10 +443,10 @@ PokegearJumptable:
 	dw PokegearMap_JohtoMap
 	dw PokegearMap_Init
 	dw PokegearMap_KantoMap
-	dw PokegearPhone_Init
-	dw PokegearPhone_Joypad
-	dw PokegearPhone_MakePhoneCall
-	dw PokegearPhone_FinishPhoneCall
+	dw PokegearPager_Init
+	dw PokegearPager_Joypad
+	dw PokegearPager_MakePagerCall
+	dw PokegearPager_FinishPagerCall
 	dw PokegearRadio_Init
 	dw PokegearRadio_Joypad
 
@@ -477,13 +477,13 @@ PokegearClock_Joypad:
 
 .no_map_card
 	ld a, [wPokegearFlags]
-	bit POKEGEAR_PHONE_CARD_F, a
-	jr z, .no_phone_card
-	ld c, POKEGEARSTATE_PHONEINIT
-	ld b, POKEGEARCARD_PHONE
+	bit POKEGEAR_PAGER_CARD_F, a
+	jr z, .no_pager_card
+	ld c, POKEGEARSTATE_PAGERINIT
+	ld b, POKEGEARCARD_PAGER
 	jr .done
 
-.no_phone_card
+.no_pager_card
 	ld a, [wPokegearFlags]
 	bit POKEGEAR_RADIO_CARD_F, a
 	ret z
@@ -583,13 +583,13 @@ PokegearMap_ContinueMap:
 
 .right
 	ld a, [wPokegearFlags]
-	bit POKEGEAR_PHONE_CARD_F, a
-	jr z, .no_phone
-	ld c, POKEGEARSTATE_PHONEINIT
-	ld b, POKEGEARCARD_PHONE
+	bit POKEGEAR_PAGER_CARD_F, a
+	jr z, .no_pager
+	ld c, POKEGEARSTATE_PAGERINIT
+	ld b, POKEGEARCARD_PAGER
 	jr .done
 
-.no_phone
+.no_pager
 	ld a, [wPokegearFlags]
 	bit POKEGEAR_RADIO_CARD_F, a
 	ret z
@@ -773,13 +773,13 @@ PokegearRadio_Joypad:
 
 .left
 	ld a, [wPokegearFlags]
-	bit POKEGEAR_PHONE_CARD_F, a
-	jr z, .no_phone
-	ld c, POKEGEARSTATE_PHONEINIT
-	ld b, POKEGEARCARD_PHONE
+	bit POKEGEAR_PAGER_CARD_F, a
+	jr z, .no_pager
+	ld c, POKEGEARSTATE_PAGERINIT
+	ld b, POKEGEARCARD_PAGER
 	jr .switch_page
 
-.no_phone
+.no_pager
 	ld a, [wPokegearFlags]
 	bit POKEGEAR_MAP_CARD_F, a
 	jr z, .no_map
@@ -799,20 +799,20 @@ PokegearRadio_Joypad:
 	set 7, [hl]
 	ret
 
-PokegearPhone_Init:
+PokegearPager_Init:
 	ld hl, wJumptableIndex
 	inc [hl]
 	xor a
-	ld [wPokegearPhoneScrollPosition], a
-	ld [wPokegearPhoneCursorPosition], a
-	ld [wPokegearPhoneSelectedPerson], a
+	ld [wPokegearPagerScrollPosition], a
+	ld [wPokegearPagerCursorPosition], a
+	ld [wPokegearPagerSelectedPerson], a
 	call InitPokegearTilemap
 	call ExitPokegearRadio_HandleMusic
-	ld hl, PokegearAskWhoCallText
+	ld hl, PokegearAskWhoPageText
 	call PrintText
 	ret
 
-PokegearPhone_Joypad:
+PokegearPager_Joypad:
 	ld hl, hJoyPressed
 	ld a, [hl]
 	and B_BUTTON
@@ -827,7 +827,7 @@ PokegearPhone_Joypad:
 	ld a, [hl]
 	and D_RIGHT
 	jr nz, .right
-	call PokegearPhone_GetDPad
+	call PokegearPager_GetDPad
 	ret
 
 .left
@@ -859,37 +859,37 @@ PokegearPhone_Joypad:
 	ret
 
 .a
-	ld hl, wPhoneList
-	ld a, [wPokegearPhoneScrollPosition]
+	ld hl, wPagerList
+	ld a, [wPokegearPagerScrollPosition]
 	ld e, a
 	ld d, 0
 	add hl, de
-	ld a, [wPokegearPhoneCursorPosition]
+	ld a, [wPokegearPagerCursorPosition]
 	ld e, a
 	ld d, 0
 	add hl, de
 	ld a, [hl]
 	and a
 	ret z
-	ld [wPokegearPhoneSelectedPerson], a
+	ld [wPokegearPagerSelectedPerson], a
 	hlcoord 1, 4
-	ld a, [wPokegearPhoneCursorPosition]
+	ld a, [wPokegearPagerCursorPosition]
 	ld bc, SCREEN_WIDTH * 2
 	call AddNTimes
 	ld [hl], "▷"
-	call PokegearPhoneContactSubmenu
+	call PokegearPagerContactSubmenu
 	jr c, .quit_submenu
 	ld hl, wJumptableIndex
 	inc [hl]
 	ret
 
 .quit_submenu
-	ld a, POKEGEARSTATE_PHONEJOYPAD
+	ld a, POKEGEARSTATE_PAGERJOYPAD
 	ld [wJumptableIndex], a
 	ret
 
-PokegearPhone_MakePhoneCall:
-	call GetMapPhoneService
+PokegearPager_MakePagerCall:
+	call GetMapPagerService
 	and a
 	jr nz, .no_service
 	ld hl, wOptions
@@ -906,27 +906,27 @@ PokegearPhone_MakePhoneCall:
 	ld hl, .GearEllipseText
 	call PrintText
 	call WaitSFX
-	ld a, [wPokegearPhoneSelectedPerson]
+	ld a, [wPokegearPagerSelectedPerson]
 	ld b, a
-	call MakePhoneCallFromPokegear
+	call UsePagerFromPokegear
 	ld c, 10
 	call DelayFrames
 	ld hl, wOptions
 	set NO_TEXT_SCROLL, [hl]
 	ld a, $1
 	ldh [hInMenu], a
-	call PokegearPhone_UpdateCursor
+	call PokegearPager_UpdateCursor
 	ld hl, wJumptableIndex
 	inc [hl]
 	ret
 
 .no_service
-	farcall Phone_NoSignal
+	farcall Pager_NoSignal
 	ld hl, .GearOutOfServiceText
 	call PrintText
-	ld a, POKEGEARSTATE_PHONEJOYPAD
+	ld a, POKEGEARSTATE_PAGERJOYPAD
 	ld [wJumptableIndex], a
-	ld hl, PokegearAskWhoCallText
+	ld hl, PokegearAskWhoPageText
 	call PrintText
 	ret
 
@@ -938,18 +938,18 @@ PokegearPhone_MakePhoneCall:
 	text_far _GearOutOfServiceText
 	text_end
 
-PokegearPhone_FinishPhoneCall:
+PokegearPager_FinishPagerCall:
 	ldh a, [hJoyPressed]
 	and A_BUTTON | B_BUTTON
 	ret z
 	farcall HangUp
-	ld a, POKEGEARSTATE_PHONEJOYPAD
+	ld a, POKEGEARSTATE_PAGERJOYPAD
 	ld [wJumptableIndex], a
-	ld hl, PokegearAskWhoCallText
+	ld hl, PokegearAskWhoPageText
 	call PrintText
 	ret
 
-PokegearPhone_GetDPad:
+PokegearPager_GetDPad:
 	ld hl, hJoyLast
 	ld a, [hl]
 	and D_UP
@@ -960,7 +960,7 @@ PokegearPhone_GetDPad:
 	ret
 
 .up
-	ld hl, wPokegearPhoneCursorPosition
+	ld hl, wPokegearPagerCursorPosition
 	ld a, [hl]
 	and a
 	jr z, .scroll_page_up
@@ -968,7 +968,7 @@ PokegearPhone_GetDPad:
 	jr .done_joypad_same_page
 
 .scroll_page_up
-	ld hl, wPokegearPhoneScrollPosition
+	ld hl, wPokegearPagerScrollPosition
 	ld a, [hl]
 	and a
 	ret z
@@ -976,17 +976,17 @@ PokegearPhone_GetDPad:
 	jr .done_joypad_update_page
 
 .down
-	ld hl, wPokegearPhoneCursorPosition
+	ld hl, wPokegearPagerCursorPosition
 	ld a, [hl]
-	cp PHONE_DISPLAY_HEIGHT - 1
+	cp PAGER_DISPLAY_HEIGHT - 1
 	jr nc, .scroll_page_down
 	inc [hl]
 	jr .done_joypad_same_page
 
 .scroll_page_down
-	ld hl, wPokegearPhoneScrollPosition
+	ld hl, wPokegearPagerScrollPosition
 	ld a, [hl]
-	cp CONTACT_LIST_SIZE - PHONE_DISPLAY_HEIGHT
+	cp CONTACT_LIST_SIZE - PAGER_DISPLAY_HEIGHT
 	ret nc
 	inc [hl]
 	jr .done_joypad_update_page
@@ -994,33 +994,33 @@ PokegearPhone_GetDPad:
 .done_joypad_same_page
 	xor a
 	ldh [hBGMapMode], a
-	call PokegearPhone_UpdateCursor
+	call PokegearPager_UpdateCursor
 	call WaitBGMap
 	ret
 
 .done_joypad_update_page
 	xor a
 	ldh [hBGMapMode], a
-	call PokegearPhone_UpdateDisplayList
+	call PokegearPager_UpdateDisplayList
 	call WaitBGMap
 	ret
 
-PokegearPhone_UpdateCursor:
+PokegearPager_UpdateCursor:
 	ld a, " "
-for y, PHONE_DISPLAY_HEIGHT
+for y, PAGER_DISPLAY_HEIGHT
 	hlcoord 1, 4 + y * 2
 	ld [hl], a
 endr
 	hlcoord 1, 4
-	ld a, [wPokegearPhoneCursorPosition]
+	ld a, [wPokegearPagerCursorPosition]
 	ld bc, 2 * SCREEN_WIDTH
 	call AddNTimes
 	ld [hl], "▶"
 	ret
 
-PokegearPhone_UpdateDisplayList:
+PokegearPager_UpdateDisplayList:
 	hlcoord 1, 3
-	ld b, PHONE_DISPLAY_HEIGHT * 2 + 1
+	ld b, PAGER_DISPLAY_HEIGHT * 2 + 1
 	ld a, " "
 .row
 	ld c, SCREEN_WIDTH - 2
@@ -1032,47 +1032,47 @@ PokegearPhone_UpdateDisplayList:
 	inc hl
 	dec b
 	jr nz, .row
-	ld a, [wPokegearPhoneScrollPosition]
+	ld a, [wPokegearPagerScrollPosition]
 	ld e, a
 	ld d, 0
-	ld hl, wPhoneList
+	ld hl, wPagerList
 	add hl, de
 	xor a
-	ld [wPokegearPhoneDisplayPosition], a
+	ld [wPokegearPagerDisplayPosition], a
 .loop
 	ld a, [hli]
 	push hl
 	push af
 	hlcoord 2, 4
-	ld a, [wPokegearPhoneDisplayPosition]
+	ld a, [wPokegearPagerDisplayPosition]
 	ld bc, 2 * SCREEN_WIDTH
 	call AddNTimes
 	ld d, h
 	ld e, l
 	pop af
 	ld b, a
-	call GetCallerClassAndName
+	call GetPagerClassAndName
 	pop hl
-	ld a, [wPokegearPhoneDisplayPosition]
+	ld a, [wPokegearPagerDisplayPosition]
 	inc a
-	ld [wPokegearPhoneDisplayPosition], a
-	cp PHONE_DISPLAY_HEIGHT
+	ld [wPokegearPagerDisplayPosition], a
+	cp PAGER_DISPLAY_HEIGHT
 	jr c, .loop
-	call PokegearPhone_UpdateCursor
+	call PokegearPager_UpdateCursor
 	ret
 
-PokegearPhone_DeletePhoneNumber:
-	ld hl, wPhoneList
-	ld a, [wPokegearPhoneScrollPosition]
+PokegearPager_DeletePagerNumber:
+	ld hl, wPagerList
+	ld a, [wPokegearPagerScrollPosition]
 	ld e, a
 	ld d, 0
 	add hl, de
-	ld a, [wPokegearPhoneCursorPosition]
+	ld a, [wPokegearPagerCursorPosition]
 	ld e, a
 	ld d, 0
 	add hl, de
 	ld [hl], 0
-	ld hl, wPhoneList
+	ld hl, wPagerList
 	ld c, CONTACT_LIST_SIZE
 .loop
 	ld a, [hli]
@@ -1086,28 +1086,28 @@ PokegearPhone_DeletePhoneNumber:
 	jr nz, .loop
 	ret
 
-PokegearPhoneContactSubmenu:
-	ld hl, wPhoneList
-	ld a, [wPokegearPhoneScrollPosition]
+PokegearPagerContactSubmenu:
+	ld hl, wPagerList
+	ld a, [wPokegearPagerScrollPosition]
 	ld e, a
 	ld d, 0
 	add hl, de
-	ld a, [wPokegearPhoneCursorPosition]
+	ld a, [wPokegearPagerCursorPosition]
 	ld e, a
 	ld d, 0
 	add hl, de
 	ld c, [hl]
-	farcall CheckCanDeletePhoneNumber
+	farcall CheckCanDeletePagerNumber
 	ld a, c
 	and a
 	jr z, .cant_delete
-	ld hl, .CallDeleteCancelJumptable
-	ld de, .CallDeleteCancelStrings
+	ld hl, .PageDeleteCancelJumptable
+	ld de, .PageDeleteCancelStrings
 	jr .got_menu_data
 
 .cant_delete
-	ld hl, .CallCancelJumptable
-	ld de, .CallCancelStrings
+	ld hl, .PageCancelJumptable
+	ld de, .PageCancelStrings
 .got_menu_data
 	xor a
 	ldh [hBGMapMode], a
@@ -1135,7 +1135,7 @@ PokegearPhoneContactSubmenu:
 	call PlaceString
 	pop de
 	xor a
-	ld [wPokegearPhoneSubmenuCursor], a
+	ld [wPokegearPagerSubmenuCursor], a
 	call .UpdateCursor
 	call WaitBGMap
 .loop
@@ -1156,7 +1156,7 @@ PokegearPhoneContactSubmenu:
 	jr .loop
 
 .d_up
-	ld hl, wPokegearPhoneSubmenuCursor
+	ld hl, wPokegearPagerSubmenuCursor
 	ld a, [hl]
 	and a
 	jr z, .loop
@@ -1167,25 +1167,25 @@ PokegearPhoneContactSubmenu:
 .d_down
 	ld hl, 2
 	add hl, de
-	ld a, [wPokegearPhoneSubmenuCursor]
+	ld a, [wPokegearPagerSubmenuCursor]
 	inc a
 	cp [hl]
 	jr nc, .loop
-	ld [wPokegearPhoneSubmenuCursor], a
+	ld [wPokegearPagerSubmenuCursor], a
 	call .UpdateCursor
 	jr .loop
 
 .a_b
 	xor a
 	ldh [hBGMapMode], a
-	call PokegearPhone_UpdateDisplayList
+	call PokegearPager_UpdateDisplayList
 	ld a, $1
 	ldh [hBGMapMode], a
 	pop hl
 	ldh a, [hJoyPressed]
 	and B_BUTTON
 	jr nz, .Cancel
-	ld a, [wPokegearPhoneSubmenuCursor]
+	ld a, [wPokegearPagerSubmenuCursor]
 	ld e, a
 	ld d, 0
 	add hl, de
@@ -1196,7 +1196,7 @@ PokegearPhoneContactSubmenu:
 	jp hl
 
 .Cancel:
-	ld hl, PokegearAskWhoCallText
+	ld hl, PokegearAskWhoPageText
 	call PrintText
 	scf
 	ret
@@ -1207,18 +1207,18 @@ PokegearPhoneContactSubmenu:
 	call YesNoBox
 	call ExitMenu
 	jr c, .CancelDelete
-	call PokegearPhone_DeletePhoneNumber
+	call PokegearPager_DeletePagerNumber
 	xor a
 	ldh [hBGMapMode], a
-	call PokegearPhone_UpdateDisplayList
-	ld hl, PokegearAskWhoCallText
+	call PokegearPager_UpdateDisplayList
+	ld hl, PokegearAskWhoPageText
 	call PrintText
 	call WaitBGMap
 .CancelDelete:
 	scf
 	ret
 
-.Call:
+.Page:
 	and a
 	ret
 
@@ -1241,35 +1241,35 @@ PokegearPhoneContactSubmenu:
 	dec c
 	jr nz, .clear_column
 	pop hl
-	ld a, [wPokegearPhoneSubmenuCursor]
+	ld a, [wPokegearPagerSubmenuCursor]
 	ld bc, SCREEN_WIDTH  * 2
 	call AddNTimes
 	ld [hl], "▶"
 	pop de
 	ret
 
-.CallDeleteCancelStrings:
+.PageDeleteCancelStrings:
 	dwcoord 10, 6
 	db 3
-	db   "CALL"
+	db   "PAGE"
 	next "DELETE"
 	next "CANCEL"
 	db   "@"
 
-.CallDeleteCancelJumptable:
-	dw .Call
+.PageDeleteCancelJumptable:
+	dw .Page
 	dw .Delete
 	dw .Cancel
 
-.CallCancelStrings:
+.PageCancelStrings:
 	dwcoord 10, 8
 	db 2
-	db   "CALL"
+	db   "PAGE"
 	next "CANCEL"
 	db   "@"
 
-.CallCancelJumptable:
-	dw .Call
+.PageCancelJumptable:
+	dw .Page
 	dw .Cancel
 
 GetAMPMHours: ; unreferenced
@@ -1341,8 +1341,8 @@ Pokegear_LoadTilemapRLE:
 	jr nz, .load
 	jr .loop
 
-PokegearAskWhoCallText:
-	text_far _PokegearAskWhoCallText
+PokegearAskWhoPageText:
+	text_far _PokegearAskWhoPageText
 	text_end
 
 PokegearPressButtonText:
@@ -1358,8 +1358,8 @@ INCBIN "gfx/pokegear/pokegear_sprites.2bpp.lz"
 
 RadioTilemapRLE:
 INCBIN "gfx/pokegear/radio.tilemap.rle"
-PhoneTilemapRLE:
-INCBIN "gfx/pokegear/phone.tilemap.rle"
+PagerTilemapRLE:
+INCBIN "gfx/pokegear/pager.tilemap.rle"
 ClockTilemapRLE:
 INCBIN "gfx/pokegear/clock.tilemap.rle"
 

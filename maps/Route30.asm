@@ -40,27 +40,27 @@ TrainerYoungsterJoey:
 	trainer YOUNGSTER, JOEY1, EVENT_BEAT_YOUNGSTER_JOEY, YoungsterJoey1SeenText, YoungsterJoey1BeatenText, 0, .Script
 
 .Script:
-	loadvar VAR_CALLERID, PHONE_YOUNGSTER_JOEY
+	loadvar VAR_CALLERID, PAGER_YOUNGSTER_JOEY
 	endifjustbattled
 	opentext
 	checkflag ENGINE_JOEY_READY_FOR_REMATCH
 	iftrue .Rematch
-	checkcellnum PHONE_YOUNGSTER_JOEY
+	checkcellnum PAGER_YOUNGSTER_JOEY
 	iftrue .NumberAccepted
-	checkevent EVENT_JOEY_ASKED_FOR_PHONE_NUMBER
+	checkevent EVENT_JOEY_ASKED_FOR_PAGER_NUMBER
 	iftrue .AskAgain
 	writetext YoungsterJoey1AfterText
 	promptbutton
-	setevent EVENT_JOEY_ASKED_FOR_PHONE_NUMBER
+	setevent EVENT_JOEY_ASKED_FOR_PAGER_NUMBER
 	scall .AskNumber1
 	sjump .RequestNumber
 
 .AskAgain:
 	scall .AskNumber2
 .RequestNumber:
-	askforphonenumber PHONE_YOUNGSTER_JOEY
-	ifequal PHONE_CONTACTS_FULL, .PhoneFull
-	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
+	askforpagernumber PAGER_YOUNGSTER_JOEY
+	ifequal PAGER_CONTACTS_FULL, .PagerFull
+	ifequal PAGER_CONTACT_REFUSED, .NumberDeclined
 	gettrainername STRING_BUFFER_3, YOUNGSTER, JOEY1
 	scall .RegisteredNumber
 	sjump .NumberAccepted
@@ -166,8 +166,8 @@ TrainerYoungsterJoey:
 	jumpstd NumberDeclinedMScript
 	end
 
-.PhoneFull:
-	jumpstd PhoneFullMScript
+.PagerFull:
+	jumpstd PagerFullMScript
 	end
 
 .RematchStd:

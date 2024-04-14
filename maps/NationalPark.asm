@@ -73,27 +73,27 @@ TrainerSchoolboyJack1:
 	trainer SCHOOLBOY, JACK1, EVENT_BEAT_SCHOOLBOY_JACK, SchoolboyJack1SeenText, SchoolboyJack1BeatenText, 0, .Script
 
 .Script:
-	loadvar VAR_CALLERID, PHONE_SCHOOLBOY_JACK
+	loadvar VAR_CALLERID, PAGER_SCHOOLBOY_JACK
 	endifjustbattled
 	opentext
 	checkflag ENGINE_JACK_READY_FOR_REMATCH
 	iftrue .Rematch
-	checkcellnum PHONE_SCHOOLBOY_JACK
+	checkcellnum PAGER_SCHOOLBOY_JACK
 	iftrue .NumberAccepted
-	checkevent EVENT_JACK_ASKED_FOR_PHONE_NUMBER
+	checkevent EVENT_JACK_ASKED_FOR_PAGER_NUMBER
 	iftrue .AskAgain
 	writetext SchoolboyJackTradeMonText
 	promptbutton
-	setevent EVENT_JACK_ASKED_FOR_PHONE_NUMBER
+	setevent EVENT_JACK_ASKED_FOR_PAGER_NUMBER
 	scall .AskNumber1
 	sjump .RequestNumber
 
 .AskAgain:
 	scall .AskNumber2
 .RequestNumber:
-	askforphonenumber PHONE_SCHOOLBOY_JACK
-	ifequal PHONE_CONTACTS_FULL, .PhoneFull
-	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
+	askforpagernumber PAGER_SCHOOLBOY_JACK
+	ifequal PAGER_CONTACTS_FULL, .PagerFull
+	ifequal PAGER_CONTACT_REFUSED, .NumberDeclined
 	gettrainername STRING_BUFFER_3, SCHOOLBOY, JACK1
 	scall .RegisteredNumber
 	sjump .NumberAccepted
@@ -178,8 +178,8 @@ TrainerSchoolboyJack1:
 	jumpstd NumberDeclinedMScript
 	end
 
-.PhoneFull:
-	jumpstd PhoneFullMScript
+.PagerFull:
+	jumpstd PagerFullMScript
 	end
 
 .RematchStd:
@@ -201,29 +201,29 @@ TrainerPokefanfBeverly1:
 	trainer POKEFANF, BEVERLY1, EVENT_BEAT_POKEFANF_BEVERLY, PokefanfBeverly1SeenText, PokefanfBeverly1BeatenText, 0, .Script
 
 .Script:
-	loadvar VAR_CALLERID, PHONE_POKEFAN_BEVERLY
+	loadvar VAR_CALLERID, PAGER_POKEFAN_BEVERLY
 	endifjustbattled
 	opentext
 	checkflag ENGINE_BEVERLY_HAS_NUGGET
 	iftrue .GiveNugget
-	checkcellnum PHONE_POKEFAN_BEVERLY
+	checkcellnum PAGER_POKEFAN_BEVERLY
 	iftrue .NumberAccepted
 	checkpoke MARILL
 	iffalse .NoMarill
-	checkevent EVENT_BEVERLY_ASKED_FOR_PHONE_NUMBER
+	checkevent EVENT_BEVERLY_ASKED_FOR_PAGER_NUMBER
 	iftrue .AskAgain
 	writetext PokefanBeverlyCuteMonText
 	promptbutton
-	setevent EVENT_BEVERLY_ASKED_FOR_PHONE_NUMBER
+	setevent EVENT_BEVERLY_ASKED_FOR_PAGER_NUMBER
 	scall .AskNumber1
 	sjump .RequestNumber
 
 .AskAgain:
 	scall .AskNumber2
 .RequestNumber:
-	askforphonenumber PHONE_POKEFAN_BEVERLY
-	ifequal PHONE_CONTACTS_FULL, .PhoneFull
-	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
+	askforpagernumber PAGER_POKEFAN_BEVERLY
+	ifequal PAGER_CONTACTS_FULL, .PagerFull
+	ifequal PAGER_CONTACT_REFUSED, .NumberDeclined
 	gettrainername STRING_BUFFER_3, POKEFANF, BEVERLY1
 	scall .RegisteredNumber
 	sjump .NumberAccepted
@@ -264,8 +264,8 @@ TrainerPokefanfBeverly1:
 	jumpstd NumberDeclinedFScript
 	end
 
-.PhoneFull:
-	jumpstd PhoneFullFScript
+.PagerFull:
+	jumpstd PagerFullFScript
 	end
 
 .Gift:

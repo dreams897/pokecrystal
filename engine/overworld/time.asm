@@ -114,11 +114,11 @@ CheckDailyResetTimer::
 rept 4
 	ld [hli], a
 endr
-	ld hl, wDailyPhoneItemFlags
+	ld hl, wDailyPagerItemFlags
 rept 4
 	ld [hli], a
 endr
-	ld hl, wDailyPhoneTimeOfDayFlags
+	ld hl, wDailyPagerTimeOfDayFlags
 rept 4
 	ld [hli], a
 endr

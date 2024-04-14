@@ -769,7 +769,7 @@ ValidateTempWildMonSpecies:
 ; Finds a rare wild Pokemon in the route of the trainer calling, then checks if it's been Seen already.
 ; The trainer will then tell you about the Pokemon if you haven't seen it.
 RandomUnseenWildMon:
-	farcall GetCallerLocation
+	farcall GetPagerLocation
 	ld d, b
 	ld e, c
 	ld hl, JohtoGrassWildMons
@@ -839,8 +839,8 @@ RandomUnseenWildMon:
 	text_far _JustSawSomeRareMonText
 	text_end
 
-RandomPhoneWildMon:
-	farcall GetCallerLocation
+RandomPagerWildMon:
+	farcall GetPagerLocation
 	ld d, b
 	ld e, c
 	ld hl, JohtoGrassWildMons
@@ -878,9 +878,9 @@ RandomPhoneWildMon:
 	ld bc, MON_NAME_LENGTH
 	jp CopyBytes
 
-RandomPhoneMon:
+RandomPagerMon:
 ; Get a random monster owned by the trainer who's calling.
-	farcall GetCallerLocation
+	farcall GetPagerLocation
 	ld hl, TrainerGroups
 	ld a, d
 	dec a

@@ -302,7 +302,7 @@ gfx/mobile/mobile_splash.2bpp: tools/gfx += --remove-duplicates --remove-xflip
 gfx/mobile/card.2bpp: tools/gfx += --trim-whitespace
 gfx/mobile/card_2.2bpp: tools/gfx += --trim-whitespace
 gfx/mobile/card_folder.2bpp: tools/gfx += --trim-whitespace
-gfx/mobile/phone_tiles.2bpp: tools/gfx += --remove-whitespace
+gfx/mobile/pager_tiles.2bpp: tools/gfx += --remove-whitespace
 gfx/mobile/pichu_animated.2bpp: tools/gfx += --trim-whitespace
 gfx/mobile/stadium2_n64.2bpp: tools/gfx += --trim-whitespace
 

@@ -182,7 +182,7 @@ MobileTextBorder::
 	cp LINK_MOBILE
 	ret c
 
-	; Draw a cell phone icon at the
+	; Draw a cell pager icon at the
 	; top right corner of the border.
 	hlcoord 19, 12
 	ld [hl], $5e ; top

@@ -357,9 +357,9 @@ StubbedTrainerRankings_LuckyNumberShow:
 	ld hl, sTrainerRankingLuckyNumberShow
 	jr StubbedTrainerRankings_Increment2Byte
 
-StubbedTrainerRankings_PhoneCalls:
+StubbedTrainerRankings_PagerCalls:
 	ret
-	ld hl, sTrainerRankingPhoneCalls
+	ld hl, sTrainerRankingPagerCalls
 	jr StubbedTrainerRankings_Increment3Byte
 
 StubbedTrainerRankings_Unused2: ; unreferenced
@@ -945,7 +945,7 @@ Function1063e5:
 
 Function1063f3:
 	ld de, wcd31
-	ld a, MOBILEAPI_TELEPHONESTATUS
+	ld a, MOBILEAPI_PAGERSTATUS
 	call MobileAPI
 	ld a, [wMobileCommsJumptableIndex]
 	inc a
@@ -1098,8 +1098,8 @@ asm_1064ed:
 	ret
 
 Function10650a: ; unreferenced
-	ld de, MobilePhoneTilesGFX
-	lb bc, BANK(MobilePhoneTilesGFX), 17
+	ld de, MobilePagerTilesGFX
+	lb bc, BANK(MobilePagerTilesGFX), 17
 	call Get2bpp
 	ret
 

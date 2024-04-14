@@ -20,12 +20,12 @@ ENDM
 ; trainer constants are Trainers indexes, for the sub-tables of TrainerGroups (see data/trainers/parties.asm)
 DEF RED EQU __trainer_class__
 	trainerclass TRAINER_NONE ; 0
-	const PHONECONTACT_MOM
-	const PHONECONTACT_BIKESHOP
-	const PHONECONTACT_BILL
-	const PHONECONTACT_ELM
-	const PHONECONTACT_BUENA
-DEF NUM_NONTRAINER_PHONECONTACTS EQU const_value - 1
+	const PAGERCONTACT_MOM
+	const PAGERCONTACT_BIKESHOP
+	const PAGERCONTACT_BILL
+	const PAGERCONTACT_ELM
+	const PAGERCONTACT_BUENA
+DEF NUM_NONTRAINER_PAGERCONTACTS EQU const_value - 1
 
 	trainerclass FALKNER ; 1
 	const FALKNER1

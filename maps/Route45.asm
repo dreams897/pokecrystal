@@ -22,26 +22,26 @@ TrainerBlackbeltKenji:
 	trainer BLACKBELT_T, KENJI3, EVENT_BEAT_BLACKBELT_KENJI, BlackbeltKenji3SeenText, BlackbeltKenji3BeatenText, 0, .Script
 
 .Script:
-	loadvar VAR_CALLERID, PHONE_BLACKBELT_KENJI
+	loadvar VAR_CALLERID, PAGER_BLACKBELT_KENJI
 	endifjustbattled
 	opentext
-	checkcellnum PHONE_BLACKBELT_KENJI
+	checkcellnum PAGER_BLACKBELT_KENJI
 	iftrue .Registered
-	checkevent EVENT_KENJI_ASKED_FOR_PHONE_NUMBER
+	checkevent EVENT_KENJI_ASKED_FOR_PAGER_NUMBER
 	iftrue .AskedAlready
 	special SampleKenjiBreakCountdown
 	writetext BlackbeltKenjiAfterBattleText
 	waitbutton
-	setevent EVENT_KENJI_ASKED_FOR_PHONE_NUMBER
+	setevent EVENT_KENJI_ASKED_FOR_PAGER_NUMBER
 	scall Route45AskNumber1M
 	sjump .AskForNumber
 
 .AskedAlready:
 	scall Route45AskNumber2M
 .AskForNumber:
-	askforphonenumber PHONE_BLACKBELT_KENJI
-	ifequal PHONE_CONTACTS_FULL, Route45PhoneFullM
-	ifequal PHONE_CONTACT_REFUSED, Route45NumberDeclinedM
+	askforpagernumber PAGER_BLACKBELT_KENJI
+	ifequal PAGER_CONTACTS_FULL, Route45PagerFullM
+	ifequal PAGER_CONTACT_REFUSED, Route45NumberDeclinedM
 	gettrainername STRING_BUFFER_3, BLACKBELT_T, KENJI3
 	scall Route45RegisteredNumberM
 	sjump Route45NumberAcceptedM
@@ -97,8 +97,8 @@ Route45NumberDeclinedM:
 	jumpstd NumberDeclinedMScript
 	end
 
-Route45PhoneFullM:
-	jumpstd PhoneFullMScript
+Route45PagerFullM:
+	jumpstd PagerFullMScript
 	end
 
 Route45RematchM:
@@ -148,27 +148,27 @@ TrainerHikerParry:
 	trainer HIKER, PARRY3, EVENT_BEAT_HIKER_PARRY, HikerParry3SeenText, HikerParry3BeatenText, 0, .Script
 
 .Script:
-	loadvar VAR_CALLERID, PHONE_HIKER_PARRY
+	loadvar VAR_CALLERID, PAGER_HIKER_PARRY
 	endifjustbattled
 	opentext
 	checkflag ENGINE_PARRY_READY_FOR_REMATCH
 	iftrue .WantsBattle
-	checkcellnum PHONE_HIKER_PARRY
+	checkcellnum PAGER_HIKER_PARRY
 	iftrue Route45NumberAcceptedM
-	checkevent EVENT_PARRY_ASKED_FOR_PHONE_NUMBER
+	checkevent EVENT_PARRY_ASKED_FOR_PAGER_NUMBER
 	iftrue .AskedAlready
 	writetext HikerParryAfterBattleText
 	promptbutton
-	setevent EVENT_PARRY_ASKED_FOR_PHONE_NUMBER
+	setevent EVENT_PARRY_ASKED_FOR_PAGER_NUMBER
 	scall Route45AskNumber1M
 	sjump .AskForNumber
 
 .AskedAlready:
 	scall Route45AskNumber2M
 .AskForNumber:
-	askforphonenumber PHONE_HIKER_PARRY
-	ifequal PHONE_CONTACTS_FULL, Route45PhoneFullM
-	ifequal PHONE_CONTACT_REFUSED, Route45NumberDeclinedM
+	askforpagernumber PAGER_HIKER_PARRY
+	ifequal PAGER_CONTACTS_FULL, Route45PagerFullM
+	ifequal PAGER_CONTACT_REFUSED, Route45NumberDeclinedM
 	gettrainername STRING_BUFFER_3, HIKER, PARRY1
 	scall Route45RegisteredNumberM
 	sjump Route45NumberAcceptedM

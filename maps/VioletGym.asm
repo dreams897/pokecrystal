@@ -35,7 +35,7 @@ VioletGymFalknerScript:
 	setevent EVENT_BEAT_BIRD_KEEPER_ROD
 	setevent EVENT_BEAT_BIRD_KEEPER_ABE
 	setmapscene ELMS_LAB, SCENE_ELMSLAB_NOOP
-	specialphonecall SPECIALCALL_ASSISTANT
+	specialpagercall SPECIALCALL_ASSISTANT
 	writetext FalknerZephyrBadgeText
 	promptbutton
 	verbosegiveitem TM_MUD_SLAP

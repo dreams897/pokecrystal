@@ -167,29 +167,29 @@ TrainerFisherRalph1:
 	trainer FISHER, RALPH1, EVENT_BEAT_FISHER_RALPH, FisherRalph1SeenText, FisherRalph1BeatenText, 0, .Script
 
 .Script:
-	loadvar VAR_CALLERID, PHONE_FISHER_RALPH
+	loadvar VAR_CALLERID, PAGER_FISHER_RALPH
 	endifjustbattled
 	opentext
 	checkflag ENGINE_RALPH_READY_FOR_REMATCH
 	iftrue .Rematch
 	checkflag ENGINE_QWILFISH_SWARM
 	iftrue .Swarm
-	checkcellnum PHONE_FISHER_RALPH
+	checkcellnum PAGER_FISHER_RALPH
 	iftrue .NumberAccepted
-	checkevent EVENT_RALPH_ASKED_FOR_PHONE_NUMBER
+	checkevent EVENT_RALPH_ASKED_FOR_PAGER_NUMBER
 	iftrue .AskAgain
 	writetext FisherRalphAfterText
 	promptbutton
-	setevent EVENT_RALPH_ASKED_FOR_PHONE_NUMBER
+	setevent EVENT_RALPH_ASKED_FOR_PAGER_NUMBER
 	scall .AskNumber1
 	sjump .AskForNumber
 
 .AskAgain:
 	scall .AskNumber2
 .AskForNumber:
-	askforphonenumber PHONE_FISHER_RALPH
-	ifequal PHONE_CONTACTS_FULL, .PhoneFull
-	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
+	askforpagernumber PAGER_FISHER_RALPH
+	ifequal PAGER_CONTACTS_FULL, .PagerFull
+	ifequal PAGER_CONTACT_REFUSED, .NumberDeclined
 	gettrainername STRING_BUFFER_3, FISHER, RALPH1
 	scall .RegisteredNumber
 	sjump .NumberAccepted
@@ -280,8 +280,8 @@ TrainerFisherRalph1:
 	jumpstd NumberDeclinedMScript
 	end
 
-.PhoneFull:
-	jumpstd PhoneFullMScript
+.PagerFull:
+	jumpstd PagerFullMScript
 	end
 
 .RematchStd:
@@ -303,27 +303,27 @@ TrainerPicnickerLiz1:
 	trainer PICNICKER, LIZ1, EVENT_BEAT_PICNICKER_LIZ, PicnickerLiz1SeenText, PicnickerLiz1BeatenText, 0, .Script
 
 .Script:
-	loadvar VAR_CALLERID, PHONE_PICNICKER_LIZ
+	loadvar VAR_CALLERID, PAGER_PICNICKER_LIZ
 	endifjustbattled
 	opentext
 	checkflag ENGINE_LIZ_READY_FOR_REMATCH
 	iftrue .Rematch
-	checkcellnum PHONE_PICNICKER_LIZ
+	checkcellnum PAGER_PICNICKER_LIZ
 	iftrue .NumberAccepted
-	checkevent EVENT_LIZ_ASKED_FOR_PHONE_NUMBER
+	checkevent EVENT_LIZ_ASKED_FOR_PAGER_NUMBER
 	iftrue .AskAgain
 	writetext PicnickerLiz1AfterText
 	promptbutton
-	setevent EVENT_LIZ_ASKED_FOR_PHONE_NUMBER
+	setevent EVENT_LIZ_ASKED_FOR_PAGER_NUMBER
 	scall .AskNumber1
 	sjump .AskForNumber
 
 .AskAgain:
 	scall .AskNumber2
 .AskForNumber:
-	askforphonenumber PHONE_PICNICKER_LIZ
-	ifequal PHONE_CONTACTS_FULL, .PhoneFull
-	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
+	askforpagernumber PAGER_PICNICKER_LIZ
+	ifequal PAGER_CONTACTS_FULL, .PagerFull
+	ifequal PAGER_CONTACT_REFUSED, .NumberDeclined
 	gettrainername STRING_BUFFER_3, PICNICKER, LIZ1
 	scall .RegisteredNumber
 	sjump .NumberAccepted
@@ -408,8 +408,8 @@ TrainerPicnickerLiz1:
 	jumpstd NumberDeclinedFScript
 	end
 
-.PhoneFull:
-	jumpstd PhoneFullFScript
+.PagerFull:
+	jumpstd PagerFullFScript
 	end
 
 .RematchStd:
@@ -796,7 +796,7 @@ PicnickerLiz1SeenText:
 	line "you know…"
 
 	para "Pardon? Battle?"
-	line "I'm on the phone."
+	line "I'm on the pager."
 
 	para "Oh, all right. But"
 	line "make it fast."

@@ -220,8 +220,8 @@ _ThereIsNothingConnectedText:: ; unreferenced
 	line "connected."
 	done
 
-_CheckCellPhoneAdapterText:: ; unreferenced
-	text "Check cell phone"
+_CheckCellPagerAdapterText:: ; unreferenced
+	text "Check cell pager"
 	line "adapter."
 	done
 

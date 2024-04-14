@@ -4845,7 +4845,7 @@ MobileErrorCode_10_000_Text:
 
 MobileErrorCode_11_000_Text:
 MobileErrorCode_13_000_Text:
-; Could not connect because either the phone cannot make the call, or the telephone line is busy.
+; Could not connect because either the pager cannot make the call, or the telephone line is busy.
 ; Please wait for a while and call again.
 	db   "でんわが　うまく　かけられないか"
 	next "でんわかいせんが　こんでいるので"
@@ -4855,7 +4855,7 @@ MobileErrorCode_13_000_Text:
 	db   "@"
 
 MobileErrorCode_12_000_Text:
-; As the telephone line is busy, the phone was not able to gather enough information (?)
+; As the telepager line is busy, the phone was not able to gather enough information (?)
 ; Please wait for a while and call again.
 	db   "でんわかいせんが　こんでいるため"
 	next "でんわが　かけられません"
@@ -5025,7 +5025,7 @@ MobileErrorCode_33_299_Text:
 	db   "@"
 
 MobileErrorCode_ServerConnectionFailedText:
-; The telephone line is busy. Due to this error, the Mobile Center cannot communicate.
+; The telepager line is busy. Due to this error, the Mobile Center cannot communicate.
 ; Please wait for a little while and call again.
 	db   "でんわかいせんが　こんでいるか"
 	next "モバイルセンターの　エラーで"

@@ -162,7 +162,7 @@ DragonShrineTakeTestScript:
 	playsound SFX_GET_BADGE
 	waitsfx
 	special RestartMapMusic
-	specialphonecall SPECIALCALL_MASTERBALL
+	specialpagercall SPECIALCALL_MASTERBALL
 	setscene SCENE_DRAGONSHRINE_NOOP
 	setmapscene DRAGONS_DEN_B1F, SCENE_DRAGONSDENB1F_CLAIR_GIVES_TM
 	writetext DragonShrinePlayerReceivedRisingBadgeText

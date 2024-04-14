@@ -98,7 +98,7 @@ Fixes in the [multi-player battle engine](#multi-player-battle-engine) category 
   - [Magikarp lengths can be miscalculated](#magikarp-lengths-can-be-miscalculated)
   - [`CheckOwnMon` only checks the first five letters of OT names](#checkownmon-only-checks-the-first-five-letters-of-ot-names)
   - [`CheckOwnMonAnywhere` does not check the Day-Care](#checkownmonanywhere-does-not-check-the-day-care)
-  - [The unused `phonecall` script command may crash](#the-unused-phonecall-script-command-may-crash)
+  - [The unused `pagercall` script command may crash](#the-unused-phonecall-script-command-may-crash)
 - [Internal engine routines](#internal-engine-routines)
   - [Saves corrupted by mid-save shutoff are not handled](#saves-corrupted-by-mid-save-shutoff-are-not-handled)
   - [`ScriptCall` can overflow `wScriptStack` and crash](#scriptcall-can-overflow-wscriptstack-and-crash)
@@ -2498,22 +2498,22 @@ This bug can prevent you from talking to Eusine in Celadon City or encountering 
 ```
 
 
-### The unused `phonecall` script command may crash
+### The unused `pagercall` script command may crash
 
-The `phonecall` script command calls the `PhoneCall` routine, which calls the `BrokenPlaceFarString` routine; this switches banks without being in bank 0, so it would start running arbitrary data as code.
+The `pagercall` script command calls the `PagerCall` routine, which calls the `BrokenPlaceFarString` routine; this switches banks without being in bank 0, so it would start running arbitrary data as code.
 
-**Fix:** Edit `PhoneCall.CallerTextboxWithName` in [engine/phone/phone.asm](https://github.com/pret/pokecrystal/blob/master/engine/phone/phone.asm):
+**Fix:** Edit `PagerCall.PagerTextboxWithName` in [engine/pager/phone.asm](https://github.com/pret/pokecrystal/blob/master/engine/phone/phone.asm):
 
 ```diff
--; BUG: The unused phonecall script command may crash (see docs/bugs_and_glitches.md)
--	ld a, [wPhoneScriptBank]
+-; BUG: The unused pagercall script command may crash (see docs/bugs_and_glitches.md)
+-	ld a, [wPagerScriptBank]
 -	ld b, a
- 	ld a, [wPhoneCaller]
+ 	ld a, [wPagerPager]
  	ld e, a
- 	ld a, [wPhoneCaller + 1]
+ 	ld a, [wPagerPager + 1]
  	ld d, a
 -	call BrokenPlaceFarString
-+	ld a, [wPhoneScriptBank]
++	ld a, [wPagerScriptBank]
 +	call PlaceFarString
  	ret
 ```

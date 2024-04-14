@@ -38,31 +38,31 @@ TrainerLassDana1:
 	trainer LASS, DANA1, EVENT_BEAT_LASS_DANA, LassDana1SeenText, LassDana1BeatenText, 0, .Script
 
 .Script
-	loadvar VAR_CALLERID, PHONE_LASS_DANA
+	loadvar VAR_CALLERID, PAGER_LASS_DANA
 	endifjustbattled
 	opentext
 	checkflag ENGINE_DANA_READY_FOR_REMATCH
 	iftrue .DanaRematch
 	checkflag ENGINE_DANA_HAS_THUNDERSTONE
 	iftrue .TryGiveThunderstone
-	checkcellnum PHONE_LASS_DANA
+	checkcellnum PAGER_LASS_DANA
 	iftrue .NumberAccepted
-	checkevent EVENT_DANA_ASKED_FOR_PHONE_NUMBER
+	checkevent EVENT_DANA_ASKED_FOR_PAGER_NUMBER
 	iftrue .SecondTimeAsking
 	writetext LassDanaMoomooMilkText
 	promptbutton
-	setevent EVENT_DANA_ASKED_FOR_PHONE_NUMBER
+	setevent EVENT_DANA_ASKED_FOR_PAGER_NUMBER
 	scall .AskNumber1F
-	sjump .AskForPhoneNumber
+	sjump .AskForPagerNumber
 
 .SecondTimeAsking:
 	scall .AskNumber2F
-.AskForPhoneNumber:
-	askforphonenumber PHONE_LASS_DANA
-	ifequal PHONE_CONTACTS_FULL, .PhoneFull
-	ifequal PHONE_CONTACT_REFUSED, .DeclinedPhoneNumber
+.AskForPagerNumber:
+	askforpagernumber PAGER_LASS_DANA
+	ifequal PAGER_CONTACTS_FULL, .PagerFull
+	ifequal PAGER_CONTACT_REFUSED, .DeclinedPagerNumber
 	gettrainername STRING_BUFFER_3, LASS, DANA1
-	scall .RegisteredPhoneNumber
+	scall .RegisteredPagerNumber
 	sjump .NumberAccepted
 
 .DanaRematch:
@@ -141,7 +141,7 @@ TrainerLassDana1:
 	jumpstd AskNumber2FScript
 	end
 
-.RegisteredPhoneNumber:
+.RegisteredPagerNumber:
 	jumpstd RegisteredNumberFScript
 	end
 
@@ -149,12 +149,12 @@ TrainerLassDana1:
 	jumpstd NumberAcceptedFScript
 	end
 
-.DeclinedPhoneNumber:
+.DeclinedPagerNumber:
 	jumpstd NumberDeclinedFScript
 	end
 
-.PhoneFull:
-	jumpstd PhoneFullFScript
+.PagerFull:
+	jumpstd PagerFullFScript
 	end
 
 .Rematch:
@@ -173,27 +173,27 @@ TrainerSchoolboyChad1:
 	trainer SCHOOLBOY, CHAD1, EVENT_BEAT_SCHOOLBOY_CHAD, SchoolboyChad1SeenText, SchoolboyChad1BeatenText, 0, .Script
 
 .Script
-	loadvar VAR_CALLERID, PHONE_SCHOOLBOY_CHAD
+	loadvar VAR_CALLERID, PAGER_SCHOOLBOY_CHAD
 	endifjustbattled
 	opentext
 	checkflag ENGINE_CHAD_READY_FOR_REMATCH
 	iftrue .ChadRematch
-	checkcellnum PHONE_SCHOOLBOY_CHAD
+	checkcellnum PAGER_SCHOOLBOY_CHAD
 	iftrue .HaveChadsNumber
-	checkevent EVENT_CHAD_ASKED_FOR_PHONE_NUMBER
+	checkevent EVENT_CHAD_ASKED_FOR_PAGER_NUMBER
 	iftrue .SecondTimeAsking
 	writetext SchoolboyChadSoManyTestsText
 	promptbutton
-	setevent EVENT_CHAD_ASKED_FOR_PHONE_NUMBER
-	scall .AskPhoneNumber1
+	setevent EVENT_CHAD_ASKED_FOR_PAGER_NUMBER
+	scall .AskPagerNumber1
 	sjump .AskToRegisterNumber
 
 .SecondTimeAsking:
-	scall .AskPhoneNumber2
+	scall .AskPagerNumber2
 .AskToRegisterNumber:
-	askforphonenumber PHONE_SCHOOLBOY_CHAD
-	ifequal PHONE_CONTACTS_FULL, .PhoneFull
-	ifequal PHONE_CONTACT_REFUSED, .SaidNo
+	askforpagernumber PAGER_SCHOOLBOY_CHAD
+	ifequal PAGER_CONTACTS_FULL, .PagerFull
+	ifequal PAGER_CONTACT_REFUSED, .SaidNo
 	gettrainername STRING_BUFFER_3, SCHOOLBOY, CHAD1
 	scall .RegisteredChad
 	sjump .HaveChadsNumber
@@ -258,11 +258,11 @@ TrainerSchoolboyChad1:
 	clearflag ENGINE_CHAD_READY_FOR_REMATCH
 	end
 
-.AskPhoneNumber1:
+.AskPagerNumber1:
 	jumpstd AskNumber1MScript
 	end
 
-.AskPhoneNumber2:
+.AskPagerNumber2:
 	jumpstd AskNumber2MScript
 	end
 
@@ -278,8 +278,8 @@ TrainerSchoolboyChad1:
 	jumpstd NumberDeclinedMScript
 	end
 
-.PhoneFull:
-	jumpstd PhoneFullMScript
+.PagerFull:
+	jumpstd PagerFullMScript
 	end
 
 .Rematch:

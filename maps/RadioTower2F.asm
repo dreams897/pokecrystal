@@ -125,7 +125,7 @@ Buena:
 	turnobject RADIOTOWER2F_BUENA, RIGHT
 	readvar VAR_FACING
 	ifnotequal RIGHT, .DontNeedToMove
-	applymovement PLAYER, RadioTower2FPlayerWalksToMicrophoneMovement
+	applymovement PLAYER, RadioTower2FPlayerWalksToMicropagerMovement
 .DontNeedToMove:
 	turnobject PLAYER, RIGHT
 	opentext
@@ -169,9 +169,9 @@ Buena:
 	writetext RadioTower2FBuenaTuneInToMyShowText
 	waitbutton
 	closetext
-	checkcellnum PHONE_BUENA
+	checkcellnum PAGER_BUENA
 	iftrue .Registered0
-	checkevent EVENT_BUENA_OFFERED_HER_PHONE_NUMBER
+	checkevent EVENT_BUENA_OFFERED_HER_PAGER_NUMBER
 	iftrue .OfferedNumberBefore
 .Registered0:
 	turnobject RADIOTOWER2F_BUENA, RIGHT
@@ -191,9 +191,9 @@ Buena:
 	writetext RadioTower2FBuenaAlreadyPlayedText
 	waitbutton
 	closetext
-	checkcellnum PHONE_BUENA
+	checkcellnum PAGER_BUENA
 	iftrue .Registered1
-	checkevent EVENT_BUENA_OFFERED_HER_PHONE_NUMBER
+	checkevent EVENT_BUENA_OFFERED_HER_PAGER_NUMBER
 	iftrue .OfferedNumberBefore
 .Registered1:
 	turnobject RADIOTOWER2F_BUENA, RIGHT
@@ -228,9 +228,9 @@ Buena:
 	writetext RadioTower2FBuenaNoBlueCardText
 	waitbutton
 	closetext
-	checkcellnum PHONE_BUENA
+	checkcellnum PAGER_BUENA
 	iftrue .Registered2
-	checkevent EVENT_BUENA_OFFERED_HER_PHONE_NUMBER_NO_BLUE_CARD
+	checkevent EVENT_BUENA_OFFERED_HER_PAGER_NUMBER_NO_BLUE_CARD
 	iftrue .OfferedNumberBefore
 .Registered2:
 	turnobject RADIOTOWER2F_BUENA, RIGHT
@@ -240,9 +240,9 @@ Buena:
 	writetext RadioTower2FBuenaCardIsFullText
 	waitbutton
 	closetext
-	checkcellnum PHONE_BUENA
+	checkcellnum PAGER_BUENA
 	iftrue .Registered3
-	checkevent EVENT_BUENA_OFFERED_HER_PHONE_NUMBER_NO_BLUE_CARD
+	checkevent EVENT_BUENA_OFFERED_HER_PAGER_NUMBER_NO_BLUE_CARD
 	iftrue .OfferedNumberBefore
 .Registered3:
 	turnobject RADIOTOWER2F_BUENA, RIGHT
@@ -252,46 +252,46 @@ Buena:
 	writetext RadioTower2FBuenaTuneInAfterSixText
 	waitbutton
 	closetext
-	checkcellnum PHONE_BUENA
+	checkcellnum PAGER_BUENA
 	iftrue .Registered4
-	checkevent EVENT_BUENA_OFFERED_HER_PHONE_NUMBER
+	checkevent EVENT_BUENA_OFFERED_HER_PAGER_NUMBER
 	iftrue .OfferedNumberBefore
 .Registered4:
 	end
 
 .BlueCardCapped1:
-	checkcellnum PHONE_BUENA
+	checkcellnum PAGER_BUENA
 	iftrue .HasNumber
 	pause 20
 	turnobject RADIOTOWER2F_BUENA, DOWN
 	pause 15
 	turnobject PLAYER, UP
 	pause 15
-	checkevent EVENT_BUENA_OFFERED_HER_PHONE_NUMBER_NO_BLUE_CARD
+	checkevent EVENT_BUENA_OFFERED_HER_PAGER_NUMBER_NO_BLUE_CARD
 	iftrue .OfferedNumberBefore
 	showemote EMOTE_SHOCK, RADIOTOWER2F_BUENA, 15
-	setevent EVENT_BUENA_OFFERED_HER_PHONE_NUMBER_NO_BLUE_CARD
-	setevent EVENT_BUENA_OFFERED_HER_PHONE_NUMBER
+	setevent EVENT_BUENA_OFFERED_HER_PAGER_NUMBER_NO_BLUE_CARD
+	setevent EVENT_BUENA_OFFERED_HER_PAGER_NUMBER
 	opentext
-	writetext RadioTower2FBuenaOfferPhoneNumberText
+	writetext RadioTower2FBuenaOfferPagerNumberText
 	sjump .AskForNumber
 
 .OfferedNumberBefore:
 	opentext
 	writetext RadioTower2FBuenaOfferNumberAgainText
 .AskForNumber:
-	askforphonenumber PHONE_BUENA
-	ifequal PHONE_CONTACTS_FULL, .PhoneFull
-	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
+	askforpagernumber PAGER_BUENA
+	ifequal PAGER_CONTACTS_FULL, .PagerFull
+	ifequal PAGER_CONTACT_REFUSED, .NumberDeclined
 	writetext RadioTower2FRegisteredBuenasNumberText
-	playsound SFX_REGISTER_PHONE_NUMBER
+	playsound SFX_REGISTER_PAGER_NUMBER
 	waitsfx
 	promptbutton
 	writetext RadioTower2FBuenaCallMeText
 	waitbutton
 	closetext
 	turnobject RADIOTOWER2F_BUENA, RIGHT
-	addcellnum PHONE_BUENA
+	addcellnum PAGER_BUENA
 	end
 
 .NumberDeclined:
@@ -301,8 +301,8 @@ Buena:
 	turnobject RADIOTOWER2F_BUENA, RIGHT
 	end
 
-.PhoneFull:
-	writetext RadioTower2FBuenaYourPhoneIsFullText
+.PagerFull:
+	writetext RadioTower2FBuenaYourPagerIsFullText
 	waitbutton
 	closetext
 	turnobject RADIOTOWER2F_BUENA, RIGHT
@@ -338,7 +338,7 @@ RadioTower2FPokemonRadioSign:
 RadioTower2FBookshelf:
 	jumpstd MagazineBookshelfScript
 
-RadioTower2FPlayerWalksToMicrophoneMovement:
+RadioTower2FPlayerWalksToMicropagerMovement:
 	slow_step DOWN
 	slow_step RIGHT
 	step_end
@@ -623,7 +623,7 @@ RadioTower2FBuenaNoBlueCardText:
 	cont "don't have it."
 	done
 
-RadioTower2FBuenaOfferPhoneNumberText:
+RadioTower2FBuenaOfferPagerNumberText:
 	text "BUENA: Oh! Your"
 	line "BLUE CARD reached"
 
@@ -641,14 +641,14 @@ RadioTower2FBuenaOfferPhoneNumberText:
 	line "special deal!"
 
 	para "How would you like"
-	line "my phone number?"
+	line "my pager number?"
 	done
 
 RadioTower2FBuenaOfferNumberAgainText:
 	text "BUENA: <PLAY_G>,"
 	line "do you want to"
 
-	para "register my phone"
+	para "register my pager"
 	line "number?"
 	done
 
@@ -668,9 +668,9 @@ RadioTower2FBuenaSadRejectedText:
 	line "special prize…"
 	done
 
-RadioTower2FBuenaYourPhoneIsFullText:
+RadioTower2FBuenaYourPagerIsFullText:
 	text "BUENA: <PLAY_G>,"
-	line "your phone list"
+	line "your pager list"
 
 	para "has no room left"
 	line "for me…"

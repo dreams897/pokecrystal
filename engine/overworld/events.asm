@@ -405,7 +405,7 @@ CheckTimeEvents:
 .do_daily
 	farcall CheckDailyResetTimer
 	farcall CheckPokerusTick
-	farcall CheckPhoneCall
+	farcall CheckPagerCall
 	ret c
 
 .nothing
@@ -810,8 +810,8 @@ CountStep:
 	and a
 	jr nz, .done
 
-	; If there is a special phone call, don't count the step.
-	farcall CheckSpecialPhoneCall
+	; If there is a special pager call, don't count the step.
+	farcall CheckSpecialPagerCall
 	jr c, .doscript
 
 	; If Repel wore off, don't count the step.

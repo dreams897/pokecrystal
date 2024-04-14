@@ -215,13 +215,13 @@ ScriptCommandTable:
 	dw Script_pokemart                   ; 94
 	dw Script_elevator                   ; 95
 	dw Script_trade                      ; 96
-	dw Script_askforphonenumber          ; 97
-	dw Script_phonecall                  ; 98
+	dw Script_askforpagernumber          ; 97
+	dw Script_pagercall                  ; 98
 	dw Script_hangup                     ; 99
 	dw Script_describedecoration         ; 9a
 	dw Script_fruittree                  ; 9b
-	dw Script_specialphonecall           ; 9c
-	dw Script_checkphonecall             ; 9d
+	dw Script_specialpagercall           ; 9c
+	dw Script_checkpagercall             ; 9d
 	dw Script_verbosegiveitem            ; 9e
 	dw Script_verbosegiveitemvar         ; 9f
 	dw Script_swarm                      ; a0
@@ -604,35 +604,35 @@ Script_trade:
 	farcall NPCTrade
 	ret
 
-Script_phonecall:
+Script_pagercall:
 	call GetScriptByte
 	ld e, a
 	call GetScriptByte
 	ld d, a
 	ld a, [wScriptBank]
 	ld b, a
-	farcall PhoneCall
+	farcall PagerCall
 	ret
 
 Script_hangup:
 	farcall HangUp
 	ret
 
-Script_askforphonenumber:
+Script_askforpagernumber:
 	call YesNoBox
 	jr c, .refused
 	call GetScriptByte
 	ld c, a
-	farcall AddPhoneNumber
-	jr c, .phonefull
-	xor a ; PHONE_CONTACT_GOT
+	farcall AddPagerNumber
+	jr c, .pagerfull
+	xor a ; PAGER_CONTACT_GOT
 	jr .done
-.phonefull
-	ld a, PHONE_CONTACTS_FULL
+.pagerfull
+	ld a, PAGER_CONTACTS_FULL
 	jr .done
 .refused
 	call GetScriptByte
-	ld a, PHONE_CONTACT_REFUSED
+	ld a, PAGER_CONTACT_REFUSED
 .done
 	ld [wScriptVar], a
 	ret
@@ -1873,7 +1873,7 @@ Script_addcellnum:
 	ld [wScriptVar], a
 	call GetScriptByte
 	ld c, a
-	farcall AddPhoneNumber
+	farcall AddPagerNumber
 	ret nc
 	ld a, TRUE
 	ld [wScriptVar], a
@@ -1891,7 +1891,7 @@ Script_delcellnum:
 	ret
 
 Script_checkcellnum:
-; returns false if the cell number is not in your phone
+; returns false if the cell number is not in your pager
 
 	xor a
 	ld [wScriptVar], a
@@ -1903,17 +1903,17 @@ Script_checkcellnum:
 	ld [wScriptVar], a
 	ret
 
-Script_specialphonecall:
+Script_specialpagercall:
 	call GetScriptByte
-	ld [wSpecialPhoneCallID], a
+	ld [wSpecialPagerCallID], a
 	call GetScriptByte
-	ld [wSpecialPhoneCallID + 1], a
+	ld [wSpecialPagerCallID + 1], a
 	ret
 
-Script_checkphonecall:
-; returns false if no special phone call is stored
+Script_checkpagercall:
+; returns false if no special pager call is stored
 
-	ld a, [wSpecialPhoneCallID]
+	ld a, [wSpecialPagerCallID]
 	and a
 	jr z, .ok
 	ld a, TRUE

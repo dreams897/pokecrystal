@@ -61,7 +61,7 @@ GoldenrodBikeShopClerkAgreedText:
 	text "Really? Great!"
 
 	para "Give me your name"
-	line "and phone number,"
+	line "and pager number,"
 
 	para "and I'll loan you"
 	line "a BICYCLE."

@@ -28,27 +28,27 @@ TrainerCooltrainermGaven3:
 	trainer COOLTRAINERM, GAVEN3, EVENT_BEAT_COOLTRAINERM_GAVEN, CooltrainermGaven3SeenText, CooltrainermGaven3BeatenText, 0, .Script
 
 .Script:
-	loadvar VAR_CALLERID, PHONE_COOLTRAINERM_GAVEN
+	loadvar VAR_CALLERID, PAGER_COOLTRAINERM_GAVEN
 	endifjustbattled
 	opentext
 	checkflag ENGINE_GAVEN_READY_FOR_REMATCH
 	iftrue .WantsBattle
-	checkcellnum PHONE_COOLTRAINERM_GAVEN
+	checkcellnum PAGER_COOLTRAINERM_GAVEN
 	iftrue .NumberAccepted
-	checkevent EVENT_GAVEN_ASKED_FOR_PHONE_NUMBER
+	checkevent EVENT_GAVEN_ASKED_FOR_PAGER_NUMBER
 	iftrue .AskedAlready
 	writetext CooltrainermGavenAfterText
 	promptbutton
-	setevent EVENT_GAVEN_ASKED_FOR_PHONE_NUMBER
+	setevent EVENT_GAVEN_ASKED_FOR_PAGER_NUMBER
 	scall .AskNumber1
 	sjump .AskForNumber
 
 .AskedAlready:
 	scall .AskNumber2
 .AskForNumber:
-	askforphonenumber PHONE_COOLTRAINERM_GAVEN
-	ifequal PHONE_CONTACTS_FULL, .PhoneFull
-	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
+	askforpagernumber PAGER_COOLTRAINERM_GAVEN
+	ifequal PAGER_CONTACTS_FULL, .PagerFull
+	ifequal PAGER_CONTACT_REFUSED, .NumberDeclined
 	gettrainername STRING_BUFFER_3, COOLTRAINERM, GAVEN3
 	scall .RegisteredNumber
 	sjump .NumberAccepted
@@ -109,8 +109,8 @@ TrainerCooltrainermGaven3:
 	jumpstd NumberDeclinedMScript
 	end
 
-.PhoneFull:
-	jumpstd PhoneFullMScript
+.PagerFull:
+	jumpstd PagerFullMScript
 	end
 
 .Rematch:
@@ -132,27 +132,27 @@ TrainerCooltrainerfBeth1:
 	trainer COOLTRAINERF, BETH1, EVENT_BEAT_COOLTRAINERF_BETH, CooltrainerfBeth1SeenText, CooltrainerfBeth1BeatenText, 0, .Script
 
 .Script:
-	loadvar VAR_CALLERID, PHONE_COOLTRAINERF_BETH
+	loadvar VAR_CALLERID, PAGER_COOLTRAINERF_BETH
 	endifjustbattled
 	opentext
 	checkflag ENGINE_BETH_READY_FOR_REMATCH
 	iftrue .WantsBattle
-	checkcellnum PHONE_COOLTRAINERF_BETH
+	checkcellnum PAGER_COOLTRAINERF_BETH
 	iftrue .NumberAccepted
-	checkevent EVENT_BETH_ASKED_FOR_PHONE_NUMBER
+	checkevent EVENT_BETH_ASKED_FOR_PAGER_NUMBER
 	iftrue .AskedAlready
 	writetext CooltrainerfBethAfterText
 	promptbutton
-	setevent EVENT_BETH_ASKED_FOR_PHONE_NUMBER
+	setevent EVENT_BETH_ASKED_FOR_PAGER_NUMBER
 	scall .AskNumber1
 	sjump .AskForNumber
 
 .AskedAlready:
 	scall .AskNumber2
 .AskForNumber:
-	askforphonenumber PHONE_COOLTRAINERF_BETH
-	ifequal PHONE_CONTACTS_FULL, .PhoneFull
-	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
+	askforpagernumber PAGER_COOLTRAINERF_BETH
+	ifequal PAGER_CONTACTS_FULL, .PagerFull
+	ifequal PAGER_CONTACT_REFUSED, .NumberDeclined
 	gettrainername STRING_BUFFER_3, COOLTRAINERF, BETH1
 	scall .RegisteredNumber
 	sjump .NumberAccepted
@@ -213,8 +213,8 @@ TrainerCooltrainerfBeth1:
 	jumpstd NumberDeclinedFScript
 	end
 
-.PhoneFull:
-	jumpstd PhoneFullFScript
+.PagerFull:
+	jumpstd PagerFullFScript
 	end
 
 .Rematch:

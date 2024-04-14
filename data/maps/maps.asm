@@ -4,7 +4,7 @@ MACRO map
 ;\3: environment: TOWN, ROUTE, INDOOR, CAVE, FOREST, GATE, or DUNGEON
 ;\4: location: a LANDMARK_* constant
 ;\5: music: a MUSIC_* constant
-;\6: phone service flag: TRUE to prevent phone calls
+;\6: pager service flag: TRUE to prevent phone calls
 ;\7: time of day: a PALETTE_* constant
 ;\8: fishing group: a FISHGROUP_* constant
 	db BANK(\1_MapAttributes), \2, \3

@@ -1,0 +1,3 @@
+UnusedPagerScript:
+	farwritetext UnusedPagerText
+	end

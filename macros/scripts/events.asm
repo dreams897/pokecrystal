@@ -946,15 +946,15 @@ MACRO trade
 	db \1 ; trade_id
 ENDM
 
-	const askforphonenumber_command ; $97
-MACRO askforphonenumber
-	db askforphonenumber_command
+	const askforpagernumber_command ; $97
+MACRO askforpagernumber
+	db askforpagernumber_command
 	db \1 ; number
 ENDM
 
-	const phonecall_command ; $98
-MACRO phonecall
-	db phonecall_command
+	const pagercall_command ; $98
+MACRO pagercall
+	db pagercall_command
 	dw \1 ; caller_name
 ENDM
 
@@ -975,15 +975,15 @@ MACRO fruittree
 	db \1 ; tree_id
 ENDM
 
-	const specialphonecall_command ; $9c
-MACRO specialphonecall
-	db specialphonecall_command
+	const specialpagercall_command ; $9c
+MACRO specialpagercall
+	db specialpagercall_command
 	dw \1 ; call_id
 ENDM
 
-	const checkphonecall_command ; $9d
-MACRO checkphonecall
-	db checkphonecall_command
+	const checkpagercall_command ; $9d
+MACRO checkpagercall
+	db checkpagercall_command
 ENDM
 
 	const verbosegiveitem_command ; $9e

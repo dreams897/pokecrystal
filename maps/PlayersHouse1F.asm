@@ -39,8 +39,8 @@ MeetMomScript:
 	getstring STRING_BUFFER_4, PokegearName
 	scall PlayersHouse1FReceiveItemStd
 	setflag ENGINE_POKEGEAR
-	setflag ENGINE_PHONE_CARD
-	addcellnum PHONE_MOM
+	setflag ENGINE_PAGER_CARD
+	addcellnum PAGER_MOM
 	setscene SCENE_PLAYERSHOUSE1F_NOOP
 	setevent EVENT_PLAYERS_HOUSE_MOM_1
 	clearevent EVENT_PLAYERS_HOUSE_MOM_2
@@ -63,20 +63,20 @@ MeetMomScript:
 .DayOfWeekDone:
 	writetext ComeHomeForDSTText
 	yesorno
-	iffalse .ExplainPhone
-	sjump .KnowPhone
+	iffalse .ExplainPager
+	sjump .KnowPager
 
-.KnowPhone:
+.KnowPager:
 	writetext KnowTheInstructionsText
 	promptbutton
-	sjump .FinishPhone
+	sjump .FinishPager
 
-.ExplainPhone:
+.ExplainPager:
 	writetext DontKnowTheInstructionsText
 	promptbutton
-	sjump .FinishPhone
+	sjump .FinishPager
 
-.FinishPhone:
+.FinishPager:
 	writetext InstructionsNextText
 	waitbutton
 	closetext
@@ -259,7 +259,7 @@ ComeHomeForDSTText:
 
 	para "By the way, do you"
 	line "know how to use"
-	cont "the PHONE?"
+	cont "the PAGER?"
 	done
 
 KnowTheInstructionsText:
@@ -267,7 +267,7 @@ KnowTheInstructionsText:
 	line "turn the #GEAR"
 
 	para "on and select the"
-	line "PHONE icon?"
+	line "PAGER icon?"
 	done
 
 DontKnowTheInstructionsText:
@@ -276,11 +276,11 @@ DontKnowTheInstructionsText:
 
 	para "Turn the #GEAR"
 	line "on and select the"
-	cont "PHONE icon."
+	cont "PAGER icon."
 	done
 
 InstructionsNextText:
-	text "Phone numbers are"
+	text "Pager numbers are"
 	line "stored in memory."
 
 	para "Just choose a name"

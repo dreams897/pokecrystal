@@ -26,27 +26,27 @@ TrainerPicnickerErin1:
 	trainer PICNICKER, ERIN1, EVENT_BEAT_PICNICKER_ERIN, PicnickerErin1SeenText, PicnickerErin1BeatenText, 0, .Script
 
 .Script:
-	loadvar VAR_CALLERID, PHONE_PICNICKER_ERIN
+	loadvar VAR_CALLERID, PAGER_PICNICKER_ERIN
 	endifjustbattled
 	opentext
 	checkflag ENGINE_ERIN_READY_FOR_REMATCH
 	iftrue .WantsBattle
-	checkcellnum PHONE_PICNICKER_ERIN
+	checkcellnum PAGER_PICNICKER_ERIN
 	iftrue Route46NumberAcceptedF
-	checkevent EVENT_ERIN_ASKED_FOR_PHONE_NUMBER
+	checkevent EVENT_ERIN_ASKED_FOR_PAGER_NUMBER
 	iftrue .AskedAlready
 	writetext PicnickerErinAfterBattleText
 	promptbutton
-	setevent EVENT_ERIN_ASKED_FOR_PHONE_NUMBER
+	setevent EVENT_ERIN_ASKED_FOR_PAGER_NUMBER
 	scall Route46AskNumber1F
 	sjump .AskForNumber
 
 .AskedAlready:
 	scall Route46AskNumber2F
 .AskForNumber:
-	askforphonenumber PHONE_PICNICKER_ERIN
-	ifequal PHONE_CONTACTS_FULL, Route46PhoneFullF
-	ifequal PHONE_CONTACT_REFUSED, Route46NumberDeclinedF
+	askforpagernumber PAGER_PICNICKER_ERIN
+	ifequal PAGER_CONTACTS_FULL, Route46PagerFullF
+	ifequal PAGER_CONTACT_REFUSED, Route46NumberDeclinedF
 	gettrainername STRING_BUFFER_3, PICNICKER, ERIN1
 	scall Route46RegisteredNumberF
 	sjump Route46NumberAcceptedF
@@ -128,8 +128,8 @@ Route46NumberDeclinedF:
 	jumpstd NumberDeclinedFScript
 	end
 
-Route46PhoneFullF:
-	jumpstd PhoneFullFScript
+Route46PagerFullF:
+	jumpstd PagerFullFScript
 	end
 
 Route46RematchF:

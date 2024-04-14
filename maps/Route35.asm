@@ -31,25 +31,25 @@ TrainerJugglerIrwin:
 	trainer JUGGLER, IRWIN1, EVENT_BEAT_JUGGLER_IRWIN, JugglerIrwin1SeenText, JugglerIrwin1BeatenText, 0, .Script
 
 .Script:
-	loadvar VAR_CALLERID, PHONE_JUGGLER_IRWIN
+	loadvar VAR_CALLERID, PAGER_JUGGLER_IRWIN
 	endifjustbattled
 	opentext
-	checkcellnum PHONE_JUGGLER_IRWIN
+	checkcellnum PAGER_JUGGLER_IRWIN
 	iftrue Route35NumberAcceptedM
-	checkevent EVENT_IRWIN_ASKED_FOR_PHONE_NUMBER
+	checkevent EVENT_IRWIN_ASKED_FOR_PAGER_NUMBER
 	iftrue .AskedAlready
 	writetext JugglerIrwinAfterBattleText
 	promptbutton
-	setevent EVENT_IRWIN_ASKED_FOR_PHONE_NUMBER
+	setevent EVENT_IRWIN_ASKED_FOR_PAGER_NUMBER
 	scall Route35AskNumber1M
 	sjump .AskForNumber
 
 .AskedAlready:
 	scall Route35AskNumber2M
 .AskForNumber:
-	askforphonenumber PHONE_JUGGLER_IRWIN
-	ifequal PHONE_CONTACTS_FULL, Route35PhoneFullM
-	ifequal PHONE_CONTACT_REFUSED, Route35NumberDeclinedM
+	askforpagernumber PAGER_JUGGLER_IRWIN
+	ifequal PAGER_CONTACTS_FULL, Route35PagerFullM
+	ifequal PAGER_CONTACT_REFUSED, Route35NumberDeclinedM
 	gettrainername STRING_BUFFER_3, JUGGLER, IRWIN1
 	scall Route35RegisteredNumberM
 	sjump Route35NumberAcceptedM
@@ -74,8 +74,8 @@ Route35NumberDeclinedM:
 	jumpstd NumberDeclinedMScript
 	end
 
-Route35PhoneFullM:
-	jumpstd PhoneFullMScript
+Route35PagerFullM:
+	jumpstd PagerFullMScript
 	end
 
 Route35RematchM:
@@ -130,29 +130,29 @@ TrainerBugCatcherArnie:
 	trainer BUG_CATCHER, ARNIE1, EVENT_BEAT_BUG_CATCHER_ARNIE, BugCatcherArnieSeenText, BugCatcherArnieBeatenText, 0, .Script
 
 .Script:
-	loadvar VAR_CALLERID, PHONE_BUG_CATCHER_ARNIE
+	loadvar VAR_CALLERID, PAGER_BUG_CATCHER_ARNIE
 	endifjustbattled
 	opentext
 	checkflag ENGINE_ARNIE_READY_FOR_REMATCH
 	iftrue .WantsBattle
 	checkflag ENGINE_YANMA_SWARM
 	iftrue .YanmaSwarming
-	checkcellnum PHONE_BUG_CATCHER_ARNIE
+	checkcellnum PAGER_BUG_CATCHER_ARNIE
 	iftrue Route35NumberAcceptedM
-	checkevent EVENT_ARNIE_ASKED_FOR_PHONE_NUMBER
+	checkevent EVENT_ARNIE_ASKED_FOR_PAGER_NUMBER
 	iftrue .AskedAlready
 	writetext BugCatcherArnieAfterBattleText
 	promptbutton
-	setevent EVENT_ARNIE_ASKED_FOR_PHONE_NUMBER
+	setevent EVENT_ARNIE_ASKED_FOR_PAGER_NUMBER
 	scall Route35AskNumber1M
 	sjump .AskForNumber
 
 .AskedAlready:
 	scall Route35AskNumber2M
 .AskForNumber:
-	askforphonenumber PHONE_BUG_CATCHER_ARNIE
-	ifequal PHONE_CONTACTS_FULL, Route35PhoneFullM
-	ifequal PHONE_CONTACT_REFUSED, Route35NumberDeclinedM
+	askforpagernumber PAGER_BUG_CATCHER_ARNIE
+	ifequal PAGER_CONTACTS_FULL, Route35PagerFullM
+	ifequal PAGER_CONTACT_REFUSED, Route35NumberDeclinedM
 	gettrainername STRING_BUFFER_3, BUG_CATCHER, ARNIE1
 	scall Route35RegisteredNumberM
 	sjump Route35NumberAcceptedM

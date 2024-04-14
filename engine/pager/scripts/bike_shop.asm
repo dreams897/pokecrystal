@@ -1,0 +1,5 @@
+BikeShopPagerPagerScript:
+	farwritetext BikeShopPagerPagerText
+	clearflag ENGINE_BIKE_SHOP_CALL_ENABLED
+	specialpagercall SPECIALCALL_NONE
+	end

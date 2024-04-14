@@ -2237,17 +2237,17 @@ GetMapMusic::
 	jr .done
 
 GetMapTimeOfDay::
-	call GetPhoneServiceTimeOfDayByte
+	call GetPagerServiceTimeOfDayByte
 	and $f
 	ret
 
-GetMapPhoneService::
-	call GetPhoneServiceTimeOfDayByte
+GetMapPagerService::
+	call GetPagerServiceTimeOfDayByte
 	and $f0
 	swap a
 	ret
 
-GetPhoneServiceTimeOfDayByte::
+GetPagerServiceTimeOfDayByte::
 	push hl
 	push bc
 

@@ -27,29 +27,29 @@ TrainerPokefanmDerek:
 	trainer POKEFANM, DEREK1, EVENT_BEAT_POKEFANM_DEREK, PokefanmDerekSeenText, PokefanmDerekBeatenText, 0, .Script
 
 .Script:
-	loadvar VAR_CALLERID, PHONE_POKEFANM_DEREK
+	loadvar VAR_CALLERID, PAGER_POKEFANM_DEREK
 	endifjustbattled
 	opentext
 	checkflag ENGINE_DEREK_HAS_NUGGET
 	iftrue .HasNugget
-	checkcellnum PHONE_POKEFANM_DEREK
+	checkcellnum PAGER_POKEFANM_DEREK
 	iftrue .NumberAccepted
 	checkpoke PIKACHU
 	iffalse .WantsPikachu
-	checkevent EVENT_DEREK_ASKED_FOR_PHONE_NUMBER
+	checkevent EVENT_DEREK_ASKED_FOR_PAGER_NUMBER
 	iftrue .AskedAlready
 	writetext PokefanMDerekText_NotBragging
 	promptbutton
-	setevent EVENT_DEREK_ASKED_FOR_PHONE_NUMBER
+	setevent EVENT_DEREK_ASKED_FOR_PAGER_NUMBER
 	scall .AskNumber1
 	sjump .AskForNumber
 
 .AskedAlready:
 	scall .AskNumber2
 .AskForNumber:
-	askforphonenumber PHONE_POKEFANM_DEREK
-	ifequal PHONE_CONTACTS_FULL, .PhoneFull
-	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
+	askforpagernumber PAGER_POKEFANM_DEREK
+	ifequal PAGER_CONTACTS_FULL, .PagerFull
+	ifequal PAGER_CONTACT_REFUSED, .NumberDeclined
 	gettrainername STRING_BUFFER_3, POKEFANM, DEREK1
 	scall .RegisteredNumber
 	sjump .NumberAccepted
@@ -90,8 +90,8 @@ TrainerPokefanmDerek:
 	jumpstd NumberDeclinedMScript
 	end
 
-.PhoneFull:
-	jumpstd PhoneFullMScript
+.PagerFull:
+	jumpstd PagerFullMScript
 	end
 
 .Gift:

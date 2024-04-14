@@ -476,7 +476,7 @@ GoldenrodPokecomCenterNewsMachineExplanationText: ; unreferenced
 	para "adventure log and"
 	line "mobile profile."
 
-	para "Your phone number"
+	para "Your pager number"
 	line "will not be sent."
 
 	para "The contents of"

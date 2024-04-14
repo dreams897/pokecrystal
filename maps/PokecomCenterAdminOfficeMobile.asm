@@ -68,19 +68,19 @@ PokecomCenterAdminOfficeMobileComputer2:
 	loadmenu .Computer2MenuHeader
 	verticalmenu
 	closewindow
-	ifequal 1, .UsePhone
-	ifequal 2, .DontUsePhone
+	ifequal 1, .UsePager
+	ifequal 2, .DontUsePager
 	sjump .Quit
 
-.UsePhone:
+.UsePager:
 	opentext
-	writetext PokecomCenterAdminOfficeMobileComputer2Text_UsePhone
+	writetext PokecomCenterAdminOfficeMobileComputer2Text_UsePager
 	waitbutton
 	sjump .loop
 
-.DontUsePhone:
+.DontUsePager:
 	opentext
-	writetext PokecomCenterAdminOfficeMobileComputer2Text_DontUsePhone
+	writetext PokecomCenterAdminOfficeMobileComputer2Text_DontUsePager
 	waitbutton
 	sjump .loop
 
@@ -97,8 +97,8 @@ PokecomCenterAdminOfficeMobileComputer2:
 .MenuData:
 	db STATICMENU_CURSOR ; flags
 	db 3 ; items
-	db "でんわ<WO>つかうとき@" ; Use phone
-	db "でんわ<GA>つながらないとき@" ; Don't use phone
+	db "でんわ<WO>つかうとき@" ; Use pager
+	db "でんわ<GA>つながらないとき@" ; Don't use pager
 	db "やめる@" ; QUIT
 
 PokecomCenterAdminOfficeMobileComputer3:
@@ -122,7 +122,7 @@ PokecomCenterAdminOfficeMobileScientist2Text:
 	text "When you linked"
 	line "with someone by"
 
-	para "mobile phone for"
+	para "mobile pager for"
 	line "the first time,"
 
 	para "weren't you"
@@ -179,7 +179,7 @@ PokecomCenterAdminOfficeMobileComputer1Text_MobileCenter:
 	line "CORNER or read the"
 
 	para "#MON NEWS, you"
-	line "need to phone the"
+	line "need to pager the"
 	cont "MOBILE CENTER."
 
 	para "You must register"
@@ -192,26 +192,26 @@ PokecomCenterAdminOfficeMobileComputer1Text_MobileCenter:
 PokecomCenterAdminOfficeMobileComputer2Text:
 	text "It's a notice"
 	line "about using the"
-	cont "phone…"
+	cont "pager…"
 	done
 
-PokecomCenterAdminOfficeMobileComputer2Text_UsePhone:
+PokecomCenterAdminOfficeMobileComputer2Text_UsePager:
 	text "Please ensure that"
-	line "your phone and"
+	line "your pager and"
 
 	para "MOBILE ADAPTER are"
 	line "properly linked."
 
 	para "Please make sure"
-	line "the wireless phone"
+	line "the wireless pager"
 	cont "signal is strong."
 
 	para "Don't touch or"
-	line "hang up the phone"
+	line "hang up the pager"
 	cont "while linking."
 	done
 
-PokecomCenterAdminOfficeMobileComputer2Text_DontUsePhone:
+PokecomCenterAdminOfficeMobileComputer2Text_DontUsePager:
 	text "If the server is"
 	line "busy, it may not"
 
