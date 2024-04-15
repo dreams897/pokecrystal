@@ -467,6 +467,7 @@ DEF GREEN EQU __trainer_class__
 	const NORTON ; unused
 	const HUGH
 	const MARKUS
+	const MIGUEL
 
 	trainerclass RIVAL2 ; 2a
 	const RIVAL2_1_CHIKORITA
