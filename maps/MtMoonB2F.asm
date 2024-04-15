@@ -29,9 +29,9 @@ MtMoonB2FNoopScene:
 	
 MtMoonB2FTeamRocketScript:
 	playmusic MUSIC_MEET_JESSIE_JAMES
-	showemote EMOTE_SHOCK, PLAYER, 20
 	opentext
 	writetext MtMoonJessieJamesText1
+	showemote EMOTE_SHOCK, PLAYER, 20
 	pause 15
 	closetext
 	turnobject PLAYER, UP
@@ -54,12 +54,14 @@ MtMoonB2FTeamRocketScript:
 	writetext MtMoonJessieJamesText4
 	waitbutton
 	closetext
+	playmusic MUSIC_MEET_JESSIE_JAMES
 	special FadeOutToBlack
-	pause 10
+	pause 25
 	special ReloadSpritesNoPalettes
 	disappear MT_MOON_B2F_JAMES
 	disappear MT_MOON_B2F_JESSIE
 	special FadeInFromBlack
+	special RestartMapMusic
 	setevent EVENT_TEAM_ROCKET_APPEARED_MT_MOON
 	setscene SCENE_MT_MOON_B2F_NOOP
 	end
