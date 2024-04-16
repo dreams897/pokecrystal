@@ -11,7 +11,6 @@ TrainerPicPointers::
 	dba JasminePic
 	dba ChuckPic
 	dba ClairPic
-	dba Rival0Pic
 	dba Rival1Pic
 	dba PokemonProfPic
 	dba WillPic
@@ -68,7 +67,9 @@ TrainerPicPointers::
 	dba KimonoGirlPic
 	dba TwinsPic
 	dba PokefanfPic
-	dba BluePic
+	dba Blue1Pic
+	dba Blue2Pic
+	dba Blue3Pic
 	dba OfficerPic
 	dba GruntfPic
 	dba TeamRocketPic

@@ -11,7 +11,6 @@ BTTrainerClassGenders:
 	db FEMALE ; JASMINE
 	db MALE   ; CHUCK
 	db FEMALE ; CLAIR
-	db MALE   ; RIVAL0
 	db MALE   ; RIVAL1
 	db MALE   ; POKEMON_PROF
 	db FEMALE ; WILL
@@ -68,6 +67,8 @@ BTTrainerClassGenders:
 	db FEMALE ; KIMONO_GIRL
 	db FEMALE ; TWINS
 	db FEMALE ; POKEFANF
+	db MALE   ; BLUE
+	db MALE   ; BLUE
 	db MALE   ; BLUE
 	db MALE   ; OFFICER
 	db FEMALE ; GRUNTF

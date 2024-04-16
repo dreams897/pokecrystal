@@ -11,7 +11,6 @@ TrainerGroups:
 	dba JasmineGroup
 	dba ChuckGroup
 	dba ClairGroup
-	dba Rival0Group
 	dba Rival1Group
 	dba PokemonProfGroup
 	dba WillGroup
@@ -68,7 +67,9 @@ TrainerGroups:
 	dba KimonoGirlGroup
 	dba TwinsGroup
 	dba PokefanFGroup
-	dba BlueGroup
+	dba Blue1Group
+	dba Blue2Group
+	dba Blue3Group
 	dba OfficerGroup
 	dba GruntFGroup
 	dba TeamRocketGroup

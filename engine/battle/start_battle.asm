@@ -100,11 +100,11 @@ PlayBattleMusic:
 
 	ld de, MUSIC_TRAINER_BATTLE
 	ld a, [wOtherTrainerClass]
-	cp RIVAL0
+	cp BLUE1
 	jr z, .done
-	cp RIVAL1
+	cp BLUE2
 	jr z, .done
-	cp RIVAL2
+	cp BLUE3
 	jr nz, .othertrainer
 
 	ld a, [wOtherTrainerID]

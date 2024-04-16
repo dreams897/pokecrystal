@@ -8222,9 +8222,9 @@ InitEnemyTrainer:
 	callfar GetTrainerAttributes
 	callfar ReadTrainerParty
 
-	; RIVAL0's first mon has no held item
+	; BLUE's first mon has no held item
 	ld a, [wTrainerClass]
-	cp RIVAL0
+	cp BLUE1
 	jr nz, .ok
 	xor a
 	ld [wOTPartyMon1Item], a

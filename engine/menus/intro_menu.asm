@@ -712,7 +712,7 @@ OakSpeech:
 	
 	xor a
 	ld [wCurPartySpecies], a
-	ld a, RIVAL1
+	ld a, BLUE1
 	ld [wTrainerClass], a
 	call Intro_PrepTrainerPic
 	
@@ -867,7 +867,7 @@ NameRivalIntro:
 
 	xor a
 	ld [wCurPartySpecies], a
-	ld a, RIVAL1
+	ld a, BLUE1
 	ld [wTrainerClass], a
 	call Intro_PrepTrainerPic
 

@@ -17,8 +17,7 @@ INCBIN "gfx/trainers/pryce.gbcpal", middle_colors
 INCBIN "gfx/trainers/jasmine.gbcpal", middle_colors
 INCBIN "gfx/trainers/chuck.gbcpal", middle_colors
 INCBIN "gfx/trainers/clair.gbcpal", middle_colors
-INCBIN "gfx/trainers/blue1.gbcpal", middle_colors
-INCBIN "gfx/trainers/blue1.gbcpal", middle_colors
+INCBIN "gfx/trainers/rival1.gbcpal", middle_colors
 INCBIN "gfx/trainers/oak.gbcpal", middle_colors
 INCBIN "gfx/trainers/will.gbcpal", middle_colors
 INCBIN "gfx/trainers/cal.gbcpal", middle_colors
@@ -56,8 +55,6 @@ INCBIN "gfx/trainers/guitarist.gbcpal", middle_colors
 INCBIN "gfx/trainers/hiker.gbcpal", middle_colors
 INCBIN "gfx/trainers/biker.gbcpal", middle_colors
 INCBIN "gfx/trainers/blaine.gbcpal", middle_colors
-EnbyPalette: ; enby gets their own pal
-INCBIN "gfx/trainers/enby.gbcpal", middle_colors
 INCBIN "gfx/trainers/burglar.gbcpal", middle_colors
 INCBIN "gfx/trainers/firebreather.gbcpal", middle_colors
 INCBIN "gfx/trainers/juggler.gbcpal", middle_colors
@@ -76,12 +73,16 @@ INCBIN "gfx/trainers/pokefan_m.gbcpal", middle_colors
 INCBIN "gfx/trainers/kimono_girl.gbcpal", middle_colors
 INCBIN "gfx/trainers/twins.gbcpal", middle_colors
 INCBIN "gfx/trainers/pokefan_f.gbcpal", middle_colors
-INCBIN "gfx/trainers/blue.gbcpal", middle_colors
+INCBIN "gfx/trainers/blue1.gbcpal", middle_colors
+INCBIN "gfx/trainers/blue2.gbcpal", middle_colors
+INCBIN "gfx/trainers/blue3.gbcpal", middle_colors
 INCBIN "gfx/trainers/officer.gbcpal", middle_colors
 INCBIN "gfx/trainers/grunt_f.gbcpal", middle_colors
 INCBIN "gfx/trainers/team_rocket.gbcpal", middle_colors
 INCBIN "gfx/trainers/kabutops_fossil.gbcpal", middle_colors
 INCBIN "gfx/trainers/aerodactyl_fossil.gbcpal", middle_colors
+EnbyPalette: ; enby gets their own pal
+INCBIN "gfx/trainers/enby.gbcpal", middle_colors
 INCBIN "gfx/trainers/mysticalman.gbcpal", middle_colors
 
 	assert_table_length NUM_TRAINER_CLASSES + 1

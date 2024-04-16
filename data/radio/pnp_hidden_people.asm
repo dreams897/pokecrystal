@@ -15,7 +15,7 @@ PnP_HiddenPeople_BeatE4:
 	db JANINE
 	db SABRINA
 	db BLAINE
-	db BLUE
+     ;  db GIOVANNI
 	; fallthrough
 PnP_HiddenPeople_BeatKanto:
 	db RIVAL1

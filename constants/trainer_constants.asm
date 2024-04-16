@@ -52,24 +52,22 @@ DEF GREEN EQU __trainer_class__
 	trainerclass CLAIR ; 8
 	const CLAIR1
 	
-	trainerclass RIVAL0 ; added
-	const RIVAL0_1_BULBASAUR
-	const RIVAL0_1_CHARMANDER
-	const RIVAL0_1_SQUIRTLE
-	
 	trainerclass RIVAL1 ; 9
-	const RIVAL1_2_BULBASAUR
-	const RIVAL1_2_CHARMANDER
-	const RIVAL1_2_SQUIRTLE
-	const RIVAL1_3_BULBASAUR
-	const RIVAL1_3_CHARMANDER
-	const RIVAL1_3_SQUIRTLE
-	const RIVAL1_4_BULBASAUR
-	const RIVAL1_4_CHARMANDER
-	const RIVAL1_4_SQUIRTLE
-	const RIVAL1_5_BULBASAUR
-	const RIVAL1_5_CHARMANDER
-	const RIVAL1_5_SQUIRTLE
+	const RIVAL1_1_CHIKORITA
+	const RIVAL1_1_CYNDAQUIL
+	const RIVAL1_1_TOTODILE
+	const RIVAL1_2_CHIKORITA
+	const RIVAL1_2_CYNDAQUIL
+	const RIVAL1_2_TOTODILE
+	const RIVAL1_3_CHIKORITA
+	const RIVAL1_3_CYNDAQUIL
+	const RIVAL1_3_TOTODILE
+	const RIVAL1_4_CHIKORITA
+	const RIVAL1_4_CYNDAQUIL
+	const RIVAL1_4_TOTODILE
+	const RIVAL1_5_CHIKORITA
+	const RIVAL1_5_CYNDAQUIL
+	const RIVAL1_5_TOTODILE
 
 	trainerclass POKEMON_PROF ; a
 
@@ -521,7 +519,6 @@ DEF GREEN EQU __trainer_class__
 	trainerclass BLAINE ; 2e
 	const BLAINE1
 
-DEF PURPLE EQU __trainer_class__
 	trainerclass BURGLAR ; 2f
 	const DUNCAN
 	const EDDIE
@@ -708,8 +705,13 @@ DEF PURPLE EQU __trainer_class__
 	const GEORGIA
 	const JAIME
 
-	trainerclass BLUE ; 40
-	const BLUE1
+	trainerclass BLUE1 ; 40
+	const BLUE1_BULBASAUR
+	const BLUE1_SQUIRTLE
+	
+	trainerclass BLUE2 ; added
+	
+	trainerclass BLUE3 ; added
 
 	trainerclass OFFICER ; 41
 	const KEITH
@@ -732,6 +734,7 @@ DEF PURPLE EQU __trainer_class__
 
 	trainerclass AERODACTYL_FOSSIL ; 45
 	
+DEF PURPLE EQU __trainer_class__
 	trainerclass ENBY_T ; 46
 
 	trainerclass MYSTICALMAN ; 47

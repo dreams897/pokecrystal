@@ -84,23 +84,22 @@ ClairGroup:
 	db 40, KINGDRA,    SMOKESCREEN, SURF, HYPER_BEAM, DRAGONBREATH
 	db -1 ; end
 	
-Rival0Group:
-	; RIVAL0 (1)
-	db "?@", TRAINERTYPE_DVS | TRAINERTYPE_ITEM
-	db  5, BULBASAUR,    $67, $67, NO_ITEM
-	db -1 ; end
-
-	; RIVAL0 (2)
-	db "?@", TRAINERTYPE_DVS | TRAINERTYPE_ITEM
-	db  5, CHARMANDER,    $67, $67, NO_ITEM
-	db -1 ; end
-
-	; RIVAL0 (3)
-	db "?@", TRAINERTYPE_DVS | TRAINERTYPE_ITEM
-	db  5, SQUIRTLE,    $67, $67, NO_ITEM
-	db -1 ; end
-
 Rival1Group:
+	; RIVAL1 (1)
+	db "?@", TRAINERTYPE_NORMAL
+	db  5, CHIKORITA
+	db -1 ; end
+
+	; RIVAL1 (2)
+	db "?@", TRAINERTYPE_NORMAL
+	db  5, CYNDAQUIL
+	db -1 ; end
+
+	; RIVAL1 (3)
+	db "?@", TRAINERTYPE_NORMAL
+	db  5, TOTODILE
+	db -1 ; end
+
 	; RIVAL1 (4)
 	db "?@", TRAINERTYPE_NORMAL
 	db 12, GASTLY
@@ -121,7 +120,7 @@ Rival1Group:
 	db 14, ZUBAT
 	db 16, CROCONAW
 	db -1 ; end
-
+	
 	; RIVAL1 (7)
 	db "?@", TRAINERTYPE_MOVES
 	db 20, HAUNTER,    LICK, SPITE, MEAN_LOOK, CURSE
@@ -3547,7 +3546,19 @@ PokefanFGroup:
 	db 16, MEOWTH,     ORAN_BERRY
 	db -1 ; end
 
-BlueGroup:
+Blue1Group:
+	; BLUE_OAKS_LAB_BULBASAUR (1)
+	db "?@", TRAINERTYPE_DVS | TRAINERTYPE_ITEM
+	db 5, BULBASAUR,    $45, $45, NO_ITEM
+	db -1 ; end
+
+	; BLUE_OAKS_LAB_SQUIRTLE (2)
+	db "?@", TRAINERTYPE_DVS | TRAINERTYPE_ITEM
+	db 5, SQUIRTLE,    $45, $45, NO_ITEM
+	db -1 ; end
+	
+Blue2Group:
+	
 	; BLUE (1)
 	db "BLUE@", TRAINERTYPE_MOVES
 	db 56, PIDGEOT,    QUICK_ATTACK, WHIRLWIND, WING_ATTACK, MIRROR_MOVE
@@ -3556,6 +3567,9 @@ BlueGroup:
 	db 58, GYARADOS,   TWISTER, HYDRO_PUMP, RAIN_DANCE, HYPER_BEAM
 	db 58, EXEGGUTOR,  SUNNY_DAY, LEECH_SEED, EGG_BOMB, SOLARBEAM
 	db 58, ARCANINE,   ROAR, SWIFT, FLAMETHROWER, EXTREMESPEED
+	db -1 ; end
+	
+Blue3Group:
 	db -1 ; end
 
 OfficerGroup:

@@ -311,11 +311,11 @@ PlaceEnemysName::
 	jr nz, .linkbattle
 
 	ld a, [wTrainerClass]
-	cp RIVAL0
+	cp BLUE1
 	jr z, .rival
-	cp RIVAL1
+	cp BLUE2
 	jr z, .rival
-	cp RIVAL2
+	cp BLUE3
 	jr z, .rival
 
 	ld de, wOTClassName

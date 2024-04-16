@@ -492,7 +492,7 @@ RivalWalkFromSquirtleScript:
 	applymovement OAKSLAB_BLUE, RivalWalksFromSquirtleLeftMovement
 	winlosstext OaksLabRivalIPickedTheWrongPokemonText, OaksLabRivalAmIGreatOrWhatText
 	setlasttalked OAKSLAB_BLUE
-	loadtrainer RIVAL0, RIVAL0_1_SQUIRTLE
+	loadtrainer BLUE1, BLUE1_SQUIRTLE
 	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
 	reloadmap
@@ -510,7 +510,7 @@ RivalWalkFromSquirtleScript:
 	turnobject OAKSLAB_BLUE, DOWN
 	winlosstext OaksLabRivalIPickedTheWrongPokemonText, OaksLabRivalAmIGreatOrWhatText
 	setlasttalked OAKSLAB_BLUE
-	loadtrainer RIVAL0, RIVAL0_1_SQUIRTLE
+	loadtrainer BLUE1, BLUE1_SQUIRTLE
 	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
 	reloadmap
@@ -546,7 +546,7 @@ RivalWalkFromBulbasaurScript:
 	applymovement OAKSLAB_BLUE, RivalWalksFromBulbasaurLeftMovement
 	winlosstext OaksLabRivalIPickedTheWrongPokemonText, OaksLabRivalAmIGreatOrWhatText
 	setlasttalked OAKSLAB_BLUE
-	loadtrainer RIVAL0, RIVAL0_1_BULBASAUR
+	loadtrainer BLUE1, BLUE1_BULBASAUR
 	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
 	reloadmap
@@ -563,7 +563,7 @@ RivalWalkFromBulbasaurScript:
 	applymovement OAKSLAB_BLUE, RivalWalksFromBulbasaurRightMovement
 	winlosstext OaksLabRivalIPickedTheWrongPokemonText, OaksLabRivalAmIGreatOrWhatText
 	setlasttalked OAKSLAB_BLUE
-	loadtrainer RIVAL0, RIVAL0_1_BULBASAUR
+	loadtrainer BLUE1, BLUE1_BULBASAUR
 	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
 	reloadmap
