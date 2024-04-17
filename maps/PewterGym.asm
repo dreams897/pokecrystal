@@ -238,14 +238,14 @@ PewterGymTrainer0AfterBattleText:
 	
 PewterGymTrainer1SeenText:
 	text "I just got back"
-	line "from Mt. Moon!"
+	line "from MT.MOON!"
 	done
 	
 PewterGymTrainer1BeatenText:
 	text "Darn!"
 	
 	para "You're ready"
-	line "for Brock!"
+	line "for BROCK!"
 	prompt
 	
 PewterGymTrainer1AfterBattleText:
