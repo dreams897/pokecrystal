@@ -501,7 +501,7 @@ BattleTowerRoomMenu_Cleanup:
 	ldh [hMobileReceive], a
 	ldh [hMobile], a
 	ldh [hVBlank], a
-	call NormalSpeed
+	call DoubleSpeed
 	xor a
 	ldh [rIF], a
 	ld a, [wcd32]
