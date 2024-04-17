@@ -1067,7 +1067,7 @@ NEXTU
 wMysteryGiftCardHolderName:: ds PLAYER_NAME_LENGTH
 ENDU
 
-	ds 138
+	ds 104
 
 wMysteryGiftPartnerData::
 wMysteryGiftPartnerGameVersion:: db
@@ -2274,6 +2274,7 @@ wItemsPocketCursor::    db
 wKeyItemsPocketCursor:: db
 wBallsPocketCursor::    db
 wTMHMPocketCursor::     db
+wBerryPocketCursor::    db
 
 wPCItemsScrollPosition::        db
 	ds 1
@@ -2281,6 +2282,7 @@ wItemsPocketScrollPosition::    db
 wKeyItemsPocketScrollPosition:: db
 wBallsPocketScrollPosition::    db
 wTMHMPocketScrollPosition::     db
+wBerryPocketScrollPosition::    db
 
 wSwitchMon::
 wSwitchItem::
@@ -2786,6 +2788,7 @@ NEXTU
 wDudeNumItems:: db
 wDudeItems:: ds 2 * 4 + 1
 
+wDudeNumBerries::
 wDudeNumKeyItems:: db
 wDudeKeyItems:: ds 18 + 1
 
@@ -2939,8 +2942,6 @@ endr
 
 wCmdQueue:: ds CMDQUEUE_CAPACITY * CMDQUEUE_ENTRY_SIZE
 
-	ds 6
-
 wMapObjects::
 wPlayerObject:: map_object wPlayer ; player is map object 0
 ; wMap1Object - wMap17Object
@@ -3011,6 +3012,9 @@ wKeyItems:: ds MAX_KEY_ITEMS + 1
 
 wNumBalls:: db
 wBalls:: ds MAX_BALLS * 2 + 1
+
+wNumBerries:: db
+wBerries:: ds MAX_BERRIES * 2 + 1
 
 wNumPCItems:: db
 wPCItems:: ds MAX_PC_ITEMS * 2 + 1
@@ -3167,7 +3171,7 @@ wKenjiFightCount::   db ; unreferenced
 wParryFightCount::   db
 wErinFightCount::    db
 
-	ds 100
+	ds 64
 
 wEventFlags:: flag_array NUM_EVENTS
 
