@@ -74,6 +74,7 @@ TrainerEncounterMusic::
 	db MUSIC_HIKER_ENCOUNTER       ; officer
 	db MUSIC_MEET_EVIL_TRAINER     ; gruntf
 	db MUSIC_MEET_JESSIE_JAMES     ; team rocket
+	db MUSIC_MEET_EVIL_TRAINER     ; giovanni
 	db MUSIC_HIKER_ENCOUNTER       ; mysticalman
 	assert_table_length NUM_TRAINER_CLASSES -2 ; exclude ENBY, AERODACTYLE_FOSSIL, KABUTOPS_FOSSIL
 	db MUSIC_HIKER_ENCOUNTER       ; unused

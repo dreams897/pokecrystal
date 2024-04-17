@@ -28,5 +28,5 @@ KantoGymLeaders:
 	db JANINE
 	db SABRINA
 	db BLAINE
-        db BLAINE ; will be GIOVANNI
+        db GIOVANNI
 	db -1

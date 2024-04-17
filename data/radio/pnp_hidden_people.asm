@@ -15,12 +15,7 @@ PnP_HiddenPeople_BeatE4:
 	db JANINE
 	db SABRINA
 	db BLAINE
-     ;  db GIOVANNI
 	; fallthrough
 PnP_HiddenPeople_BeatKanto:
-	db RIVAL1
-	db POKEMON_PROF
-	db CAL
-	db RIVAL2
-	db RED
+	; db PROFESSOR_OAK
 	db -1

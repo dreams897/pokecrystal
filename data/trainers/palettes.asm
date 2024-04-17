@@ -79,6 +79,7 @@ INCBIN "gfx/trainers/blue3.gbcpal", middle_colors
 INCBIN "gfx/trainers/officer.gbcpal", middle_colors
 INCBIN "gfx/trainers/grunt_f.gbcpal", middle_colors
 INCBIN "gfx/trainers/team_rocket.gbcpal", middle_colors
+INCBIN "gfx/trainers/giovanni.gbcpal", middle_colors
 INCBIN "gfx/trainers/kabutops_fossil.gbcpal", middle_colors
 INCBIN "gfx/trainers/aerodactyl_fossil.gbcpal", middle_colors
 EnbyPalette: ; enby gets their own pal

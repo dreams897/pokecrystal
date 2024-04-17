@@ -729,8 +729,10 @@ KabutopsFossilPic:   INCBIN "gfx/trainers/kabutops_fossil.2bpp.lz"
 AerodactylFossilPic: INCBIN "gfx/trainers/aerodactyl_fossil.2bpp.lz"
 
 SECTION "Pics 22", ROMX
-ENBYPic: INCBIN "gfx/trainers/enby.2bpp.lz"
+ENBYPic: 	     INCBIN "gfx/trainers/enby.2bpp.lz"
 SabrinaPic:          INCBIN "gfx/trainers/sabrina.2bpp.lz"
+GiovanniPic:         INCBIN "gfx/trainers/giovanni.2bpp.lz"
+
 
 SECTION "Pics 23", ROMX
 MysticalmanPic:      INCBIN "gfx/trainers/mysticalman.2bpp.lz"

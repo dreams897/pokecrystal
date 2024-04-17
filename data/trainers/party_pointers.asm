@@ -73,5 +73,6 @@ TrainerGroups:
 	dba OfficerGroup
 	dba GruntFGroup
 	dba TeamRocketGroup
+	dba GiovanniGroup
 	dba MysticalmanGroup
 	assert_table_length NUM_TRAINER_CLASSES - 3 ; exclude ENBY, AERODACTYLE_FOSSIL, KABUTOPS_FOSSIL

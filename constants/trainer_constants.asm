@@ -730,14 +730,18 @@ DEF GREEN EQU __trainer_class__
 	const TEAM_ROCKET3
 	const TEAM_ROCKET4
 	
-	trainerclass KABUTOPS_FOSSIL ; 44
+	trainerclass GIOVANNI ; 44
+	const GIOVANNI1
+	const GIOVANNI2
+	
+	trainerclass KABUTOPS_FOSSIL ; 45
 
-	trainerclass AERODACTYL_FOSSIL ; 45
+	trainerclass AERODACTYL_FOSSIL ; 46
 	
 DEF PURPLE EQU __trainer_class__
-	trainerclass ENBY_T ; 46
+	trainerclass ENBY_T ; 47
 
-	trainerclass MYSTICALMAN ; 47
+	trainerclass MYSTICALMAN ; 48
 	const EUSINE
 
 DEF NUM_TRAINER_CLASSES EQU __trainer_class__ - 1

@@ -73,6 +73,7 @@ TrainerPicPointers::
 	dba OfficerPic
 	dba GruntfPic
 	dba TeamRocketPic
+	dba GiovanniPic
 	dba KabutopsFossilPic
 	dba AerodactylFossilPic
 	dba ENBYPic
