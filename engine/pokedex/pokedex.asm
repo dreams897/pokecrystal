@@ -503,14 +503,7 @@ Pokedex_InitOptionScreen:
 	ret
 
 Pokedex_UpdateOptionScreen:
-	ld a, [wUnlockedUnownMode]
-	and a
-	jr nz, .okay
-	ld de, .NoUnownModeArrowCursorData
-	jr .okay2
-.okay
 	ld de, .ArrowCursorData
-.okay2
 	call Pokedex_MoveArrowCursor
 	call c, Pokedex_DisplayModeDescription
 	ld hl, hJoyPressed
@@ -534,26 +527,14 @@ Pokedex_UpdateOptionScreen:
 	ld [wJumptableIndex], a
 	ret
 
-.NoUnownModeArrowCursorData:
-	db D_UP | D_DOWN, 3
-	dwcoord 2,  4 ; NEW
-	dwcoord 2,  6 ; OLD
-	dwcoord 2,  8 ; ABC
-
 .ArrowCursorData:
-	db D_UP | D_DOWN, 4
-	dwcoord 2,  4 ; NEW
-	dwcoord 2,  6 ; OLD
-	dwcoord 2,  8 ; ABC
+	db D_UP | D_DOWN, 2
+	dwcoord 2,  4 ; OLD
+	dwcoord 2,  6 ; ABC
 
 .MenuActionJumptable:
-	dw .MenuAction_NewMode
 	dw .MenuAction_OldMode
 	dw .MenuAction_ABCMode
-
-.MenuAction_NewMode:
-	ld b, DEXMODE_NEW
-	jr .ChangeMode
 
 .MenuAction_OldMode:
 	ld b, DEXMODE_OLD
@@ -1060,8 +1041,7 @@ Pokedex_DrawOptionScreenBG:
 	db $3b, " OPTION ", $3c, -1
 
 .Modes:
-	db   "NEW #DEX MODE"
-	next "OLD #DEX MODE"
+	db   "OFFICIAL MODE"
 	next "A to Z MODE"
 	db   "@"
 
@@ -1408,13 +1388,12 @@ Pokedex_OrderMonsByMode:
 	dw Pokedex_ABCMode
 
 .NewMode:
-	ld de, NewPokedexOrder
 	ld hl, wPokedexOrder
+	ld a, $1
 	ld c, NUM_POKEMON
 .loopnew
-	ld a, [de]
-	inc de
 	ld [hli], a
+	inc a
 	dec c
 	jr nz, .loopnew
 	call .FindLastSeen
@@ -1507,19 +1486,19 @@ Pokedex_DisplayModeDescription:
 	ret
 
 .Modes:
-	dw .NewMode
 	dw .OldMode
 	dw .ABCMode
-
-.NewMode:
-	db   "<PK><MN> are listed by"
-	next "evolution type.@"
+	dw .NewMode
 
 .OldMode:
 	db   "<PK><MN> are listed by"
 	next "official type.@"
 
 .ABCMode:
+	db   "<PK><MN> are listed"
+	next "alphabetically.@"
+	
+.NewMode:
 	db   "<PK><MN> are listed"
 	next "alphabetically.@"
 
