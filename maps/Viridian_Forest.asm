@@ -145,8 +145,8 @@ ViridianForestYoungster4SeenText:
 	done
 
 ViridianForestYoungster4BeatenText:
-	text "I give!"
-	line "You're good at this!"
+	text "I give! You're"
+	line "good at this!"
 	prompt
 
 ViridianForestYoungster4AfterBattleText:

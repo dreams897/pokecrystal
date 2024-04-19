@@ -1551,8 +1551,8 @@ BugCatcherGroup:
 
 	; BUG_CATCHER (2)
 	db "ROB@", TRAINERTYPE_NORMAL
-	db 5, KAKUNA
-	db 3, CATERPIE
+	db 4, KAKUNA
+	db 4, CATERPIE
 	db -1 ; end
 
 	; BUG_CATCHER (3)
