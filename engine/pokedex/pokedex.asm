@@ -52,7 +52,7 @@ Pokedex:
 	jr .main
 
 .exit
-	ld de, SFX_PRESS_AB_1
+	ld de, SFX_READ_TEXT_2
 	call PlaySFX
 	call WaitSFX
 	call ClearSprites
@@ -427,8 +427,6 @@ DexEntryScreen_MenuActionJumptable:
 	ld e, a
 	predef Pokedex_GetArea
 	call Pokedex_BlackOutBG
-	call Pokedex_LoadGFX
-	call Pokedex_LoadAnyFootprint
 	call DelayFrame
 	xor a
 	ldh [hBGMapMode], a
@@ -447,8 +445,13 @@ DexEntryScreen_MenuActionJumptable:
 	ret
 
 .Cry:
-	ld a, [wCurPartySpecies]
-	call PlayMonCry
+; BUG: Playing Entei's Pokédex cry can distort Raikou's and Suicune's (see docs/bugs_and_glitches.md)
+	call Pokedex_GetSelectedMon
+	ld a, [wTempSpecies]
+	call GetCryIndex
+	ld e, c
+	ld d, b
+	call PlayCry
 	ret
 
 .Print:
@@ -1383,23 +1386,10 @@ Pokedex_OrderMonsByMode:
 	jp hl
 
 .Jumptable:
-	dw .NewMode
-	dw .OldMode
+	dw .OfficialMode
 	dw Pokedex_ABCMode
 
-.NewMode:
-	ld hl, wPokedexOrder
-	ld a, $1
-	ld c, NUM_POKEMON
-.loopnew
-	ld [hli], a
-	inc a
-	dec c
-	jr nz, .loopnew
-	call .FindLastSeen
-	ret
-
-.OldMode:
+.OfficialMode:
 	ld hl, wPokedexOrder
 	ld a, $1
 	ld c, NUM_POKEMON
@@ -1466,8 +1456,6 @@ Pokedex_ABCMode:
 
 INCLUDE "data/pokemon/dex_order_alpha.asm"
 
-INCLUDE "data/pokemon/dex_order_new.asm"
-
 Pokedex_DisplayModeDescription:
 	xor a
 	ldh [hBGMapMode], a
@@ -1486,19 +1474,14 @@ Pokedex_DisplayModeDescription:
 	ret
 
 .Modes:
-	dw .OldMode
+	dw .OfficialMode
 	dw .ABCMode
-	dw .NewMode
 
-.OldMode:
+.OfficialMode:
 	db   "<PK><MN> are listed by"
 	next "official type.@"
 
 .ABCMode:
-	db   "<PK><MN> are listed"
-	next "alphabetically.@"
-	
-.NewMode:
 	db   "<PK><MN> are listed"
 	next "alphabetically.@"
 
@@ -2145,18 +2128,31 @@ Pokedex_LoadAnyFootprint:
 	dec a
 	and %111
 	swap a ; * $10
-	add a, a
 	ld l, a
 	ld h, 0
 	add hl, de
 	ld de, Footprints
 	add hl, de
 
+	push hl
 	ld e, l
 	ld d, h
 	ld hl, vTiles2 tile $62
-	lb bc, BANK(Footprints), 4
+	lb bc, BANK(Footprints), 2
 	call Request1bpp
+	pop hl
+
+	; Whoever was editing footprints forgot to fix their
+	; tile editor. Now each bottom half is 8 tiles off.
+	ld de, 8 tiles
+	add hl, de
+
+	ld e, l
+	ld d, h
+	ld hl, vTiles2 tile $64
+	lb bc, BANK(Footprints), 2
+	call Request1bpp
+
 	ret
 
 Pokedex_LoadGFX:
