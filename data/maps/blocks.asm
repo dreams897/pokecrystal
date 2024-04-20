@@ -299,6 +299,7 @@ Route32Pokecenter1F_Blocks:
 GoldenrodPokecenter1F_Blocks:
 VermilionPokecenter1F_Blocks:
 PewterPokecenter1F_Blocks:
+MtMoonPokecenter_Blocks:
 FuchsiaPokecenter1F_Blocks:
 LavenderPokecenter1F_Blocks:
 SilverCavePokecenter1F_Blocks:
@@ -836,9 +837,6 @@ DiglettsCaveRoute2_Blocks:
 	
 DiglettsCaveRoute11_Blocks:
 	INCBIN "maps/DiglettsCaveRoute11.blk"
-	
-MtMoonPokecenter_Blocks:
-	INCBIN "maps/MtMoonPokecenter.blk"
 
 MtMoon1F_Blocks:
 	INCBIN "maps/MtMoon1F.blk"

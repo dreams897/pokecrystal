@@ -3,6 +3,10 @@
 	const LANDMARK_SPECIAL           ; 00
 ; Johto landmarks
 	const LANDMARK_NEW_BARK_TOWN     ; 01
+	const LANDMARK_ROUTE_26          ; 5b
+	const LANDMARK_ROUTE_27          ; 5c
+	const LANDMARK_TOHJO_FALLS       ; 5d
+	const LANDMARK_ROUTE_28          ; 5e
 	const LANDMARK_ROUTE_29          ; 02
 	const LANDMARK_CHERRYGROVE_CITY  ; 03
 	const LANDMARK_ROUTE_30          ; 04
@@ -94,10 +98,6 @@ DEF KANTO_LANDMARK EQU const_value
 	const LANDMARK_VICTORY_ROAD      ; 58
 	const LANDMARK_ROUTE_23          ; 59
 	const LANDMARK_INDIGO_PLATEAU    ; 5a
-	const LANDMARK_ROUTE_26          ; 5b
-	const LANDMARK_ROUTE_27          ; 5c
-	const LANDMARK_TOHJO_FALLS       ; 5d
-	const LANDMARK_ROUTE_28          ; 5e
 	const LANDMARK_SS_ANNE           ; Added
 DEF NUM_LANDMARKS EQU const_value
 

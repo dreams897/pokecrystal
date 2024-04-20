@@ -9,6 +9,10 @@ Landmarks:
 	table_width 4, Landmarks
 	landmark  -8, -16, SpecialMapName
 	landmark 140, 100, NewBarkTownName
+	landmark  28,  92, Route26Name
+	landmark  20, 100, Route27Name
+	landmark  12, 100, TohjoFallsName
+	landmark  20,  68, Route28Name
 	landmark 128, 100, Route29Name
 	landmark 100, 100, CherrygroveCityName
 	landmark 100,  80, Route30Name
@@ -100,10 +104,6 @@ Landmarks:
 	landmark  28,  52, VictoryRoadName
 	landmark  28,  44, Route23Name
 	landmark  28,  36, IndigoPlateauName
-	landmark  28,  92, Route26Name
-	landmark  20, 100, Route27Name
-	landmark  12, 100, TohjoFallsName
-	landmark  20,  68, Route28Name
 	landmark 100,  84, SSAnneName
 	assert_table_length NUM_LANDMARKS
 
