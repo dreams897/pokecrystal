@@ -41,6 +41,7 @@ ROMX $05
 	"bank5"
 ROMX $06
 	"Tileset Data 1"
+	"Tilemap Copy Functions"
 ROMX $07
 	"Roofs"
 	"Tileset Data 2"

@@ -12,6 +12,13 @@ MACRO callfar ; address, bank
 	rst FarCall
 ENDM
 
+MACRO farjp ; bank, address
+	rst FarCall
+	dbw BANK(\1), \1 | $8000
+	assert !(\1 & $8000), "farjp cannot call things above ROMX"
+	assert warn, BANK(\1) != 0 && BANK(\1) != BANK(@), "unnecessary `farjp \1`"
+ENDM
+
 MACRO homecall
 	ldh a, [hROMBank]
 	push af

@@ -112,6 +112,7 @@ DEF rLCDC_WINDOW_TILEMAP EQU 6     ; 0=9800-9BFF, 1=9C00-9FFF
 DEF rLCDC_ENABLE         EQU 7     ; 0=Off, 1=On
 DEF LCDC_DEFAULT         EQU (1 << rLCDC_ENABLE) | (1 << rLCDC_WINDOW_TILEMAP) | (1 << rLCDC_WINDOW_ENABLE) | (1 << rLCDC_SPRITES_ENABLE) | (1 << rLCDC_BG_PRIORITY)
 DEF rSTAT                EQU $ff41 ; LCDC Status (R/W)
+DEF rSTAT_MODE_2         EQU %10 ; Searching OAM
 DEF rSCY                 EQU $ff42 ; Scroll Y (R/W)
 DEF rSCX                 EQU $ff43 ; Scroll X (R/W)
 DEF rLY                  EQU $ff44 ; LCDC Y-Coordinate (R)
