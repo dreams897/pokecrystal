@@ -146,6 +146,7 @@ ENDM
 	map_const DRAGONS_DEN_B1F,                             20, 18 ; 81
 	map_const DRAGON_SHRINE,                                5,  5 ; 82
 	map_const TOHJO_FALLS,                                 15,  9 ; 83
+	map_const VIRIDIAN_FOREST,               	       17, 24 ; 15 ; Added
 	map_const DIGLETTS_CAVE,                       	       20, 18 ; 84
 	map_const DIGLETTS_CAVE_ROUTE_11,			4,  4 ; Added
 	map_const DIGLETTS_CAVE_ROUTE_2,			4,  4 ; Added
@@ -457,7 +458,6 @@ ENDM
 	map_const ROUTE_2_NUGGET_HOUSE,                         4,  4 ; 12
 	map_const ROUTE_2_GATE,                                 5,  4 ; 13
 	map_const VIRIDIAN_FOREST_SOUTH_GATE,     	        5,  4 ; 14 ; Added
-	map_const VIRIDIAN_FOREST,               	       17, 24 ; 15 ; Added
 	map_const VICTORY_ROAD_GATE,                            5,  4 ; 16
 	endgroup
 
