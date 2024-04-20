@@ -91,7 +91,7 @@ ViridianMartCooltrainerMText:
 	
 ViridianMartGotParcelText:
 	text "<PLAYER> received"
-	line "OAK'S PARCEL!"
+	line "OAK's PARCEL!"
 	done
 
 ViridianMart_MapEvents:
