@@ -731,13 +731,13 @@ TownMap_GetKantoLandmarkLimits:
 	ld a, [wStatusFlags]
 	bit STATUSFLAGS_HALL_OF_FAME_F, a
 	jr z, .not_hof
-	ld d, LANDMARK_ROUTE_28
+	ld d, LANDMARK_ROUTE_25
 	ld e, LANDMARK_PALLET_TOWN
 	ret
 
 .not_hof
-	ld d, LANDMARK_ROUTE_28
-	ld e, LANDMARK_VICTORY_ROAD
+	ld d, LANDMARK_INDIGO_PLATEAU
+	ld e, LANDMARK_PALLET_TOWN
 	ret
 
 PokegearRadio_Init:
