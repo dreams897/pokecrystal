@@ -111,10 +111,9 @@ ViridianForestYoungster2SeenText:
 	done
 
 ViridianForestYoungster2BeatenText:
-	text "No!"
-	line "CATERPIE can't"
-	cont "cut it!"
-	prompt
+	text "No! CATERPIE"
+	line "can't cut it!"
+	done
 
 ViridianForestYoungster2AfterBattleText:
 	text "Ssh! You'll scare"
@@ -128,10 +127,9 @@ ViridianForestYoungster3SeenText:
 	done
 
 ViridianForestYoungster3BeatenText:
-	text "Huh?"
-	line "I ran out"
-	cont "of #MON!"
-	prompt
+	text "Huh? I ran out"
+	line "of #MON!"
+	done
 
 ViridianForestYoungster3AfterBattleText:
 	text "Darn! I'm going"
