@@ -24,7 +24,7 @@ ItemNames::
 	li "FIRE STONE"
 	li "THUNDERSTONE"
 	li "WATER STONE"
-	li "OAK'S PARCEL"
+	li "OAK's PARCEL"
 	li "HP UP"
 	li "PROTEIN"
 	li "IRON"
