@@ -2,6 +2,90 @@
 
 JohtoGrassWildMons:
 
+	def_grass_wildmons ROUTE_26
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	db 28, DODUO
+	db 28, SANDSLASH
+	db 32, PONYTA
+	db 30, RATICATE
+	db 30, DODUO
+	db 30, ARBOK
+	db 30, ARBOK
+	; day
+	db 28, DODUO
+	db 28, SANDSLASH
+	db 32, PONYTA
+	db 30, RATICATE
+	db 30, DODUO
+	db 30, ARBOK
+	db 30, ARBOK
+	; nite
+	db 28, NOCTOWL
+	db 28, RATICATE
+	db 32, NOCTOWL
+	db 30, RATICATE
+	db 30, QUAGSIRE
+	db 30, QUAGSIRE
+	db 30, QUAGSIRE
+	end_grass_wildmons
+
+	def_grass_wildmons ROUTE_27
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	db 28, DODUO
+	db 28, ARBOK
+	db 30, RATICATE
+	db 30, DODUO
+	db 32, PONYTA
+	db 30, DODRIO
+	db 30, DODRIO
+	; day
+	db 28, DODUO
+	db 28, ARBOK
+	db 30, RATICATE
+	db 30, DODUO
+	db 32, PONYTA
+	db 30, DODRIO
+	db 30, DODRIO
+	; nite
+	db 28, QUAGSIRE
+	db 28, NOCTOWL
+	db 30, RATICATE
+	db 30, QUAGSIRE
+	db 32, NOCTOWL
+	db 32, NOCTOWL
+	db 32, NOCTOWL
+	end_grass_wildmons
+
+	def_grass_wildmons ROUTE_28
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	db 39, TANGELA
+	db 40, PONYTA
+	db 40, RAPIDASH
+	db 42, ARBOK
+	db 41, DODUO
+	db 43, DODRIO
+	db 43, DODRIO
+	; day
+	db 39, TANGELA
+	db 40, PONYTA
+	db 40, RAPIDASH
+	db 42, ARBOK
+	db 41, DODUO
+	db 43, DODRIO
+	db 43, DODRIO
+	; nite
+	db 39, TANGELA
+	db 40, POLIWHIRL
+	db 40, GOLBAT
+	db 40, POLIWHIRL
+	db 42, GOLBAT
+	db 42, GOLBAT
+	db 42, GOLBAT
+	end_grass_wildmons
+
 	def_grass_wildmons SPROUT_TOWER_2F
 	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn

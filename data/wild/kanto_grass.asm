@@ -2,6 +2,34 @@
 
 KantoGrassWildMons:
 
+	def_grass_wildmons VIRIDIAN_FOREST
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	db  4, WEEDLE
+	db  5, KAKUNA
+	db  5, WEEDLE
+	db  6, KAKUNA
+	db  4, METAPOD
+	db  3, CATERPIE
+	db  5, PIKACHU
+	; day
+	db  4, WEEDLE
+	db  4, CATERPIE
+	db  4, KAKUNA
+	db  5, METAPOD
+	db  5, CATERPIE
+	db  5, WEEDLE
+	db  5, PIKACHU
+	; nite
+	db 4, RATTATA
+	db 5, ZUBAT
+	db 4, KAKUNA
+	db 4, METAPOD
+	db 5, RATTATA
+	db 4, EKANS
+	db 5, VENONAT
+	end_grass_wildmons
+
 	def_grass_wildmons DIGLETTS_CAVE
 	db 4 percent, 2 percent, 8 percent ; encounter rates: morn/day/nite
 	; morn
@@ -812,118 +840,6 @@ KantoGrassWildMons:
 	db 10, BELLSPROUT
 	db 14, NOCTOWL
 	db 14, NOCTOWL
-	end_grass_wildmons
-
-	def_grass_wildmons ROUTE_26
-	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
-	; morn
-	db 28, DODUO
-	db 28, SANDSLASH
-	db 32, PONYTA
-	db 30, RATICATE
-	db 30, DODUO
-	db 30, ARBOK
-	db 30, ARBOK
-	; day
-	db 28, DODUO
-	db 28, SANDSLASH
-	db 32, PONYTA
-	db 30, RATICATE
-	db 30, DODUO
-	db 30, ARBOK
-	db 30, ARBOK
-	; nite
-	db 28, NOCTOWL
-	db 28, RATICATE
-	db 32, NOCTOWL
-	db 30, RATICATE
-	db 30, QUAGSIRE
-	db 30, QUAGSIRE
-	db 30, QUAGSIRE
-	end_grass_wildmons
-
-	def_grass_wildmons ROUTE_27
-	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
-	; morn
-	db 28, DODUO
-	db 28, ARBOK
-	db 30, RATICATE
-	db 30, DODUO
-	db 32, PONYTA
-	db 30, DODRIO
-	db 30, DODRIO
-	; day
-	db 28, DODUO
-	db 28, ARBOK
-	db 30, RATICATE
-	db 30, DODUO
-	db 32, PONYTA
-	db 30, DODRIO
-	db 30, DODRIO
-	; nite
-	db 28, QUAGSIRE
-	db 28, NOCTOWL
-	db 30, RATICATE
-	db 30, QUAGSIRE
-	db 32, NOCTOWL
-	db 32, NOCTOWL
-	db 32, NOCTOWL
-	end_grass_wildmons
-
-	def_grass_wildmons ROUTE_28
-	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
-	; morn
-	db 39, TANGELA
-	db 40, PONYTA
-	db 40, RAPIDASH
-	db 42, ARBOK
-	db 41, DODUO
-	db 43, DODRIO
-	db 43, DODRIO
-	; day
-	db 39, TANGELA
-	db 40, PONYTA
-	db 40, RAPIDASH
-	db 42, ARBOK
-	db 41, DODUO
-	db 43, DODRIO
-	db 43, DODRIO
-	; nite
-	db 39, TANGELA
-	db 40, POLIWHIRL
-	db 40, GOLBAT
-	db 40, POLIWHIRL
-	db 42, GOLBAT
-	db 42, GOLBAT
-	db 42, GOLBAT
-	end_grass_wildmons
-	
-	def_grass_wildmons VIRIDIAN_FOREST
-	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
-	; morn
-	db  4, WEEDLE
-	db  5, KAKUNA
-	db  5, WEEDLE
-	db  6, KAKUNA
-	db  4, METAPOD
-	db  3, CATERPIE
-	db  5, PIKACHU
-	; day
-	db  4, WEEDLE
-	db  4, CATERPIE
-	db  4, KAKUNA
-	db  5, METAPOD
-	db  5, CATERPIE
-	db  5, WEEDLE
-	db  5, PIKACHU
-	; nite
-	db 4, RATTATA
-	db 5, ZUBAT
-	db 4, KAKUNA
-	db 4, METAPOD
-	db 5, RATTATA
-	db 4, EKANS
-	db 5, VENONAT
 	end_grass_wildmons
 
 	db -1 ; end
