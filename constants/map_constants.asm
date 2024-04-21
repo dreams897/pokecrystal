@@ -208,8 +208,6 @@ ENDM
 	map_const ROCK_TUNNEL_POKECENTER,                       7,  4 ;  8
 	map_const POWER_PLANT,                                 10,  9 ; 10
 	map_const BILLS_HOUSE,                                  4,  4 ; 11
-	map_const MT_MOON_POKECENTER,                           7,  4 ; Added
-	map_const ROUTE_4,                                     45,  9 ; 12
 	map_const ROUTE_9,                                     30,  9 ; 13
 	map_const ROUTE_24,                                    10,  18 ; 15
 	map_const ROUTE_25,                                    30,  9 ; 16
@@ -320,6 +318,8 @@ ENDM
 	map_const PEWTER_SPEECH_HOUSE,                          4,  4 ;  8
 	map_const PEWTER_MUSEUM_1F,                            10,  4 ;  9
 	map_const PEWTER_MUSEUM_2F,                             7,  4 ;  10
+	map_const ROUTE_4,                                     45,  9 ; 12
+	map_const MT_MOON_POKECENTER,                           7,  4 ; Added
 	endgroup
 
 	newgroup SS_ANNE
