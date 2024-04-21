@@ -315,6 +315,9 @@ DEF GREEN EQU __trainer_class__
 	const GRUNTM_29
 	const GRUNTM_30 ; unused
 	const GRUNTM_31
+	const ROCKET_1
+	const ROCKET_2
+	const ROCKET_3
 
 	trainerclass GENTLEMAN ; 20
 	const PRESTON

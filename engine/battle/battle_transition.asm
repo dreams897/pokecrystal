@@ -675,7 +675,22 @@ StartTrainerBattle_LoadPokeBallGraphics:
 	jr .nextscene
 
 .cgb
+	ld hl, .rocketpals
+	ld a, [wOtherTrainerClass]
+	cp GRUNTM
+	jr z, .load_rocket_pals
+	cp GRUNTF
+	jr z, .load_rocket_pals
+	cp EXECUTIVEM
+	jr z, .load_rocket_pals
+	cp EXECUTIVEF
+	jr z, .load_rocket_pals
+	cp SCIENTIST
+	jr z, .load_rocket_pals
+	cp TEAM_ROCKET
+	jr z, .load_rocket_pals
 	ld hl, .pals
+.load_rocket_pals
 	ld a, [wTimeOfDayPal]
 	maskbits NUM_DAYTIMES
 	cp DARKNESS_F
@@ -732,8 +747,24 @@ INCLUDE "gfx/overworld/trainer_battle.pal"
 .darkpals:
 INCLUDE "gfx/overworld/trainer_battle_dark.pal"
 
+.rocketpals:
+INCLUDE "gfx/overworld/rocket_battle.pal"
+
 .loadpokeballgfx:
+	ld de, TeamRocketTransition
 	ld a, [wOtherTrainerClass]
+	cp GRUNTM
+	ret z
+	cp GRUNTF
+	ret z
+	cp EXECUTIVEM
+	ret z
+	cp EXECUTIVEF
+	ret z
+	cp SCIENTIST
+	ret z
+	cp TEAM_ROCKET
+	ret z
 	ld de, PokeBallTransition
 	ret
 
@@ -757,6 +788,27 @@ opt b.X ; . = 0, X = 1
 	bigdw %..XXXX....XXXX..
 	bigdw %....XXXXXXXX....
 	bigdw %......XXXX......
+popo
+
+TeamRocketTransition:
+pusho
+opt b.X ; . = 0, X = 1
+	bigdw %XXXXXXXXXXXX....
+	bigdw %XXXXXXXXXXXXXX..
+	bigdw %XXXXXXXXXXXXXXX.
+	bigdw %XXXXXXXXXXXXXXX.
+	bigdw %XXXXX.....XXXXXX
+	bigdw %XXXXX......XXXXX
+	bigdw %XXXXX.....XXXXXX
+	bigdw %XXXXXXXXXXXXXXX.
+	bigdw %XXXXXXXXXXXXXXX.
+	bigdw %XXXXXXXXXXXXXX..
+	bigdw %XXXXXXXXXXXXX...
+	bigdw %XXXXX....XXXXX..
+	bigdw %XXXXX....XXXXX..
+	bigdw %XXXXX.....XXXXX.
+	bigdw %XXXXX......XXXXX
+	bigdw %XXXXX......XXXXX
 popo
 
 WipeLYOverrides:

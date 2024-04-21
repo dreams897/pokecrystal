@@ -1471,10 +1471,29 @@ GruntMGroup:
 	db 25, GOLBAT
 	db 30, ARBOK
 	db -1 ; end
-
+	
 	; GRUNTM (31)
 	db "GRUNT@", TRAINERTYPE_NORMAL
 	db 30, GOLBAT
+	db -1 ; end
+
+	; ROCKET (32)
+	db "@", TRAINERTYPE_NORMAL
+	db 11, SANDSHREW
+	db 11, RATTATA
+	db 11, ZUBAT
+	db -1 ; end
+	
+	; ROCKET (33)
+	db "@", TRAINERTYPE_NORMAL
+	db 12, ZUBAT
+	db 12, EKANS
+	db -1 ; end
+	
+	; ROCKET (34)
+	db "@", TRAINERTYPE_NORMAL
+	db 13, RATTATA
+	db 13, ZUBAT
 	db -1 ; end
 
 GentlemanGroup:

@@ -173,7 +173,7 @@ MtMoonB2FSuperNerdScript2:
 	playmusic MUSIC_MEET_MALE_TRAINER
 	waitbutton
 	closetext
-	winlosstext MtMoonB2FSuperNerdOkIllShareText, -1
+	winlosstext MtMoonB2FSuperNerdOkIllShareText, 0
 	loadtrainer SUPER_NERD, MIGUEL
 	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
@@ -188,13 +188,43 @@ MtMoonB2FSuperNerdScript2:
 	end
 	
 MtMoonB2FTrainerRocket1:
+	trainer GRUNTM, ROCKET_1, EVENT_BEAT_MT_MOON_B2F_ROCKET_1, MtMoonB2FRocket1BattleText, MtMoonB2FRocket1EndBattleText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext MtMoonB2FRocket1AfterBattleText
+	waitbutton
+	closetext
 	end
 	
 MtMoonB2FTrainerRocket2:
+	trainer GRUNTM, ROCKET_2, EVENT_BEAT_MT_MOON_B2F_ROCKET_2, MtMoonB2FRocket2BattleText, MtMoonB2FRocket2EndBattleText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext MtMoonB2FRocket2AfterBattleText
+	waitbutton
+	closetext
 	end
 	
 MtMoonB2FTrainerRocket3:
+	trainer GRUNTM, ROCKET_3, EVENT_BEAT_MT_MOON_B2F_ROCKET_3, MtMoonB2FRocket3BattleText, MtMoonB2FRocket3EndBattleText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext MtMoonB2FRocket3AfterBattleText
+	waitbutton
+	closetext
 	end
+	
+MtMoonB2FHiddenEther:
+	hiddenitem ETHER, EVENT_HIDDEN_ETHER_MT_MOON_B2F
+	
+MtMoonB2FHiddenMoonStone:
+	hiddenitem MOON_STONE, EVENT_HIDDEN_MOONSTONE_MT_MOON_B2F
 	
 MtMoonJessieJamesText1:
 	text "Stop right there!"
@@ -274,49 +304,49 @@ MtMoonB2FSuperNerdThenThisIsMineText:
 	line "this is mine!"
 	done
 
-MtMoonB2FRocket2BattleText:
+MtMoonB2FRocket1BattleText:
 	text "We, TEAM ROCKET,"
 	line "are #MON"
 	cont "gangsters!"
 	done
 
-MtMoonB2FRocket2EndBattleText:
+MtMoonB2FRocket1EndBattleText:
 	text "I blew it!"
 	done
 
-MtMoonB2FRocket2AfterBattleText:
+MtMoonB2FRocket1AfterBattleText:
 	text "Darn it all! My"
 	line "associates won't"
 	cont "stand for this!"
 	done
 
-MtMoonB2FRocket3BattleText:
+MtMoonB2FRocket2BattleText:
 	text "We're pulling a"
 	line "big job here!"
 	cont "Get lost, kid!"
 	done
 
-MtMoonB2FRocket3EndBattleText:
+MtMoonB2FRocket2EndBattleText:
 	text "So, you are good."
 	done
 
-MtMoonB2FRocket3AfterBattleText:
+MtMoonB2FRocket2AfterBattleText:
 	text "If you find a"
 	line "fossil, give it"
 	cont "to me and scram!"
 	done
 
-MtMoonB2FRocket4BattleText:
+MtMoonB2FRocket3BattleText:
 	text "Little kids"
 	line "should leave"
 	cont "grown-ups alone!"
 	done
 
-MtMoonB2FRocket4EndBattleText:
+MtMoonB2FRocket3EndBattleText:
 	text "I'm steamed!"
 	prompt
 
-MtMoonB2FRocket4AfterBattleText:
+MtMoonB2FRocket3AfterBattleText:
 	text "#MON lived"
 	line "here long before"
 	cont "people came."
@@ -336,6 +366,8 @@ MtMoonB2F_MapEvents:
 	coord_event  3,   5, SCENE_MT_MOON_B2F_TEAM_ROCKET, MtMoonB2FTeamRocketScript
 
 	def_bg_events
+	bg_event  33, 9,  BGEVENT_ITEM, MtMoonB2FHiddenEther
+	bg_event  18, 12, BGEVENT_ITEM, MtMoonB2FHiddenMoonStone
 
 	def_object_events
 	object_event 9,   3, SPRITE_JESSIE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, MtMoonB2FTeamRocketScript, EVENT_TEAM_ROCKET_APPEARED_MT_MOON
