@@ -45,9 +45,8 @@ MtMoonB2FTeamRocketScript:
 	writetext MtMoonJessieJamesText2
 	waitbutton
 	closetext
-	winlosstext MtMoonJessieJamesText3, -1
+	winlosstext MtMoonJessieJamesText3, 0
 	loadtrainer TEAM_ROCKET, TEAM_ROCKET1
-	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
 	reloadmap
 	opentext
@@ -175,7 +174,6 @@ MtMoonB2FSuperNerdScript2:
 	closetext
 	winlosstext MtMoonB2FSuperNerdOkIllShareText, 0
 	loadtrainer SUPER_NERD, MIGUEL
-	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MT_MOON_B2F_SUPER_NERD_MIGUEL
