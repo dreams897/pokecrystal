@@ -339,7 +339,6 @@ LarvitarFrontpic:    INCBIN "gfx/pokemon/larvitar/front.animated.2bpp.lz"
 TyranitarBackpic:    INCBIN "gfx/pokemon/tyranitar/back.2bpp.lz"
 SandslashBackpic:    INCBIN "gfx/pokemon/sandslash/back.2bpp.lz"
 SeadraBackpic:       INCBIN "gfx/pokemon/seadra/back.2bpp.lz"
-TwinsPic:            INCBIN "gfx/trainers/twins.2bpp.lz"
 FarfetchDBackpic:    INCBIN "gfx/pokemon/farfetch_d/back.2bpp.lz"
 NidoranMBackpic:     INCBIN "gfx/pokemon/nidoran_m/back.2bpp.lz"
 LedybaBackpic:       INCBIN "gfx/pokemon/ledyba/back.2bpp.lz"
@@ -736,5 +735,6 @@ GiovanniPic:         INCBIN "gfx/trainers/giovanni.2bpp.lz"
 
 SECTION "Pics 23", ROMX
 MysticalmanPic:      INCBIN "gfx/trainers/mysticalman.2bpp.lz"
+TwinsPic:            INCBIN "gfx/trainers/twins.2bpp.lz"
 
 SECTION "Pics 24", ROMX
