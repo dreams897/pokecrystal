@@ -145,8 +145,8 @@ BillsFamilysHouse_Blocks:
 GoldenrodPPSpeechHouse_Blocks:
 GoldenrodNameRater_Blocks:
 VermilionFishingSpeechHouse_Blocks:
-VermilionMagnetTrainSpeechHouse_Blocks:
-VermilionDiglettsCaveSpeechHouse_Blocks:
+VermilionTradeHouse_Blocks:
+VermilionPidgeyHouse_Blocks:
 BluesHouse_Blocks:
 PewterNidoranSpeechHouse_Blocks:
 PewterSpeechHouse_Blocks:
