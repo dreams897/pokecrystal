@@ -59,30 +59,46 @@ CinnabarGroupSprites:
 	db 0 ; end
 
 ; CeruleanCity and Route5 are connected
-CeruleanGroupSprites:
 ; Route4, Route9, Route10North, Route24, Route25, CeruleanCity
-SaffronGroupSprites:
-; Route5, SaffronCity
+CeruleanGroupSprites:
 	db SPRITE_YOUNGSTER
 	db SPRITE_ROCKET
 	db SPRITE_SUPER_NERD
 	db SPRITE_HIKER
+	db SPRITE_MONSTER
 	db SPRITE_BLUE
 	db SPRITE_GUARD
 	db SPRITE_COOLTRAINER_F
 	db SPRITE_COOLTRAINER_M
 	; max 9 of 9 walking sprites
 	db SPRITE_POKE_BALL
-	db SPRITE_SLOWPOKE
+	db 0 ; end
+
+SaffronGroupSprites:
+; Route5, SaffronCity
+	db SPRITE_ROCKET
+	db SPRITE_SCIENTIST
+	db SPRITE_SILPH_WORKER_M
+	db SPRITE_SILPH_WORKER_F
+	db SPRITE_GENTLEMAN
+	;db SPRITE_BIRD
+	;db SPRITE_ROCKER
+	db SPRITE_COOLTRAINER_M
+	db SPRITE_MONSTER
+	; max 9 of 9 walking sprites
+	db SPRITE_POKE_BALL
 	db 0 ; end
 
 VermilionGroupSprites:
 ; Route6, Route11, VermilionCity
-	db SPRITE_POKEFAN_M
-	db SPRITE_GAMBLER
-	db SPRITE_YOUNGSTER
-	db SPRITE_TEACHER
+	; db SPRITE_BEAUTY
 	db SPRITE_SUPER_NERD
+	db SPRITE_YOUNGSTER
+	db SPRITE_GAMBLER
+	db SPRITE_GUARD
+	db SPRITE_SAILOR
+	db SPRITE_COOLTRAINER_F
+	db SPRITE_COOLTRAINER_M
 	; 5 of max 9 walking sprites
 	db SPRITE_BIG_SNORLAX
 	db SPRITE_MACHOP
@@ -92,13 +108,17 @@ VermilionGroupSprites:
 
 CeladonGroupSprites:
 ; Route7, Route16, Route17, CeladonCity
+	db SPRITE_LITTLE_GIRL
+	db SPRITE_LITTLE_BOY
+	db SPRITE_GIRL
 	db SPRITE_FISHER
-	db SPRITE_TEACHER
+	;db SPRITE_MIDDLE_AGED_MAN
 	db SPRITE_GRAMPS
-	db SPRITE_YOUNGSTER
-	db SPRITE_LASS
-	db SPRITE_BIKER
-	; 6 of max 9 walking sprites
+	db SPRITE_MONSTER
+	db SPRITE_GUARD
+	db SPRITE_ROCKET
+	; 9 of max 9 walking sprites
+	db SPRITE_BIG_SNORLAX
 	db SPRITE_POLIWAG
 	db SPRITE_POKE_BALL
 	db SPRITE_FRUIT_TREE
@@ -109,21 +129,34 @@ LavenderGroupSprites:
 ; Route8, Route12, Route10South, LavenderTown
 FuchsiaGroupSprites:
 ; Route13, Route14, Route15, Route18, FuchsiaCity
-	db SPRITE_POKEFAN_M
-	db SPRITE_GRAMPS
-	db SPRITE_YOUNGSTER
+	;db SPRITE_BIRD
+	db SPRITE_COOLTRAINER_M
+	db SPRITE_FAIRY
 	db SPRITE_FISHER
-	db SPRITE_TEACHER
-	db SPRITE_SUPER_NERD
-	db SPRITE_BIKER
-	; 7 of max 9 walking sprites
+	db SPRITE_GAMBLER
+	db SPRITE_MONSTER
+	;db SPRITE_SEEL
+	db SPRITE_SWIMMER_GUY
+	db SPRITE_YOUNGSTER
+	; 9 of max 9 walking sprites
 	db SPRITE_POKE_BALL
+	db SPRITE_FOSSIL
 	db SPRITE_FRUIT_TREE
 	db 0 ; end
 
 IndigoGroupSprites:
 ; Route23
-	; 0 of max 9 walking sprites
+	db SPRITE_YOUNGSTER
+	db SPRITE_GYM_GUIDE
+	db SPRITE_MONSTER
+	db SPRITE_BLUE
+	db SPRITE_COOLTRAINER_F
+	db SPRITE_COOLTRAINER_M
+	db SPRITE_SWIMMER_GUY
+	db SPRITE_GUARD
+	db SPRITE_GAMBLER
+	; 9 of max 9 walking sprites
+	db SPRITE_POKE_BALL
 	db 0 ; end
 
 ; Route29 and CherrygroveCity are connected
