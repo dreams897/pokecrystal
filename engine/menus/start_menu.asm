@@ -8,7 +8,8 @@
 	const STARTMENUITEM_OPTION   ; 5
 	const STARTMENUITEM_EXIT     ; 6
 	const STARTMENUITEM_POKEGEAR ; 7
-	const STARTMENUITEM_QUIT     ; 8
+	const STARTMENUITEM_TOWNMAP  ; 8
+	const STARTMENUITEM_QUIT     ; 9
 
 StartMenu::
 	call ClearWindowData
@@ -184,6 +185,7 @@ StartMenu::
 	dw StartMenu_Option,   .OptionString,   .OptionDesc
 	dw StartMenu_Exit,     .ExitString,     .ExitDesc
 	dw StartMenu_Pokegear, .PokegearString, .PokegearDesc
+	dw StartMenu_TownMap,  .TownMapString,  .TownMapDesc
 	dw StartMenu_Quit,     .QuitString,     .QuitDesc
 
 .PokedexString:  db "#DEX@"
@@ -191,9 +193,10 @@ StartMenu::
 .PackString:     db "PACK@"
 .StatusString:   db "<PLAYER>@"
 .SaveString:     db "SAVE@"
-.OptionString:   db "OPTION@"
+.OptionString:   db "OPTIONS@"
 .ExitString:     db "EXIT@"
 .PokegearString: db "<POKE>GEAR@"
+.TownMapString:  db "MAP@"
 .QuitString:     db "QUIT@"
 
 .PokedexDesc:
@@ -211,6 +214,10 @@ StartMenu::
 .PokegearDesc:
 	db   "Trainer's"
 	next "key device@"
+	
+.TownMapDesc:
+	db   "View the"
+	next "TOWN MAP@"
 
 .StatusDesc:
 	db   "Your own"
@@ -313,11 +320,12 @@ endr
 	call .AppendMenuList
 .no_pack
 
-	ld hl, wPokegearFlags
-	bit POKEGEAR_OBTAINED_F, [hl]
+	ld hl, wTownMapFlags
+	bit TOWN_MAP_OBTAINED_F, [hl]
 	jr z, .no_pokegear
-	ld a, STARTMENUITEM_POKEGEAR
+	ld a, STARTMENUITEM_TOWNMAP
 	call .AppendMenuList
+	
 .no_pokegear
 
 	ld a, STARTMENUITEM_STATUS
@@ -474,6 +482,13 @@ StartMenu_Pokedex:
 StartMenu_Pokegear:
 	call FadeToMenu
 	farcall PokeGear
+	call CloseSubmenu
+	ld a, 0
+	ret
+	
+StartMenu_TownMap:
+	call FadeToMenu
+	farcall _TownMap
 	call CloseSubmenu
 	ld a, 0
 	ret

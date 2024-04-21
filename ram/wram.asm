@@ -3019,6 +3019,10 @@ wBerries:: ds MAX_BERRIES * 2 + 1
 wNumPCItems:: db
 wPCItems:: ds MAX_PC_ITEMS * 2 + 1
 
+wTownMapFlags::
+; bit 0: has town map
+	db
+
 wPokegearFlags::
 ; bit 0: map
 ; bit 1: radio
@@ -3345,7 +3349,7 @@ wPartyMon{d:n}Nickname:: ds MON_NAME_LENGTH
 endr
 wPartyMonNicknamesEnd::
 
-	ds 22
+	ds 21
 
 wPokedexCaught:: flag_array NUM_POKEMON
 wEndPokedexCaught::

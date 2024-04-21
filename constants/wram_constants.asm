@@ -241,6 +241,10 @@ DEF NUM_JOHTO_BADGES EQU const_value
 DEF NUM_KANTO_BADGES EQU const_value
 DEF NUM_BADGES       EQU NUM_JOHTO_BADGES + NUM_KANTO_BADGES
 
+; wTownMapFlags
+	const_def
+	const TOWN_MAP_OBTAINED_F ; 0
+
 ; wPokegearFlags::
 	const_def
 	const POKEGEAR_MAP_CARD_F   ; 0

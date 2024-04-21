@@ -1,5 +1,7 @@
 ; EngineFlags indexes (see data/events/engine_flags.asm)
 	const_def
+; wTownMapFlags
+	const ENGINE_TOWN_MAP
 ; wPokegearFlags
 	const ENGINE_RADIO_CARD
 	const ENGINE_MAP_CARD
