@@ -148,4 +148,5 @@ Music:
 	dba Music_MeetFemaleTrainer
 	dba Music_MeetMaleTrainer
 	dba Music_MeetJessieJames
+	dba Music_MeetRivalAlt
 	assert_table_length NUM_MUSIC_SONGS
