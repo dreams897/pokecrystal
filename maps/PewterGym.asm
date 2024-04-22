@@ -13,7 +13,7 @@ PewterGymBrockScript:
 	faceplayer
 	opentext
 	checkflag ENGINE_BOULDERBADGE
-	iftrue .FightDone
+	iftrue .AllKindsOfTrainers
 	writetext BrockIntroText
 	waitbutton
 	closetext
@@ -24,6 +24,7 @@ PewterGymBrockScript:
 	setevent EVENT_BEAT_BROCK
 	setevent EVENT_BEAT_PEWTER_GYM_TRAINER_0
 	setevent EVENT_BEAT_PEWTER_GYM_TRAINER_1
+	setevent EVENT_1ST_ROUTE22_RIVAL_BATTLE
 	opentext
 	writetext ReceivedBoulderBadgeText
 	playsound SFX_GET_KEY_ITEM_1
@@ -32,11 +33,6 @@ PewterGymBrockScript:
 	setmapscene PEWTER_CITY, SCENE_PEWTER_AFTER_BEATING_BROCK
 	writetext BrockBoulderBadgeText
 	waitbutton
-	sjump .FightDone
-
-.FightDone:
-	checkevent EVENT_GOT_TM34_BIDE
-	iftrue .GotBide
 	writetext PewterGymBrockWaitTakeThisText
 	waitbutton
 	verbosegiveitem TM_BIDE
@@ -45,13 +41,13 @@ PewterGymBrockScript:
 	waitbutton
 	closetext
 	end
-	iffalse .GotBide
-.GotBide:
+	
+.AllKindsOfTrainers:
 	writetext BrockFightDoneText
 	waitbutton
 	closetext
 	end
-
+	
 TrainerPewterGymTrainer0:
 	trainer JRTRAINER_M, JERRY, EVENT_BEAT_PEWTER_GYM_TRAINER_0, PewterGymTrainer0SeenText, PewterGymTrainer0BeatenText, 0, .Script
 
