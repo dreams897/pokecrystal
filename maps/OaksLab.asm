@@ -292,7 +292,7 @@ CharmanderPokeBallScript:
 	disappear OAKSLAB_POKE_BALL1
 	setevent EVENT_GOT_A_CHARMANDER_FROM_OAK
 	writetext OaksLabMonEnergeticText
-	waitbutton
+	prompt
 	getmonname STRING_BUFFER_3, CHARMANDER
 	writetext OaksLabReceivedStarterText
 	playsound SFX_CAUGHT_MON_RBY
@@ -331,7 +331,7 @@ SquirtlePokeBallScript:
 	disappear OAKSLAB_POKE_BALL2
 	setevent EVENT_GOT_A_SQUIRTLE_FROM_OAK
 	writetext OaksLabMonEnergeticText
-	waitbutton
+	prompt
 	getmonname STRING_BUFFER_3, SQUIRTLE
 	writetext OaksLabReceivedStarterText
 	playsound SFX_CAUGHT_MON_RBY
@@ -368,7 +368,7 @@ BulbasaurPokeBallScript:
 	disappear OAKSLAB_POKE_BALL3
 	setevent EVENT_GOT_A_BULBASAUR_FROM_OAK
 	writetext OaksLabMonEnergeticText
-	waitbutton
+	prompt
 	getmonname STRING_BUFFER_3, BULBASAUR
 	writetext OaksLabReceivedStarterText
 	playsound SFX_CAUGHT_MON_RBY
@@ -971,7 +971,7 @@ OaksLabOakGotPokedexText:
 
 	para "<PLAYER> got"
 	line "#DEX from OAK!@"
-	text_end
+	done
 
 OaksLabOakThatWasMyDreamText:
 	text "To make a complete"
@@ -1088,41 +1088,6 @@ OakAideWalksLeft2:
 	step LEFT
 	step LEFT
 	step LEFT
-	turn_head DOWN
-	step_end
-
-OakJumpUpMovement:
-	fix_facing
-	big_step UP
-	remove_fixed_facing
-	step_end
-
-OakJumpDownMovement:
-	fix_facing
-	big_step DOWN
-	remove_fixed_facing
-	step_end
-
-OakJumpLeftMovement:
-	fix_facing
-	big_step LEFT
-	remove_fixed_facing
-	step_end
-
-OakJumpRightMovement:
-	fix_facing
-	big_step RIGHT
-	remove_fixed_facing
-	step_end
-
-OaksLab_OakToDefaultPositionMovement1:
-	step UP
-	step_end
-
-OaksLab_OakToDefaultPositionMovement2:
-	step RIGHT
-	step RIGHT
-	step UP
 	turn_head DOWN
 	step_end
 
