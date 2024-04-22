@@ -292,7 +292,6 @@ CharmanderPokeBallScript:
 	disappear OAKSLAB_POKE_BALL1
 	setevent EVENT_GOT_A_CHARMANDER_FROM_OAK
 	writetext OaksLabMonEnergeticText
-	promptbutton
 	getmonname STRING_BUFFER_3, CHARMANDER
 	writetext OaksLabReceivedStarterText
 	playsound SFX_CAUGHT_MON_RBY
@@ -331,7 +330,6 @@ SquirtlePokeBallScript:
 	disappear OAKSLAB_POKE_BALL2
 	setevent EVENT_GOT_A_SQUIRTLE_FROM_OAK
 	writetext OaksLabMonEnergeticText
-	promptbutton
 	getmonname STRING_BUFFER_3, SQUIRTLE
 	writetext OaksLabReceivedStarterText
 	playsound SFX_CAUGHT_MON_RBY
@@ -368,7 +366,6 @@ BulbasaurPokeBallScript:
 	disappear OAKSLAB_POKE_BALL3
 	setevent EVENT_GOT_A_BULBASAUR_FROM_OAK
 	writetext OaksLabMonEnergeticText
-	promptbutton
 	getmonname STRING_BUFFER_3, BULBASAUR
 	writetext OaksLabReceivedStarterText
 	playsound SFX_CAUGHT_MON_RBY
@@ -620,7 +617,11 @@ AfterBattleScript:
         ifequal 5, .RivalSmellYouLaterRight
 	
 .RivalSmellYouLaterLeft
-	applymovement OAKSLAB_BLUE, RivalSmellYouLaterMovementLeft
+	applymovement OAKSLAB_BLUE, RivalSmellYouLaterMovementLeft1
+	turnobject PLAYER, RIGHT
+	applymovement OAKSLAB_BLUE, RivalSmellYouLaterMovementLeft2
+	turnobject PLAYER, DOWN
+	applymovement OAKSLAB_BLUE, RivalSmellYouLaterMovementLeft3
 	disappear OAKSLAB_BLUE
 	special HealParty
 	special RestartMapMusic
@@ -629,7 +630,11 @@ AfterBattleScript:
 	end
 	
 .RivalSmellYouLaterRight
-	applymovement OAKSLAB_BLUE, RivalSmellYouLaterMovementRight
+	applymovement OAKSLAB_BLUE, RivalSmellYouLaterMovementRight1
+	turnobject PLAYER, LEFT
+	applymovement OAKSLAB_BLUE, RivalSmellYouLaterMovementRight2
+	turnobject PLAYER, DOWN
+	applymovement OAKSLAB_BLUE, RivalSmellYouLaterMovementRight3
 	disappear OAKSLAB_BLUE
 	special HealParty
 	special RestartMapMusic
@@ -637,23 +642,35 @@ AfterBattleScript:
 	setmapscene PALLET_TOWN, SCENE_PALLET_TOWN_NOOP
 	end
 	
-RivalSmellYouLaterMovementLeft:
+RivalSmellYouLaterMovementLeft1:
 	slow_step RIGHT
 	slow_step DOWN
+	step_end
+	
+RivalSmellYouLaterMovementLeft2:
 	slow_step DOWN
+	step_end
+	
+RivalSmellYouLaterMovementLeft3:
 	slow_step DOWN
 	slow_step DOWN
 	slow_step DOWN
 	step_end
 	
-RivalSmellYouLaterMovementRight:
+RivalSmellYouLaterMovementRight1:
 	slow_step LEFT
 	slow_step DOWN
-	slow_step DOWN
-	slow_step DOWN
-	slow_step DOWN
+	step_end
+	
+RivalSmellYouLaterMovementRight2:
 	slow_step DOWN
 	step_end
+	
+RivalSmellYouLaterMovementRight3:
+	slow_step DOWN
+	slow_step DOWN
+	slow_step DOWN
+	step_end	
 	
 OaksLastPokemonScript:
 	opentext
