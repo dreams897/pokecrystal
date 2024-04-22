@@ -119,8 +119,7 @@ Route3BugCatcher1BattleText:
 	done
 
 Route3BugCatcher1EndBattleText:
-	text "You beat"
-	line "me again!"
+	text "You beat me again!"
 	prompt
 
 Route3BugCatcher1AfterBattleText:
@@ -137,8 +136,8 @@ Route3Youngster1BattleText:
 	done
 
 Route3Youngster1EndBattleText:
-	text "I don't"
-	line "believe it!"
+	text "I don't believe"
+	line "it!"
 	prompt
 
 Route3Youngster1AfterBattleText:
@@ -219,8 +218,7 @@ Route3BugCatcher3BattleText:
 	done
 
 Route3BugCatcher3EndBattleText:
-	text "Done"
-	line "like dinner!"
+	text "Done like dinner!"
 	prompt
 
 Route3BugCatcher3AfterBattleText:

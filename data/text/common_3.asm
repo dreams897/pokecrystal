@@ -14,7 +14,7 @@ _OakText8::
 	prompt
 
 _OakText9::
-	text "That's Right!"
+	text "That's right!"
 	line "I remember now!"
 
 	para "His name is"
