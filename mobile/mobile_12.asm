@@ -367,10 +367,8 @@ Function48304:
 	ld a, c
 	ld [wMenuScrollPosition], a
 	ld a, d
-	push af
 	call ExitMenu
 	call ExitMenu
-	pop af
 	ldh a, [hJoyPressed]
 	bit 0, a
 	jr z, .asm_48377

@@ -514,10 +514,8 @@ PlayerDepositItemMenu:
 	ld hl, .PlayersPCHowManyDepositText
 	call MenuTextbox
 	farcall SelectQuantityToToss
-	push af
 	call ExitMenu
 	call ExitMenu
-	pop af
 	jr c, .DeclinedToDeposit
 
 .ContinueDeposit:

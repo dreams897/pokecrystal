@@ -5988,9 +5988,7 @@ Function1029fe:
 	ld hl, wMenuJoypadFilter
 	and [hl]
 	ret z
-	push af
 	call ExitMenu
-	pop af
 	ld a, [wMenuCursorY]
 	cp $01
 	jr nz, .asm_102a21
