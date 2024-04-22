@@ -148,6 +148,7 @@
 	const MUSIC_MEET_FEMALE_TRAINER
 	const MUSIC_MEET_MALE_TRAINER
 	const MUSIC_MEET_JESSIE_JAMES
+	const MUSIC_MEET_RIVAL_ALT
 DEF NUM_MUSIC_SONGS EQU const_value
 
 ; GetMapMusic picks music for these values (see home/map.asm)

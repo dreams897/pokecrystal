@@ -218,7 +218,7 @@ INCLUDE "audio/music/RBY/yellowintro.asm"
 INCLUDE "audio/music/RBY/surfingpikachu.asm"
 INCLUDE "audio/music/RBY/yellowunusedsong.asm"
 INCLUDE "audio/music/RBY/meetjessiejames.asm"
-
+INCLUDE "audio/music/RBY/meetrivalalt.asm"
 
 SECTION "Sound Effects", ROMX
 
