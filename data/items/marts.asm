@@ -240,6 +240,7 @@ MartPewter:
 	db POTION
 	db ESCAPE_ROPE
 	db ANTIDOTE
+	db REPEL
 	db BURN_HEAL
 	db AWAKENING
 	db PARLYZ_HEAL
