@@ -626,7 +626,7 @@ _CGB_TrainerCard:
 	ld a, BUGSY ; Green/Leaf
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
-	ld a, BURGLAR ; Enby
+	ld a, ENBY_T ; Enby
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
 	ld a, BROCK
