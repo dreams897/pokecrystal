@@ -890,7 +890,7 @@ OaksLabRivalIllTakeYouOnText:
 	done
 
 OaksLabRivalIPickedTheWrongPokemonText:
-	text "WHAT?"
+	text "<RIVAL>: WHAT?"
 	line "Unbelievable!"
 	cont "I picked the"
 	cont "wrong #MON!"

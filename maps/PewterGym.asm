@@ -42,7 +42,9 @@ PewterGymBrockScript:
 	verbosegiveitem TM_BIDE
 	setevent EVENT_GOT_TM34_BIDE
 	writetext TM34ExplanationText
-	promptbutton
+	waitbutton
+	closetext
+	end
 	iffalse .GotBide
 .GotBide:
 	writetext BrockFightDoneText
@@ -171,8 +173,8 @@ PewterGymTM34NoRoomText:
 	done
 
 BrockWinLossText:
-	text "I took"
-	line "you for granted."
+	text "I took you for"
+	line "granted."
 
 	para "As proof of your"
 	line "victory, here's"
@@ -244,8 +246,8 @@ PewterGymTrainer1SeenText:
 PewterGymTrainer1BeatenText:
 	text "Darn!"
 	
-	para "You're ready"
-	line "for BROCK!"
+	para "You're ready for"
+	line "BROCK!"
 	prompt
 	
 PewterGymTrainer1AfterBattleText:
