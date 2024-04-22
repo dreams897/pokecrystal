@@ -709,8 +709,9 @@ DEF GREEN EQU __trainer_class__
 	const JAIME
 
 	trainerclass BLUE1 ; 40
-	const BLUE1_BULBASAUR
+	const BLUE1_CHARMANDER
 	const BLUE1_SQUIRTLE
+	const BLUE1_BULBASAUR
 	
 	trainerclass BLUE2 ; added
 	
