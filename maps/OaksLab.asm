@@ -199,7 +199,7 @@ OaksLabParcelScript:
 	waitbutton
 	closetext
 	appear OAKSLAB_BLUE
-	playmusic MUSIC_MEET_RIVAL
+	playmusic MUSIC_MEET_RIVAL_ALT
 	applymovement OAKSLAB_BLUE, BlueParcelWalkUpMovement
 	special RestartMapMusic
 	opentext
@@ -231,7 +231,7 @@ OaksLabParcelScript:
 	writetext OaksLabRivalLeaveItAllToMeText
 	waitbutton
 	closetext
-	playmusic MUSIC_MEET_RIVAL
+	playmusic MUSIC_MEET_RIVAL_ALT
 	applymovement OAKSLAB_BLUE, RivalLeaveMovement
 	disappear OAKSLAB_BLUE
 	special RestartMapMusic
@@ -247,7 +247,7 @@ OaksLabParcelScript:
 	writetext OaksLabRivalLeaveItAllToMeText
 	waitbutton
 	closetext
-	playmusic MUSIC_MEET_RIVAL
+	playmusic MUSIC_MEET_RIVAL_ALT
 	applymovement OAKSLAB_BLUE, RivalLeaveMovement
 	disappear OAKSLAB_BLUE
 	special RestartMapMusic
@@ -613,7 +613,7 @@ AfterBattleScript:
 	writetext OaksLabRivalSmellYouLaterText
 	waitbutton
 	closetext
-	playmusic MUSIC_MEET_RIVAL
+	playmusic MUSIC_MEET_RIVAL_ALT
 	readvar VAR_XCOORD
         getnum STRING_BUFFER_3
         ifequal 4, .RivalSmellYouLaterLeft
