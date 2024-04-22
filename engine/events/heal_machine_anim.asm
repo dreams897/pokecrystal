@@ -127,7 +127,7 @@ ENDM
 	call .FlashPalettes8Times
 	call WaitSFX
 	ld de, SFX_TURN_ON_PC_1
-	call PlaySFX
+	call WaitPlaySFX
 	ret
 
 .dummy_5

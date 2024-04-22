@@ -855,9 +855,8 @@ MartBoughtText:
 
 PlayTransactionSound:
 	call WaitSFX
-	ld de, SFX_TRANSACTION
-	call PlaySFX
-	ret
+	ld de, SFX_PURCHASE_1
+	jp WaitPlaySFX
 
 MartTextbox:
 	call MenuTextbox

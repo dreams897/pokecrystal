@@ -2292,7 +2292,7 @@ FaintYourPokemon:
 FaintEnemyPokemon:
 	call WaitSFX
 	ld de, SFX_KINESIS
-	call PlaySFX
+	call WaitPlaySFX
 	call EnemyMonFaintedAnimation
 	ld de, SFX_FAINT
 	call PlaySFX
@@ -3867,7 +3867,6 @@ TryToRunAwayFromBattle:
 	ld de, SFX_RUN_RBY
 	call WaitPlaySFX
 	pop de
-	call WaitSFX
 	ld hl, BattleText_GotAwaySafely
 	call StdBattleTextbox
 	call WaitSFX
@@ -4244,7 +4243,7 @@ PursuitSwitch:
 	call PlaySFX
 	call WaitSFX
 	ld de, SFX_FAINT
-	call PlaySFX
+	call WaitPlaySFX
 	call WaitSFX
 	call EnemyMonFaintedAnimation
 	ld hl, BattleText_EnemyMonFainted
@@ -7639,7 +7638,7 @@ AnimateExpBar:
 	push bc
 	call WaitSFX
 	ld de, SFX_HEAL_HP_1
-	call PlaySFX
+	call WaitPlaySFX
 	ld c, 10
 	call DelayFrames
 	pop bc

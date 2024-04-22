@@ -541,9 +541,8 @@ HangUp_BoopOff:
 	ret
 
 Pager_StartRinging:
-	call WaitSFX
 	ld de, SFX_CALL
-	call PlaySFX
+	call WaitPlaySFX
 	call Pager_PagerTextbox
 	call UpdateSprites
 	farcall PagerRing_CopyTilemapAtOnce

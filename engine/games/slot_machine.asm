@@ -88,9 +88,8 @@ _SlotMachine:
 .loop
 	call SlotsLoop
 	jr nc, .loop
-	call WaitSFX
 	ld de, SFX_QUIT_SLOTS
-	call PlaySFX
+	call WaitPlaySFX
 	call WaitSFX
 	call ClearBGPalettes
 	farcall StubbedTrainerRankings_EndSlotsWinStreak
@@ -1753,9 +1752,8 @@ Slots_AskBet:
 	jr nc, .ok
 	dec [hl]
 .ok
-	call WaitSFX
 	ld de, SFX_PAY_DAY
-	call PlaySFX
+	call WaitPlaySFX
 	ld hl, .SlotsStartText
 	call PrintText
 	and a

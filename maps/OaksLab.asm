@@ -292,7 +292,7 @@ CharmanderPokeBallScript:
 	disappear OAKSLAB_POKE_BALL1
 	setevent EVENT_GOT_A_CHARMANDER_FROM_OAK
 	writetext OaksLabMonEnergeticText
-	prompt
+	promptbutton
 	getmonname STRING_BUFFER_3, CHARMANDER
 	writetext OaksLabReceivedStarterText
 	playsound SFX_CAUGHT_MON_RBY
@@ -331,7 +331,7 @@ SquirtlePokeBallScript:
 	disappear OAKSLAB_POKE_BALL2
 	setevent EVENT_GOT_A_SQUIRTLE_FROM_OAK
 	writetext OaksLabMonEnergeticText
-	prompt
+	promptbutton
 	getmonname STRING_BUFFER_3, SQUIRTLE
 	writetext OaksLabReceivedStarterText
 	playsound SFX_CAUGHT_MON_RBY
@@ -368,7 +368,7 @@ BulbasaurPokeBallScript:
 	disappear OAKSLAB_POKE_BALL3
 	setevent EVENT_GOT_A_BULBASAUR_FROM_OAK
 	writetext OaksLabMonEnergeticText
-	prompt
+	promptbutton
 	getmonname STRING_BUFFER_3, BULBASAUR
 	writetext OaksLabReceivedStarterText
 	playsound SFX_CAUGHT_MON_RBY
@@ -710,7 +710,7 @@ OaksLabYouWantBulbasaurText:
 OaksLabMonEnergeticText:
 	text "This #MON is"
 	line "really energetic!"
-	done
+	prompt
 
 OaksLabReceivedMonText:
 	text "<PLAYER> received"

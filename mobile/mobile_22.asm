@@ -2679,7 +2679,7 @@ Function8a116:
 .asm_8a14c
 	call WaitSFX
 	ld de, SFX_TWINKLE
-	call PlaySFX
+	call WaitPlaySFX
 	ld c, $10
 	call DelayFrames
 .asm_8a15a

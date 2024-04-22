@@ -317,9 +317,8 @@ Script_UseFlash:
 UseFlashTextScript:
 	text_far _BlindingFlashText
 	text_asm
-	call WaitSFX
 	ld de, SFX_FLASH
-	call PlaySFX
+	call WaitPlaySFX
 	call WaitSFX
 	ld hl, .BlankText
 	ret

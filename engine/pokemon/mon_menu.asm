@@ -1036,9 +1036,8 @@ MoveScreenLoop:
 .swap_moves
 	ld de, SFX_SWITCH_POKEMON
 	call PlaySFX
-	call WaitSFX
 	ld de, SFX_SWITCH_POKEMON
-	call PlaySFX
+	call WaitPlaySFX
 	call WaitSFX
 	hlcoord 1, 2
 	lb bc, 8, 18

@@ -66,9 +66,8 @@ _CardFlip:
 	call .CardFlip
 	jr .MasterLoop
 .leavethegame
-	call WaitSFX
 	ld de, SFX_QUIT_SLOTS
-	call PlaySFX
+	call WaitPlaySFX
 	call WaitSFX
 	call ClearBGPalettes
 	ld hl, wOptions
@@ -251,9 +250,8 @@ _CardFlip:
 	xor a
 	ldh [hVBlankCounter], a
 	call CardFlip_UpdateCursorOAM
-	call WaitSFX
 	ld de, SFX_CHOOSE_A_CARD
-	call PlaySFX
+	call WaitPlaySFX
 	call WaitSFX
 	ld a, [wCardFlipNumCardsPlayed]
 	ld e, a
