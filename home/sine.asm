@@ -3,8 +3,8 @@
 ; INPUT:  a = signed 6-bit value
 ;         d = degree offset
 Cosine::
-; OUTPUT: a = d * cos(a).
-	add %010000 ; add 90 degrees
+; Return d * cos(a) in hl
+	add $10 ; 90 degrees
 Sine::
 ; OUTPUT: a = d * sin(a).
 	ld e, a

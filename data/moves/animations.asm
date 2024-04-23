@@ -383,7 +383,7 @@ BattleAnim_ThrowPokeBall:
 	anim_sound 0, 1, SFX_CHANGE_DEX_MODE
 	anim_incobj 1
 	anim_wait 32
-	anim_sound 0, 1, SFX_SWAP_1
+	anim_sound 0, 1, SFX_BALL_BOUNCE
 	anim_wait 32
 	anim_wait 32
 	anim_wait 32
