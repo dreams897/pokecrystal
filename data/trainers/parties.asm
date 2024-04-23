@@ -3585,22 +3585,21 @@ Blue2Group:
 
 	; BLUE2_CHARMANDER (1)
 	db "?@", TRAINERTYPE_DVS | TRAINERTYPE_ITEM
-	db 9, PIDGEY,        $67, $67, NO_ITEM
+	db 9, PIDGEY,        $56, $56, NO_ITEM
 	db 8, CHARMANDER,    $67, $67, NO_ITEM
 	db -1 ; end
 
 	; BLUE2_SQUIRTLE (2)
 	db "?@", TRAINERTYPE_DVS | TRAINERTYPE_ITEM
-	db 9, PIDGEY,        $67, $67, NO_ITEM
+	db 9, PIDGEY,        $56, $56, NO_ITEM
 	db 8, SQUIRTLE,      $67, $67, NO_ITEM
 	db -1 ; end
 	
 	; BLUE2_BULBASAUR (3)
 	db "?@", TRAINERTYPE_DVS | TRAINERTYPE_ITEM
-	db 9, PIDGEY,        $67, $67, NO_ITEM
+	db 9, PIDGEY,        $56, $56, NO_ITEM
 	db 8, BULBASAUR,     $67, $67, NO_ITEM
 	db -1 ; end
-
 	
 Blue3Group:
 		
