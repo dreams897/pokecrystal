@@ -3601,6 +3601,31 @@ Blue2Group:
 	db 8, BULBASAUR,     $56, $56, NO_ITEM
 	db -1 ; end
 	
+	; BLUE3_CHARMANDER (1)
+	db "?@", TRAINERTYPE_DVS | TRAINERTYPE_ITEM
+	db 18, PIDGEOTTO,    $34, $46, NO_ITEM
+	db 15, RATTATA,      $56, $56, NO_ITEM
+	db 15, ABRA,         $56, $56, NO_ITEM
+	db 17, CHARMANDER,   $56, $56, NO_ITEM
+	db -1 ; end
+	
+	; BLUE3_SQUIRTLE (2)
+	db "?@", TRAINERTYPE_DVS | TRAINERTYPE_ITEM
+	db 18, PIDGEOTTO,    $34, $46, NO_ITEM
+	db 15, RATTATA,      $56, $56, NO_ITEM
+	db 15, ABRA,         $56, $56, NO_ITEM
+	db 17, SQUIRTLE,     $56, $56, NO_ITEM
+	db -1 ; end
+	
+	; BLUE3_BULBASAUR (3)
+	db "?@", TRAINERTYPE_DVS | TRAINERTYPE_ITEM
+	db 18, PIDGEOTTO,    $34, $46, NO_ITEM
+	db 15, RATTATA,      $56, $56, NO_ITEM
+	db 15, ABRA,         $56, $56, NO_ITEM
+	db 17, BULBASAUR,    $56, $56, NO_ITEM
+	db -1 ; end
+	
+	
 Blue3Group:
 		
 	; BLUE (3)

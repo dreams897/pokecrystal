@@ -717,6 +717,9 @@ DEF GREEN EQU __trainer_class__
 	const BLUE2_CHARMANDER
 	const BLUE2_SQUIRTLE
 	const BLUE2_BULBASAUR
+	const BLUE3_CHARMANDER
+	const BLUE3_SQUIRTLE
+	const BLUE3_BULBASAUR
 	
 	trainerclass BLUE3 ; added
 
