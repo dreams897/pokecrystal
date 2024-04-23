@@ -34,7 +34,7 @@
 **A**: Some features from Crystal will be quite beneficial and an upgrade to features in Gen 1. These features include shiny Pokémon, a set-able clock (spawns depend on time of day), better battle engine, Stereo audio option, item shortcuts, and much more! Some features will be removed that aren't useful to Gen 1 or don't serve a purpose that I can justify. These include Eggs (since there will be no baby Pokémon) and the Radio. The Town Map is currently it's own menu item and the Pokegear is not being used, but that may change.
 
 ### Q: What post-game content will be added?
-**A**: Some restored content such as the Prof. Oak battle, a couple Pokemon that may normally be unobtainable, and I will consider some newer features like Swarms.
+**A**: Some restored content such as the Prof. Oak battle, a couple Pokemon that may normally be unobtainable, and I will consider some newer features like Swarms. Additionally the **Phone* has been renamed to *Pager** and will allow the player to re-battle trainers post-game!
 
 ### Q: Will you keep new moves and features for Pokémon?
 **A**: Yes, I plan on keeping all of the new moves as well as some features like Magikarp length, etc. Items that make Pokémon evolve past Gen 1 will not be kept. 
