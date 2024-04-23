@@ -78,10 +78,10 @@
 **Give**: Dratini
 **Get**: Squirtle
 
-**<u>Removed Original Trade<u>**:
-
+**Removed Original Trade**:
 **Give**: Venonat
 **Get**: Tangela
+
 
 ### Q: Is there a Move Deleter/Relearner?
 **A**: There will be a new house in Fuchsia City with both a Move Deleter and Relearner added! Also Bill's grampa is still next to it.
