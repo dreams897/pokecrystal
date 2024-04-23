@@ -23,7 +23,6 @@
 
 ### Roadmap:
 
-* Finish porting all code and resources from Pokémon Red / Blue
 * Add Safari Zone
 * Add post-game content
 
@@ -79,7 +78,8 @@
 **Give**: Dratini
 **Get**: Squirtle
 
-**Removed**:
+**Removed Original Trade**:
+
 **Give**: Venonat
 **Get**: Tangela
 
