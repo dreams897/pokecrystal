@@ -23,10 +23,11 @@ VictoryRoadEntranceSign:
 	jumptext Route22PokemonLeagueSignText
 	
 Route22Rival1Script:
+	playmusic MUSIC_MEET_RIVAL
+	showemote EMOTE_SHOCK, PLAYER, 30
 	variablesprite SPRITE_OAK_BLUE, SPRITE_BLUE
 	special LoadUsedSpritesGFX
 	appear ROUTE_22_BLUE
-	playmusic MUSIC_MEET_RIVAL
 	readvar VAR_YCOORD
         getnum STRING_BUFFER_3
         ifequal 4, .RivalWalksFromTop
