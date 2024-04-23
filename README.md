@@ -78,7 +78,7 @@
 **Give**: Dratini
 **Get**: Squirtle
 
-**Removed Original Trade**:
+**<u>Removed Original Trade<u>**:
 
 **Give**: Venonat
 **Get**: Tangela
