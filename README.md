@@ -79,7 +79,9 @@
 **Get**: Squirtle
 
 **Removed Original Trade**:
+
 **Give**: Venonat
+
 **Get**: Tangela
 
 
