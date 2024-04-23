@@ -1883,7 +1883,7 @@ BattleAnim_StepThrownToTarget:
 ; Inches object towards the opponent's side in a parabola arc defined by the lower and upper nybble of Obj Param
 	dec [hl]
 	ld d, $20
-	farcall Sine
+	call BattleAnim_Sine
 	ld hl, BATTLEANIMSTRUCT_YOFFSET
 	add hl, bc
 	ld [hl], a
@@ -4209,7 +4209,7 @@ BattleAnim_StepCircle:
 ; Inches object in a circular movement where its height is 1/4 the width
 	push af
 	push de
-	farcall Sine
+	call BattleAnim_Sine
 	sra a
 	sra a
 	ld hl, BATTLEANIMSTRUCT_YOFFSET
@@ -4217,7 +4217,7 @@ BattleAnim_StepCircle:
 	ld [hl], a
 	pop de
 	pop af
-	farcall Cosine
+	call BattleAnim_Cosine
 	ld hl, BATTLEANIMSTRUCT_XOFFSET
 	add hl, bc
 	ld [hl], a
