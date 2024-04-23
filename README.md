@@ -7,7 +7,7 @@
 * All documented [bugs and glitches](https://pret.github.io/pokecrystal/bugs_and_glitches.html) fixed and all [design flaws](https://pret.github.io/pokecrystal/design_flaws.html) corrected for Crystal engine
 * 60fps and Running Shoes [branch](https://github.com/fellowship-of-the-roms/pokecrystal/tree/Doublespeed-60fps-Running-Shoes) merged
 * New post-game content and restored content that didn't make it into RBY (see list below)
-* There will be a **Gen 1** branch (default) and a **Gen 2** branch with newer tileset, SFX and Music (among other things)
+* There will be a **Gen 1** branch (default) and a **Gen 2** branch with newer tileset, SFX and Music
 * 3 Player gender choices: Boy, Girl and ENBY (NB)!
 * Custom Girl/Green sprite changed to fit gen 1 look
 * Colored Poké Balls to match ball type and new Poké Ball sprite added
