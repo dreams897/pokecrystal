@@ -25,6 +25,7 @@ PewterGymBrockScript:
 	setevent EVENT_BEAT_PEWTER_GYM_TRAINER_0
 	setevent EVENT_BEAT_PEWTER_GYM_TRAINER_1
 	setevent EVENT_1ST_ROUTE22_RIVAL_BATTLE
+	setmapscene ROUTE_22, SCENE_ROUTE_22_NOOP
 	opentext
 	writetext ReceivedBoulderBadgeText
 	playsound SFX_GET_KEY_ITEM_1
