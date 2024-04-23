@@ -100,4 +100,5 @@ MapScenes::
 	scene_var BLUES_HOUSE,                                 wBluesHouseSceneID
 	scene_var PEWTER_CITY,				       wPewterCitySceneID
 	scene_var PEWTER_MUSEUM_1F,			       wPewterMuseum1FSceneID
+	scene_var CERULEAN_CITY,                               wCeruleanCitySceneID
 	db -1 ; end

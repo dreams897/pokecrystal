@@ -3143,7 +3143,8 @@ wRoute22SceneID::                                 db
 wBluesHouseSceneID::                              db
 wPewterCitySceneID::                              db
 wPewterMuseum1FSceneID::                          db
-	ds 28
+wCeruleanCitySceneID::                            db
+	ds 27
 
 ; fight counts
 wJackFightCount::    db

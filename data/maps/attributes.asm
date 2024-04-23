@@ -505,7 +505,7 @@ ENDM
 	map_attributes Route19FuchsiaGate, ROUTE_19_FUCHSIA_GATE, $00, 0
 	map_attributes SeafoamGym, SEAFOAM_GYM, $09, 0
 	map_attributes CeruleanGymBadgeSpeechHouse, CERULEAN_GYM_BADGE_SPEECH_HOUSE, $00, 0
-	map_attributes CeruleanPoliceStation, CERULEAN_POLICE_STATION, $00, 0
+	map_attributes CeruleanTrashedHouse, CERULEAN_TRASHED_HOUSE, $00, 0
 	map_attributes CeruleanTradeSpeechHouse, CERULEAN_TRADE_SPEECH_HOUSE, $00, 0
 	map_attributes CeruleanPokecenter1F, CERULEAN_POKECENTER_1F, $00, 0
 	map_attributes CeruleanPokecenter2FBeta, CERULEAN_POKECENTER_2F_BETA, $00, 0

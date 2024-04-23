@@ -199,7 +199,7 @@ ENDM
 
 	newgroup CERULEAN                                             ;  7
 	map_const CERULEAN_GYM_BADGE_SPEECH_HOUSE,              4,  4 ;  1
-	map_const CERULEAN_POLICE_STATION,                      4,  4 ;  2
+	map_const CERULEAN_TRASHED_HOUSE,                       4,  4 ;  2
 	map_const CERULEAN_TRADE_SPEECH_HOUSE,                  4,  4 ;  3
 	map_const CERULEAN_POKECENTER_1F,                       7,  4 ;  4
 	map_const CERULEAN_POKECENTER_2F_BETA,                  7,  4 ;  5

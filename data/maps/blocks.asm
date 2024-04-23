@@ -134,7 +134,7 @@ BlackthornDragonSpeechHouse_Blocks:
 BlackthornEmysHouse_Blocks:
 MoveDeletersHouse_Blocks:
 CeruleanGymBadgeSpeechHouse_Blocks:
-CeruleanPoliceStation_Blocks:
+CeruleanTrashedHouse_Blocks:
 CeruleanTradeSpeechHouse_Blocks:
 BillsHouse_Blocks:
 CharcoalKiln_Blocks:

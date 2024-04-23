@@ -35,7 +35,7 @@ MtMoonPokecenterMagikarpSalesmanScript:
 	playsound SFX_CAUGHT_MON_RBY
 	waitsfx
 	promptbutton
-	givepoke BLASTOISE, 50
+	givepoke MAGIKARP, 5
 	takemoney YOUR_MONEY, MT_MOON_POKECENTER_MAGIKARP_PRICE
 	closetext
 	setevent EVENT_BOUGHT_MAGIKARP
