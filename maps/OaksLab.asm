@@ -240,6 +240,7 @@ OaksLabParcelScript:
 	clearevent EVENT_GAMBLER_AWAKE
 	setmapscene VIRIDIAN_MART, SCENE_VIRIDIANMART_NOOP
 	setmapscene VIRIDIAN_CITY, SCENE_VIRIDIAN_CITY_NOOP
+	setmapscene ROUTE_22, SCENE_ROUTE_22_RIVAL_1
 	end
 	
 .KeepBlueUp
@@ -256,6 +257,7 @@ OaksLabParcelScript:
 	clearevent EVENT_GAMBLER_AWAKE
 	setmapscene VIRIDIAN_MART, SCENE_VIRIDIANMART_NOOP
 	setmapscene VIRIDIAN_CITY, SCENE_VIRIDIAN_CITY_NOOP
+	setmapscene ROUTE_22, SCENE_ROUTE_22_RIVAL_1
 	end
 	
 BlueParcelWalkUpMovement:
@@ -988,7 +990,7 @@ OaksLabOakGotPokedexText:
 
 	para "<PLAYER> got"
 	line "#DEX from OAK!@"
-	done
+	text_end
 
 OaksLabOakThatWasMyDreamText:
 	text "To make a complete"

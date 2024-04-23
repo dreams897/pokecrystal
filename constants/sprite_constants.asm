@@ -190,4 +190,5 @@ DEF SPRITE_VARS EQU const_value
 	const SPRITE_FUCHSIA_GYM_4 ; fa
 	const SPRITE_COPYCAT ; fb
 	const SPRITE_JANINE_IMPERSONATOR ; fc
-	const SPRITE_VARIABLE; fd
+	const SPRITE_OAK_BLUE; fd
+	

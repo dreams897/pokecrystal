@@ -96,6 +96,7 @@ MapScenes::
 	scene_var OAKS_LAB,                                    wOaksLabSceneID
 	scene_var VIRIDIAN_CITY,			       wViridianCitySceneID
 	scene_var VIRIDIAN_MART,                               wViridianMartSceneID
+	scene_var ROUTE_22,                                    wRoute22SceneID
 	scene_var BLUES_HOUSE,                                 wBluesHouseSceneID
 	scene_var PEWTER_CITY,				       wPewterCitySceneID
 	scene_var PEWTER_MUSEUM_1F,			       wPewterMuseum1FSceneID

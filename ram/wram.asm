@@ -3139,10 +3139,11 @@ wPalletTownSceneID::                              db
 wOaksLabSceneID::				  db
 wViridianCitySceneID::			  	  db
 wViridianMartSceneID::                            db
+wRoute22SceneID::                                 db
 wBluesHouseSceneID::                              db
 wPewterCitySceneID::                              db
 wPewterMuseum1FSceneID::                          db
-	ds 29
+	ds 28
 
 ; fight counts
 wJackFightCount::    db

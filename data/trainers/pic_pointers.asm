@@ -68,7 +68,7 @@ TrainerPicPointers::
 	dba TwinsPic
 	dba PokefanfPic
 	dba Blue1Pic
-	dba Blue2Pic
+	dba Blue1Pic
 	dba Blue3Pic
 	dba OfficerPic
 	dba GruntfPic

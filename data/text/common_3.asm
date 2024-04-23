@@ -33,6 +33,11 @@ _OakText10::
 	cont "with #MON"
 	cont "awaits! Let's go!"
 	done
+	
+_RivalAmIGreatOrWhatText::
+	text "<RIVAL>: Yeah! Am"
+	line "I great or what?"
+	prompt
 
 _ClockTimeMayBeWrongText::
 	text "The clock's time"
