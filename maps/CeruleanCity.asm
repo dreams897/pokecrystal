@@ -40,7 +40,7 @@ CeruleanCityRivalBattle2Script:
         ifequal 21, .RivalWalksToRight
 	
 .RivalWalksToLeft:
-	applymovement CERULEANCITY_BLUE, Cerulean_Blue_Left_Movement
+	applymovement CERULEANCITY_BLUE, Cerulean_Blue_Down_Movement
 	opentext
 	writetext CeruleanCityRivalPreBattleText
 	waitbutton
@@ -48,26 +48,18 @@ CeruleanCityRivalBattle2Script:
 	sjump Rival2ScriptCont
 	
 .RivalWalksToRight:
-	applymovement CERULEANCITY_BLUE, Cerulean_Blue_Right_Movement
-	turnobject PLAYER, LEFT
+	moveobject CERULEANCITY_BLUE, 21, 2
+	applymovement CERULEANCITY_BLUE, Cerulean_Blue_Down_Movement
 	opentext
 	writetext CeruleanCityRivalPreBattleText
 	waitbutton
 	closetext
 	sjump Rival2ScriptCont
 	
-Cerulean_Blue_Left_Movement:
+Cerulean_Blue_Down_Movement:
 	slow_step DOWN
 	slow_step DOWN
 	slow_step DOWN
-	step_end
-	
-Cerulean_Blue_Right_Movement:
-	slow_step DOWN
-	slow_step DOWN
-	slow_step DOWN
-	slow_step DOWN
-	turn_head RIGHT
 	step_end
 	
 Rival2ScriptCont:
@@ -149,6 +141,7 @@ CeruleanCityBlueLeaveMovementLeft:
 	step_end
 	
 CeruleanCityBlueLeaveMovementRight:
+	slow_step LEFT
 	slow_step DOWN
 	slow_step DOWN
 	slow_step DOWN
