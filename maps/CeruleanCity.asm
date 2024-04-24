@@ -145,9 +145,11 @@ CeruleanCityBlueLeaveMovementLeft:
 	slow_step DOWN
 	slow_step DOWN
 	slow_step DOWN
+	slow_step DOWN
 	step_end
 	
 CeruleanCityBlueLeaveMovementRight:
+	slow_step DOWN
 	slow_step DOWN
 	slow_step DOWN
 	slow_step DOWN
