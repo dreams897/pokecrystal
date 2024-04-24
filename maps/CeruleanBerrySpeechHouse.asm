@@ -15,6 +15,7 @@ CeruleanBerrySpeechHouse_MapEvents:
 	def_warp_events
 	warp_event  2,  7, CERULEAN_CITY, 2
 	warp_event  3,  7, CERULEAN_CITY, 2
+	warp_event  2,  0, CERULEAN_CITY, 10
 
 	def_coord_events
 
