@@ -29,6 +29,130 @@ CeruleanCityRivalScene:
 CeruleanCityNoopScene:
 	disappear CERULEANCITY_BLUE
 	end
+	
+CeruleanCityRivalBattle2Script:
+	playmusic MUSIC_MEET_RIVAL
+	showemote EMOTE_SHOCK, PLAYER, 30
+	appear CERULEANCITY_BLUE
+	readvar VAR_XCOORD
+        getnum STRING_BUFFER_3
+        ifequal 20, .RivalWalksToLeft
+        ifequal 21, .RivalWalksToRight
+	
+.RivalWalksToLeft:
+	applymovement CERULEANCITY_BLUE, Cerulean_Blue_Left_Movement
+	opentext
+	writetext CeruleanCityRivalPreBattleText
+	waitbutton
+	closetext
+	sjump Rival2ScriptCont
+	
+.RivalWalksToRight:
+	applymovement CERULEANCITY_BLUE, Cerulean_Blue_Right_Movement
+	turnobject PLAYER, LEFT
+	opentext
+	writetext CeruleanCityRivalPreBattleText
+	waitbutton
+	closetext
+	sjump Rival2ScriptCont
+	
+Cerulean_Blue_Left_Movement:
+	slow_step DOWN
+	slow_step DOWN
+	slow_step DOWN
+	step_end
+	
+Cerulean_Blue_Right_Movement:
+	slow_step DOWN
+	slow_step DOWN
+	slow_step DOWN
+	slow_step DOWN
+	turn_head RIGHT
+	step_end
+	
+Rival2ScriptCont:
+	checkevent EVENT_GOT_A_CHARMANDER_FROM_OAK
+	iftrue RivalHasSquirtleBattle2
+	checkevent EVENT_GOT_A_SQUIRTLE_FROM_OAK
+	iftrue RivalHasBulbasaurBattle2
+	checkevent EVENT_GOT_A_BULBASAUR_FROM_OAK
+	iftrue RivalHasCharmanderBattle2
+	
+RivalHasCharmanderBattle2:
+	winlosstext CeruleanCityRivalDefeatedText, CeruleanCityRivalVictoryText
+	loadtrainer BLUE2, BLUE3_CHARMANDER
+	startbattle
+	reloadmapafterbattle
+	opentext
+	writetext Route22RivalAfterBattleText1
+	waitbutton
+	closetext
+	playmusic MUSIC_MEET_RIVAL_ALT
+	readvar VAR_XCOORD
+        getnum STRING_BUFFER_3
+        ifequal 20, RivalLeavesFromLeft
+        ifequal 21, RivalLeavesFromRight
+	
+RivalHasSquirtleBattle2:
+	winlosstext CeruleanCityRivalDefeatedText, CeruleanCityRivalVictoryText
+	loadtrainer BLUE2, BLUE3_SQUIRTLE
+	startbattle
+	reloadmapafterbattle
+	opentext
+	writetext Route22RivalAfterBattleText1
+	waitbutton
+	closetext
+	playmusic MUSIC_MEET_RIVAL_ALT
+	readvar VAR_XCOORD
+        getnum STRING_BUFFER_3
+        ifequal 20, RivalLeavesFromLeft
+        ifequal 21, RivalLeavesFromRight
+	
+RivalHasBulbasaurBattle2:
+	winlosstext CeruleanCityRivalDefeatedText, CeruleanCityRivalVictoryText
+	loadtrainer BLUE2, BLUE3_BULBASAUR
+	startbattle
+	reloadmapafterbattle
+	opentext
+	writetext Route22RivalAfterBattleText1
+	waitbutton
+	closetext
+	playmusic MUSIC_MEET_RIVAL_ALT
+	readvar VAR_XCOORD
+        getnum STRING_BUFFER_3
+        ifequal 20, RivalLeavesFromLeft
+        ifequal 21, RivalLeavesFromRight
+        
+RivalLeavesFromLeft:
+	applymovement CERULEANCITY_BLUE, CeruleanCityBlueLeaveMovementLeft
+	disappear CERULEANCITY_BLUE
+	special RestartMapMusic
+	setevent EVENT_BEAT_RIVAL_CERULEAN
+	setscene SCENE_CERULEAN_CITY_NOOP
+	end
+	
+RivalLeavesFromRight:
+	applymovement CERULEANCITY_BLUE, CeruleanCityBlueLeaveMovementRight
+	disappear CERULEANCITY_BLUE
+	special RestartMapMusic
+	setevent EVENT_BEAT_RIVAL_CERULEAN
+	setscene SCENE_CERULEAN_CITY_NOOP
+	end
+	
+CeruleanCityBlueLeaveMovementLeft:
+	slow_step RIGHT
+	slow_step DOWN
+	slow_step DOWN
+	slow_step DOWN
+	slow_step DOWN
+	step_end
+	
+CeruleanCityBlueLeaveMovementRight:
+	slow_step DOWN
+	slow_step DOWN
+	slow_step DOWN
+	slow_step DOWN
+	step_end
 
 CeruleanCityCooltrainerMScript:
 	faceplayer
@@ -36,9 +160,6 @@ CeruleanCityCooltrainerMScript:
 	writetext CeruleanCityCooltrainerMText
 	waitbutton
 	closetext
-	end
-	
-CeruleanCityRivalBattle2Script:
 	end
 	
 CeruleanCityRocketScript:
