@@ -285,7 +285,6 @@ TilesetViridianForestAnim:
 TilesetGateKantoAnim:
 TilesetMartKantoAnim:
 TilesetCaveKantoAnim:
-TilesetGymKantoAnim:
 TilesetGymBrockAnim:
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
