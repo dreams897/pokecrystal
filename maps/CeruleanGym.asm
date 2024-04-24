@@ -6,12 +6,8 @@
 
 CeruleanGym_MapScripts:
 	def_scene_scripts
-	scene_script CeruleanGymNoopScene,         SCENE_CERULEANGYM_NOOP
 
 	def_callbacks
-
-CeruleanGymNoopScene:
-	end
 
 CeruleanGymMistyScript:
 	faceplayer

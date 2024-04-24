@@ -3053,7 +3053,6 @@ wTradeCenterSceneID::                             db
 wColosseumSceneID::                               db
 wTimeCapsuleSceneID::                             db
 wPowerPlantSceneID::                              db
-wCeruleanGymSceneID::                             db
 wRoute25SceneID::                                 db
 wVictoryRoadGateSceneID::                         db
 wSaffronMagnetTrainStationSceneID::               db
