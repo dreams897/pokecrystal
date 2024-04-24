@@ -133,8 +133,6 @@ MahoganyRedGyaradosSpeechHouse_Blocks:
 BlackthornDragonSpeechHouse_Blocks:
 BlackthornEmysHouse_Blocks:
 MoveDeletersHouse_Blocks:
-CeruleanGymBadgeSpeechHouse_Blocks:
-CeruleanBerrySpeechHouse_Blocks:
 CeruleanTrashedHouse_Blocks:
 CeruleanTradeSpeechHouse_Blocks:
 BillsHouse_Blocks:
@@ -179,6 +177,10 @@ Route30BerryHouse_Blocks:
 	
 CeruleanBikeShop_Blocks:
 	INCBIN "maps/CeruleanBikeShop.blk"
+	
+CeruleanGymBadgeSpeechHouse_Blocks:
+CeruleanBerrySpeechHouse_Blocks:
+	INCBIN "maps/CeruleanGymBadgeSpeechHouse.blk"
 
 SafariZoneFuchsiaGateBeta_Blocks:
 Route19FuchsiaGate_Blocks:
