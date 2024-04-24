@@ -134,6 +134,7 @@ BlackthornDragonSpeechHouse_Blocks:
 BlackthornEmysHouse_Blocks:
 MoveDeletersHouse_Blocks:
 CeruleanGymBadgeSpeechHouse_Blocks:
+CeruleanBerrySpeechHouse_Blocks:
 CeruleanTrashedHouse_Blocks:
 CeruleanTradeSpeechHouse_Blocks:
 BillsHouse_Blocks:
@@ -175,6 +176,9 @@ GuideGentsHouse_Blocks:
 CherrygroveEvolutionSpeechHouse_Blocks:
 Route30BerryHouse_Blocks:
 	INCBIN "maps/House1.blk"
+	
+CeruleanBikeShop_Blocks:
+	INCBIN "maps/CeruleanBikeShop.blk"
 
 SafariZoneFuchsiaGateBeta_Blocks:
 Route19FuchsiaGate_Blocks:

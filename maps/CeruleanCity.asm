@@ -391,11 +391,13 @@ CeruleanCity_MapEvents:
 
 	def_warp_events
 	warp_event  9, 11, CERULEAN_GYM_BADGE_SPEECH_HOUSE, 1
+	warp_event 15, 11, CERULEAN_BERRY_SPEECH_HOUSE, 1
 	warp_event 27, 11, CERULEAN_TRASHED_HOUSE, 1
 	warp_event 13, 15, CERULEAN_TRADE_SPEECH_HOUSE, 1
 	warp_event 19, 17, CERULEAN_POKECENTER_1F, 1
 	warp_event 30, 19, CERULEAN_GYM, 1
-	warp_event 25, 25, CERULEAN_MART, 2
+	warp_event 25, 25, CERULEAN_MART, 1
+	warp_event 13, 25, CERULEAN_BIKE_SHOP, 1
 
 	def_coord_events
 	coord_event  20,  6, SCENE_CERULEAN_CITY_RIVAL, CeruleanCityRivalBattle2Script
