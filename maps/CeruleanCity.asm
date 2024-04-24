@@ -84,7 +84,7 @@ RivalHasCharmanderBattle2:
 	startbattle
 	reloadmapafterbattle
 	opentext
-	writetext Route22RivalAfterBattleText1
+	writetext CeruleanCityRivalIWentToBillsText
 	waitbutton
 	closetext
 	playmusic MUSIC_MEET_RIVAL_ALT
@@ -99,7 +99,7 @@ RivalHasSquirtleBattle2:
 	startbattle
 	reloadmapafterbattle
 	opentext
-	writetext Route22RivalAfterBattleText1
+	writetext CeruleanCityRivalIWentToBillsText
 	waitbutton
 	closetext
 	playmusic MUSIC_MEET_RIVAL_ALT
@@ -114,7 +114,7 @@ RivalHasBulbasaurBattle2:
 	startbattle
 	reloadmapafterbattle
 	opentext
-	writetext Route22RivalAfterBattleText1
+	writetext CeruleanCityRivalIWentToBillsText
 	waitbutton
 	closetext
 	playmusic MUSIC_MEET_RIVAL_ALT
