@@ -1,57 +1,16 @@
 	object_const_def
-	const CERULEANGYM_ROCKET
 	const CERULEANGYM_MISTY
 	const CERULEANGYM_SWIMMER_GIRL1
-	const CERULEANGYM_SWIMMER_GIRL2
 	const CERULEANGYM_SWIMMER_GUY
 	const CERULEANGYM_GYM_GUIDE
 
 CeruleanGym_MapScripts:
 	def_scene_scripts
 	scene_script CeruleanGymNoopScene,         SCENE_CERULEANGYM_NOOP
-	scene_script CeruleanGymGruntRunsOutScene, SCENE_CERULEANGYM_GRUNT_RUNS_OUT
 
 	def_callbacks
 
 CeruleanGymNoopScene:
-	end
-
-CeruleanGymGruntRunsOutScene:
-	sdefer CeruleanGymGruntRunsOutScript
-	end
-
-CeruleanGymGruntRunsOutScript:
-	applymovement CERULEANGYM_ROCKET, CeruleanGymGruntRunsDownMovement
-	playsound SFX_TACKLE
-	applymovement CERULEANGYM_ROCKET, CeruleanGymGruntRunsIntoYouMovement
-	playmusic MUSIC_ROCKET_ENCOUNTER
-	opentext
-	writetext CeruleanGymGruntIntroText
-	waitbutton
-	closetext
-	showemote EMOTE_SHOCK, CERULEANGYM_ROCKET, 15
-	applymovement CERULEANGYM_ROCKET, CeruleanGymGruntBacksAwayMovement
-	opentext
-	writetext CeruleanGymGruntBigMistakeText
-	waitbutton
-	closetext
-	applymovement CERULEANGYM_ROCKET, CeruleanGymGruntMovesCloseMovement
-	opentext
-	writetext CeruleanGymGruntByeText
-	waitbutton
-	closetext
-	applymovement CERULEANGYM_ROCKET, CeruleanGymGruntRunsOutMovement
-	playsound SFX_EXIT_BUILDING
-	disappear CERULEANGYM_ROCKET
-	clearevent EVENT_ROUTE_24_ROCKET
-	clearevent EVENT_ROUTE_25_MISTY_BOYFRIEND
-	setscene SCENE_CERULEANGYM_NOOP
-	setmapscene ROUTE_25, SCENE_ROUTE25_MISTYS_DATE
-	waitsfx
-	special RestartMapMusic
-	pause 15
-	turnobject PLAYER, DOWN
-	pause 15
 	end
 
 CeruleanGymMistyScript:
@@ -131,8 +90,6 @@ CeruleanGymGuideScript:
 	end
 
 CeruleanGymStatue1:
-	checkevent EVENT_TRAINERS_IN_CERULEAN_GYM
-	iffalse CeruleanGymStatue
 	opentext
 	writetext CeruleanGymNote1Text
 	waitbutton
@@ -140,8 +97,6 @@ CeruleanGymStatue1:
 	end
 
 CeruleanGymStatue2:
-	checkevent EVENT_TRAINERS_IN_CERULEAN_GYM
-	iffalse CeruleanGymStatue
 	opentext
 	writetext CeruleanGymNote2Text
 	waitbutton
@@ -155,40 +110,6 @@ CeruleanGymStatue:
 .Beaten:
 	gettrainername STRING_BUFFER_4, MISTY, MISTY1
 	jumpstd GymStatue2Script
-
-CeruleanGymGruntRunsDownMovement:
-	big_step DOWN
-	big_step DOWN
-	big_step DOWN
-	big_step DOWN
-	step_end
-
-CeruleanGymGruntRunsOutMovement:
-	big_step RIGHT
-	big_step DOWN
-	step_end
-
-CeruleanGymGruntRunsIntoYouMovement:
-	fix_facing
-	set_sliding
-	jump_step UP
-	remove_sliding
-	remove_fixed_facing
-	step_sleep 8
-	step_sleep 8
-	step DOWN
-	step DOWN
-	step_end
-
-CeruleanGymGruntMovesCloseMovement:
-	big_step DOWN
-	step_end
-
-CeruleanGymGruntBacksAwayMovement:
-	fix_facing
-	slow_step UP
-	remove_fixed_facing
-	step_end
 
 CeruleanGymGruntIntroText:
 	text "Oops! I so sorry!"
@@ -369,9 +290,7 @@ CeruleanGym_MapEvents:
 	bg_event  6, 11, BGEVENT_READ, CeruleanGymStatue2
 
 	def_object_events
-	object_event  4, 10, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_CERULEAN_GYM_ROCKET
-	object_event  4,  2, SPRITE_MISTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeruleanGymMistyScript, EVENT_TRAINERS_IN_CERULEAN_GYM
-	object_event  2,  3, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerSwimmerfDiana, EVENT_TRAINERS_IN_CERULEAN_GYM
-	object_event  1,  9, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerSwimmerfBriana, EVENT_TRAINERS_IN_CERULEAN_GYM
-	object_event  8,  7, SPRITE_SWIMMER_GUY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerSwimmermParker, EVENT_TRAINERS_IN_CERULEAN_GYM
-	object_event  7, 10, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeruleanGymGuideScript, EVENT_TRAINERS_IN_CERULEAN_GYM
+	object_event  4,  2, SPRITE_MISTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeruleanGymMistyScript, -1
+	object_event  2,  3, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerSwimmerfDiana, -1
+	object_event  8,  7, SPRITE_SWIMMER_GUY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerSwimmermParker, -1
+	object_event  7, 10, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CeruleanGymGuideScript, -1
