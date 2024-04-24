@@ -1,8 +1,6 @@
 	object_const_def
 	const CERULEANTRADESPEECHHOUSE_GRANNY
-	const CERULEANTRADESPEECHHOUSE_GRAMPS
-	const CERULEANTRADESPEECHHOUSE_RHYDON
-	const CERULEANTRADESPEECHHOUSE_ZUBAT
+	const CERULEANTRADESPEECHHOUSE_GRAMPS_TRADE
 
 CeruleanTradeSpeechHouse_MapScripts:
 	def_scene_scripts
@@ -13,42 +11,21 @@ CeruleanTradeSpeechHouseGrannyScript:
 	jumptextfaceplayer CeruleanTradeSpeechHouseGrannyText
 
 CeruleanTradeSpeechHouseGrampsScript:
-	jumptextfaceplayer CeruleanTradeSpeechHouseGrampsText
-
-CeruleanTradeSpeechHouseRhydonScript:
+	faceplayer
 	opentext
-	writetext CeruleanTradeSpeechHouseRhydonText
-	cry KANGASKHAN
-	waitbutton
-	closetext
-	end
-
-CeruleanTradeSpeechHouseZubatScript:
-	opentext
-	writetext CeruleanTradeSpeechHouseZubatText
-	cry ZUBAT
+	trade NPC_TRADE_TIM2
 	waitbutton
 	closetext
 	end
 
 CeruleanTradeSpeechHouseGrannyText:
-	text "My husband lives"
-	line "happily with #-"
-	cont "MON he got through"
-	cont "trades."
-	done
+	text "My husband likes"
+	line "trading #MON."
 
-CeruleanTradeSpeechHouseGrampsText:
-	text "Ah… I'm so happy…"
-	done
-
-CeruleanTradeSpeechHouseRhydonText:
-	text "KANGASKHAN: Garu"
-	line "garuu."
-	done
-
-CeruleanTradeSpeechHouseZubatText:
-	text "ZUBAT: Zuba zubaa."
+	para "If you are a"
+	line "collector, would"
+	cont "you please trade"
+	cont "with him?"
 	done
 
 CeruleanTradeSpeechHouse_MapEvents:
@@ -63,7 +40,5 @@ CeruleanTradeSpeechHouse_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  2,  4, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeruleanTradeSpeechHouseGrannyScript, -1
+	object_event  2,  4, SPRITE_GAMBLER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeruleanTradeSpeechHouseGrannyScript, -1
 	object_event  1,  2, SPRITE_GRAMPS, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeruleanTradeSpeechHouseGrampsScript, -1
-	object_event  5,  2, SPRITE_RHYDON, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CeruleanTradeSpeechHouseRhydonScript, -1
-	object_event  5,  6, SPRITE_ZUBAT, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeruleanTradeSpeechHouseZubatScript, -1

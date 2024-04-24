@@ -21,7 +21,8 @@ DEF NPCTRADE_STRUCT_LENGTH EQU _RS
 	const NPC_TRADE_CHRIS  ; 4
 	const NPC_TRADE_KIM    ; 5
 	const NPC_TRADE_FOREST ; 6
-	const NPC_TRADE_BOB    ; 7
+	const NPC_TRADE_BOB    ; added
+	const NPC_TRADE_TIM2   ; added
 DEF NUM_NPC_TRADES EQU const_value
 
 ; trade gender limits
