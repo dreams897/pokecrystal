@@ -33,14 +33,14 @@ CeruleanCityNoopScene:
 CeruleanCityRivalBattle2Script:
 	playmusic MUSIC_MEET_RIVAL
 	showemote EMOTE_SHOCK, PLAYER, 30
-	appear CERULEANCITY_BLUE
 	readvar VAR_XCOORD
         getnum STRING_BUFFER_3
         ifequal 20, .RivalWalksToLeft
         ifequal 21, .RivalWalksToRight
 	
 .RivalWalksToLeft:
-	applymovement CERULEANCITY_BLUE, Cerulean_Blue_Left_Movement
+	appear CERULEANCITY_BLUE
+	applymovement CERULEANCITY_BLUE, Cerulean_Blue_Walk_Down_Movement
 	opentext
 	writetext CeruleanCityRivalPreBattleText
 	waitbutton
@@ -48,21 +48,16 @@ CeruleanCityRivalBattle2Script:
 	sjump Rival2ScriptCont
 	
 .RivalWalksToRight:
-	applymovement CERULEANCITY_BLUE, Cerulean_Blue_Right_Movement
+	moveobject CERULEANCITY_BLUE, 21, 2
+	appear CERULEANCITY_BLUE
+	applymovement CERULEANCITY_BLUE, Cerulean_Blue_Walk_Down_Movement
 	opentext
 	writetext CeruleanCityRivalPreBattleText
 	waitbutton
 	closetext
 	sjump Rival2ScriptCont
 	
-Cerulean_Blue_Left_Movement:
-	slow_step DOWN
-	slow_step DOWN
-	slow_step DOWN
-	step_end
-	
-Cerulean_Blue_Right_Movement:
-	slow_step RIGHT
+Cerulean_Blue_Walk_Down_Movement:
 	slow_step DOWN
 	slow_step DOWN
 	slow_step DOWN
@@ -138,6 +133,7 @@ RivalLeavesFromRight:
 	end
 	
 CeruleanCityBlueLeaveMovementLeft:
+	slow_step RIGHT
 	slow_step DOWN
 	slow_step DOWN
 	slow_step DOWN
