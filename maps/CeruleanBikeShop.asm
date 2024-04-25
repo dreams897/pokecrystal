@@ -1,3 +1,5 @@
+DEF CERULEAN_BIKE_SHOP_BIKE_PRICE EQU 999999
+	
 	object_const_def
 	const CERULEAN_BIKE_SHOP_CLERK
 	const CERULEAN_BIKE_SHOP_MIDDLE_AGED_WOMAN
@@ -9,6 +11,72 @@ CeruleanBikeShop_MapScripts:
 
 	def_callbacks
 	
+CerulanBikeShopClerkScript:
+	faceplayer
+	opentext
+	checkevent EVENT_GOT_BICYCLE
+	iftrue .HowDoYouLikeIt
+	checkitem BIKE_VOUCHER
+	iftrue .OhThatsABikeVoucher
+	writetext BikeShopClerkWelcomeText
+	writetext BikeShopClerkDoYouWantItText
+	yesorno
+	checkmoney YOUR_MONEY, CERULEAN_BIKE_SHOP_BIKE_PRICE
+	ifequal HAVE_LESS, .NotEnoughMoney
+	iffalse .NoRoom
+	
+.OhThatsABikeVoucher
+	writetext BikeShopClerkOhThatsAVoucherText
+	waitbutton
+	closetext
+	giveitem BICYCLE
+	end
+	
+.NotEnoughMoney
+	writetext BikeShopCantAffordText
+	waitbutton
+	closetext
+	end
+	
+.NoRoom
+	writetext BikeShopBagFullText
+	waitbutton
+	closetext
+	end
+	
+.HowDoYouLikeIt
+	writetext BikeShopClerkHowDoYouLikeYourBicycleText
+	waitbutton
+	closetext
+	end
+	
+CeruleanBikeShopMiddleAgedWomanScript:
+	faceplayer
+	opentext
+	writetext BikeShopMiddleAgedWomanText
+	waitbutton
+	closetext
+	end
+	
+CeruleanBikeShopYoungsterScript:
+	faceplayer
+	opentext
+	checkevent EVENT_GOT_BICYCLE
+	iftrue .WowYourBikeIsCool
+	iffalse .TheseBikesAreExpensive
+	
+.WowYourBikeIsCool
+	writetext BikeShopYoungsterCoolBikeText
+	waitbutton
+	closetext
+	end
+
+.TheseBikesAreExpensive
+	writetext BikeShopYoungsterTheseBikesAreExpensiveText
+	waitbutton
+	closetext
+	end
+	
 BikeShopClerkWelcomeText:
 	text "Hi! Welcome to"
 	line "our BIKE SHOP."
@@ -17,7 +85,7 @@ BikeShopClerkWelcomeText:
 	line "the BIKE for you!"
 	prompt
 
-BikeShopClerkDoYouLikeItText:
+BikeShopClerkDoYouWantItText:
 	text "It's a cool BIKE!"
 	line "Do you want it?"
 	done
@@ -94,4 +162,7 @@ CeruleanBikeShop_MapEvents:
 	def_bg_events
 
 	def_object_events
+	object_event  6,  2, SPRITE_BIKE_SHOP_CLERK, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CerulanBikeShopClerkScript, -1
+	object_event  5,  6, SPRITE_POKEFAN_F, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeruleanBikeShopMiddleAgedWomanScript, -1
+	object_event  1,  3, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeruleanBikeShopYoungsterScript, -1
 	

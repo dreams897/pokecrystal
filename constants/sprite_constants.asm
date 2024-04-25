@@ -129,11 +129,12 @@
 	const SPRITE_CHANNELER ; added
 	const SPRITE_COOK ; added
 	const SPRITE_SAFARI_ZONE_WORKER ; added
+	const SPRITE_BIKE_SHOP_CLERK ; added
 	
 DEF NUM_OVERWORLD_SPRITES EQU const_value - 1
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)
-	const_next $80
+	const_next $81
 DEF SPRITE_POKEMON EQU const_value
 	const SPRITE_UNOWN ; 80
 	const SPRITE_GEODUDE ; 81

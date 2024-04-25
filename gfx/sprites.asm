@@ -134,6 +134,7 @@ BaldingGuySpriteGFX::          INCBIN "gfx/sprites/balding_guy.2bpp"
 ChannelerSpriteGFX::           INCBIN "gfx/sprites/channeler.2bpp"
 CookSpriteGFX::                INCBIN "gfx/sprites/cook.2bpp"
 SafariZoneWorkerSpriteGFX::    INCBIN "gfx/sprites/safari_zone_worker.2bpp"
+BikeShopClerkSpriteGFX::       INCBIN "gfx/sprites/bike_shop_clerk.2bpp"
 
 
 

@@ -152,7 +152,7 @@ ItemNames::
 	li "LEPPA BERRY"
 	li "DRAGON SCALE"
 	li "BERSERK GENE"
-	li "TERU-SAMA"
+	li "BIKE VOUCHER"
 	li "TERU-SAMA"
 	li "TERU-SAMA"
 	li "SACRED ASH"

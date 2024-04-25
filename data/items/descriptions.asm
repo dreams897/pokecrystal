@@ -153,7 +153,7 @@ ItemDescriptions:
 	dw LeppaBerryDesc
 	dw DragonScaleDesc
 	dw BerserkGeneDesc
-	dw TeruSama18Desc
+	dw BikeVoucherDesc
 	dw TeruSama19Desc
 	dw TeruSama20Desc
 	dw SacredAshDesc
@@ -848,8 +848,9 @@ BerserkGeneDesc:
 	db   "Boosts ATTACK but"
 	next "causes confusion.@"
 
-TeruSama18Desc:
-	db   "?@"
+BikeVoucherDesc:
+	db   "Exchange for a new"
+	next "BICYCLE.@"
 
 TeruSama19Desc:
 	db   "?@"

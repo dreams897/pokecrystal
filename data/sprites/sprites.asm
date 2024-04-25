@@ -134,4 +134,5 @@ OverworldSprites:
 	overworld_sprite ChannelerSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite CookSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite SafariZoneWorkerSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
+	overworld_sprite BikeShopClerkSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
 	assert_table_length NUM_OVERWORLD_SPRITES
