@@ -1,4 +1,4 @@
-	tilecoll WALL, WALL, WALL, WALL ; 00
+	tilecoll , , ,  ; 00
 	tilecoll WALL, WALL, WALL, WALL ; 01
 	tilecoll WALL, WALL, WALL, WALL ; 02
 	tilecoll WALL, WALL, WALL, WALL ; 03
@@ -62,3 +62,4 @@
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 3d
 	tilecoll WALL, WALL, WARP_CARPET_LEFT, FLOOR ; 3e
 	tilecoll FLOOR, WARP_CARPET_RIGHT, FLOOR, WARP_CARPET_RIGHT ; 3f
+	tilecoll WALL, WALL, WALL, WALL ; 40

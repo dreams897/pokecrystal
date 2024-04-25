@@ -503,8 +503,8 @@ ENDM
 	map_attributes CinnabarPokecenter2FBeta, CINNABAR_POKECENTER_2F_BETA, $00, 0
 	map_attributes Route19FuchsiaGate, ROUTE_19_FUCHSIA_GATE, $00, 0
 	map_attributes SeafoamGym, SEAFOAM_GYM, $09, 0
-	map_attributes CeruleanGymBadgeSpeechHouse, CERULEAN_GYM_BADGE_SPEECH_HOUSE, $00, 0
-	map_attributes CeruleanBerrySpeechHouse, CERULEAN_BERRY_SPEECH_HOUSE, $00, 0
+	map_attributes CeruleanGymBadgeSpeechHouse, CERULEAN_GYM_BADGE_SPEECH_HOUSE, $40, 0
+	map_attributes CeruleanBerrySpeechHouse, CERULEAN_BERRY_SPEECH_HOUSE, $40, 0
 	map_attributes CeruleanBikeShop, CERULEAN_BIKE_SHOP, $0C, 0
 	map_attributes CeruleanTrashedHouse, CERULEAN_TRASHED_HOUSE, $00, 0
 	map_attributes CeruleanTradeSpeechHouse, CERULEAN_TRADE_SPEECH_HOUSE, $00, 0
@@ -582,16 +582,16 @@ ENDM
 	map_attributes PewterMuseum2F, PEWTER_MUSEUM_2F, $00, 0
 	map_attributes MtMoonPokecenter, MT_MOON_POKECENTER, $25, 0
 	map_attributes VermilionDock, VERMILION_DOCK, $00, 0
-	map_attributes SSAnne1F, SS_ANNE_1F, $00, 0
-	map_attributes SSAnne2F, SS_ANNE_2F, $00, 0
-	map_attributes SSAnne3F, SS_ANNE_3F, $00, 0
-	map_attributes SSAnneB1F, SS_ANNE_B1F, $00, 0
-	map_attributes SSAnneBow, SS_ANNE_BOW, $00, 0
-	map_attributes SSAnneKitchen, SS_ANNE_KITCHEN, $00, 0
-	map_attributes SSAnneCaptainsRoom, SS_ANNE_CAPTAINS_ROOM, $00, 0
-	map_attributes SSAnne1FRooms, SS_ANNE_1F_ROOMS, $00, 0
-	map_attributes SSAnne2FRooms, SS_ANNE_2F_ROOMS, $00, 0
-	map_attributes SSAnneB1FRooms, SS_ANNE_B1F_ROOMS, $00, 0
+	map_attributes SSAnne1F, SS_ANNE_1F, $40, 0
+	map_attributes SSAnne2F, SS_ANNE_2F, $40, 0
+	map_attributes SSAnne3F, SS_ANNE_3F, $40, 0
+	map_attributes SSAnneB1F, SS_ANNE_B1F, $40, 0
+	map_attributes SSAnneBow, SS_ANNE_BOW, $40, 0
+	map_attributes SSAnneKitchen, SS_ANNE_KITCHEN, $40, 0
+	map_attributes SSAnneCaptainsRoom, SS_ANNE_CAPTAINS_ROOM, $40, 0
+	map_attributes SSAnne1FRooms, SS_ANNE_1F_ROOMS, $40, 0
+	map_attributes SSAnne2FRooms, SS_ANNE_2F_ROOMS, $40, 0
+	map_attributes SSAnneB1FRooms, SS_ANNE_B1F_ROOMS, $40, 0
 	map_attributes IndigoPlateauPokecenter1F, INDIGO_PLATEAU_POKECENTER_1F, $25, 0
 	map_attributes WillsRoom, WILLS_ROOM, $00, 0
 	map_attributes KogasRoom, KOGAS_ROOM, $00, 0
