@@ -61,4 +61,5 @@ Tilesets::
 	tileset TilesetShipKanto
 	tileset TilesetGymKanto
 	tileset TilesetGymBrock
+	tileset TilesetClubKanto
 	assert_table_length NUM_TILESETS + 1

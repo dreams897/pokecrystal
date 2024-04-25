@@ -129,6 +129,9 @@ INCLUDE "gfx/tilesets/gym_kanto_palette_map.asm"
 TilesetGymBrockPalMap:
 INCLUDE "gfx/tilesets/gym_brock_palette_map.asm"
 
+TilesetClubKantoPalMap:
+INCLUDE "gfx/tilesets/club_kanto_palette_map.asm"
+
 TilesetPokeComCenterPalMap:
 INCLUDE "gfx/tilesets/pokecom_center_palette_map.asm"
 

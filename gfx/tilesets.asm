@@ -436,3 +436,14 @@ INCBIN "data/tilesets/gym_brock_metatiles.bin"
 TilesetGymBrockColl::
 INCLUDE "data/tilesets/gym_brock_collision.asm"
 
+TilesetClubKantoGFX::
+INCBIN "gfx/tilesets/club_kanto.2bpp.lz"
+
+TilesetClubKantoMeta::
+INCBIN "data/tilesets/club_kanto_metatiles.bin"
+
+TilesetClubKantoColl::
+INCLUDE "data/tilesets/club_kanto_collision.asm"
+
+
+

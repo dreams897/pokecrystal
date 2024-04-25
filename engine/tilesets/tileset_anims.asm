@@ -286,6 +286,7 @@ TilesetGateKantoAnim:
 TilesetMartKantoAnim:
 TilesetCaveKantoAnim:
 TilesetGymBrockAnim:
+TilesetClubKantoAnim:
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
