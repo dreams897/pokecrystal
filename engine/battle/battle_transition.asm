@@ -61,8 +61,7 @@ DoBattleTransition:
 	pop af
 	vc_hook Stop_reducing_battle_transition_flashing
 	ldh [hVBlank], a
-	call DelayFrame
-	ret
+	jp DelayFrame
 
 .InitGFX:
 	ld a, [wLinkMode]
@@ -72,7 +71,7 @@ DoBattleTransition:
 	call UpdateSprites
 	call DelayFrame
 	call .NonMobile_LoadPokeballTiles
-	call BattleStart_CopyTilemapAtOnce
+	call CGBOnly_CopyTilemapAtOnce
 	jr .resume
 
 .mobile
@@ -89,22 +88,19 @@ DoBattleTransition:
 	ld [hli], a
 	ld [hli], a
 	ld [hl], a
-	call WipeLYOverrides
-	ret
+	jp WipeLYOverrides
 
 .NonMobile_LoadPokeballTiles:
 	call LoadTrainerBattlePokeballTiles
 	hlbgcoord 0, 0
-	call ConvertTrainerBattlePokeballTilesTo2bpp
-	ret
+	jr ConvertTrainerBattlePokeballTilesTo2bpp
 
 LoadTrainerBattlePokeballTiles:
 ; Load the tiles used in the Pokeball Graphic that fills the screen
 ; at the start of every Trainer battle.
 	ld de, TrainerBattlePokeballTiles
 	ld hl, vTiles0 tile BATTLETRANSITION_SQUARE
-	ld b, BANK(TrainerBattlePokeballTiles)
-	ld c, 2
+	lb bc, BANK(TrainerBattlePokeballTiles), 2
 	call Request2bpp
 
 	ldh a, [rVBK]
@@ -114,8 +110,7 @@ LoadTrainerBattlePokeballTiles:
 
 	ld de, TrainerBattlePokeballTiles
 	ld hl, vTiles3 tile BATTLETRANSITION_SQUARE
-	ld b, BANK(TrainerBattlePokeballTiles)
-	ld c, 2
+	lb bc, BANK(TrainerBattlePokeballTiles), 2
 	call Request2bpp
 
 	pop af
@@ -132,8 +127,8 @@ ConvertTrainerBattlePokeballTilesTo2bpp:
 	ld bc, $28 tiles
 
 .loop
-	ld [hl], -1
-	inc hl
+	ld a, -1
+	ld [hli], a
 	dec bc
 	ld a, c
 	or b
@@ -141,8 +136,7 @@ ConvertTrainerBattlePokeballTilesTo2bpp:
 
 	pop hl
 	ld de, wDecompressScratch
-	ld b, BANK(@)
-	ld c, $28
+	lb bc, BANK(@), $28
 	call Request2bpp
 	pop af
 	ldh [rSVBK], a
@@ -152,7 +146,10 @@ TrainerBattlePokeballTiles:
 INCBIN "gfx/overworld/trainer_battle_pokeball_tiles.2bpp"
 
 BattleTransitionJumptable:
-	jumptable .Jumptable, wJumptableIndex
+	ld a, [wJumptableIndex]
+	ld hl, .Jumptable
+	rst JumpTable
+	ret
 
 .Jumptable:
 	dw StartTrainerBattle_DetermineWhichAnimation ; 00
@@ -409,8 +406,9 @@ rept 5
 	add hl, de
 endr
 	ld a, [hli]
-	cp -1
+	inc a
 	jr z, .end
+	dec a
 	ld [wBattleTransitionSineWaveOffset], a
 	call .load
 	ld a, 1
@@ -685,8 +683,6 @@ StartTrainerBattle_LoadPokeBallGraphics:
 	jr z, .load_rocket_pals
 	cp EXECUTIVEF
 	jr z, .load_rocket_pals
-	cp SCIENTIST
-	jr z, .load_rocket_pals
 	cp TEAM_ROCKET
 	jr z, .load_rocket_pals
 	ld hl, .pals
@@ -761,8 +757,6 @@ INCLUDE "gfx/overworld/rocket_battle.pal"
 	ret z
 	cp EXECUTIVEF
 	ret z
-	cp SCIENTIST
-	ret z
 	cp TEAM_ROCKET
 	ret z
 	ld de, PokeBallTransition
@@ -811,6 +805,27 @@ opt b.X ; . = 0, X = 1
 	bigdw %XXXXX......XXXXX
 popo
 
+GymLeaderTransition:
+pusho
+	opt b.X ; . = 0, X = 1
+	bigdw %.....XX......XX.
+	bigdw %...XXXXXX.XXXXX.
+	bigdw %..XXX..XXXXXXX..
+	bigdw %.XX......X..XX..
+	bigdw %.XX..XX.X..XX...
+	bigdw %XX..X..X...XX...
+	bigdw %XX..X..X..XX....
+	bigdw %.XXX.XX...XX....
+	bigdw %.XX......XX.....
+	bigdw %..XXX....XX.....
+	bigdw %...XXXX.XX......
+	bigdw %.....XX.XX......
+	bigdw %......XXX.......
+	bigdw %......XXX.......
+	bigdw %......XX........
+	bigdw %......XX........
+popo
+
 WipeLYOverrides:
 	ldh a, [rSVBK]
 	push af
@@ -844,8 +859,9 @@ StartTrainerBattle_ZoomToBlack:
 
 .loop
 	ld a, [de]
-	cp -1
+	inc a
 	jr z, .done
+	dec a
 	inc de
 	ld c, a
 	ld a, [de]
@@ -900,12 +916,4 @@ ENDM
 	pop bc
 	dec b
 	jr nz, .row
-	ret
-
-UnusedWaitBGMapOnce: ; unreferenced
-	ld a, 1
-	ldh [hBGMapMode], a ; redundant
-	call WaitBGMap
-	xor a
-	ldh [hBGMapMode], a
 	ret

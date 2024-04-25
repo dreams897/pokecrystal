@@ -1356,9 +1356,16 @@ Sfx_Heal_Ailment_1_Ch5:
 	
 Sfx_Heal_HP_1_Ch5:
 	duty_cycle 2
-	pitch_sweep 1, 7
-	square_note 15, 15, 0, 1264
-	square_note 15, 15, 2, 1616
+	pitch_sweep 13, 7
+	square_note 8, 14, 1, 1872
+	pitch_sweep 14, 7
+	square_note 8, 4, 8, 1760
+	square_note 8, 5, 8, 1784
+	square_note 8, 6, 8, 1808
+	square_note 8, 7, 8, 1832
+	square_note 8, 8, 8, 1856
+	square_note 8, 9, 8, 1880
+	square_note 16, 10, 8, 1904
 	pitch_sweep 0, 8
 	sound_ret
 	
