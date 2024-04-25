@@ -116,6 +116,8 @@ ProfOakScript:
 	giveitem POKE_BALL, 5
 	writetext OaksLabPlayerReceivedPokeBallsText
 	promptbutton
+	writetext OaksLabGivePokeballsExplanationText
+	waitbutton
 	closetext
 	end
 	
@@ -821,7 +823,8 @@ OaksLabOak1ReceivedPokeballsText:
 	para "You must catch"
 	line "them! Use these"
 	cont "to capture wild"
-	done "#MON."
+	cont "#MON."
+	done
 
 OaksLabPlayerReceivedPokeBallsText:
 	text "<PLAYER> got 5"
