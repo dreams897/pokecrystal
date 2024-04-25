@@ -110,19 +110,25 @@ ProfOakScript:
 	end
 	
 .Give5Pokeballs
-	opentext
+	checkevent EVENT_GOT_5_POKE_BALLS_FROM_OAK
+	iftrue .AlreadyGotPokeBalls
 	writetext OaksLabOak1ReceivedPokeballsText
 	promptbutton
 	giveitem POKE_BALL, 5
 	writetext OaksLabPlayerReceivedPokeBallsText
-	promptbutton
+	waitsfx
+	playsound SFX_GET_ITEM1_1
+	waitsfx
 	writetext OaksLabGivePokeballsExplanationText
 	waitbutton
 	closetext
+	setevent EVENT_GOT_5_POKE_BALLS_FROM_OAK
 	end
 	
-OaksLab_ReceiveBalls:
-	jumpstd ReceiveItemScript
+.AlreadyGotPokeBalls
+	writetext OaksLabOak1ComeSeeMeSometimesText
+	waitbutton
+	closetext
 	end
 	
 WhichMonYouWantScript:
