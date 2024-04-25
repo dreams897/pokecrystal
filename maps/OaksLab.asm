@@ -96,6 +96,8 @@ ProfOakScript:
 	iftrue OaksLabParcelScript
 	checkevent EVENT_GOT_A_POKEMON_FROM_OAK
 	iffalse WhichMonYouWantScript
+	checkevent EVENT_BEAT_ROUTE22_RIVAL_1ST_BATTLE
+	iftrue .Give5Pokeballs
 	checkscene
 	ifequal SCENE_OAKSLAB_TAKE_YOU_ON, OaksLabYourPokemonCanFightScript
 	checkscene
@@ -105,6 +107,20 @@ ProfOakScript:
 	waitbutton
 	closetext
 	turnobject OAKSLAB_OAK, DOWN
+	end
+	
+.Give5Pokeballs
+	opentext
+	writetext OaksLabOak1ReceivedPokeballsText
+	promptbutton
+	giveitem POKE_BALL, 5
+	writetext OaksLabPlayerReceivedPokeBallsText
+	promptbutton
+	closetext
+	end
+	
+OaksLab_ReceiveBalls:
+	jumpstd ReceiveItemScript
 	end
 	
 WhichMonYouWantScript:
@@ -805,11 +821,12 @@ OaksLabOak1ReceivedPokeballsText:
 	para "You must catch"
 	line "them! Use these"
 	cont "to capture wild"
-	cont "#MON."
+	done "#MON."
 
-	para "<PLAYER> got 5"
-	line "# BALLs!@"
-	text_end
+OaksLabPlayerReceivedPokeBallsText:
+	text "<PLAYER> got 5"
+	line "POKé BALLs!"
+	done
 
 OaksLabGivePokeballsExplanationText:
 	text "When a wild"
