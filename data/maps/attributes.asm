@@ -511,7 +511,7 @@ ENDM
 	map_attributes CeruleanPokecenter1F, CERULEAN_POKECENTER_1F, $25, 0
 	map_attributes CeruleanPokecenter2FBeta, CERULEAN_POKECENTER_2F_BETA, $00, 0
 	map_attributes CeruleanGym, CERULEAN_GYM, $03, 0
-	map_attributes CeruleanMart, CERULEAN_MART, $00, 0
+	map_attributes CeruleanMart, CERULEAN_MART, $25, 0
 	map_attributes RockTunnelPokecenter, ROCK_TUNNEL_POKECENTER, $25, 0
 	map_attributes PowerPlant, POWER_PLANT, $00, 0
 	map_attributes BillsHouse, BILLS_HOUSE, $00, 0
@@ -563,7 +563,7 @@ ENDM
 	map_attributes VermilionPokecenter2FBeta, VERMILION_POKECENTER_2F_BETA, $00, 0
 	map_attributes PokemonFanClub, POKEMON_FAN_CLUB, $00, 0
 	map_attributes VermilionTradeHouse, VERMILION_TRADE_HOUSE, $00, 0
-	map_attributes VermilionMart, VERMILION_MART, $00, 0
+	map_attributes VermilionMart, VERMILION_MART, $25, 0
 	map_attributes VermilionPidgeyHouse, VERMILION_PIDGEY_HOUSE, $00, 0
 	map_attributes VermilionGym, VERMILION_GYM, $00, 0
 	map_attributes Route6SaffronGate, ROUTE_6_SAFFRON_GATE, $00, 0
@@ -574,7 +574,7 @@ ENDM
 	map_attributes OaksLab, OAKS_LAB, $00, 0
 	map_attributes PewterNidoranSpeechHouse, PEWTER_NIDORAN_SPEECH_HOUSE, $00, 0
 	map_attributes PewterGym, PEWTER_GYM, $03, 0
-	map_attributes PewterMart, PEWTER_MART, $00, 0
+	map_attributes PewterMart, PEWTER_MART, $25, 0
 	map_attributes PewterPokecenter1F, PEWTER_POKECENTER_1F, $25, 0
 	map_attributes PewterPokecenter2FBeta, PEWTER_POKECENTER_2F_BETA, $00, 0
 	map_attributes PewterSpeechHouse, PEWTER_SPEECH_HOUSE, $00, 0
@@ -599,7 +599,7 @@ ENDM
 	map_attributes KarensRoom, KARENS_ROOM, $00, 0
 	map_attributes LancesRoom, LANCES_ROOM, $00, 0
 	map_attributes HallOfFame, HALL_OF_FAME, $00, 0
-	map_attributes FuchsiaMart, FUCHSIA_MART, $00, 0
+	map_attributes FuchsiaMart, FUCHSIA_MART, $25, 0
 	map_attributes SafariZoneMainOffice, SAFARI_ZONE_MAIN_OFFICE, $00, 0
 	map_attributes FuchsiaGym, FUCHSIA_GYM, $00, 0
 	map_attributes BillsBrothersHouse, BILLS_BROTHERS_HOUSE, $00, 0
@@ -612,7 +612,7 @@ ENDM
 	map_attributes MrFujisHouse, MR_FUJIS_HOUSE, $00, 0
 	map_attributes LavenderSpeechHouse, LAVENDER_SPEECH_HOUSE, $00, 0
 	map_attributes LavenderNameRater, LAVENDER_NAME_RATER, $00, 0
-	map_attributes LavenderMart, LAVENDER_MART, $00, 0
+	map_attributes LavenderMart, LAVENDER_MART, $25, 0
 	map_attributes SoulHouse, SOUL_HOUSE, $00, 0
 	map_attributes PokemonTower1F, LAV_POKEMON_TOWER_1F, $00, 0
 	map_attributes Route8SaffronGate, ROUTE_8_SAFFRON_GATE, $00, 0
@@ -666,7 +666,7 @@ ENDM
 	map_attributes ViridianGym, VIRIDIAN_GYM, $00, 0
 	map_attributes ViridianNicknameSpeechHouse, VIRIDIAN_NICKNAME_SPEECH_HOUSE, $00, 0
 	map_attributes ViridianSchoolHouse, VIRIDIAN_SCHOOL_HOUSE, $00, 0
-	map_attributes ViridianMart, VIRIDIAN_MART, $00, 0
+	map_attributes ViridianMart, VIRIDIAN_MART, $25, 0
 	map_attributes ViridianPokecenter1F, VIRIDIAN_POKECENTER_1F, $25, 0
 	map_attributes ViridianPokecenter2FBeta, VIRIDIAN_POKECENTER_2F_BETA, $00, 0
 	map_attributes Route2NuggetHouse, ROUTE_2_NUGGET_HOUSE, $00, 0
@@ -683,7 +683,7 @@ ENDM
 	map_attributes Route29Route46Gate, ROUTE_29_ROUTE_46_GATE, $00, 0
 	map_attributes FightingDojo, FIGHTING_DOJO, $00, 0
 	map_attributes SaffronGym, SAFFRON_GYM, $00, 0
-	map_attributes SaffronMart, SAFFRON_MART, $00, 0
+	map_attributes SaffronMart, SAFFRON_MART, $25, 0
 	map_attributes SaffronPokecenter1F, SAFFRON_POKECENTER_1F, $25, 0
 	map_attributes SaffronPokecenter2FBeta, SAFFRON_POKECENTER_2F_BETA, $00, 0
 	map_attributes MrPsychicsHouse, MR_PSYCHICS_HOUSE, $00, 0
