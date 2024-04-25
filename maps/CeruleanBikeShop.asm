@@ -77,6 +77,9 @@ CeruleanBikeShopYoungsterScript:
 	closetext
 	end
 	
+ShinyNewBicycle:
+	jumptext NewBicycleText
+	
 BikeShopClerkWelcomeText:
 	text "Hi! Welcome to"
 	line "our BIKE SHOP."
@@ -148,7 +151,11 @@ BikeShopYoungsterCoolBikeText:
 	text "Wow. Your BIKE is"
 	line "really cool!"
 	done
-
+	
+NewBicycleText:
+	text "A shiny new"
+	line "BICYCLE!"
+	done
 
 CeruleanBikeShop_MapEvents:
 	db 0, 0 ; filler
@@ -160,9 +167,16 @@ CeruleanBikeShop_MapEvents:
 	def_coord_events
 
 	def_bg_events
+	bg_event  0,  5, BGEVENT_READ, ShinyNewBicycle
+	bg_event  1,  5, BGEVENT_READ, ShinyNewBicycle
+	bg_event  1,  4, BGEVENT_READ, ShinyNewBicycle
+	bg_event  2,  2, BGEVENT_READ, ShinyNewBicycle
+	bg_event  3,  2, BGEVENT_READ, ShinyNewBicycle
+	bg_event  3,  1, BGEVENT_READ, ShinyNewBicycle
+	bg_event  4,  0, BGEVENT_READ, ShinyNewBicycle
 
 	def_object_events
 	object_event  6,  2, SPRITE_BIKE_SHOP_CLERK, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CerulanBikeShopClerkScript, -1
 	object_event  5,  6, SPRITE_POKEFAN_F, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeruleanBikeShopMiddleAgedWomanScript, -1
-	object_event  1,  3, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeruleanBikeShopYoungsterScript, -1
+	object_event  1,  3, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeruleanBikeShopYoungsterScript, -1
 	
