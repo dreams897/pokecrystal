@@ -472,6 +472,7 @@ CeruleanCityTrainerTipsText:
 CeruleanCityBikeShopSign:
 	text "Grass and caves"
 	line "handled easily!"
+	cont "MIRACLE-CYCLE"
 	cont "BIKE SHOP"
 	done
 
