@@ -149,6 +149,7 @@ MtMoonPokecenterMagikarpSalesmanNoMoneyText:
 MtMoonPokecenterMagikarpSalesmanNoRoomText:
 	text "Please make room"
 	line "For this #MON!"
+	done
 	
 MtMoonPokecenterGotMagikarpText:
 	text "<PLAYER> received"
