@@ -137,6 +137,8 @@ DEF NUM_OVERWORLD_SPRITES EQU const_value - 1
 	const_next $81
 DEF SPRITE_POKEMON EQU const_value
 	const SPRITE_UNOWN ; 80
+	const SPRITE_RATTATA ; added
+	const SPRITE_SPEAROW ; added
 	const SPRITE_GEODUDE ; 81
 	const SPRITE_GROWLITHE ; 82
 	const SPRITE_WEEDLE ; 83
