@@ -7,9 +7,6 @@ ENDM
 EngineFlags:
 ; entries correspond to ENGINE_* constants
 	table_width 3, EngineFlags
-	
-	; town map
-	engine_flag wTownMapFlags, TOWN_MAP_OBTAINED_F
 
 	; pokegear
 	engine_flag wPokegearFlags, POKEGEAR_RADIO_CARD_F
