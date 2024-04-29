@@ -70,9 +70,8 @@ DaisyScript:
 	waitbutton
 	closetext
 	turnobject BLUESHOUSE_DAISY, RIGHT
+	giveitem TOWN_MAP
 	setevent EVENT_GOT_TOWN_MAP
-	setflag ENGINE_POKEGEAR
-	setflag ENGINE_MAP_CARD
 	setscene SCENE_BLUES_HOUSE_NOOP2
 	end
 	
