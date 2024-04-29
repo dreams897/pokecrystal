@@ -62,6 +62,7 @@ CGBLayoutJumptable:
 	dw _CGB_TrainerOrMonFrontpicPals
 	dw _CGB_MysteryGift
 	dw _CGB_Unused1E
+	dw _CGB_Plain
 	assert_table_length NUM_SCGB_LAYOUTS
 
 _CGB_BattleGrayscale:
@@ -1005,16 +1006,28 @@ _CGB_MysteryGift:
 .MysteryGiftPalettes:
 INCLUDE "gfx/mystery_gift/mystery_gift.pal"
 
-GS_CGB_MysteryGift: ; unreferenced
-	ld hl, .MysteryGiftPalette
-	ld de, wBGPals1
-	ld bc, 1 palettes
-	ld a, BANK(wBGPals1)
-	call FarCopyWRAM
-	call ApplyPals
-	call WipeAttrmap
-	call ApplyAttrmap
-	ret
-
 .MysteryGiftPalette:
 INCLUDE "gfx/mystery_gift/gs_mystery_gift.pal"
+
+_CGB_Plain:
+	ld b, 8
+	ld de, wBGPals1
+.loop
+	ld hl, Gen1DiplomaPalette
+	call LoadHLPaletteIntoDE
+	dec b
+	jr nz, .loop
+
+	; de == wOBPals1
+	ld hl, PokegearOBPals
+	ld c, 8 palettes
+	call LoadHLBytesIntoDE
+
+	call WipeAttrmap
+	jmp ApplyAttrmap
+
+Gen1DiplomaPalette:
+INCLUDE "gfx/diploma/plain.pal" ; todo: replace this polished port
+
+PokegearOBPals:
+INCLUDE "gfx/icons/icons.pal" ; todo: replace this polished port
