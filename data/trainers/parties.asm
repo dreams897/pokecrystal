@@ -1476,7 +1476,7 @@ GruntMGroup:
 	db "GRUNT@", TRAINERTYPE_NORMAL
 	db 30, GOLBAT
 	db -1 ; end
-
+	
 	; ROCKET (32)
 	db "@", TRAINERTYPE_NORMAL
 	db 11, SANDSHREW
@@ -1491,6 +1491,11 @@ GruntMGroup:
 	db -1 ; end
 	
 	; ROCKET (34)
+	db "@", TRAINERTYPE_NORMAL
+	db 16, RATICATE
+	db -1 ; end
+	
+	; ROCKET (35)
 	db "@", TRAINERTYPE_NORMAL
 	db 13, RATTATA
 	db 13, ZUBAT

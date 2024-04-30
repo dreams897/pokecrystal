@@ -9,6 +9,7 @@
 	const MT_MOON_B2F_ROCKET_1
 	const MT_MOON_B2F_ROCKET_2
 	const MT_MOON_B2F_ROCKET_3
+	const MT_MOON_B2F_ROCKET_4
 
 MtMoonB2F_MapScripts:
 	def_scene_scripts
@@ -218,6 +219,17 @@ MtMoonB2FTrainerRocket3:
 	closetext
 	end
 	
+MtMoonB2FTrainerRocket4:
+	trainer GRUNTM, ROCKET_4, EVENT_BEAT_MT_MOON_B2F_ROCKET_4, MtMoonB2FRocket4BattleText, MtMoonB2FRocket4EndBattleText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext MtMoonB2FRocket4AfterBattleText
+	waitbutton
+	closetext
+	end
+	
 MtMoonB2FHiddenEther:
 	hiddenitem ETHER, EVENT_HIDDEN_ETHER_MT_MOON_B2F
 	
@@ -349,6 +361,24 @@ MtMoonB2FRocket3AfterBattleText:
 	line "here long before"
 	cont "people came."
 	done
+	
+MtMoonB2FRocket4BattleText:
+	text "TEAM ROCKET will"
+	line "find the fossils,"
+	cont "revive and sell"
+	cont "them for cash!"
+	done
+
+MtMoonB2FRocket4EndBattleText:
+	text "Urgh!"
+	line "Now I'm mad!"
+	prompt
+
+MtMoonB2FRocket4AfterBattleText:
+	text "You made me mad!"
+	line "TEAM ROCKET will"
+	cont "blacklist you!"
+	done
 
 MtMoonB2F_MapEvents:
 	db 0, 0 ; filler
@@ -378,3 +408,4 @@ MtMoonB2F_MapEvents:
 	object_event 15, 22, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, MtMoonB2FTrainerRocket1, -1
 	object_event 29, 11, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, MtMoonB2FTrainerRocket2, -1
 	object_event 29, 17, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, MtMoonB2FTrainerRocket3, -1
+	object_event 11, 16, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, MtMoonB2FTrainerRocket4, -1

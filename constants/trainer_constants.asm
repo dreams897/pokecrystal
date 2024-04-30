@@ -318,6 +318,7 @@ DEF GREEN EQU __trainer_class__
 	const ROCKET_1
 	const ROCKET_2
 	const ROCKET_3
+	const ROCKET_4
 
 	trainerclass GENTLEMAN ; 20
 	const PRESTON
