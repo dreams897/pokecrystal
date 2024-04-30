@@ -38,6 +38,7 @@ _AnimateTileset::
 Tileset0Anim:
 TilesetJohtoModernAnim:
 TilesetKantoAnim:
+TilesetGymKantoAnim:
 	dw vTiles2 tile $14, AnimateWaterTile
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
@@ -123,7 +124,6 @@ UnusedTilesetAnim2: ; unreferenced
 TilesetPortAnim:
 TilesetPortKantoAnim:
 TilesetShipKantoAnim:
-TilesetGymKantoAnim:
 	dw vTiles2 tile $14, AnimateWaterTile
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
