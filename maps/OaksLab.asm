@@ -842,9 +842,9 @@ OaksLabGivePokeballsExplanationText:
 	line "#MON appears,"
 	cont "it's fair game."
 
-	para "Just throw a #"
+	para "Just throw a POKé"
 	line "BALL at it and try"
-	line "to catch it!"
+	cont "to catch it!"
 
 	para "This won't always"
 	line "work, though."
