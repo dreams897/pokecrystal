@@ -125,7 +125,9 @@ CatchingTutorialOldManScript:
 	end
 	
 ViridianGymLockedDoorScript:
+	pause 5
 	turnobject PLAYER, UP
+	pause 5
 	opentext
 	writetext ViridianCityGymLockedText
 	waitbutton

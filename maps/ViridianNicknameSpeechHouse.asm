@@ -80,5 +80,5 @@ ViridianNicknameSpeechHouse_MapEvents:
 	object_event  5,  3, SPRITE_BALDING_GUY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ViridianNicknameHouseBaldingGuyScript, -1
 	object_event  1,  4, SPRITE_LITTLE_GIRL, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ViridianNicknameHouseLittleGirlScript, -1
 	object_event  5,  5, SPRITE_SPEAROW, SPRITEMOVEDATA_POKEMON, 2, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Speary, -1
-	object_event  6,  3, SPRITE_RATTATA, SPRITEMOVEDATA_POKEMON, 2, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Rattey, -1
+	object_event  6,  3, SPRITE_RATTATA, SPRITEMOVEDATA_POKEMON, 2, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, Rattey, -1
 	object_event  4,  0, SPRITE_CLIPBOARD, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ViridianNicknameHouseSpearySignScript, -1
