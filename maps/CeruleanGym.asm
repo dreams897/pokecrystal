@@ -107,37 +107,6 @@ CeruleanGymStatue:
 	gettrainername STRING_BUFFER_4, MISTY, MISTY1
 	jumpstd GymStatue2Script
 
-CeruleanGymGruntIntroText:
-	text "Oops! I so sorry!"
-	line "You not hurt,"
-	cont "okay?"
-
-	para "I very busy."
-	line "No time for talk-"
-	cont "ing with you. Not"
-	cont "good for me if"
-	cont "seen by somebody."
-	done
-
-CeruleanGymGruntBigMistakeText:
-	text "Oh no! You seen"
-	line "me already! I make"
-	cont "big mistake!"
-	done
-
-CeruleanGymGruntByeText:
-	text "Hey, you! Forget"
-	line "you see me, okay?"
-
-	para "You see, hear,"
-	line "know nothing,"
-
-	para "okay?"
-	line "Bye, kid! Nothing!"
-
-	para "Bye-bye a go-go!"
-	done
-
 CeruleanGymNote1Text:
 	text "Sorry, I'll be out"
 	line "for a while."
@@ -253,23 +222,30 @@ SwimmermParkerAfterBattleText:
 	done
 
 CeruleanGymGuideText:
-	text "Yo! CHAMP in"
+	text "Yo! Champ in"
 	line "making!"
 
-	para "Since MISTY was"
-	line "away, I went out"
+	para "Here's my advice!"
 
-	para "for some fun too."
-	line "He-he-he."
+	para "The LEADER, MISTY,"
+	line "is a pro who uses"
+	cont "water #MON!"
+
+	para "You can drain all"
+	line "their water with"
+	cont "plant #MON!"
+
+	para "Or, zap them with"
+	line "electricity!"
 	done
 
 CeruleanGymGuideWinText:
-	text "Hoo, you showed me"
-	line "how tough you are."
+	text "You beat MISTY!"
+	line "What'd I tell ya?"
 
-	para "As always, that"
-	line "was one heck of a"
-	cont "great battle!"
+	para "You and me kid,"
+	line "we make a pretty"
+	cont "darn good team!"
 	done
 
 CeruleanGym_MapEvents:

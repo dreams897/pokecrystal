@@ -23,8 +23,8 @@
 	tilecoll WATER, FLOOR, WATER, FLOOR ; 16
 	tilecoll WATER, WATER, WATER, WATER ; 17
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 18
-	tilecoll FLOOR, FLOOR, WALL, FLOOR ; 19
-	tilecoll WATER, FLOOR, WATER, WALL ; 1a
+	tilecoll WALL, FLOOR, WALL, FLOOR ; 19
+	tilecoll WATER, WALL, WATER, WALL ; 1a
 	tilecoll FLOOR, FLOOR, WATER, WATER ; 1b
 	tilecoll FLOOR, WATER, FLOOR, WATER ; 1c
 	tilecoll WATER, FLOOR, WATER, FLOOR ; 1d

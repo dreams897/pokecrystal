@@ -21,7 +21,7 @@ TrainerEncounterMusic::
 	db MUSIC_HIKER_ENCOUNTER       ; koga
 	db MUSIC_OFFICER_ENCOUNTER     ; champion
 	db MUSIC_GYM_LEADER_BATTLE     ; brock
-	db MUSIC_LASS_ENCOUNTER        ; misty
+	db MUSIC_GYM_LEADER_BATTLE     ; misty
 	db MUSIC_OFFICER_ENCOUNTER     ; lt_surge
 	db MUSIC_MEET_EVIL_TRAINER     ; scientist
 	db MUSIC_OFFICER_ENCOUNTER     ; erika
