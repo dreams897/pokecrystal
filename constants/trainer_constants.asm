@@ -750,6 +750,8 @@ DEF GREEN EQU __trainer_class__
 
 	trainerclass AERODACTYL_FOSSIL ; 46
 	
+	trainerclass MOON_STONE_T ; 47
+	
 DEF PURPLE EQU __trainer_class__
 	trainerclass ENBY_T ; 47
 

@@ -731,6 +731,7 @@ SECTION "Pics 22", ROMX
 ENBYPic: 	     INCBIN "gfx/trainers/enby.2bpp.lz"
 SabrinaPic:          INCBIN "gfx/trainers/sabrina.2bpp.lz"
 GiovanniPic:         INCBIN "gfx/trainers/giovanni.2bpp.lz"
+MoonStonePic: 	     INCBIN "gfx/trainers/moon_stone.2bpp.lz"
 
 
 SECTION "Pics 23", ROMX

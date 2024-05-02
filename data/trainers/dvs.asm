@@ -75,4 +75,4 @@ TrainerClassDVs:
 	dn 13,  8, 10,  8 ; GIOVANNI
 	
 	dn  9,  8,  8,  8 ; MYSTICALMAN
-	assert_table_length NUM_TRAINER_CLASSES - 3 ; exclude ENBY, AERODACTYLE_FOSSIL, KABUTOPS_FOSSIL
+	assert_table_length NUM_TRAINER_CLASSES - 4 ; exclude ENBY, AERODACTYLE_FOSSIL, KABUTOPS_FOSSIL, MOON_STONE_T

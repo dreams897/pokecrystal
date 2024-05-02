@@ -7,7 +7,15 @@ PewterMuseum2FSpaceShuttleSignpostScript:
 	jumptext Museum2FSpaceShuttleSignText
 	
 Museum2FMoonStoneSignScript:
-	jumptext Museum2FMoonStoneSignText
+	refreshscreen
+	trainerpic MOON_STONE_T
+	waitbutton
+	closepokepic
+	opentext
+	writetext Museum2FMoonStoneSignText
+	waitbutton
+	closetext
+	end
 	
 PewterMuseum2FGrampsScript:
 	faceplayer
