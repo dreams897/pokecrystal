@@ -46,8 +46,9 @@
 	const TILESET_PORT_KANTO	   ; 32
 	const TILESET_SHIP_KANTO           ; 33
 	const TILESET_GYM_KANTO            ; 34
-	const TILESET_GYM_BROCK	           ; 35
-	const TILESET_CLUB_KANTO           ; 36
+	const TILESET_GYM_PEWTER           ; 35
+	const TILESET_GYM_CERULEAN         ; 36
+	const TILESET_CLUB_KANTO           ; 37
 DEF NUM_TILESETS EQU const_value - 1
 
 ; wTileset struct size

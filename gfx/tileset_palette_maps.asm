@@ -126,8 +126,11 @@ INCLUDE "gfx/tilesets/ship_kanto_palette_map.asm"
 TilesetGymKantoPalMap:
 INCLUDE "gfx/tilesets/gym_kanto_palette_map.asm"
 
-TilesetGymBrockPalMap:
-INCLUDE "gfx/tilesets/gym_brock_palette_map.asm"
+TilesetGymPewterPalMap:
+INCLUDE "gfx/tilesets/gym_pewter_palette_map.asm"
+
+TilesetGymCeruleanPalMap:
+INCLUDE "gfx/tilesets/gym_cerulean_palette_map.asm"
 
 TilesetClubKantoPalMap:
 INCLUDE "gfx/tilesets/club_kanto_palette_map.asm"

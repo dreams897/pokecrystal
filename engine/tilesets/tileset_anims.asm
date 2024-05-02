@@ -38,7 +38,7 @@ _AnimateTileset::
 Tileset0Anim:
 TilesetJohtoModernAnim:
 TilesetKantoAnim:
-TilesetGymKantoAnim:
+TilesetGymCeruleanAnim:
 	dw vTiles2 tile $14, AnimateWaterTile
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
@@ -285,7 +285,8 @@ TilesetViridianForestAnim:
 TilesetGateKantoAnim:
 TilesetMartKantoAnim:
 TilesetCaveKantoAnim:
-TilesetGymBrockAnim:
+TilesetGymKantoAnim:
+TilesetGymPewterAnim:
 TilesetClubKantoAnim:
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation

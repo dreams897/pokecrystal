@@ -427,14 +427,23 @@ INCBIN "data/tilesets/gym_kanto_metatiles.bin"
 TilesetGymKantoColl::
 INCLUDE "data/tilesets/gym_kanto_collision.asm"
 
-TilesetGymBrockGFX::
-INCBIN "gfx/tilesets/gym_brock.2bpp.lz"
+TilesetGymPewterGFX::
+INCBIN "gfx/tilesets/gym_pewter.2bpp.lz"
 
-TilesetGymBrockMeta::
-INCBIN "data/tilesets/gym_brock_metatiles.bin"
+TilesetGymPewterMeta::
+INCBIN "data/tilesets/gym_pewter_metatiles.bin"
 
-TilesetGymBrockColl::
-INCLUDE "data/tilesets/gym_brock_collision.asm"
+TilesetGymPewterColl::
+INCLUDE "data/tilesets/gym_pewter_collision.asm"
+
+TilesetGymCeruleanGFX::
+INCBIN "gfx/tilesets/gym_cerulean.2bpp.lz"
+
+TilesetGymCeruleanMeta::
+INCBIN "data/tilesets/gym_cerulean_metatiles.bin"
+
+TilesetGymCeruleanColl::
+INCLUDE "data/tilesets/gym_cerulean_collision.asm"
 
 TilesetClubKantoGFX::
 INCBIN "gfx/tilesets/club_kanto.2bpp.lz"

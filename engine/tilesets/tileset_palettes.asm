@@ -26,8 +26,10 @@ LoadSpecialMapPalette:
 	jr z, .house_kanto
 	cp TILESET_GYM_KANTO
 	jr z, .gym_kanto
-	cp TILESET_GYM_BROCK
-	jr z, .gym_brock
+	cp TILESET_GYM_PEWTER
+	jr z, .gym_pewter
+	cp TILESET_GYM_CERULEAN
+	jr z, .gym_cerulean
 	cp TILESET_PORT_KANTO
 	jr z, .port_kanto
 	cp TILESET_CLUB_KANTO
@@ -104,8 +106,13 @@ LoadSpecialMapPalette:
 	scf
 	ret
 	
-.gym_brock
-	call LoadGymBrockPalette
+.gym_pewter
+	call LoadGymPewterPalette
+	scf
+	ret
+	
+.gym_cerulean
+	call LoadGymCeruleanPalette
 	scf
 	ret
 	
@@ -278,15 +285,25 @@ LoadGymKantoPalette:
 GymKantoPalette:
 INCLUDE "gfx/tilesets/gym_kanto.pal"
 
-LoadGymBrockPalette:
+LoadGymPewterPalette:
 	ld a, BANK(wBGPals1)
 	ld de, wBGPals1
-	ld hl, GymBrockPalette
+	ld hl, GymPewterPalette
 	ld bc, 8 palettes
 	jp FarCopyWRAM
 
-GymBrockPalette:
-INCLUDE "gfx/tilesets/gym_brock.pal"
+GymPewterPalette:
+INCLUDE "gfx/tilesets/gym_pewter.pal"
+
+LoadGymCeruleanPalette:
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
+	ld hl, GymCeruleanPalette
+	ld bc, 8 palettes
+	jp FarCopyWRAM
+
+GymCeruleanPalette:
+INCLUDE "gfx/tilesets/gym_cerulean.pal"
 
 LoadPortKantoPalette:
 	ld a, BANK(wBGPals1)
