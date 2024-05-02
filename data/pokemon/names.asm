@@ -31,7 +31,7 @@ PokemonNames::
 	db "NIDORAN♀@@"
 	db "NIDORINA@@"
 	db "NIDOQUEEN@"
-	db "NIDORAN♂@"
+	db "NIDORAN♂@@"
 	db "NIDORINO@@"
 	db "NIDOKING@@"
 	db "CLEFAIRY@@"
