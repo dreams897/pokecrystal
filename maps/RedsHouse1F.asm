@@ -9,11 +9,11 @@ RedsHouse1F_MapScripts:
 RedsMom:
 	faceplayer
 	opentext
+	checkevent EVENT_FOLLOWED_OAK_INTO_LAB
+	iftrue .Heal
 	readvar VAR_PLAYERGENDER
 	ifequal FEMALE, .AllGirlsLeaveSomeday
 	ifequal ENBY, .EveryoneLeavesSomeday
-	checkevent EVENT_GOT_A_POKEMON_FROM_OAK
-	iftrue .Heal
 	writetext MomWakeUpTextBoy
 	waitbutton
 	closetext
@@ -47,7 +47,6 @@ RedsMom:
 	writetext RedsHouse1FMomLookingGreatText
 	waitbutton
 	closetext
-	turnobject REDSHOUSE1F_REDS_MOM, LEFT
 	end
 
 RedsHouse1FTV:
