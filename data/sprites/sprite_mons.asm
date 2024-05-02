@@ -18,6 +18,7 @@ SpriteMons:
 	db DIGLETT
 	db POLIWAG
 	db PIKACHU
+	db NIDORAN_M
 	db CLEFAIRY
 	db CHARMANDER
 	db JYNX

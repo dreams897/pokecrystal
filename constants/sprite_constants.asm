@@ -153,6 +153,7 @@ DEF SPRITE_POKEMON EQU const_value
 	const SPRITE_DIGLETT ; 8c
 	const SPRITE_POLIWAG ; 8d
 	const SPRITE_PIKACHU ; 8e
+	const SPRITE_NIDORAN_M ; added
 	const SPRITE_CLEFAIRY ; 8f
 	const SPRITE_CHARMANDER ; 90
 	const SPRITE_JYNX ; 91
