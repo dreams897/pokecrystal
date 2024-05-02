@@ -19,10 +19,3 @@
 	tilecoll WATER, WATER, FLOOR, FLOOR ; 12
 	tilecoll WATER, FLOOR, FLOOR, FLOOR ; 13
 	tilecoll WATER, WATER, FLOOR, FLOOR ; 14
-	tilecoll , , ,  ; 15
-	tilecoll , , ,  ; 16
-	tilecoll , , ,  ; 17
-	tilecoll , , ,  ; 18
-	tilecoll , , ,  ; 19
-	tilecoll , , ,  ; 1a
-	tilecoll , , ,  ; 1b
