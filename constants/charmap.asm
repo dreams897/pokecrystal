@@ -143,7 +143,7 @@
 	charmap "“",         $dd ; opening quote
 	charmap "”",         $de ; closing quote
 
-	charmap "←",         $df
+	charmap "<ENBY>",    $df
 	charmap "'",         $e0
 	charmap "<PK>",      $e1
 	charmap "<MN>",      $e2

@@ -211,8 +211,8 @@ UnownDexDoWhatString:
 UnownDexMenuString:
 	db   UNOWNSTAMP_BOLD_A, " PRINT"
 	next UNOWNSTAMP_BOLD_B, " CANCEL"
-	next "← PREVIOUS"
-	next "→ NEXT"
+	next "◀ PREVIOUS"
+	next "▶ NEXT"
 	db   "@"
 
 UnownDexVacantString:
