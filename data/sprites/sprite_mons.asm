@@ -19,6 +19,7 @@ SpriteMons:
 	db POLIWAG
 	db PIKACHU
 	db NIDORAN_M
+	db SLOWBRO
 	db CLEFAIRY
 	db CHARMANDER
 	db JYNX
