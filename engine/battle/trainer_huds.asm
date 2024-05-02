@@ -210,7 +210,7 @@ LoadTrainerHudOAM:
 	ld [hli], a ; x
 	ld a, [de]
 	ld [hli], a ; tile id
-	ld a, PAL_BATTLE_OB_YELLOW
+	ld a, PAL_BATTLE_OB_RED
 	ld [hli], a ; attributes
 	ld a, [wPlaceBallsX]
 	ld b, a
