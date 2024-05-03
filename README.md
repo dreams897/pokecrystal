@@ -31,10 +31,10 @@
 ### Q: Is this currently playable? Where can I download the ROM?
 **A**: This is a work in progress, but once the first 3 Gym badges are obtainable I will be releasing a demo. In the meantime, you are welcome to build the ROM and it is playble up until Cerulean City.
 ### Q: What features from Crystal are being kept and which are being removed?
-**A**: Some features from Crystal will be quite beneficial and an upgrade to features in Gen 1. These features include shiny Pokémon, a set-able clock (spawns depend on time of day), better battle engine, Stereo audio option, item shortcuts, and much more! Some features will be removed that aren't useful to Gen 1 or don't serve a purpose that I can justify. These include Eggs (since there will be no baby Pokémon) and the Radio. The Town Map is currently it's own menu item and the Pokegear is not being used, but that may change.
+**A**: Some features from Crystal will be quite beneficial and an upgrade to features in Gen 1. These features include shiny Pokémon, a set-able clock (spawns depend on time of day), better battle engine, Stereo audio option, item shortcuts, and much more! Some features will be removed that aren't useful to Gen 1 or don't serve a purpose that I can justify. These include Eggs (since there will be no baby Pokémon) and the Radio. The Town Map is an item just like in RBY.
 
 ### Q: What post-game content will be added?
-**A**: Some restored content such as the Prof. Oak battle, a couple Pokemon that may normally be unobtainable, and I will consider some newer features like Swarms. Additionally the **Phone* has been renamed to *Pager** and will allow the player to re-battle trainers post-game!
+**A**: Some restored content such as the Prof. Oak battle, a couple Pokemon that aren't obtainable in vanilla gameplay (both Fossils), and I will consider some newer features like Swarms. Additionally the **Phone* has been renamed to *Pager** and will allow the player to re-battle trainers post-game! This will likely be it's own item and not part of the PokéGear.
 
 ### Q: Will you keep new moves and features for Pokémon?
 **A**: Yes, I plan on keeping all of the new moves as well as some features like Magikarp length, etc. Items that make Pokémon evolve past Gen 1 will not be kept. 
@@ -94,5 +94,6 @@
 * Everyone who contributed to the [pret Crystal repo](https://pret.github.io/pokecrystal/)
 * [lwelyk](https://github.com/lwelyk) for coding and support (this started as a fork of their work)
 * Th3Element05 for some scripts
+* nehochupechatat for a lot of help with testing and making sure everything is aligned with RBY gameplay
 
 [Discord Channel](https://discord.gg/cSCDrA96yh) for updates and discussion

@@ -2366,6 +2366,8 @@ Pokedex_GetArea:
 	call GetSGBLayout
 	call SetDefaultBGPAndOBP
 	xor a
+	ldh [hBGMapMode], a
+	ld a, KANTO_REGION
 	call .GetAndPlaceNest
 .loop
 	call JoyTextDelay
