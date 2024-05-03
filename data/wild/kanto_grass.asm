@@ -5,12 +5,12 @@ KantoGrassWildMons:
 	def_grass_wildmons VIRIDIAN_FOREST
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
+	db  4, CATERPIE
 	db  4, WEEDLE
+	db  4, METAPOD
 	db  5, KAKUNA
 	db  5, WEEDLE
-	db  6, KAKUNA
-	db  4, METAPOD
-	db  3, CATERPIE
+	db  5, KAKUNA
 	db  5, PIKACHU
 	; day
 	db  4, WEEDLE
@@ -21,12 +21,12 @@ KantoGrassWildMons:
 	db  5, WEEDLE
 	db  5, PIKACHU
 	; nite
-	db 4, RATTATA
-	db 5, ZUBAT
+	db 4, WEEDLE
 	db 4, KAKUNA
 	db 4, METAPOD
-	db 5, RATTATA
-	db 4, EKANS
+	db 4, WEEDLE
+	db 5, CATERPIE
+	db 5, KAKUNA
 	db 5, VENONAT
 	end_grass_wildmons
 
@@ -61,24 +61,24 @@ KantoGrassWildMons:
 	def_grass_wildmons MT_MOON_1F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db  8, GEODUDE
 	db  6, ZUBAT
+	db  8, GEODUDE
 	db 10, ZUBAT
-	db 10, GEODUDE
 	db  8, PARAS
 	db 11, ZUBAT
+	db 12, SANDSHREW
 	db  8, CLEFAIRY
 	; day
-	db  8, GEODUDE
 	db  6, ZUBAT
+	db  8, GEODUDE
 	db 10, ZUBAT
 	db 10, GEODUDE
-	db  8, PARAS
 	db 11, ZUBAT
+	db  8, PARAS
 	db  8, CLEFAIRY
 	; nite
-	db  8, GEODUDE
 	db  6, ZUBAT
+	db  8, GEODUDE
 	db 10, ZUBAT
 	db 10, GEODUDE
 	db  8, PARAS
@@ -95,7 +95,7 @@ KantoGrassWildMons:
 	db 12, PARAS
 	db 10, GEODUDE
 	db 8, CLEFAIRY
-	db 8, CLEFAIRY
+	db 9, CLEFAIRY
 	; day
 	db 6, ZUBAT
 	db 8, GEODUDE
@@ -103,14 +103,14 @@ KantoGrassWildMons:
 	db 12, PARAS
 	db 10, GEODUDE
 	db 8, CLEFAIRY
-	db 8, CLEFAIRY
+	db 9, CLEFAIRY
 	; nite
 	db 6, ZUBAT
 	db 8, GEODUDE
 	db 8, CLEFAIRY
 	db 12, PARAS
 	db 10, GEODUDE
-	db 12, CLEFAIRY
+	db 10, CLEFAIRY
 	db 12, CLEFAIRY
 	end_grass_wildmons
 	
@@ -121,21 +121,21 @@ KantoGrassWildMons:
 	db 11, ZUBAT
 	db 10, PARAS
 	db 12, PARAS
-	db 10, CLEFAIRY
 	db 12, ZUBAT
+	db 10, CLEFAIRY
 	db 12, CLEFAIRY
 	; day
 	db 10, GEODUDE
 	db 11, ZUBAT
 	db 10, PARAS
 	db 12, PARAS
-	db 10, CLEFAIRY
 	db 12, ZUBAT
+	db 10, CLEFAIRY
 	db 12, CLEFAIRY
 	; nite
 	db 10, GEODUDE
-	db 11, ZUBAT
 	db 10, PARAS
+	db 11, ZUBAT
 	db 12, PARAS
 	db 10, CLEFAIRY
 	db 12, ZUBAT
@@ -273,97 +273,97 @@ KantoGrassWildMons:
 	db 4, RATTATA
 	db 5, PIDGEY
 	; nite
-	db 2, ZUBAT
 	db 2, RATTATA
 	db 3, RATTATA
-	db 3, ZUBAT
+	db 4, RATTATA
+	db 4, RATTATA
+	db 5, RATTATA
 	db 5, RATTATA
 	db 4, ZUBAT
-	db 4, EKANS
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_2
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 3, RATTATA
+	db 3, WEEDLE
 	db 3, PIDGEY
-	db 4, PIDGEY
+	db 4, RATTATA
 	db 4, RATTATA
 	db 5, PIDGEY
-	db 5, PIKACHU
-	db 6, PIKACHU
-	; day
-	db 3, WEEDLE
-	db 2, RATTATA
 	db 5, RATTATA
+	db 5, NIDORAN_F
+	; day
+	db 3, RATTATA
+	db 3, WEEDLE
+	db 4, RATTATA
 	db 4, WEEDLE
 	db 5, WEEDLE
 	db 5, PIDGEY
-	db 5, WEEDLE
+	db 5, NIDORAN_M
 	; nite
-	db 3, ZUBAT
+	db 3, WEEDLE
 	db 3, RATTATA
+	db 4, RATTATA
 	db 5, RATTATA
-	db 5, EKANS
-	db 6, EKANS
-	db 4, ZUBAT
+	db 5, RATTATA
+	db 5, METAPOD
 	db 5, ZUBAT
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_3
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 5, SPEAROW
-	db 7, PIDGEY
 	db 6, SPEAROW
+	db 6, SPEAROW
+	db 7, PIDGEY
 	db 7, SPEAROW
 	db 8, PIDGEY
 	db 8, SPEAROW
-	db 4, JIGGLYPUFF
+	db 5, JIGGLYPUFF
 	; day
-	db 5, SPEAROW
+	db 6, SPEAROW
 	db 6, PIDGEY
 	db 6, SPEAROW
 	db 7, SPEAROW
-	db 8, PIDGEY
-	db 3, JIGGLYPUFF
+	db 7, PIDGEY
+	db 4, JIGGLYPUFF
 	db 5, JIGGLYPUFF
 	; nite
-	db 5, RATTATA
-	db 7, ZUBAT
+	db 6, RATTATA
+	db 6, SPEAROW
+	db 7, RATTATA
+	db 7, RATTATA
+	db 8, RATTATA
+	db 6, JIGGLYPUFF
 	db 6, EKANS
-	db 7, SPEAROW
-	db 6, RATICATE
-	db 5, JIGGLYPUFF
-	db 8, JIGGLYPUFF
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_4
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 5, SPEAROW
-	db 5, RATTATA
+	db 7, SPEAROW
 	db 8, EKANS
-	db 10, RATICATE
-	db 10, ARBOK
+	db 9, EKANS
+	db 11, EKANS
+	db 8, SANDSHREW
 	db 10, SANDSHREW
-	db 10, SANDSHREW
+	db 9, MANKEY
 	; day
-	db 5, SPEAROW
-	db 5, RATTATA
+	db 7, SPEAROW
 	db 8, EKANS
-	db 10, RATICATE
-	db 10, ARBOK
+	db 9, SPEAROW
+	db 11, EKANS
+	db 8, SANDSHREW
 	db 10, SANDSHREW
-	db 10, SANDSHREW
+	db 10, MANKEY
 	; nite
-	db 5, RATTATA
-	db 10, RATTATA
-	db 10, RATICATE
-	db 6, ZUBAT
-	db 5, RATTATA
-	db 6, CLEFAIRY
-	db 6, CLEFAIRY
+	db 7, SPEAROW
+	db 8, EKANS
+	db 9, EKANS
+	db 11, EKANS
+	db 8, SANDSHREW
+	db 10, SANDSHREW
+	db 10, MANKEY
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_5
@@ -762,28 +762,28 @@ KantoGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 3, NIDORAN_M
-	db 4, RATTATA
+	db 3, RATTATA
 	db 4, NIDORAN_M
 	db 3, SPEAROW
 	db 4, SPEAROW
-	db 3, NIDORAN_F
+	db 4, RATTATA
 	db 4, NIDORAN_F
 	; day
-	db 4, NIDORAN_M
-	db 2, RATTATA
 	db 2, NIDORAN_M
+	db 2, RATTATA
 	db 3, SPEAROW
+	db 4, SPEAROW
+	db 5, RATTATA
 	db 5, SPEAROW
-	db 3, NIDORAN_F
 	db 4, NIDORAN_F
 	; nite
 	db 3, RATTATA
-	db 3, POLIWAG
+	db 3, SPEAROW
+	db 4, RATTATA
+	db 3, NIDORAN_M
 	db 5, RATTATA
-	db 4, POLIWAG
-	db 6, RATTATA
-	db 7, RATTATA
-	db 7, RATICATE
+	db 5, RATTATA
+	db 5, NIDORAN_F
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_24
