@@ -14,10 +14,10 @@ CeruleanGymMistyScript:
 	opentext
 	checkflag ENGINE_CASCADEBADGE
 	iftrue .FightDone
-	writetext MistyIntroText
+	writetext CeruleanGymMistyPreBattleText
 	waitbutton
 	closetext
-	winlosstext MistyWinLossText, 0
+	winlosstext CeruleanGymMistyReceivedCascadeBadgeText, 0
 	loadtrainer MISTY, MISTY1
 	startbattle
 	reloadmapafterbattle
@@ -27,7 +27,7 @@ CeruleanGymMistyScript:
 	setevent EVENT_BEAT_SWIMMERM_PARKER
 	opentext
 	writetext ReceivedCascadeBadgeText
-	playsound SFX_GET_BADGE
+	playsound SFX_GET_KEY_ITEM_1
 	waitsfx
 	setflag ENGINE_CASCADEBADGE
 .FightDone:
@@ -85,20 +85,6 @@ CeruleanGymGuideScript:
 	closetext
 	end
 
-CeruleanGymStatue1:
-	opentext
-	writetext CeruleanGymNote1Text
-	waitbutton
-	closetext
-	end
-
-CeruleanGymStatue2:
-	opentext
-	writetext CeruleanGymNote2Text
-	waitbutton
-	closetext
-	end
-
 CeruleanGymStatue:
 	checkflag ENGINE_CASCADEBADGE
 	iftrue .Beaten
@@ -106,18 +92,6 @@ CeruleanGymStatue:
 .Beaten:
 	gettrainername STRING_BUFFER_4, MISTY, MISTY1
 	jumpstd GymStatue2Script
-
-CeruleanGymNote1Text:
-	text "Sorry, I'll be out"
-	line "for a while."
-	cont "MISTY, GYM LEADER"
-	done
-
-CeruleanGymNote2Text:
-	text "Since MISTY's out,"
-	line "we'll be away too."
-	cont "GYM TRAINERS"
-	done
 
 MistyIntroText:
 	text "MISTY: I was ex-"
@@ -220,6 +194,113 @@ SwimmermParkerAfterBattleText:
 	line "guard down, or"
 	cont "you'll be crushed!"
 	done
+	
+CeruleanGymMistyPreBattleText:
+	text "Hi, you're a new"
+	line "face!"
+
+	para "Trainers who want"
+	line "to turn pro have"
+	cont "to have a policy"
+	cont "about #MON!"
+
+	para "What is your"
+	line "approach when you"
+	cont "catch #MON?"
+
+	para "My policy is an"
+	line "all-out offensive"
+	cont "with water-type"
+	cont "#MON!"
+	done
+
+CeruleanGymMistyTM11ExplanationText:
+	text "TM11 teaches"
+	line "BUBBLEBEAM!"
+
+	para "Use it on an"
+	line "aquatic #MON!"
+	done
+
+CeruleanGymMistyCascadeBadgeInfoText:
+	text "The CASCADEBADGE"
+	line "makes all #MON"
+	cont "up to L30 obey!"
+
+	para "That includes"
+	line "even outsiders!"
+
+	para "There's more, you"
+	line "can now use CUT"
+	cont "any time!"
+
+	para "You can CUT down"
+	line "small bushes to"
+	cont "open new paths!"
+
+	para "You can also have"
+	line "my favorite TM!"
+	done
+
+CeruleanGymMistyReceivedTM11Text:
+	text "<PLAYER> received"
+	line "TM11!"
+	done
+
+CeruleanGymMistyTM11NoRoomText:
+	text "You better make"
+	line "room for this!"
+	done
+
+CeruleanGymMistyReceivedCascadeBadgeText:
+	text "Wow!"
+	line "You're too much!"
+
+	para "All right!"
+
+	para "You can have the"
+	line "CASCADEBADGE to"
+	cont "show you beat me!"
+	done
+
+CeruleanGymBattleText1:
+	text "I'm more than good"
+	line "enough for you!"
+
+	para "MISTY can wait!"
+	done
+
+CeruleanGymEndBattleText1:
+	text "You"
+	line "overwhelmed me!"
+	prompt
+
+CeruleanGymAfterBattleText1:
+	text "You have to face"
+	line "other trainers to"
+	cont "find out how good"
+	cont "you really are."
+	done
+
+CeruleanGymBattleText2:
+	text "Splash!"
+
+	para "I'm first up!"
+	line "Let's do it!"
+	done
+
+CeruleanGymEndBattleText2:
+	text "That"
+	line "can't be!"
+	prompt
+
+CeruleanGymAfterBattleText2:
+	text "MISTY is going to"
+	line "keep improving!"
+
+	para "She won't lose to"
+	line "someone like you!"
+	done
 
 CeruleanGymGuideText:
 	text "Yo! Champ in"
@@ -258,8 +339,8 @@ CeruleanGym_MapEvents:
 	def_coord_events
 
 	def_bg_events
-	bg_event  3, 11, BGEVENT_READ, CeruleanGymStatue1
-	bg_event  6, 11, BGEVENT_READ, CeruleanGymStatue2
+	bg_event  3, 11, BGEVENT_READ, CeruleanGymStatue
+	bg_event  6, 11, BGEVENT_READ, CeruleanGymStatue
 
 	def_object_events
 	object_event  4,  2, SPRITE_MISTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeruleanGymMistyScript, -1
