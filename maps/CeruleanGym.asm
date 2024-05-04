@@ -232,7 +232,7 @@ SwimmerfLisaAfterBattleText:
 CeruleanGymBattleText2:
 	text "Splash!"
 
-	para "I'm up!"
+	para "I'm first up!"
 	line "Let's do it!"
 	done
 
@@ -292,5 +292,5 @@ CeruleanGym_MapEvents:
 	object_event  4,  2, SPRITE_MISTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeruleanGymMistyScript, -1
 	object_event  2,  3, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, CeruleanGymTrainerSwimmerfJill, -1
 	object_event  3,  7, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, CeruleanGymTrainerSwimmerfLisa, -1
-	object_event  8,  6, SPRITE_SWIMMER_GUY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, CeruleanGymTrainerSwimmermJames, -1
+	object_event  8,  8, SPRITE_SWIMMER_GUY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, CeruleanGymTrainerSwimmermJames, -1
 	object_event  7, 10, SPRITE_GYM_GUIDE_KANTO, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CeruleanGymGuideScript, -1
