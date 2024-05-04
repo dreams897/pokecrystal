@@ -41,8 +41,8 @@ TrainerEncounterMusic::
 	db MUSIC_BEAUTY_ENCOUNTER      ; sabrina
 	db MUSIC_MEET_MALE_TRAINER     ; bug_catcher
 	db MUSIC_HIKER_ENCOUNTER       ; fisher
-	db MUSIC_HIKER_ENCOUNTER       ; swimmerm
-	db MUSIC_BEAUTY_ENCOUNTER      ; swimmerf
+	db MUSIC_MEET_MALE_TRAINER     ; swimmerm
+	db MUSIC_MEET_FEMALE_TRAINER   ; swimmerf
 	db MUSIC_HIKER_ENCOUNTER       ; sailor
 	db MUSIC_MEET_MALE_TRAINER     ; super_nerd
 	db MUSIC_TRAINER_BATTLE        ; rival2

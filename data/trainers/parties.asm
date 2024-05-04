@@ -2038,6 +2038,12 @@ SwimmerMGroup:
 	db 32, HORSEA
 	db 35, SEADRA
 	db -1 ; end
+	
+	; SWIMMERM (22)
+	db "JAMES@", TRAINERTYPE_NORMAL
+	db 16, HORSEA
+	db 16, SHELLDER
+	db -1 ; end
 
 SwimmerFGroup:
 	; SWIMMERF (1)
@@ -2147,6 +2153,18 @@ SwimmerFGroup:
 	db 35, SEAKING
 	db 35, SEAKING
 	db -1 ; end
+	
+	; SWIMMERF (20)
+	db "JILL@", TRAINERTYPE_NORMAL
+	db 19, GOLDEEN
+	db -1 ; end
+	
+	; SWIMMERF (20)
+	db "LISA@", TRAINERTYPE_NORMAL
+	db 18, PSYDUCK
+	db -1 ; end
+	
+	
 
 SailorGroup:
 	; SAILOR (1)

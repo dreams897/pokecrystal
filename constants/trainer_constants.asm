@@ -417,6 +417,7 @@ DEF GREEN EQU __trainer_class__
 	const JAMES ; unused
 	const LEWIS ; unused
 	const PARKER
+	const JAMES2
 
 	trainerclass SWIMMERF ; 27
 	const ELAINE
@@ -438,6 +439,8 @@ DEF GREEN EQU __trainer_class__
 	const NIKKI
 	const DIANA
 	const BRIANA
+	const JILL2
+	const LISA2
 
 	trainerclass SAILOR ; 28
 	const EUGENE

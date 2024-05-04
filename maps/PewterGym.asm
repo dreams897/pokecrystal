@@ -22,8 +22,8 @@ PewterGymBrockScript:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_BROCK
-	setevent EVENT_BEAT_PEWTER_GYM_TRAINER_0
-	setevent EVENT_BEAT_PEWTER_GYM_TRAINER_1
+	setevent EVENT_BEAT_PEWTER_GYM_TRAINER_JERRY
+	setevent EVENT_BEAT_PEWTER_GYM_TRAINER_TONY
 	setevent EVENT_1ST_ROUTE22_RIVAL_BATTLE
 	setmapscene ROUTE_22, SCENE_ROUTE_22_NOOP
 	opentext
@@ -50,7 +50,7 @@ PewterGymBrockScript:
 	end
 	
 TrainerPewterGymTrainer0:
-	trainer JRTRAINER_M, JERRY, EVENT_BEAT_PEWTER_GYM_TRAINER_0, PewterGymTrainer0SeenText, PewterGymTrainer0BeatenText, 0, .Script
+	trainer JRTRAINER_M, JERRY, EVENT_BEAT_PEWTER_GYM_TRAINER_JERRY, PewterGymTrainer0SeenText, PewterGymTrainer0BeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -61,7 +61,7 @@ TrainerPewterGymTrainer0:
 	end
 	
 TrainerPewterGymTrainer1:
-	trainer HIKER, TONY, EVENT_BEAT_PEWTER_GYM_TRAINER_1, PewterGymTrainer1SeenText, PewterGymTrainer1BeatenText, 0, .Script
+	trainer HIKER, TONY, EVENT_BEAT_PEWTER_GYM_TRAINER_TONY, PewterGymTrainer1SeenText, PewterGymTrainer1BeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
