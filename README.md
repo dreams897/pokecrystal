@@ -18,7 +18,7 @@
 * The Day Care aims to be massively improved with new animated sprites, a PC in the corner, more accessable entrance, and will be added to the map/Fly
 * Tangela will be exclusive to the Safari Zone
 * New trades have been added, see list below!
-* Wild Pokémon areas aim to be a balance between Red, Blue and Yellow with the addition new spawns depending on time of day!
+* Wild Pokémon areas aim to be a balance between RBY with the addition of spawns based on the time of day!
 * Expanded tileset to fix some visual limitations that Gen 1 had
 
 ### Roadmap:
