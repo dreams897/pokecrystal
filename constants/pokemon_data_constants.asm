@@ -77,12 +77,8 @@ rsreset
 DEF MON_SPECIES            rb
 DEF MON_ITEM               rb
 DEF MON_MOVES              rb NUM_MOVES
-DEF MON_ID                 rw
-DEF MON_EXP                rb
-rsset MON_EXP
-DEF MON_CAUGHTTIME         rb
-DEF MON_EXP2               rb
-DEF MON_EXP3               rb
+DEF MON_OT_ID              rw
+DEF MON_EXP                rb 3
 DEF MON_STAT_EXP           rw NUM_EXP_STATS
 rsset MON_STAT_EXP
 DEF MON_HP_EXP             rw
@@ -96,7 +92,7 @@ DEF MON_HAPPINESS          rb
 DEF MON_POKERUS            rb
 DEF MON_CAUGHTDATA         rw
 rsset MON_CAUGHTDATA
-                           rb_skip
+DEF MON_CAUGHTTIME         rb
 DEF MON_CAUGHTGENDER       rb
 rsset MON_CAUGHTDATA
 DEF MON_CAUGHTLEVEL        rb
@@ -119,9 +115,9 @@ DEF PARTYMON_STRUCT_LENGTH EQU _RS
 DEF NICKNAMED_MON_STRUCT_LENGTH EQU PARTYMON_STRUCT_LENGTH + MON_NAME_LENGTH
 DEF REDMON_STRUCT_LENGTH EQU 44
 
-; experience data
+; caught data
 
-DEF CAUGHT_TIME_MASK EQU %11000000
+DEF CAUGHT_TIME_MASK  EQU %11000000
 DEF CAUGHT_LEVEL_MASK EQU %00111111
 
 DEF EXP_MASK         EQU %00111111
