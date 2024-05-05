@@ -27,6 +27,7 @@ Route22Rival1Script:
 	showemote EMOTE_SHOCK, PLAYER, 30
 	variablesprite SPRITE_OAK_BLUE, SPRITE_BLUE
 	special LoadUsedSpritesGFX
+	special RefreshSprites
 	appear ROUTE_22_BLUE
 	readvar VAR_YCOORD
         getnum STRING_BUFFER_3
@@ -125,6 +126,7 @@ RivalLeavesFromTop:
 	special RestartMapMusic
 	setevent EVENT_BEAT_ROUTE22_RIVAL_1ST_BATTLE
 	setscene SCENE_ROUTE_22_NOOP
+	special RefreshSprites
 	end
 	
 RivalLeavesFromBottom:
@@ -133,6 +135,7 @@ RivalLeavesFromBottom:
 	special RestartMapMusic
 	setevent EVENT_BEAT_ROUTE22_RIVAL_1ST_BATTLE
 	setscene SCENE_ROUTE_22_NOOP
+	special RefreshSprites
 	end
 	
 Route22RivalLeaveMovementTop1:
