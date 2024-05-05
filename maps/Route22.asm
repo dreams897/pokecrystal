@@ -126,6 +126,7 @@ RivalLeavesFromTop:
 	special RestartMapMusic
 	setevent EVENT_BEAT_ROUTE22_RIVAL_1ST_BATTLE
 	setscene SCENE_ROUTE_22_NOOP
+	special LoadUsedSpritesGFX
 	special RefreshSprites
 	end
 	
@@ -135,6 +136,7 @@ RivalLeavesFromBottom:
 	special RestartMapMusic
 	setevent EVENT_BEAT_ROUTE22_RIVAL_1ST_BATTLE
 	setscene SCENE_ROUTE_22_NOOP
+	special LoadUsedSpritesGFX
 	special RefreshSprites
 	end
 	
@@ -145,6 +147,7 @@ Route22RivalLeaveMovementTop1:
 	slow_step DOWN
 	slow_step DOWN
 	slow_step DOWN
+	remove_object
 	step_end
 	
 Route22RivalLeaveMovementBottom1:
@@ -157,6 +160,7 @@ Route22RivalLeaveMovementBottom1:
 	slow_step DOWN
 	slow_step DOWN
 	slow_step DOWN
+	remove_object
 	step_end
 	
 Route22RivalBeforeBattleText1:
