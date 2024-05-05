@@ -67,7 +67,7 @@ MainMenu:
 ; entries correspond to MAINMENUITEM_* constants
 	db "CONTINUE@"
 	db "NEW GAME@"
-	db "OPTION@"
+	db "OPTIONS@"
 	db "MYSTERY GIFT@"
 	db "MOBILE@"
 	db "MOBILE STUDIUM@"

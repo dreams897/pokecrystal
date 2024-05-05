@@ -191,7 +191,7 @@ StartMenu::
 .PackString:     db "PACK@"
 .StatusString:   db "<PLAYER>@"
 .SaveString:     db "SAVE@"
-.OptionString:   db "OPTION@"
+.OptionString:   db "OPTIONS@"
 .ExitString:     db "EXIT@"
 .PokegearString: db "<POKE>GEAR@"
 .QuitString:     db "QUIT@"
