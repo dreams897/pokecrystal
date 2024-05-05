@@ -10,9 +10,9 @@ ENDM
 MonMenuIconPals:
 	table_width 1, MonMenuIconPals
 	;         normal, shiny
-	icon_pals TEAL,   GREEN  ; BULBASAUR
-	icon_pals TEAL,   GREEN  ; IVYSAUR
-	icon_pals TEAL,   GREEN  ; VENUSAUR
+	icon_pals GREEN,   TEAL  ; BULBASAUR
+	icon_pals GREEN,   TEAL  ; IVYSAUR
+	icon_pals GREEN,   TEAL  ; VENUSAUR
 	icon_pals RED,    BROWN  ; CHARMANDER
 	icon_pals RED,    BROWN  ; CHARMELEON
 	icon_pals RED,    PURPLE ; CHARIZARD
@@ -48,7 +48,7 @@ MonMenuIconPals:
 	icon_pals BROWN,  GREEN  ; CLEFABLE
 	icon_pals RED,    BROWN  ; VULPIX
 	icon_pals BROWN,  GRAY   ; NINETALES
-	icon_pals RED,    PINK   ; JIGGLYPUFF
+	icon_pals PINK,   RED   ; JIGGLYPUFF
 	icon_pals RED,    PINK   ; WIGGLYTUFF
 	icon_pals BLUE,   GREEN  ; ZUBAT
 	icon_pals BLUE,   PINK   ; GOLBAT

@@ -1498,6 +1498,12 @@ GruntMGroup:
 	db 13, RATTATA
 	db 13, ZUBAT
 	db -1 ; end
+	
+	; ROCKET (36)
+	db "@", TRAINERTYPE_NORMAL
+	db 15, EKANS
+	db 15, ZUBAT
+	db -1 ; end
 
 GentlemanGroup:
 	; GENTLEMAN (1)
