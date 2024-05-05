@@ -3612,20 +3612,20 @@ Blue2Group:
 
 	; BLUE2_CHARMANDER (1)
 	db "?@", TRAINERTYPE_DVS | TRAINERTYPE_ITEM
-	db 9, PIDGEY,        $34, $46, NO_ITEM
-	db 8, CHARMANDER,    $56, $56, NO_ITEM
+	db 9, PIDGEY,        $33, $35, NO_ITEM
+	db 8, CHARMANDER,    $45, $46, NO_ITEM
 	db -1 ; end
 
 	; BLUE2_SQUIRTLE (2)
 	db "?@", TRAINERTYPE_DVS | TRAINERTYPE_ITEM
-	db 9, PIDGEY,        $34, $46, NO_ITEM
-	db 8, SQUIRTLE,      $56, $56, NO_ITEM
+	db 9, PIDGEY,        $33, $35, NO_ITEM
+	db 8, SQUIRTLE,      $45, $46, NO_ITEM
 	db -1 ; end
 	
 	; BLUE2_BULBASAUR (3)
 	db "?@", TRAINERTYPE_DVS | TRAINERTYPE_ITEM
-	db 9, PIDGEY,        $34, $46, NO_ITEM
-	db 8, BULBASAUR,     $56, $56, NO_ITEM
+	db 9, PIDGEY,        $33, $35, NO_ITEM
+	db 8, BULBASAUR,     $45, $46, NO_ITEM
 	db -1 ; end
 	
 	; BLUE3_CHARMANDER (1)

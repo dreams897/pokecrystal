@@ -79,7 +79,7 @@ RivalHasCharmanderBattle1:
 	winlosstext Route22Rival1DefeatedText, Route22AmIGreatOrWhatText
 	loadtrainer BLUE2, BLUE2_CHARMANDER
 	startbattle
-	reloadmapafterbattle
+	reloadmap
 	opentext
 	writetext Route22RivalAfterBattleText1
 	waitbutton
@@ -123,21 +123,21 @@ RivalHasBulbasaurBattle1:
 RivalLeavesFromTop:
 	applymovement ROUTE_22_BLUE, Route22RivalLeaveMovementTop1
 	disappear ROUTE_22_BLUE
+	special LoadUsedSpritesGFX
+	special RefreshSprites
 	special RestartMapMusic
 	setevent EVENT_BEAT_ROUTE22_RIVAL_1ST_BATTLE
 	setscene SCENE_ROUTE_22_NOOP
-	special LoadUsedSpritesGFX
-	special RefreshSprites
 	end
 	
 RivalLeavesFromBottom:
 	applymovement ROUTE_22_BLUE, Route22RivalLeaveMovementBottom1
 	disappear ROUTE_22_BLUE
+	special LoadUsedSpritesGFX
+	special RefreshSprites
 	special RestartMapMusic
 	setevent EVENT_BEAT_ROUTE22_RIVAL_1ST_BATTLE
 	setscene SCENE_ROUTE_22_NOOP
-	special LoadUsedSpritesGFX
-	special RefreshSprites
 	end
 	
 Route22RivalLeaveMovementTop1:
