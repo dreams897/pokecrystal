@@ -79,7 +79,7 @@ RivalHasCharmanderBattle1:
 	winlosstext Route22Rival1DefeatedText, Route22AmIGreatOrWhatText
 	loadtrainer BLUE2, BLUE2_CHARMANDER
 	startbattle
-	reloadmap
+	reloadmapafterbattle
 	opentext
 	writetext Route22RivalAfterBattleText1
 	waitbutton
