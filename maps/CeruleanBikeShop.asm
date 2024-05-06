@@ -1,4 +1,4 @@
-DEF CERULEAN_BIKE_SHOP_BIKE_PRICE EQU 999999
+DEF CERULEAN_BIKE_SHOP_BIKE EQU 1000000
 	
 	object_const_def
 	const CERULEAN_BIKE_SHOP_CLERK
@@ -19,11 +19,19 @@ CerulanBikeShopClerkScript:
 	checkitem BIKE_VOUCHER
 	iftrue .OhThatsABikeVoucher
 	writetext BikeShopClerkWelcomeText
-	writetext BikeShopClerkDoYouWantItText
-	yesorno
-	checkmoney YOUR_MONEY, CERULEAN_BIKE_SHOP_BIKE_PRICE
+	loadmenu CeruleanBikeShop_MenuHeader
+	verticalmenu
+	closewindow
+	ifequal 1, .TryToBuyBicycle
+	sjump CeruleanBikeShop_CancelPurchaseScript
+	
+.TryToBuyBicycle:
+	checkmoney YOUR_MONEY, CERULEAN_BIKE_SHOP_BIKE
 	ifequal HAVE_LESS, .NotEnoughMoney
-	iffalse .NoRoom
+	getitemname STRING_BUFFER_3, BICYCLE
+	scall CeruleanBikeShop_askbuy
+	iffalse CeruleanBikeShop_CancelPurchaseScript
+	end
 	
 .OhThatsABikeVoucher
 	writetext BikeShopClerkOhThatsAVoucherText
@@ -34,7 +42,6 @@ CerulanBikeShopClerkScript:
 	
 .NotEnoughMoney
 	writetext BikeShopCantAffordText
-	waitbutton
 	closetext
 	end
 	
@@ -49,6 +56,27 @@ CerulanBikeShopClerkScript:
 	waitbutton
 	closetext
 	end
+	
+CeruleanBikeShop_CancelPurchaseScript:
+	closetext
+	end
+	
+CeruleanBikeShop_askbuy:
+	writetext BikeShopClerkDoYouWantItText
+	yesorno
+	end
+	
+CeruleanBikeShop_MenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 0, 19, TEXTBOX_Y - 6
+	dw .MenuData
+	db 1 ; default option
+	
+.MenuData:
+	db STATICMENU_CURSOR ; flags
+	db 2 ; items
+	db "BICYCLE  ¥1000000@"
+	db "CANCEL@"
 	
 CeruleanBikeShopMiddleAgedWomanScript:
 	faceplayer
@@ -180,3 +208,4 @@ CeruleanBikeShop_MapEvents:
 	object_event  5,  6, SPRITE_POKEFAN_F, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeruleanBikeShopMiddleAgedWomanScript, -1
 	object_event  1,  3, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeruleanBikeShopYoungsterScript, -1
 	
+
