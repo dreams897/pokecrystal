@@ -4,7 +4,7 @@
 	const CERULEANCITY_COOLTRAINER_M
 	const CERULEANCITY_SUPER_NERD1
 	const CERULEANCITY_SUPER_NERD2
-	const CERULEANCITY_GUARD
+	const CERULEANCITY_COP
 	const CERULEANCITY_COOLTRAINER_F1
 	const CERULEANCITY_SLOWBRO
 	const CERULEANCITY_COOLTRAINER_F2
@@ -15,6 +15,7 @@ CeruleanCity_MapScripts:
 	def_scene_scripts
 	scene_script CeruleanCityRivalScene, SCENE_CERULEAN_CITY_RIVAL
 	scene_script CeruleanCityNoopScene, SCENE_CERULEAN_CITY_NOOP
+	scene_script CeruleanCityAfterBillScene, SCENE_CERULEAN_CITY_AFTER_BILL
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, CeruleanCityFlypointCallback
@@ -28,6 +29,10 @@ CeruleanCityRivalScene:
 	
 CeruleanCityNoopScene:
 	disappear CERULEANCITY_BLUE
+	end
+	
+CeruleanCityAfterBillScene:
+	moveobject CERULEANCITY_COP, 28, 12
 	end
 	
 CeruleanCityRivalBattle2Script:
@@ -139,10 +144,12 @@ CeruleanCityBlueLeaveMovementLeft:
 	slow_step DOWN
 	slow_step DOWN
 	slow_step DOWN
+	slow_step DOWN
 	step_end
 	
 CeruleanCityBlueLeaveMovementRight:
 	slow_step LEFT
+	slow_step DOWN
 	slow_step DOWN
 	slow_step DOWN
 	slow_step DOWN
@@ -177,10 +184,10 @@ CeruleanCitySuperNerd2Script:
 	closetext
 	end
 	
-CeruleanCityGuardScript:
+CeruleanCityCopScript:
 	faceplayer
 	opentext
-	writetext CeruleanCityGuardText
+	writetext CeruleanCityCopText
 	waitbutton
 	closetext
 	end
@@ -303,8 +310,8 @@ CeruleanCityRocketText:
 
 CeruleanCityRocketReceivedTM28Text:
 	text "<PLAYER> recovered"
-	line "TM28!@"
-	text_end
+	line "TM28!"
+	done
 
 CeruleanCityRocketIBetterGetMovingText:
 	text "I better get"
@@ -353,7 +360,7 @@ CeruleanCitySuperNerd2Text:
 	cont "sounds amusing."
 	done
 
-CeruleanCityGuardText:
+CeruleanCityCopText:
 	text "The people here"
 	line "were robbed."
 
@@ -472,8 +479,9 @@ CeruleanCityTrainerTipsText:
 CeruleanCityBikeShopSign:
 	text "Grass and caves"
 	line "handled easily!"
-	cont "MIRACLE-CYCLE"
-	cont "BIKE SHOP"
+	
+	para "MIRACLE-CYCLE"
+	line "BIKE SHOP"
 	done
 
 CeruleanCityGymSign:
@@ -537,7 +545,7 @@ CeruleanCity_MapEvents:
 	object_event 31, 20, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeruleanCityCooltrainerMScript, -1
 	object_event 15, 18, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeruleanCitySuperNerd1Script, -1
 	object_event  9, 21, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CeruleanCitySuperNerd2Script, -1
-	object_event 27, 12, SPRITE_GUARD, SPRITEMOVEDATA_STANDING_DOWN, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeruleanCityGuardScript, -1
+	object_event 27, 12, SPRITE_GUARD, SPRITEMOVEDATA_STANDING_DOWN, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeruleanCityCopScript, -1
 	object_event 29, 26, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeruleanCityCooltrainerF1Script, -1
 	object_event 28, 26, SPRITE_SLOWBRO, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_OW_RED, OBJECTTYPE_SCRIPT, 0, CeruleanCitySlowbro, -1
 	object_event  9, 27, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeruleanCityCooltrainerF2Script, -1

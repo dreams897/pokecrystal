@@ -431,11 +431,18 @@ YoungsterGroup:
 	db 14, SPEAROW
 	db -1 ; end
 	
-	; YOUNGSTER (12)
+	; YOUNGSTER (13)
 	db "SAMUEL@", TRAINERTYPE_NORMAL
 	db 10, RATTATA
 	db 10, RATTATA
 	db 10, ZUBAT
+	db -1 ; end
+	
+	; YOUNGSTER (14)
+	db "RYAN@", TRAINERTYPE_NORMAL
+	db 14, RATTATA
+	db 14, EKANS
+	db 14, ZUBAT
 	db -1 ; end
 
 SchoolboyGroup:
@@ -836,6 +843,19 @@ LassGroup:
 	db 11, ODDISH
 	db 11, BELLSPROUT
 	db -1 ; end
+	
+	; LASS (22)
+	db "AMY@", TRAINERTYPE_NORMAL
+	db 14, PIDGEY
+	db 14, NIDORAN_F
+	db -1 ; end
+	
+	; LASS (22)
+	db "EMILY@", TRAINERTYPE_NORMAL
+	db 14, CLEFAIRY
+	db 14, ODDISH
+	db -1 ; end
+	
 
 JanineGroup:
 	; JANINE (1)
@@ -1504,6 +1524,12 @@ GruntMGroup:
 	db 15, EKANS
 	db 15, ZUBAT
 	db -1 ; end
+	
+	; ROCKET (37 Nugget Bridge)
+	db "@", TRAINERTYPE_NORMAL
+	db 15, EKANS
+	db 15, ZUBAT
+	db -1 ; end
 
 GentlemanGroup:
 	; GENTLEMAN (1)
@@ -1739,6 +1765,12 @@ BugCatcherGroup:
 	db  10, CATERPIE
 	db  10, METAPOD
 	db  10, CATERPIE
+	db -1 ; end
+	
+	; BUG_CATCHER (26)
+	db "JAKE@", TRAINERTYPE_NORMAL
+	db  14, CATERPIE
+	db  14, WEEDLE
 	db -1 ; end
 
 FisherGroup:
@@ -3225,6 +3257,17 @@ JrtrainermGroup:
 	db "JERRY@", TRAINERTYPE_NORMAL
 	db 11, DIGLETT
 	db 11, SANDSHREW
+	db -1 ; end
+	
+	; JRTRAINER_M (1)
+	db "SEAN@", TRAINERTYPE_NORMAL
+	db 18, MANKEY
+	db -1 ; end
+	
+	; JRTRAINER_M (1)
+	db "ALEX@", TRAINERTYPE_NORMAL
+	db 14, RATTATA
+	db 14, EKANS
 	db -1 ; end
 
 ExecutiveFGroup:

@@ -3139,6 +3139,8 @@ wBluesHouseSceneID::                              db
 wPewterCitySceneID::                              db
 wPewterMuseum1FSceneID::                          db
 wCeruleanCitySceneID::                            db
+wRoute24SceneID::                                 db
+
 	ds 27
 
 ; fight counts

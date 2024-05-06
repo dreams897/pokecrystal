@@ -789,29 +789,29 @@ KantoGrassWildMons:
 	def_grass_wildmons ROUTE_24
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 8, CATERPIE
-	db 10, CATERPIE
-	db 12, METAPOD
-	db 12, ABRA
-	db 10, BELLSPROUT
-	db 14, BUTTERFREE
-	db 14, BUTTERFREE
-	; day
-	db 8, CATERPIE
-	db 12, SUNKERN
-	db 10, CATERPIE
-	db 12, ABRA
-	db 10, BELLSPROUT
-	db 14, BUTTERFREE
-	db 14, BUTTERFREE
-	; nite
-	db 10, VENONAT
-	db 10, ODDISH
+	db  8, KAKUNA
+	db  8, METAPOD
+	db 10, PIDGEY
 	db 12, ODDISH
+	db 12, WEEDLE
+	db  8, ABRA
+	db 12, BELLSPROUT
+	; day
+	db  8, KAKUNA
+	db  8, METAPOD
+	db  8, WEEDLE
+	db 12, ODDISH
+	db 12, BELLSPROUT
+	db 13, ODDISH
+	db 10, ABRA
+	; nite
+	db  8, KAKUNA
+	db  9, METAPOD
+	db 11, WEEDLE
+	db 12, ODDISH
+	db 12, BELLSPROUT
 	db 12, ABRA
-	db 10, BELLSPROUT
-	db 14, GLOOM
-	db 14, GLOOM
+	db 14, ODDISH
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_25
