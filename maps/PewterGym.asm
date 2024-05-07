@@ -106,10 +106,10 @@ PewterGymGuideTextContinued:
 PewterGymStatue:
 	checkflag ENGINE_BOULDERBADGE
 	iftrue .Beaten
-	jumpstd GymStatue1Script
+	jumpstd GymStatue2Script
 .Beaten:
 	gettrainername STRING_BUFFER_4, BROCK, BROCK1
-	jumpstd GymStatue2Script
+	jumpstd GymStatue3Script
 
 BrockIntroText:
 	text "I'm BROCK!"

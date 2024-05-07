@@ -89,10 +89,10 @@ CeruleanGymGuideScript:
 CeruleanGymStatue:
 	checkflag ENGINE_CASCADEBADGE
 	iftrue .Beaten
-	jumpstd GymStatue1Script
+	jumpstd GymStatue2Script
 .Beaten:
 	gettrainername STRING_BUFFER_4, MISTY, MISTY1
-	jumpstd GymStatue2Script
+	jumpstd GymStatue3Script
 
 MistyIntroText:
 	text "MISTY: I was ex-"
