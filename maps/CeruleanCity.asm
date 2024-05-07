@@ -238,6 +238,9 @@ CeruleanCitySuperNerd3Script:
 	closetext
 	end
 	
+CeruleanCityHiddenRareCandy:
+	hiddenitem RARE_CANDY, EVENT_HIDDEN_RARE_CANDY_CERULEAN_CITY
+	
 CeruleanCityRivalPreBattleText:
 	text "<RIVAL>: Yo!"
 	line "<PLAYER>!"
@@ -538,6 +541,7 @@ CeruleanCity_MapEvents:
 	bg_event 17, 29, BGEVENT_READ, CeruleanTrainerTipsSign
 	bg_event 20, 17, BGEVENT_READ, CeruleanCityPokecenterSign
 	bg_event 26, 25, BGEVENT_READ, CeruleanCityMartSign
+	bg_event 15,  8, BGEVENT_ITEM, CeruleanCityHiddenRareCandy
 
 	def_object_events
 	object_event 20,  2, SPRITE_BLUE, SPRITEMOVEDATA_STANDING_DOWN, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeruleanCityRivalBattle2Script, EVENT_CERULEAN_RIVAL_WANTS_BATTLE
