@@ -114,7 +114,7 @@ BikeShopClerkWelcomeText:
 
 	para "Have we got just"
 	line "the BIKE for you!"
-	prompt
+	done
 
 BikeShopClerkDoYouWantItText:
 	text "It's a cool BIKE!"
