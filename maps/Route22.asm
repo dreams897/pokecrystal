@@ -41,6 +41,7 @@ Route22Rival1Script:
 	writetext Route22RivalBeforeBattleText1
 	waitbutton
 	closetext
+	setevent EVENT_1ST_ROUTE22_RIVAL_BATTLE
 	sjump Rival1ScriptCont
 	
 .RivalWalksFromBottom:
@@ -49,6 +50,7 @@ Route22Rival1Script:
 	writetext Route22RivalBeforeBattleText1
 	waitbutton
 	closetext
+	setevent EVENT_1ST_ROUTE22_RIVAL_BATTLE
 	sjump Rival1ScriptCont
 	
 ROUTE_22_Rival_Movement_Top:
@@ -287,4 +289,4 @@ Route22_MapEvents:
 	bg_event  7, 11, BGEVENT_READ, VictoryRoadEntranceSign
 
 	def_object_events
-	object_event  24,  5, SPRITE_OAK_BLUE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route22Rival1Script, EVENT_ROUTE22_RIVAL_WANTS_BATTLE
+	object_event  24,  5, SPRITE_OAK_BLUE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route22Rival1Script, EVENT_1ST_ROUTE22_RIVAL_BATTLE
