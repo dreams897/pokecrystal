@@ -7,13 +7,12 @@ RedNameMenuHeader:
 
 .MaleNames:
 	db STATICMENU_CURSOR | STATICMENU_PLACE_TITLE | STATICMENU_DISABLE_B ; flags
-	db 5 ; items
+	db 4 ; items
 	db "NEW NAME@"
 MalePlayerNameArray:
 	db "RED@"
 	db "ASH@"
 	db "JACK@"
-	db "JOHN@"
 	db 2 ; title indent
 	db " NAME @" ; title
 
@@ -26,13 +25,12 @@ GreenNameMenuHeader:
 
 .FemaleNames:
 	db STATICMENU_CURSOR | STATICMENU_PLACE_TITLE | STATICMENU_DISABLE_B ; flags
-	db 5 ; items
+	db 4 ; items
 	db "NEW NAME@"
 FemalePlayerNameArray:
 	db "GREEN@"
 	db "LEAF@"
 	db "AMANDA@"
-	db "JODI@"
 	db 2 ; title indent
 	db " NAME @" ; title
 	
@@ -45,12 +43,11 @@ EnbyNameMenuHeader:
 
 .OtherNames:
 	db STATICMENU_CURSOR | STATICMENU_PLACE_TITLE | STATICMENU_DISABLE_B ; flags
-	db 5 ; items
+	db 4 ; items
 	db "NEW NAME@"
 EnbyPlayerNameArray:
 	db "PURPLE@"
 	db "JORDAN@"
 	db "REMY@"
-	db "WEST@"
 	db 2 ; title indent
 	db " NAME @" ; title
