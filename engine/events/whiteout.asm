@@ -28,18 +28,19 @@ Script_Whiteout:
 	text_end
 
 OverworldBGMap:
-	call ClearPalettes
-	call ClearScreen
-	call WaitBGMap2
-	call HideSprites
-	call RotateThreePalettesLeft
-	ret
+	farcall FadeOutToWhite
+	xor a
+	ldh [hMapAnims], a
+	call ClearTilemap
+	call ClearSprites
+	ld a, CGB_PLAIN
+	call GetSGBLayout
+	jmp SetDefaultBGPAndOBP
 
 BattleBGMap:
 	ld b, SCGB_BATTLE_GRAYSCALE
 	call GetSGBLayout
-	call SetDefaultBGPAndOBP
-	ret
+	jmp SetDefaultBGPAndOBP
 
 HalveMoney:
 	farcall StubbedTrainerRankings_WhiteOuts
@@ -67,9 +68,8 @@ GetWhiteoutSpawn:
 	farcall IsSpawnPoint
 	ld a, c
 	jr c, .yes
-	ld a, SPAWN_PALLET
+	ld a, SPAWN_PALLET ; Player's house
 
 .yes
 	ld [wDefaultSpawnpoint], a
 	ret
-	
