@@ -634,6 +634,8 @@ Continue_DisplayGameTime:
 
 OakSpeech:
 	farcall InitClock
+	farcall SetDayOfWeek
+	
 	call RotateFourPalettesLeft
 	call ClearTilemap
 	call StartPCItem
@@ -788,7 +790,7 @@ OakText10:
 	text_end
 	
 StartPCItem:
-	ld a, POTION
+	ld a, GOOD_ROD
 	ld [wCurItem], a
 	ld a, 1
 	ld [wItemQuantityChange], a

@@ -206,7 +206,8 @@ _OakTimeSoDarkText::
 	done
 
 _OakTimeWhatDayIsItText::
-	text "What day is it?"
+	text "And what day of"
+	line "the week is it?"
 	done
 
 _OakTimeIsItText::
