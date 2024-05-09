@@ -242,7 +242,7 @@ KantoGrassWildMons:
 	;  %, species,		min, max
 	db 25, PIDGEY, 	           2,  5
 	db 25, RATTATA, 	   2,  4
-	db 15, RATTATA, 	   2,  4
+	db 15, PIDGEY, 	           2,  4
 	db 15, RATTATA, 	   2,  4
 	db 10, RATTATA, 	   2,  4
 	db  5, PIDGEY, 	           2,  7
@@ -250,7 +250,7 @@ KantoGrassWildMons:
 	; day
 	db 25, PIDGEY, 	           2,  5
 	db 25, RATTATA, 	   2,  4
-	db 15, RATTATA, 	   2,  4
+	db 15, PIDGEY, 	           2,  4
 	db 15, RATTATA, 	   2,  4
 	db 10, RATTATA, 	   2,  4
 	db  5, PIDGEY, 	           2,  7
@@ -258,7 +258,7 @@ KantoGrassWildMons:
 	; nite
 	db 25, PIDGEY, 	           2,  5
 	db 25, RATTATA, 	   2,  4
-	db 15, RATTATA, 	   2,  4
+	db 15, PIDGEY, 	           2,  4
 	db 15, RATTATA, 	   2,  4
 	db 10, RATTATA, 	   2,  4
 	db  5, PIDGEY, 	           2,  7
