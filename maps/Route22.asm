@@ -22,7 +22,7 @@ Route22RivalScene2:
 VictoryRoadEntranceSign:
 	jumptext Route22PokemonLeagueSignText
 	
-Route22Rival1Script:
+Route22RivalWantsBattleScript:
 	playmusic MUSIC_MEET_RIVAL
 	showemote EMOTE_SHOCK, PLAYER, 30
 	variablesprite SPRITE_OAK_BLUE, SPRITE_BLUE
@@ -37,20 +37,24 @@ Route22Rival1Script:
 .RivalWalksFromTop:
 	applymovement ROUTE_22_BLUE, ROUTE_22_Rival_Movement_Top
 	turnobject PLAYER, DOWN
+	readvar VAR_BADGES
+    	ifequal 8, RivalBattle2Script 
 	opentext
 	writetext Route22RivalBeforeBattleText1
 	waitbutton
 	closetext
-	setevent EVENT_1ST_ROUTE22_RIVAL_BATTLE
+	setevent EVENT_ROUTE22_RIVAL_WANTS_BATTLE
 	sjump Rival1ScriptCont
 	
 .RivalWalksFromBottom:
 	applymovement ROUTE_22_BLUE, ROUTE_22_Rival_Movement_Bottom
+	readvar VAR_BADGES
+    	ifequal 8, RivalBattle2Script 
 	opentext
 	writetext Route22RivalBeforeBattleText1
 	waitbutton
 	closetext
-	setevent EVENT_1ST_ROUTE22_RIVAL_BATTLE
+	setevent EVENT_ROUTE22_RIVAL_WANTS_BATTLE
 	sjump Rival1ScriptCont
 	
 ROUTE_22_Rival_Movement_Top:
@@ -68,6 +72,9 @@ ROUTE_22_Rival_Movement_Bottom:
 	slow_step RIGHT
 	slow_step RIGHT
 	step_end
+	
+RivalBattle2Script:
+	end ; TODO
 	
 Rival1ScriptCont:
 	checkevent EVENT_GOT_A_CHARMANDER_FROM_OAK
@@ -126,7 +133,6 @@ RivalLeavesFromTop:
 	applymovement ROUTE_22_BLUE, Route22RivalLeaveMovementTop1
 	disappear ROUTE_22_BLUE
 	special LoadUsedSpritesGFX
-	special RefreshSprites
 	special RestartMapMusic
 	setevent EVENT_BEAT_ROUTE22_RIVAL_1ST_BATTLE
 	setscene SCENE_ROUTE_22_NOOP
@@ -136,7 +142,6 @@ RivalLeavesFromBottom:
 	applymovement ROUTE_22_BLUE, Route22RivalLeaveMovementBottom1
 	disappear ROUTE_22_BLUE
 	special LoadUsedSpritesGFX
-	special RefreshSprites
 	special RestartMapMusic
 	setevent EVENT_BEAT_ROUTE22_RIVAL_1ST_BATTLE
 	setscene SCENE_ROUTE_22_NOOP
@@ -282,11 +287,13 @@ Route22_MapEvents:
 	warp_event  8,  5, VICTORY_ROAD_GATE, 1
 
 	def_coord_events
-	coord_event  29,  4, SCENE_ROUTE_22_RIVAL_1, Route22Rival1Script
-	coord_event  29,  5, SCENE_ROUTE_22_RIVAL_1, Route22Rival1Script
+	coord_event  29,  4, SCENE_ROUTE_22_RIVAL_1, Route22RivalWantsBattleScript
+	coord_event  29,  5, SCENE_ROUTE_22_RIVAL_1, Route22RivalWantsBattleScript
+	coord_event  29,  4, SCENE_ROUTE_22_RIVAL_2, Route22RivalWantsBattleScript
+	coord_event  29,  5, SCENE_ROUTE_22_RIVAL_2, Route22RivalWantsBattleScript
 	
 	def_bg_events
 	bg_event  7, 11, BGEVENT_READ, VictoryRoadEntranceSign
 
 	def_object_events
-	object_event  24,  5, SPRITE_OAK_BLUE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route22Rival1Script, EVENT_1ST_ROUTE22_RIVAL_BATTLE
+	object_event  24,  5, SPRITE_OAK_BLUE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route22RivalWantsBattleScript, EVENT_ROUTE22_RIVAL_WANTS_BATTLE

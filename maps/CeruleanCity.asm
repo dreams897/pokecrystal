@@ -50,6 +50,7 @@ CeruleanCityRivalBattle2Script:
 	writetext CeruleanCityRivalPreBattleText
 	waitbutton
 	closetext
+	setevent EVENT_CERULEAN_RIVAL_WANTS_BATTLE
 	sjump Rival2ScriptCont
 	
 .RivalWalksToRight:
@@ -60,6 +61,7 @@ CeruleanCityRivalBattle2Script:
 	writetext CeruleanCityRivalPreBattleText
 	waitbutton
 	closetext
+	setevent EVENT_CERULEAN_RIVAL_WANTS_BATTLE
 	sjump Rival2ScriptCont
 	
 Cerulean_Blue_Walk_Down_Movement:
@@ -544,7 +546,7 @@ CeruleanCity_MapEvents:
 	bg_event 15,  8, BGEVENT_ITEM, CeruleanCityHiddenRareCandy
 
 	def_object_events
-	object_event 20,  2, SPRITE_BLUE, SPRITEMOVEDATA_STANDING_DOWN, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeruleanCityRivalBattle2Script, EVENT_CERULEAN_RIVAL_WANTS_BATTLE
+	object_event 20,  2, SPRITE_BLUE, SPRITEMOVEDATA_STANDING_DOWN, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeruleanCityRivalBattle2Script, EVENT_CERULEAN_RIVAL_WANTS_BATTLE
 	object_event 30,  8, SPRITE_ROCKET, SPRITEMOVEDATA_SPINRANDOM_SLOW, 1, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CeruleanCityRocketScript, -1
 	object_event 31, 20, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeruleanCityCooltrainerMScript, -1
 	object_event 15, 18, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeruleanCitySuperNerd1Script, -1

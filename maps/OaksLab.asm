@@ -211,7 +211,7 @@ OaksLabPokeDexScript:
 	jumptext OaksLabPokedexText
 	
 OaksLabParcelScript:
-	moveobject OAKSLAB_BLUE, 4, 7
+	moveobject OAKSLAB_BLUE, 4, 8
 	setscene SCENE_OAKSLAB_PARCEL
 	writetext OaksLabOak1DeliverParcelText
 	playsound SFX_GET_KEY_ITEM_1
@@ -285,6 +285,7 @@ OaksLabParcelScript:
 	end
 	
 BlueParcelWalkUpMovement:
+	slow_step UP
 	slow_step UP
 	slow_step UP
 	slow_step UP
