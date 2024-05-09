@@ -53,7 +53,7 @@ PewterPokecenterGentlemanText:
 
 	para "TEAM ROCKET is"
 	line "at MT.MOON? Huh?"
-	cont "I'm on the pager!"
+	cont "I'm on the phone!"
 
 	para "Scram!"
 	done
