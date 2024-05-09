@@ -2,172 +2,164 @@
 
 KantoWaterWildMons:
 
-	def_water_wildmons TOHJO_FALLS
+	def_water_wildmons VERMILION_DOCK ; TODO
 	db 4 percent ; encounter rate
-	db 20, GOLDEEN
-	db 20, SLOWPOKE
-	db 20, SEAKING
+	;  %, species,		 min, max
+	db 50, GOLDEEN,            3,   6
+	db 25, SLOWPOKE,           3,   6
+	db 25, SEAKING,            3,   6
 	end_water_wildmons
 
-	def_water_wildmons VERMILION_DOCK
-	db 2 percent ; encounter rate
-	db 35, TENTACOOL
-	db 30, TENTACOOL
-	db 35, TENTACRUEL
-	end_water_wildmons
-
-	def_water_wildmons ROUTE_4
+	def_water_wildmons ROUTE_4 ; TODO
 	db 4 percent ; encounter rate
-	db 10, GOLDEEN
-	db 5, GOLDEEN
-	db 10, SEAKING
+	;  %, species,		 min, max
+	db 50, GOLDEEN,            3,   6
+	db 25, SLOWPOKE,           3,   6
+	db 25, SEAKING,            3,   6
 	end_water_wildmons
 
-	def_water_wildmons ROUTE_6
-	db 2 percent ; encounter rate
-	db 10, PSYDUCK
-	db 5, PSYDUCK
-	db 10, GOLDUCK
-	end_water_wildmons
-
-	def_water_wildmons ROUTE_9
+	def_water_wildmons ROUTE_6 ; TODO
 	db 4 percent ; encounter rate
-	db 15, GOLDEEN
-	db 10, GOLDEEN
-	db 15, SEAKING
+	;  %, species,		 min, max
+	db 50, GOLDEEN,            3,   6
+	db 25, SLOWPOKE,           3,   6
+	db 25, SEAKING,            3,   6
 	end_water_wildmons
 
-	def_water_wildmons ROUTE_10
+	def_water_wildmons ROUTE_9 ; TODO
 	db 4 percent ; encounter rate
-	db 15, GOLDEEN
-	db 10, GOLDEEN
-	db 15, SEAKING
+	;  %, species,		 min, max
+	db 50, GOLDEEN,            3,   6
+	db 25, SLOWPOKE,           3,   6
+	db 25, SEAKING,            3,   6
 	end_water_wildmons
 
-	def_water_wildmons ROUTE_12
-	db 6 percent ; encounter rate
-	db 25, TENTACOOL
-	db 25, QUAGSIRE
-	db 25, TENTACRUEL
-	end_water_wildmons
-
-	def_water_wildmons ROUTE_13
-	db 6 percent ; encounter rate
-	db 25, TENTACOOL
-	db 25, QUAGSIRE
-	db 25, TENTACRUEL
-	end_water_wildmons
-
-	def_water_wildmons ROUTE_19
-	db 6 percent ; encounter rate
-	db 35, TENTACOOL
-	db 30, TENTACOOL
-	db 35, TENTACRUEL
-	end_water_wildmons
-
-	def_water_wildmons ROUTE_20
-	db 6 percent ; encounter rate
-	db 35, TENTACOOL
-	db 30, TENTACOOL
-	db 35, TENTACRUEL
-	end_water_wildmons
-
-	def_water_wildmons ROUTE_21
-	db 6 percent ; encounter rate
-	db 35, TENTACOOL
-	db 30, TENTACOOL
-	db 35, TENTACRUEL
-	end_water_wildmons
-
-	def_water_wildmons ROUTE_22
-	db 2 percent ; encounter rate
-	db 10, POLIWAG
-	db 5, POLIWAG
-	db 10, POLIWHIRL
-	end_water_wildmons
-
-	def_water_wildmons ROUTE_24
+	def_water_wildmons ROUTE_10 ; TODO
 	db 4 percent ; encounter rate
-	db 10, GOLDEEN
-	db 5, GOLDEEN
-	db 10, SEAKING
+	;  %, species,		 min, max
+	db 50, GOLDEEN,            3,   6
+	db 25, SLOWPOKE,           3,   6
+	db 25, SEAKING,            3,   6
 	end_water_wildmons
 
-	def_water_wildmons ROUTE_25
+	def_water_wildmons ROUTE_12 ; TODO
 	db 4 percent ; encounter rate
-	db 10, GOLDEEN
-	db 5, GOLDEEN
-	db 10, SEAKING
+	;  %, species,		 min, max
+	db 50, GOLDEEN,            3,   6
+	db 25, SLOWPOKE,           3,   6
+	db 25, SEAKING,            3,   6
 	end_water_wildmons
 
-	def_water_wildmons ROUTE_26
-	db 6 percent ; encounter rate
-	db 30, TENTACOOL
-	db 25, TENTACOOL
-	db 30, TENTACRUEL
-	end_water_wildmons
-
-	def_water_wildmons ROUTE_27
-	db 6 percent ; encounter rate
-	db 20, TENTACOOL
-	db 15, TENTACOOL
-	db 20, TENTACRUEL
-	end_water_wildmons
-
-	def_water_wildmons ROUTE_28
-	db 2 percent ; encounter rate
-	db 40, POLIWAG
-	db 35, POLIWAG
-	db 40, POLIWHIRL
-	end_water_wildmons
-
-	def_water_wildmons PALLET_TOWN
-	db 6 percent ; encounter rate
-	db 35, TENTACOOL
-	db 30, TENTACOOL
-	db 35, TENTACRUEL
-	end_water_wildmons
-
-	def_water_wildmons VIRIDIAN_CITY
-	db 2 percent ; encounter rate
-	db 10, POLIWAG
-	db 5, POLIWAG
-	db 10, POLIWHIRL
-	end_water_wildmons
-
-	def_water_wildmons CERULEAN_CITY
+	def_water_wildmons ROUTE_13 ; TODO
 	db 4 percent ; encounter rate
-	db 10, GOLDEEN
-	db 5, GOLDEEN
-	db 10, SEAKING
+	;  %, species,		 min, max
+	db 50, GOLDEEN,            3,   6
+	db 25, SLOWPOKE,           3,   6
+	db 25, SEAKING,            3,   6
 	end_water_wildmons
 
-	def_water_wildmons VERMILION_CITY
-	db 6 percent ; encounter rate
-	db 35, TENTACOOL
-	db 30, TENTACOOL
-	db 35, TENTACRUEL
+	def_water_wildmons ROUTE_19 ; TODO
+	db 4 percent ; encounter rate
+	;  %, species,		 min, max
+	db 50, GOLDEEN,            3,   6
+	db 25, SLOWPOKE,           3,   6
+	db 25, SEAKING,            3,   6
 	end_water_wildmons
 
-	def_water_wildmons CELADON_CITY
-	db 2 percent ; encounter rate
-	db 20, GRIMER
-	db 15, GRIMER
-	db 15, MUK
+	def_water_wildmons ROUTE_20 ; TODO
+	db 4 percent ; encounter rate
+	;  %, species,		 min, max
+	db 50, GOLDEEN,            3,   6
+	db 25, SLOWPOKE,           3,   6
+	db 25, SEAKING,            3,   6
 	end_water_wildmons
 
-	def_water_wildmons FUCHSIA_CITY
-	db 2 percent ; encounter rate
-	db 20, MAGIKARP
-	db 15, MAGIKARP
-	db 10, MAGIKARP
+	def_water_wildmons ROUTE_21 ; TODO
+	db 4 percent ; encounter rate
+	;  %, species,		 min, max
+	db 50, GOLDEEN,            3,   6
+	db 25, SLOWPOKE,           3,   6
+	db 25, SEAKING,            3,   6
 	end_water_wildmons
 
-	def_water_wildmons CINNABAR_ISLAND
-	db 6 percent ; encounter rate
-	db 35, TENTACOOL
-	db 30, TENTACOOL
-	db 35, TENTACRUEL
+	def_water_wildmons ROUTE_22 ; TODO
+	db 4 percent ; encounter rate
+	;  %, species,		 min, max
+	db 50, GOLDEEN,            3,   6
+	db 25, SLOWPOKE,           3,   6
+	db 25, SEAKING,            3,   6
+	end_water_wildmons
+
+	def_water_wildmons ROUTE_24 ; TODO
+	db 4 percent ; encounter rate
+	;  %, species,		 min, max
+	db 50, GOLDEEN,            3,   6
+	db 25, SLOWPOKE,           3,   6
+	db 25, SEAKING,            3,   6
+	end_water_wildmons
+
+	def_water_wildmons ROUTE_25 ; TODO
+	db 4 percent ; encounter rate
+	;  %, species,		 min, max
+	db 50, GOLDEEN,            3,   6
+	db 25, SLOWPOKE,           3,   6
+	db 25, SEAKING,            3,   6
+	end_water_wildmons
+
+	def_water_wildmons PALLET_TOWN ; TODO
+	db 4 percent ; encounter rate
+	;  %, species,		 min, max
+	db 50, GOLDEEN,            3,   6
+	db 25, SLOWPOKE,           3,   6
+	db 25, SEAKING,            3,   6
+	end_water_wildmons
+
+	def_water_wildmons VIRIDIAN_CITY ; TODO
+	db 4 percent ; encounter rate
+	;  %, species,		 min, max
+	db 50, GOLDEEN,            3,   6
+	db 25, SLOWPOKE,           3,   6
+	db 25, SEAKING,            3,   6
+	end_water_wildmons
+
+	def_water_wildmons CERULEAN_CITY ; TODO
+	db 4 percent ; encounter rate
+	;  %, species,		 min, max
+	db 50, GOLDEEN,            3,   6
+	db 25, SLOWPOKE,           3,   6
+	db 25, SEAKING,            3,   6
+	end_water_wildmons
+
+	def_water_wildmons VERMILION_CITY ; TODO
+	db 4 percent ; encounter rate
+	;  %, species,		 min, max
+	db 50, GOLDEEN,            3,   6
+	db 25, SLOWPOKE,           3,   6
+	db 25, SEAKING,            3,   6
+	end_water_wildmons
+
+	def_water_wildmons CELADON_CITY ; TODO
+	db 4 percent ; encounter rate
+	;  %, species,		 min, max
+	db 50, GOLDEEN,            3,   6
+	db 25, SLOWPOKE,           3,   6
+	db 25, SEAKING,            3,   6
+	end_water_wildmons
+
+	def_water_wildmons FUCHSIA_CITY ; TODO
+	db 4 percent ; encounter rate
+	;  %, species,		 min, max
+	db 50, GOLDEEN,            3,   6
+	db 25, SLOWPOKE,           3,   6
+	db 25, SEAKING,            3,   6
+	end_water_wildmons
+
+	def_water_wildmons CINNABAR_ISLAND ; TODO
+	db 4 percent ; encounter rate
+	;  %, species,		 min, max
+	db 50, GOLDEEN,            3,   6
+	db 25, SLOWPOKE,           3,   6
+	db 25, SEAKING,            3,   6
 	end_water_wildmons
 
 	db -1 ; end

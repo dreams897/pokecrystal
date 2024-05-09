@@ -242,7 +242,7 @@ endr
 	cp DARKNESS_F
 	jr z, .loop2
 
-	ld bc, 2 * NUM_GRASSMON
+	ld bc, 4 * NUM_GRASSMON
 	call AddNTimes
 .loop3
 	; Choose one of the middle three Pokemon.

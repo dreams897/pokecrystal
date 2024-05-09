@@ -107,6 +107,8 @@ FindNest:
 	jr z, .found
 	inc hl
 	inc hl
+	inc hl
+	inc hl
 	pop af
 	dec a
 	jr nz, .ScanMapLoop
@@ -259,92 +261,78 @@ ChooseWildEncounter:
 	inc hl
 	inc hl
 	call CheckOnWater
-	ld de, WaterMonProbTable
 	jr z, .watermon
 	inc hl
 	inc hl
 	ld a, [wTimeOfDay]
-	ld bc, NUM_GRASSMON * 2
+	ld bc, NUM_GRASSMON * 4
 	call AddNTimes
-	ld de, GrassMonProbTable
 
 .watermon
-; hl contains the pointer to the wild mon data, let's save that to the stack
-	push hl
 .randomloop
 	call Random
 	cp 100
 	jr nc, .randomloop
-	inc a ; 1 <= a <= 100
-	ld b, a
-	ld h, d
-	ld l, e
+	ld de, 4
 ; This next loop chooses which mon to load up.
 .prob_bracket_loop
-	ld a, [hli]
-	cp b
-	jr nc, .got_it
-	inc hl
+	sub [hl]
+	jr c, .got_it
+	add hl, de
 	jr .prob_bracket_loop
 
 .got_it
-	ld c, [hl]
-	ld b, 0
-	pop hl
-	add hl, bc ; this selects our mon
+	inc hl
 	ld a, [hli]
 	ld b, a
-; If the Pokemon is encountered by surfing, we need to give the levels some variety.
-	call CheckOnWater
-	jr nz, .ok
-; Check if we buff the wild mon, and by how much.
-	call Random
-	cp 35 percent
-	jr c, .ok
-	inc b
-	cp 65 percent
-	jr c, .ok
-	inc b
-	cp 85 percent
-	jr c, .ok
-	inc b
-	cp 95 percent
-	jr c, .ok
-	inc b
-; Store the level
-.ok
-	ld a, b
-	ld [wCurPartyLevel], a
-	ld b, [hl]
-	ld a, b
 	call ValidateTempWildMonSpecies
 	jr c, .nowildbattle
 
-	ld a, b
 	cp UNOWN
-	jr nz, .done
+	jr nz, .load_species
 
 	ld a, [wUnlockedUnowns]
 	and a
 	jr z, .nowildbattle
-
-.done
-	jr .loadwildmon
-
-.nowildbattle
-	ld a, 1
-	and a
-	ret
-
-.loadwildmon
+	
 	ld a, b
+
+.load_species
 	ld [wTempWildMonSpecies], a
+
+; Min level
+	ld a, [hli]
+	ld d, a
+
+; Max level
+	ld a, [hl]
+	sub d
+	jr nz, .RandomLevel
+
+; If min and max are the same.
+	ld a, d
+	jr .GotLevel
+
+.RandomLevel:
+; Get a random level between the min and max.
+	ld c, a
+	inc c
+	call Random
+	ldh a, [hRandomAdd]
+	call SimpleDivide
+	add d
+
+.GotLevel:
+	ld [wCurPartyLevel], a
 
 .startwildbattle
 	xor a
 	ret
 
-INCLUDE "data/wild/probabilities.asm"
+.nowildbattle
+	ld a, 1
+	and a
+	ret
 
 CheckRepelEffect::
 ; If there is no active Repel, there's no need to be here.
@@ -782,10 +770,10 @@ RandomUnseenWildMon:
 
 .GetGrassmon:
 	push hl
-	ld bc, 5 + 4 * 2 ; Location of the level of the 5th wild Pokemon in that map
+	ld bc, 5 + 4 * 4 ; Location of the level of the 5th wild Pokemon in that map
 	add hl, bc
 	ld a, [wTimeOfDay]
-	ld bc, NUM_GRASSMON * 2
+	ld bc, NUM_GRASSMON * 4
 	call AddNTimes
 .randloop1
 	call Random
@@ -800,7 +788,7 @@ RandomUnseenWildMon:
 	inc hl
 	ld c, [hl] ; Contains the species index of this rare Pokemon
 	pop hl
-	ld de, 5 + 0 * 2
+	ld de, 5 + 0 * 4
 	add hl, de
 	inc hl ; Species index of the most common Pokemon on that route
 	ld b, 4
@@ -851,11 +839,11 @@ RandomPagerWildMon:
 	call LookUpWildmonsForMapDE
 
 .ok
-	ld bc, 5 + 0 * 2
+	ld bc, 5 + 0 * 4
 	add hl, bc
 	ld a, [wTimeOfDay]
 	inc a
-	ld bc, NUM_GRASSMON * 2
+	ld bc, NUM_GRASSMON * 4
 .loop
 	dec a
 	jr z, .done
