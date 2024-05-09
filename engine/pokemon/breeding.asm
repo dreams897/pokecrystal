@@ -695,7 +695,7 @@ EggHatch_AnimationSequence:
 	ld de, vTiles2 tile $31
 	ld a, EGG
 	call GetEggFrontpic
-	ld de, MUSIC_EVOLUTION
+	ld de, MUSIC_SAFARI_ZONE
 	call PlayMusic
 	call EnableLCD
 	hlcoord 7, 4

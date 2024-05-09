@@ -7639,7 +7639,7 @@ AnimateExpBar:
 .PlayExpBarSound:
 	push bc
 	call WaitSFX
-	ld de, SFX_HEAL_HP_1
+	ld de, SFX_EXP_BAR
 	call WaitPlaySFX
 	ld c, 10
 	call DelayFrames

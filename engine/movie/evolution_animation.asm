@@ -85,7 +85,7 @@ EvolutionAnimation:
 	call PlayMonCry
 .skip_cry
 
-	ld de, MUSIC_EVOLUTION
+	ld de, MUSIC_SAFARI_ZONE
 	call PlayMusic
 
 	ld c, 80

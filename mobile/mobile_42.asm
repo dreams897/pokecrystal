@@ -447,7 +447,7 @@ Function1082fa:
 	ret
 
 MobileTradeAnim_ShowPlayerMonToBeSent:
-	ld de, MUSIC_EVOLUTION
+	ld de, MUSIC_SAFARI_ZONE
 	call PlayMusic2
 	ld a, $80
 	ldh [hSCX], a
@@ -570,7 +570,7 @@ MobileTradeAnim_ShowOTMonFromTrade:
 	ret
 
 MobileTradeAnim_ShowPlayerMonForGTS:
-	ld de, MUSIC_EVOLUTION
+	ld de, MUSIC_SAFARI_ZONE
 	call PlayMusic2
 	ld a, $80
 	ldh [hSCX], a
@@ -903,7 +903,7 @@ MobileTradeAnim_11:
 	call Function108b5a
 	ld a, $e0
 	ldh [hSCX], a
-	ld de, MUSIC_EVOLUTION
+	ld de, MUSIC_SAFARI_ZONE
 	call PlayMusic2
 	call GetMobileTradeAnimByte
 	ret

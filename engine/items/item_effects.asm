@@ -1681,7 +1681,7 @@ ItemRestoreHP:
 
 HealHP_SFX_GFX:
 	push de
-	ld de, SFX_HEAL_HP_1
+	ld de, SFX_POTION
 	call WaitPlaySFX
 	pop de
 	ld a, [wCurPartyMon]
