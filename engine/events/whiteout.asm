@@ -8,7 +8,6 @@ OverworldWhiteoutScript::
 
 Script_Whiteout:
 	writetext .BlackedOutText
-	waitbutton
 	special FadeOutToBlack
 	pause 40
 	special HealParty
