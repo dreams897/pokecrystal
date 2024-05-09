@@ -33,7 +33,6 @@ RedsMom:
 	
 .Heal:
 	writetext RedsHouse1FMomYouShouldRestText
-	waitbutton
 	closetext
 	special FadeBlackQuickly
 	special ReloadSpritesNoPalettes
@@ -107,7 +106,6 @@ StandByMeText:
 
 	para "I better go too."
 	done
-
 	
 WizardOfOzText:
 	text "There's a movie"
@@ -122,10 +120,9 @@ WizardOfOzText:
 VictorVictoriaText:
 	text "There's a movie"
 	line "on TV. A singer"
-	cont "wearing half-"
-	cont "face makeup"
-	cont "bows and exits"
-	cont "the stage."
+	cont "with half-face"
+	cont "makeup bows and"
+	cont "exits the stage."
 
 	para "I better go too."
 	done

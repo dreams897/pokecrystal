@@ -542,7 +542,7 @@ _BlackedOutText::
 
 	para "<PLAYER> blacked"
 	line "out!"
-	done
+	prompt
 
 _ItemfinderItemNearbyText::
 	text "Yes! ITEMFINDER"
