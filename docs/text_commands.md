@@ -93,7 +93,7 @@ Play `SFX_CAUGHT_MON`.
 
 ## `$11`: `sound_dex_fanfare_80_109`
 
-Play `SFX_DEX_FANFARE_80_109`.
+Play `SFX_CAUGHT_MON_RBY`.
 
 
 ## `$12`: `sound_fanfare`
