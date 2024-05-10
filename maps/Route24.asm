@@ -29,7 +29,6 @@ Route24RocketScript:
 	writetext Route24CooltrainerM1YouBeatOurContestText
 	waitbutton
 	writetext Route24CooltrainerM1YouJustEarnedAPrizeText
-	waitbutton
 	getitemname STRING_BUFFER_3, NUGGET
 	giveitem NUGGET
 	iffalse .NotEnoughSpace
@@ -283,3 +282,4 @@ Route24_MapEvents:
 	object_event 11, 25, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, Route24YoungsterScript, -1
 	object_event 10, 28, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, Route24CooltrainerF2Script, -1
 	object_event 11, 31, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, Route24BugCatcherScript, -1
+	; TODO add Thunderwave TM

@@ -421,28 +421,45 @@ YoungsterGroup:
 	db 37, RATICATE,   HYPER_BEAM, QUICK_ATTACK, HYPER_FANG, PURSUIT
 	db -1 ; end
 	
-	; YOUNGSTER (11)
+	; YOUNGSTER (15)
 	db "BEN@", TRAINERTYPE_NORMAL
 	db 11, RATTATA
 	db -1 ; end
 	
-	; YOUNGSTER (12)
+	; YOUNGSTER (16)
 	db "MIKEY@", TRAINERTYPE_NORMAL
 	db 14, SPEAROW
 	db -1 ; end
 	
-	; YOUNGSTER (13)
+	; YOUNGSTER (17)
 	db "SAMUEL@", TRAINERTYPE_NORMAL
 	db 10, RATTATA
 	db 10, RATTATA
 	db 10, ZUBAT
 	db -1 ; end
 	
-	; YOUNGSTER (14)
+	; YOUNGSTER (18)
 	db "RYAN@", TRAINERTYPE_NORMAL
 	db 14, RATTATA
 	db 14, EKANS
 	db 14, ZUBAT
+	db -1 ; end
+	
+	; YOUNGSTER (19)
+	db "GORDON@", TRAINERTYPE_NORMAL
+	db 15, RATTATA
+	db 15, SPEAROW
+	db -1 ; end
+	
+	; YOUNGSTER (20)
+	db "WARREN@", TRAINERTYPE_NORMAL
+	db 17, SLOWPOKE
+	db -1 ; end
+	
+	; YOUNGSTER (21)
+	db "IAN@", TRAINERTYPE_NORMAL
+	db 14, EKANS
+	db 14, SANDSHREW
 	db -1 ; end
 
 SchoolboyGroup:
@@ -856,6 +873,18 @@ LassGroup:
 	db 14, ODDISH
 	db -1 ; end
 	
+	; LASS (23)
+	db "MICHELLE@", TRAINERTYPE_NORMAL
+	db 15, NIDORAN_M
+	db 15, NIDORAN_F
+	db -1 ; end
+	
+	; LASS (23)
+	db "DANA@", TRAINERTYPE_NORMAL
+	db 13, ODDISH
+	db 13, PIDGEY
+	db 13, ODDISH
+	db -1 ; end
 
 JanineGroup:
 	; JANINE (1)
@@ -2608,6 +2637,25 @@ HikerGroup:
 	db 10, GEODUDE
 	db 10, ONIX
 	db -1 ; end
+	
+	; HIKER (25)
+	db "BENJAMIN@", TRAINERTYPE_NORMAL
+	db 15, MACHOP
+	db 15, GEODUDE
+	db -1 ; end
+	
+	; HIKER (26)
+	db "ERIK@", TRAINERTYPE_NORMAL
+	db 17, ONIX
+	db -1 ; end
+	
+	; HIKER (27)
+	db "ANTHONY@", TRAINERTYPE_NORMAL
+	db 13, GEODUDE
+	db 13, GEODUDE
+	db 13, MACHOP
+	db 13, GEODUDE
+	db -1 ; end
 
 BikerGroup:
 	; BIKER (1)
@@ -3259,13 +3307,19 @@ JrtrainermGroup:
 	db 11, SANDSHREW
 	db -1 ; end
 	
-	; JRTRAINER_M (1)
+	; JRTRAINER_M (2)
 	db "SEAN@", TRAINERTYPE_NORMAL
 	db 18, MANKEY
 	db -1 ; end
 	
-	; JRTRAINER_M (1)
+	; JRTRAINER_M (3)
 	db "ALEX@", TRAINERTYPE_NORMAL
+	db 14, RATTATA
+	db 14, EKANS
+	db -1 ; end
+	
+	; JRTRAINER_M (4)
+	db "JEFFREY@", TRAINERTYPE_NORMAL
 	db 14, RATTATA
 	db 14, EKANS
 	db -1 ; end

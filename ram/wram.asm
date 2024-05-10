@@ -3049,7 +3049,6 @@ wTradeCenterSceneID::                             db
 wColosseumSceneID::                               db
 wTimeCapsuleSceneID::                             db
 wPowerPlantSceneID::                              db
-wRoute25SceneID::                                 db
 wVictoryRoadGateSceneID::                         db
 wSaffronMagnetTrainStationSceneID::               db
 wRoute16GateSceneID::                             db
