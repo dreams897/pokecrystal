@@ -1,10 +1,10 @@
 ; gray
-	RGB 30, 30, 26
+	RGB 27, 31, 27
 	RGB 19, 19, 19
 	RGB 13, 13, 13
 	RGB 07, 07, 07
 ; red
-	RGB 30, 30, 26
+	RGB 27, 31, 27
 	RGB 31, 19, 24
 	RGB 30, 10, 06
 	RGB 07, 07, 07
@@ -14,22 +14,22 @@
 	RGB 05, 14, 00
 	RGB 07, 07, 07
 ; water (blue)
-	RGB 30, 30, 26
+	RGB 27, 31, 27
 	RGB 18, 19, 31
 	RGB 13, 12, 31
 	RGB 07, 07, 07
 ; yellow
-	RGB 30, 30, 26
+	RGB 27, 31, 27
 	RGB 31, 31, 07
 	RGB 31, 16, 01
 	RGB 07, 07, 07
 ; brown
-	RGB 30, 30, 26
+	RGB 27, 31, 27
 	RGB 24, 18, 07
 	RGB 20, 15, 03
 	RGB 07, 07, 07
 ; roof (glass)
-	RGB 30, 30, 26
+	RGB 27, 31, 27
 	RGB 21, 17, 7
 	RGB 16, 13, 3
 	RGB 07, 07, 07
