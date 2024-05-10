@@ -39,17 +39,25 @@ Tileset0Anim:
 TilesetJohtoModernAnim:
 TilesetKantoAnim:
 TilesetGymCeruleanAnim:
-	dw vTiles2 tile $14, AnimateWaterTile
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  AnimateFlowerTile
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  StandingTileFrame8
-	dw NULL,  DoneTileAnimation
+    	dw vTiles2 tile $14, ReadTileToAnimBuffer
+    	dw NULL,  WaitTileAnimation
+    	dw NULL,  WaitTileAnimation
+    	dw wTileAnimBuffer, ScrollTileRightLeft
+    	dw NULL,  WaitTileAnimation
+    	dw NULL,  WaitTileAnimation
+    	dw vTiles2 tile $14, WriteTileFromAnimBuffer
+    	dw NULL,  WaitTileAnimation
+    	dw NULL,  WaitTileAnimation
+    	dw vTiles2 tile $64, AnimateFountainTile
+    	dw NULL,  WaitTileAnimation
+    	dw NULL,  WaitTileAnimation
+    	dw NULL,  WaitTileAnimation
+    	dw NULL,  WaitTileAnimation
+    	dw NULL,  WaitTileAnimation
+    	dw NULL,  AnimateFlowerTile
+    	dw NULL,  WaitTileAnimation
+    	dw NULL,  WaitTileAnimation
+    	dw NULL,  DoneTileAnimation
 
 TilesetParkAnim:
 	dw vTiles2 tile $14, AnimateWaterTile

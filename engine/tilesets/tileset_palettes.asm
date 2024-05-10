@@ -12,6 +12,8 @@ LoadSpecialMapPalette:
 	jr z, .radio_tower
 	cp TILESET_MANSION
 	jr z, .mansion_mobile
+	cp TILESET_KANTO
+	jr z, .kanto
 	cp TILESET_MUSEUM
 	jr z, .museum
 	cp TILESET_POKECENTER_KANTO
@@ -70,6 +72,10 @@ LoadSpecialMapPalette:
 	scf
 	ret
 	
+.kanto
+	call LoadKantoPalette
+	scf
+	ret
 
 .museum
 	call LoadMuseumPalette
@@ -213,6 +219,16 @@ LoadMansionPalette:
 
 MansionPalette2:
 INCLUDE "gfx/tilesets/mansion_2.pal"
+
+LoadKantoPalette:
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
+	ld hl, KantoPalette
+	ld bc, 8 palettes
+	jp FarCopyWRAM
+
+KantoPalette:
+INCLUDE "gfx/tilesets/kanto.pal"
 
 LoadMuseumPalette:
 	ld a, BANK(wBGPals1)
