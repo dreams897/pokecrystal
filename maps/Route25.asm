@@ -60,12 +60,12 @@ Route25TrainerYoungsterWarren:
 	end
 
 Route25TrainerLassMichelle:
-	trainer LASS, MICHELLE2, EVENT_BEAT_ROUTE_25_LASS_MICHELLE, Route25CooltrainerF1BattleText, Route25CooltrainerF1EndBattleText, 0, .Script
+	trainer LASS, MICHELLE2, EVENT_BEAT_ROUTE_25_LASS_MICHELLE, Route25Lass1BattleText, Route25Lass1EndBattleText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext Route25CooltrainerF1AfterBattleText
+	writetext Route25Lass1AfterBattleText
 	waitbutton
 	closetext
 	end
@@ -82,12 +82,12 @@ Route25TrainerHikerAnthony:
 	end
 
 Route25TrainerJrTrainerMJeffrey:
-	trainer JRTRAINER_M, JEFFREY2, EVENT_BEAT_ROUTE_25_JRTRAINER_M_JEFFREY, Route25CooltrainerMBattleText, Route25CooltrainerMEndBattleText, 0, .Script
+	trainer JRTRAINER_M, JEFFREY2, EVENT_BEAT_ROUTE_25_JRTRAINER_M_JEFFREY, Route25JrTrainerMBattleText, Route25JrTrainerMEndBattleText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext Route25CooltrainerMAfterBattleText
+	writetext Route25JrTrainerMAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -104,12 +104,12 @@ Route25TrainerYoungsterIan:
 	end
 	
 Route25TrainerLassDana:
-	trainer LASS, DANA6, EVENT_BEAT_ROUTE_25_LASS_DANA, Route25CooltrainerF2BattleText, Route25CooltrainerF2EndBattleText, 0, .Script
+	trainer LASS, DANA6, EVENT_BEAT_ROUTE_25_LASS_DANA, Route25Lass2BattleText, Route25Lass2EndBattleText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext Route25CooltrainerF2AfterBattleText
+	writetext Route25Lass2AfterBattleText
 	waitbutton
 	closetext
 	end
@@ -157,33 +157,32 @@ Route25Youngster2AfterBattleText:
 	cont "around the world."
 	done
 
-Route25CooltrainerMBattleText:
+Route25JrTrainerMBattleText:
 	text "I'm a cool guy."
 	line "I've got a girl"
 	cont "friend!"
 	done
 
-Route25CooltrainerMEndBattleText:
-	text "Aww,"
-	line "darn..."
+Route25JrTrainerMEndBattleText:
+	text "Aww, darn..."
 	prompt
 
-Route25CooltrainerMAfterBattleText:
+Route25JrTrainerMAfterBattleText:
 	text "Oh well. My girl"
 	line "will cheer me up."
 	done
 
-Route25CooltrainerF1BattleText:
+Route25Lass1BattleText:
 	text "Hi! My boy"
 	line "friend is cool!"
 	done
 
-Route25CooltrainerF1EndBattleText:
+Route25Lass1EndBattleText:
 	text "I was in"
 	line "bad condition!"
 	prompt
 
-Route25CooltrainerF1AfterBattleText:
+Route25Lass1AfterBattleText:
 	text "I wish my guy was"
 	line "as good as you!"
 	done
@@ -205,18 +204,18 @@ Route25Youngster3AfterBattleText:
 	cont "switch it!"
 	done
 
-Route25CooltrainerF2BattleText:
+Route25Lass2BattleText:
 	text "My friend has a"
 	line "cute #MON."
 	cont "I'm so jealous!"
 	done
 
-Route25CooltrainerF2EndBattleText:
+Route25Lass2EndBattleText:
 	text "I'm not"
 	line "so jealous!"
 	prompt
 
-Route25CooltrainerF2AfterBattleText:
+Route25Lass2AfterBattleText:
 	text "You came from MT."
 	line "MOON? May I have"
 	cont "a CLEFAIRY?"
@@ -295,6 +294,6 @@ Route25_MapEvents:
 	object_event 18,  8, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, Route25TrainerLassMichelle, -1
 	object_event 23,  9, SPRITE_HIKER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, Route25TrainerHikerAnthony, -1
 	object_event 24,  4, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, Route25TrainerJrTrainerMJeffrey, -1
-	object_event 32,  3, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 3, Route25TrainerYoungsterIan, -1
+	object_event 32,  3, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, Route25TrainerYoungsterIan, -1
 	object_event 37,  4, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, Route25TrainerLassDana, -1
 	object_event 22,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route25SeismicToss, EVENT_ROUTE_25_TM_SEISMIC_TOSS ; TODO make this Seismic Toss TM
