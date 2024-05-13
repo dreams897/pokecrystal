@@ -40,18 +40,17 @@ Pokedex:
 	xor a
 	ldh [hMapAnims], a
 	call InitPokedex
-	call DelayFrame
+	jr .handleLoop
 
-.main
+.loop
+	call Pokedex_RunJumptable
+.handleLoop
+	call DelayFrame
 	call JoyTextDelay
 	ld a, [wJumptableIndex]
 	bit 7, a
-	jr nz, .exit
-	call Pokedex_RunJumptable
-	call DelayFrame
-	jr .main
+	jr z, .loop
 
-.exit
 	ld de, SFX_PRESS_AB_1
 	call PlaySFX
 	call WaitSFX
@@ -80,16 +79,14 @@ InitPokedex:
 	call ClearTilemap
 	call Pokedex_LoadGFX
 
-	ld hl, wPokedexDataStart
-	ld bc, wPokedexDataEnd - wPokedexDataStart
-	xor a
-	call ByteFill
-
 	xor a
 	ld [wJumptableIndex], a
 	ld [wPrevDexEntryJumptableIndex], a
 	ld [wPrevDexEntryBackup], a
 	ld [wUnusedPokedexByte], a
+	ld hl, wPokedexDataStart
+	ld bc, wPokedexDataEnd - wPokedexDataStart
+	call ByteFill
 
 	ld a, [wLastDexMode]
 	ld [wCurDexMode], a
