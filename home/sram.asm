@@ -1,3 +1,10 @@
+GetSRAMBank::
+; load sram bank a
+; if invalid bank, sram is disabled
+	cp NUM_SRAM_BANKS
+	jr nc, CloseSRAM
+	; fallthrough
+
 OpenSRAM::
 ; if invalid bank, sram is disabled
 	cp NUM_SRAM_BANKS

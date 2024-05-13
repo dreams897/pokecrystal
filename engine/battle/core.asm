@@ -2910,7 +2910,7 @@ ForcePickPartyMonInBattle:
 	call CheckMobileBattleError
 	ret c
 
-	ld de, SFX_WRONG
+	ld de, SFX_DENIED_1
 	call PlaySFX
 	call WaitSFX
 	jr .pick

@@ -2371,6 +2371,16 @@ wItemQuantity:: db
 
 wTempMon:: party_struct wTempMon
 
+wTempMonShiny:: db
+
+wEnemyMonShiny:: db
+
+sBoxMon1Shiny:: db
+
+wOTPartyMon1Shiny:: db
+
+wPartyMon1Shiny:: db
+
 wSpriteFlags:: db
 
 wHandlePlayerStep:: db
@@ -3346,7 +3356,7 @@ wPartyMon{d:n}Nickname:: ds MON_NAME_LENGTH
 endr
 wPartyMonNicknamesEnd::
 
-	ds 22
+	ds 16
 
 wPokedexCaught:: flag_array NUM_POKEMON
 wEndPokedexCaught::
