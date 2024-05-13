@@ -790,7 +790,7 @@ OakText10:
 	text_end
 	
 StartPCItem:
-	ld a, GOOD_ROD
+	ld a, POTION
 	ld [wCurItem], a
 	ld a, 1
 	ld [wItemQuantityChange], a

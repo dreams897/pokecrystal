@@ -7,6 +7,13 @@ SECTION "rst0", ROM0[$0000]
 SECTION "rst8", ROM0[$0008]
 FarCall::
 	jp FarCall_hl
+	
+PopAFBCDEHL::
+	pop af
+PopBCDEHL::
+	pop bc
+	pop de
+	pop hl
 
 SECTION "rst10", ROM0[$0010]
 Bankswitch::
