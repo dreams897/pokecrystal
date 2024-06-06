@@ -34,6 +34,8 @@ LoadSpecialMapPalette:
 	jr z, .port_kanto
 	cp TILESET_CLUB_KANTO
 	jr z, .club_kanto
+	cp TILESET_INTERIOR
+	jr z, .interior
 	jr .do_nothing
 
 .pokecom_2f
@@ -122,6 +124,11 @@ LoadSpecialMapPalette:
 	
 .club_kanto
 	call LoadClubKantoPalette
+	scf
+	ret
+
+.interior
+	call LoadMuseumPalette
 	scf
 	ret
 

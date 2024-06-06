@@ -135,7 +135,6 @@ BlackthornEmysHouse_Blocks:
 MoveDeletersHouse_Blocks:
 CeruleanTrashedHouse_Blocks:
 CeruleanTradeSpeechHouse_Blocks:
-BillsHouse_Blocks:
 CharcoalKiln_Blocks:
 LakeOfRageHiddenPowerHouse_Blocks:
 LakeOfRageMagikarpHouse_Blocks:
@@ -177,7 +176,8 @@ Route30BerryHouse_Blocks:
 	
 CeruleanBikeShop_Blocks:
 	INCBIN "maps/CeruleanBikeShop.blk"
-	
+BillsHouse_Blocks:
+	INCBIN "maps/BillsHouse.blk"
 CeruleanGymBadgeSpeechHouse_Blocks:
 CeruleanBerrySpeechHouse_Blocks:
 	INCBIN "maps/CeruleanGymBadgeSpeechHouse.blk"

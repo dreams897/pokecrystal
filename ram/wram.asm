@@ -3149,8 +3149,9 @@ wPewterCitySceneID::                              db
 wPewterMuseum1FSceneID::                          db
 wCeruleanCitySceneID::                            db
 wRoute24SceneID::                                 db
+wBillsHouseSceneID:                               db
 
-	ds 27
+	ds 26
 
 ; fight counts
 wJackFightCount::    db

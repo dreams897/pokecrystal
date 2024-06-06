@@ -135,6 +135,9 @@ INCLUDE "gfx/tilesets/gym_cerulean_palette_map.asm"
 TilesetClubKantoPalMap:
 INCLUDE "gfx/tilesets/club_kanto_palette_map.asm"
 
+TilesetInteriorPalMap:
+INCLUDE "gfx/tilesets/interior_palette_map.asm"
+
 TilesetPokeComCenterPalMap:
 INCLUDE "gfx/tilesets/pokecom_center_palette_map.asm"
 

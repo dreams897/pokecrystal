@@ -454,5 +454,11 @@ INCBIN "data/tilesets/club_kanto_metatiles.bin"
 TilesetClubKantoColl::
 INCLUDE "data/tilesets/club_kanto_collision.asm"
 
+TilesetInteriorGFX::
+INCBIN "gfx/tilesets/interior.2bpp.lz"
 
+TilesetInteriorMeta::
+INCBIN "data/tilesets/interior_metatiles.bin"
 
+TilesetInteriorColl::
+INCLUDE "data/tilesets/interior_collision.asm"

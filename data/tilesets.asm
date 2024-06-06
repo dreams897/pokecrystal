@@ -63,4 +63,5 @@ Tilesets::
 	tileset TilesetGymPewter
 	tileset TilesetGymCerulean
 	tileset TilesetClubKanto
+	tileset TilesetInterior
 	assert_table_length NUM_TILESETS + 1
