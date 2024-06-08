@@ -281,7 +281,6 @@ Route25HandleBill:
 .BillPostHelp
 	setevent EVENT_LEFT_BILLS_HOUSE_AFTER_HELPING
 	setmapscene BILLS_HOUSE, SCENE_BILLS_HOUSE_NOOP
-	closetext
 	end
 
 
