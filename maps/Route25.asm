@@ -274,6 +274,17 @@ Route25BillSignText:
 	line "BILL lives here!"
 	done
 
+Route25HandleBill:
+	checkevent EVENT_GOT_SS_TICKET
+	iftrue .BillPostHelp
+	end
+.BillPostHelp
+	setevent EVENT_LEFT_BILLS_HOUSE_AFTER_HELPING
+	setmapscene BILLS_HOUSE, SCENE_BILLS_HOUSE_NOOP
+	closetext
+	end
+
+
 Route25_MapEvents:
 	db 0, 0 ; filler
 
@@ -281,6 +292,7 @@ Route25_MapEvents:
 	warp_event 45,  3, BILLS_HOUSE, 1
 
 	def_coord_events
+	coord_event 45,  4, -1, Route25HandleBill
 
 	def_bg_events
 	bg_event 43,  3, BGEVENT_READ, BillsHouseSign

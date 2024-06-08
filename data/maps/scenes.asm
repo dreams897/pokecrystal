@@ -100,4 +100,5 @@ MapScenes::
 	scene_var PEWTER_MUSEUM_1F,			       wPewterMuseum1FSceneID
 	scene_var CERULEAN_CITY,                               wCeruleanCitySceneID
 	scene_var ROUTE_24,                                    wRoute24SceneID
+	scene_var BILLS_HOUSE,                                 wBillsHouseSceneID
 	db -1 ; end

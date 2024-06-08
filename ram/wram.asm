@@ -3149,7 +3149,7 @@ wPewterCitySceneID::                              db
 wPewterMuseum1FSceneID::                          db
 wCeruleanCitySceneID::                            db
 wRoute24SceneID::                                 db
-wBillsHouseSceneID:                               db
+wBillsHouseSceneID::                               db
 
 	ds 26
 
