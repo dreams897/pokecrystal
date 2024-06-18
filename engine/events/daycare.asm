@@ -190,10 +190,6 @@ DayCare_AskWithdrawBreedMon:
 	jr .check_money
 
 .grew_at_least_one_level
-	ld a, DAYCARETEXT_GENIUSES
-	call PrintDayCareText
-	call YesNoBox
-	jr c, .refused
 	ld a, DAYCARETEXT_ASK_WITHDRAW
 	call PrintDayCareText
 	call YesNoBox
