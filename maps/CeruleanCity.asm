@@ -168,6 +168,40 @@ CeruleanCityCooltrainerMScript:
 	end
 	
 CeruleanCityRocketScript:
+	faceplayer
+	opentext
+	checkevent EVENT_BEAT_CERULEAN_ROCKET_THIEF
+	iftrue, .beatRocketThief
+	writetext CeruleanCityRocketText
+	playmusic MUSIC_MEET_EVIL_TRAINER
+	waitbutton
+	closetext
+	winlosstext CeruleanCityRocketIGiveUpText, 0
+	loadtrainer GRUNTM, ROCKET_CERULEAN
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_CERULEAN_ROCKET_THIEF
+	opentext
+.beatRocketThief
+	writetext CeruleanCityRocketIllReturnTheTMText
+	giveitem TM_DIG
+	iffalse .NoRoom
+	writetext CeruleanCityRocketReceivedTM28Text
+	playsound SFX_GET_ITEM1_1
+	waitsfx
+	waitbutton
+	writetext CeruleanCityRocketIBetterGetMovingText
+	waitbutton
+	special FadeBlackQuickly
+	closetext
+	disappear CERULEANCITY_ROCKET
+	setscene SCENE_CERULEAN_CITY_NOOP
+	special FadeInQuickly
+	end
+.NoRoom
+	writetext CeruleanCityRocketTM28NoRoomText
+	waitbutton
+	closetext
 	end
 	
 CeruleanCitySuperNerd1Script:
@@ -536,6 +570,7 @@ CeruleanCity_MapEvents:
 	def_coord_events
 	coord_event  20,  6, SCENE_CERULEAN_CITY_RIVAL, CeruleanCityRivalBattle2Script
 	coord_event  21,  6, SCENE_CERULEAN_CITY_RIVAL, CeruleanCityRivalBattle2Script
+	coord_event 30,  9, SCENE_CERULEAN_CITY_AFTER_BILL, CeruleanCityRocketScript
 
 	def_bg_events
 	bg_event 23, 19, BGEVENT_READ, CeruleanCitySign

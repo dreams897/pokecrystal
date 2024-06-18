@@ -1554,10 +1554,10 @@ GruntMGroup:
 	db 15, ZUBAT
 	db -1 ; end
 	
-	; ROCKET (37 Nugget Bridge)
+	;ROCKET (37 Cerulean City)
 	db "@", TRAINERTYPE_NORMAL
-	db 15, EKANS
-	db 15, ZUBAT
+	db 17, MACHOP
+	db 17, DROWZEE
 	db -1 ; end
 
 GentlemanGroup:
