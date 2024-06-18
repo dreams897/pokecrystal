@@ -133,7 +133,6 @@ MahoganyRedGyaradosSpeechHouse_Blocks:
 BlackthornDragonSpeechHouse_Blocks:
 BlackthornEmysHouse_Blocks:
 MoveDeletersHouse_Blocks:
-CeruleanTrashedHouse_Blocks:
 CeruleanTradeSpeechHouse_Blocks:
 CharcoalKiln_Blocks:
 LakeOfRageHiddenPowerHouse_Blocks:
@@ -173,9 +172,11 @@ GuideGentsHouse_Blocks:
 CherrygroveEvolutionSpeechHouse_Blocks:
 Route30BerryHouse_Blocks:
 	INCBIN "maps/House1.blk"
-	
+
 CeruleanBikeShop_Blocks:
 	INCBIN "maps/CeruleanBikeShop.blk"
+CeruleanTrashedHouse_Blocks:
+	INCBIN "maps/CeruleanTrashedHouse.blk"	
 BillsHouse_Blocks:
 	INCBIN "maps/BillsHouse.blk"
 CeruleanGymBadgeSpeechHouse_Blocks:

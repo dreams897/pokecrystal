@@ -58,7 +58,6 @@ BillPokemon:
 	applymovement BILLSHOUSE_BILL_POKEMON, BillPokemonWalkAroundPlayer	
 .backtomain
 	disappear BILLSHOUSE_BILL_POKEMON
-	variablesprite SPRITE_BILL_MON, SPRITE_BILL
 	setscene SCENE_BILLS_HOUSE_CELL
 	setevent EVENT_BILL_SAID_USE_CELL_SEPARATOR
 	end
@@ -85,6 +84,7 @@ BillPokemonWalkUp:
 BillThanks:
 	faceplayer
 	opentext
+	variablesprite SPRITE_BILL_MON, SPRITE_BILL
 	checkevent EVENT_GOT_SS_TICKET
 	iftrue .ExplainSSAnne
 	readvar VAR_PLAYERGENDER
