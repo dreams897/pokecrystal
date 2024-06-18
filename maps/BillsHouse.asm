@@ -1,7 +1,6 @@
 	object_const_def
 	const BILLSHOUSE_BILL_POKEMON
 	const BILLSHOUSE_BILL1
-	const BILLSHOUSE_BILL2
 
 BillsHouse_MapScripts:
 	def_scene_scripts
@@ -14,33 +13,28 @@ BillsHouse_MapScripts:
 
 BillsHousePokemonScene:
 	disappear BILLSHOUSE_BILL1
-	disappear BILLSHOUSE_BILL2
        end
 BillsHouseCellScene:
        end
 BillsHouseHelpedScene:
 	disappear BILLSHOUSE_BILL_POKEMON
-	disappear BILLSHOUSE_BILL2
        end
 BillsHouseNoopScene:
-	appear BILLSHOUSE_BILL2
+	disappear BILLSHOUSE_BILL1
        end
 BillsHouseBillsCallback:
 	checkscene
 	ifequal SCENE_BILLS_HOUSE_JUST_HELPED, .HelpedBill
-	ifequal SCENE_BILLS_HOUSE_NOOP, .HideMon
 	endcallback
 .HelpedBill:
 	moveobject BILLSHOUSE_BILL1, 4, 4
-	endcallback
-.HideMon:
-	moveobject BILLSHOUSE_BILL_POKEMON, 40, 40
-	moveobject BILLSHOUSE_BILL1, 40, 40
 	endcallback
 
 BillPokemon:
 	faceplayer
 	opentext
+	checkscene 
+	ifequal SCENE_BILLS_HOUSE_NOOP, .Helped
 	writetext BillImNotAPokemonText
 	yesorno
 	iftrue .accepted
@@ -64,8 +58,14 @@ BillPokemon:
 	applymovement BILLSHOUSE_BILL_POKEMON, BillPokemonWalkAroundPlayer	
 .backtomain
 	disappear BILLSHOUSE_BILL_POKEMON
+	variablesprite SPRITE_BILL_MON, SPRITE_BILL
 	setscene SCENE_BILLS_HOUSE_CELL
 	setevent EVENT_BILL_SAID_USE_CELL_SEPARATOR
+	end
+.Helped:
+	writetext BillCheckOutMyRarePokemonText
+	waitbutton
+	closetext
 	end
 
 BillPokemonWalkAroundPlayer:
@@ -118,13 +118,6 @@ BillThanks:
 	closetext
 	end
 
-BillAfterHelp:
-	faceplayer
-	opentext
-	writetext BillCheckOutMyRarePokemonText
-	waitbutton
-	closetext
-	end
 
 BillsHousePCScript:
 	opentext
@@ -327,11 +320,11 @@ BillsHouse_MapEvents:
 
 	def_coord_events
 	coord_event  2,  7, SCENE_BILLS_HOUSE_CELL, BillsHouseCantLeave
-	coord_event  3,  7, SCENE_BILLS_HOUSE_CELL, BillsHouseCantLeave	
+	coord_event  3,  7, SCENE_BILLS_HOUSE_CELL, BillsHouseCantLeave
 	def_bg_events
 	bg_event  1,  4, BGEVENT_UP, BillsHousePCScript
 
 	def_object_events
-	object_event  6,  5, SPRITE_MONSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BillPokemon, -1
+	object_event  6,  5, SPRITE_BILL_MON, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BillPokemon, -1
 	object_event  1,  2, SPRITE_BILL, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BillThanks, EVENT_LEFT_BILLS_HOUSE_AFTER_HELPING
-	object_event  6,  5, SPRITE_BILL, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BillAfterHelp, EVENT_BILL_SAID_USE_CELL_SEPARATOR
+
