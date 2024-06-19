@@ -229,9 +229,25 @@ CeruleanCityCopScript:
 	end
 	
 CeruleanCitySlowbro:
+	faceplayer
 	opentext
-	writetext CeruleanCitySlowbroText
-	cry SLOWBRO
+	random 4
+	ifequal 0, .TookASnooze
+	ifequal 1, .LoafingAround
+	ifequal 2, .TurnedAway
+	ifequal 3, .IgnoredOrders
+.TookASnooze
+	writetext CeruleanCitySlowbroTookASnoozeText
+	sjump .backtomain
+.IgnoredOrders
+	writetext CeruleanCitySlowbroIgnoredOrdersText
+	sjump .backtomain
+.TurnedAway
+	writetext CeruleanCitySlowbroTurnedAwayText
+	sjump .backtomain
+.LoafingAround
+	writetext CeruleanCitySlowbroIsLoafingAroundText
+.backtomain
 	waitbutton
 	closetext
 	end
@@ -239,23 +255,22 @@ CeruleanCitySlowbro:
 CeruleanCityCooltrainerF1Script:
 	faceplayer
 	opentext
-	writetext CeruleanCityCooltrainerFText1
+	random 3
+	ifequal 0, .Sonicboom
+	ifequal 1, .Punch
+	ifequal 2, .Withdraw
+.Sonicboom
+	writetext CeruleanCityCooltrainerF1SlowbroPunchText
+	sjump .backtomain
+.Punch
+	writetext CeruleanCityCooltrainerF1SlowbroUseSonicboomText
+	sjump .backtomain
+.Withdraw
+	writetext CeruleanCityCooltrainerF1SlowbroWithdrawText
+.backtomain
 	waitbutton
 	closetext
 	turnobject CERULEANCITY_COOLTRAINER_F1, LEFT
-	opentext
-	writetext CeruleanCityCooltrainerFText2
-	waitbutton
-	closetext
-	opentext
-	writetext CeruleanCitySlowbroText
-	cry SLOWBRO
-	waitbutton
-	closetext
-	opentext
-	writetext CeruleanCityCooltrainerFText3
-	waitbutton
-	closetext
 	end
 	
 CeruleanCityCooltrainerF2Script:
@@ -457,25 +472,6 @@ CeruleanCitySlowbroTurnedAwayText:
 CeruleanCitySlowbroIgnoredOrdersText:
 	text "SLOWBRO"
 	line "ignored orders..."
-	done
-	
-CeruleanCitySlowbroText:
-	text "SLOWBRO: Yarah?"
-	done
-
-CeruleanCityCooltrainerFText1:
-	text "My SLOWBRO and I"
-	line "make an awesome"
-	cont "combination!"
-	done
-
-CeruleanCityCooltrainerFText2:
-	text "SLOWBRO, show me"
-	line "your CONFUSION!"
-	done
-	
-CeruleanCityCooltrainerFText3:
-	text "…"
 	done
 
 CeruleanCityCooltrainerF2Text:
