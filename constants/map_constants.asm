@@ -148,8 +148,8 @@ ENDM
 	map_const TOHJO_FALLS,                                 15,  9 ; 83
 	map_const VIRIDIAN_FOREST,               	       17, 24 ; 15 ; Added
 	map_const DIGLETTS_CAVE,                       	       20, 18 ; 84
-	map_const DIGLETTS_CAVE_ROUTE_11,			4,  4 ; Added
 	map_const DIGLETTS_CAVE_ROUTE_2,			4,  4 ; Added
+	map_const DIGLETTS_CAVE_ROUTE_11,			4,  4 ; Added
 	map_const MT_MOON_1F,              		       20, 18 ; Added                     
 	map_const MT_MOON_B1F,				       14, 14 ; Added
 	map_const MT_MOON_B2F,				       20, 18 ; Added
