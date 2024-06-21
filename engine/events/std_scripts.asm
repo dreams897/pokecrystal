@@ -56,6 +56,7 @@ StdScripts::
 	add_stdscript PCScript
 	add_stdscript GameCornerCoinVendorScript
 	add_stdscript HappinessCheckScript
+	add_stdscript ThirstySaffronGuards_DrinkScript
 
 PokecenterNurseScript:
 ; EVENT_WELCOMED_TO_POKECOM_CENTER is never set
@@ -1766,3 +1767,54 @@ Movement_ContestResults_WalkAfterWarp:
 	step DOWN
 	turn_head UP
 	step_end
+
+ThirstySaffronGuards_DrinkScript:
+	checkevent EVENT_GAVE_SAFFRON_GUARD_A_DRINK
+	iftrue .ScriptEnd
+	checkitem LEMONADE
+	iftrue .HaveLemonade
+	checkitem FRESH_WATER
+	iftrue .HaveFreshWater
+	checkitem SODA_POP
+	iftrue .HaveSodaPop
+	checkitem BERRY_JUICE
+	iftrue .HaveBerryJuice
+	sjump ThirstySaffronGuards_DeclineScript
+.HaveLemonade
+	opentext
+	farwritetext _SaffronGateGuardImParchedText
+	takeitem LEMONADE
+	sjump .BackToMain
+.HaveFreshWater
+	opentext
+	farwritetext _SaffronGateGuardImParchedText
+	takeitem FRESH_WATER
+	sjump .BackToMain
+.HaveSodaPop
+	opentext
+	farwritetext _SaffronGateGuardImParchedText
+	takeitem SODA_POP
+	sjump .BackToMain
+.HaveBerryJuice
+	opentext
+	farwritetext _SaffronGateGuardImParchedText
+	takeitem BERRY_JUICE
+.BackToMain
+	waitbutton
+	setevent EVENT_GAVE_SAFFRON_GUARD_A_DRINK
+	farwritetext _SaffronGateGuardYouCanGoOnThroughText
+	waitbutton
+	closetext
+.ScriptEnd
+	end
+	
+ThirstySaffronGuards_DeclineScript:
+	checkevent EVENT_GAVE_SAFFRON_GUARD_A_DRINK
+	iftrue .ScriptEnd
+	opentext
+	farwritetext _SaffronGateGuardGeeImThirstyText
+	waitbutton
+	closetext
+.ScriptEnd
+	end
+

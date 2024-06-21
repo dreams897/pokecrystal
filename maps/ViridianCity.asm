@@ -37,6 +37,9 @@ ViridianCityDrunkOldManScript1:
 	waitbutton
 	closetext
 	applymovement PLAYER, ViridianCity_TurnDownMovement1
+	opentext ViridianCityDrunkOldManDontGoText
+	waitbutton
+	closetext
 	end
 	
 ViridianCityDrunkOldManScript2:
@@ -45,6 +48,9 @@ ViridianCityDrunkOldManScript2:
 	waitbutton
 	closetext
 	applymovement PLAYER, ViridianCity_TurnDownMovement1
+	opentext ViridianCityDrunkOldManDontGoText
+	waitbutton
+	closetext
 	end
 	
 ViridianCity_TurnDownMovement1:
@@ -274,8 +280,9 @@ ViridianCityDrunkOldManCantPassText:
 	cont "C'mere an lissen"
 	cont "to what I hafta"
 	cont "say!"
-
-	para "...Hey!"
+	done
+ViridianCityDrunkOldManDontGoText:
+	text "...Hey!"
 	line "I said don't go!"
 	done
 

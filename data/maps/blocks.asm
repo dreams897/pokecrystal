@@ -133,9 +133,7 @@ MahoganyRedGyaradosSpeechHouse_Blocks:
 BlackthornDragonSpeechHouse_Blocks:
 BlackthornEmysHouse_Blocks:
 MoveDeletersHouse_Blocks:
-CeruleanTrashedHouse_Blocks:
 CeruleanTradeSpeechHouse_Blocks:
-BillsHouse_Blocks:
 CharcoalKiln_Blocks:
 LakeOfRageHiddenPowerHouse_Blocks:
 LakeOfRageMagikarpHouse_Blocks:
@@ -174,10 +172,12 @@ GuideGentsHouse_Blocks:
 CherrygroveEvolutionSpeechHouse_Blocks:
 Route30BerryHouse_Blocks:
 	INCBIN "maps/House1.blk"
-	
+CeruleanTrashedHouse_Blocks:
+	INCBIN "maps/CeruleanTrashedHouse.blk"
 CeruleanBikeShop_Blocks:
 	INCBIN "maps/CeruleanBikeShop.blk"
-	
+BillsHouse_Blocks:
+	INCBIN "maps/BillsHouse.blk"
 CeruleanGymBadgeSpeechHouse_Blocks:
 CeruleanBerrySpeechHouse_Blocks:
 	INCBIN "maps/CeruleanGymBadgeSpeechHouse.blk"
@@ -193,8 +193,10 @@ Route6SaffronGate_Blocks:
 Route40BattleTowerGate_Blocks:
 Route2Gate_Blocks:
 Route29Route46Gate_Blocks:
-Route5SaffronGate_Blocks:
 	INCBIN "maps/NorthSouthGate.blk"
+
+Route5SaffronGate_Blocks:
+	INCBIN "maps/Route5SaffronGate.blk"
 
 CinnabarIsland_Blocks:
 	INCBIN "maps/CinnabarIsland.blk"

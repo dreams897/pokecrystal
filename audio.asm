@@ -210,7 +210,7 @@ INCLUDE "audio/music/RBY/surfing.asm"
 INCLUDE "audio/music/RBY/jigglypuffsong.asm"
 INCLUDE "audio/music/RBY/halloffame.asm"
 INCLUDE "audio/music/RBY/credits.asm"
-
+INCLUDE "audio/music/RBY/meetrivalalt.asm"
 
 SECTION "RBY Songs 4", ROMX
 
@@ -218,7 +218,7 @@ INCLUDE "audio/music/RBY/yellowintro.asm"
 INCLUDE "audio/music/RBY/surfingpikachu.asm"
 INCLUDE "audio/music/RBY/yellowunusedsong.asm"
 INCLUDE "audio/music/RBY/meetjessiejames.asm"
-INCLUDE "audio/music/RBY/meetrivalalt.asm"
+INCLUDE "audio/music/RBY/digda01.asm"
 
 SECTION "Sound Effects", ROMX
 

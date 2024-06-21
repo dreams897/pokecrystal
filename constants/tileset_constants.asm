@@ -49,6 +49,7 @@
 	const TILESET_GYM_PEWTER           ; 35
 	const TILESET_GYM_CERULEAN         ; 36
 	const TILESET_CLUB_KANTO           ; 37
+	const TILESET_INTERIOR             ; 38
 DEF NUM_TILESETS EQU const_value - 1
 
 ; wTileset struct size

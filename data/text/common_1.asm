@@ -1684,9 +1684,10 @@ _DaycareDummyText::
 	done
 
 _DayCareManIntroText::
-	text "I'm the DAY-CARE"
-	line "MAN. Want me to"
-	cont "raise a #MON?"
+	text "I run a DAYCARE."
+	line "Would you like me"
+	cont "to raise one of"
+	cont "your #MON?"
 	done
 
 _DayCareManIntroEggText::
@@ -1736,13 +1737,13 @@ _DayCareLadyIntroEggText::
 	done
 
 _WhatShouldIRaiseText::
-	text "What should I"
-	line "raise for you?"
+	text "Which #MON"
+	line "should I raise?"
 	prompt
 
 _OnlyOneMonText::
-	text "Oh? But you have"
-	line "just one #MON."
+	text "You only have one"
+	line "#MON with you."
 	prompt
 
 _CantAcceptEggText::
@@ -1762,15 +1763,16 @@ _LastHealthyMonText::
 	prompt
 
 _IllRaiseYourMonText::
-	text "OK. I'll raise"
-	line "your @"
+	text "Fine, I'll look"
+	line "after @"
 	text_ram wStringBuffer1
-	text "."
+	text_start
+	cont "for a while."
 	prompt
 
 _ComeBackLaterText::
-	text "Come back for it"
-	line "later."
+	text "Come see me in"
+	line "a while."
 	done
 
 _AreWeGeniusesText::
@@ -1791,12 +1793,14 @@ _YourMonHasGrownText::
 	line "grown by @"
 	text_decimal wStringBuffer2 + 1, 1, 3
 	text "."
+	
+	para "Aren't I great?"
 
-	para "If you want your"
-	line "#MON back, it"
-	cont "will cost ¥@"
+	para "You owe me ¥@"
 	text_decimal wStringBuffer2 + 2, 3, 4
-	text "."
+	text_start
+	line "for the return"
+	cont "of this #MON."
 	done
 
 _PerfectHeresYourMonText::
@@ -1816,26 +1820,26 @@ _BackAlreadyText::
 	line "Your @"
 	text_ram wStringBuffer1
 	text_start
-	para "needs a little"
-	line "more time with us."
+	cont "needs some more"
+	cont "time with me."
 
-	para "If you want your"
-	line "#MON back, it"
-	cont "will cost ¥100."
+	para "You owe me ¥100"
+	line "for the return"
+	cont "of this #MON."
 	done
 
 _HaveNoRoomText::
 	text "You have no room"
-	line "for it."
+	line "for this #MON!"
 	prompt
 
 _NotEnoughMoneyText::
-	text "You don't have"
-	line "enough money."
+	text "Hey, you don't"
+	line "have enough ¥!"
 	prompt
 
 _OhFineThenText::
-	text "Oh, fine then."
+	text "All right then."
 	prompt
 
 _ComeAgainText::

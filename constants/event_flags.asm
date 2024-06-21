@@ -376,6 +376,7 @@
 	const EVENT_LAB_HANDING_OVER_FOSSIL_MON
 	
 ; Saffron City events
+	const EVENT_GAVE_SAFFRON_GUARD_A_DRINK
 	const EVENT_GOT_TM31
 	const EVENT_DEFEATED_FIGHTING_DOJO
 	const EVENT_BEAT_KARATE_MASTER
@@ -2070,5 +2071,5 @@
 	const EVENT_BATTLE_TOWER_OPEN_CIVILIANS
 ; Unused: next 48 events
 
-	const_next 2343
+	const_next 2342
 DEF NUM_EVENTS EQU const_value ; 1097 with Kanto events

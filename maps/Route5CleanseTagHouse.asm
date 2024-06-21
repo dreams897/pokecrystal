@@ -7,19 +7,13 @@ Route5CleanseTagHouse_MapScripts:
 
 	def_callbacks
 
-Route5CleanseTagHouseGrannyScript:
+Route5DaycareManScript:
 	faceplayer
 	opentext
-	writetext Route5CleanseTagHouseGrannyText1
-	promptbutton
-	verbosegiveitem CLEANSE_TAG
-	writetext Route5CleanseTagHouseGrannyText2
+	special DayCareMan
 	waitbutton
 	closetext
 	end
-
-Route5CleanseTagHouseTeacherScript:
-	jumptextfaceplayer Route5CleanseTagHouseTeacherText
 
 HouseForSaleBookshelf:
 	jumpstd DifficultBookshelfScript
@@ -41,17 +35,6 @@ Route5CleanseTagHouseGrannyText2:
 	cont "are protected now."
 	done
 
-Route5CleanseTagHouseTeacherText:
-	text "My grandma is into"
-	line "warding off what"
-
-	para "she believes to be"
-	line "evil spirits."
-
-	para "I'm sorry that she"
-	line "startled you."
-	done
-
 Route5CleanseTagHouse_MapEvents:
 	db 0, 0 ; filler
 
@@ -66,5 +49,4 @@ Route5CleanseTagHouse_MapEvents:
 	bg_event  1,  1, BGEVENT_READ, HouseForSaleBookshelf
 
 	def_object_events
-	object_event  2,  5, SPRITE_GRANNY, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route5CleanseTagHouseGrannyScript, -1
-	object_event  5,  3, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route5CleanseTagHouseTeacherScript, -1
+	object_event  2,  4, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route5DaycareManScript, -1

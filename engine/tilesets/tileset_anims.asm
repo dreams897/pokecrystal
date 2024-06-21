@@ -296,6 +296,7 @@ TilesetCaveKantoAnim:
 TilesetGymKantoAnim:
 TilesetGymPewterAnim:
 TilesetClubKantoAnim:
+TilesetInteriorAnim:
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation

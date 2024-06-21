@@ -168,6 +168,40 @@ CeruleanCityCooltrainerMScript:
 	end
 	
 CeruleanCityRocketScript:
+	faceplayer
+	opentext
+	checkevent EVENT_BEAT_CERULEAN_ROCKET_THIEF
+	iftrue .beatRocketThief
+	writetext CeruleanCityRocketText
+	playmusic MUSIC_MEET_EVIL_TRAINER
+	waitbutton
+	closetext
+	winlosstext CeruleanCityRocketIGiveUpText, 0
+	loadtrainer GRUNTM, ROCKET_CERULEAN
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_CERULEAN_ROCKET_THIEF
+	opentext
+.beatRocketThief
+	writetext CeruleanCityRocketIllReturnTheTMText
+	giveitem TM_DIG
+	iffalse .NoRoom
+	writetext CeruleanCityRocketReceivedTM28Text
+	playsound SFX_GET_ITEM1_1
+	waitsfx
+	waitbutton
+	writetext CeruleanCityRocketIBetterGetMovingText
+	waitbutton
+	special FadeBlackQuickly
+	closetext
+	disappear CERULEANCITY_ROCKET
+	setscene SCENE_CERULEAN_CITY_NOOP
+	special FadeInQuickly
+	end
+.NoRoom
+	writetext CeruleanCityRocketTM28NoRoomText
+	waitbutton
+	closetext
 	end
 	
 CeruleanCitySuperNerd1Script:
@@ -195,9 +229,25 @@ CeruleanCityCopScript:
 	end
 	
 CeruleanCitySlowbro:
+	faceplayer
 	opentext
-	writetext CeruleanCitySlowbroText
-	cry SLOWBRO
+	random 4
+	ifequal 0, .TookASnooze
+	ifequal 1, .LoafingAround
+	ifequal 2, .TurnedAway
+	ifequal 3, .IgnoredOrders
+.TookASnooze
+	writetext CeruleanCitySlowbroTookASnoozeText
+	sjump .backtomain
+.IgnoredOrders
+	writetext CeruleanCitySlowbroIgnoredOrdersText
+	sjump .backtomain
+.TurnedAway
+	writetext CeruleanCitySlowbroTurnedAwayText
+	sjump .backtomain
+.LoafingAround
+	writetext CeruleanCitySlowbroIsLoafingAroundText
+.backtomain
 	waitbutton
 	closetext
 	end
@@ -205,23 +255,22 @@ CeruleanCitySlowbro:
 CeruleanCityCooltrainerF1Script:
 	faceplayer
 	opentext
-	writetext CeruleanCityCooltrainerFText1
+	random 3
+	ifequal 0, .Sonicboom
+	ifequal 1, .Punch
+	ifequal 2, .Withdraw
+.Sonicboom
+	writetext CeruleanCityCooltrainerF1SlowbroPunchText
+	sjump .backtomain
+.Punch
+	writetext CeruleanCityCooltrainerF1SlowbroUseSonicboomText
+	sjump .backtomain
+.Withdraw
+	writetext CeruleanCityCooltrainerF1SlowbroWithdrawText
+.backtomain
 	waitbutton
 	closetext
 	turnobject CERULEANCITY_COOLTRAINER_F1, LEFT
-	opentext
-	writetext CeruleanCityCooltrainerFText2
-	waitbutton
-	closetext
-	opentext
-	writetext CeruleanCitySlowbroText
-	cry SLOWBRO
-	waitbutton
-	closetext
-	opentext
-	writetext CeruleanCityCooltrainerFText3
-	waitbutton
-	closetext
 	end
 	
 CeruleanCityCooltrainerF2Script:
@@ -424,25 +473,6 @@ CeruleanCitySlowbroIgnoredOrdersText:
 	text "SLOWBRO"
 	line "ignored orders..."
 	done
-	
-CeruleanCitySlowbroText:
-	text "SLOWBRO: Yarah?"
-	done
-
-CeruleanCityCooltrainerFText1:
-	text "My SLOWBRO and I"
-	line "make an awesome"
-	cont "combination!"
-	done
-
-CeruleanCityCooltrainerFText2:
-	text "SLOWBRO, show me"
-	line "your CONFUSION!"
-	done
-	
-CeruleanCityCooltrainerFText3:
-	text "…"
-	done
 
 CeruleanCityCooltrainerF2Text:
 	text "I want a bright"
@@ -531,10 +561,12 @@ CeruleanCity_MapEvents:
 	warp_event 13, 25, CERULEAN_BIKE_SHOP, 1
 	warp_event  9,  9, CERULEAN_GYM_BADGE_SPEECH_HOUSE, 3
 	warp_event 15,  9, CERULEAN_BERRY_SPEECH_HOUSE, 3
+	warp_event 27, 9, CERULEAN_TRASHED_HOUSE, 3
 
 	def_coord_events
 	coord_event  20,  6, SCENE_CERULEAN_CITY_RIVAL, CeruleanCityRivalBattle2Script
 	coord_event  21,  6, SCENE_CERULEAN_CITY_RIVAL, CeruleanCityRivalBattle2Script
+	coord_event 30,  9, SCENE_CERULEAN_CITY_AFTER_BILL, CeruleanCityRocketScript
 
 	def_bg_events
 	bg_event 23, 19, BGEVENT_READ, CeruleanCitySign
