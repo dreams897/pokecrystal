@@ -1555,12 +1555,10 @@ _SaffronGateGuardImParchedText::
 	cont "Huh? I can have"
 	cont "this drink?"
 	cont "Gee, thanks!@"
-	text_end
+	prompt
 
 _SaffronGateGuardYouCanGoOnThroughText::
-	text_start
-
-	para "..."
+	text "..."
 	line "Glug glug..."
 	cont "..."
 	cont "Gulp..."
