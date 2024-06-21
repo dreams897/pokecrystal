@@ -44,6 +44,18 @@ UnusedSetSeenMon:
 	dec a
 	call SetSeenMon
 	ret
+	
+ShowPokedexEntry:
+       ld a, [wScriptVar]
+       dec a
+       call SetSeenMon
+       call FadeToMenu
+       ld a, [wScriptVar]
+       ld [wNamedObjectIndex], a
+       farcall NewPokedexEntry
+       call ExitAllMenus
+       ret
+
 
 FindPartyMonAboveLevel:
 	ld a, [wScriptVar]
@@ -423,3 +435,4 @@ TrainerHouse:
 	ld a, [sMysteryGiftTrainerHouseFlag]
 	ld [wScriptVar], a
 	jp CloseSRAM
+

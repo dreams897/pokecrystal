@@ -123,6 +123,7 @@ BillsHousePCScript:
 	opentext
 	checkscene
 	ifequal SCENE_BILLS_HOUSE_CELL, .initiated
+	ifequal SCENE_BILLS_HOUSE_NOOP, .ListEeveelutions
 .monitor
 	writetext BillsHouseMonitorText
 	sjump .end
@@ -155,6 +156,33 @@ BillsHousePCScript:
 	waitbutton
 	closetext
 	end
+.ListEeveelutions
+	writetext BillsHousePokemonListText1
+.EeveelutionsMenu
+	writetext BillsHousePokemonListText2
+	loadmenu BillsHousePC_MenuHeader
+	verticalmenu
+	ifequal 1, .Eevee
+	ifequal 2, .Flareon
+	ifequal 3, .Jolteon
+	ifequal 4, .Vaporeon
+	closewindow
+	closetext
+	end
+.Eevee
+	setval EEVEE
+	sjump .ShowEntry
+.Flareon
+	setval FLAREON
+	sjump .ShowEntry
+.Jolteon
+	setval JOLTEON
+	sjump .ShowEntry
+.Vaporeon
+	setval VAPOREON
+.ShowEntry
+	special ShowPokedexEntry
+	sjump .EeveelutionsMenu
 
 BillExitMachine:
 		slow_step DOWN
@@ -176,6 +204,19 @@ BillsHouse_CantLeaveMovement:
 	step UP
 	step_end
 	
+BillsHousePC_MenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 0, 12, TEXTBOX_Y
+	dw .MenuData	
+.MenuData:
+	db STATICMENU_CURSOR ; flags
+	db 5 ; items
+	db "EEVEE@"
+	db "FLAREON@"
+	db "JOLTEON@"
+	db "VAPOREON@"
+	db "CANCEL@"
+
 BillsHouseMonitorText:
 	text "TELEPORTER is"
 	line "displayed on the"
@@ -310,6 +351,15 @@ BillCheckOutMyRarePokemonText:
 	cont "#MON on my PC!"
 	done
 
+BillsHousePokemonListText1:
+	text "BILL's favorite"
+	line "#MON list!"
+	prompt
+
+BillsHousePokemonListText2:
+	text "Which #MON do"
+	line "you want to see?"
+	done
 
 BillsHouse_MapEvents:
 	db 0, 0 ; filler
