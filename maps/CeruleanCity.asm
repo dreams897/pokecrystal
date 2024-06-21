@@ -171,7 +171,7 @@ CeruleanCityRocketScript:
 	faceplayer
 	opentext
 	checkevent EVENT_BEAT_CERULEAN_ROCKET_THIEF
-	iftrue, .beatRocketThief
+	iftrue .beatRocketThief
 	writetext CeruleanCityRocketText
 	playmusic MUSIC_MEET_EVIL_TRAINER
 	waitbutton
