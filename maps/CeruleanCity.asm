@@ -16,7 +16,7 @@ CeruleanCity_MapScripts:
 	scene_script CeruleanCityRivalScene, SCENE_CERULEAN_CITY_RIVAL
 	scene_script CeruleanCityNoopScene, SCENE_CERULEAN_CITY_NOOP
 	scene_script CeruleanCityAfterBillScene, SCENE_CERULEAN_CITY_AFTER_BILL
-
+	scene_script CeruleanCityNoopScene2, SCENE_CERULEAN_CITY_NOOP2
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, CeruleanCityFlypointCallback
 
@@ -30,7 +30,11 @@ CeruleanCityRivalScene:
 CeruleanCityNoopScene:
 	disappear CERULEANCITY_BLUE
 	end
-	
+
+CeruleanCityNoopScene2:
+	disappear CERULEANCITY_ROCKET
+	end
+
 CeruleanCityAfterBillScene:
 	moveobject CERULEANCITY_COP, 28, 12
 	end
@@ -195,7 +199,7 @@ CeruleanCityRocketScript:
 	special FadeBlackQuickly
 	closetext
 	disappear CERULEANCITY_ROCKET
-	setscene SCENE_CERULEAN_CITY_NOOP
+	setscene SCENE_CERULEAN_CITY_NOOP2
 	special FadeInQuickly
 	end
 .NoRoom
