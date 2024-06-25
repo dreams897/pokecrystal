@@ -1801,7 +1801,20 @@ BugCatcherGroup:
 	db  14, CATERPIE
 	db  14, WEEDLE
 	db -1 ; end
-
+	
+	;ROUTE 5 Bug Catcher 1
+	db "KEIGO@", TRAINERTYPE_NORMAL
+	db  16, WEEDLE
+	db  16, CATERPIE
+	db  16, WEEDLE
+	db -1 ;end
+	
+	;ROUTE 5 BUG CATCHER 2
+	db "ELIJAH@", TRAINERTYPE_NORMAL
+	db 20, BUTTERFREE
+	db -1 ;end
+	
+	
 FisherGroup:
 	; FISHER (1)
 	db "JUSTIN@", TRAINERTYPE_NORMAL
@@ -3300,6 +3313,19 @@ JrtrainerfGroup:
 	db 31, PARASECT
 	db -1 ; end
 	
+	;ROUTE 5 JR TRAINER 1
+	db "NANCY@", TRAINERTYPE_NORMAL
+	db 16, RATTATA
+	db 16, PIKACHU
+	db -1 ;end
+	
+	;ROUTE 5 JR TRAINER 2
+	db "ISABELLE@", TRAINERTYPE_NORMAL
+	db 16, PIDGEY
+	db 16, PIDGEY
+	db 16, PIDGEY
+	db -1 ;end
+
 JrtrainermGroup:
 	; JRTRAINER_M (1)
 	db "JERRY@", TRAINERTYPE_NORMAL
@@ -3323,6 +3349,17 @@ JrtrainermGroup:
 	db 14, RATTATA
 	db 14, EKANS
 	db -1 ; end
+	
+	;ROUTE 5 JR TRAINER 1
+	db "RICKY@", TRAINERTYPE_NORMAL
+	db 20, SQUIRTLE
+	db -1 ;end
+
+	;ROUTE 5 JR TRAINER 2
+	db "JEFF@", TRAINERTYPE_NORMAL
+	db 16, SPEAROW
+	db 16, RATICATE
+	db -1 ;end
 
 ExecutiveFGroup:
 	; EXECUTIVEF (1)
