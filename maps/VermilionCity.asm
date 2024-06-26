@@ -60,27 +60,31 @@ VermillionSailor1:
 	checkevent EVENT_SS_ANNE_LEFT
 	iftrue .Departed
 	writetext VermilionCitySailor1WelcomeToSSAnneText
+	waitbutton
 	readvar VAR_XCOORD
     getnum STRING_BUFFER_3
     ifequal 18, .CheckForTicket
-	sjump .btm
-	waitbutton
+	closetext
+	end
 .CheckForTicket
 	writetext VermilionCitySailor1DoYouHaveATicketText
 	checkitem S_S_TICKET
 	iffalse .NoTicket
 	writetext VermilionCitySailor1FlashedTicketText
-	sjump .btm
-.NoTicket
-	writetext VermilionCitySailor1YouNeedATicketText
-	applymovement PLAYER, .MoveUp
-	sjump .btm
-.Departed
-	writetext VermilionCitySailor1ShipSetSailText
-	applymovement PLAYER, .MoveUp
-.btm
 	waitbutton
 	closetext
+	end
+.NoTicket
+	writetext VermilionCitySailor1YouNeedATicketText
+	waitbutton
+	closetext
+	applymovement PLAYER, .MoveUp
+	end
+.Departed
+	writetext VermilionCitySailor1ShipSetSailText
+	waitbutton
+	closetext
+	applymovement PLAYER, .MoveUp
 .end
 	end
 
@@ -258,7 +262,7 @@ VermilionCity_MapEvents:
 	bg_event 29, 15, BGEVENT_READ, VermilionCityPortSign
 	bg_event 12,  3, BGEVENT_READ, VermilionCityPokecenterSign
 	bg_event 24, 13, BGEVENT_READ, VermilionCityMartSign
-	bg_event 18, 6, BGEVENT_READ, VermilionCityNoticeSign
+	bg_event 37, 13, BGEVENT_READ, VermilionCityNoticeSign
 
 	def_object_events
 	object_event 19,  7, SPRITE_BEAUTY,  SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionCityBeautyScript, -1
