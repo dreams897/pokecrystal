@@ -172,7 +172,7 @@ CeruleanCityCooltrainerMScript:
 	end
 	
 CeruleanCityRocketScript:
-	faceplayer
+	turnobject CERULEANCITY_ROCKET, VAR_FACING
 	opentext
 	checkevent EVENT_BEAT_CERULEAN_ROCKET_THIEF
 	iftrue .beatRocketThief
