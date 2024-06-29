@@ -28,7 +28,7 @@ TrainerR11Youngster1:
 	end
 
 TrainerR11Youngster2:
-	trainer YOUNGSTER, DAVE2, EVENT_BEAT_ROUTE_11_YOUNGSTER2, Route11Youngster2BattleText, Route11Youngster2EndBattleText, 0, .Script
+	trainer YOUNGSTER, DILLON, EVENT_BEAT_ROUTE_11_YOUNGSTER2, Route11Youngster2BattleText, Route11Youngster2EndBattleText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -39,7 +39,7 @@ TrainerR11Youngster2:
 	end
 
 TrainerR11Youngster3:
-	trainer YOUNGSTER, DILLON, EVENT_BEAT_ROUTE_11_YOUNGSTER3, Route11Youngster3BattleText, Route11Youngster3EndBattleText, 0, .Script
+	trainer YOUNGSTER, YASU, EVENT_BEAT_ROUTE_11_YOUNGSTER3, Route11Youngster3BattleText, Route11Youngster3EndBattleText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -50,7 +50,7 @@ TrainerR11Youngster3:
 	end
 
 TrainerR11Youngster4:
-	trainer YOUNGSTER, YASU, EVENT_BEAT_ROUTE_11_YOUNGSTER4, Route11Youngster4BattleText, Route11Youngster4EndBattleText, 0, .Script
+	trainer YOUNGSTER, DAVE2, EVENT_BEAT_ROUTE_11_YOUNGSTER4, Route11Youngster4BattleText, Route11Youngster4EndBattleText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -83,7 +83,7 @@ TrainerR11Gambler2:
 	end
 
 TrainerR11Gambler3:
-	trainer GAMBLER, DARIAN, EVENT_BEAT_ROUTE_11_GAMBLER3, Route11Gambler3BattleText, Route11Gambler3EndBattleText, 0, .Script
+	trainer GAMBLER, DIRK2, EVENT_BEAT_ROUTE_11_GAMBLER3, Route11Gambler3BattleText, Route11Gambler3EndBattleText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -94,7 +94,7 @@ TrainerR11Gambler3:
 	end
 
 TrainerR11Gambler4:
-	trainer GAMBLER, DIRK2, EVENT_BEAT_ROUTE_11_GAMBLER4, Route11Gambler4BattleText, Route11Gambler4EndBattleText, 0, .Script
+	trainer GAMBLER, DARIAN, EVENT_BEAT_ROUTE_11_GAMBLER4, Route11Gambler4BattleText, Route11Gambler4EndBattleText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -105,7 +105,7 @@ TrainerR11Gambler4:
 	end
 
 TrainerR11SuperNerd1:
-	trainer ENGINEER, BERNIE, EVENT_BEAT_ROUTE_11_ENGINEER1, Route11SuperNerd1BattleText, Route11SuperNerd1EndBattleText, 0, .Script
+	trainer ENGINEER, BRAXTON, EVENT_BEAT_ROUTE_11_ENGINEER1, Route11SuperNerd1BattleText, Route11SuperNerd1EndBattleText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -116,7 +116,7 @@ TrainerR11SuperNerd1:
 	end
 
 TrainerR11SuperNerd2:
-	trainer ENGINEER, BRAXTON, EVENT_BEAT_ROUTE_11_ENGINEER2, Route11SuperNerd2BattleText, Route11SuperNerd2EndBattleText, 0, .Script
+	trainer ENGINEER, BERNIE, EVENT_BEAT_ROUTE_11_ENGINEER2, Route11SuperNerd2BattleText, Route11SuperNerd2EndBattleText, 0, .Script
 
 .Script:
 	endifjustbattled
