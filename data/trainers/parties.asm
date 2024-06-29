@@ -466,6 +466,22 @@ YoungsterGroup:
 	db "EDDIE@", TRAINERTYPE_NORMAL
 	db 21, EKANS
 	db -1 ; end
+	
+	db "DAVE@"
+	db 18, NIDORAN_M
+	db 18, NIDORINO
+	db -1 ;end
+	
+	db "DILLON@"
+	db 19, SANDSHREW
+	db 19, ZUBAT
+	db -1 ;end
+	
+	db "YASU@"
+	db 22, RATTATA
+	db 22, RATICATE
+	db 22, RATICATE
+	db -1 ;end
 
 SchoolboyGroup:
 	; SCHOOLBOY (1)
@@ -3926,6 +3942,19 @@ GamblerGroup:
 	db 18, MAGNEMITE
 	db -1 ; end
 
+EngineerGroup:
+	;ENGINEER(1)
+	db "BERNIE@"
+	db 18, MAGNEMITE
+	db 18, MAGNEMITE
+	db 18, MAGNETON
+	db -1 ;end
+
+	;ENGINEER(1)
+	db "BRAXTON@"
+	db 21, MAGNEMITE
+	db -1 ;end
+	
 SECTION "Random Party Lists", ROMX
 
 RandomPartyLists::

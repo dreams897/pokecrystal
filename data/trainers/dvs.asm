@@ -76,4 +76,5 @@ TrainerClassDVs:
 	
 	dn  9,  8,  8,  8 ; MYSTICALMAN
 	dn  9,  8,  8,  8 ; GAMBLER
+	dn  9,  8,  8,  8 ; ENGINEER
 	assert_table_length NUM_TRAINER_CLASSES - 4 ; exclude ENBY, AERODACTYLE_FOSSIL, KABUTOPS_FOSSIL, MOON_STONE_T

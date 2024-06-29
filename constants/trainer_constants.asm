@@ -133,7 +133,12 @@ DEF GREEN EQU __trainer_class__
 	const IAN2
 	const WARREN2
 	const EDDIE2
-
+	const DAVE2
+	const DILLON
+	const YASU
+	
+	
+	
 	trainerclass SCHOOLBOY ; 17
 	const JACK1
 	const KIPP
@@ -790,6 +795,10 @@ DEF PURPLE EQU __trainer_class__
 	const JASPER
 	const DARIAN
 	const DIRK2
+
+	trainerclass ENGINEER
+	const BERNIE
+	const BRAXTON
 
 DEF NUM_TRAINER_CLASSES EQU __trainer_class__ - 1
 

@@ -80,4 +80,5 @@ TrainerPicPointers::
 	dba ENBYPic
 	dba MysticalmanPic
 	dba GamblerPic
+	dba EngineerPic
 	assert_table_length NUM_TRAINER_CLASSES

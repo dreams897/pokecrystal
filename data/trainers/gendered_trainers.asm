@@ -28,6 +28,7 @@ MaleTrainers:
 	db BIKER
 	db SCIENTIST
 	db GAMBLER
+	db ENGINEER
 .End
 
 FemaleTrainers:

@@ -76,4 +76,5 @@ TrainerGroups:
 	dba GiovanniGroup
 	dba MysticalmanGroup
 	dba GamblerGroup
+	dba EngineerGroup
 	assert_table_length NUM_TRAINER_CLASSES - 4 ; exclude ENBY, AERODACTYLE_FOSSIL, KABUTOPS_FOSSIL, MOON_STONE_T
