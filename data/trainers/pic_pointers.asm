@@ -74,11 +74,11 @@ TrainerPicPointers::
 	dba GruntfPic
 	dba TeamRocketPic
 	dba GiovanniPic
+	dba GamblerPic
+	dba EngineerPic
 	dba KabutopsFossilPic
 	dba AerodactylFossilPic
 	dba MoonStonePic
 	dba ENBYPic
 	dba MysticalmanPic
-	dba GamblerPic
-	dba EngineerPic
 	assert_table_length NUM_TRAINER_CLASSES

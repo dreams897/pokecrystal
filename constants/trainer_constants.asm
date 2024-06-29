@@ -778,6 +778,16 @@ DEF GREEN EQU __trainer_class__
 	const GIOVANNI1
 	const GIOVANNI2
 
+	trainerclass GAMBLER ;49
+	const HUGO
+	const JASPER
+	const DARIAN
+	const DIRK2
+
+	trainerclass ENGINEER
+	const BERNIE
+	const BRAXTON
+
 	trainerclass KABUTOPS_FOSSIL ; 45
 
 	trainerclass AERODACTYL_FOSSIL ; 46
@@ -790,15 +800,6 @@ DEF PURPLE EQU __trainer_class__
 	trainerclass MYSTICALMAN ; 48
 	const EUSINE
 
-	trainerclass GAMBLER ;49
-	const HUGO
-	const JASPER
-	const DARIAN
-	const DIRK2
-
-	trainerclass ENGINEER
-	const BERNIE
-	const BRAXTON
 
 DEF NUM_TRAINER_CLASSES EQU __trainer_class__ - 1
 
