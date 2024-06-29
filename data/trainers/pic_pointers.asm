@@ -79,4 +79,5 @@ TrainerPicPointers::
 	dba MoonStonePic
 	dba ENBYPic
 	dba MysticalmanPic
+	dba GamblerPic
 	assert_table_length NUM_TRAINER_CLASSES

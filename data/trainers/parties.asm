@@ -462,6 +462,11 @@ YoungsterGroup:
 	db 14, SANDSHREW
 	db -1 ; end
 
+	; YOUNGSTER (22)
+	db "EDDIE@", TRAINERTYPE_NORMAL
+	db 21, EKANS
+	db -1 ; end
+
 SchoolboyGroup:
 	; SCHOOLBOY (1)
 	db "JACK@", TRAINERTYPE_NORMAL
@@ -3895,7 +3900,32 @@ MysticalmanGroup:
 	db 23, HAUNTER,    LICK, HYPNOSIS, MEAN_LOOK, CURSE
 	db 25, ELECTRODE,  SCREECH, SONICBOOM, THUNDER, ROLLOUT
 	db -1 ; end
-	
+
+GamblerGroup:
+	;GAMBLER(1)
+	db "HUGO@", TRAINERTYPE_NORMAL
+	db 18, POLIWAG
+	db 18, HORSEA
+	db -1 ; end
+
+	;GAMBLER(2)
+	db "JASPER@", TRAINERTYPE_NORMAL
+	db 18, BELLSPROUT
+	db 18, ODDISH
+	db -1 ; end
+
+	;GAMBLER(3)
+	db "DARIAN@", TRAINERTYPE_NORMAL
+	db 18, GROWLITHE
+	db 18, VULPIX
+	db -1 ; end
+
+	;GAMBLER(3)
+	db "DIRK@", TRAINERTYPE_NORMAL
+	db 18, VOLTORB
+	db 18, MAGNEMITE
+	db -1 ; end
+
 SECTION "Random Party Lists", ROMX
 
 RandomPartyLists::

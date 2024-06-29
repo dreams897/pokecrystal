@@ -86,5 +86,5 @@ INCBIN "gfx/trainers/moon_stone.gbcpal", middle_colors
 EnbyPalette: ; enby gets their own pal
 INCBIN "gfx/trainers/enby.gbcpal", middle_colors
 INCBIN "gfx/trainers/mysticalman.gbcpal", middle_colors
-
+INCBIN "gfx/trainers/gambler.gbcpal", middle_colors
 	assert_table_length NUM_TRAINER_CLASSES + 1

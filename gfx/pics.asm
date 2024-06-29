@@ -737,5 +737,5 @@ MoonStonePic: 	     INCBIN "gfx/trainers/moon_stone.2bpp.lz"
 SECTION "Pics 23", ROMX
 MysticalmanPic:      INCBIN "gfx/trainers/mysticalman.2bpp.lz"
 TwinsPic:            INCBIN "gfx/trainers/twins.2bpp.lz"
-
+GamblerPic:          INCBIN "gfx/trainers/gambler.2bpp.lz"
 SECTION "Pics 24", ROMX

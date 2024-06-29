@@ -73,4 +73,5 @@ TrainerClassNames::
 	li "TEAM ROCKET"
 	li "LEADER"
 	li "MYSTICALMAN"
+	li "GAMBLER"
 	assert_list_length NUM_TRAINER_CLASSES - 4 ; exclude ENBY, AERODACTYLE_FOSSIL, KABUTOPS_FOSSIL, MOON_STONE_T

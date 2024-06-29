@@ -76,6 +76,7 @@ TrainerEncounterMusic::
 	db MUSIC_MEET_JESSIE_JAMES     ; team rocket
 	db MUSIC_MEET_EVIL_TRAINER     ; giovanni
 	db MUSIC_HIKER_ENCOUNTER       ; mysticalman
+	db MUSIC_MEET_EVIL_TRAINER     ; gambler
 	assert_table_length NUM_TRAINER_CLASSES -3 ; exclude ENBY, AERODACTYLE_FOSSIL, KABUTOPS_FOSSIL, MOON_STONE_T
 	db MUSIC_HIKER_ENCOUNTER       ; unused
 	db MUSIC_HIKER_ENCOUNTER       ; unused
