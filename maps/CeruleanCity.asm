@@ -32,6 +32,7 @@ CeruleanCityNoopScene:
 	end
 
 CeruleanCityNoopScene2:
+	moveobject CERULEANCITY_COP, 28, 12
 	disappear CERULEANCITY_ROCKET
 	end
 
