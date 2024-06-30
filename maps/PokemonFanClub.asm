@@ -26,6 +26,7 @@ PokemonFanClubChairmanScript:
 .HeardSpeechButBagFull:
 	writetext PokemonFanClubChairmanIWantYouToHaveThisText
 	promptbutton
+	getitemname STRING_BUFFER_3, BIKE_VOUCHER
 	giveitem BIKE_VOUCHER
 	iffalse .BagFull
 	writetext BikeVoucherReceivedText
