@@ -26,6 +26,7 @@ SSAnneRivalBattleScript:
         getnum STRING_BUFFER_3
         ifequal 36, .RivalWalksToLeft
         ifequal 37, .RivalWalksToRight
+	appear SSANNE2F_RIVAL
 .RivalWalksToLeft
 	applymovement SSANNE2F_RIVAL, .RivalWalksToLeftMov
 	sjump .BTM1
