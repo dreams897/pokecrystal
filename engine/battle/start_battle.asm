@@ -113,7 +113,7 @@ PlayBattleMusic:
 	ld de, MUSIC_CHAMPION_BATTLE
 	jr .done
 
-;.othertrainer
+.othertrainer
 ;	ld a, [wLinkMode]
 ;	and a
 ;	jr nz, .johtotrainer

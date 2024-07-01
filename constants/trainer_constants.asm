@@ -757,6 +757,10 @@ DEF GREEN EQU __trainer_class__
 	const BLUE3_SQUIRTLE
 	const BLUE3_BULBASAUR
 	
+	const BLUE4_CHARMELEON
+	const BLUE4_WARTOTLE
+	const BLUE4_IVYSAUR
+	
 	trainerclass BLUE3 ; added
 
 	trainerclass OFFICER ; 41
