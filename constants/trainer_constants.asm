@@ -475,7 +475,9 @@ DEF GREEN EQU __trainer_class__
 	const HUEY2
 	const HUEY3
 	const HUEY4
-
+	const TREVOR2
+	const EDMOND2
+	
 	trainerclass SUPER_NERD ; 29
 	const STAN
 	const ERIC
