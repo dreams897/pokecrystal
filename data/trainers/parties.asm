@@ -483,6 +483,10 @@ YoungsterGroup:
 	db 22, RATICATE
 	db -1 ;end
 
+	db "TYLER@", TRAINERTYPE_NORMAL
+	db 21, NIDORAN_M
+	db -1 ;end
+	
 SchoolboyGroup:
 	; SCHOOLBOY (1)
 	db "JACK@", TRAINERTYPE_NORMAL
@@ -900,12 +904,18 @@ LassGroup:
 	db 15, NIDORAN_F
 	db -1 ; end
 	
-	; LASS (23)
+	; LASS (24)
 	db "DANA@", TRAINERTYPE_NORMAL
 	db 13, ODDISH
 	db 13, PIDGEY
 	db 13, ODDISH
 	db -1 ; end
+
+	;LASS 25
+	db "ANN@", TRAINERTYPE_NORMAL
+	db 18, PIDGEY
+	db 18, NIDORAN_F
+	db -1 ;end
 
 JanineGroup:
 	; JANINE (1)
@@ -1608,7 +1618,17 @@ GentlemanGroup:
 	db "ALFRED@", TRAINERTYPE_NORMAL
 	db 20, NOCTOWL
 	db -1 ; end
+	
+	db "THOMAS@", TRAINERTYPE_NORMAL
+	db 18, GROWLITHE
+	db 18, GROWLITHE
+	db -1 ; end
 
+	db "ARTHUR@", TRAINERTYPE_NORMAL
+	db 19, NIDORAN_M
+	db 19, NIDORAN_F
+	db -1 ;end
+	
 SkierGroup:
 	; SKIER (1)
 	db "ROXANNE@", TRAINERTYPE_NORMAL

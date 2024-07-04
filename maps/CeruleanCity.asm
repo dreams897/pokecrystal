@@ -237,15 +237,13 @@ CeruleanCitySlowbro:
 	faceplayer
 	opentext
 	random 4
-	ifequal 0, .TookASnooze
+	iffalse .TookASnooze
 	ifequal 1, .LoafingAround
 	ifequal 2, .TurnedAway
-	ifequal 3, .IgnoredOrders
+	writetext CeruleanCitySlowbroIgnoredOrdersText
+	sjump .backtomain
 .TookASnooze
 	writetext CeruleanCitySlowbroTookASnoozeText
-	sjump .backtomain
-.IgnoredOrders
-	writetext CeruleanCitySlowbroIgnoredOrdersText
 	sjump .backtomain
 .TurnedAway
 	writetext CeruleanCitySlowbroTurnedAwayText
@@ -261,17 +259,16 @@ CeruleanCityCooltrainerF1Script:
 	faceplayer
 	opentext
 	random 3
-	ifequal 0, .Sonicboom
+	iffalse .Sonicboom
 	ifequal 1, .Punch
-	ifequal 2, .Withdraw
+	writetext CeruleanCityCooltrainerF1SlowbroWithdrawText
+	sjump .backtomain
 .Sonicboom
 	writetext CeruleanCityCooltrainerF1SlowbroPunchText
 	sjump .backtomain
 .Punch
 	writetext CeruleanCityCooltrainerF1SlowbroUseSonicboomText
 	sjump .backtomain
-.Withdraw
-	writetext CeruleanCityCooltrainerF1SlowbroWithdrawText
 .backtomain
 	waitbutton
 	closetext
