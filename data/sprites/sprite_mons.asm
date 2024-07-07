@@ -41,4 +41,6 @@ SpriteMons:
 	db LUGIA
 	db HO_OH
 	db SEEL
+	db PIDGEY
+	db WIGGLYTUFF
 	assert_table_length NUM_POKEMON_SPRITES

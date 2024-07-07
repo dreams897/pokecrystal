@@ -89,7 +89,7 @@ Museum2FBrunetteGirlText:
 	
 Museum2FHikerAfterTradeText:
 	text "Hello there! Your"
-	line "old Pikachu is"
+	line "old PIKACHU is"
 	cont "magnificent!"
 	done
 

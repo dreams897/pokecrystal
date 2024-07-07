@@ -130,7 +130,6 @@
 	const SPRITE_COOK ; added
 	const SPRITE_SAFARI_ZONE_WORKER ; added
 	const SPRITE_BIKE_SHOP_CLERK ; added
-	
 DEF NUM_OVERWORLD_SPRITES EQU const_value - 1
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)
@@ -176,6 +175,8 @@ DEF SPRITE_POKEMON EQU const_value
 	const SPRITE_LUGIA ; a1
 	const SPRITE_HO_OH ; a2
 	const SPRITE_SEEL ;added
+	const SPRITE_PIDGEY ;added
+	const SPRITE_WIGGLYTUFF
 DEF NUM_POKEMON_SPRITES EQU const_value - SPRITE_POKEMON
 
 ; special GetMonSprite values (see engine/overworld/overworld.asm)
