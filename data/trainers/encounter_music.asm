@@ -40,7 +40,7 @@ TrainerEncounterMusic::
 	db MUSIC_BEAUTY_ENCOUNTER      ; teacher
 	db MUSIC_BEAUTY_ENCOUNTER      ; sabrina
 	db MUSIC_MEET_MALE_TRAINER     ; bug_catcher
-	db MUSIC_HIKER_ENCOUNTER       ; fisher
+	db MUSIC_MEET_MALE_TRAINER       ; fisher
 	db MUSIC_MEET_MALE_TRAINER     ; swimmerm
 	db MUSIC_MEET_FEMALE_TRAINER   ; swimmerf
 	db MUSIC_MEET_MALE_TRAINER     ; sailor
