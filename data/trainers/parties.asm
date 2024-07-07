@@ -2035,12 +2035,22 @@ FisherGroup:
 	db 34, SEAKING,    SUPERSONIC, RAIN_DANCE, WATERFALL, FURY_ATTACK
 	db 37, QWILFISH,   ROLLOUT, SURF, PIN_MISSILE, TAKE_DOWN
 	db -1 ; end
+	
 	;FISHER 26
 	db "DALE@", TRAINERTYPE_NORMAL
 	db 17, GOLDEEN
 	db 17, TENTACOOL
 	db 17, GOLDEEN
 	db -1 ; end	
+	
+	;FISHER 27
+	db "BARNY@", TRAINERTYPE_NORMAL
+	db 17, TENTACOOL
+	db 17, STARYU
+	db 17, SHELLDER
+	db -1 ;end
+	
+	
 	
 SwimmerMGroup:
 	; SWIMMERM (1)
@@ -2401,6 +2411,36 @@ SailorGroup:
 	db "EDMOND@", TRAINERTYPE_NORMAL
 	db 18, MACHOP
 	db 18, SHELLDER
+	db -1 ;end
+	
+	;SAILOR 16
+	db "PHILLIP@", TRAINERTYPE_NORMAL
+	db 20, MACHOKE
+	db -1 ;end
+	
+	;SAILOR 17
+	db "HUEY@", TRAINERTYPE_NORMAL
+	db 18, TENTACOOL
+	db 18, STARYU
+	db -1 ;end
+
+	;SAILOR 18
+	db "DYLAN@", TRAINERTYPE_NORMAL
+	db 17, HORSEA
+	db 17, HORSEA
+	db 17, HORSEA
+	db -1 ;end
+	
+	;SAILOR 19
+	db "LEONARD@", TRAINERTYPE_NORMAL
+	db 21, SHELLDER
+	db -1 ;end
+	
+	;SAILOR 20
+	db "DUNCAN@", TRAINERTYPE_NORMAL
+	db 17, HORSEA
+	db 17, SHELLDER
+	db 17, TENTACOOL
 	db -1 ;end
 	
 SuperNerdGroup:

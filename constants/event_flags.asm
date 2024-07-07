@@ -719,6 +719,9 @@
 	const EVENT_SS_ANNE_BODY_SLAM
 	const EVENT_SS_ANNE_RARE_CANDY
 	const EVENT_SS_ANNE_MAX_ETHER
+	const EVENT_SS_ANNE_ETHER
+	const EVENT_SS_ANNE_TM_REST
+	const EVENT_SS_ANNE_MAX_POTION
 ; Victory Road 3F events
 	const EVENT_VICTORY_ROAD_3_BOULDER_ON_SWITCH1
 	const EVENT_BEAT_VICTORY_ROAD_3_TRAINER_0
@@ -2076,5 +2079,5 @@
 	const EVENT_BATTLE_TOWER_OPEN_CIVILIANS
 ; Unused: next 48 events
 
-	const_next 2336
+	const_next 2333
 DEF NUM_EVENTS EQU const_value ; 1097 with Kanto events

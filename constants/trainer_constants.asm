@@ -420,6 +420,7 @@ DEF GREEN EQU __trainer_class__
 	const RALPH5
 	const TULLY4
 	const DALE2
+	const BARNY
 
 	trainerclass SWIMMERM ; 26
 	const HAROLD
@@ -484,6 +485,11 @@ DEF GREEN EQU __trainer_class__
 	const HUEY4
 	const TREVOR2
 	const EDMOND2
+	const PHILLIP2
+	const HUEY5
+	const DYLAN2
+	const LEONARD2
+	const DUNCAN2
 	
 	trainerclass SUPER_NERD ; 29
 	const STAN
