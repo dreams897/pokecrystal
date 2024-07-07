@@ -213,7 +213,8 @@ DEF GREEN EQU __trainer_class__
 	const MICHELLE2
 	const DANA6
 	const ANN
-	
+	const DAWN2
+
 	trainerclass JANINE ; 1a
 	const JANINE1
 
@@ -345,6 +346,8 @@ DEF GREEN EQU __trainer_class__
 	const ALFRED
 	const THOMAS2
 	const ARTHUR
+	const BROOKS
+	const LAMAR
 	
 	trainerclass SKIER ; 21
 	const ROXANNE
@@ -416,6 +419,7 @@ DEF GREEN EQU __trainer_class__
 	const RALPH4
 	const RALPH5
 	const TULLY4
+	const DALE2
 
 	trainerclass SWIMMERM ; 26
 	const HAROLD

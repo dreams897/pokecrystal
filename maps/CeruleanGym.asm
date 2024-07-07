@@ -31,8 +31,24 @@ CeruleanGymMistyScript:
 	playsound SFX_GET_KEY_ITEM_1
 	waitsfx
 	setflag ENGINE_CASCADEBADGE
-.FightDone:
+.FightDone
+	checkevent EVENT_GOT_TM11
+	iftrue .ExplainTM11
 	writetext CeruleanGymMistyCascadeBadgeInfoText
+	promptbutton
+	;giveitem TM_BUBBLEBEAM
+	;iffalse .NoRoom
+	writetext CeruleanGymMistyReceivedTM11Text
+	setevent EVENT_GOT_TM11
+	playsound SFX_GET_ITEM1_1
+	waitsfx
+	promptbutton
+.ExplainTM11
+	writetext CeruleanGymMistyTM11ExplanationText
+	closetext
+	end
+.NoRoom
+	writetext BikeShopBagFullText
 	waitbutton
 	closetext
 	end

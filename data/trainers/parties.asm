@@ -916,7 +916,13 @@ LassGroup:
 	db 18, PIDGEY
 	db 18, NIDORAN_F
 	db -1 ;end
-
+	
+	;lass 26
+	db "DAWN@", TRAINERTYPE_NORMAL
+	db 18, RATTATA
+	db 18, PIKACHU
+	db -1, end
+	
 JanineGroup:
 	; JANINE (1)
 	db "JANINE@", TRAINERTYPE_MOVES
@@ -1618,16 +1624,27 @@ GentlemanGroup:
 	db "ALFRED@", TRAINERTYPE_NORMAL
 	db 20, NOCTOWL
 	db -1 ; end
-	
+	;GENTLEMAN 6
 	db "THOMAS@", TRAINERTYPE_NORMAL
 	db 18, GROWLITHE
 	db 18, GROWLITHE
 	db -1 ; end
-
+	;GENTLEMAN 7
 	db "ARTHUR@", TRAINERTYPE_NORMAL
 	db 19, NIDORAN_M
 	db 19, NIDORAN_F
 	db -1 ;end
+	;GENTLEMAN 8
+	db "BROOKS@", TRAINERTYPE_NORMAL
+	db 23, PIKACHU
+	db -1;end
+	;GENTLEMAN 9
+	db "LAMAR@", TRAINERTYPE_NORMAL
+	db 17, GROWLITHE
+	db 17, PONYTA
+	db -1 ;end
+	
+	
 	
 SkierGroup:
 	; SKIER (1)
@@ -2018,7 +2035,13 @@ FisherGroup:
 	db 34, SEAKING,    SUPERSONIC, RAIN_DANCE, WATERFALL, FURY_ATTACK
 	db 37, QWILFISH,   ROLLOUT, SURF, PIN_MISSILE, TAKE_DOWN
 	db -1 ; end
-
+	;FISHER 26
+	db "DALE@", TRAINERTYPE_NORMAL
+	db 17, GOLDEEN
+	db 17, TENTACOOL
+	db 17, GOLDEEN
+	db -1 ; end	
+	
 SwimmerMGroup:
 	; SWIMMERM (1)
 	db "HAROLD@", TRAINERTYPE_NORMAL
