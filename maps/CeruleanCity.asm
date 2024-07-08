@@ -16,7 +16,7 @@ CeruleanCity_MapScripts:
 	scene_script CeruleanCityRivalScene, SCENE_CERULEAN_CITY_RIVAL
 	scene_script CeruleanCityNoopScene, SCENE_CERULEAN_CITY_NOOP
 	scene_script CeruleanCityAfterBillScene, SCENE_CERULEAN_CITY_AFTER_BILL
-
+	scene_script CeruleanCityNoopScene2, SCENE_CERULEAN_CITY_NOOP2
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, CeruleanCityFlypointCallback
 
@@ -30,7 +30,12 @@ CeruleanCityRivalScene:
 CeruleanCityNoopScene:
 	disappear CERULEANCITY_BLUE
 	end
-	
+
+CeruleanCityNoopScene2:
+	moveobject CERULEANCITY_COP, 28, 12
+	disappear CERULEANCITY_ROCKET
+	end
+
 CeruleanCityAfterBillScene:
 	moveobject CERULEANCITY_COP, 28, 12
 	end
@@ -168,7 +173,7 @@ CeruleanCityCooltrainerMScript:
 	end
 	
 CeruleanCityRocketScript:
-	faceplayer
+	turnobject CERULEANCITY_ROCKET, VAR_FACING
 	opentext
 	checkevent EVENT_BEAT_CERULEAN_ROCKET_THIEF
 	iftrue .beatRocketThief
@@ -195,7 +200,7 @@ CeruleanCityRocketScript:
 	special FadeBlackQuickly
 	closetext
 	disappear CERULEANCITY_ROCKET
-	setscene SCENE_CERULEAN_CITY_NOOP
+	setscene SCENE_CERULEAN_CITY_NOOP2
 	special FadeInQuickly
 	end
 .NoRoom
@@ -232,15 +237,13 @@ CeruleanCitySlowbro:
 	faceplayer
 	opentext
 	random 4
-	ifequal 0, .TookASnooze
+	iffalse .TookASnooze
 	ifequal 1, .LoafingAround
 	ifequal 2, .TurnedAway
-	ifequal 3, .IgnoredOrders
+	writetext CeruleanCitySlowbroIgnoredOrdersText
+	sjump .backtomain
 .TookASnooze
 	writetext CeruleanCitySlowbroTookASnoozeText
-	sjump .backtomain
-.IgnoredOrders
-	writetext CeruleanCitySlowbroIgnoredOrdersText
 	sjump .backtomain
 .TurnedAway
 	writetext CeruleanCitySlowbroTurnedAwayText
@@ -256,17 +259,16 @@ CeruleanCityCooltrainerF1Script:
 	faceplayer
 	opentext
 	random 3
-	ifequal 0, .Sonicboom
+	iffalse .Sonicboom
 	ifequal 1, .Punch
-	ifequal 2, .Withdraw
+	writetext CeruleanCityCooltrainerF1SlowbroWithdrawText
+	sjump .backtomain
 .Sonicboom
 	writetext CeruleanCityCooltrainerF1SlowbroPunchText
 	sjump .backtomain
 .Punch
 	writetext CeruleanCityCooltrainerF1SlowbroUseSonicboomText
 	sjump .backtomain
-.Withdraw
-	writetext CeruleanCityCooltrainerF1SlowbroWithdrawText
 .backtomain
 	waitbutton
 	closetext

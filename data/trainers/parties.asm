@@ -462,6 +462,31 @@ YoungsterGroup:
 	db 14, SANDSHREW
 	db -1 ; end
 
+	; YOUNGSTER (22)
+	db "EDDIE@", TRAINERTYPE_NORMAL
+	db 21, EKANS
+	db -1 ; end
+	
+	db "DAVE@", TRAINERTYPE_NORMAL
+	db 18, NIDORAN_M
+	db 18, NIDORINO
+	db -1 ;end
+	
+	db "DILLON@", TRAINERTYPE_NORMAL
+	db 19, SANDSHREW
+	db 19, ZUBAT
+	db -1 ;end
+	
+	db "YASU@", TRAINERTYPE_NORMAL
+	db 22, RATTATA
+	db 22, RATICATE
+	db 22, RATICATE
+	db -1 ;end
+
+	db "TYLER@", TRAINERTYPE_NORMAL
+	db 21, NIDORAN_M
+	db -1 ;end
+	
 SchoolboyGroup:
 	; SCHOOLBOY (1)
 	db "JACK@", TRAINERTYPE_NORMAL
@@ -879,13 +904,25 @@ LassGroup:
 	db 15, NIDORAN_F
 	db -1 ; end
 	
-	; LASS (23)
+	; LASS (24)
 	db "DANA@", TRAINERTYPE_NORMAL
 	db 13, ODDISH
 	db 13, PIDGEY
 	db 13, ODDISH
 	db -1 ; end
 
+	;LASS 25
+	db "ANN@", TRAINERTYPE_NORMAL
+	db 18, PIDGEY
+	db 18, NIDORAN_F
+	db -1 ;end
+	
+	;lass 26
+	db "DAWN@", TRAINERTYPE_NORMAL
+	db 18, RATTATA
+	db 18, PIKACHU
+	db -1, end
+	
 JanineGroup:
 	; JANINE (1)
 	db "JANINE@", TRAINERTYPE_MOVES
@@ -1587,7 +1624,28 @@ GentlemanGroup:
 	db "ALFRED@", TRAINERTYPE_NORMAL
 	db 20, NOCTOWL
 	db -1 ; end
-
+	;GENTLEMAN 6
+	db "THOMAS@", TRAINERTYPE_NORMAL
+	db 18, GROWLITHE
+	db 18, GROWLITHE
+	db -1 ; end
+	;GENTLEMAN 7
+	db "ARTHUR@", TRAINERTYPE_NORMAL
+	db 19, NIDORAN_M
+	db 19, NIDORAN_F
+	db -1 ;end
+	;GENTLEMAN 8
+	db "BROOKS@", TRAINERTYPE_NORMAL
+	db 23, PIKACHU
+	db -1;end
+	;GENTLEMAN 9
+	db "LAMAR@", TRAINERTYPE_NORMAL
+	db 17, GROWLITHE
+	db 17, PONYTA
+	db -1 ;end
+	
+	
+	
 SkierGroup:
 	; SKIER (1)
 	db "ROXANNE@", TRAINERTYPE_NORMAL
@@ -1801,7 +1859,20 @@ BugCatcherGroup:
 	db  14, CATERPIE
 	db  14, WEEDLE
 	db -1 ; end
-
+	
+	;ROUTE 5 Bug Catcher 1
+	db "KEIGO@", TRAINERTYPE_NORMAL
+	db  16, WEEDLE
+	db  16, CATERPIE
+	db  16, WEEDLE
+	db -1 ;end
+	
+	;ROUTE 5 BUG CATCHER 2
+	db "ELIJAH@", TRAINERTYPE_NORMAL
+	db 20, BUTTERFREE
+	db -1 ;end
+	
+	
 FisherGroup:
 	; FISHER (1)
 	db "JUSTIN@", TRAINERTYPE_NORMAL
@@ -1964,7 +2035,23 @@ FisherGroup:
 	db 34, SEAKING,    SUPERSONIC, RAIN_DANCE, WATERFALL, FURY_ATTACK
 	db 37, QWILFISH,   ROLLOUT, SURF, PIN_MISSILE, TAKE_DOWN
 	db -1 ; end
-
+	
+	;FISHER 26
+	db "DALE@", TRAINERTYPE_NORMAL
+	db 17, GOLDEEN
+	db 17, TENTACOOL
+	db 17, GOLDEEN
+	db -1 ; end	
+	
+	;FISHER 27
+	db "BARNY@", TRAINERTYPE_NORMAL
+	db 17, TENTACOOL
+	db 17, STARYU
+	db 17, SHELLDER
+	db -1 ;end
+	
+	
+	
 SwimmerMGroup:
 	; SWIMMERM (1)
 	db "HAROLD@", TRAINERTYPE_NORMAL
@@ -2314,6 +2401,48 @@ SailorGroup:
 	db 38, POLIWRATH,  SURF, STRENGTH, ICE_PUNCH, SUBMISSION
 	db -1 ; end
 
+	;SAILOR (14)
+	db "TREVOR@", TRAINERTYPE_NORMAL
+	db 17, MACHOP
+	db 17, TENTACOOL
+	db -1 ;end
+	
+	;SAILOR (15)
+	db "EDMOND@", TRAINERTYPE_NORMAL
+	db 18, MACHOP
+	db 18, SHELLDER
+	db -1 ;end
+	
+	;SAILOR 16
+	db "PHILLIP@", TRAINERTYPE_NORMAL
+	db 20, MACHOKE
+	db -1 ;end
+	
+	;SAILOR 17
+	db "HUEY@", TRAINERTYPE_NORMAL
+	db 18, TENTACOOL
+	db 18, STARYU
+	db -1 ;end
+
+	;SAILOR 18
+	db "DYLAN@", TRAINERTYPE_NORMAL
+	db 17, HORSEA
+	db 17, HORSEA
+	db 17, HORSEA
+	db -1 ;end
+	
+	;SAILOR 19
+	db "LEONARD@", TRAINERTYPE_NORMAL
+	db 21, SHELLDER
+	db -1 ;end
+	
+	;SAILOR 20
+	db "DUNCAN@", TRAINERTYPE_NORMAL
+	db 17, HORSEA
+	db 17, SHELLDER
+	db 17, TENTACOOL
+	db -1 ;end
+	
 SuperNerdGroup:
 	; SUPER_NERD (1)
 	db "STAN@", TRAINERTYPE_NORMAL
@@ -3300,6 +3429,19 @@ JrtrainerfGroup:
 	db 31, PARASECT
 	db -1 ; end
 	
+	;ROUTE 5 JR TRAINER 1
+	db "NANCY@", TRAINERTYPE_NORMAL
+	db 16, RATTATA
+	db 16, PIKACHU
+	db -1 ;end
+	
+	;ROUTE 5 JR TRAINER 2
+	db "BELLE@", TRAINERTYPE_NORMAL
+	db 16, PIDGEY
+	db 16, PIDGEY
+	db 16, PIDGEY
+	db -1 ;end
+
 JrtrainermGroup:
 	; JRTRAINER_M (1)
 	db "JERRY@", TRAINERTYPE_NORMAL
@@ -3323,6 +3465,17 @@ JrtrainermGroup:
 	db 14, RATTATA
 	db 14, EKANS
 	db -1 ; end
+	
+	;ROUTE 5 JR TRAINER 1
+	db "RICKY@", TRAINERTYPE_NORMAL
+	db 20, SQUIRTLE
+	db -1 ;end
+
+	;ROUTE 5 JR TRAINER 2
+	db "JEFF@", TRAINERTYPE_NORMAL
+	db 16, SPEAROW
+	db 16, RATICATE
+	db -1 ;end
 
 ExecutiveFGroup:
 	; EXECUTIVEF (1)
@@ -3749,7 +3902,30 @@ Blue2Group:
 	db 17, BULBASAUR,    $56, $56, NO_ITEM
 	db -1 ; end
 	
+	;BLUE4 CHARMELEON (1)
+	db "?@", TRAINERTYPE_DVS | TRAINERTYPE_ITEM
+	db 19, PIDGEOTTO, $36, $48, POTION
+	db 16, RATICATE, $66, $67, POTION
+	db 18, KADABRA, $66, $67, POTION
+	db 20, CHARMELEON, $66, $67, POTION
+	db -1 ;end
+
+	;BLUE4 WARTOTLE (1)
+	db "?@", TRAINERTYPE_DVS | TRAINERTYPE_ITEM
+	db 19, PIDGEOTTO, $36, $48, POTION
+	db 16, RATICATE, $66, $67, POTION
+	db 18, KADABRA, $66, $67, POTION
+	db 20, WARTORTLE, $66, $67, POTION
+	db -1 ;end	
 	
+	;BLUE4 IVYSAUR (1)
+	db "?@", TRAINERTYPE_DVS | TRAINERTYPE_ITEM
+	db 19, PIDGEOTTO, $36, $48, POTION
+	db 16, RATICATE, $66, $67, POTION
+	db 18, KADABRA, $66, $67, POTION
+	db 20, IVYSAUR, $66, $67, POTION
+	db -1 ;end	
+
 Blue3Group:
 		
 	; BLUE (3)
@@ -3851,6 +4027,45 @@ GiovanniGroup:
 	db 41, NIDOQUEEN, DOUBLE_KICK, BODY_SLAM, POISON_STING, TAIL_WHIP
 	db -1 ; end
 
+GamblerGroup:
+	;GAMBLER(1)
+	db "HUGO@", TRAINERTYPE_NORMAL
+	db 18, POLIWAG
+	db 18, HORSEA
+	db -1 ; end
+
+	;GAMBLER(2)
+	db "JASPER@", TRAINERTYPE_NORMAL
+	db 18, BELLSPROUT
+	db 18, ODDISH
+	db -1 ; end
+
+	;GAMBLER(3)
+	db "DARIAN@", TRAINERTYPE_NORMAL
+	db 18, GROWLITHE
+	db 18, VULPIX
+	db -1 ; end
+
+	;GAMBLER(3)
+	db "DIRK@", TRAINERTYPE_NORMAL
+	db 18, VOLTORB
+	db 18, MAGNEMITE
+	db -1 ; end
+
+EngineerGroup:
+	;ENGINEER(1)
+	db "BERNIE@", TRAINERTYPE_NORMAL
+	db 18, MAGNEMITE
+	db 18, MAGNEMITE
+	db 18, MAGNETON
+	db -1 ;end
+
+	;ENGINEER(1)
+	db "BRAXTON@", TRAINERTYPE_NORMAL
+	db 21, MAGNEMITE
+	db -1 ;end
+	
+
 MysticalmanGroup:
 	; MYSTICALMAN (1)
 	db "EUSINE@", TRAINERTYPE_MOVES
@@ -3858,7 +4073,7 @@ MysticalmanGroup:
 	db 23, HAUNTER,    LICK, HYPNOSIS, MEAN_LOOK, CURSE
 	db 25, ELECTRODE,  SCREECH, SONICBOOM, THUNDER, ROLLOUT
 	db -1 ; end
-	
+
 SECTION "Random Party Lists", ROMX
 
 RandomPartyLists::
